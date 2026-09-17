@@ -4,11 +4,11 @@ const scene = [
     text: "Root avançait lentement dans la rue, absorbée par ses pensées."
   },
   {
-    image: "images/Root.PNG",
+    image: "images/HOPE.PNG",
     text: "Quelques minutes plus tard, elle pénétra dans le musée. Quelque chose attirait son attention."
   },
   {
-    image: "images/Root.PNG",
+    image: "images/Maitre-Lee.PNG",
     text: "Devant elle, un objet ancien semblait presque l'attendre. Son instinct lui disait que rien n'était normal."
   }
 ];
