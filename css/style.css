@@ -938,13 +938,18 @@ a.button:hover{
 
   padding:40px 20px;
 
-  background:
+  background-image:
     linear-gradient(
-      rgba(0,0,0,.45),
-      rgba(0,0,0,.65)
+      rgba(0,0,0,.25),
+      rgba(0,0,0,.40)
     ),
-    url("../images/Root.PNG")
-    center center / cover no-repeat;
+    url("../images/Root.PNG");
+
+  background-position:center center;
+
+  background-size:contain;
+
+  background-repeat:no-repeat;
 
   background-color:#000;
 }
@@ -1013,30 +1018,98 @@ a.button:hover{
   margin-top:30px;
 }
 
-/* Téléphone */
+/* =========================
+   TABLETTE
+   ========================= */
+
+@media (max-width:1024px){
+
+  .chapitre{
+    padding:30px 16px;
+
+    background-size:contain;
+  }
+
+  .chapitre-contenu{
+    width:min(92vw, 760px);
+
+    padding:28px 22px;
+  }
+
+  .chapitre-contenu h1{
+    font-size:
+      clamp(
+        32px,
+        7vw,
+        54px
+      );
+  }
+
+  .chapitre-contenu p{
+    font-size:
+      clamp(
+        17px,
+        2.6vw,
+        22px
+      );
+  }
+}
+
+/* =========================
+   TÉLÉPHONE
+   ========================= */
 
 @media (max-width:600px){
 
   .chapitre{
-    padding:20px 12px;
+    min-height:100vh;
+
+    padding:18px 10px;
+
     align-items:flex-start;
+
+    background-size:contain;
+
+    background-position:center top;
   }
 
   .chapitre-contenu{
-    margin-top:6vh;
+    width:94vw;
 
-    padding:
-      24px 18px;
+    margin-top:5vh;
+
+    padding:22px 16px;
 
     border-radius:16px;
+
+    background:
+      rgba(5,7,10,.80);
+  }
+
+  .chapitre-contenu h1{
+    font-size:
+      clamp(
+        30px,
+        10vw,
+        46px
+      );
+
+    margin-bottom:18px;
   }
 
   .chapitre-contenu p{
     font-size:17px;
+
     line-height:1.65;
   }
 
+  .choix{
+    gap:10px;
+
+    margin-top:24px;
+  }
+
+  .choix a.button{
+    width:100%;
+  }
 }
-
-
-
