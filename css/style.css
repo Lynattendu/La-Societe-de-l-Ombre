@@ -922,3 +922,121 @@ a.button:hover{
     transform:none !important;
   }
 }
+
+
+/* =========================
+   CHAPITRES
+   ========================= */
+
+.chapitre{
+  min-height:100vh;
+  width:100%;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  padding:40px 20px;
+
+  background:
+    linear-gradient(
+      rgba(0,0,0,.45),
+      rgba(0,0,0,.65)
+    ),
+    url("../images/Root.PNG")
+    center center / cover no-repeat;
+
+  background-color:#000;
+}
+
+.chapitre-contenu{
+  width:min(900px, 94vw);
+
+  padding:36px 32px;
+
+  background:
+    rgba(5,7,10,.78);
+
+  border:
+    1px solid
+    rgba(245,197,106,.25);
+
+  border-radius:20px;
+
+  box-shadow:
+    0 20px 70px
+    rgba(0,0,0,.45);
+
+  backdrop-filter:
+    blur(4px);
+}
+
+.chapitre-contenu h1{
+  margin-top:0;
+
+  font-size:
+    clamp(
+      34px,
+      6vw,
+      64px
+    );
+
+  color:var(--gold);
+
+  text-align:center;
+}
+
+.chapitre-contenu p{
+  font-size:
+    clamp(
+      18px,
+      2.2vw,
+      24px
+    );
+
+  line-height:1.75;
+
+  color:#f4efe6;
+
+  text-align:left;
+}
+
+.choix{
+  display:flex;
+
+  justify-content:center;
+
+  gap:16px;
+
+  flex-wrap:wrap;
+
+  margin-top:30px;
+}
+
+/* Téléphone */
+
+@media (max-width:600px){
+
+  .chapitre{
+    padding:20px 12px;
+    align-items:flex-start;
+  }
+
+  .chapitre-contenu{
+    margin-top:6vh;
+
+    padding:
+      24px 18px;
+
+    border-radius:16px;
+  }
+
+  .chapitre-contenu p{
+    font-size:17px;
+    line-height:1.65;
+  }
+
+}
+
+
+
