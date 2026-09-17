@@ -923,7 +923,6 @@ a.button:hover{
   }
 }
 
-
 /* =========================
    CHAPITRES
    ========================= */
@@ -932,35 +931,48 @@ a.button:hover{
   min-height:100vh;
   width:100%;
 
+  position:relative;
+
   display:flex;
   align-items:center;
   justify-content:center;
 
-  padding:40px 20px;
+  overflow:hidden;
 
-  background-image:
-    linear-gradient(
-      rgba(0,0,0,.25),
-      rgba(0,0,0,.40)
-    ),
-    url("../images/Root.PNG");
-
-  background-position:center center;
-
-  background-size:contain;
-
-  background-repeat:no-repeat;
-
-  background-color:#000;
+  background:#000;
 }
 
-.chapitre-contenu{
-  width:min(900px, 94vw);
+/* Image entière */
+.chapitre-image{
+  position:absolute;
 
-  padding:36px 32px;
+  top:0;
+  left:0;
+
+  width:100%;
+  height:100%;
+
+  object-fit:contain;
+
+  object-position:center center;
+
+  background:#000;
+
+  z-index:1;
+}
+
+/* Zone de texte */
+.chapitre-contenu{
+  position:relative;
+
+  z-index:2;
+
+  width:min(900px, 92vw);
+
+  padding:32px 28px;
 
   background:
-    rgba(5,7,10,.78);
+    rgba(5,7,10,.72);
 
   border:
     1px solid
@@ -973,11 +985,15 @@ a.button:hover{
     rgba(0,0,0,.45);
 
   backdrop-filter:
-    blur(4px);
+    blur(3px);
 }
 
 .chapitre-contenu h1{
   margin-top:0;
+
+  text-align:center;
+
+  color:var(--gold);
 
   font-size:
     clamp(
@@ -985,13 +1001,11 @@ a.button:hover{
       6vw,
       64px
     );
-
-  color:var(--gold);
-
-  text-align:center;
 }
 
 .chapitre-contenu p{
+  color:#f4efe6;
+
   font-size:
     clamp(
       18px,
@@ -1000,10 +1014,6 @@ a.button:hover{
     );
 
   line-height:1.75;
-
-  color:#f4efe6;
-
-  text-align:left;
 }
 
 .choix{
@@ -1018,98 +1028,18 @@ a.button:hover{
   margin-top:30px;
 }
 
-/* =========================
-   TABLETTE
-   ========================= */
-
-@media (max-width:1024px){
-
-  .chapitre{
-    padding:30px 16px;
-
-    background-size:contain;
-  }
-
-  .chapitre-contenu{
-    width:min(92vw, 760px);
-
-    padding:28px 22px;
-  }
-
-  .chapitre-contenu h1{
-    font-size:
-      clamp(
-        32px,
-        7vw,
-        54px
-      );
-  }
-
-  .chapitre-contenu p{
-    font-size:
-      clamp(
-        17px,
-        2.6vw,
-        22px
-      );
-  }
-}
-
-/* =========================
-   TÉLÉPHONE
-   ========================= */
-
+/* Téléphone */
 @media (max-width:600px){
 
-  .chapitre{
-    min-height:100vh;
-
-    padding:18px 10px;
-
-    align-items:flex-start;
-
-    background-size:contain;
-
-    background-position:center top;
-  }
-
   .chapitre-contenu{
-    width:94vw;
+    width:92vw;
 
-    margin-top:5vh;
-
-    padding:22px 16px;
-
-    border-radius:16px;
-
-    background:
-      rgba(5,7,10,.80);
-  }
-
-  .chapitre-contenu h1{
-    font-size:
-      clamp(
-        30px,
-        10vw,
-        46px
-      );
-
-    margin-bottom:18px;
+    padding:20px 16px;
   }
 
   .chapitre-contenu p{
     font-size:17px;
-
     line-height:1.65;
   }
 
-  .choix{
-    gap:10px;
-
-    margin-top:24px;
-  }
-
-  .choix a.button{
-    width:100%;
-  }
 }
