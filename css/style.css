@@ -1043,3 +1043,96 @@ a.button:hover{
   }
 
 }
+
+/* =========================
+   TEXTE ANIMÉ DES CHAPITRES
+   ========================= */
+
+.texte-scene{
+  min-height:120px;
+}
+
+.mot{
+  opacity:0;
+
+  animation:
+    apparitionMot .35s ease forwards;
+}
+
+@keyframes apparitionMot{
+
+  from{
+    opacity:0;
+    transform:translateY(4px);
+  }
+
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+
+}
+
+
+/* =========================
+   TRANSITION DES IMAGES
+   ========================= */
+
+.chapitre-image{
+
+  transition:
+    opacity .7s ease,
+    transform .7s ease;
+
+}
+
+.chapitre-image.fade-out{
+
+  opacity:0;
+
+  transform:
+    scale(1.02);
+
+}
+
+.chapitre-image.fade-in{
+
+  opacity:1;
+
+  transform:
+    scale(1);
+
+}
+
+
+/* =========================
+   BOUTON SUITE
+   ========================= */
+
+.bouton-suite{
+
+  opacity:0;
+
+  pointer-events:none;
+
+  transform:
+    translateY(10px);
+
+  transition:
+    opacity .6s ease,
+    transform .6s ease;
+
+}
+
+.bouton-suite.visible{
+
+  opacity:1;
+
+  pointer-events:auto;
+
+  transform:
+    translateY(0);
+
+}
+
+
