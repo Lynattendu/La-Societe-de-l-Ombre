@@ -37,25 +37,44 @@ function lancerIntroductionChapitre() {
 
   imageScene.src = scene[0].image;
 
+  // 1. Chapitre 1
   setTimeout(() => {
     chapitreNumero.classList.add("visible");
-  }, 300);
+  }, 500);
 
+  // 2. Titre
   setTimeout(() => {
     chapitreTitre.classList.add("visible");
-  }, 1600);
+  }, 1800);
 
+  // 3. L'image apparaît
   setTimeout(() => {
     imageScene.classList.add("visible");
-  }, 3000);
+  }, 3200);
 
+  // 4. On laisse le lecteur regarder
+  setTimeout(() => {
+    document
+      .querySelector(".chapitre-intro")
+      .classList.add("disparait");
+  }, 5000);
+
+  // 5. Le bloc titre disparaît vraiment
+  setTimeout(() => {
+    document
+      .querySelector(".chapitre-intro")
+      .style.display = "none";
+  }, 6100);
+
+  // 6. Le texte apparaît ensuite
   setTimeout(() => {
     chapitreContenu.classList.add("visible");
-  }, 3900);
+  }, 6300);
 
+  // 7. Puis le texte commence à être raconté
   setTimeout(() => {
     afficherSegment();
-  }, 4500);
+  }, 7000);
 }
 
 /* =========================
