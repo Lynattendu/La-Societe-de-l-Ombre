@@ -5,17 +5,21 @@ const scene = [
   },
   {
     image: "images/Hope.PNG",
-    text: "Quelques minutes plus tard, elle pénétra dans le musée. Quelque chose attirait son attention."
+    text: "Quelque part ailleurs, Hope poursuivait son propre chemin, avec cette force tranquille qui la caractérisait."
   },
   {
     image: "images/Maitre-Lee.PNG",
-    text: "Devant elle, un objet ancien semblait presque l'attendre. Son instinct lui disait que rien n'était normal."
+    text: "Et dans le silence, Maître Lee observait les mouvements du monde comme s’il en connaissait déjà les failles."
   }
 ];
 
 const imageScene = document.getElementById("imageScene");
 const texteScene = document.getElementById("texteScene");
 const suiteBtn = document.getElementById("suiteBtn");
+
+const chapitreNumero = document.getElementById("chapitreNumero");
+const chapitreTitre = document.getElementById("chapitreTitre");
+const chapitreContenu = document.getElementById("chapitreContenu");
 
 let segmentIndex = 0;
 let motIndex = 0;
@@ -26,7 +30,36 @@ let enCours = false;
 const vitesseMot = 180;
 
 /* =========================
-   AFFICHER UNE IMAGE
+   INTRO VISUELLE DU CHAPITRE
+   ========================= */
+
+function lancerIntroductionChapitre() {
+
+  imageScene.src = scene[0].image;
+
+  setTimeout(() => {
+    chapitreNumero.classList.add("visible");
+  }, 300);
+
+  setTimeout(() => {
+    chapitreTitre.classList.add("visible");
+  }, 1600);
+
+  setTimeout(() => {
+    imageScene.classList.add("visible");
+  }, 3000);
+
+  setTimeout(() => {
+    chapitreContenu.classList.add("visible");
+  }, 3900);
+
+  setTimeout(() => {
+    afficherSegment();
+  }, 4500);
+}
+
+/* =========================
+   CHANGEMENT D’IMAGE
    ========================= */
 
 function changerImage(src) {
@@ -38,107 +71,76 @@ function changerImage(src) {
     imageScene.src = src;
 
     imageScene.onload = () => {
-
       imageScene.classList.remove("fade-out");
       imageScene.classList.add("fade-in");
 
       setTimeout(() => {
         imageScene.classList.remove("fade-in");
       }, 700);
-
     };
 
   }, 400);
 }
 
-
 /* =========================
-   ECRITURE MOT PAR MOT
+   AFFICHAGE D’UN SEGMENT
    ========================= */
 
 function afficherSegment() {
 
   if (segmentIndex >= scene.length) {
-
     suiteBtn.classList.add("visible");
     return;
   }
 
   const segment = scene[segmentIndex];
 
-  changerImage(segment.image);
+  if (segmentIndex > 0) {
+    changerImage(segment.image);
+  }
 
   mots = segment.text.split(" ");
-
   motIndex = 0;
-
   texteScene.innerHTML = "";
-
   enCours = true;
 
   ecrireMot();
 }
 
+/* =========================
+   ÉCRITURE MOT PAR MOT
+   ========================= */
 
 function ecrireMot() {
 
   if (motIndex < mots.length) {
 
     const mot = document.createElement("span");
-
     mot.textContent = mots[motIndex] + " ";
-
     mot.classList.add("mot");
 
     texteScene.appendChild(mot);
 
     motIndex++;
 
-    timer = setTimeout(
-      ecrireMot,
-      vitesseMot
-    );
+    timer = setTimeout(ecrireMot, vitesseMot);
 
   } else {
 
     enCours = false;
 
     setTimeout(() => {
-
       segmentIndex++;
-
       afficherSegment();
-
     }, 1200);
 
   }
 }
 
-
 /* =========================
-   TOUCHER / CLIQUER
-   POUR AFFICHER TOUT LE TEXTE
+   AFFICHER TOUT LE TEXTE
+   SI ON TOUCHE / CLIQUE
    ========================= */
-
-texteScene.addEventListener(
-  "click",
-  afficherTexteComplet
-);
-
-document.addEventListener(
-  "touchstart",
-  function(event){
-
-    if (
-      event.target.closest(".chapitre-contenu")
-    ) {
-      afficherTexteComplet();
-    }
-
-  },
-  { passive:true }
-);
-
 
 function afficherTexteComplet() {
 
@@ -148,27 +150,30 @@ function afficherTexteComplet() {
 
   clearTimeout(timer);
 
-  texteScene.innerHTML =
-    mots.join(" ");
-
-  motIndex =
-    mots.length;
-
-  enCours =
-    false;
+  texteScene.innerHTML = mots.join(" ");
+  motIndex = mots.length;
+  enCours = false;
 
   setTimeout(() => {
-
     segmentIndex++;
-
     afficherSegment();
-
   }, 900);
 }
 
+texteScene.addEventListener("click", afficherTexteComplet);
+
+document.addEventListener(
+  "touchstart",
+  function(event) {
+    if (event.target.closest(".chapitre-contenu")) {
+      afficherTexteComplet();
+    }
+  },
+  { passive: true }
+);
 
 /* =========================
-   DEMARRAGE
+   DÉMARRAGE
    ========================= */
 
-afficherSegment();
+lancerIntroductionChapitre();
