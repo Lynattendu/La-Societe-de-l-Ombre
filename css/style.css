@@ -1134,5 +1134,198 @@ a.button:hover{
     translateY(0);
 
 }
+/* =========================
+   INTRO CINÉMATIQUE DU CHAPITRE
+   ========================= */
 
+.chapitre{
+  min-height:100vh;
+  width:100%;
+  position:relative;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  overflow:hidden;
+  background:#000;
+}
+
+.chapitre-image{
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  object-position:center center;
+  background:#000;
+  z-index:1;
+  opacity:0;
+  transition:
+    opacity .9s ease,
+    transform .9s ease;
+}
+
+.chapitre-image.visible{
+  opacity:1;
+}
+
+.chapitre-image.fade-out{
+  opacity:0;
+  transform:scale(1.02);
+}
+
+.chapitre-image.fade-in{
+  opacity:1;
+  transform:scale(1);
+}
+
+/* Bloc Chapitre + Titre */
+.chapitre-intro{
+  position:relative;
+  z-index:3;
+  text-align:center;
+  padding:20px;
+  pointer-events:none;
+}
+
+.chapitre-numero{
+  opacity:0;
+  transform:translateY(18px);
+  font-size:clamp(24px, 4vw, 42px);
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  color:#f5c56a;
+  margin-bottom:18px;
+  text-shadow:0 0 20px rgba(245,197,106,.18);
+  transition:
+    opacity .8s ease,
+    transform .8s ease;
+}
+
+.chapitre-titre{
+  opacity:0;
+  transform:translateY(18px);
+  margin:0;
+  font-size:clamp(34px, 7vw, 82px);
+  line-height:1;
+  color:#fff;
+  text-shadow:0 4px 26px rgba(0,0,0,.65);
+  transition:
+    opacity 1s ease,
+    transform 1s ease;
+}
+
+.chapitre-numero.visible,
+.chapitre-titre.visible{
+  opacity:1;
+  transform:translateY(0);
+}
+
+/* Zone texte */
+.chapitre-contenu{
+  position:relative;
+  z-index:4;
+  width:min(900px, 92vw);
+  padding:32px 28px;
+  background:rgba(5,7,10,.72);
+  border:1px solid rgba(245,197,106,.25);
+  border-radius:20px;
+  box-shadow:0 20px 70px rgba(0,0,0,.45);
+  backdrop-filter:blur(3px);
+
+  opacity:0;
+  transform:translateY(20px);
+  transition:
+    opacity .8s ease,
+    transform .8s ease;
+}
+
+.chapitre-contenu.visible{
+  opacity:1;
+  transform:translateY(0);
+}
+
+.texte-scene{
+  min-height:120px;
+  color:#f4efe6;
+  font-size:clamp(18px, 2.2vw, 24px);
+  line-height:1.75;
+}
+
+.mot{
+  opacity:0;
+  animation:apparitionMot .35s ease forwards;
+}
+
+@keyframes apparitionMot{
+  from{
+    opacity:0;
+    transform:translateY(4px);
+  }
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
+.choix{
+  display:flex;
+  justify-content:center;
+  gap:16px;
+  flex-wrap:wrap;
+  margin-top:30px;
+}
+
+.bouton-suite{
+  opacity:0;
+  pointer-events:none;
+  transform:translateY(10px);
+  transition:
+    opacity .6s ease,
+    transform .6s ease;
+}
+
+.bouton-suite.visible{
+  opacity:1;
+  pointer-events:auto;
+  transform:translateY(0);
+}
+
+/* Tablette */
+@media (max-width:1024px){
+  .chapitre-contenu{
+    width:min(92vw, 760px);
+    padding:28px 22px;
+  }
+}
+
+/* Téléphone */
+@media (max-width:600px){
+  .chapitre-intro{
+    padding:14px;
+  }
+
+  .chapitre-numero{
+    font-size:20px;
+    margin-bottom:12px;
+  }
+
+  .chapitre-titre{
+    font-size:clamp(30px, 10vw, 52px);
+  }
+
+  .chapitre-contenu{
+    width:92vw;
+    padding:20px 16px;
+  }
+
+  .texte-scene{
+    font-size:17px;
+    line-height:1.65;
+  }
+
+  .choix a.button{
+    width:100%;
+  }
+}
 
