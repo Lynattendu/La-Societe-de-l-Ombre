@@ -27,7 +27,7 @@ let mots = [];
 let timer = null;
 let enCours = false;
 
-const vitesseMot = 180;
+const vitesseMot = 380;
 
 /* =========================
    INTRO VISUELLE DU CHAPITRE
