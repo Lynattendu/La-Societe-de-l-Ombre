@@ -1265,19 +1265,37 @@ a.button:hover{
 .chapitre-contenu{
   position:relative;
   z-index:4;
-  width:min(900px, 92vw);
-  padding:32px 28px;
-  background:rgba(5,7,10,.72);
-  border:1px solid rgba(245,197,106,.25);
-  border-radius:20px;
-  box-shadow:0 20px 70px rgba(0,0,0,.45);
+
+  width:min(820px, 88vw);
+
+  margin:auto;
+
+  padding:30px 28px;
+
+  background:
+    rgba(5,7,10,.70);
+
+  border:
+    1px solid
+    rgba(245,197,106,.22);
+
+  border-radius:18px;
+
+  box-shadow:
+    0 20px 70px
+    rgba(0,0,0,.40);
+
   backdrop-filter:blur(3px);
 
   opacity:0;
-  transform:translateY(20px);
+
+  transform:translateY(18px);
+
   transition:
-    opacity .8s ease,
-    transform .8s ease;
+    opacity 1s ease,
+    transform 1s ease;
+
+  text-align:center;
 }
 
 .chapitre-contenu.visible{
@@ -1287,10 +1305,21 @@ a.button:hover{
 
 .texte-scene{
   min-height:120px;
+
   color:#f4efe6;
-  font-size:clamp(18px, 2.2vw, 24px);
-  line-height:1.75;
+
+  font-size:
+    clamp(
+      18px,
+      2vw,
+      23px
+    );
+
+  line-height:1.9;
+
+  text-align:center;
 }
+
 
 .mot{
   opacity:0;
