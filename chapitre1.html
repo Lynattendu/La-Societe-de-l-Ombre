@@ -2,20 +2,10 @@
 <html lang="fr">
 
 <head>
-
   <meta charset="UTF-8">
-
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
-  >
-
-  <title>
-    Chapitre 1 — La Société de l'Ombre
-  </title>
-
- <link rel="stylesheet" href="css/style.css?v=2">
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapitre 1 — La Société de l'Ombre</title>
+  <link rel="stylesheet" href="css/style.css?v=3">
 </head>
 
 <body>
@@ -29,11 +19,17 @@
       alt="Illustration du chapitre"
     >
 
-    <section class="chapitre-contenu">
-
-      <h1>
+    <section class="chapitre-intro">
+      <div id="chapitreNumero" class="chapitre-numero">
         Chapitre 1
+      </div>
+
+      <h1 id="chapitreTitre" class="chapitre-titre">
+        Le Mystère Commence
       </h1>
+    </section>
+
+    <section id="chapitreContenu" class="chapitre-contenu">
 
       <p
         id="texteScene"
@@ -41,7 +37,6 @@
       ></p>
 
       <div class="choix">
-
         <a
           id="suiteBtn"
           class="button bouton-suite"
@@ -49,14 +44,13 @@
         >
           Suite
         </a>
-
       </div>
 
     </section>
 
   </main>
 
-  <script src="js/chapitre.js?v=2"></script>
+  <script src="js/chapitre.js?v=3"></script>
 
 </body>
 
