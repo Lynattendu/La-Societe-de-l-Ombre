@@ -2,55 +2,3499 @@
 <html lang="fr">
 
 <head>
+
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Chapitre 1 — La Société de l'Ombre</title>
-  <link rel="stylesheet" href="css/style.css?v=3">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+  >
+
+  <meta
+    name="theme-color"
+    content="#050505"
+  >
+
+  <title>
+    Chapitre 1 — Embrasse ton destin | La Société de l'Ombre
+  </title>
+
+  <link
+    rel="stylesheet"
+    href="css/chapitre1.css"
+  >
+
 </head>
+
 
 <body>
 
-  <main class="chapitre">
+
+<!-- =====================================================
+     BARRE DE PROGRESSION
+===================================================== -->
+
+<div
+  class="progress-bar"
+  aria-hidden="true"
+>
+  <div
+    class="progress-fill"
+    id="progressFill"
+  ></div>
+</div>
+
+
+
+<!-- =====================================================
+     COMMANDES
+===================================================== -->
+
+<div class="chapter-controls">
+
+  <button
+    class="control-btn"
+    id="menuBtn"
+    aria-label="Ouvrir le menu"
+  >
+    ☰
+  </button>
+
+  <button
+    class="control-btn"
+    id="soundBtn"
+    aria-label="Activer ou désactiver le son"
+  >
+    ♫
+  </button>
+
+</div>
+
+
+
+<main
+  class="chapter"
+  id="chapter"
+>
+
+
+
+<!-- =====================================================
+     VISUEL 1
+     TITRE DU CHAPITRE
+===================================================== -->
+
+<section
+  class="scene scene-cover"
+  id="scene-1"
+>
+
+  <div
+    class="visual full-visual"
+    data-visual="1"
+  >
 
     <img
-      id="imageScene"
-      class="chapitre-image"
-      src="images/Root.PNG"
-      alt="Illustration du chapitre"
+      src="images/chapitre1/Visuel-1.PNG"
+      alt="Chapitre 1 — Embrasse ton destin"
+      loading="eager"
     >
 
-    <section class="chapitre-intro">
-      <div id="chapitreNumero" class="chapitre-numero">
-        Chapitre 1
-      </div>
+  </div>
 
-      <h1 id="chapitreTitre" class="chapitre-titre">
-        Le Mystère Commence
-      </h1>
-    </section>
 
-    <section id="chapitreContenu" class="chapitre-contenu">
+  <div class="chapter-title-overlay">
 
-      <p
-        id="texteScene"
-        class="texte-scene"
-      ></p>
+    <p class="chapter-number">
+      Chapitre 1
+    </p>
 
-      <div class="choix">
-        <a
-          id="suiteBtn"
-          class="button bouton-suite"
-          href="chapitre2.html"
-        >
-          Suite
-        </a>
-      </div>
+    <h1>
+      Embrasse ton destin
+    </h1>
 
-    </section>
+    <button
+      class="continue-btn"
+      data-next
+    >
+      Commencer
+    </button>
 
-  </main>
+  </div>
 
-  <script src="js/chapitre.js?v=3"></script>
+</section>
+
+
+
+<!-- =====================================================
+     MEXIQUE — IREG
+===================================================== -->
+
+<section
+  class="scene"
+  id="scene-2"
+>
+
+  <div class="location-card">
+
+    <span>
+      De nos jours — lundi, en fin de matinée
+    </span>
+
+    <strong>
+      Mexique
+    </strong>
+
+    <span>
+      Institut de Recherche et d’Étude Génétique — IREG
+    </span>
+
+  </div>
+
+
+  <div
+    class="visual"
+    data-visual="2"
+  >
+
+    <img
+      src="images/chapitre1/Visuel-2.PNG"
+      alt="Institut de Recherche et d’Étude Génétique au Mexique"
+      loading="lazy"
+    >
+
+  </div>
+
+
+  <div class="text-block">
+
+    <p>
+      Betty Flores est une chercheuse généticienne mexicaine très réputée.
+      D’une intelligence hors du commun, elle est extrêmement visionnaire
+      et connue dans le monde entier.
+    </p>
+
+    <p>
+      Ses découvertes extraordinaires font évoluer la génétique et la
+      médecine à une vitesse inespérée. Ses recherches ont déjà permis
+      de sauver non pas des milliers, mais des millions de vies.
+    </p>
+
+    <p>
+      Malgré son succès, elle reste humble. Elle possède néanmoins un
+      caractère bien trempé. Elle sait ce qu’elle veut et suit son chemin,
+      son but, sans jamais rien lâcher.
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     VISUEL 3 — BETTY
+===================================================== -->
+
+<section
+  class="scene"
+  id="scene-3"
+>
+
+  <div
+    class="visual"
+    data-visual="3"
+  >
+
+    <img
+      src="images/chapitre1/Visuel-3.PNG"
+      alt="Betty Flores observe au microscope"
+      loading="lazy"
+    >
+
+  </div>
+
+
+  <div class="text-block">
+
+    <p>
+      Betty est, comme à son habitude, en plein travail.
+    </p>
+
+    <p>
+      Elle étudie différentes hypothèses dans l’espoir de découvrir
+      un moyen de bloquer toutes les altérations possibles de l’ADN humain.
+    </p>
+
+    <p>
+      Les mutations génétiques sont son domaine de prédilection.
+    </p>
+
+    <p>
+      Elle rêve secrètement de découvrir l’ambroisie des dieux.
+    </p>
+
+    <p>
+      Non pas pour rendre l’être humain immortel, mais pour parvenir à
+      enrayer la dégradation cellulaire provoquée par une infection
+      ou un traumatisme.
+    </p>
+
+    <p>
+      Elle cherche à accélérer la production cellulaire uniquement dans
+      des zones déterminées — infectées ou endommagées — afin d’augmenter
+      la vitesse de régénération des cellules et de permettre des guérisons
+      extrêmement rapides.
+    </p>
+
+    <p>
+      Et, idéalement, de limiter le vieillissement cellulaire de l’être humain.
+    </p>
+
+
+    <p class="emphasis">
+      La question éthique ?
+    </p>
+
+    <p>
+      C’est une autre histoire.
+    </p>
+
+    <p>
+      Betty ne s’en préoccupe guère.
+      Elle est chercheuse avant tout, scientifique dans l’âme.
+    </p>
+
+    <p>
+      Une généticienne de génie, mondialement reconnue,
+      mais peu respectueuse de l’éthique, de la morale et des règles.
+    </p>
+
+    <p>
+      Ce qui lui confère autant d’alliés que d’ennemis.
+    </p>
+
+    <p>
+      C’est une femme de caractère :
+      autoritaire, stricte, mais passionnée et dotée d’un grand cœur.
+    </p>
+
+    <p>
+      Un peu comme son meilleur ami, Charles Loutcho.
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     CHARLES
+===================================================== -->
+
+<section
+  class="scene text-scene"
+  id="scene-charles"
+>
+
+  <div class="text-block">
+
+    <p>
+      Tous les deux se cachent derrière leur travail.
+    </p>
+
+    <p>
+      Charles Loutcho est un chirurgien extrêmement doué,
+      doté d’une réputation sans pareille.
+    </p>
+
+    <p>
+      Ses patients, comme ses confrères,
+      pensent qu’il est un faiseur de miracles.
+    </p>
+
+    <p class="emphasis">
+      Pour lui, rien n’est irréparable.
+    </p>
+
+    <p>
+      L’être humain n’est qu’une machine.
+      Certes extrêmement complexe et fragile,
+      mais une machine dont tout peut être changé,
+      réparé ou remplacé.
+    </p>
+
+    <p>
+      D’autres le surnomment
+      « l’illuminé chanceux ».
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     VISUEL 4 — FIOLE
+===================================================== -->
+
+<section
+  class="scene secret-scene"
+  id="scene-4"
+>
+
+  <div
+    class="visual interactive-visual"
+    data-visual="4"
+    data-secret="fiole"
+  >
+
+    <img
+      src="images/chapitre1/Visuel-4.PNG"
+      alt="Une ancienne fiole contenant un sang mystérieux"
+      loading="lazy"
+    >
+
+    <button
+      class="observe-btn"
+      data-observe="fiole"
+      aria-label="Observer la fiole"
+    >
+      Observer
+    </button>
+
+  </div>
+
+
+  <div class="text-block">
+
+    <p>
+      Comme lui, Betty a réalisé l’impensable.
+    </p>
+
+    <p class="emphasis">
+      Elle a donné la vie.
+    </p>
+
+    <p>
+      Oui, véritablement donné la vie.
+    </p>
+
+    <p>
+      Il y a dix-neuf ans, dans le plus grand secret,
+      elle a créé un être humain de sexe féminin
+      sans aucune gestation dans un corps humain.
+    </p>
+
+    <p>
+      Elle l’a déclarée comme sa propre fille :
+    </p>
+
+    <p class="name-reveal">
+      Anna.
+    </p>
+
+    <p>
+      Aux yeux du monde,
+      Betty avait simplement été enceinte.
+    </p>
+
+    <p>
+      Mais comment a-t-elle réalisé une telle prouesse,
+      direz-vous ?
+    </p>
+
+    <p>
+      Après avoir étudié jour et nuit, durant des années,
+      le sang contenu dans une fiole impossible à dater,
+      elle découvrit avec stupéfaction les capacités
+      impressionnantes que ce code génétique semblait
+      pouvoir conférer à l’être qui le possédait.
+    </p>
+
+    <p>
+      Après mûre réflexion,
+      Betty mélangea son propre code génétique
+      à celui provenant de la fiole.
+    </p>
+
+    <p>
+      Cette fiole lui avait été remise secrètement
+      par son amie Root, dans l’espoir que Betty puisse
+      en découvrir non seulement l’origine,
+      mais aussi obtenir une possible datation.
+    </p>
+
+    <p>
+      En modifiant puis en créant ce nouveau code génétique,
+      Betty voulait réaliser son rêve de toujours :
+      avoir une fille.
+    </p>
+
+    <p>
+      Mais également lui offrir la possibilité d’être protégée,
+      autant que possible, contre les maux de la Terre.
+    </p>
+
+    <p>
+      Le code génétique créé par Betty grâce au sang contenu
+      dans la fiole procure à Anna toutes sortes de facultés.
+    </p>
+
+    <p>
+      Elle ne possède pas de super-pouvoirs.
+    </p>
+
+    <p>
+      C’est une jeune femme comme toutes les autres.
+    </p>
+
+    <p class="emphasis">
+      Ou presque.
+    </p>
+
+    <p>
+      Si elle se trouvait à côté de vous,
+      vous n’y verriez que du feu.
+    </p>
+
+    <p>
+      Elle possède les mêmes aptitudes que n’importe quel être humain,
+      à ceci près qu’Anna en exploite une part bien plus importante
+      que la plupart de ses semblables.
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     VISUEL 5 — ANNA / BETTY
+===================================================== -->
+
+<section
+  class="scene"
+  id="scene-5"
+>
+
+  <div
+    class="visual"
+    data-visual="5"
+  >
+
+    <img
+      src="images/chapitre1/Visuel-5.PNG"
+      alt="Anna rejoint Betty dans son laboratoire"
+      loading="lazy"
+    >
+
+  </div>
+
+
+  <div class="text-block">
+
+    <p>
+      Betty se trouve dans son laboratoire,
+      la tête plongée dans son microscope, comme souvent.
+    </p>
+
+    <p>
+      Anna entre discrètement, tel un chat,
+      sans faire le moindre bruit.
+    </p>
+
+    <p>
+      Absorbée par ses recherches,
+      Betty ne remarque pas immédiatement sa présence.
+    </p>
+
+    <p>
+      Anna s’approche doucement derrière sa mère.
+      Elle veut lui faire une surprise.
+    </p>
+
+    <p>
+      Elle pose délicatement ses mains sur ses épaules,
+      comme pour lui offrir un massage,
+      puis l’embrasse sur la joue pour lui dire bonjour,
+      sans prononcer un seul mot.
+    </p>
+
+    <p>
+      Bien que très concentrée,
+      Betty ne sursaute pas.
+    </p>
+
+    <p>
+      Comme si elle savait qu’il s’agissait d’Anna.
+    </p>
+
+    <p>
+      Betty cesse immédiatement d’observer dans son microscope,
+      fait pivoter sa chaise afin de se retrouver face à Anna
+      et lui adresse un immense sourire.
+    </p>
+
+
+    <div class="dialogue">
+
+      <p>
+        — J’aimerais bien qu’on déjeune ensemble un de ces jours.
+        Mais je ne veux pas te faire rater tes cours.
+      </p>
+
+      <p>
+        — Justement, j’allais te le proposer.
+        Mes cours sont annulés cet après-midi.
+      </p>
+
+      <p>
+        — Génial !
+        Ça tombe bien.
+        Charles m’a parlé d’un petit restaurant qui ne paie pas de mine
+        et que tu vas adorer.
+        Ils font de la cuisine française.
+      </p>
+
+      <p>
+        — Non, ce n’est pas vrai !
+        On va manger français ?
+        Je t’adore, Man !
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     VISUEL 6 — RANGE ROVER
+===================================================== -->
+
+<section
+  class="scene"
+  id="scene-6"
+>
+
+  <div
+    class="visual"
+    data-visual="6"
+  >
+
+    <img
+      src="images/chapitre1/Visuel-6.PNG"
+      alt="Betty et Anna dans un Range Rover avec chauffeur"
+      loading="lazy"
+    >
+
+  </div>
+
+
+  <div class="text-block">
+
+    <p>
+      Elles quittent le laboratoire puis prennent l’ascenseur
+      afin de rejoindre le rez-de-chaussée de l’institut.
+    </p>
+
+    <p>
+      Une voiture avec chauffeur les attend,
+      ainsi que le véhicule suiveur de leurs gardes du corps.
+    </p>
+
+    <p>
+      Dans le Range Rover noir qui les conduit au restaurant,
+      Betty découvre, comme toujours avec beaucoup de plaisir,
+      les nouveautés qui intéressent et passionnent Anna.
+    </p>
+
+    <p>
+      Tout en discutant avec Betty,
+      Anna ressent soudainement l’anxiété de leur chauffeur.
+    </p>
+
+    <p>
+      Essayant de ne rien montrer à sa mère,
+      elle tend davantage l’oreille.
+    </p>
+
+    <p class="emphasis">
+      Quelque chose ne va pas.
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     VISUEL 7 — FUSILLADE
+===================================================== -->
+
+<section
+  class="scene danger-scene"
+  id="scene-7"
+>
+
+  <div
+    class="visual"
+    data-visual="7"
+  >
+
+    <img
+      src="images/chapitre1/Visuel-7.PNG"
+      alt="Fusillade autour du véhicule blindé"
+      loading="lazy"
+    >
+
+  </div>
+
+
+  <div class="text-block">
+
+    <p>
+      Puis, soudain,
+      elle se jette au sol,
+      entraînant sa mère avec elle afin de la protéger.
+    </p>
+
+    <p class="impact-text">
+      Des coups de feu retentissent.
+    </p>
+
+    <p>
+      Une balle perdue frappe le pare-brise du Range Rover.
+    </p>
+
+    <p>
+      Heureusement,
+      le véhicule est équipé de vitres blindées.
+    </p>
+
+    <p>
+      Ils sont coincés au beau milieu d’un règlement de comptes
+      impliquant le cartel de Santalucibel.
+    </p>
+
+    <p>
+      Les deux femmes se rassurent mutuellement
+      sans dire un mot.
+    </p>
+
+    <p>
+      Leurs regards et leurs expressions suffisent.
+    </p>
+
+    <p class="emphasis">
+      Ensemble, elles sont fortes.
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     VISUELS 8 / 9 / 10 — RESTAURANT / ÉLIE
+===================================================== -->
+
+<section
+  class="scene"
+  id="scene-8"
+>
+
+  <div
+    class="visual"
+    data-visual="8"
+  >
+
+    <img
+      src="images/chapitre1/Visuel-8.PNG"
+      alt="Restaurant français au Mexique"
+      loading="lazy"
+    >
+
+  </div>
+
+
+  <div class="text-block">
+
+    <p>
+      Arrivées devant le restaurant,
+      les deux voitures s’arrêtent.
+    </p>
+
+    <p>
+      Betty et Anna pénètrent ensuite dans le restaurant
+      et s’installent à une table joliment décorée.
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<section
+  class="scene"
+  id="scene-9"
+>
+
+  <div
+    class="visual"
+    data-visual="9"
+  >
+
+    <img
+      src="images/chapitre1/Visuel-9.PNG"
+      alt="Élie Santalucibel entre dans le restaurant"
+      loading="lazy"
+    >
+
+  </div>
+
+
+  <div class="text-block">
+
+    <p>
+      Quinze ou vingt minutes après le début de leur repas,
+      un homme très élégant entre dans le restaurant,
+      accompagné de quatre hommes de main.
+    </p>
+
+    <p>
+      Sans prononcer un mot,
+      uniquement par sa présence,
+      il impose le respect.
+    </p>
+
+    <p class="emphasis">
+      Et surtout la peur.
+    </p>
+
+    <p>
+      L’homme se comporte en parfait gentleman
+      et les salue avec un sourire charmeur.
+    </p>
+
+    <div class="dialogue">
+
+      <p>
+        — Bonjour, mesdames.
+        La qualité des mets ici est excellente, paraît-il.
+        Quoi qu’il en soit, votre beauté a déjà magnifiquement
+        embelli ma journée.
+      </p>
+
+      <p>
+        Je vous en remercie et vous souhaite un délicieux appétit.
+        Au plaisir de vous revoir.
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<section
+  class="scene"
+  id="scene-10"
+>
+
+  <div
+    class="visual"
+    data-visual="10"
+  >
+
+    <img
+      src="images/chapitre1/Visuel-10.PNG"
+      alt="Élie observe Betty et Anna depuis le fond du restaurant"
+      loading="lazy"
+    >
+
+  </div>
+
+
+  <div class="text-block">
+
+    <p>
+      Élie Santalucibel va s’asseoir à la table du fond.
+    </p>
+
+    <p>
+      De là, il peut observer toutes les personnes
+      entrant ou sortant du restaurant.
+    </p>
+
+    <div class="dialogue">
+
+      <p>
+        — Est-ce que tu le connais ?
+      </p>
+
+      <p>
+        — Pas personnellement.
+        Seulement de réputation.
+      </p>
+
+      <p>
+        — Qui est-ce ?
+      </p>
+
+      <p>
+        — Un homme auquel il est préférable de ne pas avoir affaire.
+      </p>
+
+      <p>
+        Cet homme n’est autre qu’Élie Santalucibel.
+        Le patron du cartel de Santalucibel.
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     FRANCE
+===================================================== -->
+
+<section
+  class="scene"
+  id="scene-11"
+>
+
+  <div class="location-card">
+
+    <span>
+      France — mardi, début de soirée
+    </span>
+
+    <strong>
+      Côte d’Azur
+    </strong>
+
+  </div>
+
+
+  <div
+    class="visual"
+    data-visual="11"
+  >
+
+    <img
+      src="images/chapitre1/Visuel-11.PNG"
+      alt="Restaurant Le Monde d’ici et d’ailleurs sur la Côte d’Azur"
+      loading="lazy"
+    >
+
+  </div>
+
+
+  <div class="text-block">
+
+    <p>
+      Le Monde d’ici et d’ailleurs.
+    </p>
+
+    <p>
+      Situé sur la Côte d’Azur,
+      sur une falaise en bord de mer,
+      le restaurant offre une vue imprenable.
+    </p>
+
+    <p>
+      Et sa cuisine est une véritable extase pour les papilles.
+    </p>
+
+    <p>
+      Le Monde d’ici et d’ailleurs est de ces rares endroits
+      où chacun semble se sentir à la fois ailleurs et chez lui.
+    </p>
+
+    <p>
+      Et, étrangement,
+      en parfaite sécurité.
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<!-- MAX -->
+
+<section
+  class="scene"
+  id="scene-12"
+>
+
+  <div
+    class="visual"
+    data-visual="12"
+  >
+
+    <img
+      src="images/chapitre1/Visuel-12.PNG"
+      alt="Max Speedman"
+      loading="lazy"
+    >
+
+  </div>
+
+  <div class="text-block">
+
+    <p>
+      Max Speedman est un reporter de télévision italien.
+    </p>
+
+    <p>
+      Ses reportages sur les grands événements
+      de l’actualité internationale le conduisent
+      aux quatre coins du monde.
+    </p>
+
+    <p class="emphasis">
+      Son émission retranscrit les faits.
+    </p>
+
+    <p class="emphasis">
+      Rien que les faits.
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<!-- PETER -->
+
+<section
+  class="scene"
+  id="scene-13"
+>
+
+  <div
+    class="visual"
+    data-visual="13"
+  >
+
+    <img
+      src="images/chapitre1/Visuel-13.PNG"
+      alt="Peter Evanos"
+      loading="lazy"
+    >
+
+  </div>
+
+  <div class="text-block">
+
+    <p>
+      Afin de surveiller ses arrières,
+      Max peut compter sur Peter Evanos,
+      son meilleur ami.
+    </p>
+
+    <p>
+      Peter est un inventeur de génie
+      et le grand patron d’une start-up
+      à la pointe de l’innovation.
+    </p>
+
+    <p>
+      Il travaille notamment sur les systèmes
+      de surveillance, de protection et de sécurité.
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<!-- ROOT -->
+
+<section
+  class="scene"
+  id="scene-14"
+>
+
+  <div
+    class="visual"
+    data-visual="14"
+  >
+
+    <img
+      src="images/chapitre1/Visuel-14.PNG"
+      alt="Root Tempass"
+      loading="lazy"
+    >
+
+  </div>
+
+  <div class="text-block">
+
+    <p>
+      Max et Peter sont presque toujours rejoints
+      par leur amie américaine,
+      Root Tempass.
+    </p>
+
+    <p>
+      Ce soir-là,
+      Max, Peter et Root dînent ensemble.
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<!-- HOPE -->
+
+<section
+  class="scene"
+  id="scene-15"
+>
+
+  <div
+    class="visual"
+    data-visual="15"
+  >
+
+    <img
+      src="images/chapitre1/Visuel-15.PNG"
+      alt="Hope apprend la mort de son frère"
+      loading="lazy"
+    >
+
+  </div>
+
+
+  <div class="text-block">
+
+    <p>
+      Hope, la propriétaire du restaurant,
+      reçoit un appel téléphonique.
+    </p>
+
+    <p>
+      Son frère aîné,
+      qui vit au Mexique,
+      vient de mourir.
+    </p>
+
+    <p class="impact-text">
+      Il a été assassiné.
+    </p>
+
+    <p>
+      Étrangement,
+      Hope ne paraît ni surprise ni en colère.
+    </p>
+
+    <p>
+      Elle devient simplement pensive.
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<!-- QUATRE RÉUNIS -->
+
+<section
+  class="scene"
+  id="scene-16"
+>
+
+  <div
+    class="visual"
+    data-visual="16"
+  >
+
+    <img
+      src="images/chapitre1/Visuel-16.PNG"
+      alt="Max Peter Root et Hope réunis"
+      loading="lazy"
+    >
+
+  </div>
+
+
+  <div class="text-block dialogue">
+
+    <p>
+      — Hope part au Mexique.
+    </p>
+
+    <p>
+      — Pour tout vous dire,
+      mon frère a été tué par un cartel.
+    </p>
+
+    <p>
+      — Dès le début du mois prochain,
+      je serai moi aussi au Mexique.
+    </p>
+
+    <p>
+      — Décidément…
+      on va tous finir par se retrouver au Mexique.
+    </p>
+
+    <p>
+      Max, Peter et Root se lèvent.
+    </p>
+
+    <p class="emphasis">
+      — Always together, stronger.
+    </p>
+
+    <p>
+      Toujours plus forts ensemble.
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<!-- CONVERGENCE -->
+
+<section
+  class="scene"
+  id="scene-17"
+>
+
+  <div
+    class="visual"
+    data-visual="17"
+  >
+
+    <img
+      src="images/chapitre1/Visuel-17.PNG"
+      alt="Plusieurs trajectoires convergent vers le Mexique"
+      loading="lazy"
+    >
+
+  </div>
+
+  <div class="text-block">
+
+    <p>
+      Peu à peu,
+      plusieurs trajectoires commencent à converger
+      vers le même endroit.
+    </p>
+
+    <p class="emphasis">
+      Le Mexique.
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     ROOT / AÉROPORT
+===================================================== -->
+
+<section
+  class="scene"
+  id="scene-18"
+>
+
+  <div
+    class="visual"
+    data-visual="18"
+  >
+
+    <img
+      src="images/chapitre1/Visuel-18.PNG"
+      alt="Root sur la route de l’aéroport"
+      loading="lazy"
+    >
+
+  </div>
+
+  <div class="text-block">
+
+    <p>
+      Un peu plus tard dans la matinée,
+      Root prend la route de l’aéroport.
+    </p>
+
+    <p>
+      Mais quelque chose ne va pas.
+    </p>
+
+    <p>
+      Elle ne cesse de penser à Hope.
+    </p>
+
+    <p>
+      Elle a la sensation que son amie
+      ne lui a pas tout dit.
+    </p>
+
+    <p>
+      Cette impression devient trop forte.
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     VISUEL 19 — CHOIX INSTINCT / RAISON
+===================================================== -->
+
+<section
+  class="scene choice-scene"
+  id="scene-19"
+>
+
+  <div
+    class="visual"
+    data-visual="19"
+  >
+
+    <img
+      src="images/chapitre1/Visuel-19.PNG"
+      alt="Choisir entre instinct et raison"
+      loading="lazy"
+    >
+
+  </div>
+
+
+  <div class="choice-content">
+
+    <p>
+      Quelque chose te dit
+      que Hope ne lui a pas tout révélé.
+    </p>
+
+    <h2>
+      Que ferais-tu ?
+    </h2>
+
+
+    <div class="choice-buttons">
+
+      <button
+        class="choice-btn"
+        data-choice="instinct"
+      >
+        Suivre son instinct
+      </button>
+
+      <button
+        class="choice-btn"
+        data-choice="raison"
+      >
+        Continuer vers l’aéroport
+      </button>
+
+    </div>
+
+    <div
+      class="choice-result"
+      id="choiceResult"
+    ></div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     HOPE / ROOT SUR LE ROCHER
+===================================================== -->
+
+<section
+  class="scene"
+  id="scene-20"
+>
+
+  <div
+    class="visual"
+    data-visual="20"
+  >
+
+    <img
+      src="images/chapitre1/Visuel-20.PNG"
+      alt="Hope et Root face à la mer"
+      loading="lazy"
+    >
+
+  </div>
+
+
+  <div class="text-block dialogue">
+
+    <p>
+      Root fait demi-tour.
+    </p>
+
+    <p>
+      Lorsqu’elle arrive au restaurant,
+      elle n’a même pas besoin de demander
+      où Hope se trouve.
+    </p>
+
+    <p>
+      Instinctivement,
+      elle se dirige vers le rocher
+      où Hope semble méditer face à la mer.
+    </p>
+
+    <p>
+      — Tu as compris
+      que nous ne nous étions pas tout dit.
+    </p>
+
+    <p>
+      Hope sourit légèrement.
+    </p>
+
+    <p>
+      — Lorsque tu ressens profondément un doute,
+      c’est souvent parce que quelque chose t’a échappé.
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     VISUEL 21 — FILEUSES
+===================================================== -->
+
+<section
+  class="scene myth-scene"
+  id="scene-21"
+>
+
+  <div
+    class="visual"
+    data-visual="21"
+  >
+
+    <img
+      src="images/chapitre1/Visuel-21.PNG"
+      alt="Nona Décima et Morta, les trois Fileuses"
+      loading="lazy"
+    >
+
+  </div>
+
+
+  <div class="text-block dialogue">
+
+    <p>
+      — Tu es une personne d’exception.
+      De par tes ancêtres,
+      un destin particulier t’attend.
+    </p>
+
+    <p>
+      — Là-bas,
+      tu ne m’as jamais dit
+      de quelle lignée je descendais.
+    </p>
+
+    <p>
+      Hope se tourne complètement vers elle.
+    </p>
+
+    <p class="impact-text">
+      — Tu es une Parque.
+    </p>
+
+    <p>
+      — Tu descends des trois sœurs fileuses :
+      Nona, Décima et Morta.
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     VISUEL 22 — ROOT PARQUE
+===================================================== -->
+
+<section
+  class="scene"
+  id="scene-22"
+>
+
+  <div
+    class="visual"
+    data-visual="22"
+  >
+
+    <img
+      src="images/chapitre1/Visuel-22.PNG"
+      alt="Root et le fil d’or de sa destinée"
+      loading="lazy"
+    >
+
+  </div>
+
+
+  <div class="text-block">
+
+    <p>
+      Tu es le fil d’or de la lignée
+      des mémoires du temps.
+    </p>
+
+    <p>
+      Ton métier,
+      tes passions,
+      tes choix…
+    </p>
+
+    <p class="emphasis">
+      Rien de tout cela n’est vraiment un hasard.
+    </p>
+
+    <p>
+      Root reste silencieuse.
+    </p>
+
+    <p>
+      Puis son visage s’illumine.
+    </p>
+
+    <p class="impact-text">
+      Je suis une Parque.
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     VISUEL 23 — BOÎTE
+===================================================== -->
+
+<section
+  class="scene secret-scene"
+  id="scene-23"
+>
+
+  <div
+    class="visual interactive-visual"
+    data-visual="23"
+    data-secret="pandore"
+  >
+
+    <img
+      src="images/chapitre1/Visuel-23.PNG"
+      alt="La boîte de Pandore"
+      loading="lazy"
+    >
+
+  </div>
+
+
+  <div class="text-block dialogue">
+
+    <p>
+      — Il faut que tu partes récupérer quelque chose.
+    </p>
+
+    <p>
+      — Quoi ?
+    </p>
+
+    <p class="emphasis">
+      — Une boîte.
+    </p>
+
+    <p class="impact-text">
+      La boîte.
+    </p>
+
+    <p>
+      Elle est unique,
+      légendaire,
+      extrêmement rare,
+      antique…
+    </p>
+
+    <p>
+      et surtout,
+      elle va nous être indispensable.
+    </p>
+
+    <p>
+      Root sourit.
+    </p>
+
+    <p>
+      — La boîte de Pandore.
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     VISUEL 24 — ENVELOPPE INTERACTIVE
+===================================================== -->
+
+<section
+  class="scene interaction-scene"
+  id="scene-24"
+>
+
+  <div
+    class="visual interactive-visual envelope"
+    data-visual="24"
+  >
+
+    <img
+      src="images/chapitre1/Visuel-24.PNG"
+      alt="L’enveloppe confiée par Hope"
+      loading="lazy"
+    >
+
+
+    <button
+      class="touch-zone"
+      id="openEnvelope"
+      aria-label="Ouvrir l’enveloppe"
+    >
+      Toucher l’enveloppe
+    </button>
+
+  </div>
+
+
+  <div
+    class="envelope-reveal"
+    id="envelopeReveal"
+  >
+
+    <p>
+      DESTINATION
+    </p>
+
+    <strong>
+      VIETNAM
+    </strong>
+
+    <span>
+      Grotte de Hang Son Doong
+    </span>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     VISUEL 25 — HANG SON DOONG
+===================================================== -->
+
+<section
+  class="scene"
+  id="scene-25"
+>
+
+  <div
+    class="visual"
+    data-visual="25"
+  >
+
+    <img
+      src="images/chapitre1/Visuel-25.PNG"
+      alt="Hang Son Doong au Vietnam"
+      loading="lazy"
+    >
+
+  </div>
+
+
+  <div class="text-block dialogue">
+
+    <p>
+      Root ouvre l’enveloppe.
+    </p>
+
+    <p>
+      — L’Asie…
+    </p>
+
+    <p class="impact-text">
+      La grotte de Hang Son Doong.
+    </p>
+
+    <p>
+      — Tu me gâtes.
+      Je ne te décevrai pas.
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     VISUEL 26 — FANTÔME DE L’OMBRE
+===================================================== -->
+
+<section
+  class="scene shadow-scene"
+  id="scene-26"
+>
+
+  <div
+    class="visual"
+    data-visual="26"
+  >
+
+    <img
+      src="images/chapitre1/Visuel-26.PNG"
+      alt="Le Fantôme de l’Ombre"
+      loading="lazy"
+    >
+
+  </div>
+
+
+  <div class="text-block dialogue">
+
+    <p>
+      — Tu risques de ne pas être
+      la seule à la chercher.
+    </p>
+
+    <p class="impact-text">
+      — Le Fantôme de l’Ombre.
+    </p>
+
+    <p>
+      Elle appartient à l’Ordre des Gardiens Noirs.
+    </p>
+
+    <p>
+      Elle va très certainement te surveiller
+      et tenter de récupérer la boîte de Pandore.
+    </p>
+
+    <p>
+      — Qui est-elle ?
+    </p>
+
+    <p>
+      — L’élite de la Ligue des Assassins.
+    </p>
+
+    <p>
+      Ne fais confiance à personne.
+    </p>
+
+    <p class="emphasis">
+      Et encore moins à une femme.
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     LOS ANGELES — CYBERCRIMINALITÉ
+===================================================== -->
+
+<section
+  class="scene"
+  id="scene-27"
+>
+
+  <div class="location-card">
+
+    <span>
+      États-Unis
+    </span>
+
+    <strong>
+      Los Angeles
+    </strong>
+
+    <span>
+      Vendredi après-midi — Division de la cybercriminalité
+    </span>
+
+  </div>
+
+
+  <div
+    class="visual"
+    data-visual="27"
+  >
+
+    <img
+      src="images/chapitre1/Visuel-27.PNG"
+      alt="Lucy Adverse analyse des affaires avec IA2"
+      loading="lazy"
+    >
+
+  </div>
+
+
+  <div class="text-block">
+
+    <p>
+      L’agent Lucy Adverse analyse,
+      avec l’aide d’IA2 —
+      une intelligence artificielle autonome
+      dont elle est l’administratrice —
+      les liens susceptibles de relier plusieurs affaires criminelles.
+    </p>
+
+    <p>
+      Un détail en particulier l’interpelle.
+    </p>
+
+    <p class="impact-text">
+      Un symbole.
+    </p>
+
+    <p>
+      Toujours le même.
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     VISUEL 28 — ÉNIGME DES SYMBOLES
+===================================================== -->
+
+<section
+  class="scene puzzle-scene"
+  id="scene-28"
+>
+
+  <div
+    class="visual"
+    data-visual="28"
+  >
+
+    <img
+      src="images/chapitre1/Visuel-28.PNG"
+      alt="Les symboles présentent différentes inclinaisons"
+      loading="lazy"
+    >
+
+  </div>
+
+
+  <div class="text-block">
+
+    <p>
+      Le symbole n’a jamais exactement
+      la même inclinaison.
+    </p>
+
+    <p>
+      Il est parfaitement identique
+      d’une victime à l’autre,
+      mais pivote légèrement
+      de quelques degrés.
+    </p>
+
+    <p>
+      Comme l’aiguille d’une montre.
+    </p>
+
+    <p>
+      Ou celle d’une boussole.
+    </p>
+
+  </div>
+
+
+  <button
+    class="puzzle-btn"
+    id="analyseSymbols"
+  >
+    Analyser les inclinaisons
+  </button>
+
+</section>
+
+
+
+<!-- =====================================================
+     VISUEL 29 — OBJET
+===================================================== -->
+
+<section
+  class="scene hidden-scene"
+  id="scene-29"
+>
+
+  <div
+    class="visual"
+    data-visual="29"
+  >
+
+    <img
+      src="images/chapitre1/Visuel-29.PNG"
+      alt="Le symbole désigne un objet"
+      loading="lazy"
+    >
+
+  </div>
+
+
+  <div class="text-block">
+
+    <p>
+      Lucy prolonge mentalement,
+      puis numériquement grâce à IA2,
+      l’axe correspondant à l’inclinaison du symbole.
+    </p>
+
+    <p class="emphasis">
+      À chaque fois,
+      la ligne désigne un objet.
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     VISUEL 30 — MESSAGE MICROSCOPIQUE
+===================================================== -->
+
+<section
+  class="scene"
+  id="scene-30"
+>
+
+  <div
+    class="visual"
+    data-visual="30"
+  >
+
+    <img
+      src="images/chapitre1/Visuel-30.PNG"
+      alt="IA2 révèle un message microscopique"
+      loading="lazy"
+    >
+
+  </div>
+
+
+  <div class="text-block secret-message">
+
+    <p>
+      Sur chacun d’eux est dissimulé,
+      presque microscopiquement,
+      exactement le même message :
+    </p>
+
+    <blockquote>
+
+      Cet art d’exception est un métier
+      que seule une femme aguerrie sait réellement exercer avec excellence.
+
+      Il faut avoir le courage de se plonger dans les méandres
+      et les abysses de l’être qui sait.
+
+      Pour comprendre cette artiste et son art subtil,
+      il faut conserver un doux et fragile espoir,
+      une persistance presque vaine,
+      afin d’être guidé sur le chemin de la vérité.
+
+      Approcher,
+      ou seulement percevoir l’artiste,
+      relève déjà du miracle.
+
+      La comprendre et l’apprivoiser un jour
+      relève de la folie.
+
+    </blockquote>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     VISUEL 31 — RÉVÉLATION
+===================================================== -->
+
+<section
+  class="scene revelation-scene"
+  id="scene-31"
+>
+
+  <div
+    class="visual"
+    data-visual="31"
+  >
+
+    <img
+      src="images/chapitre1/Visuel-31.PNG"
+      alt="Lucy comprend qu’elle recherche une tueuse à gages"
+      loading="lazy"
+    >
+
+  </div>
+
+
+  <div class="text-block">
+
+    <p>
+      À cet instant,
+      Lucy comprend.
+    </p>
+
+    <p class="impact-text">
+      Elle ne recherche pas un tueur en série.
+    </p>
+
+    <p class="impact-text">
+      Elle recherche une tueuse à gages.
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     VISUEL 32 — CAMÉLÉON
+===================================================== -->
+
+<section
+  class="scene"
+  id="scene-32"
+>
+
+  <div
+    class="visual"
+    data-visual="32"
+  >
+
+    <img
+      src="images/chapitre1/Visuel-32.PNG"
+      alt="La Tueuse Caméléon sous différentes identités"
+      loading="lazy"
+    >
+
+  </div>
+
+
+  <div class="text-block">
+
+    <p>
+      Une femme intelligente.
+    </p>
+
+    <p>
+      Méthodique.
+    </p>
+
+    <p>
+      Et surtout,
+      elle joue avec ceux qui la poursuivent.
+    </p>
+
+    <p>
+      Cette découverte change tout.
+    </p>
+
+    <p class="impact-text">
+      Lucy décide de la surnommer :
+    </p>
+
+    <p class="name-reveal">
+      La Tueuse Caméléon.
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<!-- VISUEL 33 -->
+
+<section
+  class="scene"
+  id="scene-33"
+>
+
+  <div
+    class="visual"
+    data-visual="33"
+  >
+
+    <img
+      src="images/chapitre1/Visuel-33.PNG"
+      alt="Carte mondiale des meurtres"
+      loading="lazy"
+    >
+
+  </div>
+
+  <div class="text-block">
+
+    <p>
+      Lucy décide d’étendre ses recherches
+      aux affaires similaires partout dans le monde.
+    </p>
+
+    <p>
+      La réponse d’IA2 arrive rapidement.
+    </p>
+
+    <p class="impact-text">
+      Elle frappe sur plusieurs continents.
+    </p>
+
+    <p class="emphasis">
+      Partout.
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<!-- VISUEL 34 — CLIVE -->
+
+<section
+  class="scene"
+  id="scene-34"
+>
+
+  <div
+    class="visual"
+    data-visual="34"
+  >
+
+    <img
+      src="images/chapitre1/Visuel-34.PNG"
+      alt="Clive Lynx"
+      loading="lazy"
+    >
+
+  </div>
+
+
+  <div class="text-block">
+
+    <p>
+      Pour avancer,
+      Lucy décide de faire appel à une vieille connaissance.
+    </p>
+
+    <p class="name-reveal">
+      Clive Lynx.
+    </p>
+
+    <p>
+      Un gentleman cambrioleur.
+    </p>
+
+    <p>
+      Audacieux,
+      prévoyant,
+      doté d’une mémoire photographique impressionnante.
+    </p>
+
+    <p>
+      Les journaux l’ont surnommé :
+    </p>
+
+    <p class="emphasis">
+      Le Magicien.
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     VISUEL 35 — FLASHBACK
+===================================================== -->
+
+<section
+  class="scene flashback-scene"
+  id="scene-35"
+>
+
+  <div
+    class="visual"
+    data-visual="35"
+  >
+
+    <img
+      src="images/chapitre1/Visuel-35.PNG"
+      alt="Lucy agressée dans une ruelle avant l’intervention de Clive"
+      loading="lazy"
+    >
+
+  </div>
+
+
+  <div class="text-block">
+
+    <p>
+      Ils se sont rencontrés peu de temps après
+      l’arrivée de Lucy à la division.
+    </p>
+
+    <p>
+      C’était un dimanche,
+      au lever du jour.
+    </p>
+
+    <p>
+      Après une longue poursuite,
+      Lucy avait coincé un individu dangereux
+      dans une petite ruelle sombre.
+    </p>
+
+    <p>
+      Mais l’homme lui avait arraché
+      son arme de service.
+    </p>
+
+    <p>
+      Et s’apprêtait à lui tirer
+      une balle entre les deux yeux.
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     VISUEL 36 — SCEPTRE
+===================================================== -->
+
+<section
+  class="scene"
+  id="scene-36"
+>
+
+  <div
+    class="visual"
+    data-visual="36"
+  >
+
+    <img
+      src="images/chapitre1/Visuel-36.PNG"
+      alt="Clive neutralise l’agresseur avec un sceptre en or"
+      loading="lazy"
+    >
+
+  </div>
+
+
+  <div class="text-block dialogue">
+
+    <p>
+      Clive avait surgi de nulle part.
+    </p>
+
+    <p>
+      Il avait assommé l’agresseur
+      avec un sceptre en or massif
+      incrusté de pierres précieuses.
+    </p>
+
+    <p>
+      — Une vie sauvée
+      contre un secret bien gardé.
+    </p>
+
+    <p>
+      — C’est un marché respectable,
+      vous ne trouvez pas ?
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     VISUEL 37 — FRENCH BAR
+===================================================== -->
+
+<section
+  class="scene"
+  id="scene-37"
+>
+
+  <div
+    class="visual"
+    data-visual="37"
+  >
+
+    <img
+      src="images/chapitre1/Visuel-37.PNG"
+      alt="Lucy et Clive au French Bar"
+      loading="lazy"
+    >
+
+  </div>
+
+
+  <div class="text-block">
+
+    <p>
+      De discussion en discussion,
+      ils étaient devenus de véritables acolytes.
+    </p>
+
+    <p>
+      Ils se retrouvaient régulièrement
+      au French Bar.
+    </p>
+
+    <p>
+      Peu à peu,
+      il était devenu leur quartier général officieux.
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     VISUEL 38 — TRANSITION SPORT
+===================================================== -->
+
+<section
+  class="scene"
+  id="scene-38"
+>
+
+  <div
+    class="visual"
+    data-visual="38"
+  >
+
+    <img
+      src="images/chapitre1/Visuel-38.PNG"
+      alt="Lucy quitte la division pour aller faire du sport"
+      loading="lazy"
+    >
+
+  </div>
+
+
+  <div class="text-block">
+
+    <p>
+      À la fin de sa journée de travail,
+      comme à son habitude,
+      Lucy part faire du sport.
+    </p>
+
+    <p>
+      La salle de fitness lui permet
+      de relâcher la pression.
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     PARKING / ROOT + LUCY
+===================================================== -->
+
+<section
+  class="scene"
+  id="scene-39"
+>
+
+  <div
+    class="visual"
+    data-visual="39"
+  >
+
+    <img
+      src="images/chapitre1/Visuel-39.PNG"
+      alt="Root rejoint sa voiture après son cours de spinning"
+      loading="lazy"
+    >
+
+  </div>
+
+
+  <div class="text-block">
+
+    <p>
+      Root Tempass fréquente la même salle.
+    </p>
+
+    <p>
+      À la fin d’un cours de spinning,
+      Root rejoint le parking souterrain.
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<!-- VISUEL 40 -->
+
+<section
+  class="scene"
+  id="scene-40"
+>
+
+  <div
+    class="visual"
+    data-visual="40"
+  >
+
+    <img
+      src="images/chapitre1/Visuel-40.PNG"
+      alt="Trois hommes attendent Root dans le parking"
+      loading="lazy"
+    >
+
+  </div>
+
+
+  <div class="text-block">
+
+    <p class="impact-text">
+      Trois hommes l’attendent.
+    </p>
+
+    <p>
+      Ils l’agressent.
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<!-- VISUEL 41 -->
+
+<section
+  class="scene"
+  id="scene-41"
+>
+
+  <div
+    class="visual"
+    data-visual="41"
+  >
+
+    <img
+      src="images/chapitre1/Visuel-41.PNG"
+      alt="Root neutralise deux de ses agresseurs"
+      loading="lazy"
+    >
+
+  </div>
+
+</section>
+
+
+
+<!-- VISUEL 42 -->
+
+<section
+  class="scene"
+  id="scene-42"
+>
+
+  <div
+    class="visual"
+    data-visual="42"
+  >
+
+    <img
+      src="images/chapitre1/Visuel-42.PNG"
+      alt="Lucy intervient aux côtés de Root"
+      loading="lazy"
+    >
+
+  </div>
+
+
+  <div class="text-block">
+
+    <p>
+      Lucy aperçoit la scène.
+    </p>
+
+    <p>
+      Elle se précipite immédiatement.
+    </p>
+
+    <p>
+      Mais lorsqu’elle arrive,
+      Root a déjà mis deux hommes
+      hors d’état de nuire.
+    </p>
+
+    <p>
+      Ensemble,
+      Lucy et Root neutralisent le troisième.
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<!-- VISUEL 43 -->
+
+<section
+  class="scene"
+  id="scene-43"
+>
+
+  <div
+    class="visual"
+    data-visual="43"
+  >
+
+    <img
+      src="images/chapitre1/Visuel-43.PNG"
+      alt="Root et Lucy après le combat"
+      loading="lazy"
+    >
+
+  </div>
+
+
+  <div class="text-block dialogue">
+
+    <p>
+      — Merci.
+      C’était risqué de votre part,
+      mais très aimable d’être intervenue.
+    </p>
+
+    <p>
+      — Je n’ai pas fait grand-chose.
+    </p>
+
+    <p>
+      Et j’ai comme l’impression
+      que vous vous en seriez très bien sortie toute seule.
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     VISUEL 44 — ROOT ANALYSE LUCY
+===================================================== -->
+
+<section
+  class="scene"
+  id="scene-44"
+>
+
+  <div
+    class="visual"
+    data-visual="44"
+  >
+
+    <img
+      src="images/chapitre1/Visuel-44.PNG"
+      alt="Root observe la manière de combattre de Lucy"
+      loading="lazy"
+      onerror="this.closest('.visual').classList.add('visual-missing')"
+    >
+
+  </div>
+
+
+  <div class="text-block dialogue">
+
+    <p>
+      — Vous travaillez dans la police.
+    </p>
+
+    <p>
+      Lucy ne dit rien.
+    </p>
+
+    <p>
+      Root poursuit :
+    </p>
+
+    <p class="emphasis">
+      — Plus précisément…
+      dans la cybercriminalité.
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     VISUEL 45 — SHIN GI TAI
+===================================================== -->
+
+<section
+  class="scene philosophy-scene"
+  id="scene-45"
+>
+
+  <div
+    class="visual"
+    data-visual="45"
+  >
+
+    <img
+      src="images/chapitre1/Visuel-45.PNG"
+      alt="Shin Gi Tai — mental technique et corps"
+      loading="lazy"
+      onerror="this.closest('.visual').classList.add('visual-missing')"
+    >
+
+  </div>
+
+
+  <div class="text-block">
+
+    <p>
+      Root observe Lucy.
+    </p>
+
+    <p>
+      — La théorie et la pratique
+      ne suffisent pas toujours.
+    </p>
+
+    <p>
+      Le combat peut devenir un art.
+    </p>
+
+    <p>
+      Un état d’être.
+    </p>
+
+    <p class="impact-text">
+      Shin — Gi — Tai.
+    </p>
+
+    <p>
+      L’union du mental,
+      de la technique
+      et du corps.
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     VISUEL 46 — ZEN ATTITUDE
+===================================================== -->
+
+<section
+  class="scene"
+  id="scene-46"
+>
+
+  <div
+    class="visual"
+    data-visual="46"
+  >
+
+    <img
+      src="images/chapitre1/Visuel-46.PNG"
+      alt="Restaurant Le Zen Attitude"
+      loading="lazy"
+      onerror="this.closest('.visual').classList.add('visual-missing')"
+    >
+
+  </div>
+
+
+  <div class="location-card">
+
+    <strong>
+      Le Zen Attitude
+    </strong>
+
+  </div>
+
+</section>
+
+
+
+<!-- VISUEL 47 -->
+
+<section
+  class="scene"
+  id="scene-47"
+>
+
+  <div
+    class="visual"
+    data-visual="47"
+  >
+
+    <img
+      src="images/chapitre1/Visuel-47.PNG"
+      alt="Lucy et Root discutent au Zen Attitude"
+      loading="lazy"
+      onerror="this.closest('.visual').classList.add('visual-missing')"
+    >
+
+  </div>
+
+
+  <div class="text-block">
+
+    <p>
+      Root et Lucy passent une excellente soirée.
+    </p>
+
+    <p>
+      Elles apprennent à mieux se connaître
+      et, curieusement,
+      une confiance presque immédiate
+      s’installe entre elles.
+    </p>
+
+    <p>
+      Comme si elles se connaissaient
+      depuis toujours.
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<!-- VISUEL 48 -->
+
+<section
+  class="scene"
+  id="scene-48"
+>
+
+  <div
+    class="visual"
+    data-visual="48"
+  >
+
+    <img
+      src="images/chapitre1/Visuel-48.PNG"
+      alt="Root explique les relations de cause à effet"
+      loading="lazy"
+      onerror="this.closest('.visual').classList.add('visual-missing')"
+    >
+
+  </div>
+
+
+  <div class="text-block">
+
+    <p>
+      Root explique que connaître
+      les causes et leurs effets
+      permet parfois d’anticiper
+      certaines conséquences.
+    </p>
+
+    <p>
+      Et donc,
+      quelquefois,
+      de modifier le futur.
+    </p>
+
+    <p>
+      Pas en le contrôlant entièrement.
+    </p>
+
+    <p>
+      Mais en intervenant
+      au bon moment,
+      au bon endroit
+      et auprès de la bonne personne.
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<!-- VISUEL 49 -->
+
+<section
+  class="scene"
+  id="scene-49"
+>
+
+  <div
+    class="visual"
+    data-visual="49"
+  >
+
+    <img
+      src="images/chapitre1/Visuel-49.PNG"
+      alt="Lucy observe Root avec une curiosité professionnelle"
+      loading="lazy"
+      onerror="this.closest('.visual').classList.add('visual-missing')"
+    >
+
+  </div>
+
+
+  <div class="text-block">
+
+    <p>
+      Lucy est fascinée.
+    </p>
+
+    <p>
+      Impressionnée.
+    </p>
+
+    <p>
+      Mais progressivement,
+      une légère méfiance apparaît également en elle.
+    </p>
+
+    <p>
+      Sans même le savoir,
+      Root vient d’attiser
+      la curiosité professionnelle de Lucy.
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<!-- VISUEL 50 -->
+
+<section
+  class="scene"
+  id="scene-50"
+>
+
+  <div
+    class="visual"
+    data-visual="50"
+  >
+
+    <img
+      src="images/chapitre1/Visuel-50.PNG"
+      alt="Lucy et Root quittent le restaurant après une longue soirée"
+      loading="lazy"
+      onerror="this.closest('.visual').classList.add('visual-missing')"
+    >
+
+  </div>
+
+
+  <div class="text-block">
+
+    <p>
+      Les heures passent
+      sans qu’aucune des deux
+      ne s’en aperçoive.
+    </p>
+
+    <p>
+      Jusqu’au moment où un serveur
+      s’approche de leur table.
+    </p>
+
+    <div class="dialogue">
+
+      <p>
+        — Mesdames,
+        je suis désolé,
+        mais nous allons devoir fermer.
+      </p>
+
+    </div>
+
+    <p>
+      Dehors,
+      Root réalise quelque chose d’étrange.
+    </p>
+
+    <p>
+      Avec Lucy,
+      elle a complètement perdu
+      la notion du temps.
+    </p>
+
+    <p>
+      Et presque celle de l’espace.
+    </p>
+
+    <p class="emphasis">
+      Une Parque désorientée
+      dans le temps et l’espace.
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     MEXIQUE — SAMEDI
+===================================================== -->
+
+<section
+  class="scene text-scene"
+  id="mexique-samedi"
+>
+
+  <div class="location-card">
+
+    <strong>
+      Mexique — samedi
+    </strong>
+
+  </div>
+
+
+  <div class="text-block">
+
+    <p>
+      Au dîner,
+      Betty annonce à Anna
+      que le restaurant français
+      où elles ont déjeuné
+      a brûlé mardi matin.
+    </p>
+
+    <p class="impact-text">
+      Le chef et le propriétaire sont morts.
+    </p>
+
+    <p>
+      Anna est à la fois triste et furieuse.
+    </p>
+
+    <div class="dialogue">
+
+      <p>
+        — Il faut l’arrêter.
+        On doit faire quelque chose.
+      </p>
+
+      <p>
+        — Les hommes comme Élie
+        sont un peu comme l’Hydre de Lerne.
+      </p>
+
+      <p>
+        Tu coupes une tête,
+        deux autres repoussent.
+      </p>
+
+    </div>
+
+    <p>
+      Le vrai problème,
+      c’est tout ce qu’il représente :
+      ce système,
+      cet engrenage de trafic,
+      de violence et de peur.
+    </p>
+
+    <p>
+      Anna reste silencieuse.
+    </p>
+
+    <p>
+      Puis elle sourit légèrement.
+    </p>
+
+    <p>
+      — C’est aussi pour cette raison
+      que je fais des études de journalisme.
+    </p>
+
+    <p class="emphasis">
+      Je veux montrer au monde
+      ce qu’il ne voit pas.
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     CHINE — TEMPLE DU CERCLE
+===================================================== -->
+
+<section
+  class="scene text-scene temple-scene"
+  id="temple-cercle"
+>
+
+  <div class="location-card">
+
+    <span>
+      Chine
+    </span>
+
+    <strong>
+      Temple du Cercle
+    </strong>
+
+    <span>
+      Forêt de Zhangjiajie — Wulingyuan
+    </span>
+
+  </div>
+
+
+  <div class="text-block">
+
+    <p>
+      Maître Lee est le maître
+      des Sentinelles de la Lumière
+      et le gardien de la Source de Vie
+      ainsi que du Temple du Cercle.
+    </p>
+
+    <p>
+      C’est lui qui découvrit Hope
+      lorsqu’elle avait douze ans.
+    </p>
+
+    <p>
+      Elle était l’unique survivante
+      du crash d’un A380.
+    </p>
+
+    <p>
+      Pour Lee,
+      c’était un signe.
+    </p>
+
+    <p>
+      Hope n’était pas une enfant
+      comme les autres.
+    </p>
+
+    <p>
+      Maître Lee décida de lui enseigner
+      la maîtrise d’elle-même,
+      la survie dans les conditions
+      les plus extrêmes
+      et tout ce qui pouvait lui permettre
+      d’acquérir un corps sain
+      et un esprit parfaitement maîtrisé.
+    </p>
+
+    <p>
+      Hope franchit avec une facilité déconcertante
+      chacune des initiations
+      de l’Ordre des Sentinelles de la Lumière.
+    </p>
+
+    <p>
+      Puis vint l’épreuve suprême.
+    </p>
+
+    <p class="impact-text">
+      La Porte de la Source de Vie.
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     LEE / HOPE
+===================================================== -->
+
+<section
+  class="scene text-scene"
+  id="lee-hope"
+>
+
+  <div class="text-block dialogue">
+
+    <p>
+      Dans la nuit de mardi,
+      Hope avait prévenu Maître Lee
+      de la mort de son frère.
+    </p>
+
+    <p>
+      Un long silence avait suivi.
+    </p>
+
+    <p>
+      — Nous l’attendions depuis longtemps.
+    </p>
+
+    <p>
+      — Le signe ?
+    </p>
+
+    <p>
+      — Peut-être.
+    </p>
+
+    <p>
+      Un événement isolé
+      n’est parfois qu’un événement.
+    </p>
+
+    <p>
+      Mais lorsque plusieurs pièces
+      commencent à bouger en même temps,
+      il faut apprendre à regarder
+      l’échiquier dans son ensemble.
+    </p>
+
+    <p class="impact-text">
+      — Ta destinée est en marche.
+    </p>
+
+    <p>
+      — Elle l’a toujours été.
+    </p>
+
+    <p>
+      — Oui.
+      Mais jusqu’à présent,
+      tu pouvais encore choisir
+      d’ignorer certains chemins.
+    </p>
+
+    <p>
+      Ce temps est terminé.
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     LA JEUNE PUISSANTE
+===================================================== -->
+
+<section
+  class="scene text-scene revelation-scene"
+  id="jeune-puissante"
+>
+
+  <div class="text-block dialogue">
+
+    <p>
+      Maître Lee reprend :
+    </p>
+
+    <p class="impact-text">
+      — La jeune Puissante existe.
+    </p>
+
+    <p>
+      Hope relève immédiatement les yeux.
+    </p>
+
+    <p>
+      — Tu en es certain ?
+    </p>
+
+    <p>
+      — Presque.
+    </p>
+
+    <p>
+      — Où est-elle ?
+    </p>
+
+    <p class="impact-text">
+      — Au Mexique.
+    </p>
+
+    <p>
+      Elle doit avoir
+      environ dix-neuf ans aujourd’hui.
+    </p>
+
+    <p>
+      — Comment peux-tu le savoir ?
+    </p>
+
+    <p>
+      — À cause d’une fiole.
+    </p>
+
+    <p>
+      Hope comprend presque immédiatement.
+    </p>
+
+    <p class="emphasis">
+      — Root.
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     AMY
+===================================================== -->
+
+<section
+  class="scene text-scene shadow-scene"
+  id="amy-revelation"
+>
+
+  <div class="text-block dialogue">
+
+    <p>
+      Maître Lee continue :
+    </p>
+
+    <p>
+      — Il existe une autre personne
+      que tu risques de croiser.
+    </p>
+
+    <p>
+      Le sourire de Hope disparaît.
+    </p>
+
+    <p>
+      Elle a déjà compris.
+    </p>
+
+    <p class="impact-text">
+      — Amy.
+    </p>
+
+    <p>
+      Lee acquiesce.
+    </p>
+
+    <p>
+      — Elle est donc toujours en vie.
+    </p>
+
+    <p>
+      — Oui.
+    </p>
+
+    <p>
+      La petite fille que tu as connue
+      existe peut-être encore quelque part.
+    </p>
+
+    <p>
+      Mais celle que tu rencontreras aujourd’hui
+      porte un autre nom.
+    </p>
+
+    <p class="emphasis">
+      Le Fantôme de l’Ombre.
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     FIN DU CHAPITRE
+===================================================== -->
+
+<section
+  class="scene chapter-end"
+  id="chapter-end"
+>
+
+  <div class="end-symbol">
+    ∞
+  </div>
+
+
+  <div class="text-block dialogue">
+
+    <p>
+      Lee reprend finalement :
+    </p>
+
+    <p>
+      — Va au Mexique.
+    </p>
+
+    <p>
+      — Trouve la jeune Puissante.
+    </p>
+
+    <p>
+      — Protège-la.
+    </p>
+
+    <p>
+      — Rassemble ceux que le destin
+      mettra sur ton chemin.
+    </p>
+
+    <p>
+      Puis son visage redevient grave.
+    </p>
+
+    <p>
+      — Beaucoup de personnes
+      vont bientôt croire
+      que tu es la seule capable
+      de sauver le monde.
+    </p>
+
+    <p>
+      Il marque une pause.
+    </p>
+
+    <p class="impact-text">
+      — Ne commets jamais
+      l’erreur de les croire.
+    </p>
+
+    <p>
+      Hope le fixe.
+    </p>
+
+    <p>
+      Lee conclut :
+    </p>
+
+    <p class="impact-text">
+      — Tu n’y arriveras pas seule.
+    </p>
+
+    <p>
+      Et c’est précisément pour cela
+      que le destin est en train
+      de les rassembler autour de toi.
+    </p>
+
+  </div>
+
+
+  <div class="end-actions">
+
+    <button
+      class="chapter-btn"
+      id="restartChapter"
+    >
+      Relire le chapitre
+    </button>
+
+    <a
+      class="chapter-btn primary"
+      href="chapitre2.html"
+    >
+      Continuer
+    </a>
+
+  </div>
+
+</section>
+
+
+
+</main>
+
+
+
+<!-- =====================================================
+     SECRET DÉCOUVERT
+===================================================== -->
+
+<div
+  class="secret-popup"
+  id="secretPopup"
+  aria-hidden="true"
+>
+
+  <div class="secret-popup-inner">
+
+    <span class="secret-symbol">
+      ∞
+    </span>
+
+    <span>
+      SECRET DÉCOUVERT
+    </span>
+
+  </div>
+
+</div>
+
+
+
+<!-- =====================================================
+     MENU DU CHAPITRE
+===================================================== -->
+
+<div
+  class="chapter-menu"
+  id="chapterMenu"
+  aria-hidden="true"
+>
+
+  <div class="chapter-menu-panel">
+
+    <button
+      class="menu-close"
+      id="menuClose"
+      aria-label="Fermer le menu"
+    >
+      ×
+    </button>
+
+
+    <h2>
+      Chapitre 1
+    </h2>
+
+    <p>
+      Embrasse ton destin
+    </p>
+
+
+    <button
+      id="resumeBtn"
+      class="menu-action"
+    >
+      Reprendre la lecture
+    </button>
+
+
+    <button
+      id="restartBtn"
+      class="menu-action"
+    >
+      Recommencer le chapitre
+    </button>
+
+
+    <a
+      href="index.html"
+      class="menu-action"
+    >
+      Retour à l’accueil
+    </a>
+
+  </div>
+
+</div>
+
+
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
+<script src="js/chapitre1.js"></script>
+
 
 </body>
 
