@@ -1,1 +1,1640 @@
+/* =========================================================
+   LA SOCIÉTÉ DE L’OMBRE
+   CHAPITRE 3 — LA CONFIANCE
+   Mobile-first / 9:16
+========================================================= */
 
+
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  background: #050505;
+}
+
+body {
+  margin: 0;
+
+  min-height: 100vh;
+
+  background:
+    radial-gradient(
+      circle at top,
+      rgba(26, 24, 30, 0.96),
+      #050505 62%
+    );
+
+  color: #f4eee6;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  overflow-x: hidden;
+}
+
+img {
+  display: block;
+  width: 100%;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button {
+  font: inherit;
+}
+
+
+/* =========================================================
+   VARIABLES
+========================================================= */
+
+:root {
+
+  --bg: #050505;
+  --bg-soft: #0b0b0f;
+  --panel: rgba(14, 14, 18, 0.84);
+
+  --text: #f5efe8;
+  --text-soft: #c9c0b7;
+  --text-dim: #908883;
+
+  --gold: #e7bd72;
+  --gold-soft: #f5dfaa;
+
+  --blue: #74cfff;
+  --blue-soft: #b9e8ff;
+
+  --green: #87d6aa;
+  --green-soft: #caf3da;
+
+  --violet: #a88cff;
+  --violet-soft: #d9d0ff;
+
+  --red: #b55252;
+
+  --border: rgba(255, 255, 255, 0.11);
+
+  --shadow:
+    0 20px 60px rgba(0, 0, 0, 0.56);
+
+  --radius: 22px;
+
+  --max-width: 820px;
+}
+
+
+/* =========================================================
+   BARRE DE PROGRESSION
+========================================================= */
+
+.progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 3px;
+
+  background:
+    rgba(255, 255, 255, 0.05);
+
+  z-index: 9999;
+}
+
+.progress-fill {
+  width: 0%;
+  height: 100%;
+
+  background:
+    linear-gradient(
+      90deg,
+      var(--blue),
+      var(--gold-soft),
+      var(--green)
+    );
+
+  box-shadow:
+    0 0 14px rgba(231, 189, 114, 0.5);
+
+  transition:
+    width 0.15s linear;
+}
+
+
+/* =========================================================
+   COMMANDES
+========================================================= */
+
+.chapter-controls {
+  position: fixed;
+
+  top:
+    calc(
+      16px +
+      env(safe-area-inset-top)
+    );
+
+  right: 14px;
+
+  display: flex;
+  gap: 10px;
+
+  z-index: 9000;
+}
+
+.control-btn {
+  width: 44px;
+  height: 44px;
+
+  border-radius: 50%;
+
+  border:
+    1px solid rgba(255, 255, 255, 0.18);
+
+  background:
+    rgba(10, 10, 13, 0.66);
+
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+
+  color: #fff;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 18px;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 8px 22px rgba(0, 0, 0, 0.4);
+
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease,
+    background 0.2s ease;
+}
+
+.control-btn:active {
+  transform: scale(0.92);
+}
+
+
+/* =========================================================
+   CONTENEUR GLOBAL
+========================================================= */
+
+.chapter {
+  width: 100%;
+  overflow: hidden;
+}
+
+.scene {
+  position: relative;
+
+  width: 100%;
+  max-width: var(--max-width);
+
+  margin: 0 auto;
+
+  min-height: 100svh;
+
+  padding:
+    74px
+    18px
+    72px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  isolation: isolate;
+}
+
+.scene + .scene {
+  border-top:
+    1px solid rgba(255, 255, 255, 0.035);
+}
+
+
+/* =========================================================
+   AMBIANCE DE FOND
+========================================================= */
+
+.scene::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  pointer-events: none;
+
+  background:
+    radial-gradient(
+      circle at 50% 18%,
+      rgba(255, 255, 255, 0.03),
+      transparent 42%
+    );
+
+  z-index: -2;
+}
+
+.scene::after {
+  content: "";
+
+  position: absolute;
+
+  left: 50%;
+  bottom: 0;
+
+  width: 82%;
+  height: 1px;
+
+  transform: translateX(-50%);
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.11),
+      transparent
+    );
+
+  opacity: 0.45;
+}
+
+
+/* =========================================================
+   VISUELS
+========================================================= */
+
+.visual {
+  position: relative;
+
+  width: 100%;
+
+  margin:
+    0 auto
+    28px;
+
+  border-radius: var(--radius);
+
+  overflow: hidden;
+
+  border:
+    1px solid rgba(255, 255, 255, 0.08);
+
+  background:
+    linear-gradient(
+      180deg,
+      #111216,
+      #070708
+    );
+
+  box-shadow: var(--shadow);
+
+  opacity: 0;
+
+  transform:
+    translateY(26px)
+    scale(0.985);
+
+  transition:
+    opacity 0.8s ease,
+    transform 0.8s ease;
+}
+
+.scene.is-visible .visual {
+  opacity: 1;
+
+  transform:
+    translateY(0)
+    scale(1);
+}
+
+.visual img {
+  width: 100%;
+  height: auto;
+
+  object-fit: contain;
+
+  background: #050505;
+}
+
+.visual:not(.full-visual) img {
+  max-height: 84svh;
+}
+
+
+/* =========================================================
+   VISUEL MANQUANT
+========================================================= */
+
+.visual.visual-missing {
+  display: none;
+}
+
+
+/* =========================================================
+   COUVERTURE
+========================================================= */
+
+.scene-cover {
+  max-width: none;
+
+  min-height: 100svh;
+
+  padding: 0;
+}
+
+.scene-cover::after {
+  display: none;
+}
+
+.full-visual {
+  margin: 0;
+
+  min-height: 100svh;
+
+  border: none;
+  border-radius: 0;
+
+  box-shadow: none;
+}
+
+.full-visual img {
+  width: 100%;
+  min-height: 100svh;
+  height: 100svh;
+
+  object-fit: cover;
+}
+
+.chapter-title-overlay {
+  position: absolute;
+  inset: 0;
+
+  z-index: 3;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+
+  text-align: center;
+
+  padding:
+    90px
+    24px
+    calc(
+      60px +
+      env(safe-area-inset-bottom)
+    );
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.05),
+      rgba(0, 0, 0, 0.12) 45%,
+      rgba(0, 0, 0, 0.8) 100%
+    );
+}
+
+.chapter-number {
+  margin-bottom: 12px;
+
+  color: var(--gold-soft);
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.36em;
+
+  font-size: 13px;
+}
+
+.chapter-title-overlay h1 {
+  max-width: 700px;
+
+  margin-bottom: 34px;
+
+  font-size:
+    clamp(
+      34px,
+      9vw,
+      70px
+    );
+
+  line-height: 1;
+
+  font-weight: 400;
+
+  text-shadow:
+    0 4px 18px rgba(0, 0, 0, 0.9);
+}
+
+
+/* =========================================================
+   BLOCS TEXTE
+========================================================= */
+
+.text-block {
+  width: 100%;
+
+  margin: 0 auto;
+
+  padding:
+    4px
+    4px
+    0;
+
+  opacity: 0;
+
+  transform:
+    translateY(20px);
+
+  transition:
+    opacity 0.9s ease 0.18s,
+    transform 0.9s ease 0.18s;
+}
+
+.scene.is-visible .text-block {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.text-block p {
+  max-width: 720px;
+
+  margin:
+    0 auto
+    18px;
+
+  color: var(--text);
+
+  font-size:
+    clamp(
+      18px,
+      4.7vw,
+      24px
+    );
+
+  line-height: 1.72;
+
+  text-wrap: pretty;
+}
+
+.text-block p:last-child {
+  margin-bottom: 0;
+}
+
+
+/* =========================================================
+   EMPHASES
+========================================================= */
+
+.emphasis {
+  color: var(--gold-soft) !important;
+
+  text-align: center;
+
+  font-style: italic;
+
+  letter-spacing: 0.02em;
+}
+
+.impact-text {
+  margin-top: 26px !important;
+  margin-bottom: 26px !important;
+
+  color: #fff !important;
+
+  text-align: center;
+
+  font-size:
+    clamp(
+      24px,
+      7vw,
+      38px
+    ) !important;
+
+  line-height: 1.25 !important;
+
+  text-shadow:
+    0 0 22px rgba(255, 255, 255, 0.08);
+}
+
+.name-reveal {
+  margin:
+    38px auto !important;
+
+  color: var(--gold-soft) !important;
+
+  text-align: center;
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.1em;
+
+  font-size:
+    clamp(
+      32px,
+      10vw,
+      62px
+    ) !important;
+
+  line-height: 1.1 !important;
+}
+
+
+/* =========================================================
+   DIALOGUES
+========================================================= */
+
+.dialogue {
+  padding-top: 6px;
+}
+
+.dialogue p {
+  padding-left: 16px;
+
+  border-left:
+    2px solid rgba(231, 189, 114, 0.35);
+
+  color: #f9f3ed;
+}
+
+
+/* =========================================================
+   CARTES DE LIEU
+========================================================= */
+
+.location-card {
+  width: 100%;
+
+  margin:
+    0 auto
+    26px;
+
+  padding:
+    18px;
+
+  border-radius: 18px;
+
+  border:
+    1px solid rgba(231, 189, 114, 0.18);
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(20, 18, 15, 0.9),
+      rgba(8, 8, 10, 0.92)
+    );
+
+  box-shadow:
+    0 12px 34px rgba(0, 0, 0, 0.36);
+
+  text-align: center;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 7px;
+
+  opacity: 0;
+
+  transform:
+    translateY(18px);
+
+  transition:
+    opacity 0.8s ease 0.1s,
+    transform 0.8s ease 0.1s;
+}
+
+.scene.is-visible .location-card {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.location-card strong {
+  color: var(--gold-soft);
+
+  font-size:
+    clamp(
+      22px,
+      6vw,
+      34px
+    );
+
+  font-weight: 400;
+
+  letter-spacing: 0.08em;
+}
+
+.location-card span {
+  color: var(--text-soft);
+
+  font-size: 13px;
+
+  line-height: 1.5;
+
+  letter-spacing: 0.05em;
+}
+
+
+/* =========================================================
+   BOUTONS
+========================================================= */
+
+.continue-btn,
+.chapter-btn,
+.menu-action,
+.interaction-btn,
+.clue-item {
+  min-height: 48px;
+
+  padding:
+    14px
+    24px;
+
+  border-radius: 999px;
+
+  border:
+    1px solid rgba(231, 189, 114, 0.55);
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(30, 25, 18, 0.93),
+      rgba(10, 10, 12, 0.97)
+    );
+
+  color: var(--gold-soft);
+
+  text-decoration: none;
+  text-align: center;
+
+  letter-spacing: 0.06em;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.45),
+    inset 0 0 18px rgba(231, 189, 114, 0.05);
+
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease,
+    background 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.continue-btn:active,
+.chapter-btn:active,
+.menu-action:active,
+.interaction-btn:active,
+.clue-item:active {
+  transform: scale(0.97);
+}
+
+
+/* =========================================================
+   INTERACTIONS
+========================================================= */
+
+.interaction-scene {
+  text-align: center;
+}
+
+.interaction-btn {
+  display: inline-flex;
+
+  align-self: center;
+
+  justify-content: center;
+
+  width: min(100%, 360px);
+
+  margin:
+    28px auto
+    0;
+}
+
+.interactive-visual {
+  overflow: hidden;
+
+  animation:
+    subtlePulse
+    4s
+    ease-in-out
+    infinite;
+}
+
+.interactive-visual::after {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  pointer-events: none;
+
+  background:
+    radial-gradient(
+      circle at center,
+      transparent 46%,
+      rgba(0, 0, 0, 0.24)
+    );
+}
+
+
+/* =========================================================
+   SCÈNES CACHÉES
+========================================================= */
+
+.hidden-scene {
+  opacity: 0.26;
+
+  transition:
+    opacity 0.7s ease;
+}
+
+.hidden-scene.unlocked {
+  opacity: 1;
+}
+
+
+/* =========================================================
+   BOÎTE DE RÉVÉLATION
+========================================================= */
+
+.reveal-box {
+  width: 100%;
+
+  max-width: 620px;
+
+  margin:
+    24px auto
+    0;
+
+  padding:
+    20px;
+
+  border-radius: 18px;
+
+  border:
+    1px solid rgba(231, 189, 114, 0.22);
+
+  background:
+    rgba(15, 13, 11, 0.84);
+
+  opacity: 0;
+
+  transform:
+    translateY(14px)
+    scale(0.98);
+
+  pointer-events: none;
+
+  transition:
+    opacity 0.55s ease,
+    transform 0.55s ease;
+}
+
+.reveal-box.open {
+  opacity: 1;
+
+  transform:
+    translateY(0)
+    scale(1);
+}
+
+
+/* =========================================================
+   BOUCLIER D'ANNA
+========================================================= */
+
+.shield-scene {
+  background:
+    radial-gradient(
+      circle at 50% 35%,
+      rgba(116, 207, 255, 0.11),
+      transparent 62%
+    );
+}
+
+.shield-scene .visual {
+  border-color:
+    rgba(116, 207, 255, 0.24);
+
+  box-shadow:
+    var(--shadow),
+    0 0 40px rgba(116, 207, 255, 0.12);
+}
+
+
+/* =========================================================
+   TECHNOLOGIE / BIO-HOLOPHONE
+========================================================= */
+
+.tech-scene {
+  background:
+    radial-gradient(
+      circle at 50% 20%,
+      rgba(116, 207, 255, 0.08),
+      transparent 60%
+    );
+}
+
+.hologram-scene {
+  background:
+    radial-gradient(
+      circle at 50% 35%,
+      rgba(116, 207, 255, 0.13),
+      transparent 62%
+    );
+}
+
+.hologram-scene .reveal-box {
+  border-color:
+    rgba(116, 207, 255, 0.35);
+
+  background:
+    rgba(10, 24, 34, 0.86);
+
+  color: var(--blue-soft);
+
+  box-shadow:
+    0 0 35px rgba(116, 207, 255, 0.1);
+}
+
+
+/* =========================================================
+   SÉCURITÉ
+========================================================= */
+
+.security-scene {
+  background:
+    radial-gradient(
+      circle at 50% 20%,
+      rgba(105, 135, 160, 0.08),
+      transparent 60%
+    );
+}
+
+
+/* =========================================================
+   CONFRONTATION
+========================================================= */
+
+.confrontation-scene {
+  background:
+    radial-gradient(
+      circle at center,
+      rgba(120, 38, 38, 0.11),
+      transparent 60%
+    );
+}
+
+
+/* =========================================================
+   PACTE / CONFIANCE
+========================================================= */
+
+.pact-scene {
+  background:
+    radial-gradient(
+      circle at 50% 35%,
+      rgba(231, 189, 114, 0.09),
+      transparent 62%
+    );
+}
+
+
+/* =========================================================
+   FLASHBACK
+========================================================= */
+
+.flashback-scene {
+  background:
+    linear-gradient(
+      180deg,
+      rgba(12, 12, 14, 1),
+      rgba(8, 8, 10, 1)
+    );
+
+  filter:
+    saturate(0.92);
+}
+
+
+/* =========================================================
+   SENTINELLES
+========================================================= */
+
+.sentinel-scene {
+  background:
+    radial-gradient(
+      circle at 50% 20%,
+      rgba(231, 189, 114, 0.08),
+      transparent 60%
+    );
+}
+
+
+/* =========================================================
+   DUALITÉ HOPE / AMY
+========================================================= */
+
+.duality-scene {
+  background:
+    radial-gradient(
+      circle at 25% 30%,
+      rgba(231, 189, 114, 0.09),
+      transparent 35%
+    ),
+    radial-gradient(
+      circle at 75% 30%,
+      rgba(73, 77, 105, 0.14),
+      transparent 35%
+    );
+}
+
+
+/* =========================================================
+   ENTRAÎNEMENT
+========================================================= */
+
+.training-scene {
+  background:
+    radial-gradient(
+      circle at 50% 25%,
+      rgba(95, 112, 130, 0.09),
+      transparent 60%
+    );
+}
+
+
+/* =========================================================
+   ENQUÊTE DE LUCY
+========================================================= */
+
+.investigation-scene {
+  background:
+    radial-gradient(
+      circle at 50% 20%,
+      rgba(116, 207, 255, 0.08),
+      transparent 58%
+    );
+}
+
+.clue-grid {
+  display: grid;
+
+  grid-template-columns:
+    1fr;
+
+  gap: 12px;
+
+  width: 100%;
+
+  max-width: 620px;
+
+  margin:
+    26px auto
+    0;
+}
+
+.clue-item {
+  width: 100%;
+
+  border-radius: 16px;
+
+  border:
+    1px solid rgba(116, 207, 255, 0.2);
+
+  background:
+    rgba(10, 20, 27, 0.8);
+
+  color: var(--text-soft);
+}
+
+.clue-item.confirmed {
+  border-color:
+    rgba(116, 207, 255, 0.8);
+
+  background:
+    rgba(18, 48, 67, 0.82);
+
+  color: #fff;
+
+  box-shadow:
+    0 0 28px rgba(116, 207, 255, 0.12);
+}
+
+.ai-panel {
+  width: 100%;
+
+  max-width: 620px;
+
+  margin:
+    22px auto
+    0;
+
+  padding:
+    20px;
+
+  border-radius: 18px;
+
+  border:
+    1px solid rgba(116, 207, 255, 0.22);
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(11, 24, 32, 0.9),
+      rgba(7, 10, 13, 0.95)
+    );
+
+  color: var(--blue-soft);
+
+  line-height: 1.6;
+
+  box-shadow:
+    0 14px 40px rgba(0, 0, 0, 0.42);
+}
+
+
+/* =========================================================
+   MÉMOIRE
+========================================================= */
+
+.memory-scene {
+  background:
+    radial-gradient(
+      circle at 50% 30%,
+      rgba(231, 189, 114, 0.07),
+      transparent 60%
+    );
+}
+
+
+/* =========================================================
+   OBJETS ANCIENS
+========================================================= */
+
+.artifact-scene {
+  background:
+    radial-gradient(
+      circle at 50% 30%,
+      rgba(153, 119, 76, 0.1),
+      transparent 60%
+    );
+}
+
+
+/* =========================================================
+   RÉVÉLATIONS
+========================================================= */
+
+.revelation-scene {
+  background:
+    radial-gradient(
+      circle at 50% 35%,
+      rgba(166, 140, 255, 0.08),
+      transparent 62%
+    );
+}
+
+
+/* =========================================================
+   MARQUE DE ROOT
+========================================================= */
+
+.mark-scene {
+  background:
+    radial-gradient(
+      circle at 50% 35%,
+      rgba(166, 140, 255, 0.1),
+      rgba(116, 207, 255, 0.05),
+      transparent 62%
+    );
+}
+
+.mark-scene .reveal-box {
+  border-color:
+    rgba(166, 140, 255, 0.34);
+
+  background:
+    rgba(20, 16, 31, 0.84);
+
+  color: var(--violet-soft);
+}
+
+
+/* =========================================================
+   UNION
+========================================================= */
+
+.unity-scene {
+  background:
+    radial-gradient(
+      circle at center,
+      rgba(231, 189, 114, 0.09),
+      transparent 62%
+    );
+}
+
+
+/* =========================================================
+   CALME / FIN DE SOIRÉE
+========================================================= */
+
+.calm-scene {
+  background:
+    radial-gradient(
+      circle at 50% 20%,
+      rgba(55, 87, 105, 0.06),
+      transparent 62%
+    );
+}
+
+
+/* =========================================================
+   FIN DU CHAPITRE
+========================================================= */
+
+.chapter-end {
+  min-height: 100svh;
+
+  text-align: center;
+
+  padding-bottom:
+    calc(
+      60px +
+      env(safe-area-inset-bottom)
+    );
+}
+
+.end-symbol {
+  margin:
+    36px auto
+    30px;
+
+  color: var(--gold-soft);
+
+  font-size:
+    clamp(
+      72px,
+      20vw,
+      140px
+    );
+
+  line-height: 1;
+
+  text-shadow:
+    0 0 34px rgba(231, 189, 114, 0.28);
+
+  animation:
+    subtleFloat
+    4s
+    ease-in-out
+    infinite;
+}
+
+.end-actions {
+  width: 100%;
+  max-width: 480px;
+
+  margin:
+    44px auto
+    0;
+
+  display: grid;
+  gap: 14px;
+}
+
+.chapter-btn {
+  display: block;
+  width: 100%;
+}
+
+.chapter-btn.primary {
+  background:
+    linear-gradient(
+      180deg,
+      rgba(231, 189, 114, 0.22),
+      rgba(50, 37, 18, 0.86)
+    );
+
+  border-color:
+    rgba(231, 189, 114, 0.8);
+
+  color: #fff;
+}
+
+
+/* =========================================================
+   POPUP
+========================================================= */
+
+.secret-popup {
+  position: fixed;
+  inset: 0;
+
+  z-index: 9500;
+
+  pointer-events: none;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 30px;
+
+  opacity: 0;
+
+  transition:
+    opacity 0.35s ease;
+}
+
+.secret-popup.show {
+  opacity: 1;
+}
+
+.secret-popup::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background:
+    rgba(0, 0, 0, 0.6);
+
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.secret-popup-inner {
+  position: relative;
+
+  min-width: 260px;
+
+  padding:
+    28px
+    24px;
+
+  border-radius: 22px;
+
+  border:
+    1px solid rgba(231, 189, 114, 0.65);
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(26, 20, 13, 0.97),
+      rgba(8, 8, 10, 0.98)
+    );
+
+  color: var(--gold-soft);
+
+  text-align: center;
+
+  letter-spacing: 0.14em;
+
+  box-shadow:
+    0 20px 80px rgba(0, 0, 0, 0.75),
+    0 0 30px rgba(231, 189, 114, 0.09);
+
+  transform: scale(0.9);
+
+  transition:
+    transform 0.35s ease;
+}
+
+.secret-popup.show .secret-popup-inner {
+  transform: scale(1);
+}
+
+.secret-symbol {
+  display: block;
+
+  margin-bottom: 12px;
+
+  font-size: 46px;
+}
+
+
+/* =========================================================
+   MENU
+========================================================= */
+
+.chapter-menu {
+  position: fixed;
+  inset: 0;
+
+  z-index: 10000;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding:
+    30px
+    20px;
+
+  background:
+    rgba(0, 0, 0, 0.72);
+
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+
+  opacity: 0;
+  visibility: hidden;
+
+  transition:
+    opacity 0.35s ease,
+    visibility 0.35s ease;
+}
+
+.chapter-menu.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.chapter-menu-panel {
+  position: relative;
+
+  width: 100%;
+  max-width: 430px;
+
+  padding:
+    36px
+    24px
+    26px;
+
+  border-radius: 24px;
+
+  border:
+    1px solid rgba(255, 255, 255, 0.12);
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(23, 21, 20, 0.98),
+      rgba(6, 6, 7, 0.98)
+    );
+
+  box-shadow:
+    0 24px 80px rgba(0, 0, 0, 0.72);
+
+  text-align: center;
+}
+
+.chapter-menu-panel h2 {
+  margin-bottom: 8px;
+
+  color: var(--gold-soft);
+
+  font-size: 30px;
+
+  font-weight: 400;
+}
+
+.chapter-menu-panel > p {
+  margin-bottom: 28px;
+
+  color: var(--text-soft);
+}
+
+.menu-close {
+  position: absolute;
+
+  top: 10px;
+  right: 12px;
+
+  width: 42px;
+  height: 42px;
+
+  border: none;
+
+  background: transparent;
+
+  color: #fff;
+
+  font-size: 32px;
+
+  cursor: pointer;
+}
+
+.menu-action {
+  display: block;
+
+  width: 100%;
+
+  margin-top: 12px;
+}
+
+
+/* =========================================================
+   ÉTATS JAVASCRIPT
+========================================================= */
+
+.no-scroll {
+  overflow: hidden;
+}
+
+.sound-active {
+  color: var(--gold-soft);
+
+  border-color:
+    rgba(231, 189, 114, 0.55);
+
+  background:
+    rgba(60, 45, 20, 0.82);
+}
+
+.completed {
+  border-color:
+    var(--green) !important;
+
+  color:
+    var(--green-soft) !important;
+
+  background:
+    rgba(18, 49, 37, 0.78) !important;
+}
+
+.secret-found {
+  border-color:
+    rgba(231, 189, 114, 0.45);
+
+  box-shadow:
+    0 0 40px rgba(231, 189, 114, 0.14);
+}
+
+
+/* =========================================================
+   ANIMATIONS
+========================================================= */
+
+@keyframes subtlePulse {
+
+  0% {
+    box-shadow:
+      var(--shadow);
+  }
+
+  50% {
+    box-shadow:
+      var(--shadow),
+      0 0 34px rgba(231, 189, 114, 0.08);
+  }
+
+  100% {
+    box-shadow:
+      var(--shadow);
+  }
+
+}
+
+@keyframes subtleFloat {
+
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-4px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+
+}
+
+
+/* =========================================================
+   TABLETTE
+========================================================= */
+
+@media
+  (min-width: 700px) {
+
+  .scene {
+    padding-left: 34px;
+    padding-right: 34px;
+  }
+
+  .text-block {
+    padding-left: 22px;
+    padding-right: 22px;
+  }
+
+  .clue-grid {
+    grid-template-columns:
+      repeat(3, 1fr);
+  }
+
+}
+
+
+/* =========================================================
+   GRAND ÉCRAN
+========================================================= */
+
+@media
+  (min-width: 1100px) {
+
+  .scene:not(.scene-cover) {
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
+
+  .visual:not(.full-visual) {
+    max-width: 720px;
+  }
+
+  .text-block {
+    max-width: 760px;
+  }
+
+}
+
+
+/* =========================================================
+   PETITS TÉLÉPHONES
+========================================================= */
+
+@media
+  (max-width: 390px) {
+
+  .scene {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+
+  .text-block p {
+    font-size: 17px;
+    line-height: 1.68;
+  }
+
+  .impact-text {
+    font-size: 26px !important;
+  }
+
+  .location-card {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+
+  .chapter-controls {
+    right: 10px;
+  }
+
+  .control-btn {
+    width: 40px;
+    height: 40px;
+  }
+
+}
+
+
+/* =========================================================
+   ACCESSIBILITÉ
+========================================================= */
+
+@media
+  (prefers-reduced-motion: reduce) {
+
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration:
+      0.01ms !important;
+
+    animation-iteration-count:
+      1 !important;
+
+    transition-duration:
+      0.01ms !important;
+  }
+
+}
