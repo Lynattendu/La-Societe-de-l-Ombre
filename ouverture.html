@@ -1,1 +1,574 @@
+<!DOCTYPE html>
+<html lang="fr">
 
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>La Société de l'Ombre — Ouverture</title>
+
+  <link rel="stylesheet" href="css/ouverture.css">
+</head>
+
+<body>
+
+  <main class="ouverture">
+
+    <!-- =========================
+         ÉCRAN 1 — PRÉSENTATION
+         ========================= -->
+
+    <section class="scene active" id="scene1">
+
+      <div class="scene-bg">
+        <img src="images/ouverture/Visuel-1.PNG" alt="">
+      </div>
+
+      <div class="overlay"></div>
+
+      <div class="scene-content">
+
+        <p>
+          Aurore Lynattendu, créatrice de récit et architecte d’univers.
+        </p>
+
+        <p>
+          Pour ce premier roman, elle a choisi une collaboration singulière
+          avec une intelligence artificielle, intervenant comme co-architecte
+          narrative : structurer les idées, affiner les dialogues, renforcer
+          la cohérence et accompagner la construction de l’univers.
+        </p>
+
+        <p>
+          On a tous, un jour, rêvé d’écrire.
+        </p>
+
+        <p>
+          Les rêves sont faits pour être réalisés.
+        </p>
+
+        <p>
+          Et aujourd’hui, plus que jamais, de nouveaux outils permettent de
+          transformer une idée, une envie ou un monde imaginaire en véritable récit.
+        </p>
+
+        <p>
+          Il ne faut parfois qu’une première idée.
+        </p>
+
+        <p>
+          Puis oser lui donner vie.
+        </p>
+
+        <button class="action-btn" id="startStoryBtn">
+          Donner vie à l’histoire
+        </button>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         ÉCRAN 2 — AVANT DE COMMENCER
+         ========================= -->
+
+    <section class="scene" id="scene2">
+
+      <div class="scene-bg">
+        <img src="images/ouverture/Visuel-2.PNG" alt="">
+      </div>
+
+      <div class="overlay"></div>
+
+      <div class="scene-content">
+
+        <h2>
+          Avant de commencer…
+        </h2>
+
+        <p>
+          Ce livre est né d’une idée simple :
+        </p>
+
+        <p>
+          et si une histoire pouvait devenir un passage ?
+        </p>
+
+        <p>
+          Un passage entre le réel et l’imaginaire.
+        </p>
+
+        <p>
+          Entre ce que nous savons et ce que nous croyons savoir.
+        </p>
+
+        <p>
+          Entre ce que nous sommes… et ce que nous pourrions devenir.
+        </p>
+
+        <p class="short-line">
+          Entrez.
+        </p>
+
+        <p class="short-line">
+          Observez.
+        </p>
+
+        <p class="short-line">
+          Questionnez.
+        </p>
+
+        <p class="short-line important-line">
+          Et surtout… choisissez.
+        </p>
+
+        <button class="portal-btn" id="portalBtn" aria-label="Entrer dans le passage">
+          <span class="portal-ring"></span>
+        </button>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         ÉCRAN 3 — PASSAGE ACTIVÉ
+         ========================= -->
+
+    <section class="scene" id="scene3">
+
+      <div class="scene-bg">
+        <img src="images/ouverture/Visuel-3.PNG" alt="">
+      </div>
+
+      <div class="overlay light-overlay"></div>
+
+      <div class="scene-content center-content">
+
+        <p class="transition-text">
+          Vous avez choisi d’entrer.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         ÉCRAN 4 — GARDIENS / SENTINELLES
+         ========================= -->
+
+    <section class="scene" id="scene4">
+
+      <div class="scene-bg">
+        <img src="images/ouverture/Visuel-4.PNG" alt="">
+      </div>
+
+      <div class="overlay"></div>
+
+      <div class="scene-content">
+
+        <p>
+          Ils viennent de tous horizons.
+          Le hasard n’existant pas, c’est le destin qui les a fait se rencontrer.
+        </p>
+
+        <p>
+          Le Mexique va devenir leur terre d’adoption.
+        </p>
+
+        <p>
+          Mais le monde tout entier est leur terrain de jeu.
+        </p>
+
+        <p>
+          Depuis la nuit des temps, ils font de leur mieux pour maintenir
+          l’équilibre des forces, pour le bien de tous.
+        </p>
+
+        <p>
+          Pour que vivre ne soit pas simplement survivre.
+        </p>
+
+        <p>
+          Certaines fois, vous faites ou dites des choses que, dans d’autres
+          circonstances, vous n’auriez jamais faites ni dites.
+        </p>
+
+        <p>
+          Qui n’a jamais eu des paroles qui ont dépassé sa pensée ?
+        </p>
+
+        <p>
+          Eh bien voilà : c’est à ce moment-là que vous révélez qui vous êtes réellement,
+          que l’être profond fait son apparition.
+        </p>
+
+        <p class="important-line">
+          Ordre des Gardiens Noirs ou Sentinelles de la Lumière.
+        </p>
+
+        <div class="symbols-row">
+
+          <button class="symbol-btn" id="guardianBtn">
+            <img src="images/ouverture/Visuel-5.PNG" alt="Symbole des Gardiens Noirs">
+          </button>
+
+          <button class="symbol-btn" id="sentinelBtn">
+            <img src="images/ouverture/Visuel-6.PNG" alt="Symbole des Sentinelles de la Lumière">
+          </button>
+
+        </div>
+
+        <button class="action-btn hidden" id="continueScene4Btn">
+          Continuer
+        </button>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         ÉCRAN 5 — SECRET DÉCOUVERT
+         ========================= -->
+
+    <section class="scene" id="scene5">
+
+      <div class="scene-bg">
+        <img src="images/ouverture/Visuel-7.PNG" alt="">
+      </div>
+
+      <div class="overlay"></div>
+
+      <div class="scene-content center-content">
+
+        <p class="secret-title">
+          SECRET DÉCOUVERT
+        </p>
+
+        <p class="secret-text">
+          L’équilibre ne signifie pas toujours le bien.
+        </p>
+
+        <button class="action-btn" id="secretContinueBtn">
+          Continuer
+        </button>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         ÉCRAN 6 — TEXTE AVANT PAPILLON
+         ========================= -->
+
+    <section class="scene" id="scene6">
+
+      <div class="scene-bg">
+        <img src="images/ouverture/Visuel-4.PNG" alt="">
+      </div>
+
+      <div class="overlay"></div>
+
+      <div class="scene-content">
+
+        <p>
+          Bien souvent, vous avez été manipulés par un cumul de coïncidences
+          qui n’en sont peut-être pas… et sûrement pas, soit dit en passant.
+        </p>
+
+        <p>
+          C’était simplement le moment pour vous de montrer votre vrai visage.
+        </p>
+
+        <p>
+          Ils sont partout.
+        </p>
+
+        <p>
+          Vous êtes leurs marionnettes.
+        </p>
+
+        <p>
+          Ils vous manipulent souvent pour leur propre intérêt, parfois pour
+          le bien de tous, et quelquefois simplement pour vous tester, pour
+          savoir quand et comment vous allez pouvoir leur être utiles.
+        </p>
+
+        <p class="important-line">
+          Car le battement d’ailes d’un papillon peut provoquer un tsunami
+          à l’autre bout de la Terre.
+        </p>
+
+        <button class="butterfly-btn" id="butterflyBtn">
+          <img src="images/ouverture/Visuel-8.PNG" alt="Papillon">
+        </button>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         ÉCRAN 7 — PAPILLON ACTIVÉ
+         ========================= -->
+
+    <section class="scene" id="scene7">
+
+      <div class="scene-bg">
+        <img src="images/ouverture/Visuel-9.PNG" alt="">
+      </div>
+
+      <div class="overlay"></div>
+
+      <div class="scene-content center-content">
+
+        <p class="transition-text">
+          Un battement.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         ÉCRAN 8 — ONDE / CAUSE
+         ========================= -->
+
+    <section class="scene" id="scene8">
+
+      <div class="scene-bg">
+        <img src="images/ouverture/Visuel-10.PNG" alt="">
+      </div>
+
+      <div class="overlay"></div>
+
+      <div class="scene-content center-content">
+
+        <p class="important-line">
+          Tout effet a une cause.
+        </p>
+
+        <p>
+          Vous êtes le résultat de quelle cause ?
+        </p>
+
+        <p>
+          Et quels effets avez-vous provoqués, vous-même, sans le savoir ?
+        </p>
+
+        <button class="action-btn" id="goPrologueBtn">
+          Continuer
+        </button>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         ÉCRAN 9 — PROLOGUE
+         ========================= -->
+
+    <section class="scene" id="scene9">
+
+      <div class="scene-bg">
+        <img src="images/ouverture/Visuel-11.PNG" alt="">
+      </div>
+
+      <div class="overlay"></div>
+
+      <div class="scene-content">
+
+        <h2>
+          Prologue
+        </h2>
+
+        <p>
+          Qui vous dit que ce livre n’est qu’un roman de fiction…
+          ou un texte subversif ?
+        </p>
+
+        <p>
+          Qui vous dit que tout ce qui va vous être dévoilé n’est pas réel ?
+        </p>
+
+        <p>
+          Et si tout ce que vous connaissez n’était, en réalité, qu’une illusion ?
+        </p>
+
+        <p>
+          Êtes-vous sûrs d’être maîtres de vos propres choix ?
+        </p>
+
+        <p>
+          De ne pas être manipulés ?
+        </p>
+
+        <p>
+          Que votre vie est bien celle que vous avez choisie ?
+        </p>
+
+        <p>
+          Votre vie n’est peut-être qu’une illusion parfaitement orchestrée.
+        </p>
+
+        <p>
+          Il est temps d’ouvrir les yeux.
+        </p>
+
+        <p>
+          De vous réveiller.
+        </p>
+
+        <p>
+          Ils sont partout.
+        </p>
+
+        <p class="important-line">
+          Il est temps pour vous de choisir votre camp.
+        </p>
+
+        <button class="action-btn" id="choiceScreenBtn">
+          Choisir
+        </button>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         ÉCRAN 10 — CHOIX
+         ========================= -->
+
+    <section class="scene" id="scene10">
+
+      <div class="scene-bg">
+        <img src="images/ouverture/Visuel-12.PNG" alt="">
+      </div>
+
+      <div class="overlay"></div>
+
+      <div class="scene-content center-content">
+
+        <div class="choice-icon">
+          <img src="images/ouverture/Visuel-16.PNG" alt="">
+        </div>
+
+        <h2>
+          Choisissez.
+        </h2>
+
+        <div class="choices">
+
+          <button class="choice-btn dark-choice" id="illusionBtn">
+            Vivre dans l’illusion
+          </button>
+
+          <button class="choice-btn light-choice" id="awakeBtn">
+            Ouvrir les yeux
+          </button>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         ÉCRAN 11 — ILLUSION
+         ========================= -->
+
+    <section class="scene" id="scene11">
+
+      <div class="scene-bg">
+        <img src="images/ouverture/Visuel-13.PNG" alt="">
+      </div>
+
+      <div class="overlay"></div>
+
+      <div class="scene-content center-content">
+
+        <p class="transition-text">
+          Vous venez pourtant de faire un choix.
+        </p>
+
+        <p>
+          Êtes-vous certain qu’il était vraiment le vôtre ?
+        </p>
+
+        <button class="action-btn consequenceContinueBtn">
+          Continuer
+        </button>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         ÉCRAN 12 — ÉVEIL
+         ========================= -->
+
+    <section class="scene" id="scene12">
+
+      <div class="scene-bg">
+        <img src="images/ouverture/Visuel-14.PNG" alt="">
+      </div>
+
+      <div class="overlay"></div>
+
+      <div class="scene-content center-content">
+
+        <p class="transition-text">
+          Alors regardez attentivement.
+        </p>
+
+        <p>
+          Certaines vérités ne se montrent qu’à ceux qui les cherchent.
+        </p>
+
+        <button class="action-btn consequenceContinueBtn">
+          Continuer
+        </button>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         ÉCRAN 13 — TRANSITION CHAPITRE 1
+         ========================= -->
+
+    <section class="scene" id="scene13">
+
+      <div class="scene-bg">
+        <img src="images/ouverture/Visuel-18.PNG" alt="">
+      </div>
+
+      <div class="overlay light-overlay"></div>
+
+      <div class="scene-content center-content">
+
+        <button class="action-btn final-btn" id="chapter1Btn">
+          Entrer dans le chapitre 1
+        </button>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <script src="js/ouverture.js"></script>
+
+</body>
+
+</html>
