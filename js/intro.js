@@ -1,5 +1,5 @@
 // Animation d'introduction
-const PAGE_SUIVANTE = "chapitre1.html";
+const PAGE_SUIVANTE = "ouverture.html";
 
 const INTRO_DEJA_VUE = "societeOmbre_intro_vue";
 
