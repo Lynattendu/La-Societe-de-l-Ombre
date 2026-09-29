@@ -1,1 +1,1541 @@
 
+/* =========================================================
+   LA SOCIÉTÉ DE L’OMBRE
+   CHAPITRE 1 — EMBRASSE TON DESTIN
+   Version mobile-first / 9:16
+========================================================= */
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  background: #050505;
+}
+
+body {
+  margin: 0;
+  background:
+    radial-gradient(
+      circle at top,
+      rgba(28, 28, 34, 0.95),
+      #050505 60%
+    );
+  color: #f4eee6;
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button {
+  font: inherit;
+}
+
+img {
+  display: block;
+  width: 100%;
+}
+
+
+/* =========================================================
+   VARIABLES
+========================================================= */
+
+:root {
+  --bg: #050505;
+  --bg-soft: #0b0b0e;
+  --panel: rgba(14, 14, 18, 0.82);
+
+  --text: #f4eee6;
+  --text-soft: #c7beb4;
+  --text-dim: #8d8580;
+
+  --gold: #e7bf75;
+  --gold-soft: #f7e2ad;
+
+  --blue: #75cfff;
+  --blue-soft: #b8e8ff;
+
+  --red: #a94848;
+
+  --border: rgba(255, 255, 255, 0.12);
+
+  --shadow:
+    0 20px 60px rgba(0, 0, 0, 0.55);
+
+  --radius: 22px;
+
+  --max-width: 820px;
+}
+
+
+/* =========================================================
+   BARRE DE PROGRESSION
+========================================================= */
+
+.progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: rgba(255, 255, 255, 0.06);
+  z-index: 9999;
+}
+
+.progress-fill {
+  width: 0%;
+  height: 100%;
+  background:
+    linear-gradient(
+      90deg,
+      var(--blue),
+      var(--gold-soft),
+      var(--gold)
+    );
+  box-shadow:
+    0 0 14px rgba(231, 191, 117, 0.6);
+  transition: width 0.15s linear;
+}
+
+
+/* =========================================================
+   COMMANDES
+========================================================= */
+
+.chapter-controls {
+  position: fixed;
+  top: calc(16px + env(safe-area-inset-top));
+  right: 14px;
+
+  display: flex;
+  gap: 10px;
+
+  z-index: 9000;
+}
+
+.control-btn {
+  width: 44px;
+  height: 44px;
+
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+
+  background:
+    rgba(10, 10, 13, 0.65);
+
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+
+  color: #fff;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+
+  font-size: 18px;
+
+  box-shadow:
+    0 8px 22px rgba(0, 0, 0, 0.4);
+
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.control-btn:active {
+  transform: scale(0.92);
+}
+
+
+/* =========================================================
+   CHAPITRE GLOBAL
+========================================================= */
+
+.chapter {
+  width: 100%;
+  overflow: hidden;
+}
+
+.scene {
+  position: relative;
+
+  width: 100%;
+  max-width: var(--max-width);
+
+  margin: 0 auto;
+
+  min-height: 100svh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  padding:
+    72px
+    18px
+    70px;
+
+  isolation: isolate;
+}
+
+.scene + .scene {
+  border-top:
+    1px solid rgba(255, 255, 255, 0.035);
+}
+
+
+/* =========================================================
+   FOND SUBTIL PAR SCÈNE
+========================================================= */
+
+.scene::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background:
+    radial-gradient(
+      circle at 50% 15%,
+      rgba(255, 255, 255, 0.035),
+      transparent 42%
+    );
+
+  pointer-events: none;
+  z-index: -2;
+}
+
+.scene::after {
+  content: "";
+
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+
+  width: 80%;
+  height: 1px;
+
+  transform: translateX(-50%);
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.12),
+      transparent
+    );
+
+  opacity: 0.45;
+}
+
+
+/* =========================================================
+   VISUELS
+========================================================= */
+
+.visual {
+  position: relative;
+
+  width: 100%;
+
+  margin:
+    0 auto
+    28px;
+
+  border-radius: var(--radius);
+
+  overflow: hidden;
+
+  background:
+    linear-gradient(
+      180deg,
+      #111,
+      #070707
+    );
+
+  box-shadow:
+    var(--shadow);
+
+  border:
+    1px solid rgba(255, 255, 255, 0.08);
+
+  opacity: 0;
+  transform:
+    translateY(26px)
+    scale(0.985);
+
+  transition:
+    opacity 0.8s ease,
+    transform 0.8s ease;
+}
+
+.scene.is-visible .visual {
+  opacity: 1;
+
+  transform:
+    translateY(0)
+    scale(1);
+}
+
+.visual img {
+  width: 100%;
+  height: auto;
+
+  object-fit: contain;
+
+  background: #050505;
+}
+
+
+/* =========================================================
+   FORMAT MOBILE 9:16
+========================================================= */
+
+.visual:not(.full-visual) img {
+  max-height: 84svh;
+}
+
+.full-visual {
+  margin: 0;
+  border-radius: 0;
+  min-height: 100svh;
+  border: none;
+  box-shadow: none;
+}
+
+.full-visual img {
+  width: 100%;
+  min-height: 100svh;
+  height: 100svh;
+  object-fit: cover;
+}
+
+
+/* =========================================================
+   VISUEL MANQUANT
+========================================================= */
+
+.visual.visual-missing {
+  display: none;
+}
+
+
+/* =========================================================
+   TITRE CHAPITRE
+========================================================= */
+
+.scene-cover {
+  max-width: none;
+  min-height: 100svh;
+  padding: 0;
+}
+
+.scene-cover::after {
+  display: none;
+}
+
+.chapter-title-overlay {
+  position: absolute;
+  inset: 0;
+
+  z-index: 3;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+
+  text-align: center;
+
+  padding:
+    90px
+    24px
+    calc(60px + env(safe-area-inset-bottom));
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.06),
+      rgba(0, 0, 0, 0.1) 40%,
+      rgba(0, 0, 0, 0.78) 100%
+    );
+}
+
+.chapter-number {
+  margin-bottom: 12px;
+
+  color: var(--gold-soft);
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.38em;
+
+  font-size: 13px;
+}
+
+.chapter-title-overlay h1 {
+  max-width: 680px;
+
+  margin-bottom: 34px;
+
+  font-size:
+    clamp(
+      34px,
+      9vw,
+      70px
+    );
+
+  line-height: 1;
+
+  font-weight: 400;
+
+  text-shadow:
+    0 4px 18px rgba(0, 0, 0, 0.9);
+}
+
+
+/* =========================================================
+   BOUTON CONTINUER
+========================================================= */
+
+.continue-btn,
+.chapter-btn,
+.menu-action,
+.choice-btn,
+.puzzle-btn,
+.observe-btn,
+.touch-zone {
+  border: 1px solid rgba(231, 191, 117, 0.55);
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(30, 25, 18, 0.92),
+      rgba(10, 10, 12, 0.96)
+    );
+
+  color: var(--gold-soft);
+
+  border-radius: 999px;
+
+  padding:
+    14px
+    24px;
+
+  min-height: 48px;
+
+  text-decoration: none;
+
+  cursor: pointer;
+
+  text-align: center;
+
+  letter-spacing: 0.06em;
+
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.45),
+    inset 0 0 18px rgba(231, 191, 117, 0.06);
+
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+.continue-btn:active,
+.chapter-btn:active,
+.menu-action:active,
+.choice-btn:active,
+.puzzle-btn:active,
+.observe-btn:active,
+.touch-zone:active {
+  transform: scale(0.97);
+}
+
+
+/* =========================================================
+   CARTES LIEU
+========================================================= */
+
+.location-card {
+  width: 100%;
+
+  margin:
+    0 auto
+    26px;
+
+  padding:
+    18px
+    18px;
+
+  border:
+    1px solid rgba(231, 191, 117, 0.18);
+
+  border-radius: 18px;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(20, 18, 15, 0.88),
+      rgba(8, 8, 10, 0.9)
+    );
+
+  box-shadow:
+    0 12px 34px rgba(0, 0, 0, 0.36);
+
+  text-align: center;
+
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+
+  opacity: 0;
+  transform: translateY(18px);
+
+  transition:
+    opacity 0.8s ease 0.12s,
+    transform 0.8s ease 0.12s;
+}
+
+.scene.is-visible .location-card {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.location-card strong {
+  color: var(--gold-soft);
+
+  font-size:
+    clamp(
+      22px,
+      6vw,
+      34px
+    );
+
+  font-weight: 400;
+
+  letter-spacing: 0.08em;
+}
+
+.location-card span {
+  color: var(--text-soft);
+
+  font-size: 13px;
+
+  line-height: 1.5;
+
+  letter-spacing: 0.05em;
+}
+
+
+/* =========================================================
+   BLOCS TEXTE
+========================================================= */
+
+.text-block {
+  width: 100%;
+
+  margin: 0 auto;
+
+  padding:
+    4px
+    4px
+    0;
+
+  opacity: 0;
+
+  transform:
+    translateY(20px);
+
+  transition:
+    opacity 0.9s ease 0.2s,
+    transform 0.9s ease 0.2s;
+}
+
+.scene.is-visible .text-block {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.text-block p {
+  max-width: 720px;
+
+  margin:
+    0 auto
+    18px;
+
+  font-size:
+    clamp(
+      18px,
+      4.7vw,
+      24px
+    );
+
+  line-height: 1.72;
+
+  color: var(--text);
+
+  text-wrap: pretty;
+}
+
+.text-block p:last-child {
+  margin-bottom: 0;
+}
+
+
+/* =========================================================
+   EMPHASES
+========================================================= */
+
+.emphasis {
+  color: var(--gold-soft) !important;
+
+  text-align: center;
+
+  font-style: italic;
+
+  letter-spacing: 0.02em;
+}
+
+.impact-text {
+  margin-top: 26px !important;
+  margin-bottom: 26px !important;
+
+  text-align: center;
+
+  color: #fff !important;
+
+  font-size:
+    clamp(
+      24px,
+      7vw,
+      38px
+    ) !important;
+
+  line-height: 1.25 !important;
+
+  text-shadow:
+    0 0 22px rgba(255, 255, 255, 0.08);
+}
+
+.name-reveal {
+  text-align: center;
+
+  color: var(--gold-soft) !important;
+
+  font-size:
+    clamp(
+      32px,
+      10vw,
+      62px
+    ) !important;
+
+  letter-spacing: 0.1em;
+
+  text-transform: uppercase;
+
+  line-height: 1.1 !important;
+
+  margin:
+    38px auto !important;
+}
+
+
+/* =========================================================
+   DIALOGUES
+========================================================= */
+
+.dialogue {
+  padding-top: 6px;
+}
+
+.dialogue p {
+  padding-left: 16px;
+
+  border-left:
+    2px solid rgba(231, 191, 117, 0.35);
+
+  color: #f8f2eb;
+}
+
+
+/* =========================================================
+   BLOCKQUOTE / MESSAGE SECRET
+========================================================= */
+
+.secret-message blockquote {
+  max-width: 680px;
+
+  margin:
+    28px auto
+    0;
+
+  padding:
+    24px
+    18px;
+
+  border-left:
+    2px solid var(--gold);
+
+  border-radius:
+    0
+    16px
+    16px
+    0;
+
+  background:
+    rgba(231, 191, 117, 0.045);
+
+  color: #eee5da;
+
+  font-size:
+    clamp(
+      17px,
+      4.4vw,
+      22px
+    );
+
+  line-height: 1.8;
+
+  white-space: pre-line;
+
+  font-style: italic;
+}
+
+
+/* =========================================================
+   SCÈNES DE TYPE TEXTE
+========================================================= */
+
+.text-scene {
+  min-height: auto;
+
+  padding-top: 110px;
+  padding-bottom: 110px;
+}
+
+
+/* =========================================================
+   SCÈNES SPÉCIALES
+========================================================= */
+
+.danger-scene {
+  background:
+    radial-gradient(
+      circle at center,
+      rgba(120, 30, 30, 0.15),
+      transparent 60%
+    );
+}
+
+.shadow-scene {
+  background:
+    radial-gradient(
+      circle at 50% 30%,
+      rgba(25, 35, 48, 0.25),
+      transparent 65%
+    );
+}
+
+.myth-scene {
+  background:
+    radial-gradient(
+      circle at top,
+      rgba(231, 191, 117, 0.12),
+      transparent 55%
+    );
+}
+
+.philosophy-scene {
+  background:
+    linear-gradient(
+      180deg,
+      rgba(5, 5, 5, 1),
+      rgba(10, 13, 16, 1)
+    );
+}
+
+.revelation-scene {
+  background:
+    radial-gradient(
+      circle at 50% 40%,
+      rgba(117, 207, 255, 0.07),
+      transparent 55%
+    );
+}
+
+.flashback-scene {
+  filter: saturate(0.9);
+}
+
+.temple-scene {
+  background:
+    radial-gradient(
+      circle at 50% 10%,
+      rgba(95, 76, 44, 0.08),
+      transparent 58%
+    );
+}
+
+
+/* =========================================================
+   INTERACTIF
+========================================================= */
+
+.interactive-visual {
+  overflow: hidden;
+}
+
+.interactive-visual::after {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  pointer-events: none;
+
+  background:
+    radial-gradient(
+      circle at center,
+      transparent 45%,
+      rgba(0, 0, 0, 0.28)
+    );
+}
+
+.observe-btn,
+.touch-zone {
+  position: absolute;
+  left: 50%;
+  bottom: 22px;
+
+  transform: translateX(-50%);
+
+  z-index: 5;
+
+  min-width: 170px;
+
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.observe-btn:active,
+.touch-zone:active {
+  transform:
+    translateX(-50%)
+    scale(0.96);
+}
+
+
+/* =========================================================
+   CHOIX
+========================================================= */
+
+.choice-scene {
+  text-align: center;
+}
+
+.choice-content {
+  width: 100%;
+}
+
+.choice-content > p {
+  max-width: 650px;
+
+  margin:
+    0 auto
+    22px;
+
+  color: var(--text-soft);
+
+  font-size:
+    clamp(
+      18px,
+      4.8vw,
+      24px
+    );
+
+  line-height: 1.6;
+}
+
+.choice-content h2 {
+  margin-bottom: 26px;
+
+  color: #fff;
+
+  font-size:
+    clamp(
+      28px,
+      7vw,
+      42px
+    );
+
+  font-weight: 400;
+}
+
+.choice-buttons {
+  display: grid;
+  gap: 14px;
+
+  width: 100%;
+  max-width: 520px;
+
+  margin: 0 auto;
+}
+
+.choice-btn {
+  width: 100%;
+}
+
+.choice-result {
+  max-width: 620px;
+
+  margin:
+    26px auto
+    0;
+
+  min-height: 1px;
+
+  color: var(--gold-soft);
+
+  font-size:
+    clamp(
+      17px,
+      4.4vw,
+      22px
+    );
+
+  line-height: 1.65;
+}
+
+
+/* =========================================================
+   PUZZLE
+========================================================= */
+
+.puzzle-scene {
+  text-align: center;
+}
+
+.puzzle-btn {
+  display: inline-flex;
+
+  align-self: center;
+
+  justify-content: center;
+
+  margin:
+    28px auto
+    0;
+
+  width: min(100%, 360px);
+}
+
+
+/* =========================================================
+   SCÈNE CACHÉE / RÉVÉLATION
+========================================================= */
+
+.hidden-scene {
+  opacity: 0.3;
+
+  transition:
+    opacity 0.7s ease;
+}
+
+.hidden-scene.unlocked {
+  opacity: 1;
+}
+
+
+/* =========================================================
+   ENVELOPPE
+========================================================= */
+
+.envelope-reveal {
+  width: 100%;
+
+  max-width: 520px;
+
+  margin:
+    20px auto
+    0;
+
+  padding:
+    22px
+    20px;
+
+  border:
+    1px solid rgba(231, 191, 117, 0.25);
+
+  border-radius: 18px;
+
+  background:
+    rgba(14, 12, 10, 0.82);
+
+  text-align: center;
+
+  opacity: 0;
+  transform:
+    translateY(14px)
+    scale(0.98);
+
+  pointer-events: none;
+
+  transition:
+    opacity 0.6s ease,
+    transform 0.6s ease;
+}
+
+.envelope-reveal.open {
+  opacity: 1;
+  transform:
+    translateY(0)
+    scale(1);
+}
+
+.envelope-reveal p {
+  margin-bottom: 5px;
+
+  font-size: 12px;
+
+  letter-spacing: 0.4em;
+
+  color: var(--text-dim);
+}
+
+.envelope-reveal strong {
+  display: block;
+
+  margin-bottom: 7px;
+
+  color: var(--gold-soft);
+
+  font-size:
+    clamp(
+      28px,
+      8vw,
+      46px
+    );
+
+  font-weight: 400;
+
+  letter-spacing: 0.16em;
+}
+
+.envelope-reveal span {
+  color: var(--text-soft);
+
+  font-size: 15px;
+}
+
+
+/* =========================================================
+   FIN DE CHAPITRE
+========================================================= */
+
+.chapter-end {
+  min-height: 100svh;
+
+  text-align: center;
+
+  padding-bottom:
+    calc(
+      60px
+      + env(safe-area-inset-bottom)
+    );
+}
+
+.end-symbol {
+  margin-bottom: 30px;
+
+  font-size:
+    clamp(
+      72px,
+      20vw,
+      140px
+    );
+
+  line-height: 1;
+
+  color: var(--gold-soft);
+
+  text-shadow:
+    0 0 34px rgba(231, 191, 117, 0.28);
+}
+
+.end-actions {
+  display: grid;
+  gap: 14px;
+
+  width: 100%;
+  max-width: 480px;
+
+  margin:
+    44px auto
+    0;
+}
+
+.chapter-btn {
+  display: block;
+  width: 100%;
+}
+
+.chapter-btn.primary {
+  background:
+    linear-gradient(
+      180deg,
+      rgba(231, 191, 117, 0.22),
+      rgba(50, 37, 18, 0.85)
+    );
+
+  border-color:
+    rgba(231, 191, 117, 0.8);
+
+  color: #fff;
+}
+
+
+/* =========================================================
+   POPUP SECRET
+========================================================= */
+
+.secret-popup {
+  position: fixed;
+  inset: 0;
+
+  z-index: 9500;
+
+  pointer-events: none;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 30px;
+
+  opacity: 0;
+
+  transition:
+    opacity 0.35s ease;
+}
+
+.secret-popup.show {
+  opacity: 1;
+}
+
+.secret-popup::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background:
+    rgba(0, 0, 0, 0.58);
+
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.secret-popup-inner {
+  position: relative;
+
+  min-width: 260px;
+
+  padding:
+    28px
+    24px;
+
+  border-radius: 22px;
+
+  border:
+    1px solid rgba(231, 191, 117, 0.65);
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(26, 20, 13, 0.96),
+      rgba(8, 8, 10, 0.98)
+    );
+
+  box-shadow:
+    0 20px 80px rgba(0, 0, 0, 0.75),
+    0 0 30px rgba(231, 191, 117, 0.09);
+
+  text-align: center;
+
+  color: var(--gold-soft);
+
+  letter-spacing: 0.14em;
+
+  transform: scale(0.9);
+
+  transition:
+    transform 0.35s ease;
+}
+
+.secret-popup.show .secret-popup-inner {
+  transform: scale(1);
+}
+
+.secret-symbol {
+  display: block;
+
+  margin-bottom: 12px;
+
+  font-size: 46px;
+}
+
+
+/* =========================================================
+   MENU
+========================================================= */
+
+.chapter-menu {
+  position: fixed;
+  inset: 0;
+
+  z-index: 10000;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding:
+    30px
+    20px;
+
+  background:
+    rgba(0, 0, 0, 0.7);
+
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+
+  opacity: 0;
+  visibility: hidden;
+
+  transition:
+    opacity 0.35s ease,
+    visibility 0.35s ease;
+}
+
+.chapter-menu.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.chapter-menu-panel {
+  position: relative;
+
+  width: 100%;
+  max-width: 430px;
+
+  padding:
+    36px
+    24px
+    26px;
+
+  border-radius: 24px;
+
+  border:
+    1px solid rgba(255, 255, 255, 0.12);
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(23, 21, 20, 0.98),
+      rgba(6, 6, 7, 0.98)
+    );
+
+  box-shadow:
+    0 24px 80px rgba(0, 0, 0, 0.72);
+
+  text-align: center;
+}
+
+.chapter-menu-panel h2 {
+  margin-bottom: 8px;
+
+  color: var(--gold-soft);
+
+  font-size: 30px;
+
+  font-weight: 400;
+}
+
+.chapter-menu-panel > p {
+  margin-bottom: 28px;
+
+  color: var(--text-soft);
+}
+
+.menu-close {
+  position: absolute;
+
+  top: 10px;
+  right: 12px;
+
+  width: 42px;
+  height: 42px;
+
+  border: none;
+  background: transparent;
+
+  color: #fff;
+
+  font-size: 32px;
+
+  cursor: pointer;
+}
+
+.menu-action {
+  display: block;
+
+  width: 100%;
+
+  margin-top: 12px;
+}
+
+
+/* =========================================================
+   PETITES ANIMATIONS
+========================================================= */
+
+@keyframes pulseGold {
+
+  0% {
+    box-shadow:
+      0 0 0 rgba(231, 191, 117, 0);
+  }
+
+  50% {
+    box-shadow:
+      0 0 34px rgba(231, 191, 117, 0.18);
+  }
+
+  100% {
+    box-shadow:
+      0 0 0 rgba(231, 191, 117, 0);
+  }
+
+}
+
+.interactive-visual {
+  animation:
+    pulseGold
+    4s
+    ease-in-out
+    infinite;
+}
+
+
+@keyframes subtleFloat {
+
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-4px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+
+}
+
+.end-symbol {
+  animation:
+    subtleFloat
+    4s
+    ease-in-out
+    infinite;
+}
+
+
+/* =========================================================
+   TABLETTE
+========================================================= */
+
+@media
+  (min-width: 700px) {
+
+  .scene {
+    padding-left: 34px;
+    padding-right: 34px;
+  }
+
+  .text-block {
+    padding-left: 22px;
+    padding-right: 22px;
+  }
+
+  .choice-buttons {
+    grid-template-columns:
+      repeat(2, 1fr);
+  }
+
+}
+
+
+/* =========================================================
+   GRAND ÉCRAN
+========================================================= */
+
+@media
+  (min-width: 1100px) {
+
+  .scene:not(.scene-cover) {
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
+
+  .visual:not(.full-visual) {
+    max-width: 720px;
+  }
+
+  .text-block {
+    max-width: 760px;
+  }
+
+}
+
+
+/* =========================================================
+   PETITS TÉLÉPHONES
+========================================================= */
+
+@media
+  (max-width: 390px) {
+
+  .scene {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+
+  .text-block p {
+    font-size: 17px;
+    line-height: 1.68;
+  }
+
+  .impact-text {
+    font-size: 26px !important;
+  }
+
+  .location-card {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+
+  .chapter-controls {
+    right: 10px;
+  }
+
+  .control-btn {
+    width: 40px;
+    height: 40px;
+  }
+
+}
+
+
+/* =========================================================
+   ACCESSIBILITÉ — RÉDUCTION DES ANIMATIONS
+========================================================= */
+
+@media
+  (prefers-reduced-motion: reduce) {
+
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration:
+      0.01ms !important;
+
+    animation-iteration-count:
+      1 !important;
+
+    transition-duration:
+      0.01ms !important;
+  }
+
+}
+
+
+/* =========================================================
+   CLASSES JAVASCRIPT
+========================================================= */
+
+.no-scroll {
+  overflow: hidden;
+}
+
+.sound-active {
+  color: var(--gold-soft);
+
+  border-color:
+    rgba(231, 191, 117, 0.55);
+
+  background:
+    rgba(60, 45, 20, 0.8);
+}
+
+.secret-found {
+  border-color:
+    rgba(231, 191, 117, 0.45);
+
+  box-shadow:
+    0 0 40px rgba(231, 191, 117, 0.14);
+}
+
+.choice-btn.selected {
+  background:
+    linear-gradient(
+      180deg,
+      rgba(231, 191, 117, 0.25),
+      rgba(50, 37, 18, 0.9)
+    );
+
+  border-color:
+    var(--gold);
+}
+
+.choice-btn.dimmed {
+  opacity: 0.45;
+}
+
+.puzzle-btn.completed {
+  border-color:
+    var(--blue);
+
+  color:
+    var(--blue-soft);
+
+  background:
+    rgba(18, 43, 58, 0.75);
+}
