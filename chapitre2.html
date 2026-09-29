@@ -1,1 +1,4552 @@
+<!DOCTYPE html>
+<html lang="fr">
 
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+  >
+
+  <meta name="theme-color" content="#050505">
+
+  <title>
+    Chapitre 2 — L’union fait la force | La Société de l'Ombre
+  </title>
+
+  <link
+    rel="stylesheet"
+    href="css/chapitre2.css"
+  >
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     BARRE DE PROGRESSION
+===================================================== -->
+
+<div class="progress-bar">
+  <div
+    class="progress-fill"
+    id="progressFill"
+  ></div>
+</div>
+
+
+<!-- =====================================================
+     COMMANDES
+===================================================== -->
+
+<div class="chapter-controls">
+
+  <button
+    class="control-btn"
+    id="menuBtn"
+    aria-label="Ouvrir le menu"
+  >
+    ☰
+  </button>
+
+  <button
+    class="control-btn"
+    id="soundBtn"
+    aria-label="Activer ou désactiver le son"
+  >
+    ♫
+  </button>
+
+</div>
+
+
+<main
+  class="chapter"
+  id="chapter"
+>
+
+
+<!-- =====================================================
+     VISUEL 1 — TITRE
+===================================================== -->
+
+<section
+  class="scene scene-cover"
+  id="scene-1"
+>
+
+  <div
+    class="visual full-visual"
+    data-visual="1"
+  >
+
+    <img
+      src="images/chapitre2/Visuel-1.PNG"
+      alt="Chapitre 2 — L’union fait la force"
+      loading="eager"
+      onerror="this.closest('.visual').classList.add('visual-missing')"
+    >
+
+  </div>
+
+  <div class="chapter-title-overlay">
+
+    <p class="chapter-number">
+      Chapitre 2
+    </p>
+
+    <h1>
+      L’union fait la force
+    </h1>
+
+    <button
+      class="continue-btn"
+      data-next
+    >
+      Continuer
+    </button>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     SÉQUENCE 1
+     LUCY DOUTE DE ROOT
+===================================================== -->
+
+<section
+  class="scene"
+  id="scene-2"
+>
+
+  <div class="location-card">
+
+    <strong>
+      États-Unis
+    </strong>
+
+    <span>
+      Los Angeles
+    </span>
+
+  </div>
+
+
+  <div
+    class="visual"
+    data-visual="2"
+  >
+
+    <img
+      src="images/chapitre2/Visuel-2.PNG"
+      alt="Lucy attend des nouvelles de Root"
+      loading="lazy"
+      onerror="this.closest('.visual').classList.add('visual-missing')"
+    >
+
+  </div>
+
+
+  <div class="text-block">
+
+    <p>
+      Lucy n’a toujours aucune nouvelle de Root.
+    </p>
+
+    <p>
+      Elle est étonnée.
+    </p>
+
+    <p>
+      Et, malgré le peu de temps depuis lequel elles se connaissent,
+      elle commence à s’inquiéter.
+    </p>
+
+    <p>
+      Root devait être rentrée depuis plusieurs jours.
+    </p>
+
+    <p>
+      Lucy décide finalement de lancer une recherche avec IA2.
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     VISUEL 3 — IA2
+===================================================== -->
+
+<section
+  class="scene investigation-scene"
+  id="scene-3"
+>
+
+  <div
+    class="visual"
+    data-visual="3"
+  >
+
+    <img
+      src="images/chapitre2/Visuel-3.PNG"
+      alt="IA2 compare les déplacements de Root et de la Tueuse Caméléon"
+      loading="lazy"
+      onerror="this.closest('.visual').classList.add('visual-missing')"
+    >
+
+  </div>
+
+
+  <div class="text-block">
+
+    <p>
+      Elle découvre rapidement que Root n’est toujours pas signalée
+      comme étant revenue sur le territoire américain.
+    </p>
+
+    <p>
+      Avec son métier, ses nombreux voyages n’ont rien d’anormal.
+    </p>
+
+    <p>
+      Mais IA2 relève quelque chose de beaucoup plus troublant.
+    </p>
+
+    <p class="impact-text">
+      Root était présente dans plusieurs des mêmes pays
+      que la Tueuse Caméléon.
+    </p>
+
+    <p class="emphasis">
+      Et durant les mêmes périodes.
+    </p>
+
+  </div>
+
+
+  <div
+    class="investigation-panel"
+    id="rootInvestigation"
+  >
+
+    <h2>
+      Analyse IA2
+    </h2>
+
+    <p>
+      Examiner les éléments relevés.
+    </p>
+
+
+    <div class="clue-grid">
+
+      <button
+        class="clue-btn"
+        data-root-clue="voyages"
+      >
+        Voyages communs
+      </button>
+
+      <button
+        class="clue-btn"
+        data-root-clue="combat"
+      >
+        Capacités de combat
+      </button>
+
+      <button
+        class="clue-btn"
+        data-root-clue="disparition"
+      >
+        Disparition
+      </button>
+
+      <button
+        class="clue-btn"
+        data-root-clue="profil"
+      >
+        Profil potentiel
+      </button>
+
+    </div>
+
+
+    <div
+      class="clue-result"
+      id="rootClueResult"
+    ></div>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     VISUEL 4 — DOUTE
+===================================================== -->
+
+<section
+  class="scene"
+  id="scene-4"
+>
+
+  <div
+    class="visual"
+    data-visual="4"
+  >
+
+    <img
+      src="images/chapitre2/Visuel-4.PNG"
+      alt="Lucy doute devant les données concernant Root"
+      loading="lazy"
+      onerror="this.closest('.visual').classList.add('visual-missing')"
+    >
+
+  </div>
+
+
+  <div class="text-block dialogue">
+
+    <p>
+      Lucy fixe les données quelques secondes.
+    </p>
+
+    <p>
+      — Ça commence à faire beaucoup de coïncidences.
+    </p>
+
+    <p>
+      Pourtant, son instinct lui souffle presque immédiatement
+      que quelque chose ne va pas dans cette hypothèse.
+    </p>
+
+    <p>
+      IA2 lui rappelle qu’un lien émotionnel s’est créé
+      entre elle et Root au cours de leur soirée au restaurant.
+    </p>
+
+    <p>
+      Cela peut fausser son jugement.
+    </p>
+
+    <p>
+      Lucy ne peut pas totalement le nier.
+    </p>
+
+    <p>
+      En très peu de temps,
+      elle s’est attachée à Root.
+    </p>
+
+    <p>
+      Sans réellement savoir pourquoi.
+    </p>
+
+    <p>
+      — Tu as raison.
+      Elle pourrait correspondre au profil de la femme que nous recherchons.
+    </p>
+
+    <p>
+      Elle secoue néanmoins la tête.
+    </p>
+
+    <p class="emphasis">
+      — Mais je n’y crois pas.
+      Quelque chose au fond de moi me dit que ce n’est pas elle.
+    </p>
+
+    <p>
+      IA2 lui rappelle que ces éléments peuvent n’être que des coïncidences.
+    </p>
+
+    <p>
+      Ou, au contraire,
+      constituer les premiers indices à charge contre Root.
+    </p>
+
+    <p>
+      — Si nous découvrons un lien sérieux,
+      tu devras la confronter.
+    </p>
+
+    <p>
+      — Je sais.
+      Et tu me connais suffisamment pour savoir
+      que je ne dérogerai pas à mon devoir.
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     VISUEL 5 — CLIVE AVOUe
+===================================================== -->
+
+<section
+  class="scene"
+  id="scene-5"
+>
+
+  <div
+    class="visual"
+    data-visual="5"
+  >
+
+    <img
+      src="images/chapitre2/Visuel-5.PNG"
+      alt="Clive avoue à Lucy avoir tenté de cambrioler Root"
+      loading="lazy"
+      onerror="this.closest('.visual').classList.add('visual-missing')"
+    >
+
+  </div>
+
+
+  <div class="text-block dialogue">
+
+    <p>
+      Lucy décide de creuser davantage.
+    </p>
+
+    <p>
+      Elle veut tout savoir sur Root Tempass.
+    </p>
+
+    <p>
+      Et pour cela,
+      elle demande l’aide de Clive.
+    </p>
+
+    <p>
+      Celui-ci se montre étrangement hésitant.
+    </p>
+
+    <p>
+      — Il y a quelque chose que je ne t’ai jamais raconté.
+    </p>
+
+    <p>
+      — Je sens que ça va me plaire.
+    </p>
+
+    <p>
+      Clive esquisse un sourire embarrassé.
+    </p>
+
+    <p>
+      — J’ai essayé de cambrioler l’hacienda de Root.
+    </p>
+
+    <p>
+      Lucy le fixe.
+    </p>
+
+    <p class="impact-text">
+      — Pardon ?
+    </p>
+
+    <p>
+      — Et son musée.
+    </p>
+
+    <p>
+      — Clive…
+    </p>
+
+    <p>
+      — Plusieurs fois.
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     VISUEL 6 — CLIVE CHEZ ROOT
+===================================================== -->
+
+<section
+  class="scene flashback-scene"
+  id="scene-6"
+>
+
+  <div
+    class="visual"
+    data-visual="6"
+  >
+
+    <img
+      src="images/chapitre2/Visuel-6.PNG"
+      alt="Clive tente de pénétrer dans la propriété de Root"
+      loading="lazy"
+      onerror="this.closest('.visual').classList.add('visual-missing')"
+    >
+
+  </div>
+
+
+  <div class="text-block dialogue">
+
+    <p>
+      — Et ?
+    </p>
+
+    <p>
+      Clive soupire.
+    </p>
+
+    <p class="emphasis">
+      — Je n’ai jamais réussi à lui voler quoi que ce soit.
+    </p>
+
+    <p>
+      Lucy éclate presque de rire.
+    </p>
+
+    <p>
+      — Le Magicien n’a pas réussi à cambrioler une archéologue ?
+    </p>
+
+    <p>
+      — Tu peux te moquer si tu veux,
+      mais j’arrive à peine à pénétrer dans ses propriétés.
+    </p>
+
+    <p>
+      Dès que je suis à l’intérieur,
+      je suis détecté et littéralement reconduit vers la sortie.
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     VISUEL 7 — SÉCURITÉ
+===================================================== -->
+
+<section
+  class="scene"
+  id="scene-7"
+>
+
+  <div
+    class="visual"
+    data-visual="7"
+  >
+
+    <img
+      src="images/chapitre2/Visuel-7.PNG"
+      alt="Le système de sécurité de Root piège Clive"
+      loading="lazy"
+      onerror="this.closest('.visual').classList.add('visual-missing')"
+    >
+
+  </div>
+
+
+  <div class="text-block dialogue">
+
+    <p>
+      — Elle a des gardes ?
+    </p>
+
+    <p>
+      — Non.
+    </p>
+
+    <p>
+      — Une équipe de sécurité privée ?
+    </p>
+
+    <p>
+      — Pas vraiment.
+    </p>
+
+    <p>
+      Clive devient beaucoup plus sérieux.
+    </p>
+
+    <p>
+      — Ton amie Root possède le système de sécurité
+      le plus sophistiqué que j’aie jamais rencontré.
+    </p>
+
+    <p>
+      — À ce point-là ?
+    </p>
+
+    <p>
+      — À ce point-là.
+    </p>
+
+    <p>
+      Il utilise des sortes de drones miniatures.
+    </p>
+
+    <p>
+      Ils me tendent des pièges,
+      me filment,
+      anticipent mes déplacements
+      et me poussent exactement là où ils veulent que j’aille.
+    </p>
+
+    <p>
+      — Tu veux dire qu’il apprend de tes réactions ?
+    </p>
+
+    <p>
+      — Exactement.
+    </p>
+
+    <p>
+      À chacune de mes tentatives,
+      le système était différent.
+    </p>
+
+    <p>
+      Plus efficace.
+      Plus adapté à ma manière d’agir.
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     VISUEL 8 — ÉCHEC ET MAT
+===================================================== -->
+
+<section
+  class="scene"
+  id="scene-8"
+>
+
+  <div
+    class="visual"
+    data-visual="8"
+  >
+
+    <img
+      src="images/chapitre2/Visuel-8.PNG"
+      alt="Clive comprend que le système de Root l'a mis échec et mat"
+      loading="lazy"
+      onerror="this.closest('.visual').classList.add('visual-missing')"
+    >
+
+  </div>
+
+
+  <div class="text-block dialogue">
+
+    <p>
+      — Lors de ma dernière tentative,
+      le message était parfaitement clair :
+    </p>
+
+    <p class="impact-text">
+      échec et mat.
+    </p>
+
+    <p>
+      Lucy sourit.
+    </p>
+
+    <p>
+      — Tu dramatises.
+    </p>
+
+    <p>
+      — Pas cette fois.
+    </p>
+
+    <p>
+      J’ai compris qu’il me laissait encore repartir,
+      mais que je ne devais plus revenir.
+    </p>
+
+    <p>
+      — Et tu as obéi ?
+    </p>
+
+    <p>
+      — Oui.
+    </p>
+
+    <p>
+      Lucy le dévisage.
+    </p>
+
+    <p>
+      — Là, tu commences vraiment à m’inquiéter.
+    </p>
+
+    <p>
+      — Moi aussi, ça m’a inquiété.
+    </p>
+
+    <p>
+      Lucy réfléchit.
+    </p>
+
+    <p>
+      Si elle veut comprendre Root,
+      elle va devoir se rapprocher d’elle.
+    </p>
+
+    <p>
+      Entrer dans son quotidien.
+    </p>
+
+    <p>
+      Comprendre son environnement.
+    </p>
+
+    <p>
+      Sa vie.
+    </p>
+
+    <p>
+      Et surtout…
+    </p>
+
+    <p class="emphasis">
+      retrouver Root.
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     SÉQUENCE 2 — VIETNAM
+===================================================== -->
+
+<section
+  class="scene"
+  id="scene-9"
+>
+
+  <div class="location-card">
+
+    <strong>
+      Vietnam
+    </strong>
+
+    <span>
+      Aéroport de Đồng Hới
+    </span>
+
+  </div>
+
+
+  <div
+    class="visual"
+    data-visual="9"
+  >
+
+    <img
+      src="images/chapitre2/Visuel-9.PNG"
+      alt="Root arrive au Vietnam"
+      loading="lazy"
+      onerror="this.closest('.visual').classList.add('visual-missing')"
+    >
+
+  </div>
+
+
+  <div class="text-block">
+
+    <p>
+      Une fois arrivée à l’aéroport de Đồng Hới,
+      à une cinquantaine de kilomètres de sa destination finale,
+      Root s’assure immédiatement qu’elle n’a pas été suivie.
+    </p>
+
+    <p>
+      Puis elle se met en route sans perdre de temps.
+    </p>
+
+    <p>
+      Sa mission est claire :
+    </p>
+
+    <p class="impact-text">
+      retrouver la boîte de Pandore.
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- VISUEL 10 -->
+
+<section class="scene" id="scene-10">
+
+  <div class="visual" data-visual="10">
+
+    <img
+      src="images/chapitre2/Visuel-10.PNG"
+      alt="Root traverse la jungle vietnamienne"
+      loading="lazy"
+      onerror="this.closest('.visual').classList.add('visual-missing')"
+    >
+
+  </div>
+
+
+  <div class="text-block">
+
+    <p>
+      Root est historienne,
+      archéologue et aventurière.
+    </p>
+
+    <p>
+      Une sorte d’Indiana Jones ou de Lara Croft des temps modernes.
+    </p>
+
+    <p>
+      Grâce à Peter,
+      elle dispose également des technologies les plus avancées
+      dont elle pourrait avoir besoin sur le terrain.
+    </p>
+
+    <p>
+      Elle suit scrupuleusement les indications de Hope.
+    </p>
+
+    <p>
+      Après avoir traversé une forêt dense
+      et plusieurs cours d’eau,
+      elle approche enfin de l’entrée secrète de la grotte.
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- VISUEL 11 -->
+
+<section class="scene danger-scene" id="scene-11">
+
+  <div class="visual" data-visual="11">
+
+    <img
+      src="images/chapitre2/Visuel-11.PNG"
+      alt="Root sent qu'une présence l'observe"
+      loading="lazy"
+      onerror="this.closest('.visual').classList.add('visual-missing')"
+    >
+
+  </div>
+
+
+  <div class="text-block">
+
+    <p>
+      Mais quelque chose la dérange.
+    </p>
+
+    <p>
+      Depuis un moment,
+      elle ressent une présence.
+    </p>
+
+    <p>
+      Malgré toutes les précautions prises,
+      Root sait qu’elle n’est pas seule.
+    </p>
+
+    <p class="emphasis">
+      Elle se sent observée.
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- VISUEL 12 -->
+
+<section class="scene" id="scene-12">
+
+  <div class="visual" data-visual="12">
+
+    <img
+      src="images/chapitre2/Visuel-12.PNG"
+      alt="Les drones de Root ne détectent aucune présence"
+      loading="lazy"
+      onerror="this.closest('.visual').classList.add('visual-missing')"
+    >
+
+  </div>
+
+
+  <div class="text-block">
+
+    <p>
+      Elle déploie un drone miniature.
+    </p>
+
+    <p>
+      Vision thermique.
+    </p>
+
+    <p>
+      Détection électromagnétique.
+    </p>
+
+    <p>
+      Analyse des mouvements.
+    </p>
+
+    <p class="impact-text">
+      Rien.
+    </p>
+
+    <p>
+      Root observe les données quelques secondes.
+    </p>
+
+    <p>
+      Puis elle comprend.
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- VISUEL 13 -->
+
+<section class="scene shadow-scene" id="scene-13">
+
+  <div class="visual" data-visual="13">
+
+    <img
+      src="images/chapitre2/Visuel-13.PNG"
+      alt="Amy, le Fantôme de l'Ombre, observe Root"
+      loading="lazy"
+      onerror="this.closest('.visual').classList.add('visual-missing')"
+    >
+
+  </div>
+
+
+  <div class="text-block">
+
+    <p>
+      Si son instinct lui affirme que quelqu’un est là
+      alors que les appareils de Peter ne détectent absolument rien,
+      il n’existe qu’une possibilité réellement inquiétante.
+    </p>
+
+    <p class="impact-text">
+      Le Fantôme de l’Ombre.
+    </p>
+
+    <p class="emphasis">
+      Amy.
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- VISUEL 14 -->
+
+<section class="scene" id="scene-14">
+
+  <div class="visual" data-visual="14">
+
+    <img
+      src="images/chapitre2/Visuel-14.PNG"
+      alt="Root crée de fausses pistes"
+      loading="lazy"
+      onerror="this.closest('.visual').classList.add('visual-missing')"
+    >
+
+  </div>
+
+
+  <div class="text-block">
+
+    <p>
+      Root décide d’utiliser l’une des techniques
+      que Hope lui a enseignées.
+    </p>
+
+    <p>
+      Elle n’a pas besoin de semer Amy définitivement.
+    </p>
+
+    <p>
+      Il lui suffit de gagner du temps.
+    </p>
+
+    <p>
+      Root modifie plusieurs fois son itinéraire,
+      disparaît volontairement de certaines zones de visibilité,
+      efface certaines traces
+      et en crée de fausses.
+    </p>
+
+    <p>
+      Commence alors un étrange jeu de pistes.
+    </p>
+
+    <p>
+      Root contre un adversaire
+      qu’elle ne voit jamais.
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- VISUEL 15 -->
+
+<section class="scene" id="scene-15">
+
+  <div class="visual" data-visual="15">
+
+    <img
+      src="images/chapitre2/Visuel-15.PNG"
+      alt="Root atteint l'entrée secrète de Sơn Đoòng"
+      loading="lazy"
+      onerror="this.closest('.visual').classList.add('visual-missing')"
+    >
+
+  </div>
+
+
+  <div class="text-block">
+
+    <p>
+      Plusieurs jours s’écoulent.
+    </p>
+
+    <p>
+      Root avance,
+      détourne son trajet,
+      revient sur ses pas,
+      brouille sa progression.
+    </p>
+
+    <p>
+      Finalement,
+      une astuce enseignée par Hope porte ses fruits.
+    </p>
+
+    <p>
+      Root obtient quelques heures d’avance.
+    </p>
+
+    <p>
+      Peut-être moins.
+    </p>
+
+    <p class="emphasis">
+      Cela suffira.
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- VISUEL 16 -->
+
+<section class="scene cave-scene" id="scene-16">
+
+  <div class="visual" data-visual="16">
+
+    <img
+      src="images/chapitre2/Visuel-16.PNG"
+      alt="Root explore l'immense grotte de Sơn Đoòng avec ses drones"
+      loading="lazy"
+      onerror="this.closest('.visual').classList.add('visual-missing')"
+    >
+
+  </div>
+
+
+  <div class="text-block dialogue">
+
+    <p>
+      Root pénètre dans la grotte
+      et s’enfonce dans son immensité.
+    </p>
+
+    <p>
+      Plusieurs mini-drones la précèdent.
+    </p>
+
+    <p>
+      D’autres restent volontairement en retrait.
+    </p>
+
+    <p>
+      Grâce à ses lunettes infrarouges
+      et à la cartographie des drones,
+      elle progresse rapidement.
+    </p>
+
+    <p>
+      — Très bien…
+    </p>
+
+    <p>
+      Comment suis-je censée retrouver
+      une boîte à peine plus grosse que ma main
+      dans une grotte qui s’étend sur des kilomètres ?
+    </p>
+
+    <p>
+      — Hope…
+      dans quoi m’as-tu encore embarquée ?
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     VISUEL 17 — CASCADE
+===================================================== -->
+
+<section class="scene cave-scene" id="scene-17">
+
+  <div class="visual" data-visual="17">
+
+    <img
+      src="images/chapitre2/Visuel-17.PNG"
+      alt="La Cascade des Secrets Enfouis"
+      loading="lazy"
+      onerror="this.closest('.visual').classList.add('visual-missing')"
+    >
+
+  </div>
+
+
+  <div class="text-block">
+
+    <p>
+      Puis elle atteint enfin ce que les indications de Hope appellent :
+    </p>
+
+    <p class="impact-text">
+      la Cascade des Secrets Enfouis.
+    </p>
+
+    <p>
+      Lorsqu’elle la découvre,
+      Root s’immobilise.
+    </p>
+
+    <p>
+      La chute d’eau produit une musique douce et presque irréelle.
+    </p>
+
+    <p>
+      À ses pieds,
+      plusieurs vasques naturelles prennent des nuances
+      turquoise et émeraude.
+    </p>
+
+    <p>
+      Stalactites et stalagmites scintillent
+      sous les rares rayons de lumière.
+    </p>
+
+    <p>
+      Un fin brouillard flotte dans l’air.
+    </p>
+
+  </div>
+
+
+  <div
+    class="cave-observation"
+    id="caveObservation"
+  >
+
+    <h2>
+      Observer autrement
+    </h2>
+
+    <p>
+      Que doit écouter Root ?
+    </p>
+
+
+    <div class="observation-grid">
+
+      <button
+        class="observation-btn"
+        data-cave-observation="eau"
+      >
+        L’eau
+      </button>
+
+      <button
+        class="observation-btn"
+        data-cave-observation="roche"
+      >
+        La roche
+      </button>
+
+      <button
+        class="observation-btn"
+        data-cave-observation="son"
+      >
+        Le son
+      </button>
+
+      <button
+        class="observation-btn"
+        data-cave-observation="lumiere"
+      >
+        La lumière
+      </button>
+
+    </div>
+
+
+    <div
+      class="observation-result"
+      id="caveObservationResult"
+    ></div>
+
+  </div>
+
+</section>
+
+
+<!-- VISUEL 18 -->
+
+<section class="scene philosophy-scene" id="scene-18">
+
+  <div class="visual" data-visual="18">
+
+    <img
+      src="images/chapitre2/Visuel-18.PNG"
+      alt="Root médite derrière la cascade"
+      loading="lazy"
+      onerror="this.closest('.visual').classList.add('visual-missing')"
+    >
+
+  </div>
+
+
+  <div class="text-block">
+
+    <p>
+      Root trouve un passage derrière la cascade.
+    </p>
+
+    <p>
+      Elle s’assoit en tailleur.
+    </p>
+
+    <p>
+      Ferme les yeux.
+    </p>
+
+    <p>
+      Respire.
+    </p>
+
+    <p>
+      Progressivement,
+      le bruit de la cascade semble disparaître.
+    </p>
+
+    <p>
+      Ou plutôt se transformer.
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- VISUEL 19 -->
+
+<section class="scene philosophy-scene" id="scene-19">
+
+  <div class="visual" data-visual="19">
+
+    <img
+      src="images/chapitre2/Visuel-19.PNG"
+      alt="Root ressent la grotte et la présence de Hope"
+      loading="lazy"
+      onerror="this.closest('.visual').classList.add('visual-missing')"
+    >
+
+  </div>
+
+
+  <div class="text-block dialogue">
+
+    <p>
+      Une présence familière.
+    </p>
+
+    <p>
+      La sensation que Hope se trouve tout près d’elle.
+    </p>
+
+    <p>
+      Puis une voix semble naître à l’intérieur de son esprit.
+    </p>
+
+    <p>
+      — Tu y es.
+    </p>
+
+    <p>
+      Maintenant,
+      laisse-toi aller.
+    </p>
+
+    <p>
+      Ressens.
+      Écoute tout ce qui t’entoure.
+    </p>
+
+    <p>
+      Ne cherche pas seulement à observer la grotte.
+    </p>
+
+    <p class="emphasis">
+      Fais corps avec elle.
+    </p>
+
+    <p>
+      Écoute-la.
+    </p>
+
+    <p>
+      Et elle t’indiquera où se trouve la boîte.
+    </p>
+
+    <p>
+      — Tu descends directement des Parques.
+    </p>
+
+    <p>
+      Tu portes en toi une part de la mémoire
+      des générations qui t’ont précédée.
+    </p>
+
+    <p>
+      Ne lutte pas contre elle.
+    </p>
+
+    <p>
+      Unis-toi à ce qui t’entoure.
+    </p>
+
+    <p>
+      Et laisse venir les réponses.
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- VISUEL 20 -->
+
+<section class="scene secret-scene" id="scene-20">
+
+  <div class="visual" data-visual="20">
+
+    <img
+      src="images/chapitre2/Visuel-20.PNG"
+      alt="Root découvre la boîte de Pandore dans une cavité"
+      loading="lazy"
+      onerror="this.closest('.visual').classList.add('visual-missing')"
+    >
+
+  </div>
+
+
+  <div class="text-block">
+
+    <p>
+      Lorsqu’elle ouvre finalement les yeux,
+      quelque chose semble avoir changé.
+    </p>
+
+    <p>
+      Sans hésitation,
+      Root se dirige vers la gauche de la cascade.
+    </p>
+
+    <p>
+      Ses doigts rencontrent une cavité.
+    </p>
+
+    <p>
+      Elle y glisse la main.
+    </p>
+
+    <p>
+      Et en retire une petite boîte.
+    </p>
+
+    <p class="impact-text">
+      La boîte de Pandore.
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- VISUEL 21 -->
+
+<section class="scene secret-scene" id="scene-21">
+
+  <div class="visual" data-visual="21">
+
+    <img
+      src="images/chapitre2/Visuel-21.PNG"
+      alt="La boîte se désagrège contre le cœur de Root"
+      loading="lazy"
+      onerror="this.closest('.visual').classList.add('visual-missing')"
+    >
+
+  </div>
+
+
+  <div class="text-block">
+
+    <p>
+      Malgré son apparence,
+      l’objet est d’une légèreté presque impossible.
+    </p>
+
+    <p>
+      Root ressent soudain une envie irrépressible.
+    </p>
+
+    <p>
+      Comme si quelque chose lui demandait
+      de rapprocher la boîte de son cœur.
+    </p>
+
+    <p>
+      Root hésite.
+    </p>
+
+    <p>
+      Puis la pose directement contre sa peau.
+    </p>
+
+    <p class="impact-text">
+      Au premier contact…
+    </p>
+
+    <p>
+      la boîte se désagrège.
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- VISUEL 22 -->
+
+<section class="scene revelation-scene" id="scene-22">
+
+  <div class="visual" data-visual="22">
+
+    <img
+      src="images/chapitre2/Visuel-22.PNG"
+      alt="Le tatouage de la cascade apparaît sur Root"
+      loading="lazy"
+      onerror="this.closest('.visual').classList.add('visual-missing')"
+    >
+
+  </div>
+
+
+  <div class="text-block">
+
+    <p>
+      À sa place apparaît progressivement une marque.
+    </p>
+
+    <p class="impact-text">
+      Une cascade.
+    </p>
+
+    <p>
+      Un tatouage aux couleurs éclatantes,
+      presque irréelles,
+      dans lequel semblent avoir été intégrés
+      les symboles qui recouvraient autrefois chacune des faces de la boîte.
+    </p>
+
+    <p>
+      Root passe doucement ses doigts dessus.
+    </p>
+
+    <p>
+      Une sensation de bonheur intense l’envahit.
+    </p>
+
+    <p>
+      Mais également autre chose.
+    </p>
+
+    <p>
+      Des connaissances.
+    </p>
+
+    <p>
+      Des impressions.
+    </p>
+
+    <p>
+      Des souvenirs qu’elle ne reconnaît pas.
+    </p>
+
+    <p class="emphasis">
+      Un savoir immense dont elle ignore encore comment se servir.
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- VISUEL 23 -->
+
+<section class="scene danger-scene" id="scene-23">
+
+  <div class="visual" data-visual="23">
+
+    <img
+      src="images/chapitre2/Visuel-23.PNG"
+      alt="Root s'échappe par une rivière souterraine"
+      loading="lazy"
+      onerror="this.closest('.visual').classList.add('visual-missing')"
+    >
+
+  </div>
+
+
+  <div class="text-block dialogue">
+
+    <p>
+      Soudain,
+      l’un de ses drones l’alerte.
+    </p>
+
+    <p>
+      Quelqu’un approche.
+    </p>
+
+    <p class="emphasis">
+      Amy.
+    </p>
+
+    <p>
+      Impossible de ressortir par le même chemin.
+    </p>
+
+    <p>
+      Root s’enfonce davantage dans la roche
+      et atteint une rivière souterraine.
+    </p>
+
+    <p>
+      Le courant forme une sorte de gigantesque toboggan naturel.
+    </p>
+
+    <p>
+      — Évidemment.
+    </p>
+
+    <p>
+      — Pourquoi prendre une sortie normale ?
+    </p>
+
+    <p>
+      Root se laisse glisser dans le courant.
+    </p>
+
+    <p>
+      Plusieurs minutes plus tard,
+      la lumière réapparaît.
+    </p>
+
+    <p>
+      Le courant la projette dans une rivière
+      située à plusieurs kilomètres de la grotte.
+    </p>
+
+    <p>
+      La boîte de Pandore n’existe plus.
+    </p>
+
+    <p>
+      Du moins…
+    </p>
+
+    <p class="impact-text">
+      plus sous la forme d’une boîte.
+    </p>
+
+    <p>
+      Direction le Mexique.
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     SÉQUENCE 3 — MEXIQUE
+===================================================== -->
+
+<section class="scene" id="scene-24">
+
+  <div class="location-card">
+
+    <strong>
+      Mexique
+    </strong>
+
+    <span>
+      Un peu plus de trois semaines plus tard
+    </span>
+
+  </div>
+
+
+  <div class="visual" data-visual="24">
+
+    <img
+      src="images/chapitre2/Visuel-24.PNG"
+      alt="Nouvelle hacienda Awake et restaurant"
+      loading="lazy"
+      onerror="this.closest('.visual').classList.add('visual-missing')"
+    >
+
+  </div>
+
+
+  <div class="text-block">
+
+    <p>
+      Hope a enterré son frère, Ted.
+    </p>
+
+    <p>
+      Elle est désormais la dernière représentante
+      de la famille Awake par le sang.
+    </p>
+
+    <p>
+      Elle a vendu l’emplacement de l’ancien restaurant
+      et transformé une grande partie de l’hacienda
+      en restaurant français haut de gamme.
+    </p>
+
+    <p>
+      Grâce aux nouvelles technologies de Peter,
+      elle a également entièrement repensé la sécurité.
+    </p>
+
+    <p>
+      Extérieur.
+      Intérieur.
+      Accès.
+      Surveillance.
+    </p>
+
+    <p class="emphasis">
+      Tout est sous contrôle.
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- VISUEL 25 -->
+
+<section class="scene" id="scene-25">
+
+  <div class="visual" data-visual="25">
+
+    <img
+      src="images/chapitre2/Visuel-25.PNG"
+      alt="Anna traverse le Parc des Délires avec ses gardes"
+      loading="lazy"
+      onerror="this.closest('.visual').classList.add('visual-missing')"
+    >
+
+  </div>
+
+
+  <div class="text-block">
+
+    <p>
+      Betty et Anna vivent à seulement quelques kilomètres.
+    </p>
+
+    <p>
+      Ce jour-là,
+      Anna est en route pour rejoindre un petit groupe d’amis.
+    </p>
+
+    <p>
+      Elle traverse le Parc des Délires,
+      suivie de très près par ses gardes du corps.
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- VISUEL 26 -->
+
+<section class="scene danger-scene" id="scene-26">
+
+  <div class="visual" data-visual="26">
+
+    <img
+      src="images/chapitre2/Visuel-26.PNG"
+      alt="Tentative d'enlèvement d'Anna"
+      loading="lazy"
+      onerror="this.closest('.visual').classList.add('visual-missing')"
+    >
+
+  </div>
+
+
+  <div class="text-block">
+
+    <p>
+      Soudain,
+      plusieurs hommes surgissent.
+    </p>
+
+    <p>
+      Tout va très vite.
+    </p>
+
+    <p class="impact-text">
+      Ils veulent enlever Anna.
+    </p>
+
+    <p>
+      Ses gardes interviennent immédiatement.
+    </p>
+
+    <p>
+      Mais les assaillants sont trop nombreux.
+    </p>
+
+    <p>
+      Trop organisés.
+    </p>
+
+    <p>
+      Chaque mouvement semble avoir été anticipé.
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- VISUEL 27 -->
+
+<section class="scene danger-scene" id="scene-27">
+
+  <div class="visual" data-visual="27">
+
+    <img
+      src="images/chapitre2/Visuel-27.PNG"
+      alt="Hope intervient pour sauver Anna"
+      loading="lazy"
+      onerror="this.closest('.visual').classList.add('visual-missing')"
+    >
+
+  </div>
+
+
+  <div class="text-block">
+
+    <p>
+      Un à un,
+      les gardes du corps tombent.
+    </p>
+
+    <p>
+      Plusieurs hommes maîtrisent Anna
+      et l’entraînent vers un véhicule.
+    </p>
+
+    <p>
+      Puis, soudain…
+    </p>
+
+    <p class="impact-text">
+      une femme surgit.
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- VISUEL 28 -->
+
+<section class="scene" id="scene-28">
+
+  <div class="visual" data-visual="28">
+
+    <img
+      src="images/chapitre2/Visuel-28.PNG"
+      alt="Hope neutralise les ravisseurs d'Anna"
+      loading="lazy"
+      onerror="this.closest('.visual').classList.add('visual-missing')"
+    >
+
+  </div>
+
+
+  <div class="text-block">
+
+    <p>
+      Quelques secondes suffisent.
+    </p>
+
+    <p>
+      Les gestes de Hope sont d’une précision stupéfiante.
+    </p>
+
+    <p>
+      Rapides.
+    </p>
+
+    <p>
+      Fluides.
+    </p>
+
+    <p>
+      Presque impossibles à suivre.
+    </p>
+
+    <p>
+      Les assaillants tombent les uns après les autres.
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- VISUEL 29 -->
+
+<section class="scene" id="scene-29">
+
+  <div class="visual" data-visual="29">
+
+    <img
+      src="images/chapitre2/Visuel-29.PNG"
+      alt="Hope ramène Anna auprès de Hale"
+      loading="lazy"
+      onerror="this.closest('.visual').classList.add('visual-missing')"
+    >
+
+  </div>
+
+
+  <div class="text-block dialogue">
+
+    <p>
+      Hope attrape la main d’Anna
+      et la ramène auprès du seul garde encore conscient.
+    </p>
+
+    <p>
+      — Ça va aller maintenant.
+      C’est terminé.
+      Vous ne risquez plus rien.
+    </p>
+
+    <p>
+      Hale traduit immédiatement en espagnol.
+    </p>
+
+    <p>
+      Puis son regard rencontre celui de Hope.
+    </p>
+
+    <p>
+      Quelque chose change.
+    </p>
+
+    <p>
+      Il incline discrètement la tête.
+    </p>
+
+    <p class="emphasis">
+      Un salut presque imperceptible.
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- VISUEL 30 -->
+
+<section class="scene revelation-scene" id="scene-30">
+
+  <div class="visual" data-visual="30">
+
+    <img
+      src="images/chapitre2/Visuel-30.PNG"
+      alt="La marque des Sentinelles apparaît sur le poignet de Hale"
+      loading="lazy"
+      onerror="this.closest('.visual').classList.add('visual-missing')"
+    >
+
+  </div>
+
+
+  <div class="text-block dialogue">
+
+    <p>
+      Hope saisit l’avant-bras droit de Hale
+      pour l’aider à se relever.
+    </p>
+
+    <p>
+      Sa main glisse lentement jusqu’à son poignet.
+    </p>
+
+    <p class="impact-text">
+      Une marque apparaît.
+    </p>
+
+    <p>
+      Un tatouage thermosensible.
+    </p>
+
+    <p>
+      La marque des Sentinelles de la Lumière.
+    </p>
+
+    <p>
+      Anna comprend parfaitement
+      qu’il se passe quelque chose.
+    </p>
+
+    <p>
+      Mais elle ignore totalement quoi.
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- VISUEL 31 -->
+
+<section class="scene" id="scene-31">
+
+  <div class="visual" data-visual="31">
+
+    <img
+      src="images/chapitre2/Visuel-31.PNG"
+      alt="Hope s'éloigne après avoir reconnu Hale comme Sentinelle"
+      loading="lazy"
+      onerror="this.closest('.visual').classList.add('visual-missing')"
+    >
+
+  </div>
+
+
+  <div class="text-block dialogue">
+
+    <p>
+      — Comment vous appelez-vous ?
+    </p>
+
+    <p>
+      Hope lui répond directement en espagnol :
+    </p>
+
+    <p>
+      — Je m’appelle Hope.
+    </p>
+
+    <p>
+      Puis elle se tourne vers Hale.
+    </p>
+
+    <p class="emphasis">
+      — Prenez bien soin d’elle, Sentinelle.
+    </p>
+
+    <p>
+      Hale se fige.
+    </p>
+
+    <p>
+      — Le temps est devenu précieux.
+    </p>
+
+    <p>
+      À partir de maintenant,
+      il nous est compté.
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- VISUEL 32 -->
+
+<section class="scene" id="scene-32">
+
+  <div class="visual" data-visual="32">
+
+    <img
+      src="images/chapitre2/Visuel-32.PNG"
+      alt="Betty retrouve Anna après la tentative d'enlèvement"
+      loading="lazy"
+      onerror="this.closest('.visual').classList.add('visual-missing')"
+    >
+
+  </div>
+
+
+  <div class="text-block">
+
+    <p>
+      Betty abandonne immédiatement son travail
+      et se précipite auprès de sa fille.
+    </p>
+
+    <p>
+      Anna raconte tout.
+    </p>
+
+    <p>
+      Une inconnue.
+    </p>
+
+    <p>
+      Une Française.
+    </p>
+
+    <p>
+      Capable de neutraliser presque seule
+      tout un groupe d’hommes.
+    </p>
+
+    <p>
+      Betty et Anna arrivent rapidement
+      à la même conclusion :
+    </p>
+
+    <p class="emphasis">
+      elles veulent savoir qui est Hope.
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- VISUEL 33 -->
+
+<section class="scene" id="scene-33">
+
+  <div class="visual" data-visual="33">
+
+    <img
+      src="images/chapitre2/Visuel-33.PNG"
+      alt="Betty appelle Lucy depuis son hacienda"
+      loading="lazy"
+      onerror="this.closest('.visual').classList.add('visual-missing')"
+    >
+
+  </div>
+
+
+  <div class="text-block dialogue">
+
+    <p>
+      Quelques jours plus tard,
+      une invitation arrive à l’hacienda.
+    </p>
+
+    <p>
+      Inauguration d’un nouveau restaurant français haut de gamme.
+    </p>
+
+    <p>
+      Anna est certaine qu’il appartient à Hope.
+    </p>
+
+    <p>
+      Betty, elle, n’aime pas les coïncidences.
+    </p>
+
+    <p>
+      Une tentative d’enlèvement.
+    </p>
+
+    <p>
+      Une inconnue surgissant exactement au bon moment.
+    </p>
+
+    <p>
+      Puis cette invitation.
+    </p>
+
+    <p>
+      Betty se sert un verre de vin.
+    </p>
+
+    <p>
+      Et appelle Lucy.
+    </p>
+
+    <p>
+      — Quelqu’un a essayé d’enlever Anna.
+    </p>
+
+    <p>
+      Un silence.
+    </p>
+
+    <p>
+      — Quoi ?
+    </p>
+
+    <p>
+      — Elle va bien.
+    </p>
+
+    <p>
+      Mais j’ai besoin de savoir à qui j’ai affaire.
+    </p>
+
+    <p>
+      Je veux que tu te renseignes
+      sur une Française qui vient de reprendre l’hacienda Awake.
+    </p>
+
+    <p>
+      — Son nom ?
+    </p>
+
+    <p class="impact-text">
+      — Hope.
+    </p>
+
+    <p>
+      Quelques minutes plus tard,
+      Lucy accepte de venir au Mexique.
+    </p>
+
+    <p>
+      Elle restera auprès d’Anna
+      jusqu’à ce qu’elles comprennent
+      qui a tenté de l’enlever.
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     SÉQUENCE 4 — CONVERGENCE
+===================================================== -->
+
+<section class="scene" id="scene-34">
+
+  <div class="location-card">
+
+    <strong>
+      France
+    </strong>
+
+  </div>
+
+
+  <div class="visual" data-visual="34">
+
+    <img
+      src="images/chapitre2/Visuel-34.PNG"
+      alt="Peter travaille dans son laboratoire"
+      loading="lazy"
+      onerror="this.closest('.visual').classList.add('visual-missing')"
+    >
+
+  </div>
+
+
+  <div class="text-block">
+
+    <p>
+      Peter travaille sur une nouvelle invention.
+    </p>
+
+    <p>
+      Depuis quelque temps,
+      presque toutes ses innovations poursuivent le même objectif :
+    </p>
+
+    <p>
+      protéger,
+      dissuader
+      et neutraliser lorsque cela devient nécessaire.
+    </p>
+
+    <p>
+      Root et Hope sont souvent
+      les premières à tester ses créations.
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- VISUEL 35 -->
+
+<section class="scene" id="scene-35">
+
+  <div class="visual" data-visual="35">
+
+    <img
+      src="images/chapitre2/Visuel-35.PNG"
+      alt="Max monte son reportage"
+      loading="lazy"
+      onerror="this.closest('.visual').classList.add('visual-missing')"
+    >
+
+  </div>
+
+
+  <div class="text-block">
+
+    <p>
+      Max vient d’achever plusieurs semaines d’enquête.
+    </p>
+
+    <p>
+      Son sujet :
+      certains réseaux discrets qui tentent d’influencer
+      des événements, des opinions et des décisions
+      pour défendre leurs propres intérêts.
+    </p>
+
+    <p>
+      Max dispose de documents,
+      de transactions
+      et de témoignages.
+    </p>
+
+    <p>
+      Mais il ignore encore jusqu’où s’étend réellement ce système.
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- VISUEL 36 -->
+
+<section class="scene philosophy-scene" id="scene-36">
+
+  <div class="visual" data-visual="36">
+
+    <img
+      src="images/chapitre2/Visuel-36.PNG"
+      alt="Max décide quelles informations publier"
+      loading="lazy"
+      onerror="this.closest('.visual').classList.add('visual-missing')"
+    >
+
+  </div>
+
+
+  <div class="text-block">
+
+    <p>
+      Pour la première fois depuis longtemps,
+      Max hésite devant une vérité.
+    </p>
+
+    <p>
+      Pas parce qu’il doute de ses preuves.
+    </p>
+
+    <p>
+      Mais parce qu’il doute de ce qu’elles pourraient provoquer.
+    </p>
+
+    <p class="emphasis">
+      Les faits et rien que les faits.
+    </p>
+
+    <p>
+      Mais existe-t-il des vérités
+      que l’on ne peut pas jeter brutalement au visage du monde ?
+    </p>
+
+    <p>
+      Max décide de montrer les faits établis.
+    </p>
+
+    <p>
+      Les connexions vérifiables.
+    </p>
+
+    <p>
+      Les contradictions.
+    </p>
+
+    <p>
+      Les zones d’ombre.
+    </p>
+
+    <p>
+      Mais pas toutes ses conclusions.
+    </p>
+
+    <p>
+      Il laisse au spectateur
+      la possibilité de construire les siennes.
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- VISUEL 37 -->
+
+<section class="scene" id="scene-37">
+
+  <div class="visual" data-visual="37">
+
+    <img
+      src="images/chapitre2/Visuel-37.PNG"
+      alt="Max prépare son enquête sur Élie Santalucibel"
+      loading="lazy"
+      onerror="this.closest('.visual').classList.add('visual-missing')"
+    >
+
+  </div>
+
+
+  <div class="text-block dialogue">
+
+    <p>
+      Le reportage terminé,
+      une autre enquête l’attend.
+    </p>
+
+    <p class="impact-text">
+      Élie Santalucibel.
+    </p>
+
+    <p>
+      Max contacte Hope.
+    </p>
+
+    <p>
+      — J’espère que ton restaurant a une chambre de libre.
+    </p>
+
+    <p>
+      — Pourquoi ?
+      Tu comptes enfin venir travailler sérieusement ?
+    </p>
+
+    <p>
+      — Très drôle.
+      Mon reportage français est terminé.
+    </p>
+
+    <p>
+      Prochaine destination :
+      le Mexique.
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- VISUEL 38 -->
+
+<section class="scene investigation-scene" id="scene-38">
+
+  <div class="location-card">
+
+    <strong>
+      Los Angeles
+    </strong>
+
+  </div>
+
+
+  <div class="visual" data-visual="38">
+
+    <img
+      src="images/chapitre2/Visuel-38.PNG"
+      alt="IA2 retrouve Root en route vers le Mexique"
+      loading="lazy"
+      onerror="this.closest('.visual').classList.add('visual-missing')"
+    >
+
+  </div>
+
+
+  <div class="text-block dialogue">
+
+    <p>
+      Lucy poursuit ses recherches.
+    </p>
+
+    <p>
+      Soudain,
+      IA2 l’interrompt.
+    </p>
+
+    <p>
+      — J’ai retrouvé Root Tempass.
+    </p>
+
+    <p>
+      — Où est-elle ?
+    </p>
+
+    <p>
+      — Elle a embarqué ce matin
+      sur un vol en provenance du Vietnam.
+    </p>
+
+    <p>
+      Destination :
+    </p>
+
+    <p class="impact-text">
+      Mexique.
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- VISUEL 39 -->
+
+<section class="scene investigation-scene" id="scene-39">
+
+  <div class="visual" data-visual="39">
+
+    <img
+      src="images/chapitre2/Visuel-39.PNG"
+      alt="Le dossier administratif de Hope est presque vide"
+      loading="lazy"
+      onerror="this.closest('.visual').classList.add('visual-missing')"
+    >
+
+  </div>
+
+
+  <div class="text-block">
+
+    <p>
+      IA2 poursuit ses investigations sur Hope.
+    </p>
+
+    <p>
+      Les résultats sont étrangement pauvres.
+    </p>
+
+    <p>
+      Hope Awake.
+    </p>
+
+    <p>
+      Française.
+    </p>
+
+    <p>
+      Cheffe cuisinière.
+    </p>
+
+    <p>
+      Propriétaire du Monde d’ici et d’ailleurs
+      depuis quatre ans.
+    </p>
+
+    <p class="impact-text">
+      Et presque rien d’autre.
+    </p>
+
+    <p>
+      Aucune donnée exploitable avant cette période.
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- VISUEL 40 -->
+
+<section class="scene investigation-scene" id="scene-40">
+
+  <div class="visual" data-visual="40">
+
+    <img
+      src="images/chapitre2/Visuel-40.PNG"
+      alt="Archives du crash aérien en Chine et enfant disparue"
+      loading="lazy"
+      onerror="this.closest('.visual').classList.add('visual-missing')"
+    >
+
+  </div>
+
+
+  <div class="text-block">
+
+    <p>
+      Lucy recherche alors la famille Awake.
+    </p>
+
+    <p>
+      Ted avait été recueilli puis adopté
+      après la disparition de sa famille
+      dans le crash d’un Airbus A380 en Chine.
+    </p>
+
+    <p>
+      Lucy demande la liste complète des passagers.
+    </p>
+
+    <p>
+      Puis s’arrête sur une information.
+    </p>
+
+    <p class="impact-text">
+      Une fillette de douze ans.
+    </p>
+
+    <p>
+      Son corps n’avait jamais été retrouvé.
+    </p>
+
+  </div>
+
+
+  <div
+    class="investigation-panel"
+    id="hopeInvestigation"
+  >
+
+    <h2>
+      Reconstituer le passé de Hope
+    </h2>
+
+
+    <div class="clue-grid">
+
+      <button
+        class="clue-btn"
+        data-hope-clue="crash"
+      >
+        Le crash
+      </button>
+
+      <button
+        class="clue-btn"
+        data-hope-clue="ted"
+      >
+        Ted Awake
+      </button>
+
+      <button
+        class="clue-btn"
+        data-hope-clue="enfant"
+      >
+        L’enfant disparue
+      </button>
+
+      <button
+        class="clue-btn"
+        data-hope-clue="photo"
+      >
+        Comparer les visages
+      </button>
+
+    </div>
+
+
+    <div
+      class="clue-result"
+      id="hopeClueResult"
+    ></div>
+
+  </div>
+
+</section>
+
+
+<!-- VISUEL 41 -->
+
+<section class="scene revelation-scene" id="scene-41">
+
+  <div class="visual" data-visual="41">
+
+    <img
+      src="images/chapitre2/Visuel-41.PNG"
+      alt="IA2 compare la fillette disparue avec Hope adulte"
+      loading="lazy"
+      onerror="this.closest('.visual').classList.add('visual-missing')"
+    >
+
+  </div>
+
+
+  <div class="text-block dialogue">
+
+    <p>
+      Lucy place une photographie récente de Hope
+      à côté de celle de l’enfant.
+    </p>
+
+    <p>
+      — Fais-moi une simulation.
+    </p>
+
+    <p>
+      Suppose que cette enfant n’est pas morte dans le crash.
+    </p>
+
+    <p>
+      Fais vieillir son visage
+      jusqu’à l’âge actuel de Hope.
+    </p>
+
+    <p>
+      Quelques instants plus tard,
+      IA2 affiche son résultat.
+    </p>
+
+    <p class="impact-text">
+      Concordance morphologique très élevée.
+    </p>
+
+    <p>
+      Lucy reste immobile.
+    </p>
+
+    <p>
+      — Donc cette gamine pourrait être elle.
+    </p>
+
+    <p>
+      — Hypothèse plausible.
+    </p>
+
+    <p>
+      Lucy observe la carte du monde.
+    </p>
+
+    <p>
+      France.
+      Vietnam.
+      Mexique.
+    </p>
+
+    <p>
+      — Pourquoi tout le monde finit-il au Mexique ?
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     SÉQUENCE 5 — ROOT / HOPE
+===================================================== -->
+
+<section class="scene" id="scene-42">
+
+  <div class="location-card">
+
+    <strong>
+      Mexique
+    </strong>
+
+    <span>
+      Lundi — 00 h 30
+    </span>
+
+  </div>
+
+
+  <div class="visual" data-visual="42">
+
+    <img
+      src="images/chapitre2/Visuel-42.PNG"
+      alt="Hope accueille Root à l'aéroport"
+      loading="lazy"
+      onerror="this.closest('.visual').classList.add('visual-missing')"
+    >
+
+  </div>
+
+
+  <div class="text-block">
+
+    <p>
+      Root vient tout juste d’atterrir.
+    </p>
+
+    <p>
+      Hope l’attend à l’aéroport.
+    </p>
+
+    <p>
+      Quelques minutes plus tard,
+      elles prennent la route de l’hacienda.
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- VISUEL 43 -->
+
+<section class="scene" id="scene-43">
+
+  <div class="visual" data-visual="43">
+
+    <img
+      src="images/chapitre2/Visuel-43.PNG"
+      alt="Root montre à Hope le tatouage laissé par la boîte de Pandore"
+      loading="lazy"
+      onerror="this.closest('.visual').classList.add('visual-missing')"
+    >
+
+  </div>
+
+
+  <div class="text-block dialogue">
+
+    <p>
+      Root est beaucoup trop impatiente pour attendre.
+    </p>
+
+    <p>
+      Elle ouvre légèrement son chemisier.
+    </p>
+
+    <p>
+      — Regarde.
+    </p>
+
+    <p>
+      Hope découvre la marque.
+    </p>
+
+    <p>
+      Une magnifique cascade,
+      parcourue des symboles de la boîte.
+    </p>
+
+    <p>
+      — Oh…
+      elle est magnifique.
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- VISUEL 44 -->
+
+<section class="scene revelation-scene" id="scene-44">
+
+  <div class="visual" data-visual="44">
+
+    <img
+      src="images/chapitre2/Visuel-44.PNG"
+      alt="Le tatouage de Root réagit à la présence de Hope"
+      loading="lazy"
+      onerror="this.closest('.visual').classList.add('visual-missing')"
+    >
+
+  </div>
+
+
+  <div class="text-block">
+
+    <p>
+      Hope approche doucement sa main.
+    </p>
+
+    <p>
+      Elle ne touche même pas réellement la peau de Root.
+    </p>
+
+    <p>
+      Pourtant…
+    </p>
+
+    <p class="impact-text">
+      la marque réagit.
+    </p>
+
+    <p>
+      Les contours de la cascade s’illuminent.
+    </p>
+
+    <p>
+      Puis les symboles s’éveillent à leur tour.
+    </p>
+
+    <p>
+      Comme si quelque chose circulait
+      entre Hope et la marque.
+    </p>
+
+    <p>
+      Une énergie.
+    </p>
+
+    <p>
+      Des informations.
+    </p>
+
+    <p>
+      Ou peut-être les deux.
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- VISUEL 45 -->
+
+<section class="scene" id="scene-45">
+
+  <div class="visual" data-visual="45">
+
+    <img
+      src="images/chapitre2/Visuel-45.PNG"
+      alt="Hope et Root rient après la réaction du tatouage"
+      loading="lazy"
+      onerror="this.closest('.visual').classList.add('visual-missing')"
+    >
+
+  </div>
+
+
+  <div class="text-block">
+
+    <p>
+      Hope et Root se regardent.
+    </p>
+
+    <p>
+      Pendant quelques secondes,
+      aucune ne parle.
+    </p>
+
+    <p>
+      Puis elles éclatent de rire.
+    </p>
+
+    <p>
+      Un rire spontané.
+    </p>
+
+    <p>
+      De soulagement.
+    </p>
+
+    <p>
+      De bonheur.
+    </p>
+
+    <p class="emphasis">
+      Et quelque part, de victoire.
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- VISUEL 46 -->
+
+<section class="scene" id="scene-46">
+
+  <div class="visual" data-visual="46">
+
+    <img
+      src="images/chapitre2/Visuel-46.PNG"
+      alt="Hope et Root discutent autour d'un verre à l'hacienda"
+      loading="lazy"
+      onerror="this.closest('.visual').classList.add('visual-missing')"
+    >
+
+  </div>
+
+
+  <div class="text-block dialogue">
+
+    <p>
+      Plus tard,
+      elles se retrouvent dans la cuisine de l’hacienda.
+    </p>
+
+    <p>
+      Hope ouvre une bouteille de vin.
+    </p>
+
+    <p>
+      Elles parlent encore du Vietnam,
+      d’Amy,
+      de la grotte
+      et de la boîte.
+    </p>
+
+    <p>
+      Puis Hope demande :
+    </p>
+
+    <p>
+      — Tu as eu le temps de voir avec Clark
+      s’il pouvait venir à l’inauguration ?
+    </p>
+
+    <p>
+      Root sourit.
+    </p>
+
+    <p>
+      — Oui.
+      Il sera là.
+    </p>
+
+    <p>
+      Hope lui propose ensuite de découvrir
+      un cénote particulier le lendemain.
+    </p>
+
+    <p>
+      — Évidemment que je suis partante.
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     SÉQUENCE 6 — TOUT LE MONDE ARRIVE
+===================================================== -->
+
+<section class="scene" id="scene-47">
+
+  <div class="location-card">
+
+    <strong>
+      Mardi — Hacienda Flores
+    </strong>
+
+  </div>
+
+
+  <div class="visual" data-visual="47">
+
+    <img
+      src="images/chapitre2/Visuel-47.PNG"
+      alt="Lucy et Clive arrivent à l'hacienda Flores"
+      loading="lazy"
+      onerror="this.closest('.visual').classList.add('visual-missing')"
+    >
+
+  </div>
+
+
+  <div class="text-block">
+
+    <p>
+      Toute la propriété s’affaire pour préparer
+      l’arrivée de Lucy.
+    </p>
+
+    <p>
+      Après la tentative d’enlèvement,
+      chacun sait qu’elle va tout passer au crible.
+    </p>
+
+    <p>
+      Lucy arrive avec Clive.
+    </p>
+
+    <p>
+      Aucun détail ne lui échappera.
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- VISUEL 48 -->
+
+<section class="scene" id="scene-48">
+
+  <div class="visual" data-visual="48">
+
+    <img
+      src="images/chapitre2/Visuel-48.PNG"
+      alt="Anna apprend le français au bord de la piscine"
+      loading="lazy"
+      onerror="this.closest('.visual').classList.add('visual-missing')"
+    >
+
+  </div>
+
+
+  <div class="text-block dialogue">
+
+    <p>
+      Anna termine déjà ses cours de français.
+    </p>
+
+    <p>
+      Betty lui propose de pratiquer avec Hale.
+    </p>
+
+    <p>
+      Anna proteste immédiatement.
+    </p>
+
+    <p>
+      — Alors qu’avec Hope,
+      j’ai tellement de questions à lui poser.
+    </p>
+
+    <p>
+      Betty soupire.
+    </p>
+
+    <p>
+      — Nous ne connaissons même pas cette femme.
+    </p>
+
+    <p>
+      — Raison de plus.
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- VISUEL 49 -->
+
+<section class="scene" id="scene-49">
+
+  <div class="visual" data-visual="49">
+
+    <img
+      src="images/chapitre2/Visuel-49.PNG"
+      alt="Peter et Max arrivent en jet privé au Mexique"
+      loading="lazy"
+      onerror="this.closest('.visual').classList.add('visual-missing')"
+    >
+
+  </div>
+
+
+  <div class="text-block">
+
+    <p>
+      Début d’après-midi.
+    </p>
+
+    <p>
+      Le jet privé de Peter Evanos
+      atterrit avec près d’une heure d’avance.
+    </p>
+
+    <p>
+      Peter et Max échangent un regard satisfait.
+    </p>
+
+    <p>
+      Ils ont eu exactement la même idée.
+    </p>
+
+    <p class="emphasis">
+      Faire une surprise aux filles.
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- VISUEL 50 -->
+
+<section class="scene revelation-scene" id="scene-50">
+
+  <div class="visual" data-visual="50">
+
+    <img
+      src="images/chapitre2/Visuel-50.PNG"
+      alt="Le Phénix technologique de Peter prend son envol"
+      loading="lazy"
+      onerror="this.closest('.visual').classList.add('visual-missing')"
+    >
+
+  </div>
+
+
+  <div class="text-block dialogue">
+
+    <p>
+      Peter sort l’un de ses nouveaux dispositifs.
+    </p>
+
+    <p>
+      Une créature ressemblant
+      à un magnifique oiseau prend son envol.
+    </p>
+
+    <p class="impact-text">
+      Le Phénix.
+    </p>
+
+    <p>
+      Ses mouvements sont naturels.
+    </p>
+
+    <p>
+      Son plumage.
+      Sa respiration.
+      Ses réactions.
+    </p>
+
+    <p>
+      Tout semble vivant.
+    </p>
+
+    <p>
+      — Peter…
+      qu’est-ce que tu as fabriqué ?
+    </p>
+
+    <p>
+      Peter avoue avoir utilisé
+      une partie des travaux de Betty Flores
+      sans lui demander réellement son autorisation.
+    </p>
+
+    <p>
+      Max le fixe.
+    </p>
+
+    <p>
+      — Tu es mort.
+    </p>
+
+    <p>
+      — Probablement.
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- VISUEL 51 -->
+
+<section class="scene" id="scene-51">
+
+  <div class="visual" data-visual="51">
+
+    <img
+      src="images/chapitre2/Visuel-51.PNG"
+      alt="Lucy reçoit enfin un message de Root"
+      loading="lazy"
+      onerror="this.closest('.visual').classList.add('visual-missing')"
+    >
+
+  </div>
+
+
+  <div class="text-block">
+
+    <p>
+      Après l’audit de sécurité de l’hacienda Flores,
+      Lucy rejoint Anna près de la piscine.
+    </p>
+
+    <p>
+      Son téléphone vibre.
+    </p>
+
+    <p class="impact-text">
+      Root.
+    </p>
+
+    <p>
+      Lucy relit le message une seconde fois.
+    </p>
+
+    <p>
+      Elle est contente.
+    </p>
+
+    <p>
+      Et surtout rassurée.
+    </p>
+
+    <p>
+      Root va bien.
+    </p>
+
+    <p>
+      Elles échangent plusieurs messages.
+    </p>
+
+    <p>
+      Root lui révèle finalement qu’elle se trouve elle aussi au Mexique.
+    </p>
+
+    <p>
+      Et qu’elle connaît un excellent restaurant français
+      qui ouvrira très bientôt dans le Yucatán.
+    </p>
+
+    <p>
+      Lucy sourit.
+    </p>
+
+    <p>
+      Mais sa curiosité professionnelle se réveille immédiatement.
+    </p>
+
+    <p>
+      Root connaîtrait-elle Hope ?
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- VISUEL 52 -->
+
+<section class="scene" id="scene-52">
+
+  <div class="visual" data-visual="52">
+
+    <img
+      src="images/chapitre2/Visuel-52.PNG"
+      alt="Lucy et Betty discutent à l'hacienda Flores"
+      loading="lazy"
+      onerror="this.closest('.visual').classList.add('visual-missing')"
+    >
+
+  </div>
+
+
+  <div class="text-block dialogue">
+
+    <p>
+      Lucy profite ensuite d’un moment seule avec Betty.
+    </p>
+
+    <p>
+      Elles parlent d’Élie.
+    </p>
+
+    <p>
+      De leur passé.
+    </p>
+
+    <p>
+      Et surtout d’Anna.
+    </p>
+
+    <p>
+      Betty finit par avouer :
+    </p>
+
+    <p class="emphasis">
+      — J’ai peur pour elle, Lucy.
+    </p>
+
+    <p>
+      J’ai peur qu’on lui fasse du mal.
+    </p>
+
+    <p>
+      J’ai peur de ne pas savoir la protéger.
+    </p>
+
+    <p>
+      Et j’ai peur de la décevoir.
+    </p>
+
+    <p>
+      Lucy écoute sans l’interrompre.
+    </p>
+
+    <p>
+      — J’aime la femme que tu es devenue.
+    </p>
+
+    <p>
+      Betty prend sa main.
+    </p>
+
+    <p>
+      — Je t’ai souvent prise pour modèle.
+    </p>
+
+    <p>
+      Lucy reste silencieuse.
+    </p>
+
+    <p>
+      Puis murmure :
+    </p>
+
+    <p class="emphasis">
+      — Je suis fière d’être ta sœur.
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- VISUEL 53 -->
+
+<section class="scene investigation-scene" id="scene-53">
+
+  <div class="visual" data-visual="53">
+
+    <img
+      src="images/chapitre2/Visuel-53.PNG"
+      alt="Clive reconnaît le système de sécurité de l'hacienda Awake"
+      loading="lazy"
+      onerror="this.closest('.visual').classList.add('visual-missing')"
+    >
+
+  </div>
+
+
+  <div class="text-block dialogue">
+
+    <p>
+      Clive part discrètement observer l’hacienda Awake.
+    </p>
+
+    <p>
+      Lorsqu’il revient,
+      son expression est inhabituelle.
+    </p>
+
+    <p>
+      — Ta copine Root n’est plus la seule
+      à posséder un système de sécurité
+      ultra haut de gamme
+      et inconnu du marché.
+    </p>
+
+    <p>
+      Lucy devient immédiatement attentive.
+    </p>
+
+    <p>
+      — Le même ?
+    </p>
+
+    <p>
+      — Pas nécessairement identique.
+      Mais suffisamment proche.
+    </p>
+
+    <p>
+      Lucy comprend soudain.
+    </p>
+
+    <p class="impact-text">
+      Hope.
+    </p>
+
+    <p>
+      Root lui avait parlé d’une amie
+      qui lui avait enseigné ses fameux
+      « petits trucs au cas où ».
+    </p>
+
+    <p>
+      Le puzzle commence à prendre forme.
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     SÉQUENCE 7 — L’UNION FAIT LA FORCE
+===================================================== -->
+
+<section class="scene" id="scene-54">
+
+  <div class="visual" data-visual="54">
+
+    <img
+      src="images/chapitre2/Visuel-54.PNG"
+      alt="Lucy et Anna arrivent au portail de l'hacienda Awake"
+      loading="lazy"
+      onerror="this.closest('.visual').classList.add('visual-missing')"
+    >
+
+  </div>
+
+
+  <div class="text-block">
+
+    <p>
+      Lucy et Anna prennent la route
+      en direction de l’hacienda Awake.
+    </p>
+
+    <p>
+      Lorsqu’elles arrivent devant le portail,
+      plusieurs drones apparaissent.
+    </p>
+
+    <p>
+      Ils analysent leur véhicule.
+    </p>
+
+    <p>
+      Puis les deux femmes.
+    </p>
+
+    <p>
+      — Lucy Adverse.
+      Division de la cybercriminalité, Los Angeles.
+    </p>
+
+    <p>
+      — Anna Flores.
+      Étudiante en journalisme.
+      Fille de Betty Flores.
+    </p>
+
+    <p>
+      Quelques secondes plus tard :
+    </p>
+
+    <p class="impact-text">
+      Autorisation accordée.
+    </p>
+
+    <p>
+      Le portail s’ouvre.
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- VISUEL 55 -->
+
+<section class="scene" id="scene-55">
+
+  <div class="visual" data-visual="55">
+
+    <img
+      src="images/chapitre2/Visuel-55.PNG"
+      alt="James accueille Lucy et Anna à l'hacienda Awake"
+      loading="lazy"
+      onerror="this.closest('.visual').classList.add('visual-missing')"
+    >
+
+  </div>
+
+
+  <div class="text-block dialogue">
+
+    <p>
+      Un homme entièrement vêtu de noir
+      vient à leur rencontre.
+    </p>
+
+    <p>
+      — Bonjour,
+      Mesdames Adverse et Flores.
+    </p>
+
+    <p>
+      Madame vous prie de bien vouloir l’excuser
+      de vous faire patienter.
+    </p>
+
+    <p>
+      Il leur indique le jardin.
+    </p>
+
+    <p>
+      — Que puis-je vous servir ?
+    </p>
+
+    <p>
+      Anna demande :
+    </p>
+
+    <p>
+      — Qu’est-ce qu’elle boit habituellement ?
+    </p>
+
+    <p>
+      — Hope.
+      Servez-moi la même chose.
+    </p>
+
+    <p>
+      Lucy sourit.
+    </p>
+
+    <p>
+      — Faites de même pour moi.
+    </p>
+
+    <p>
+      James semble amusé.
+    </p>
+
+    <p>
+      — Madame m’avait dit
+      que vous me demanderiez probablement cela.
+    </p>
+
+    <p>
+      Deux Fresh Cactus Frenchies.
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- VISUEL 56 -->
+
+<section class="scene training-scene" id="scene-56">
+
+  <div class="visual" data-visual="56">
+
+    <img
+      src="images/chapitre2/Visuel-56.PNG"
+      alt="Hope s'entraîne les yeux bandés contre plusieurs adversaires"
+      loading="lazy"
+      onerror="this.closest('.visual').classList.add('visual-missing')"
+    >
+
+  </div>
+
+
+  <div class="text-block">
+
+    <p>
+      Du mouvement attire l’attention de Lucy.
+    </p>
+
+    <p>
+      Dans le jardin,
+      elles découvrent une vaste plateforme d’entraînement.
+    </p>
+
+    <p>
+      Une femme se trouve en son centre.
+    </p>
+
+    <p class="impact-text">
+      Hope.
+    </p>
+
+    <p>
+      Les yeux bandés.
+    </p>
+
+    <p>
+      Plusieurs adversaires l’attaquent simultanément.
+    </p>
+
+    <p>
+      Chaque attaque semble anticipée.
+    </p>
+
+    <p>
+      Chaque mouvement économisé.
+    </p>
+
+    <p>
+      Chaque riposte précise.
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- VISUEL 57 -->
+
+<section class="scene training-scene" id="scene-57">
+
+  <div class="visual" data-visual="57">
+
+    <img
+      src="images/chapitre2/Visuel-57.PNG"
+      alt="Hope combat un adversaire masqué plus rapide que les autres"
+      loading="lazy"
+      onerror="this.closest('.visual').classList.add('visual-missing')"
+    >
+
+  </div>
+
+
+  <div class="text-block dialogue">
+
+    <p>
+      Puis un nouvel adversaire apparaît.
+    </p>
+
+    <p>
+      Masqué.
+    </p>
+
+    <p>
+      Plus rapide que les autres.
+    </p>
+
+    <p>
+      Cette fois,
+      l’affrontement dure plus longtemps.
+    </p>
+
+    <p>
+      Hope finit par le neutraliser.
+    </p>
+
+    <p>
+      Puis elle lui parle.
+    </p>
+
+    <p>
+      — N’attaque pas comme une hyène.
+    </p>
+
+    <p>
+      Tu n’es pas une meute.
+    </p>
+
+    <p class="emphasis">
+      Sois plutôt la lionne.
+    </p>
+
+    <p>
+      Observe.
+    </p>
+
+    <p>
+      Attends.
+    </p>
+
+    <p>
+      Cherche le plus infime changement dans mon mouvement.
+    </p>
+
+    <p>
+      Puis :
+    </p>
+
+    <p class="emphasis">
+      Sois le léopard.
+    </p>
+
+    <p>
+      Réussis ou échoue.
+    </p>
+
+    <p>
+      Mais n’essaie pas.
+    </p>
+
+    <p class="impact-text">
+      Fais-le.
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- VISUEL 58 -->
+
+<section class="scene revelation-scene" id="scene-58">
+
+  <div class="visual" data-visual="58">
+
+    <img
+      src="images/chapitre2/Visuel-58.PNG"
+      alt="Le combattant retire son masque et Lucy reconnaît Root"
+      loading="lazy"
+      onerror="this.closest('.visual').classList.add('visual-missing')"
+    >
+
+  </div>
+
+
+  <div class="text-block dialogue">
+
+    <p>
+      Hope aide son adversaire à se relever.
+    </p>
+
+    <p>
+      Celui-ci retire son masque.
+    </p>
+
+    <p>
+      Lucy reste figée.
+    </p>
+
+    <p class="impact-text">
+      — Root…
+    </p>
+
+    <p>
+      Anna se tourne vers elle.
+    </p>
+
+    <p>
+      — Tu la connais ?
+    </p>
+
+    <p>
+      Lucy secoue lentement la tête.
+    </p>
+
+    <p>
+      — Oui.
+    </p>
+
+    <p>
+      Comme tu me l’as dit tout à l’heure…
+    </p>
+
+    <p class="emphasis">
+      le monde est petit.
+    </p>
+
+    <p>
+      Vraiment,
+      vraiment petit.
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- VISUEL 59 -->
+
+<section class="scene" id="scene-59">
+
+  <div class="visual" data-visual="59">
+
+    <img
+      src="images/chapitre2/Visuel-59.PNG"
+      alt="Hope Root Lucy et Anna réunies pour la première fois"
+      loading="lazy"
+      onerror="this.closest('.visual').classList.add('visual-missing')"
+    >
+
+  </div>
+
+
+  <div class="text-block dialogue">
+
+    <p>
+      Les quatre femmes se retrouvent enfin face à face.
+    </p>
+
+    <p>
+      Root sourit.
+    </p>
+
+    <p>
+      — Le monde est effectivement très petit.
+    </p>
+
+    <p>
+      Ou alors le destin possède
+      une façon plutôt particulière
+      de réunir les gens.
+    </p>
+
+    <p>
+      Hope répond :
+    </p>
+
+    <p>
+      — Personne n’échappe complètement à sa destinée.
+    </p>
+
+    <p>
+      La vraie question est plutôt de savoir
+      si nous sommes prêts à lui faire face…
+    </p>
+
+    <p class="emphasis">
+      ou si nous préférons détourner les yeux
+      jusqu’à risquer de perdre notre propre raison d’être.
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     DISCUSSION SENTINELLES
+===================================================== -->
+
+<section class="scene text-scene" id="sentinelles">
+
+  <div class="text-block dialogue">
+
+    <p>
+      Les quatre femmes s’installent
+      dans le salon extérieur.
+    </p>
+
+    <p>
+      Anna pose rapidement sa première question :
+    </p>
+
+    <p>
+      — Les hommes en noir…
+      qui sont-ils ?
+    </p>
+
+    <p>
+      Hope répond :
+    </p>
+
+    <p class="impact-text">
+      — Les Sentinelles de la Lumière.
+    </p>
+
+    <p>
+      Pour le moment,
+      imagine-les comme des gardes du corps
+      extrêmement spécialisés.
+    </p>
+
+    <p>
+      Root précise que Hope est plutôt leur guide.
+    </p>
+
+    <p>
+      Leur maître d’armes.
+    </p>
+
+    <p>
+      Leur professeur.
+    </p>
+
+    <p>
+      Lucy comprend alors.
+    </p>
+
+    <p>
+      Hope est bien l’amie
+      qui a appris à Root
+      ses fameux « petits trucs utiles au cas où ».
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- DISCUSSION HOPE -->
+
+<section class="scene text-scene" id="questions-hope">
+
+  <div class="text-block dialogue">
+
+    <p>
+      Lucy observe Hope.
+    </p>
+
+    <p>
+      — Que faisiez-vous au Parc des Délires
+      au moment où Anna a été agressée ?
+    </p>
+
+    <p>
+      — Je traversais le parc
+      pour rejoindre l’ancien restaurant de mon frère Ted.
+    </p>
+
+    <p>
+      Celui que le cartel Santalucibel a incendié.
+    </p>
+
+    <p>
+      Ted et son chef sont morts dans cet incendie.
+    </p>
+
+    <p>
+      Un silence tombe.
+    </p>
+
+    <p>
+      Lucy poursuit :
+    </p>
+
+    <p>
+      — Comment une femme seule
+      a-t-elle réussi à empêcher un enlèvement
+      alors que six professionnels entraînés ont échoué ?
+    </p>
+
+    <p>
+      Root veut intervenir.
+    </p>
+
+    <p>
+      Hope l’arrête.
+    </p>
+
+    <p>
+      — Elle compte pour toi.
+    </p>
+
+    <p>
+      Et tu lui fais confiance.
+    </p>
+
+    <p>
+      Ton amie est mon amie.
+    </p>
+
+    <p>
+      Puis Hope explique avoir été formée très jeune
+      au combat,
+      à la survie,
+      à l’observation
+      et à la maîtrise de soi.
+    </p>
+
+    <p>
+      Dans son village,
+      certains la considèrent aujourd’hui
+      comme un maître Sentinelle.
+    </p>
+
+    <p>
+      Root sourit.
+    </p>
+
+    <p>
+      — Tu veux dire Maître Unique ?
+    </p>
+
+    <p>
+      Hope lève les yeux au ciel.
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- VISUEL 60 -->
+
+<section class="scene training-scene" id="scene-60">
+
+  <div class="visual" data-visual="60">
+
+    <img
+      src="images/chapitre2/Visuel-60.PNG"
+      alt="Root entraîne Lucy pendant que Hope entraîne Anna"
+      loading="lazy"
+      onerror="this.closest('.visual').classList.add('visual-missing')"
+    >
+
+  </div>
+
+
+  <div class="text-block">
+
+    <p>
+      Hope propose alors un petit cours de self-défense.
+    </p>
+
+    <p>
+      Root entraîne Lucy.
+    </p>
+
+    <p>
+      Hope prend Anna avec elle.
+    </p>
+
+    <p>
+      Root désarme Lucy.
+    </p>
+
+    <p>
+      Encore.
+    </p>
+
+    <p>
+      Et encore.
+    </p>
+
+    <p>
+      Mais elle lui explique chaque mouvement
+      avec une patience presque infinie.
+    </p>
+
+    <p>
+      — Tu utilises tes yeux
+      comme si c’était ton unique moyen
+      de comprendre ce qui t’entoure.
+    </p>
+
+    <p>
+      Ferme-les.
+    </p>
+
+    <p>
+      Maintenant,
+      écoute.
+    </p>
+
+    <p>
+      De l’autre côté,
+      Hope apprend à Anna à observer :
+    </p>
+
+    <p>
+      les épaules,
+      le regard,
+      les appuis.
+    </p>
+
+    <p class="emphasis">
+      Le corps décide souvent
+      avant l’esprit conscient.
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- VISUEL 61 -->
+
+<section class="scene pact-scene" id="scene-61">
+
+  <div class="visual" data-visual="61">
+
+    <img
+      src="images/chapitre2/Visuel-61.PNG"
+      alt="Les quatre femmes sont réunies autour de la table"
+      loading="lazy"
+      onerror="this.closest('.visual').classList.add('visual-missing')"
+    >
+
+  </div>
+
+
+  <div class="text-block dialogue">
+
+    <p>
+      Plus d’une heure passe.
+    </p>
+
+    <p>
+      Elles retournent finalement
+      au salon extérieur.
+    </p>
+
+    <p>
+      Avant de reprendre la discussion,
+      Hope devient soudain plus sérieuse.
+    </p>
+
+    <p>
+      — J’aimerais vous proposer une règle.
+    </p>
+
+    <p>
+      Une seule.
+    </p>
+
+    <p class="impact-text">
+      Aucun mensonge.
+    </p>
+
+    <p>
+      Nous n’avons pas l’obligation
+      de répondre à toutes les questions.
+    </p>
+
+    <p>
+      Nous pouvons dire
+      que nous ne sommes pas prêtes.
+    </p>
+
+    <p>
+      Nous pouvons refuser
+      de révéler ce qui ne nous appartient pas.
+    </p>
+
+    <p>
+      Mais si nous répondons…
+    </p>
+
+    <p class="emphasis">
+      alors nous disons la vérité.
+    </p>
+
+    <p>
+      Et rien de ce qui est confié ici
+      ne doit être utilisé contre celle qui l’a partagé.
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- VISUEL 62 -->
+
+<section class="scene pact-scene" id="scene-62">
+
+  <div class="visual" data-visual="62">
+
+    <img
+      src="images/chapitre2/Visuel-62.PNG"
+      alt="Root Hope et Anna ont posé leurs mains tandis que Lucy hésite"
+      loading="lazy"
+      onerror="this.closest('.visual').classList.add('visual-missing')"
+    >
+
+  </div>
+
+
+  <div class="text-block">
+
+    <p>
+      Root tend sa main au centre de la table.
+    </p>
+
+    <p>
+      Hope pose la sienne dessus.
+    </p>
+
+    <p>
+      Anna les rejoint.
+    </p>
+
+    <p>
+      Puis toutes trois regardent Lucy.
+    </p>
+
+    <p>
+      Lucy ne bouge pas.
+    </p>
+
+    <p>
+      Un pacte de confiance.
+    </p>
+
+    <p>
+      Sans procédure.
+    </p>
+
+    <p>
+      Sans preuve.
+    </p>
+
+    <p>
+      Sans garantie.
+    </p>
+
+    <p class="emphasis">
+      Tout ce qu’elle déteste.
+    </p>
+
+    <p>
+      Tout ce contre quoi son métier
+      l’a entraînée.
+    </p>
+
+    <p>
+      Sa raison lui dit de refuser.
+    </p>
+
+    <p>
+      Son instinct lui dit exactement le contraire.
+    </p>
+
+  </div>
+
+
+  <div class="pact-action">
+
+    <button
+      class="pact-btn"
+      id="joinPactBtn"
+    >
+      Poser la main
+    </button>
+
+  </div>
+
+</section>
+
+
+<!-- VISUEL 63 -->
+
+<section
+  class="scene pact-scene final-pact-scene"
+  id="scene-63"
+>
+
+  <div
+    class="visual"
+    data-visual="63"
+  >
+
+    <img
+      src="images/chapitre2/Visuel-63.PNG"
+      alt="Les quatre mains sont réunies"
+      loading="lazy"
+      onerror="this.closest('.visual').classList.add('visual-missing')"
+    >
+
+  </div>
+
+
+  <div class="text-block dialogue">
+
+    <p>
+      Lucy prend une inspiration.
+    </p>
+
+    <p>
+      Puis pose lentement sa main
+      sur celles des trois autres.
+    </p>
+
+    <p>
+      — D’accord.
+    </p>
+
+    <p>
+      Anna sourit.
+    </p>
+
+    <p>
+      Root également.
+    </p>
+
+    <p>
+      Hope ne dit rien.
+    </p>
+
+    <p>
+      Lucy ajoute :
+    </p>
+
+    <p>
+      — Mais je vous préviens…
+    </p>
+
+    <p class="emphasis">
+      J’ai beaucoup de questions.
+    </p>
+
+    <p>
+      Root éclate de rire.
+    </p>
+
+    <p>
+      — Ça,
+      personne n’en doutait.
+    </p>
+
+    <p>
+      Les quatre femmes rient.
+    </p>
+
+    <p>
+      Mais Lucy sait que quelque chose vient de se produire.
+    </p>
+
+    <p>
+      Quelque chose qu’elle aurait cru impossible
+      quelques heures auparavant.
+    </p>
+
+    <p>
+      Elle vient d’accorder sa confiance sans preuve.
+    </p>
+
+    <p>
+      Pas aveuglément.
+    </p>
+
+    <p>
+      Pas complètement.
+    </p>
+
+    <p>
+      Mais suffisamment pour accepter
+      d’entrer dans ce cercle.
+    </p>
+
+    <p>
+      Pour la première fois depuis très longtemps,
+      Lucy choisit de ne pas seulement suivre
+      ce que lui montrent les faits.
+    </p>
+
+    <p class="impact-text">
+      Elle décide aussi d’écouter son instinct.
+    </p>
+
+    <p>
+      Et sans encore le savoir…
+    </p>
+
+    <p class="emphasis">
+      elle vient peut-être de faire
+      le premier choix qui changera véritablement sa destinée.
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     FIN DU CHAPITRE
+===================================================== -->
+
+<section
+  class="scene chapter-end"
+  id="chapter-end"
+>
+
+  <div class="end-symbol">
+    ∞
+  </div>
+
+  <p class="chapter-end-title">
+    L’union fait la force
+  </p>
+
+
+  <div class="end-actions">
+
+    <button
+      class="chapter-btn"
+      id="restartChapter"
+    >
+      Relire le chapitre
+    </button>
+
+    <a
+      href="chapitre3.html"
+      class="chapter-btn primary"
+    >
+      Chapitre suivant
+    </a>
+
+  </div>
+
+</section>
+
+
+</main>
+
+
+<!-- =====================================================
+     POPUP SECRET / RÉVÉLATION
+===================================================== -->
+
+<div
+  class="secret-popup"
+  id="secretPopup"
+  aria-hidden="true"
+>
+
+  <div class="secret-popup-inner">
+
+    <span class="secret-symbol">
+      ∞
+    </span>
+
+    <span class="secret-title">
+      INFORMATION DÉCOUVERTE
+    </span>
+
+    <p
+      class="secret-description"
+      id="secretDescription"
+    ></p>
+
+  </div>
+
+</div>
+
+
+<!-- =====================================================
+     MENU
+===================================================== -->
+
+<div
+  class="chapter-menu"
+  id="chapterMenu"
+  aria-hidden="true"
+>
+
+  <div class="chapter-menu-panel">
+
+    <button
+      class="menu-close"
+      id="menuClose"
+      aria-label="Fermer le menu"
+    >
+      ×
+    </button>
+
+    <h2>
+      Chapitre 2
+    </h2>
+
+    <p>
+      L’union fait la force
+    </p>
+
+    <button
+      id="resumeBtn"
+      class="menu-action"
+    >
+      Reprendre la lecture
+    </button>
+
+    <button
+      id="restartBtn"
+      class="menu-action"
+    >
+      Recommencer le chapitre
+    </button>
+
+    <a
+      href="chapitre1.html"
+      class="menu-action"
+    >
+      Retour au chapitre 1
+    </a>
+
+    <a
+      href="index.html"
+      class="menu-action"
+    >
+      Retour à l’accueil
+    </a>
+
+  </div>
+
+</div>
+
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
+<script src="js/chapitre2.js"></script>
+
+
+</body>
+
+</html>
