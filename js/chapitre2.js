@@ -665,176 +665,267 @@ function showSecret(
 
 
 /* =========================================================
-   INTERACTION 1
-   IA2 — ANALYSE DES INDICES SUR ROOT
+   ANALYSE IA2 — ENQUÊTE SUR ROOT
+   Les 4 pistes peuvent être consultées librement
 ========================================================= */
 
-const rootClues =
-  document.querySelectorAll(
-    '[data-root-clue]'
-  );
+const rootClueButtons = document.querySelectorAll("[data-root-clue]");
+const rootClueResult = document.getElementById("rootClueResult");
+const rootClueContinue = document.getElementById("rootClueContinue");
 
-const rootClueResult =
-  document.getElementById(
-    "rootClueResult"
-  );
+const ROOT_CLUE_STORAGE = "societeOmbre_chapitre2_rootClues";
 
-const rootClueContinue =
-  document.getElementById(
-    "rootClueContinue"
-  );
+/* Récupération des pistes déjà consultées */
+let rootCluesFound = [];
 
-
-function getRootClues() {
-
-  try {
-
-    return JSON.parse(
-      localStorage.getItem(
-        STORAGE_ROOT_CLUES
-      )
-    ) || [];
-
-  } catch (error) {
-
-    return [];
-
-  }
-
+try {
+  rootCluesFound =
+    JSON.parse(localStorage.getItem(ROOT_CLUE_STORAGE)) || [];
+} catch (error) {
+  rootCluesFound = [];
 }
 
 
-function saveRootClues(list) {
+/* ---------------------------------------------------------
+   TEXTES DES ANALYSES
+--------------------------------------------------------- */
 
-  localStorage.setItem(
-    STORAGE_ROOT_CLUES,
-    JSON.stringify(list)
-  );
+const rootClueTexts = {
 
-}
+  voyages: `
+    <div class="ia2-analysis">
+      <h3>🌍 Voyages communs</h3>
 
+      <p>
+        IA2 a comparé les déplacements connus de Root Tempass
+        avec les lieux associés aux crimes attribués à la
+        Tueuse Caméléon.
+      </p>
 
-function updateRootInvestigation() {
+      <p>
+        Plusieurs correspondances géographiques apparaissent.
+        Dans différents pays, Root se trouvait dans la même
+        zone et durant une période compatible avec certains
+        meurtres.
+      </p>
 
-  const found =
-    getRootClues();
-
-  rootClues.forEach(
-    (clue) => {
-
-      const value =
-        clue.dataset.rootClue;
-
-      if (
-        found.includes(value)
-      ) {
-
-        clue.classList.add(
-          "found"
-        );
-
-      }
-
-    }
-  );
+      <p class="ia2-warning">
+        CORRÉLATION DÉTECTÉE — aucune preuve directe.
+      </p>
+    </div>
+  `,
 
 
-  if (
-    rootClueResult &&
-    found.length > 0
-  ) {
+  combat: `
+    <div class="ia2-analysis">
+      <h3>🥋 Capacités de combat</h3>
 
-    rootClueResult.innerHTML =
-      `
-        <strong>IA2</strong><br><br>
-        ${found.length} indice${found.length > 1 ? "s" : ""}
-        actuellement retenu${found.length > 1 ? "s" : ""}.
-      `;
+      <p>
+        Root possède un niveau de combat très supérieur à celui
+        attendu chez une archéologue.
+      </p>
 
+      <p>
+        Ses déplacements, son anticipation et sa capacité à
+        neutraliser plusieurs adversaires correspondent à une
+        personne ayant reçu un entraînement particulièrement
+        avancé.
+      </p>
+
+      <p class="ia2-warning">
+        COMPATIBLE AVEC LE PROFIL — insuffisant pour établir
+        une implication criminelle.
+      </p>
+    </div>
+  `,
+
+
+  disparition: `
+    <div class="ia2-analysis">
+      <h3>📡 Disparition</h3>
+
+      <p>
+        Depuis plusieurs jours, Root ne répond plus normalement
+        aux habitudes de communication observées par Lucy.
+      </p>
+
+      <p>
+        Ses déplacements deviennent également plus difficiles
+        à suivre.
+      </p>
+
+      <p>
+        Cette absence peut correspondre à une mission,
+        une volonté de disparaître...
+        ou simplement à une situation que Lucy ignore encore.
+      </p>
+
+      <p class="ia2-warning">
+        DONNÉES INCOMPLÈTES.
+      </p>
+    </div>
+  `,
+
+
+  profil: `
+    <div class="ia2-analysis">
+      <h3>⚠️ Profil potentiel</h3>
+
+      <p>
+        Voyages internationaux fréquents.
+        Excellentes capacités physiques.
+        Ressources financières importantes.
+        Maîtrise de technologies inhabituelles.
+        Goût prononcé pour les situations extrêmes.
+      </p>
+
+      <p>
+        Plusieurs éléments sont compatibles avec le profil
+        recherché.
+      </p>
+
+      <p>
+        Pourtant, IA2 ne dispose d'aucune preuve permettant
+        d'identifier Root Tempass comme la Tueuse Caméléon.
+      </p>
+
+      <p class="ia2-warning">
+        HYPOTHÈSE À APPROFONDIR — NE PAS CONCLURE.
+      </p>
+    </div>
+  `
+};
+
+
+/* ---------------------------------------------------------
+   AFFICHAGE D'UNE PISTE
+--------------------------------------------------------- */
+
+function showRootClue(clueName) {
+
+  const clueText = rootClueTexts[clueName];
+
+  if (!clueText) {
+    return;
   }
 
 
-  if (
-    found.length >=
-    rootClues.length &&
-    rootClues.length > 0
-  ) {
+  /* Afficher l'analyse choisie */
+  if (rootClueResult) {
 
-    if (rootClueResult) {
+    rootClueResult.classList.remove("analysis-visible");
 
-      rootClueResult.innerHTML =
-        `
-          <strong>Analyse IA2 terminée.</strong>
-          <br><br>
-          Les déplacements de Root,
-          ses capacités de combat,
-          son absence prolongée
-          et certaines concordances géographiques
-          justifient une enquête approfondie.
-          <br><br>
-          Aucun de ces éléments,
-          pris isolément,
-          ne constitue une preuve.
-        `;
+    setTimeout(() => {
 
-    }
+      rootClueResult.innerHTML = clueText;
 
+      requestAnimationFrame(() => {
+        rootClueResult.classList.add("analysis-visible");
+      });
 
-    if (rootClueContinue) {
-
-      rootClueContinue.hidden =
-        false;
-
-      rootClueContinue.classList.add(
-        "completed"
-      );
-
-    }
-
+    }, 120);
   }
 
-}
 
+  /* Première consultation de cette piste */
+  if (!rootCluesFound.includes(clueName)) {
 
-rootClues.forEach(
-  (clue) => {
+    rootCluesFound.push(clueName);
 
-    clue.addEventListener(
-      "click",
-      () => {
-
-        const value =
-          clue.dataset.rootClue;
-
-        const found =
-          getRootClues();
-
-        if (
-          !found.includes(value)
-        ) {
-
-          found.push(value);
-
-          saveRootClues(found);
-
-          clue.classList.add(
-            "found"
-          );
-
-          playClueSound();
-
-        }
-
-        updateRootInvestigation();
-
-      }
+    localStorage.setItem(
+      ROOT_CLUE_STORAGE,
+      JSON.stringify(rootCluesFound)
     );
-
   }
-);
 
 
-updateRootInvestigation();
+  updateRootClueButtons();
+  updateRootClueProgress();
+}
+
+
+/* ---------------------------------------------------------
+   ÉTAT VISUEL DES BOUTONS
+--------------------------------------------------------- */
+
+function updateRootClueButtons() {
+
+  rootClueButtons.forEach(button => {
+
+    const clueName = button.dataset.rootClue;
+
+    if (rootCluesFound.includes(clueName)) {
+
+      button.classList.add("found");
+
+      /* Ajouter le ✓ une seule fois */
+      if (!button.querySelector(".clue-check")) {
+
+        const check = document.createElement("span");
+
+        check.className = "clue-check";
+        check.textContent = " ✓";
+
+        button.appendChild(check);
+      }
+
+    }
+
+    /*
+      IMPORTANT :
+      on ne désactive JAMAIS le bouton.
+      Le lecteur peut donc revenir dessus.
+    */
+    button.disabled = false;
+  });
+}
+
+
+/* ---------------------------------------------------------
+   PROGRESSION DE L'ENQUÊTE
+--------------------------------------------------------- */
+
+function updateRootClueProgress() {
+
+  if (!rootClueContinue) {
+    return;
+  }
+
+  if (rootCluesFound.length >= 4) {
+
+    rootClueContinue.classList.add("unlocked");
+    rootClueContinue.disabled = false;
+
+  } else {
+
+    rootClueContinue.classList.remove("unlocked");
+    rootClueContinue.disabled = true;
+  }
+}
+
+
+/* ---------------------------------------------------------
+   CLICS
+--------------------------------------------------------- */
+
+rootClueButtons.forEach(button => {
+
+  button.addEventListener("click", function () {
+
+    const clueName = this.dataset.rootClue;
+
+    showRootClue(clueName);
+  });
+
+});
+
+
+/* ---------------------------------------------------------
+   RESTAURATION À L'OUVERTURE DU CHAPITRE
+--------------------------------------------------------- */
+
+updateRootClueButtons();
+updateRootClueProgress();
 
 
 /* =========================================================
