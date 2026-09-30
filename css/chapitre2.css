@@ -1797,3 +1797,64 @@ button {
   }
 
 }
+/* =========================================================
+   ANALYSE IA2
+========================================================= */
+
+.root-clue-result {
+  opacity: 0;
+  transform: translateY(10px);
+  transition:
+    opacity 0.35s ease,
+    transform 0.35s ease;
+}
+
+.root-clue-result.analysis-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.clue-item {
+  position: relative;
+  cursor: pointer;
+}
+
+.clue-item.found {
+  border-color: rgba(99, 220, 255, 0.8);
+  box-shadow:
+    0 0 10px rgba(99, 220, 255, 0.2);
+}
+
+.clue-check {
+  margin-left: 6px;
+  color: #8ff4ff;
+  font-weight: bold;
+}
+
+.ia2-analysis {
+  margin-top: 18px;
+  padding: 18px;
+  border: 1px solid rgba(99, 220, 255, 0.25);
+  border-radius: 14px;
+  background:
+    linear-gradient(
+      135deg,
+      rgba(4, 15, 24, 0.94),
+      rgba(8, 24, 34, 0.9)
+    );
+}
+
+.ia2-analysis h3 {
+  margin-top: 0;
+}
+
+.ia2-warning {
+  margin-top: 16px;
+  font-size: 0.82rem;
+  letter-spacing: 0.08em;
+  color: #8ff4ff;
+  text-transform: uppercase;
+}
+
+
+
