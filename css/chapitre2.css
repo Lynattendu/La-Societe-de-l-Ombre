@@ -1856,5 +1856,39 @@ button {
   text-transform: uppercase;
 }
 
+/* =========================================================
+   OBSERVATION DE LA GROTTE
+========================================================= */
+
+.root-clue-result {
+  margin-top: 20px;
+  opacity: 0;
+  transform: translateY(10px);
+
+  transition:
+    opacity 0.35s ease,
+    transform 0.35s ease;
+}
+
+.root-clue-result.analysis-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.ia2-analysis {
+  padding: 18px;
+
+  border-radius: 16px;
+
+  border:
+    1px solid rgba(116, 207, 255, 0.25);
+
+  background:
+    rgba(10, 20, 27, 0.85);
+}
+
+.ia2-analysis h3 {
+  margin-bottom: 12px;
+}
 
 
