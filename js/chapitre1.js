@@ -1,4 +1,3 @@
-
 /* =========================================================
    LA SOCIÉTÉ DE L’OMBRE
    CHAPITRE 1 — EMBRASSE TON DESTIN
@@ -87,12 +86,6 @@ const STORAGE_PROLOGUE_CHOICE =
    IMAGES MANQUANTES
 ========================================================= */
 
-/*
-  Si une image Visuel-44, 45...
-  n'existe pas encore,
-  elle disparaît proprement.
-*/
-
 document
   .querySelectorAll(".visual img")
   .forEach((img) => {
@@ -105,9 +98,11 @@ document
           img.closest(".visual");
 
         if (visual) {
+
           visual.classList.add(
             "visual-missing"
           );
+
         }
 
       }
@@ -126,9 +121,7 @@ const observer =
 
       entries.forEach((entry) => {
 
-        if (
-          entry.isIntersecting
-        ) {
+        if (entry.isIntersecting) {
 
           const scene =
             entry.target;
@@ -171,7 +164,8 @@ function animateParagraphs(scene) {
     return;
   }
 
-  scene.dataset.textAnimated = "1";
+  scene.dataset.textAnimated =
+    "1";
 
   const paragraphs =
     scene.querySelectorAll(
@@ -205,10 +199,8 @@ function animateParagraphs(scene) {
             ],
             {
               duration: 650,
-              easing:
-                "ease-out",
-              fill:
-                "forwards"
+              easing: "ease-out",
+              fill: "forwards"
             }
           );
 
@@ -228,6 +220,10 @@ function animateParagraphs(scene) {
 
 function updateProgress() {
 
+  if (!progressFill) {
+    return;
+  }
+
   const scrollTop =
     window.scrollY;
 
@@ -236,9 +232,7 @@ function updateProgress() {
       .scrollHeight -
     window.innerHeight;
 
-  if (
-    documentHeight <= 0
-  ) {
+  if (documentHeight <= 0) {
     return;
   }
 
@@ -319,24 +313,9 @@ const savedScroll =
     10
   );
 
-if (
-  !Number.isNaN(savedScroll) &&
-  savedScroll > 250
-) {
-
-  /*
-    On ne renvoie pas automatiquement
-    le lecteur dans le chapitre.
-
-    Le bouton "Reprendre la lecture"
-    du menu utilisera cette position.
-  */
-
-}
-
 
 /* =========================================================
-   BOUTON "COMMENCER"
+   BOUTONS CONTINUER / COMMENCER
 ========================================================= */
 
 document
@@ -363,10 +342,8 @@ document
         if (nextScene) {
 
           nextScene.scrollIntoView({
-            behavior:
-              "smooth",
-            block:
-              "start"
+            behavior: "smooth",
+            block: "start"
           });
 
         }
@@ -382,6 +359,10 @@ document
 ========================================================= */
 
 function openMenu() {
+
+  if (!chapterMenu) {
+    return;
+  }
 
   chapterMenu.classList.add(
     "open"
@@ -401,6 +382,10 @@ function openMenu() {
 
 function closeMenu() {
 
+  if (!chapterMenu) {
+    return;
+  }
+
   chapterMenu.classList.remove(
     "open"
   );
@@ -417,68 +402,82 @@ function closeMenu() {
 }
 
 
-menuBtn.addEventListener(
-  "click",
-  openMenu
-);
+if (menuBtn) {
+
+  menuBtn.addEventListener(
+    "click",
+    openMenu
+  );
+
+}
 
 
-menuClose.addEventListener(
-  "click",
-  closeMenu
-);
+if (menuClose) {
+
+  menuClose.addEventListener(
+    "click",
+    closeMenu
+  );
+
+}
 
 
-chapterMenu.addEventListener(
-  "click",
-  (event) => {
+if (chapterMenu) {
 
-    if (
-      event.target ===
-      chapterMenu
-    ) {
+  chapterMenu.addEventListener(
+    "click",
+    (event) => {
 
-      closeMenu();
+      if (
+        event.target ===
+        chapterMenu
+      ) {
+
+        closeMenu();
+
+      }
 
     }
+  );
 
-  }
-);
+}
 
 
 /* =========================================================
    REPRENDRE LA LECTURE
 ========================================================= */
 
-resumeBtn.addEventListener(
-  "click",
-  () => {
+if (resumeBtn) {
 
-    closeMenu();
+  resumeBtn.addEventListener(
+    "click",
+    () => {
 
-    const position =
-      parseInt(
-        localStorage.getItem(
-          STORAGE_SCROLL
-        ),
-        10
-      );
+      closeMenu();
 
-    if (
-      !Number.isNaN(position)
-    ) {
+      const position =
+        parseInt(
+          localStorage.getItem(
+            STORAGE_SCROLL
+          ),
+          10
+        );
 
-      window.scrollTo({
-        top:
-          position,
-        behavior:
-          "smooth"
-      });
+      if (
+        !Number.isNaN(position)
+      ) {
+
+        window.scrollTo({
+          top: position,
+          behavior: "smooth"
+        });
+
+      }
 
     }
+  );
 
-  }
-);
+}
 
 
 /* =========================================================
@@ -504,11 +503,7 @@ function restartChapterFunction() {
   );
 
   /*
-    Les secrets ne sont volontairement
-    PAS supprimés.
-
-    Ainsi un secret découvert
-    reste acquis même lors d'une relecture.
+    Les secrets restent enregistrés.
   */
 
   window.scrollTo({
@@ -521,16 +516,24 @@ function restartChapterFunction() {
 }
 
 
-restartBtn.addEventListener(
-  "click",
-  restartChapterFunction
-);
+if (restartBtn) {
+
+  restartBtn.addEventListener(
+    "click",
+    restartChapterFunction
+  );
+
+}
 
 
-restartChapter.addEventListener(
-  "click",
-  restartChapterFunction
-);
+if (restartChapter) {
+
+  restartChapter.addEventListener(
+    "click",
+    restartChapterFunction
+  );
+
+}
 
 
 /* =========================================================
@@ -584,99 +587,57 @@ function saveSecret(secret) {
 ========================================================= */
 
 let secretTimer = null;
+let secretHideTimer = null;
 
-function showSecret(
-  secretName,
-  secretText
-) {
 
-  saveSecret(
-    secretName
-  );
+function hideSecretPopup() {
 
-  const inner =
-    secretPopup.querySelector(
-      ".secret-popup-inner"
-    );
-
-  let description =
-    inner.querySelector(
-      ".secret-description"
-    );
-
-  if (!description) {
-
-    description =
-      document.createElement(
-        "p"
-      );
-
-    description.className =
-      "secret-description";
-
-    description.style.marginTop =
-      "14px";
-
-    description.style.fontSize =
-      "15px";
-
-    description.style.lineHeight =
-      "1.55";
-
-    description.style.letterSpacing =
-      "0";
-
-    description.style.color =
-      "#f4eee6";
-
-    inner.appendChild(
-      description
-    );
-
+  if (!secretPopup) {
+    return;
   }
 
-  description.textContent =
-    secretText;
-
-  secretPopup.classList.add(
+  secretPopup.classList.remove(
     "show"
   );
 
   secretPopup.setAttribute(
     "aria-hidden",
-    "false"
+    "true"
   );
 
-  playSecretSound();
+  /*
+    Très important :
+    le popup ne peut plus bloquer
+    le scroll ni les boutons.
+  */
+  secretPopup.style.pointerEvents =
+    "none";
 
   clearTimeout(
-    secretTimer
+    secretHideTimer
   );
 
-  secretTimer =
+  secretHideTimer =
     setTimeout(
       () => {
 
-        secretPopup.classList.remove(
-          "show"
-        );
+        if (
+          !secretPopup.classList.contains(
+            "show"
+          )
+        ) {
 
-        secretPopup.setAttribute(
-          "aria-hidden",
-          "true"
-        );
+          secretPopup.style.visibility =
+            "hidden";
+
+        }
 
       },
-      3200
+      450
     );
 
 }
 
-/* =========================================================
-   POPUP SECRET
-========================================================= */
-
-let secretTimer = null;
 
 function showSecret(
   secretName,
@@ -687,10 +648,18 @@ function showSecret(
     secretName
   );
 
+  if (!secretPopup) {
+    return;
+  }
+
   const inner =
     secretPopup.querySelector(
       ".secret-popup-inner"
     );
+
+  if (!inner) {
+    return;
+  }
 
   let description =
     inner.querySelector(
@@ -733,14 +702,25 @@ function showSecret(
     secretText;
 
 
-  /* Le popup redevient actif */
+  clearTimeout(
+    secretTimer
+  );
+
+  clearTimeout(
+    secretHideTimer
+  );
+
+
+  /*
+    Réactivation du popup
+  */
+
   secretPopup.style.visibility =
     "visible";
 
   secretPopup.style.pointerEvents =
     "auto";
 
-
   secretPopup.classList.add(
     "show"
   );
@@ -754,61 +734,105 @@ function showSecret(
   playSecretSound();
 
 
-  clearTimeout(
-    secretTimer
-  );
-
+  /*
+    Le message reste 3,2 secondes,
+    puis disparaît automatiquement.
+  */
 
   secretTimer =
     setTimeout(
-      () => {
-
-        /*
-          On commence par retirer le popup visuellement
-        */
-        secretPopup.classList.remove(
-          "show"
-        );
-
-        secretPopup.setAttribute(
-          "aria-hidden",
-          "true"
-        );
-
-
-        /*
-          IMPORTANT :
-          il ne peut plus bloquer la page
-        */
-        secretPopup.style.pointerEvents =
-          "none";
-
-
-        /*
-          On laisse le temps au fondu de se terminer
-          puis on le cache complètement.
-        */
-        setTimeout(
-          () => {
-
-            if (
-              !secretPopup.classList.contains(
-                "show"
-              )
-            ) {
-
-              secretPopup.style.visibility =
-                "hidden";
-
-            }
-
-          },
-          450
-        );
-
-      },
+      hideSecretPopup,
       3200
     );
+
+}
+
+
+/*
+  Sécurité au chargement :
+  le popup ne doit jamais bloquer
+  la page s'il n'est pas ouvert.
+*/
+
+if (secretPopup) {
+
+  secretPopup.style.pointerEvents =
+    "none";
+
+  if (
+    !secretPopup.classList.contains(
+      "show"
+    )
+  ) {
+
+    secretPopup.style.visibility =
+      "hidden";
+
+  }
+
+}
+
+
+/* =========================================================
+   SECRET — FIOLE
+========================================================= */
+
+const fioleVisual =
+  document.querySelector(
+    '[data-secret="fiole"]'
+  );
+
+const fioleButton =
+  document.querySelector(
+    '[data-observe="fiole"]'
+  );
+
+
+function discoverFiole() {
+
+  if (fioleVisual) {
+
+    fioleVisual.classList.add(
+      "secret-found"
+    );
+
+  }
+
+  showSecret(
+    "fiole",
+    "Cette fiole est à l’origine d’une chaîne d’événements dont personne ne mesure encore les conséquences."
+  );
+
+}
+
+
+if (fioleButton) {
+
+  fioleButton.addEventListener(
+    "click",
+    (event) => {
+
+      event.preventDefault();
+      event.stopPropagation();
+
+      discoverFiole();
+
+    }
+  );
+
+}
+
+
+if (fioleVisual) {
+
+  fioleVisual.addEventListener(
+    "click",
+    () => {
+
+      discoverFiole();
+
+    }
+  );
 
 }
 
@@ -866,14 +890,21 @@ function resetChoiceButtons() {
 
 function createChoiceContinueButton() {
 
+  if (!choiceResult) {
+    return;
+  }
+
   const oldButton =
     choiceResult.querySelector(
       ".choice-continue"
     );
 
   if (oldButton) {
+
     oldButton.remove();
+
   }
+
 
   const button =
     document.createElement(
@@ -889,6 +920,7 @@ function createChoiceContinueButton() {
   button.style.marginTop =
     "22px";
 
+
   button.addEventListener(
     "click",
     () => {
@@ -901,16 +933,15 @@ function createChoiceContinueButton() {
       if (scene20) {
 
         scene20.scrollIntoView({
-          behavior:
-            "smooth",
-          block:
-            "start"
+          behavior: "smooth",
+          block: "start"
         });
 
       }
 
     }
   );
+
 
   choiceResult.appendChild(
     button
@@ -921,12 +952,18 @@ function createChoiceContinueButton() {
 
 function applyChoice(choice) {
 
+  if (!choiceResult) {
+    return;
+  }
+
   resetChoiceButtons();
+
 
   const selected =
     document.querySelector(
       `[data-choice="${choice}"]`
     );
+
 
   choiceButtons.forEach(
     (button) => {
@@ -1007,6 +1044,7 @@ function applyChoice(choice) {
 
   }
 
+
   createChoiceContinueButton();
 
 }
@@ -1049,6 +1087,7 @@ const savedChoice =
     STORAGE_CHOICE
   );
 
+
 if (
   savedChoice === "instinct" ||
   savedChoice === "raison"
@@ -1067,6 +1106,10 @@ if (
 
 function openHopeEnvelope() {
 
+  if (!envelopeReveal) {
+    return;
+  }
+
   envelopeReveal.classList.add(
     "open"
   );
@@ -1075,6 +1118,7 @@ function openHopeEnvelope() {
     STORAGE_ENVELOPE,
     "1"
   );
+
 
   if (openEnvelope) {
 
@@ -1085,6 +1129,7 @@ function openHopeEnvelope() {
       true;
 
   }
+
 
   playRevealSound();
 
@@ -1118,25 +1163,33 @@ if (
 
 function solveSymbolPuzzle() {
 
-  if (!scene29) {
+  if (
+    !scene29 ||
+    !analyseSymbols
+  ) {
     return;
   }
+
 
   scene29.classList.add(
     "unlocked"
   );
+
 
   localStorage.setItem(
     STORAGE_PUZZLE,
     "1"
   );
 
+
   analyseSymbols.classList.add(
     "completed"
   );
 
+
   analyseSymbols.textContent =
     "Inclinaison identifiée";
+
 
   playRevealSound();
 
@@ -1145,10 +1198,8 @@ function solveSymbolPuzzle() {
     () => {
 
       scene29.scrollIntoView({
-        behavior:
-          "smooth",
-        block:
-          "start"
+        behavior: "smooth",
+        block: "start"
       });
 
     },
@@ -1174,9 +1225,14 @@ if (
   ) === "1"
 ) {
 
-  scene29?.classList.add(
-    "unlocked"
-  );
+  if (scene29) {
+
+    scene29.classList.add(
+      "unlocked"
+    );
+
+  }
+
 
   if (analyseSymbols) {
 
@@ -1203,23 +1259,28 @@ function addPrologueMemory() {
       STORAGE_PROLOGUE_CHOICE
     );
 
+
   if (!prologueChoice) {
     return;
   }
+
 
   const leeScene =
     document.getElementById(
       "lee-hope"
     );
 
+
   const textBlock =
     leeScene?.querySelector(
       ".text-block"
     );
 
+
   if (!textBlock) {
     return;
   }
+
 
   if (
     document.getElementById(
@@ -1229,25 +1290,32 @@ function addPrologueMemory() {
     return;
   }
 
+
   const memory =
     document.createElement(
       "p"
     );
 
+
   memory.id =
     "prologueMemory";
+
 
   memory.className =
     "emphasis";
 
+
   memory.style.marginTop =
     "42px";
+
 
   memory.style.padding =
     "20px 14px";
 
+
   memory.style.borderTop =
     "1px solid rgba(231,191,117,.25)";
+
 
   memory.style.borderBottom =
     "1px solid rgba(231,191,117,.25)";
@@ -1273,6 +1341,7 @@ function addPrologueMemory() {
       "Vous aviez choisi l’illusion. Pourtant, vous êtes toujours ici.";
 
   }
+
 
   textBlock.appendChild(
     memory
@@ -1305,22 +1374,28 @@ function startSound() {
     return;
   }
 
+
   const AudioContextClass =
     window.AudioContext ||
     window.webkitAudioContext;
+
 
   if (!AudioContextClass) {
     return;
   }
 
+
   audioCtx =
     new AudioContextClass();
+
 
   masterGain =
     audioCtx.createGain();
 
+
   masterGain.gain.value =
     0.025;
+
 
   masterGain.connect(
     audioCtx.destination
@@ -1330,12 +1405,14 @@ function startSound() {
   ambienceOsc1 =
     audioCtx.createOscillator();
 
+
   ambienceOsc2 =
     audioCtx.createOscillator();
 
 
   const gain1 =
     audioCtx.createGain();
+
 
   const gain2 =
     audioCtx.createGain();
@@ -1344,8 +1421,10 @@ function startSound() {
   ambienceOsc1.type =
     "sine";
 
+
   ambienceOsc1.frequency.value =
     42;
+
 
   gain1.gain.value =
     0.7;
@@ -1354,8 +1433,10 @@ function startSound() {
   ambienceOsc2.type =
     "triangle";
 
+
   ambienceOsc2.frequency.value =
     84;
+
 
   gain2.gain.value =
     0.08;
@@ -1364,6 +1445,7 @@ function startSound() {
   ambienceOsc1
     .connect(gain1)
     .connect(masterGain);
+
 
   ambienceOsc2
     .connect(gain2)
@@ -1374,14 +1456,21 @@ function startSound() {
 
   ambienceOsc2.start();
 
-  soundActive = true;
 
-  soundBtn.classList.add(
-    "sound-active"
-  );
+  soundActive =
+    true;
 
-  soundBtn.textContent =
-    "♪";
+
+  if (soundBtn) {
+
+    soundBtn.classList.add(
+      "sound-active"
+    );
+
+    soundBtn.textContent =
+      "♪";
+
+  }
 
 }
 
@@ -1399,12 +1488,17 @@ function stopSound() {
     return;
   }
 
-  masterGain.gain
-    .exponentialRampToValueAtTime(
-      0.0001,
-      audioCtx.currentTime +
-      0.35
-    );
+
+  if (masterGain) {
+
+    masterGain.gain
+      .exponentialRampToValueAtTime(
+        0.0001,
+        audioCtx.currentTime +
+        0.35
+      );
+
+  }
 
 
   setTimeout(
@@ -1415,31 +1509,46 @@ function stopSound() {
         ambienceOsc1?.stop();
         ambienceOsc2?.stop();
 
-        audioCtx.close();
+        audioCtx?.close();
 
       } catch (error) {
-        /* rien */
+
+        /* Rien */
+
       }
 
 
-      audioCtx = null;
-      masterGain = null;
-      ambienceOsc1 = null;
-      ambienceOsc2 = null;
+      audioCtx =
+        null;
+
+      masterGain =
+        null;
+
+      ambienceOsc1 =
+        null;
+
+      ambienceOsc2 =
+        null;
 
     },
     450
   );
 
 
-  soundActive = false;
+  soundActive =
+    false;
 
-  soundBtn.classList.remove(
-    "sound-active"
-  );
 
-  soundBtn.textContent =
-    "♫";
+  if (soundBtn) {
+
+    soundBtn.classList.remove(
+      "sound-active"
+    );
+
+    soundBtn.textContent =
+      "♫";
+
+  }
 
 }
 
@@ -1448,22 +1557,26 @@ function stopSound() {
    BOUTON SON
 ========================================================= */
 
-soundBtn.addEventListener(
-  "click",
-  () => {
+if (soundBtn) {
 
-    if (soundActive) {
+  soundBtn.addEventListener(
+    "click",
+    () => {
 
-      stopSound();
+      if (soundActive) {
 
-    } else {
+        stopSound();
 
-      startSound();
+      } else {
+
+        startSound();
+
+      }
 
     }
+  );
 
-  }
-);
+}
 
 
 /* =========================================================
@@ -1483,8 +1596,10 @@ function playTone(
     return;
   }
 
+
   const oscillator =
     audioCtx.createOscillator();
+
 
   const gain =
     audioCtx.createGain();
@@ -1492,6 +1607,7 @@ function playTone(
 
   oscillator.type =
     "sine";
+
 
   oscillator.frequency.value =
     frequency;
@@ -1520,6 +1636,7 @@ function playTone(
 
   oscillator.start();
 
+
   oscillator.stop(
     audioCtx.currentTime +
     duration
@@ -1528,7 +1645,9 @@ function playTone(
 }
 
 
-/* SECRET */
+/* =========================================================
+   SON SECRET
+========================================================= */
 
 function playSecretSound() {
 
@@ -1537,6 +1656,7 @@ function playSecretSound() {
     0.7,
     0.025
   );
+
 
   setTimeout(
     () => {
@@ -1554,7 +1674,9 @@ function playSecretSound() {
 }
 
 
-/* CHOIX */
+/* =========================================================
+   SON CHOIX
+========================================================= */
 
 function playChoiceSound() {
 
@@ -1567,7 +1689,9 @@ function playChoiceSound() {
 }
 
 
-/* RÉVÉLATION */
+/* =========================================================
+   SON RÉVÉLATION
+========================================================= */
 
 function playRevealSound() {
 
@@ -1576,6 +1700,7 @@ function playRevealSound() {
     0.7,
     0.025
   );
+
 
   setTimeout(
     () => {
@@ -1606,6 +1731,8 @@ document.addEventListener(
     ) {
 
       closeMenu();
+
+      hideSecretPopup();
 
     }
 
@@ -1640,6 +1767,7 @@ const firstScene =
   document.querySelector(
     ".scene"
   );
+
 
 if (firstScene) {
 
