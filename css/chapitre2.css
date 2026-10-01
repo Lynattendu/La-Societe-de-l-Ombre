@@ -1910,8 +1910,8 @@ button {
 /* zone invisible à ajuster selon l'endroit exact où se cache Amy */
 .amy-hitbox {
   position: absolute;
-  top: 34%;
-  left: 63%;
+  top: 5%;
+  left: 80%;
   width: 16%;
   height: 26%;
   background: transparent;
