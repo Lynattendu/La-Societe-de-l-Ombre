@@ -1126,8 +1126,6 @@ img {
 
   z-index: 9500;
 
-  pointer-events: none;
-
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1135,13 +1133,18 @@ img {
   padding: 30px;
 
   opacity: 0;
+  visibility: hidden;
+
+  pointer-events: none;
 
   transition:
-    opacity 0.35s ease;
+    opacity 0.35s ease,
+    visibility 0.35s ease;
 }
 
 .secret-popup.show {
   opacity: 1;
+  visibility: visible;
 }
 
 .secret-popup::before {
@@ -1205,7 +1208,6 @@ img {
 
   font-size: 46px;
 }
-
 
 /* =========================================================
    MENU
