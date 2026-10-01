@@ -2171,4 +2171,112 @@ if (firstScene) {
    FIN INITIALISATION
 ========================================================= */
 
+/* =========================================================
+   ROOT DANS LA GROTTE — OBSERVER AUTREMENT
+========================================================= */
+
+const caveClueButtons =
+  document.querySelectorAll("[data-cave-clue]");
+
+const caveClueResult =
+  document.getElementById("caveClueResult");
+
+const caveClueTexts = {
+
+  eau: `
+    <div class="ia2-analysis">
+      <h3>💧 L’eau</h3>
+
+      <p>
+        Root observe le courant.
+      </p>
+
+      <p>
+        L’eau ne suit pas simplement la pente.
+        Certaines variations semblent indiquer
+        un passage ou une direction.
+      </p>
+    </div>
+  `,
+
+  roche: `
+    <div class="ia2-analysis">
+      <h3>🪨 La roche</h3>
+
+      <p>
+        Root effleure les parois.
+      </p>
+
+      <p>
+        Certaines zones paraissent différentes,
+        comme si elles avaient été touchées
+        ou travaillées longtemps auparavant.
+      </p>
+    </div>
+  `,
+
+  son: `
+    <div class="ia2-analysis">
+      <h3>🔊 Le son</h3>
+
+      <p>
+        Elle ferme les yeux.
+      </p>
+
+      <p>
+        Derrière le bruit de l’eau,
+        certains échos reviennent différemment.
+      </p>
+
+      <p>
+        La grotte semble cacher une cavité.
+      </p>
+    </div>
+  `,
+
+  lumiere: `
+    <div class="ia2-analysis">
+      <h3>✨ La lumière</h3>
+
+      <p>
+        La lumière traverse la brume
+        et frappe certaines zones de la roche.
+      </p>
+
+      <p>
+        Ce qui paraissait aléatoire
+        commence à ressembler à un repère.
+      </p>
+    </div>
+  `
+};
+
+
+caveClueButtons.forEach(button => {
+
+  button.addEventListener("click", function () {
+
+    const clueName =
+      this.dataset.caveClue;
+
+    if (!caveClueTexts[clueName]) {
+      return;
+    }
+
+    if (!caveClueResult) {
+      return;
+    }
+
+    caveClueResult.innerHTML =
+      caveClueTexts[clueName];
+
+    caveClueResult.classList.add(
+      "analysis-visible"
+    );
+
+  });
+
+});
+
+   
 });
