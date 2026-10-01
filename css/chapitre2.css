@@ -1910,8 +1910,8 @@ button {
 /* zone invisible à ajuster selon l'endroit exact où se cache Amy */
 .amy-hitbox {
   position: absolute;
-  top: 5%;
-  left: 80%;
+  top: 15%;
+  left: 90%;
   width: 16%;
   height: 26%;
   background: transparent;
@@ -1923,8 +1923,8 @@ button {
 /* halo de révélation */
 .amy-spotlight {
   position: absolute;
-  top: 5%;
-  left: 80%;
+  top: 15%;
+  left: 90%;
   width: 16%;
   height: 26%;
   border-radius: 50%;
