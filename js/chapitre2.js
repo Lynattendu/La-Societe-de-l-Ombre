@@ -2282,3 +2282,69 @@ caveClueButtons.forEach(button => {
 
    
 });
+
+
+/* =========================================================
+   MINI-JEU — TROUVER AMY
+========================================================= */
+
+const amyHuntVisual =
+  document.querySelector("[data-amy-hunt]");
+
+const amyHitbox =
+  document.getElementById("amyHitbox");
+
+const amySpotlight =
+  document.getElementById("amySpotlight");
+
+const amyResult =
+  document.getElementById("amyResult");
+
+let amyTimer = null;
+
+function revealAmy() {
+
+  if (!amyHuntVisual) {
+    return;
+  }
+
+  amyHuntVisual.classList.add("amy-found");
+
+  if (amyResult) {
+    amyResult.textContent =
+      "Amy, le Fantôme de l’Ombre, était là.";
+    amyResult.classList.add("visible");
+  }
+
+  clearTimeout(amyTimer);
+
+  amyTimer = setTimeout(() => {
+
+    amyHuntVisual.classList.remove("amy-found");
+
+    if (amyResult) {
+      amyResult.classList.remove("visible");
+    }
+
+  }, 2600);
+
+}
+
+if (amyHitbox) {
+
+  amyHitbox.addEventListener(
+    "click",
+    (event) => {
+
+      event.stopPropagation();
+      revealAmy();
+
+    }
+  );
+
+}
+
+
+
+
+
