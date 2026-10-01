@@ -1135,6 +1135,11 @@ img {
   opacity: 0;
   visibility: hidden;
 
+  /*
+    IMPORTANT :
+    le popup ne bloque JAMAIS
+    le scroll ou les clics du livre.
+  */
   pointer-events: none;
 
   transition:
@@ -1142,10 +1147,18 @@ img {
     visibility 0.35s ease;
 }
 
+
 .secret-popup.show {
   opacity: 1;
   visibility: visible;
+
+  /*
+    On laisse volontairement none.
+    Le popup est seulement informatif.
+  */
+  pointer-events: none;
 }
+
 
 .secret-popup::before {
   content: "";
@@ -1160,10 +1173,12 @@ img {
   -webkit-backdrop-filter: blur(8px);
 }
 
+
 .secret-popup-inner {
   position: relative;
 
   min-width: 260px;
+  max-width: 90%;
 
   padding:
     28px
@@ -1197,9 +1212,12 @@ img {
     transform 0.35s ease;
 }
 
-.secret-popup.show .secret-popup-inner {
+
+.secret-popup.show
+.secret-popup-inner {
   transform: scale(1);
 }
+
 
 .secret-symbol {
   display: block;
@@ -1208,7 +1226,6 @@ img {
 
   font-size: 46px;
 }
-
 /* =========================================================
    MENU
 ========================================================= */
