@@ -1912,8 +1912,8 @@ button {
   position: absolute;
   top: 3%;
   left: 75%;
-  width: 10%;
-  height: 35%;
+  width: 25%;
+  height: 25%;
   background: transparent;
   border: none;
   cursor: pointer;
@@ -1925,8 +1925,8 @@ button {
   position: absolute;
   top: 3%;
   left: 75%;
-  width: 10%;
-  height: 35%;
+  width: 25%;
+  height: 25%;
   border-radius: 50%;
   border: 2px solid rgba(255, 215, 140, 0.95);
   box-shadow:
