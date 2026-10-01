@@ -1783,7 +1783,65 @@ if (firstScene) {
   );
 
 }
+/* =========================================================
+   RÉINITIALISER TOUTE LA PROGRESSION
+========================================================= */
 
+const resetAllProgress =
+  document.getElementById(
+    "resetAllProgress"
+  );
+
+
+if (resetAllProgress) {
+
+  resetAllProgress.addEventListener(
+    "click",
+    () => {
+
+      const confirmation =
+        confirm(
+          "Effacer toute la progression enregistrée du livre ?"
+        );
+
+
+      if (!confirmation) {
+        return;
+      }
+
+
+      Object.keys(
+        localStorage
+      )
+        .filter(
+          (key) =>
+            key.startsWith(
+              "societeOmbre_"
+            )
+        )
+        .forEach(
+          (key) => {
+
+            localStorage.removeItem(
+              key
+            );
+
+          }
+        );
+
+
+      /*
+        Retour en haut du chapitre
+        avec une page totalement neuve.
+      */
+
+      window.location.href =
+        "chapitre1.html";
+
+    }
+  );
+
+}
 
 /* =========================================================
    FIN INITIALISATION
