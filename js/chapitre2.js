@@ -938,17 +938,19 @@ if (rootClueContinue) {
     "click",
     () => {
 
-      const target =
-        document.getElementById(
-          "scene-5"
-        ) ||
-        document.querySelector(
-          '[data-after-root-investigation]'
-        );
+      const currentSection =
+        rootClueContinue.closest(".scene");
 
-      if (target) {
+      if (!currentSection) {
+        return;
+      }
 
-        target.scrollIntoView({
+      const nextSection =
+        currentSection.nextElementSibling;
+
+      if (nextSection) {
+
+        nextSection.scrollIntoView({
           behavior: "smooth",
           block: "start"
         });
