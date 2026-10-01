@@ -587,7 +587,6 @@ function saveSecret(secret) {
 ========================================================= */
 
 let secretTimer = null;
-let secretHideTimer = null;
 
 
 function hideSecretPopup() {
@@ -596,9 +595,7 @@ function hideSecretPopup() {
     return;
   }
 
-  secretPopup.classList.remove(
-    "show"
-  );
+  secretPopup.classList.remove("show");
 
   secretPopup.setAttribute(
     "aria-hidden",
@@ -613,34 +610,34 @@ function showSecret(
   secretText
 ) {
 
-  saveSecret(
-    secretName
-  );
-
   if (!secretPopup) {
     return;
   }
+
+  saveSecret(secretName);
+
 
   const inner =
     secretPopup.querySelector(
       ".secret-popup-inner"
     );
 
+
   if (!inner) {
     return;
   }
+
 
   let description =
     inner.querySelector(
       ".secret-description"
     );
 
+
   if (!description) {
 
     description =
-      document.createElement(
-        "p"
-      );
+      document.createElement("p");
 
     description.className =
       "secret-description";
@@ -660,9 +657,7 @@ function showSecret(
     description.style.color =
       "#f4eee6";
 
-    inner.appendChild(
-      description
-    );
+    inner.appendChild(description);
 
   }
 
@@ -671,24 +666,9 @@ function showSecret(
     secretText;
 
 
-  clearTimeout(
-    secretTimer
-  );
+  /* Afficher */
 
-  clearTimeout(
-    secretHideTimer
-  );
-
-
-  /*
-    Réactivation du popup
-  */
-
-
-
-  secretPopup.classList.add(
-    "show"
-  );
+  secretPopup.classList.add("show");
 
   secretPopup.setAttribute(
     "aria-hidden",
@@ -699,41 +679,22 @@ function showSecret(
   playSecretSound();
 
 
-  /*
-    Le message reste 3,2 secondes,
-    puis disparaît automatiquement.
-  */
+  /* Annuler un ancien timer */
+
+  clearTimeout(secretTimer);
+
+
+  /* Disparition automatique après 3 secondes */
 
   secretTimer =
     setTimeout(
-      hideSecretPopup,
-      3200
+      () => {
+
+        hideSecretPopup();
+
+      },
+      3000
     );
-
-}
-
-
-/*
-  Sécurité au chargement :
-  le popup ne doit jamais bloquer
-  la page s'il n'est pas ouvert.
-*/
-
-if (secretPopup) {
-
-  secretPopup.style.pointerEvents =
-    "none";
-
-  if (
-    !secretPopup.classList.contains(
-      "show"
-    )
-  ) {
-
-    secretPopup.style.visibility =
-      "hidden";
-
-  }
 
 }
 
