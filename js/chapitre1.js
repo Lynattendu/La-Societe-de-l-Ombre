@@ -684,11 +684,7 @@ function showSecret(
     Réactivation du popup
   */
 
-  secretPopup.style.visibility =
-    "visible";
 
-  secretPopup.style.pointerEvents =
-    "auto";
 
   secretPopup.classList.add(
     "show"
