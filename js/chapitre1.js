@@ -673,60 +673,142 @@ function showSecret(
 }
 
 /* =========================================================
-   SECRET — FIOLE
+   POPUP SECRET
 ========================================================= */
 
-const fioleVisual =
-  document.querySelector(
-    '[data-secret="fiole"]'
+let secretTimer = null;
+
+function showSecret(
+  secretName,
+  secretText
+) {
+
+  saveSecret(
+    secretName
   );
 
-const fioleButton =
-  document.querySelector(
-    '[data-observe="fiole"]'
+  const inner =
+    secretPopup.querySelector(
+      ".secret-popup-inner"
+    );
+
+  let description =
+    inner.querySelector(
+      ".secret-description"
+    );
+
+  if (!description) {
+
+    description =
+      document.createElement(
+        "p"
+      );
+
+    description.className =
+      "secret-description";
+
+    description.style.marginTop =
+      "14px";
+
+    description.style.fontSize =
+      "15px";
+
+    description.style.lineHeight =
+      "1.55";
+
+    description.style.letterSpacing =
+      "0";
+
+    description.style.color =
+      "#f4eee6";
+
+    inner.appendChild(
+      description
+    );
+
+  }
+
+
+  description.textContent =
+    secretText;
+
+
+  /* Le popup redevient actif */
+  secretPopup.style.visibility =
+    "visible";
+
+  secretPopup.style.pointerEvents =
+    "auto";
+
+
+  secretPopup.classList.add(
+    "show"
+  );
+
+  secretPopup.setAttribute(
+    "aria-hidden",
+    "false"
   );
 
 
-function discoverFiole() {
+  playSecretSound();
 
-  fioleVisual?.classList.add(
-    "secret-found"
+
+  clearTimeout(
+    secretTimer
   );
 
-  showSecret(
-    "fiole",
-    "Cette fiole est à l’origine d’une chaîne d’événements dont personne ne mesure encore les conséquences."
-  );
 
-}
+  secretTimer =
+    setTimeout(
+      () => {
 
+        /*
+          On commence par retirer le popup visuellement
+        */
+        secretPopup.classList.remove(
+          "show"
+        );
 
-if (fioleButton) {
-
-  fioleButton.addEventListener(
-    "click",
-    (event) => {
-
-      event.stopPropagation();
-
-      discoverFiole();
-
-    }
-  );
-
-}
+        secretPopup.setAttribute(
+          "aria-hidden",
+          "true"
+        );
 
 
-if (fioleVisual) {
+        /*
+          IMPORTANT :
+          il ne peut plus bloquer la page
+        */
+        secretPopup.style.pointerEvents =
+          "none";
 
-  fioleVisual.addEventListener(
-    "click",
-    () => {
 
-      discoverFiole();
+        /*
+          On laisse le temps au fondu de se terminer
+          puis on le cache complètement.
+        */
+        setTimeout(
+          () => {
 
-    }
-  );
+            if (
+              !secretPopup.classList.contains(
+                "show"
+              )
+            ) {
+
+              secretPopup.style.visibility =
+                "hidden";
+
+            }
+
+          },
+          450
+        );
+
+      },
+      3200
+    );
 
 }
 
