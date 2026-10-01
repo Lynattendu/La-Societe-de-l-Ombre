@@ -672,7 +672,6 @@ function showSecret(
 
 }
 
-
 /* =========================================================
    SECRET — FIOLE
 ========================================================= */
@@ -700,27 +699,7 @@ function discoverFiole() {
   );
 
 }
-const vialObserveButton =
-  document.getElementById("vialObserveButton");
 
-const vialObserveResult =
-  document.getElementById("vialObserveResult");
-
-if (vialObserveButton && vialObserveResult) {
-
-  vialObserveButton.addEventListener("click", () => {
-
-    vialObserveResult.classList.add("visible");
-
-    setTimeout(() => {
-
-      vialObserveResult.classList.remove("visible");
-
-    }, 3000);
-
-  });
-
-}
 
 if (fioleButton) {
 
