@@ -605,37 +605,6 @@ function hideSecretPopup() {
     "true"
   );
 
-  /*
-    Très important :
-    le popup ne peut plus bloquer
-    le scroll ni les boutons.
-  */
-  secretPopup.style.pointerEvents =
-    "none";
-
-  clearTimeout(
-    secretHideTimer
-  );
-
-  secretHideTimer =
-    setTimeout(
-      () => {
-
-        if (
-          !secretPopup.classList.contains(
-            "show"
-          )
-        ) {
-
-          secretPopup.style.visibility =
-            "hidden";
-
-        }
-
-      },
-      450
-    );
-
 }
 
 
