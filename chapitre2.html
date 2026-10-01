@@ -939,42 +939,78 @@
 </section>
 
 
-<!-- VISUEL 13 -->
+<!-- =====================================================
+     VISUEL 13 — Le Fantôme de l’Ombre est là
+===================================================== -->
 
-<section class="scene shadow-scene" id="scene-13">
+<section
+  class="scene"
+  id="scene-13"
+>
 
-  <div class="visual" data-visual="13">
+  <div
+    class="visual visual-amy-hunt"
+    data-visual="13"
+    data-amy-hunt
+  >
 
     <img
       src="images/chapitre2/Visuel-13.PNG"
-      alt="Amy, le Fantôme de l'Ombre, observe Root"
+      alt="Amy est cachée dans le décor tandis que Root avance dans la jungle"
       loading="lazy"
       onerror="this.closest('.visual').classList.add('visual-missing')"
     >
 
-  </div>
+    <!-- zone invisible cliquable -->
+    <button
+      class="amy-hitbox"
+      id="amyHitbox"
+      aria-label="Trouver Amy"
+      type="button"
+    ></button>
 
+    <!-- halo de révélation -->
+    <div
+      class="amy-spotlight"
+      id="amySpotlight"
+      aria-hidden="true"
+    >
+      <span class="amy-label">
+        Amy
+      </span>
+    </div>
+
+  </div>
 
   <div class="text-block">
 
     <p>
-      Si son instinct lui affirme que quelqu’un est là
-      alors que les appareils de Peter ne détectent absolument rien,
-      il n’existe qu’une possibilité réellement inquiétante.
+      Root sent une présence.
+    </p>
+
+    <p>
+      Pourtant, ni ses drones ni ses capteurs ne détectent quoi que ce soit.
     </p>
 
     <p class="impact-text">
-      Le Fantôme de l’Ombre.
-    </p>
-
-    <p class="emphasis">
-      Amy.
+      Quelqu’un est là.
+      Invisible.
+      Patient.
+      Presque fondu dans le décor.
     </p>
 
   </div>
 
-</section>
+  <p class="amy-help">
+    Touchez l’image pour essayer de repérer Amy.
+  </p>
 
+  <div
+    class="amy-result"
+    id="amyResult"
+  ></div>
+
+</section>
 
 <!-- VISUEL 14 -->
 
