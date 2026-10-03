@@ -48,6 +48,12 @@ const secretPopup =
 const STORAGE_SCROLL =
   "societeOmbre_chapitre2_scroll";
 
+const STORAGE_PROGRESS =
+  "societeOmbre_chapitre2_progression";
+
+const STORAGE_COMPLETED =
+  "societeOmbre_chapitre2_termine";
+
 const STORAGE_ROOT_CLUES =
   "societeOmbre_chapitre2_rootClues";
 
@@ -63,8 +69,18 @@ const STORAGE_PACT =
 const STORAGE_SECRETS =
   "societeOmbre_chapitre2_secrets";
 
-const STORAGE_FINISHED =
-  "societeOmbre_chapitre2_finished";
+
+/* =========================================================
+   PARAMÈTRES D'OUVERTURE
+========================================================= */
+
+const urlParams =
+  new URLSearchParams(
+    window.location.search
+  );
+
+const lectureMode =
+  urlParams.get("lecture");
 
 
 /* =========================================================
@@ -83,9 +99,11 @@ document
           img.closest(".visual");
 
         if (visual) {
+
           visual.classList.add(
             "visual-missing"
           );
+
         }
 
       }
@@ -119,6 +137,18 @@ const observer =
             scene
           );
 
+
+          /*
+            Dès qu'une scène est vue,
+            le chapitre est considéré
+            comme commencé.
+          */
+
+          localStorage.setItem(
+            STORAGE_PROGRESS,
+            "1"
+          );
+
         }
 
       });
@@ -149,12 +179,15 @@ function animateParagraphs(scene) {
     return;
   }
 
-  scene.dataset.textAnimated = "1";
+  scene.dataset.textAnimated =
+    "1";
+
 
   const paragraphs =
     scene.querySelectorAll(
       ".text-block p"
     );
+
 
   paragraphs.forEach(
     (paragraph, index) => {
@@ -164,6 +197,7 @@ function animateParagraphs(scene) {
 
       paragraph.style.transform =
         "translateY(12px)";
+
 
       setTimeout(
         () => {
@@ -175,6 +209,7 @@ function animateParagraphs(scene) {
                 transform:
                   "translateY(12px)"
               },
+
               {
                 opacity: 1,
                 transform:
@@ -208,19 +243,23 @@ function updateProgress() {
     return;
   }
 
+
   const scrollTop =
     window.scrollY;
+
 
   const documentHeight =
     document.documentElement
       .scrollHeight -
     window.innerHeight;
 
+
   if (
     documentHeight <= 0
   ) {
     return;
   }
+
 
   const percentage =
     Math.min(
@@ -233,6 +272,7 @@ function updateProgress() {
         ) * 100
       )
     );
+
 
   progressFill.style.width =
     percentage + "%";
@@ -248,6 +288,7 @@ window.addEventListener(
   }
 );
 
+
 updateProgress();
 
 
@@ -255,7 +296,9 @@ updateProgress();
    SAUVEGARDE DE LA POSITION
 ========================================================= */
 
-let saveScrollTimer = null;
+let saveScrollTimer =
+  null;
+
 
 window.addEventListener(
   "scroll",
@@ -264,6 +307,7 @@ window.addEventListener(
     clearTimeout(
       saveScrollTimer
     );
+
 
     saveScrollTimer =
       setTimeout(
@@ -274,6 +318,12 @@ window.addEventListener(
             Math.round(
               window.scrollY
             )
+          );
+
+
+          localStorage.setItem(
+            STORAGE_PROGRESS,
+            "1"
           );
 
         },
@@ -288,11 +338,85 @@ window.addEventListener(
 
 
 /* =========================================================
+   REPRENDRE / RECOMMENCER DEPUIS
+   LE MENU GÉNÉRAL
+========================================================= */
+
+if (
+  lectureMode === "reprendre"
+) {
+
+  const savedPosition =
+    parseInt(
+      localStorage.getItem(
+        STORAGE_SCROLL
+      ),
+      10
+    );
+
+
+  if (
+    !Number.isNaN(
+      savedPosition
+    ) &&
+    savedPosition > 0
+  ) {
+
+    /*
+      On laisse le temps aux images
+      et à la page de se mettre en place.
+    */
+
+    setTimeout(
+      () => {
+
+        window.scrollTo({
+          top: savedPosition,
+          left: 0,
+          behavior: "instant"
+        });
+
+        updateProgress();
+
+      },
+      400
+    );
+
+  }
+
+}
+
+
+if (
+  lectureMode === "recommencer"
+) {
+
+  setTimeout(
+    () => {
+
+      window.scrollTo({
+        top: 0,
+        left: 0,
+        behavior: "instant"
+      });
+
+      updateProgress();
+
+    },
+    100
+  );
+
+}
+
+
+/* =========================================================
    BOUTONS CONTINUER
 ========================================================= */
 
 document
-  .querySelectorAll("[data-next]")
+  .querySelectorAll(
+    "[data-next]"
+  )
   .forEach((button) => {
 
     button.addEventListener(
@@ -302,13 +426,16 @@ document
         const currentScene =
           button.closest(".scene");
 
+
         if (!currentScene) {
           return;
         }
 
+
         const nextScene =
           currentScene
             .nextElementSibling;
+
 
         if (nextScene) {
 
@@ -335,14 +462,17 @@ function openMenu() {
     return;
   }
 
+
   chapterMenu.classList.add(
     "open"
   );
+
 
   chapterMenu.setAttribute(
     "aria-hidden",
     "false"
   );
+
 
   document.body.classList.add(
     "no-scroll"
@@ -357,14 +487,17 @@ function closeMenu() {
     return;
   }
 
+
   chapterMenu.classList.remove(
     "open"
   );
+
 
   chapterMenu.setAttribute(
     "aria-hidden",
     "true"
   );
+
 
   document.body.classList.remove(
     "no-scroll"
@@ -416,6 +549,7 @@ if (chapterMenu) {
 
 /* =========================================================
    REPRENDRE LA LECTURE
+   DEPUIS LE MENU DU CHAPITRE
 ========================================================= */
 
 if (resumeBtn) {
@@ -426,6 +560,7 @@ if (resumeBtn) {
 
       closeMenu();
 
+
       const position =
         parseInt(
           localStorage.getItem(
@@ -433,6 +568,7 @@ if (resumeBtn) {
           ),
           10
         );
+
 
       if (
         !Number.isNaN(position)
@@ -457,43 +593,66 @@ if (resumeBtn) {
 
 function restartChapterFunction() {
 
-  localStorage.removeItem(
-    STORAGE_SCROLL
+  /*
+    Tout ce qui appartient au chapitre 2
+    commence par ce préfixe.
+  */
+
+  const prefix =
+    "societeOmbre_chapitre2_";
+
+
+  const keysToDelete =
+    [];
+
+
+  for (
+    let i = 0;
+    i < localStorage.length;
+    i++
+  ) {
+
+    const key =
+      localStorage.key(i);
+
+
+    if (
+      key &&
+      key.startsWith(prefix)
+    ) {
+
+      keysToDelete.push(
+        key
+      );
+
+    }
+
+  }
+
+
+  /*
+    Suppression totale de la mémoire
+    du chapitre 2.
+  */
+
+  keysToDelete.forEach(
+    (key) => {
+
+      localStorage.removeItem(
+        key
+      );
+
+    }
   );
 
-  localStorage.removeItem(
-    STORAGE_ROOT_CLUES
-  );
 
-  localStorage.removeItem(
-    STORAGE_CAVE_SENSES
-  );
+  /*
+    Recharge le chapitre comme
+    s'il n'avait jamais été lu.
+  */
 
-  localStorage.removeItem(
-    STORAGE_HOPE_CLUES
-  );
-
-  localStorage.removeItem(
-    STORAGE_PACT
-  );
-
-  localStorage.removeItem(
-    STORAGE_FINISHED
-  );
-
-  window.scrollTo({
-    top: 0,
-    behavior: "smooth"
-  });
-
-  closeMenu();
-
-  setTimeout(
-    () => {
-      location.reload();
-    },
-    500
-  );
+  window.location.href =
+    "chapitre2.html?lecture=recommencer";
 
 }
 
@@ -546,11 +705,13 @@ function saveSecret(secret) {
   const secrets =
     getSecrets();
 
+
   if (
     !secrets.includes(secret)
   ) {
 
     secrets.push(secret);
+
 
     localStorage.setItem(
       STORAGE_SECRETS,
@@ -568,32 +729,61 @@ function saveSecret(secret) {
    POPUP SECRET
 ========================================================= */
 
-let secretTimer = null;
+let secretTimer =
+  null;
+
+
+function hideSecretPopup() {
+
+  if (!secretPopup) {
+    return;
+  }
+
+
+  secretPopup.classList.remove(
+    "show"
+  );
+
+
+  secretPopup.setAttribute(
+    "aria-hidden",
+    "true"
+  );
+
+}
+
 
 function showSecret(
   secretName,
   secretText
 ) {
 
-  saveSecret(secretName);
+  saveSecret(
+    secretName
+  );
+
 
   if (!secretPopup) {
     return;
   }
+
 
   const inner =
     secretPopup.querySelector(
       ".secret-popup-inner"
     );
 
+
   if (!inner) {
     return;
   }
+
 
   let description =
     inner.querySelector(
       ".secret-description"
     );
+
 
   if (!description) {
 
@@ -602,23 +792,30 @@ function showSecret(
         "p"
       );
 
+
     description.className =
       "secret-description";
+
 
     description.style.marginTop =
       "14px";
 
+
     description.style.fontSize =
       "15px";
+
 
     description.style.lineHeight =
       "1.55";
 
+
     description.style.letterSpacing =
       "0";
 
+
     description.style.color =
       "#f4eee6";
+
 
     inner.appendChild(
       description
@@ -626,36 +823,35 @@ function showSecret(
 
   }
 
+
   description.textContent =
     secretText;
+
 
   secretPopup.classList.add(
     "show"
   );
+
 
   secretPopup.setAttribute(
     "aria-hidden",
     "false"
   );
 
+
   playSecretSound();
+
 
   clearTimeout(
     secretTimer
   );
 
+
   secretTimer =
     setTimeout(
       () => {
 
-        secretPopup.classList.remove(
-          "show"
-        );
-
-        secretPopup.setAttribute(
-          "aria-hidden",
-          "true"
-        );
+        hideSecretPopup();
 
       },
       3200
@@ -666,29 +862,50 @@ function showSecret(
 
 /* =========================================================
    ANALYSE IA2 — ENQUÊTE SUR ROOT
-   Les 4 pistes peuvent être consultées librement
 ========================================================= */
 
-const rootClueButtons = document.querySelectorAll("[data-root-clue]");
-const rootClueResult = document.getElementById("rootClueResult");
-const rootClueContinue = document.getElementById("rootClueContinue");
+const rootClueButtons =
+  document.querySelectorAll(
+    "[data-root-clue]"
+  );
 
-const ROOT_CLUE_STORAGE = "societeOmbre_chapitre2_rootClues";
 
-/* Récupération des pistes déjà consultées */
-let rootCluesFound = [];
+const rootClueResult =
+  document.getElementById(
+    "rootClueResult"
+  );
+
+
+const rootClueContinue =
+  document.getElementById(
+    "rootClueContinue"
+  );
+
+
+let rootCluesFound =
+  [];
+
 
 try {
+
   rootCluesFound =
-    JSON.parse(localStorage.getItem(ROOT_CLUE_STORAGE)) || [];
+    JSON.parse(
+      localStorage.getItem(
+        STORAGE_ROOT_CLUES
+      )
+    ) || [];
+
 } catch (error) {
-  rootCluesFound = [];
+
+  rootCluesFound =
+    [];
+
 }
 
 
-/* ---------------------------------------------------------
-   TEXTES DES ANALYSES
---------------------------------------------------------- */
+/* =========================================================
+   TEXTES DES ANALYSES ROOT
+========================================================= */
 
 const rootClueTexts = {
 
@@ -715,7 +932,6 @@ const rootClueTexts = {
     </div>
   `,
 
-
   combat: `
     <div class="ia2-analysis">
       <h3>🥋 Capacités de combat</h3>
@@ -738,7 +954,6 @@ const rootClueTexts = {
       </p>
     </div>
   `,
-
 
   disparition: `
     <div class="ia2-analysis">
@@ -765,7 +980,6 @@ const rootClueTexts = {
       </p>
     </div>
   `,
-
 
   profil: `
     <div class="ia2-analysis">
@@ -794,96 +1008,152 @@ const rootClueTexts = {
       </p>
     </div>
   `
+
 };
 
 
-/* ---------------------------------------------------------
-   AFFICHAGE D'UNE PISTE
---------------------------------------------------------- */
+/* =========================================================
+   AFFICHAGE D'UNE PISTE ROOT
+========================================================= */
 
-function showRootClue(clueName) {
+function showRootClue(
+  clueName
+) {
 
-  const clueText = rootClueTexts[clueName];
+  const clueText =
+    rootClueTexts[
+      clueName
+    ];
+
 
   if (!clueText) {
     return;
   }
 
 
-  /* Afficher l'analyse choisie */
   if (rootClueResult) {
 
-    rootClueResult.classList.remove("analysis-visible");
+    rootClueResult.classList.remove(
+      "analysis-visible"
+    );
 
-    setTimeout(() => {
 
-      rootClueResult.innerHTML = clueText;
+    setTimeout(
+      () => {
 
-      requestAnimationFrame(() => {
-        rootClueResult.classList.add("analysis-visible");
-      });
+        rootClueResult.innerHTML =
+          clueText;
 
-    }, 120);
+
+        requestAnimationFrame(
+          () => {
+
+            rootClueResult.classList.add(
+              "analysis-visible"
+            );
+
+          }
+        );
+
+      },
+      120
+    );
+
   }
 
 
-  /* Première consultation de cette piste */
-  if (!rootCluesFound.includes(clueName)) {
+  if (
+    !rootCluesFound.includes(
+      clueName
+    )
+  ) {
 
-    rootCluesFound.push(clueName);
+    rootCluesFound.push(
+      clueName
+    );
+
 
     localStorage.setItem(
-      ROOT_CLUE_STORAGE,
-      JSON.stringify(rootCluesFound)
+      STORAGE_ROOT_CLUES,
+      JSON.stringify(
+        rootCluesFound
+      )
     );
+
   }
 
 
   updateRootClueButtons();
   updateRootClueProgress();
+
 }
 
 
-/* ---------------------------------------------------------
-   ÉTAT VISUEL DES BOUTONS
---------------------------------------------------------- */
+/* =========================================================
+   ÉTAT DES BOUTONS ROOT
+========================================================= */
 
 function updateRootClueButtons() {
 
-  rootClueButtons.forEach(button => {
+  rootClueButtons.forEach(
+    (button) => {
 
-    const clueName = button.dataset.rootClue;
+      const clueName =
+        button.dataset.rootClue;
 
-    if (rootCluesFound.includes(clueName)) {
 
-      button.classList.add("found");
+      if (
+        rootCluesFound.includes(
+          clueName
+        )
+      ) {
 
-      /* Ajouter le ✓ une seule fois */
-      if (!button.querySelector(".clue-check")) {
+        button.classList.add(
+          "found"
+        );
 
-        const check = document.createElement("span");
 
-        check.className = "clue-check";
-        check.textContent = " ✓";
+        if (
+          !button.querySelector(
+            ".clue-check"
+          )
+        ) {
 
-        button.appendChild(check);
+          const check =
+            document.createElement(
+              "span"
+            );
+
+
+          check.className =
+            "clue-check";
+
+
+          check.textContent =
+            " ✓";
+
+
+          button.appendChild(
+            check
+          );
+
+        }
+
       }
 
-    }
 
-    /*
-      IMPORTANT :
-      on ne désactive JAMAIS le bouton.
-      Le lecteur peut donc revenir dessus.
-    */
-    button.disabled = false;
-  });
+      button.disabled =
+        false;
+
+    }
+  );
+
 }
 
 
-/* ---------------------------------------------------------
-   PROGRESSION DE L'ENQUÊTE
---------------------------------------------------------- */
+/* =========================================================
+   PROGRESSION ENQUÊTE ROOT
+========================================================= */
 
 function updateRootClueProgress() {
 
@@ -891,45 +1161,66 @@ function updateRootClueProgress() {
     return;
   }
 
-  if (rootCluesFound.length >= 4) {
 
-    rootClueContinue.classList.add("unlocked");
-    rootClueContinue.disabled = false;
+  if (
+    rootCluesFound.length >= 4
+  ) {
+
+    rootClueContinue.classList.add(
+      "unlocked"
+    );
+
+
+    rootClueContinue.disabled =
+      false;
 
   } else {
 
-    rootClueContinue.classList.remove("unlocked");
-    rootClueContinue.disabled = true;
+    rootClueContinue.classList.remove(
+      "unlocked"
+    );
+
+
+    rootClueContinue.disabled =
+      true;
+
   }
+
 }
 
 
-/* ---------------------------------------------------------
-   CLICS
---------------------------------------------------------- */
+/* =========================================================
+   CLICS ROOT
+========================================================= */
 
-rootClueButtons.forEach(button => {
+rootClueButtons.forEach(
+  (button) => {
 
-  button.addEventListener("click", function () {
+    button.addEventListener(
+      "click",
+      function () {
 
-    const clueName = this.dataset.rootClue;
-
-    showRootClue(clueName);
-  });
-
-});
+        const clueName =
+          this.dataset.rootClue;
 
 
-/* ---------------------------------------------------------
-   RESTAURATION À L'OUVERTURE DU CHAPITRE
---------------------------------------------------------- */
+        showRootClue(
+          clueName
+        );
+
+      }
+    );
+
+  }
+);
+
 
 updateRootClueButtons();
 updateRootClueProgress();
 
 
 /* =========================================================
-   BOUTON SUITE ENQUÊTE ROOT
+   SUITE ENQUÊTE ROOT
 ========================================================= */
 
 if (rootClueContinue) {
@@ -939,14 +1230,20 @@ if (rootClueContinue) {
     () => {
 
       const currentSection =
-        rootClueContinue.closest(".scene");
+        rootClueContinue.closest(
+          ".scene"
+        );
+
 
       if (!currentSection) {
         return;
       }
 
+
       const nextSection =
-        currentSection.nextElementSibling;
+        currentSection
+          .nextElementSibling;
+
 
       if (nextSection) {
 
@@ -964,8 +1261,7 @@ if (rootClueContinue) {
 
 
 /* =========================================================
-   INTERACTION 2
-   CASCADE DES SECRETS ENFOUIS
+   INTERACTION — CASCADE
 ========================================================= */
 
 const sensoryButtons =
@@ -973,10 +1269,12 @@ const sensoryButtons =
     "[data-sense]"
   );
 
+
 const sensoryResult =
   document.getElementById(
     "sensoryResult"
   );
+
 
 const caveReveal =
   document.getElementById(
@@ -1007,7 +1305,9 @@ function saveCaveSenses(list) {
 
   localStorage.setItem(
     STORAGE_CAVE_SENSES,
-    JSON.stringify(list)
+    JSON.stringify(
+      list
+    )
   );
 
 }
@@ -1035,11 +1335,13 @@ function updateCaveInteraction() {
   const discovered =
     getCaveSenses();
 
+
   sensoryButtons.forEach(
     (button) => {
 
       const sense =
         button.dataset.sense;
+
 
       if (
         discovered.includes(
@@ -1059,7 +1361,7 @@ function updateCaveInteraction() {
 
   if (
     discovered.length >=
-    sensoryButtons.length &&
+      sensoryButtons.length &&
     sensoryButtons.length > 0
   ) {
 
@@ -1070,19 +1372,26 @@ function updateCaveInteraction() {
           <strong>
             Root comprend enfin.
           </strong>
+
           <br><br>
+
           Elle cherche depuis le début
           comme une archéologue.
+
           <br><br>
+
           Hope lui avait pourtant demandé
           de faire autre chose.
+
           <br><br>
+
           Ressentir.
           Écouter.
           Faire corps avec la grotte.
         `;
 
     }
+
 
     if (caveReveal) {
 
@@ -1107,8 +1416,10 @@ sensoryButtons.forEach(
         const sense =
           button.dataset.sense;
 
+
         const discovered =
           getCaveSenses();
+
 
         if (
           !discovered.includes(
@@ -1120,17 +1431,21 @@ sensoryButtons.forEach(
             sense
           );
 
+
           saveCaveSenses(
             discovered
           );
+
 
           button.classList.add(
             "discovered"
           );
 
+
           playClueSound();
 
         }
+
 
         if (
           sensoryResult &&
@@ -1141,6 +1456,7 @@ sensoryButtons.forEach(
             senseTexts[sense];
 
         }
+
 
         updateCaveInteraction();
 
@@ -1155,13 +1471,14 @@ updateCaveInteraction();
 
 
 /* =========================================================
-   OUVERTURE / RÉVÉLATION BOÎTE DE PANDORE
+   BOÎTE DE PANDORE
 ========================================================= */
 
 const pandoraButton =
   document.getElementById(
     "pandoraButton"
   );
+
 
 const pandoraReveal =
   document.getElementById(
@@ -1179,8 +1496,10 @@ if (pandoraButton) {
         "completed"
       );
 
+
       pandoraButton.textContent =
         "Boîte découverte";
+
 
       if (pandoraReveal) {
 
@@ -1190,10 +1509,12 @@ if (pandoraButton) {
 
       }
 
+
       showSecret(
         "pandora-transformation",
         "La boîte de Pandore ne semble pas avoir été conçue pour être transportée. Elle a choisi une nouvelle forme."
       );
+
 
       playRevealSound();
 
@@ -1204,8 +1525,7 @@ if (pandoraButton) {
 
 
 /* =========================================================
-   INTERACTION 3
-   ENQUÊTE IA2 SUR HOPE
+   INTERACTION — ENQUÊTE IA2 SUR HOPE
 ========================================================= */
 
 const hopeClues =
@@ -1213,15 +1533,18 @@ const hopeClues =
     "[data-hope-clue]"
   );
 
+
 const hopeClueResult =
   document.getElementById(
     "hopeClueResult"
   );
 
+
 const hopeCompareBtn =
   document.getElementById(
     "hopeCompareBtn"
   );
+
 
 const hopeComparison =
   document.getElementById(
@@ -1252,7 +1575,9 @@ function saveHopeClues(list) {
 
   localStorage.setItem(
     STORAGE_HOPE_CLUES,
-    JSON.stringify(list)
+    JSON.stringify(
+      list
+    )
   );
 
 }
@@ -1280,14 +1605,18 @@ function updateHopeInvestigation() {
   const found =
     getHopeClues();
 
+
   hopeClues.forEach(
     (clue) => {
 
       const value =
         clue.dataset.hopeClue;
 
+
       if (
-        found.includes(value)
+        found.includes(
+          value
+        )
       ) {
 
         clue.classList.add(
@@ -1302,7 +1631,7 @@ function updateHopeInvestigation() {
 
   if (
     found.length >=
-    hopeClues.length &&
+      hopeClues.length &&
     hopeClues.length > 0
   ) {
 
@@ -1313,7 +1642,9 @@ function updateHopeInvestigation() {
           <strong>
             Tous les éléments sont maintenant reliés.
           </strong>
+
           <br><br>
+
           Il reste une hypothèse à tester :
           comparer la fillette disparue
           à Hope adulte.
@@ -1344,24 +1675,36 @@ hopeClues.forEach(
         const value =
           clue.dataset.hopeClue;
 
+
         const found =
           getHopeClues();
 
+
         if (
-          !found.includes(value)
+          !found.includes(
+            value
+          )
         ) {
 
-          found.push(value);
+          found.push(
+            value
+          );
 
-          saveHopeClues(found);
+
+          saveHopeClues(
+            found
+          );
+
 
           clue.classList.add(
             "found"
           );
 
+
           playClueSound();
 
         }
+
 
         if (
           hopeClueResult &&
@@ -1372,6 +1715,7 @@ hopeClues.forEach(
             hopeTexts[value];
 
         }
+
 
         updateHopeInvestigation();
 
@@ -1399,8 +1743,10 @@ if (hopeCompareBtn) {
         "completed"
       );
 
+
       hopeCompareBtn.textContent =
         "Analyse terminée";
+
 
       if (hopeComparison) {
 
@@ -1408,21 +1754,30 @@ if (hopeCompareBtn) {
           "open"
         );
 
+
         hopeComparison.innerHTML =
           `
             <strong>
               IA2 — Concordance morphologique élevée
             </strong>
+
             <br><br>
+
             Structure osseuse :
             compatible.
+
             <br>
+
             Écartement des yeux :
             compatible.
+
             <br>
+
             Proportions faciales :
             compatibles.
+
             <br><br>
+
             Conclusion :
             les données justifient une enquête approfondie,
             mais ne permettent pas une identification certaine.
@@ -1430,7 +1785,9 @@ if (hopeCompareBtn) {
 
       }
 
+
       playRevealSound();
+
 
       showSecret(
         "hope-enfant",
@@ -1452,6 +1809,7 @@ const rootMessageBtn =
     "rootMessageBtn"
   );
 
+
 const rootMessageReveal =
   document.getElementById(
     "rootMessageReveal"
@@ -1472,12 +1830,15 @@ if (rootMessageBtn) {
 
       }
 
+
       rootMessageBtn.classList.add(
         "completed"
       );
 
+
       rootMessageBtn.textContent =
         "Message lu";
+
 
       playRevealSound();
 
@@ -1496,6 +1857,7 @@ const securityScanBtn =
     "securityScanBtn"
   );
 
+
 const securityReveal =
   document.getElementById(
     "securityReveal"
@@ -1512,8 +1874,10 @@ if (securityScanBtn) {
         "completed"
       );
 
+
       securityScanBtn.textContent =
         "Analyse terminée";
+
 
       if (securityReveal) {
 
@@ -1523,7 +1887,9 @@ if (securityScanBtn) {
 
       }
 
+
       playRevealSound();
+
 
       showSecret(
         "security-link",
@@ -1537,7 +1903,6 @@ if (securityScanBtn) {
 
 
 /* =========================================================
-   INTERACTION 4
    PACTE DE VÉRITÉ
 ========================================================= */
 
@@ -1549,6 +1914,7 @@ const pactButton =
     "[data-pact-hand]"
   );
 
+
 const pactZone =
   document.getElementById(
     "pactZone"
@@ -1557,10 +1923,12 @@ const pactZone =
     ".hand-zone"
   );
 
+
 const pactResult =
   document.getElementById(
     "pactResult"
   );
+
 
 const chapterEnd =
   document.getElementById(
@@ -1575,8 +1943,19 @@ function completePact() {
     "1"
   );
 
+
+  /*
+    Le chapitre est officiellement terminé.
+  */
+
   localStorage.setItem(
-    STORAGE_FINISHED,
+    STORAGE_COMPLETED,
+    "1"
+  );
+
+
+  localStorage.setItem(
+    STORAGE_PROGRESS,
     "1"
   );
 
@@ -1587,8 +1966,10 @@ function completePact() {
       "completed"
     );
 
+
     pactButton.textContent =
       "Pacte accepté";
+
 
     pactButton.disabled =
       true;
@@ -1633,11 +2014,13 @@ function completePact() {
         </p>
       `;
 
+
     pactResult.classList.add(
       "open"
     );
 
   }
+
 
   playPactSound();
 
@@ -1671,6 +2054,10 @@ if (pactButton) {
 }
 
 
+/* =========================================================
+   RESTAURATION DU PACTE
+========================================================= */
+
 if (
   localStorage.getItem(
     STORAGE_PACT
@@ -1683,13 +2070,16 @@ if (
       "completed"
     );
 
+
     pactButton.textContent =
       "Pacte accepté";
+
 
     pactButton.disabled =
       true;
 
   }
+
 
   if (pactZone) {
 
@@ -1699,7 +2089,35 @@ if (
 
   }
 
+
   if (pactResult) {
+
+    pactResult.innerHTML =
+      `
+        <p>
+          Lucy prend une inspiration.
+        </p>
+
+        <p>
+          Puis pose lentement sa main
+          sur celles des trois autres.
+        </p>
+
+        <p class="impact-text">
+          Aucun mensonge.
+        </p>
+
+        <p>
+          Pour la première fois depuis longtemps,
+          elle accepte d’accorder sa confiance
+          sans disposer de toutes les preuves.
+        </p>
+
+        <p class="emphasis">
+          L’union fait la force.
+        </p>
+      `;
+
 
     pactResult.classList.add(
       "open"
@@ -1719,6 +2137,7 @@ const prologueChoice =
     "societeOmbre_premierChoix"
   );
 
+
 const pactMemory =
   document.getElementById(
     "pactMemory"
@@ -1728,7 +2147,8 @@ const pactMemory =
 if (pactMemory) {
 
   if (
-    prologueChoice === "eveil"
+    prologueChoice ===
+    "eveil"
   ) {
 
     pactMemory.textContent =
@@ -1736,8 +2156,10 @@ if (pactMemory) {
 
   }
 
+
   if (
-    prologueChoice === "illusion"
+    prologueChoice ===
+    "illusion"
   ) {
 
     pactMemory.textContent =
@@ -1749,439 +2171,20 @@ if (pactMemory) {
 
 
 /* =========================================================
-   SON
-========================================================= */
-
-let audioCtx = null;
-let masterGain = null;
-let ambienceOsc1 = null;
-let ambienceOsc2 = null;
-let soundActive = false;
-
-
-function startSound() {
-
-  if (soundActive) {
-    return;
-  }
-
-  const AudioContextClass =
-    window.AudioContext ||
-    window.webkitAudioContext;
-
-  if (!AudioContextClass) {
-    return;
-  }
-
-  audioCtx =
-    new AudioContextClass();
-
-  masterGain =
-    audioCtx.createGain();
-
-  masterGain.gain.value =
-    0.022;
-
-  masterGain.connect(
-    audioCtx.destination
-  );
-
-
-  ambienceOsc1 =
-    audioCtx.createOscillator();
-
-  ambienceOsc2 =
-    audioCtx.createOscillator();
-
-
-  const gain1 =
-    audioCtx.createGain();
-
-  const gain2 =
-    audioCtx.createGain();
-
-
-  ambienceOsc1.type =
-    "sine";
-
-  ambienceOsc1.frequency.value =
-    40;
-
-  gain1.gain.value =
-    0.65;
-
-
-  ambienceOsc2.type =
-    "triangle";
-
-  ambienceOsc2.frequency.value =
-    79;
-
-  gain2.gain.value =
-    0.07;
-
-
-  ambienceOsc1
-    .connect(gain1)
-    .connect(masterGain);
-
-  ambienceOsc2
-    .connect(gain2)
-    .connect(masterGain);
-
-
-  ambienceOsc1.start();
-
-  ambienceOsc2.start();
-
-
-  soundActive = true;
-
-
-  if (soundBtn) {
-
-    soundBtn.classList.add(
-      "sound-active"
-    );
-
-    soundBtn.textContent =
-      "♪";
-
-  }
-
-}
-
-
-function stopSound() {
-
-  if (
-    !soundActive ||
-    !audioCtx
-  ) {
-    return;
-  }
-
-  masterGain.gain
-    .exponentialRampToValueAtTime(
-      0.0001,
-      audioCtx.currentTime +
-      0.35
-    );
-
-
-  setTimeout(
-    () => {
-
-      try {
-
-        ambienceOsc1?.stop();
-        ambienceOsc2?.stop();
-
-        audioCtx.close();
-
-      } catch (error) {
-        /* rien */
-      }
-
-
-      audioCtx = null;
-      masterGain = null;
-      ambienceOsc1 = null;
-      ambienceOsc2 = null;
-
-    },
-    450
-  );
-
-
-  soundActive = false;
-
-
-  if (soundBtn) {
-
-    soundBtn.classList.remove(
-      "sound-active"
-    );
-
-    soundBtn.textContent =
-      "♫";
-
-  }
-
-}
-
-
-if (soundBtn) {
-
-  soundBtn.addEventListener(
-    "click",
-    () => {
-
-      if (soundActive) {
-
-        stopSound();
-
-      } else {
-
-        startSound();
-
-      }
-
-    }
-  );
-
-}
-
-
-/* =========================================================
-   EFFETS SONORES
-========================================================= */
-
-function playTone(
-  frequency,
-  duration,
-  volume = 0.04,
-  type = "sine"
-) {
-
-  if (
-    !soundActive ||
-    !audioCtx
-  ) {
-    return;
-  }
-
-  const oscillator =
-    audioCtx.createOscillator();
-
-  const gain =
-    audioCtx.createGain();
-
-
-  oscillator.type =
-    type;
-
-  oscillator.frequency.value =
-    frequency;
-
-
-  gain.gain.setValueAtTime(
-    volume,
-    audioCtx.currentTime
-  );
-
-
-  gain.gain
-    .exponentialRampToValueAtTime(
-      0.0001,
-      audioCtx.currentTime +
-      duration
-    );
-
-
-  oscillator
-    .connect(gain)
-    .connect(
-      audioCtx.destination
-    );
-
-
-  oscillator.start();
-
-  oscillator.stop(
-    audioCtx.currentTime +
-    duration
-  );
-
-}
-
-
-function playClueSound() {
-
-  playTone(
-    430,
-    0.35,
-    0.018
-  );
-
-  setTimeout(
-    () => {
-
-      playTone(
-        580,
-        0.45,
-        0.015
-      );
-
-    },
-    100
-  );
-
-}
-
-
-function playRevealSound() {
-
-  playTone(
-    420,
-    0.65,
-    0.022
-  );
-
-  setTimeout(
-    () => {
-
-      playTone(
-        630,
-        0.8,
-        0.018
-      );
-
-    },
-    160
-  );
-
-}
-
-
-function playSecretSound() {
-
-  playTone(
-    540,
-    0.65,
-    0.022
-  );
-
-  setTimeout(
-    () => {
-
-      playTone(
-        760,
-        0.8,
-        0.018
-      );
-
-    },
-    140
-  );
-
-}
-
-
-function playPactSound() {
-
-  playTone(
-    330,
-    1.1,
-    0.02
-  );
-
-  setTimeout(
-    () => {
-
-      playTone(
-        495,
-        1.2,
-        0.02
-      );
-
-    },
-    170
-  );
-
-  setTimeout(
-    () => {
-
-      playTone(
-        660,
-        1.3,
-        0.018
-      );
-
-    },
-    340
-  );
-
-}
-
-
-/* =========================================================
-   ESCAPE FERME LE MENU
-========================================================= */
-
-document.addEventListener(
-  "keydown",
-  (event) => {
-
-    if (
-      event.key === "Escape"
-    ) {
-
-      closeMenu();
-
-    }
-
-  }
-);
-
-
-/* =========================================================
-   SAUVEGARDE AVANT DE QUITTER
-========================================================= */
-
-window.addEventListener(
-  "beforeunload",
-  () => {
-
-    localStorage.setItem(
-      STORAGE_SCROLL,
-      Math.round(
-        window.scrollY
-      )
-    );
-
-  }
-);
-
-
-/* =========================================================
-   PREMIÈRE SCÈNE
-========================================================= */
-
-const firstScene =
-  document.querySelector(
-    ".scene"
-  );
-
-if (firstScene) {
-
-  setTimeout(
-    () => {
-
-      firstScene.classList.add(
-        "is-visible"
-      );
-
-    },
-    100
-  );
-
-}
-
-
-/* =========================================================
-   FIN INITIALISATION
-========================================================= */
-
-/* =========================================================
    ROOT DANS LA GROTTE — OBSERVER AUTREMENT
 ========================================================= */
 
 const caveClueButtons =
-  document.querySelectorAll("[data-cave-clue]");
+  document.querySelectorAll(
+    "[data-cave-clue]"
+  );
+
 
 const caveClueResult =
-  document.getElementById("caveClueResult");
+  document.getElementById(
+    "caveClueResult"
+  );
+
 
 const caveClueTexts = {
 
@@ -2251,37 +2254,50 @@ const caveClueTexts = {
       </p>
     </div>
   `
+
 };
 
 
-caveClueButtons.forEach(button => {
+caveClueButtons.forEach(
+  (button) => {
 
-  button.addEventListener("click", function () {
+    button.addEventListener(
+      "click",
+      function () {
 
-    const clueName =
-      this.dataset.caveClue;
+        const clueName =
+          this.dataset.caveClue;
 
-    if (!caveClueTexts[clueName]) {
-      return;
-    }
 
-    if (!caveClueResult) {
-      return;
-    }
+        if (
+          !caveClueTexts[
+            clueName
+          ]
+        ) {
+          return;
+        }
 
-    caveClueResult.innerHTML =
-      caveClueTexts[clueName];
 
-    caveClueResult.classList.add(
-      "analysis-visible"
+        if (!caveClueResult) {
+          return;
+        }
+
+
+        caveClueResult.innerHTML =
+          caveClueTexts[
+            clueName
+          ];
+
+
+        caveClueResult.classList.add(
+          "analysis-visible"
+        );
+
+      }
     );
 
-  });
-
-});
-
-   
-});
+  }
+);
 
 
 /* =========================================================
@@ -2289,18 +2305,32 @@ caveClueButtons.forEach(button => {
 ========================================================= */
 
 const amyHuntVisual =
-  document.querySelector("[data-amy-hunt]");
+  document.querySelector(
+    "[data-amy-hunt]"
+  );
+
 
 const amyHitbox =
-  document.getElementById("amyHitbox");
+  document.getElementById(
+    "amyHitbox"
+  );
+
 
 const amySpotlight =
-  document.getElementById("amySpotlight");
+  document.getElementById(
+    "amySpotlight"
+  );
+
 
 const amyResult =
-  document.getElementById("amyResult");
+  document.getElementById(
+    "amyResult"
+  );
 
-let amyTimer = null;
+
+let amyTimer =
+  null;
+
 
 function revealAmy() {
 
@@ -2308,27 +2338,71 @@ function revealAmy() {
     return;
   }
 
-  amyHuntVisual.classList.add("amy-found");
 
-  if (amyResult) {
-    amyResult.textContent =
-      "Amy, le Fantôme de l’Ombre, était là.";
-    amyResult.classList.add("visible");
+  amyHuntVisual.classList.add(
+    "amy-found"
+  );
+
+
+  if (amySpotlight) {
+
+    amySpotlight.classList.add(
+      "visible"
+    );
+
   }
 
-  clearTimeout(amyTimer);
 
-  amyTimer = setTimeout(() => {
+  if (amyResult) {
 
-    amyHuntVisual.classList.remove("amy-found");
+    amyResult.textContent =
+      "Amy, le Fantôme de l’Ombre, était là.";
 
-    if (amyResult) {
-      amyResult.classList.remove("visible");
-    }
 
-  }, 2600);
+    amyResult.classList.add(
+      "visible"
+    );
+
+  }
+
+
+  clearTimeout(
+    amyTimer
+  );
+
+
+  amyTimer =
+    setTimeout(
+      () => {
+
+        amyHuntVisual.classList.remove(
+          "amy-found"
+        );
+
+
+        if (amySpotlight) {
+
+          amySpotlight.classList.remove(
+            "visible"
+          );
+
+        }
+
+
+        if (amyResult) {
+
+          amyResult.classList.remove(
+            "visible"
+          );
+
+        }
+
+      },
+      2600
+    );
 
 }
+
 
 if (amyHitbox) {
 
@@ -2337,6 +2411,8 @@ if (amyHitbox) {
     (event) => {
 
       event.stopPropagation();
+
+
       revealAmy();
 
     }
@@ -2345,6 +2421,508 @@ if (amyHitbox) {
 }
 
 
+/* =========================================================
+   SON
+========================================================= */
+
+let audioCtx =
+  null;
+
+let masterGain =
+  null;
+
+let ambienceOsc1 =
+  null;
+
+let ambienceOsc2 =
+  null;
+
+let soundActive =
+  false;
 
 
+function startSound() {
 
+  if (soundActive) {
+    return;
+  }
+
+
+  const AudioContextClass =
+    window.AudioContext ||
+    window.webkitAudioContext;
+
+
+  if (!AudioContextClass) {
+    return;
+  }
+
+
+  audioCtx =
+    new AudioContextClass();
+
+
+  masterGain =
+    audioCtx.createGain();
+
+
+  masterGain.gain.value =
+    0.022;
+
+
+  masterGain.connect(
+    audioCtx.destination
+  );
+
+
+  ambienceOsc1 =
+    audioCtx.createOscillator();
+
+
+  ambienceOsc2 =
+    audioCtx.createOscillator();
+
+
+  const gain1 =
+    audioCtx.createGain();
+
+
+  const gain2 =
+    audioCtx.createGain();
+
+
+  ambienceOsc1.type =
+    "sine";
+
+
+  ambienceOsc1.frequency.value =
+    40;
+
+
+  gain1.gain.value =
+    0.65;
+
+
+  ambienceOsc2.type =
+    "triangle";
+
+
+  ambienceOsc2.frequency.value =
+    79;
+
+
+  gain2.gain.value =
+    0.07;
+
+
+  ambienceOsc1
+    .connect(gain1)
+    .connect(masterGain);
+
+
+  ambienceOsc2
+    .connect(gain2)
+    .connect(masterGain);
+
+
+  ambienceOsc1.start();
+
+  ambienceOsc2.start();
+
+
+  soundActive =
+    true;
+
+
+  if (soundBtn) {
+
+    soundBtn.classList.add(
+      "sound-active"
+    );
+
+
+    soundBtn.textContent =
+      "♪";
+
+  }
+
+}
+
+
+function stopSound() {
+
+  if (
+    !soundActive ||
+    !audioCtx
+  ) {
+    return;
+  }
+
+
+  if (masterGain) {
+
+    masterGain.gain
+      .exponentialRampToValueAtTime(
+        0.0001,
+        audioCtx.currentTime +
+          0.35
+      );
+
+  }
+
+
+  setTimeout(
+    () => {
+
+      try {
+
+        ambienceOsc1?.stop();
+        ambienceOsc2?.stop();
+
+        audioCtx?.close();
+
+      } catch (error) {
+
+        /* rien */
+
+      }
+
+
+      audioCtx =
+        null;
+
+      masterGain =
+        null;
+
+      ambienceOsc1 =
+        null;
+
+      ambienceOsc2 =
+        null;
+
+    },
+    450
+  );
+
+
+  soundActive =
+    false;
+
+
+  if (soundBtn) {
+
+    soundBtn.classList.remove(
+      "sound-active"
+    );
+
+
+    soundBtn.textContent =
+      "♫";
+
+  }
+
+}
+
+
+if (soundBtn) {
+
+  soundBtn.addEventListener(
+    "click",
+    () => {
+
+      if (soundActive) {
+
+        stopSound();
+
+      } else {
+
+        startSound();
+
+      }
+
+    }
+  );
+
+}
+
+
+/* =========================================================
+   EFFETS SONORES
+========================================================= */
+
+function playTone(
+  frequency,
+  duration,
+  volume = 0.04,
+  type = "sine"
+) {
+
+  if (
+    !soundActive ||
+    !audioCtx
+  ) {
+    return;
+  }
+
+
+  const oscillator =
+    audioCtx.createOscillator();
+
+
+  const gain =
+    audioCtx.createGain();
+
+
+  oscillator.type =
+    type;
+
+
+  oscillator.frequency.value =
+    frequency;
+
+
+  gain.gain.setValueAtTime(
+    volume,
+    audioCtx.currentTime
+  );
+
+
+  gain.gain
+    .exponentialRampToValueAtTime(
+      0.0001,
+      audioCtx.currentTime +
+        duration
+    );
+
+
+  oscillator
+    .connect(gain)
+    .connect(
+      audioCtx.destination
+    );
+
+
+  oscillator.start();
+
+
+  oscillator.stop(
+    audioCtx.currentTime +
+      duration
+  );
+
+}
+
+
+function playClueSound() {
+
+  playTone(
+    430,
+    0.35,
+    0.018
+  );
+
+
+  setTimeout(
+    () => {
+
+      playTone(
+        580,
+        0.45,
+        0.015
+      );
+
+    },
+    100
+  );
+
+}
+
+
+function playRevealSound() {
+
+  playTone(
+    420,
+    0.65,
+    0.022
+  );
+
+
+  setTimeout(
+    () => {
+
+      playTone(
+        630,
+        0.8,
+        0.018
+      );
+
+    },
+    160
+  );
+
+}
+
+
+function playSecretSound() {
+
+  playTone(
+    540,
+    0.65,
+    0.022
+  );
+
+
+  setTimeout(
+    () => {
+
+      playTone(
+        760,
+        0.8,
+        0.018
+      );
+
+    },
+    140
+  );
+
+}
+
+
+function playPactSound() {
+
+  playTone(
+    330,
+    1.1,
+    0.02
+  );
+
+
+  setTimeout(
+    () => {
+
+      playTone(
+        495,
+        1.2,
+        0.02
+      );
+
+    },
+    170
+  );
+
+
+  setTimeout(
+    () => {
+
+      playTone(
+        660,
+        1.3,
+        0.018
+      );
+
+    },
+    340
+  );
+
+}
+
+
+/* =========================================================
+   ÉCHAP FERME LE MENU
+========================================================= */
+
+document.addEventListener(
+  "keydown",
+  (event) => {
+
+    if (
+      event.key === "Escape"
+    ) {
+
+      closeMenu();
+
+      hideSecretPopup();
+
+    }
+
+  }
+);
+
+
+/* =========================================================
+   SAUVEGARDE AVANT DE QUITTER
+========================================================= */
+
+window.addEventListener(
+  "beforeunload",
+  () => {
+
+    /*
+      Important :
+      lorsqu'on recommence,
+      on ne doit pas recréer immédiatement
+      une sauvegarde de progression.
+    */
+
+    const params =
+      new URLSearchParams(
+        window.location.search
+      );
+
+
+    if (
+      params.get("lecture") ===
+      "recommencer"
+    ) {
+      return;
+    }
+
+
+    localStorage.setItem(
+      STORAGE_SCROLL,
+      Math.round(
+        window.scrollY
+      )
+    );
+
+
+    localStorage.setItem(
+      STORAGE_PROGRESS,
+      "1"
+    );
+
+  }
+);
+
+
+/* =========================================================
+   PREMIÈRE SCÈNE
+========================================================= */
+
+const firstScene =
+  document.querySelector(
+    ".scene"
+  );
+
+
+if (firstScene) {
+
+  setTimeout(
+    () => {
+
+      firstScene.classList.add(
+        "is-visible"
+      );
+
+    },
+    100
+  );
+
+}
+
+
+/* =========================================================
+   FIN INITIALISATION
+========================================================= */
+
+});
