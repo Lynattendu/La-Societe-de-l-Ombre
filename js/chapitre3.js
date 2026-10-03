@@ -48,6 +48,17 @@ const secretPopup =
 const STORAGE_SCROLL =
   "societeOmbre_chapitre3_scroll";
 
+/*
+  Utilisées par le nouveau menu général.
+*/
+
+const STORAGE_PROGRESS =
+  "societeOmbre_chapitre3_progression";
+
+const STORAGE_COMPLETED =
+  "societeOmbre_chapitre3_termine";
+
+
 const STORAGE_SHIELD =
   "societeOmbre_chapitre3_shield";
 
@@ -63,8 +74,48 @@ const STORAGE_ROOT_MARK =
 const STORAGE_SECRETS =
   "societeOmbre_chapitre3_secrets";
 
-const STORAGE_FINISHED =
-  "societeOmbre_chapitre3_finished";
+
+/* =========================================================
+   COMPATIBILITÉ AVEC L'ANCIENNE SAUVEGARDE
+========================================================= */
+
+/*
+  Ton ancien chapitre utilisait :
+  societeOmbre_chapitre3_finished
+
+  Si quelqu'un avait déjà terminé le chapitre,
+  on convertit cette ancienne information.
+*/
+
+if (
+  localStorage.getItem(
+    "societeOmbre_chapitre3_finished"
+  ) === "1"
+) {
+
+  localStorage.setItem(
+    STORAGE_COMPLETED,
+    "1"
+  );
+
+}
+
+
+/* =========================================================
+   MODE D'OUVERTURE
+   ?lecture=reprendre
+   ?lecture=recommencer
+========================================================= */
+
+const urlParams =
+  new URLSearchParams(
+    window.location.search
+  );
+
+const lectureMode =
+  urlParams.get(
+    "lecture"
+  );
 
 
 /* =========================================================
@@ -83,9 +134,11 @@ document
           img.closest(".visual");
 
         if (visual) {
+
           visual.classList.add(
             "visual-missing"
           );
+
         }
 
       }
@@ -119,6 +172,17 @@ const observer =
             scene
           );
 
+
+          /*
+            Dès que le lecteur atteint une scène,
+            le chapitre est considéré comme commencé.
+          */
+
+          localStorage.setItem(
+            STORAGE_PROGRESS,
+            "1"
+          );
+
         }
 
       });
@@ -131,7 +195,9 @@ const observer =
 
 
 scenes.forEach((scene) => {
+
   observer.observe(scene);
+
 });
 
 
@@ -147,12 +213,15 @@ function animateParagraphs(scene) {
     return;
   }
 
-  scene.dataset.textAnimated = "1";
+  scene.dataset.textAnimated =
+    "1";
+
 
   const paragraphs =
     scene.querySelectorAll(
       ".text-block p"
     );
+
 
   paragraphs.forEach(
     (paragraph, index) => {
@@ -162,6 +231,7 @@ function animateParagraphs(scene) {
 
       paragraph.style.transform =
         "translateY(12px)";
+
 
       setTimeout(
         () => {
@@ -206,19 +276,23 @@ function updateProgress() {
     return;
   }
 
+
   const scrollTop =
     window.scrollY;
+
 
   const documentHeight =
     document.documentElement
       .scrollHeight -
     window.innerHeight;
 
+
   if (
     documentHeight <= 0
   ) {
     return;
   }
+
 
   const percentage =
     Math.min(
@@ -231,6 +305,7 @@ function updateProgress() {
         ) * 100
       )
     );
+
 
   progressFill.style.width =
     percentage + "%";
@@ -246,6 +321,7 @@ window.addEventListener(
   }
 );
 
+
 updateProgress();
 
 
@@ -253,7 +329,9 @@ updateProgress();
    SAUVEGARDE POSITION
 ========================================================= */
 
-let saveScrollTimer = null;
+let saveScrollTimer =
+  null;
+
 
 window.addEventListener(
   "scroll",
@@ -262,6 +340,7 @@ window.addEventListener(
     clearTimeout(
       saveScrollTimer
     );
+
 
     saveScrollTimer =
       setTimeout(
@@ -274,6 +353,12 @@ window.addEventListener(
             )
           );
 
+
+          localStorage.setItem(
+            STORAGE_PROGRESS,
+            "1"
+          );
+
         },
         250
       );
@@ -283,6 +368,84 @@ window.addEventListener(
     passive: true
   }
 );
+
+
+/* =========================================================
+   REPRISE DEPUIS LE MENU GÉNÉRAL
+========================================================= */
+
+if (
+  lectureMode === "reprendre"
+) {
+
+  const savedPosition =
+    parseInt(
+      localStorage.getItem(
+        STORAGE_SCROLL
+      ),
+      10
+    );
+
+
+  if (
+    !Number.isNaN(
+      savedPosition
+    ) &&
+    savedPosition > 0
+  ) {
+
+    /*
+      On attend légèrement pour permettre
+      aux images et à la mise en page
+      de prendre leur taille définitive.
+    */
+
+    setTimeout(
+      () => {
+
+        window.scrollTo({
+          top: savedPosition,
+          left: 0,
+          behavior: "instant"
+        });
+
+
+        updateProgress();
+
+      },
+      400
+    );
+
+  }
+
+}
+
+
+/* =========================================================
+   RECOMMENCEMENT DEPUIS LE MENU GÉNÉRAL
+========================================================= */
+
+if (
+  lectureMode === "recommencer"
+) {
+
+  setTimeout(
+    () => {
+
+      window.scrollTo({
+        top: 0,
+        left: 0,
+        behavior: "instant"
+      });
+
+
+      updateProgress();
+
+    },
+    100
+  );
+
+}
 
 
 /* =========================================================
@@ -302,13 +465,16 @@ document
         const currentScene =
           button.closest(".scene");
 
+
         if (!currentScene) {
           return;
         }
 
+
         const nextScene =
           currentScene
             .nextElementSibling;
+
 
         if (nextScene) {
 
@@ -337,14 +503,17 @@ function openMenu() {
     return;
   }
 
+
   chapterMenu.classList.add(
     "open"
   );
+
 
   chapterMenu.setAttribute(
     "aria-hidden",
     "false"
   );
+
 
   document.body.classList.add(
     "no-scroll"
@@ -359,14 +528,17 @@ function closeMenu() {
     return;
   }
 
+
   chapterMenu.classList.remove(
     "open"
   );
+
 
   chapterMenu.setAttribute(
     "aria-hidden",
     "true"
   );
+
 
   document.body.classList.remove(
     "no-scroll"
@@ -418,6 +590,7 @@ if (chapterMenu) {
 
 /* =========================================================
    REPRENDRE LA LECTURE
+   DEPUIS LE MENU INTERNE
 ========================================================= */
 
 if (resumeBtn) {
@@ -428,6 +601,7 @@ if (resumeBtn) {
 
       closeMenu();
 
+
       const position =
         parseInt(
           localStorage.getItem(
@@ -436,8 +610,11 @@ if (resumeBtn) {
           10
         );
 
+
       if (
-        !Number.isNaN(position)
+        !Number.isNaN(
+          position
+        )
       ) {
 
         window.scrollTo({
@@ -459,43 +636,73 @@ if (resumeBtn) {
 
 function restartChapterFunction() {
 
-  localStorage.removeItem(
-    STORAGE_SCROLL
+  /*
+    Toutes les données propres au chapitre 3
+    commencent par ce préfixe.
+  */
+
+  const prefix =
+    "societeOmbre_chapitre3_";
+
+
+  const keysToDelete =
+    [];
+
+
+  for (
+    let i = 0;
+    i < localStorage.length;
+    i++
+  ) {
+
+    const key =
+      localStorage.key(i);
+
+
+    if (
+      key &&
+      key.startsWith(
+        prefix
+      )
+    ) {
+
+      keysToDelete.push(
+        key
+      );
+
+    }
+
+  }
+
+
+  /*
+    Suppression de toute la mémoire
+    propre au chapitre 3 :
+    position, secrets, interactions,
+    statut terminé, etc.
+  */
+
+  keysToDelete.forEach(
+    (key) => {
+
+      localStorage.removeItem(
+        key
+      );
+
+    }
   );
 
-  localStorage.removeItem(
-    STORAGE_SHIELD
-  );
 
-  localStorage.removeItem(
-    STORAGE_HOLOGRAM
-  );
+  /*
+    On ne touche PAS :
+    - au chapitre 1
+    - au chapitre 2
+    - au choix du prologue
+  */
 
-  localStorage.removeItem(
-    STORAGE_HOPE_CONFIRM
-  );
 
-  localStorage.removeItem(
-    STORAGE_ROOT_MARK
-  );
-
-  localStorage.removeItem(
-    STORAGE_FINISHED
-  );
-
-  window.scrollTo({
-    top: 0,
-    behavior: "smooth"
-  });
-
-  closeMenu();
-
-  setTimeout(
-    () => {
-      location.reload();
-    },
-    500
-  );
+  window.location.href =
+    "chapitre3.html?lecture=recommencer";
 
 }
 
@@ -548,15 +755,23 @@ function saveSecret(secret) {
   const secrets =
     getSecrets();
 
+
   if (
-    !secrets.includes(secret)
+    !secrets.includes(
+      secret
+    )
   ) {
 
-    secrets.push(secret);
+    secrets.push(
+      secret
+    );
+
 
     localStorage.setItem(
       STORAGE_SECRETS,
-      JSON.stringify(secrets)
+      JSON.stringify(
+        secrets
+      )
     );
 
   }
@@ -568,32 +783,61 @@ function saveSecret(secret) {
    POPUP INFORMATION
 ========================================================= */
 
-let secretTimer = null;
+let secretTimer =
+  null;
+
+
+function hideSecretPopup() {
+
+  if (!secretPopup) {
+    return;
+  }
+
+
+  secretPopup.classList.remove(
+    "show"
+  );
+
+
+  secretPopup.setAttribute(
+    "aria-hidden",
+    "true"
+  );
+
+}
+
 
 function showSecret(
   secretName,
   secretText
 ) {
 
-  saveSecret(secretName);
+  saveSecret(
+    secretName
+  );
+
 
   if (!secretPopup) {
     return;
   }
+
 
   const inner =
     secretPopup.querySelector(
       ".secret-popup-inner"
     );
 
+
   if (!inner) {
     return;
   }
+
 
   let description =
     inner.querySelector(
       ".secret-description"
     );
+
 
   if (!description) {
 
@@ -602,23 +846,30 @@ function showSecret(
         "p"
       );
 
+
     description.className =
       "secret-description";
+
 
     description.style.marginTop =
       "14px";
 
+
     description.style.fontSize =
       "15px";
+
 
     description.style.lineHeight =
       "1.55";
 
+
     description.style.letterSpacing =
       "0";
 
+
     description.style.color =
       "#f4eee6";
+
 
     inner.appendChild(
       description
@@ -626,36 +877,35 @@ function showSecret(
 
   }
 
+
   description.textContent =
     secretText;
+
 
   secretPopup.classList.add(
     "show"
   );
+
 
   secretPopup.setAttribute(
     "aria-hidden",
     "false"
   );
 
+
   playSecretSound();
+
 
   clearTimeout(
     secretTimer
   );
 
+
   secretTimer =
     setTimeout(
       () => {
 
-        secretPopup.classList.remove(
-          "show"
-        );
-
-        secretPopup.setAttribute(
-          "aria-hidden",
-          "true"
-        );
+        hideSecretPopup();
 
       },
       3000
@@ -674,6 +924,7 @@ const shieldTrigger =
     "shieldTrigger"
   );
 
+
 const shieldScene =
   document.getElementById(
     "scene-15"
@@ -687,6 +938,7 @@ function activateShield() {
     "1"
   );
 
+
   if (shieldScene) {
 
     shieldScene.classList.add(
@@ -695,21 +947,26 @@ function activateShield() {
 
   }
 
+
   if (shieldTrigger) {
 
     shieldTrigger.classList.add(
       "completed"
     );
 
+
     shieldTrigger.textContent =
       "Protection activée";
+
 
     shieldTrigger.disabled =
       true;
 
   }
 
+
   playRevealSound();
+
 
   showSecret(
     "anna-shield",
@@ -760,14 +1017,17 @@ if (
 
   }
 
+
   if (shieldTrigger) {
 
     shieldTrigger.classList.add(
       "completed"
     );
 
+
     shieldTrigger.textContent =
       "Protection activée";
+
 
     shieldTrigger.disabled =
       true;
@@ -787,6 +1047,7 @@ const hologramTrigger =
     "hologramTrigger"
   );
 
+
 const hologramReveal =
   document.getElementById(
     "hologramReveal"
@@ -800,6 +1061,7 @@ function activateHologram() {
     "1"
   );
 
+
   if (hologramReveal) {
 
     hologramReveal.classList.add(
@@ -808,21 +1070,26 @@ function activateHologram() {
 
   }
 
+
   if (hologramTrigger) {
 
     hologramTrigger.classList.add(
       "completed"
     );
 
+
     hologramTrigger.textContent =
       "Bio-holophone actif";
+
 
     hologramTrigger.disabled =
       true;
 
   }
 
+
   playHologramSound();
+
 
   showSecret(
     "bio-holophone",
@@ -856,14 +1123,17 @@ if (
 
   }
 
+
   if (hologramTrigger) {
 
     hologramTrigger.classList.add(
       "completed"
     );
 
+
     hologramTrigger.textContent =
       "Bio-holophone actif";
+
 
     hologramTrigger.disabled =
       true;
@@ -882,6 +1152,7 @@ const hopeConfirmButtons =
   document.querySelectorAll(
     "[data-hope-confirm]"
   );
+
 
 const hopeConfirmResult =
   document.getElementById(
@@ -926,16 +1197,21 @@ function saveHopeConfirmations(list) {
 
   localStorage.setItem(
     STORAGE_HOPE_CONFIRM,
-    JSON.stringify(list)
+    JSON.stringify(
+      list
+    )
   );
 
 }
 
 
-function updateHopeConfirmations() {
+function updateHopeConfirmations(
+  showFinalSecret = false
+) {
 
   const found =
     getHopeConfirmations();
+
 
   hopeConfirmButtons.forEach(
     (button) => {
@@ -943,8 +1219,11 @@ function updateHopeConfirmations() {
       const value =
         button.dataset.hopeConfirm;
 
+
       if (
-        found.includes(value)
+        found.includes(
+          value
+        )
       ) {
 
         button.classList.add(
@@ -959,7 +1238,7 @@ function updateHopeConfirmations() {
 
   if (
     found.length ===
-    hopeConfirmButtons.length &&
+      hopeConfirmButtons.length &&
     hopeConfirmButtons.length > 0
   ) {
 
@@ -970,12 +1249,16 @@ function updateHopeConfirmations() {
           <strong>
             IA2 — hypothèse consolidée
           </strong>
+
           <br><br>
+
           Les principaux éléments
           découverts par Lucy au chapitre précédent
           viennent d’être confirmés
           directement par Hope.
+
           <br><br>
+
           Pour la première fois,
           l’enquête et son récit
           racontent la même histoire.
@@ -983,10 +1266,25 @@ function updateHopeConfirmations() {
 
     }
 
-    showSecret(
-      "hope-confirmed",
-      "L’enquête de Lucy n’était pas fausse. Elle était simplement incomplète."
-    );
+
+    /*
+      On affiche le popup uniquement
+      au moment où le lecteur termine
+      réellement l'interaction.
+
+      Ainsi, il ne réapparaît pas
+      automatiquement lorsqu'on reprend
+      le chapitre.
+    */
+
+    if (showFinalSecret) {
+
+      showSecret(
+        "hope-confirmed",
+        "L’enquête de Lucy n’était pas fausse. Elle était simplement incomplète."
+      );
+
+    }
 
   }
 
@@ -1003,24 +1301,41 @@ hopeConfirmButtons.forEach(
         const value =
           button.dataset.hopeConfirm;
 
+
         const found =
           getHopeConfirmations();
 
+
+        let newlyDiscovered =
+          false;
+
+
         if (
-          !found.includes(value)
+          !found.includes(
+            value
+          )
         ) {
 
-          found.push(value);
+          found.push(
+            value
+          );
+
 
           saveHopeConfirmations(
             found
           );
 
+
           button.classList.add(
             "confirmed"
           );
 
+
           playClueSound();
+
+
+          newlyDiscovered =
+            true;
 
         }
 
@@ -1035,7 +1350,16 @@ hopeConfirmButtons.forEach(
 
         }
 
-        updateHopeConfirmations();
+
+        const completedNow =
+          newlyDiscovered &&
+          found.length ===
+            hopeConfirmButtons.length;
+
+
+        updateHopeConfirmations(
+          completedNow
+        );
 
       }
     );
@@ -1044,7 +1368,14 @@ hopeConfirmButtons.forEach(
 );
 
 
-updateHopeConfirmations();
+/*
+  Restauration visuelle
+  sans rejouer le popup secret.
+*/
+
+updateHopeConfirmations(
+  false
+);
 
 
 /* =========================================================
@@ -1056,6 +1387,7 @@ const rootMarkTrigger =
   document.getElementById(
     "rootMarkTrigger"
   );
+
 
 const rootMarkReveal =
   document.getElementById(
@@ -1070,6 +1402,7 @@ function revealRootMark() {
     "1"
   );
 
+
   if (rootMarkReveal) {
 
     rootMarkReveal.classList.add(
@@ -1078,21 +1411,26 @@ function revealRootMark() {
 
   }
 
+
   if (rootMarkTrigger) {
 
     rootMarkTrigger.classList.add(
       "completed"
     );
 
+
     rootMarkTrigger.textContent =
       "Marque révélée";
+
 
     rootMarkTrigger.disabled =
       true;
 
   }
 
+
   playMarkSound();
+
 
   showSecret(
     "root-mark",
@@ -1126,645 +1464,7 @@ if (
 
   }
 
+
   if (rootMarkTrigger) {
 
-    rootMarkTrigger.classList.add(
-      "completed"
-    );
-
-    rootMarkTrigger.textContent =
-      "Marque révélée";
-
-    rootMarkTrigger.disabled =
-      true;
-
-  }
-
-}
-
-
-/* =========================================================
-   MÉMOIRE DU PACTE DU CHAPITRE 2
-========================================================= */
-
-const previousPact =
-  localStorage.getItem(
-    "societeOmbre_chapitre2_pact"
-  );
-
-
-if (
-  previousPact === "1"
-) {
-
-  const pactScene =
-    document.getElementById(
-      "scene-9"
-    );
-
-  const textBlock =
-    pactScene?.querySelector(
-      ".text-block"
-    );
-
-
-  if (textBlock) {
-
-    const memory =
-      document.createElement(
-        "p"
-      );
-
-    memory.className =
-      "emphasis";
-
-    memory.style.marginTop =
-      "32px";
-
-    memory.style.padding =
-      "18px 12px";
-
-    memory.style.borderTop =
-      "1px solid rgba(231,189,114,.24)";
-
-    memory.style.borderBottom =
-      "1px solid rgba(231,189,114,.24)";
-
-    memory.textContent =
-      "Lucy a déjà accepté cet accord. Betty est maintenant invitée à entrer, elle aussi, dans ce cercle de confiance.";
-
-    textBlock.appendChild(
-      memory
-    );
-
-  }
-
-}
-
-
-/* =========================================================
-   MÉMOIRE DU CHOIX DU PROLOGUE
-========================================================= */
-
-const prologueChoice =
-  localStorage.getItem(
-    "societeOmbre_premierChoix"
-  );
-
-
-if (prologueChoice) {
-
-  const scene27 =
-    document.getElementById(
-      "scene-27"
-    );
-
-  const textBlock =
-    scene27?.querySelector(
-      ".text-block"
-    );
-
-
-  if (textBlock) {
-
-    const memory =
-      document.createElement(
-        "p"
-      );
-
-    memory.className =
-      "emphasis";
-
-    memory.style.marginTop =
-      "36px";
-
-
-    if (
-      prologueChoice ===
-      "eveil"
-    ) {
-
-      memory.textContent =
-        "Vous aviez choisi d’ouvrir les yeux. Hope commence maintenant à montrer ce qui se cachait derrière les apparences.";
-
-    }
-
-
-    if (
-      prologueChoice ===
-      "illusion"
-    ) {
-
-      memory.textContent =
-        "Vous aviez choisi l’illusion. Pourtant, les apparences commencent maintenant à se fissurer.";
-
-    }
-
-
-    textBlock.appendChild(
-      memory
-    );
-
-  }
-
-}
-
-
-/* =========================================================
-   FIN DE CHAPITRE
-========================================================= */
-
-const scene50 =
-  document.getElementById(
-    "scene-50"
-  );
-
-
-if (scene50) {
-
-  const endObserver =
-    new IntersectionObserver(
-      (entries) => {
-
-        entries.forEach(
-          (entry) => {
-
-            if (
-              entry.isIntersecting
-            ) {
-
-              localStorage.setItem(
-                STORAGE_FINISHED,
-                "1"
-              );
-
-            }
-
-          }
-        );
-
-      },
-      {
-        threshold: 0.5
-      }
-    );
-
-  endObserver.observe(
-    scene50
-  );
-
-}
-
-
-/* =========================================================
-   SON D'AMBIANCE
-========================================================= */
-
-let audioCtx = null;
-let masterGain = null;
-let ambienceOsc1 = null;
-let ambienceOsc2 = null;
-let soundActive = false;
-
-
-function startSound() {
-
-  if (soundActive) {
-    return;
-  }
-
-  const AudioContextClass =
-    window.AudioContext ||
-    window.webkitAudioContext;
-
-  if (!AudioContextClass) {
-    return;
-  }
-
-  audioCtx =
-    new AudioContextClass();
-
-  masterGain =
-    audioCtx.createGain();
-
-  masterGain.gain.value =
-    0.022;
-
-  masterGain.connect(
-    audioCtx.destination
-  );
-
-
-  ambienceOsc1 =
-    audioCtx.createOscillator();
-
-  ambienceOsc2 =
-    audioCtx.createOscillator();
-
-
-  const gain1 =
-    audioCtx.createGain();
-
-  const gain2 =
-    audioCtx.createGain();
-
-
-  ambienceOsc1.type =
-    "sine";
-
-  ambienceOsc1.frequency.value =
-    41;
-
-  gain1.gain.value =
-    0.63;
-
-
-  ambienceOsc2.type =
-    "triangle";
-
-  ambienceOsc2.frequency.value =
-    82;
-
-  gain2.gain.value =
-    0.065;
-
-
-  ambienceOsc1
-    .connect(gain1)
-    .connect(masterGain);
-
-  ambienceOsc2
-    .connect(gain2)
-    .connect(masterGain);
-
-
-  ambienceOsc1.start();
-
-  ambienceOsc2.start();
-
-
-  soundActive = true;
-
-
-  if (soundBtn) {
-
-    soundBtn.classList.add(
-      "sound-active"
-    );
-
-    soundBtn.textContent =
-      "♪";
-
-  }
-
-}
-
-
-function stopSound() {
-
-  if (
-    !soundActive ||
-    !audioCtx
-  ) {
-    return;
-  }
-
-  masterGain.gain
-    .exponentialRampToValueAtTime(
-      0.0001,
-      audioCtx.currentTime +
-      0.35
-    );
-
-
-  setTimeout(
-    () => {
-
-      try {
-
-        ambienceOsc1?.stop();
-        ambienceOsc2?.stop();
-
-        audioCtx.close();
-
-      } catch (error) {
-        /* rien */
-      }
-
-
-      audioCtx = null;
-      masterGain = null;
-      ambienceOsc1 = null;
-      ambienceOsc2 = null;
-
-    },
-    450
-  );
-
-
-  soundActive = false;
-
-
-  if (soundBtn) {
-
-    soundBtn.classList.remove(
-      "sound-active"
-    );
-
-    soundBtn.textContent =
-      "♫";
-
-  }
-
-}
-
-
-if (soundBtn) {
-
-  soundBtn.addEventListener(
-    "click",
-    () => {
-
-      if (soundActive) {
-
-        stopSound();
-
-      } else {
-
-        startSound();
-
-      }
-
-    }
-  );
-
-}
-
-
-/* =========================================================
-   PETITS EFFETS SONORES
-========================================================= */
-
-function playTone(
-  frequency,
-  duration,
-  volume = 0.04,
-  type = "sine"
-) {
-
-  if (
-    !soundActive ||
-    !audioCtx
-  ) {
-    return;
-  }
-
-  const oscillator =
-    audioCtx.createOscillator();
-
-  const gain =
-    audioCtx.createGain();
-
-
-  oscillator.type =
-    type;
-
-  oscillator.frequency.value =
-    frequency;
-
-
-  gain.gain.setValueAtTime(
-    volume,
-    audioCtx.currentTime
-  );
-
-
-  gain.gain
-    .exponentialRampToValueAtTime(
-      0.0001,
-      audioCtx.currentTime +
-      duration
-    );
-
-
-  oscillator
-    .connect(gain)
-    .connect(
-      audioCtx.destination
-    );
-
-
-  oscillator.start();
-
-  oscillator.stop(
-    audioCtx.currentTime +
-    duration
-  );
-
-}
-
-
-function playClueSound() {
-
-  playTone(
-    430,
-    0.35,
-    0.018
-  );
-
-  setTimeout(
-    () => {
-
-      playTone(
-        580,
-        0.45,
-        0.015
-      );
-
-    },
-    100
-  );
-
-}
-
-
-function playRevealSound() {
-
-  playTone(
-    420,
-    0.65,
-    0.022
-  );
-
-  setTimeout(
-    () => {
-
-      playTone(
-        640,
-        0.8,
-        0.018
-      );
-
-    },
-    160
-  );
-
-}
-
-
-function playSecretSound() {
-
-  playTone(
-    540,
-    0.65,
-    0.022
-  );
-
-  setTimeout(
-    () => {
-
-      playTone(
-        760,
-        0.8,
-        0.018
-      );
-
-    },
-    140
-  );
-
-}
-
-
-function playHologramSound() {
-
-  playTone(
-    520,
-    0.45,
-    0.018,
-    "sine"
-  );
-
-  setTimeout(
-    () => {
-
-      playTone(
-        720,
-        0.65,
-        0.015,
-        "triangle"
-      );
-
-    },
-    120
-  );
-
-}
-
-
-function playMarkSound() {
-
-  playTone(
-    350,
-    0.7,
-    0.02
-  );
-
-  setTimeout(
-    () => {
-
-      playTone(
-        470,
-        0.9,
-        0.018
-      );
-
-    },
-    160
-  );
-
-  setTimeout(
-    () => {
-
-      playTone(
-        610,
-        1.0,
-        0.015
-      );
-
-    },
-    310
-  );
-
-}
-
-
-/* =========================================================
-   ESCAPE FERME LE MENU
-========================================================= */
-
-document.addEventListener(
-  "keydown",
-  (event) => {
-
-    if (
-      event.key === "Escape"
-    ) {
-
-      closeMenu();
-
-    }
-
-  }
-);
-
-
-/* =========================================================
-   SAUVEGARDE AVANT DE QUITTER
-========================================================= */
-
-window.addEventListener(
-  "beforeunload",
-  () => {
-
-    localStorage.setItem(
-      STORAGE_SCROLL,
-      Math.round(
-        window.scrollY
-      )
-    );
-
-  }
-);
-
-
-/* =========================================================
-   PREMIÈRE SCÈNE
-========================================================= */
-
-const firstScene =
-  document.querySelector(
-    ".scene"
-  );
-
-if (firstScene) {
-
-  setTimeout(
-    () => {
-
-      firstScene.classList.add(
-        "is-visible"
-      );
-
-    },
-    100
-  );
-
-}
-
-
-/* =========================================================
-   FIN INITIALISATION
-========================================================= */
-
-});
+   
