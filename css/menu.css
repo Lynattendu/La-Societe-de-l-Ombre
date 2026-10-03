@@ -1,1 +1,363 @@
+* {
+  box-sizing: border-box;
+}
 
+html,
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+}
+
+body {
+  background:
+    radial-gradient(
+      circle at center,
+      #17202b 0%,
+      #080a0e 50%,
+      #020304 100%
+    );
+
+  color: white;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+}
+
+
+.menu-page {
+  min-height: 100vh;
+
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+
+  padding:
+    60px 20px;
+
+  position: relative;
+}
+
+
+.menu-content {
+  width: 100%;
+  max-width: 700px;
+
+  text-align: center;
+
+  position: relative;
+  z-index: 2;
+}
+
+
+.menu-content h1 {
+  margin-bottom: 10px;
+
+  font-size:
+    clamp(
+      2rem,
+      7vw,
+      4rem
+    );
+
+  letter-spacing: 2px;
+}
+
+
+.menu-subtitle {
+  opacity: 0.75;
+
+  margin-bottom: 40px;
+
+  font-size: 1.1rem;
+}
+
+
+.chapters {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 16px;
+}
+
+
+.chapter-btn {
+  width: 100%;
+
+  border:
+    1px solid
+    rgba(
+      255,
+      220,
+      150,
+      0.35
+    );
+
+  border-radius: 14px;
+
+  padding:
+    20px 18px;
+
+  background:
+    rgba(
+      10,
+      14,
+      20,
+      0.88
+    );
+
+  color: white;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.25s ease,
+    border-color 0.25s ease,
+    background 0.25s ease;
+}
+
+
+.chapter-btn:hover {
+  transform:
+    translateY(-2px);
+
+  border-color:
+    rgba(
+      255,
+      220,
+      150,
+      0.85
+    );
+
+  background:
+    rgba(
+      22,
+      28,
+      38,
+      0.95
+    );
+}
+
+
+.chapter-number,
+.chapter-title,
+.chapter-status {
+  display: block;
+}
+
+
+.chapter-number {
+  font-size: 0.8rem;
+
+  opacity: 0.65;
+
+  text-transform: uppercase;
+
+  letter-spacing: 2px;
+}
+
+
+.chapter-title {
+  margin-top: 6px;
+
+  font-size: 1.35rem;
+}
+
+
+.chapter-status {
+  margin-top: 8px;
+
+  font-size: 0.8rem;
+
+  opacity: 0.55;
+}
+
+
+.back-btn {
+  display: inline-block;
+
+  margin-top: 40px;
+
+  color: white;
+
+  opacity: 0.7;
+
+  text-decoration: none;
+}
+
+
+/* =========================
+   FENÊTRE MODALE
+   ========================= */
+
+.chapter-modal {
+  position: fixed;
+
+  inset: 0;
+
+  z-index: 100;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  padding: 20px;
+}
+
+
+.chapter-modal.hidden {
+  display: none;
+}
+
+
+.modal-background {
+  position: absolute;
+
+  inset: 0;
+
+  background:
+    rgba(
+      0,
+      0,
+      0,
+      0.82
+    );
+
+  backdrop-filter:
+    blur(7px);
+}
+
+
+.modal-box {
+  position: relative;
+
+  z-index: 101;
+
+  width: 100%;
+  max-width: 430px;
+
+  padding:
+    32px 24px;
+
+  border-radius: 18px;
+
+  border:
+    1px solid
+    rgba(
+      255,
+      220,
+      150,
+      0.4
+    );
+
+  background:
+    linear-gradient(
+      160deg,
+      #171c24,
+      #07090d
+    );
+
+  text-align: center;
+
+  box-shadow:
+    0 25px 80px
+    rgba(
+      0,
+      0,
+      0,
+      0.7
+    );
+}
+
+
+.modal-small {
+  opacity: 0.6;
+
+  font-size: 0.85rem;
+}
+
+
+.modal-box h2 {
+  margin:
+    8px 0
+    30px;
+}
+
+
+.modal-question {
+  margin-bottom: 22px;
+}
+
+
+.modal-btn {
+  display: block;
+
+  width: 100%;
+
+  margin: 12px 0;
+
+  padding:
+    16px 18px;
+
+  border-radius: 12px;
+
+  cursor: pointer;
+
+  font-size: 1rem;
+}
+
+
+.resume-btn {
+  border: 0;
+
+  background:
+    linear-gradient(
+      135deg,
+      #e3bd70,
+      #fff1bd
+    );
+
+  color: #111;
+}
+
+
+.restart-btn {
+  border:
+    1px solid
+    rgba(
+      255,
+      255,
+      255,
+      0.25
+    );
+
+  background:
+    rgba(
+      255,
+      255,
+      255,
+      0.06
+    );
+
+  color: white;
+}
+
+
+.cancel-btn {
+  border: 0;
+
+  background: none;
+
+  color: white;
+
+  opacity: 0.5;
+
+  cursor: pointer;
+
+  margin-top: 12px;
+}
