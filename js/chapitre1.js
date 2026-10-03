@@ -65,7 +65,12 @@ const choiceResult =
 
 const STORAGE_SCROLL =
   "societeOmbre_chapitre1_scroll";
+const STORAGE_PROGRESS =
+  "societeOmbre_chapitre1_progression";
 
+const STORAGE_COMPLETED =
+  "societeOmbre_chapitre1_termine";
+   
 const STORAGE_CHOICE =
   "societeOmbre_chapitre1_instinctRaison";
 
