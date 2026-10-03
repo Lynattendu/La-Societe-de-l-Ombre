@@ -1808,11 +1808,36 @@ window.addEventListener(
   "beforeunload",
   () => {
 
+    /*
+      On ne sauvegarde pas une nouvelle
+      progression lorsqu'on est justement
+      en train de recommencer le chapitre.
+    */
+
+    const params =
+      new URLSearchParams(
+        window.location.search
+      );
+
+    if (
+      params.get("lecture") ===
+      "recommencer"
+    ) {
+      return;
+    }
+
+
     localStorage.setItem(
       STORAGE_SCROLL,
       Math.round(
         window.scrollY
       )
+    );
+
+
+    localStorage.setItem(
+      STORAGE_PROGRESS,
+      "1"
     );
 
   }
