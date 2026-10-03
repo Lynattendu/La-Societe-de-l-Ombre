@@ -128,18 +128,52 @@ const observer =
 
         if (entry.isIntersecting) {
 
-          const scene =
-            entry.target;
+  const scene =
+    entry.target;
 
-          scene.classList.add(
-            "is-visible"
-          );
+  scene.classList.add(
+    "is-visible"
+  );
 
-          animateParagraphs(
-            scene
-          );
+  animateParagraphs(
+    scene
+  );
 
-        }
+
+  /*
+    Le chapitre a été commencé.
+  */
+
+  localStorage.setItem(
+    STORAGE_PROGRESS,
+    "1"
+  );
+
+
+  /*
+    Si la dernière scène du chapitre
+    entre dans l'écran, le chapitre
+    est considéré comme lu.
+  */
+
+  const lastScene =
+    scenes[
+      scenes.length - 1
+    ];
+
+
+  if (
+    scene === lastScene
+  ) {
+
+    localStorage.setItem(
+      STORAGE_COMPLETED,
+      "1"
+    );
+
+  }
+
+}
 
       });
 
