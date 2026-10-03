@@ -1,1 +1,108 @@
+<!DOCTYPE html>
+<html lang="fr">
 
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>La Société de l'Ombre — Chapitres</title>
+
+  <link
+    rel="stylesheet"
+    href="css/menu.css"
+  >
+</head>
+
+<body>
+
+  <main class="menu-page">
+
+    <div class="menu-overlay"></div>
+
+    <section class="menu-content">
+
+      <h1>
+        La Société de l'Ombre
+      </h1>
+
+      <p class="menu-subtitle">
+        Choisissez un chapitre
+      </p>
+
+      <div
+        class="chapters"
+        id="chapters"
+      ></div>
+
+      <a
+        href="index.html"
+        class="back-btn"
+      >
+        Retour à l'accueil
+      </a>
+
+    </section>
+
+  </main>
+
+
+  <!-- =========================
+       FENÊTRE REPRENDRE / RECOMMENCER
+       ========================= -->
+
+  <div
+    class="chapter-modal hidden"
+    id="chapterModal"
+  >
+
+    <div class="modal-background"></div>
+
+    <div class="modal-box">
+
+      <p class="modal-small">
+        Vous avez sélectionné
+      </p>
+
+      <h2 id="selectedChapterTitle">
+        Chapitre
+      </h2>
+
+      <p class="modal-question">
+        Que souhaitez-vous faire ?
+      </p>
+
+      <button
+        class="modal-btn resume-btn"
+        id="resumeBtn"
+      >
+        Reprendre la lecture
+      </button>
+
+      <button
+        class="modal-btn restart-btn"
+        id="restartBtn"
+      >
+        Recommencer le chapitre
+      </button>
+
+      <button
+        class="cancel-btn"
+        id="cancelBtn"
+      >
+        Annuler
+      </button>
+
+    </div>
+
+  </div>
+
+
+  <script src="js/menu.js"></script>
+
+</body>
+
+</html>
