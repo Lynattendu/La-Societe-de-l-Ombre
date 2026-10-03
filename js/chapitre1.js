@@ -500,55 +500,63 @@ if (resumeBtn) {
 
 function restartChapterFunction() {
 
-  localStorage.removeItem(
-    STORAGE_SCROLL
-  );
-
-  localStorage.removeItem(
-    STORAGE_CHOICE
-  );
-
-  localStorage.removeItem(
-    STORAGE_PUZZLE
-  );
-
-  localStorage.removeItem(
-    STORAGE_ENVELOPE
-  );
-
   /*
-    Les secrets restent enregistrés.
+    Efface absolument toute la mémoire
+    appartenant au chapitre 1.
   */
 
-  window.scrollTo({
-    top: 0,
-    behavior: "smooth"
-  });
+  const prefix =
+    "societeOmbre_chapitre1_";
 
-  closeMenu();
-
-}
+  const keysToDelete =
+    [];
 
 
-if (restartBtn) {
+  for (
+    let i = 0;
+    i < localStorage.length;
+    i++
+  ) {
 
-  restartBtn.addEventListener(
-    "click",
-    restartChapterFunction
+    const key =
+      localStorage.key(i);
+
+    if (
+      key &&
+      key.startsWith(prefix)
+    ) {
+
+      keysToDelete.push(
+        key
+      );
+
+    }
+
+  }
+
+
+  keysToDelete.forEach(
+    (key) => {
+
+      localStorage.removeItem(
+        key
+      );
+
+    }
   );
 
+
+  /*
+    Recharge complètement le chapitre.
+    C'est important car cela remet aussi
+    visuellement les énigmes, choix,
+    secrets et enveloppes à zéro.
+  */
+
+  window.location.href =
+    "chapitre1.html?lecture=recommencer";
+
 }
-
-
-if (restartChapter) {
-
-  restartChapter.addEventListener(
-    "click",
-    restartChapterFunction
-  );
-
-}
-
 
 /* =========================================================
    SECRETS
