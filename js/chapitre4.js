@@ -48,6 +48,19 @@ const secretPopup =
 const STORAGE_SCROLL =
   "societeOmbre_chapitre4_scroll";
 
+
+/*
+  Ces deux clés sont utilisées
+  par le nouveau menu général.
+*/
+
+const STORAGE_PROGRESS =
+  "societeOmbre_chapitre4_progression";
+
+const STORAGE_COMPLETED =
+  "societeOmbre_chapitre4_termine";
+
+
 const STORAGE_SYMBOL =
   "societeOmbre_chapitre4_symbol";
 
@@ -75,8 +88,48 @@ const STORAGE_DRAGON =
 const STORAGE_SECRETS =
   "societeOmbre_chapitre4_secrets";
 
-const STORAGE_FINISHED =
-  "societeOmbre_chapitre4_finished";
+
+/* =========================================================
+   COMPATIBILITÉ AVEC ANCIENNE SAUVEGARDE
+========================================================= */
+
+/*
+  Ton ancien chapitre utilisait :
+
+  societeOmbre_chapitre4_finished
+
+  Si un lecteur avait déjà terminé le chapitre,
+  on transforme automatiquement cette ancienne
+  information dans le nouveau système.
+*/
+
+if (
+  localStorage.getItem(
+    "societeOmbre_chapitre4_finished"
+  ) === "1"
+) {
+
+  localStorage.setItem(
+    STORAGE_COMPLETED,
+    "1"
+  );
+
+}
+
+
+/* =========================================================
+   MODE D'OUVERTURE
+========================================================= */
+
+const urlParams =
+  new URLSearchParams(
+    window.location.search
+  );
+
+const lectureMode =
+  urlParams.get(
+    "lecture"
+  );
 
 
 /* =========================================================
@@ -95,9 +148,11 @@ document
           img.closest(".visual");
 
         if (visual) {
+
           visual.classList.add(
             "visual-missing"
           );
+
         }
 
       }
@@ -131,6 +186,18 @@ const observer =
             scene
           );
 
+
+          /*
+            Dès qu'une scène est affichée,
+            le chapitre est considéré
+            comme commencé.
+          */
+
+          localStorage.setItem(
+            STORAGE_PROGRESS,
+            "1"
+          );
+
         }
 
       });
@@ -142,9 +209,15 @@ const observer =
   );
 
 
-scenes.forEach((scene) => {
-  observer.observe(scene);
-});
+scenes.forEach(
+  (scene) => {
+
+    observer.observe(
+      scene
+    );
+
+  }
+);
 
 
 /* =========================================================
@@ -154,17 +227,22 @@ scenes.forEach((scene) => {
 function animateParagraphs(scene) {
 
   if (
-    scene.dataset.textAnimated === "1"
+    scene.dataset.textAnimated ===
+    "1"
   ) {
     return;
   }
 
-  scene.dataset.textAnimated = "1";
+
+  scene.dataset.textAnimated =
+    "1";
+
 
   const paragraphs =
     scene.querySelectorAll(
       ".text-block p"
     );
+
 
   paragraphs.forEach(
     (paragraph, index) => {
@@ -172,8 +250,10 @@ function animateParagraphs(scene) {
       paragraph.style.opacity =
         "0";
 
+
       paragraph.style.transform =
         "translateY(12px)";
+
 
       setTimeout(
         () => {
@@ -185,6 +265,7 @@ function animateParagraphs(scene) {
                 transform:
                   "translateY(12px)"
               },
+
               {
                 opacity: 1,
                 transform:
@@ -218,19 +299,23 @@ function updateProgress() {
     return;
   }
 
+
   const scrollTop =
     window.scrollY;
+
 
   const documentHeight =
     document.documentElement
       .scrollHeight -
     window.innerHeight;
 
+
   if (
     documentHeight <= 0
   ) {
     return;
   }
+
 
   const percentage =
     Math.min(
@@ -243,6 +328,7 @@ function updateProgress() {
         ) * 100
       )
     );
+
 
   progressFill.style.width =
     percentage + "%";
@@ -258,6 +344,7 @@ window.addEventListener(
   }
 );
 
+
 updateProgress();
 
 
@@ -265,7 +352,9 @@ updateProgress();
    SAUVEGARDE DE LA POSITION
 ========================================================= */
 
-let saveScrollTimer = null;
+let saveScrollTimer =
+  null;
+
 
 window.addEventListener(
   "scroll",
@@ -274,6 +363,7 @@ window.addEventListener(
     clearTimeout(
       saveScrollTimer
     );
+
 
     saveScrollTimer =
       setTimeout(
@@ -286,6 +376,12 @@ window.addEventListener(
             )
           );
 
+
+          localStorage.setItem(
+            STORAGE_PROGRESS,
+            "1"
+          );
+
         },
         250
       );
@@ -295,6 +391,85 @@ window.addEventListener(
     passive: true
   }
 );
+
+
+/* =========================================================
+   REPRENDRE DEPUIS LE MENU GÉNÉRAL
+========================================================= */
+
+if (
+  lectureMode === "reprendre"
+) {
+
+  const savedPosition =
+    parseInt(
+      localStorage.getItem(
+        STORAGE_SCROLL
+      ),
+      10
+    );
+
+
+  if (
+    !Number.isNaN(
+      savedPosition
+    ) &&
+    savedPosition > 0
+  ) {
+
+    /*
+      Petit délai :
+      cela permet aux images et aux scènes
+      de prendre leur hauteur définitive
+      avant de replacer le lecteur.
+    */
+
+    setTimeout(
+      () => {
+
+        window.scrollTo({
+          top: savedPosition,
+          left: 0,
+          behavior: "instant"
+        });
+
+
+        updateProgress();
+
+      },
+      400
+    );
+
+  }
+
+}
+
+
+/* =========================================================
+   RECOMMENCER DEPUIS LE MENU GÉNÉRAL
+========================================================= */
+
+if (
+  lectureMode === "recommencer"
+) {
+
+  setTimeout(
+    () => {
+
+      window.scrollTo({
+        top: 0,
+        left: 0,
+        behavior: "instant"
+      });
+
+
+      updateProgress();
+
+    },
+    100
+  );
+
+}
 
 
 /* =========================================================
@@ -312,15 +487,20 @@ document
       () => {
 
         const currentScene =
-          button.closest(".scene");
+          button.closest(
+            ".scene"
+          );
+
 
         if (!currentScene) {
           return;
         }
 
+
         const nextScene =
           currentScene
             .nextElementSibling;
+
 
         if (nextScene) {
 
@@ -347,14 +527,17 @@ function openMenu() {
     return;
   }
 
+
   chapterMenu.classList.add(
     "open"
   );
+
 
   chapterMenu.setAttribute(
     "aria-hidden",
     "false"
   );
+
 
   document.body.classList.add(
     "no-scroll"
@@ -369,14 +552,17 @@ function closeMenu() {
     return;
   }
 
+
   chapterMenu.classList.remove(
     "open"
   );
+
 
   chapterMenu.setAttribute(
     "aria-hidden",
     "true"
   );
+
 
   document.body.classList.remove(
     "no-scroll"
@@ -428,6 +614,7 @@ if (chapterMenu) {
 
 /* =========================================================
    REPRENDRE LA LECTURE
+   DEPUIS LE MENU DU CHAPITRE
 ========================================================= */
 
 if (resumeBtn) {
@@ -438,6 +625,7 @@ if (resumeBtn) {
 
       closeMenu();
 
+
       const position =
         parseInt(
           localStorage.getItem(
@@ -446,8 +634,11 @@ if (resumeBtn) {
           10
         );
 
+
       if (
-        !Number.isNaN(position)
+        !Number.isNaN(
+          position
+        )
       ) {
 
         window.scrollTo({
@@ -469,59 +660,69 @@ if (resumeBtn) {
 
 function restartChapterFunction() {
 
-  localStorage.removeItem(
-    STORAGE_SCROLL
+  /*
+    Toutes les données propres au chapitre 4
+    commencent par ce préfixe.
+  */
+
+  const prefix =
+    "societeOmbre_chapitre4_";
+
+
+  const keysToDelete =
+    [];
+
+
+  for (
+    let i = 0;
+    i < localStorage.length;
+    i++
+  ) {
+
+    const key =
+      localStorage.key(i);
+
+
+    if (
+      key &&
+      key.startsWith(
+        prefix
+      )
+    ) {
+
+      keysToDelete.push(
+        key
+      );
+
+    }
+
+  }
+
+
+  /*
+    On efface absolument toute
+    la mémoire du chapitre 4.
+  */
+
+  keysToDelete.forEach(
+    (key) => {
+
+      localStorage.removeItem(
+        key
+      );
+
+    }
   );
 
-  localStorage.removeItem(
-    STORAGE_SYMBOL
-  );
 
-  localStorage.removeItem(
-    STORAGE_MICROSCOPE
-  );
+  /*
+    Les chapitres précédents et
+    le choix du prologue restent intacts.
+  */
 
-  localStorage.removeItem(
-    STORAGE_FUTURE
-  );
 
-  localStorage.removeItem(
-    STORAGE_LUCY_MARK
-  );
-
-  localStorage.removeItem(
-    STORAGE_DEAD_FILES
-  );
-
-  localStorage.removeItem(
-    STORAGE_BLACK_MARK
-  );
-
-  localStorage.removeItem(
-    STORAGE_ROOT_HIGHER_MARK
-  );
-
-  localStorage.removeItem(
-    STORAGE_DRAGON
-  );
-
-  localStorage.removeItem(
-    STORAGE_FINISHED
-  );
-
-  window.scrollTo({
-    top: 0,
-    behavior: "smooth"
-  });
-
-  closeMenu();
-
-  setTimeout(
-    () => {
-      location.reload();
-    },
-    500
-  );
+  window.location.href =
+    "chapitre4.html?lecture=recommencer";
 
 }
 
@@ -574,15 +775,23 @@ function saveSecret(secret) {
   const secrets =
     getSecrets();
 
+
   if (
-    !secrets.includes(secret)
+    !secrets.includes(
+      secret
+    )
   ) {
 
-    secrets.push(secret);
+    secrets.push(
+      secret
+    );
+
 
     localStorage.setItem(
       STORAGE_SECRETS,
-      JSON.stringify(secrets)
+      JSON.stringify(
+        secrets
+      )
     );
 
   }
@@ -594,32 +803,61 @@ function saveSecret(secret) {
    POPUP INFORMATION
 ========================================================= */
 
-let secretTimer = null;
+let secretTimer =
+  null;
+
+
+function hideSecretPopup() {
+
+  if (!secretPopup) {
+    return;
+  }
+
+
+  secretPopup.classList.remove(
+    "show"
+  );
+
+
+  secretPopup.setAttribute(
+    "aria-hidden",
+    "true"
+  );
+
+}
+
 
 function showSecret(
   secretName,
   secretText
 ) {
 
-  saveSecret(secretName);
+  saveSecret(
+    secretName
+  );
+
 
   if (!secretPopup) {
     return;
   }
+
 
   const inner =
     secretPopup.querySelector(
       ".secret-popup-inner"
     );
 
+
   if (!inner) {
     return;
   }
+
 
   let description =
     inner.querySelector(
       ".secret-description"
     );
+
 
   if (!description) {
 
@@ -628,23 +866,30 @@ function showSecret(
         "p"
       );
 
+
     description.className =
       "secret-description";
+
 
     description.style.marginTop =
       "14px";
 
+
     description.style.fontSize =
       "15px";
+
 
     description.style.lineHeight =
       "1.55";
 
+
     description.style.letterSpacing =
       "0";
 
+
     description.style.color =
       "#f4eee6";
+
 
     inner.appendChild(
       description
@@ -652,36 +897,35 @@ function showSecret(
 
   }
 
+
   description.textContent =
     secretText;
+
 
   secretPopup.classList.add(
     "show"
   );
+
 
   secretPopup.setAttribute(
     "aria-hidden",
     "false"
   );
 
+
   playSecretSound();
+
 
   clearTimeout(
     secretTimer
   );
 
+
   secretTimer =
     setTimeout(
       () => {
 
-        secretPopup.classList.remove(
-          "show"
-        );
-
-        secretPopup.setAttribute(
-          "aria-hidden",
-          "true"
-        );
+        hideSecretPopup();
 
       },
       3200
@@ -700,6 +944,7 @@ const symbolTrigger =
     "symbolTrigger"
   );
 
+
 const scene14 =
   document.getElementById(
     "scene-14"
@@ -713,21 +958,26 @@ function activateSymbol() {
     "1"
   );
 
+
   if (symbolTrigger) {
 
     symbolTrigger.classList.add(
       "completed"
     );
 
+
     symbolTrigger.textContent =
       "Orientation repérée";
+
 
     symbolTrigger.disabled =
       true;
 
   }
 
+
   playClueSound();
+
 
   showSecret(
     "cameleon-symbol",
@@ -776,8 +1026,10 @@ if (
       "completed"
     );
 
+
     symbolTrigger.textContent =
       "Orientation repérée";
+
 
     symbolTrigger.disabled =
       true;
@@ -797,6 +1049,7 @@ const microscopeTrigger =
     "microscopeTrigger"
   );
 
+
 const microscopeReveal =
   document.getElementById(
     "microscopeReveal"
@@ -810,6 +1063,7 @@ function activateMicroscope() {
     "1"
   );
 
+
   if (microscopeReveal) {
 
     microscopeReveal.classList.add(
@@ -818,21 +1072,26 @@ function activateMicroscope() {
 
   }
 
+
   if (microscopeTrigger) {
 
     microscopeTrigger.classList.add(
       "completed"
     );
 
+
     microscopeTrigger.textContent =
       "Message révélé";
+
 
     microscopeTrigger.disabled =
       true;
 
   }
 
+
   playRevealSound();
+
 
   showSecret(
     "cameleon-message",
@@ -866,14 +1125,17 @@ if (
 
   }
 
+
   if (microscopeTrigger) {
 
     microscopeTrigger.classList.add(
       "completed"
     );
 
+
     microscopeTrigger.textContent =
       "Message révélé";
+
 
     microscopeTrigger.disabled =
       true;
@@ -893,6 +1155,7 @@ const futureTrigger =
     "futureTrigger"
   );
 
+
 const futureReveal =
   document.getElementById(
     "futureReveal"
@@ -906,6 +1169,7 @@ function activateFutureAnalysis() {
     "1"
   );
 
+
   if (futureReveal) {
 
     futureReveal.classList.add(
@@ -914,21 +1178,26 @@ function activateFutureAnalysis() {
 
   }
 
+
   if (futureTrigger) {
 
     futureTrigger.classList.add(
       "completed"
     );
 
+
     futureTrigger.textContent =
       "Trajectoire reconstruite";
+
 
     futureTrigger.disabled =
       true;
 
   }
 
+
   playAnalysisSound();
+
 
   showSecret(
     "absence-analysis",
@@ -962,14 +1231,17 @@ if (
 
   }
 
+
   if (futureTrigger) {
 
     futureTrigger.classList.add(
       "completed"
     );
 
+
     futureTrigger.textContent =
       "Trajectoire reconstruite";
+
 
     futureTrigger.disabled =
       true;
@@ -989,6 +1261,7 @@ const lucyMarkTrigger =
     "lucyMarkTrigger"
   );
 
+
 const lucyMarkScene =
   document.getElementById(
     "scene-52"
@@ -1002,6 +1275,7 @@ function revealLucyMark() {
     "1"
   );
 
+
   if (lucyMarkScene) {
 
     lucyMarkScene.classList.add(
@@ -1010,21 +1284,26 @@ function revealLucyMark() {
 
   }
 
+
   if (lucyMarkTrigger) {
 
     lucyMarkTrigger.classList.add(
       "completed"
     );
 
+
     lucyMarkTrigger.textContent =
       "Marque révélée";
+
 
     lucyMarkTrigger.disabled =
       true;
 
   }
 
+
   playMarkSound();
+
 
   showSecret(
     "lucy-indecis",
@@ -1075,14 +1354,17 @@ if (
 
   }
 
+
   if (lucyMarkTrigger) {
 
     lucyMarkTrigger.classList.add(
       "completed"
     );
 
+
     lucyMarkTrigger.textContent =
       "Marque révélée";
+
 
     lucyMarkTrigger.disabled =
       true;
@@ -1102,6 +1384,7 @@ const deadFilesTrigger =
     "deadFilesTrigger"
   );
 
+
 const deadFilesReveal =
   document.getElementById(
     "deadFilesReveal"
@@ -1115,6 +1398,7 @@ function revealDeadFiles() {
     "1"
   );
 
+
   if (deadFilesReveal) {
 
     deadFilesReveal.classList.add(
@@ -1123,21 +1407,26 @@ function revealDeadFiles() {
 
   }
 
+
   if (deadFilesTrigger) {
 
     deadFilesTrigger.classList.add(
       "completed"
     );
 
+
     deadFilesTrigger.textContent =
       "Dossiers ouverts";
+
 
     deadFilesTrigger.disabled =
       true;
 
   }
 
+
   playDataSound();
+
 
   showSecret(
     "dead-identities",
@@ -1171,14 +1460,17 @@ if (
 
   }
 
+
   if (deadFilesTrigger) {
 
     deadFilesTrigger.classList.add(
       "completed"
     );
 
+
     deadFilesTrigger.textContent =
       "Dossiers ouverts";
+
 
     deadFilesTrigger.disabled =
       true;
@@ -1198,6 +1490,7 @@ const blackMarkTrigger =
     "blackMarkTrigger"
   );
 
+
 const blackMarkReveal =
   document.getElementById(
     "blackMarkReveal"
@@ -1211,6 +1504,7 @@ function revealBlackMark() {
     "1"
   );
 
+
   if (blackMarkReveal) {
 
     blackMarkReveal.classList.add(
@@ -1219,21 +1513,26 @@ function revealBlackMark() {
 
   }
 
+
   if (blackMarkTrigger) {
 
     blackMarkTrigger.classList.add(
       "completed"
     );
 
+
     blackMarkTrigger.textContent =
       "Marque révélée";
+
 
     blackMarkTrigger.disabled =
       true;
 
   }
 
+
   playDarkMarkSound();
+
 
   showSecret(
     "black-guardian-mark",
@@ -1267,14 +1566,17 @@ if (
 
   }
 
+
   if (blackMarkTrigger) {
 
     blackMarkTrigger.classList.add(
       "completed"
     );
 
+
     blackMarkTrigger.textContent =
       "Marque révélée";
+
 
     blackMarkTrigger.disabled =
       true;
@@ -1294,6 +1596,7 @@ const rootHigherMarkTrigger =
     "rootHigherMarkTrigger"
   );
 
+
 const rootHigherMarkReveal =
   document.getElementById(
     "rootHigherMarkReveal"
@@ -1307,6 +1610,7 @@ function revealRootHigherMark() {
     "1"
   );
 
+
   if (rootHigherMarkReveal) {
 
     rootHigherMarkReveal.classList.add(
@@ -1315,21 +1619,26 @@ function revealRootHigherMark() {
 
   }
 
+
   if (rootHigherMarkTrigger) {
 
     rootHigherMarkTrigger.classList.add(
       "completed"
     );
 
+
     rootHigherMarkTrigger.textContent =
       "Marques révélées";
+
 
     rootHigherMarkTrigger.disabled =
       true;
 
   }
 
+
   playSentinelSound();
+
 
   showSecret(
     "root-higher-mark",
@@ -1363,14 +1672,17 @@ if (
 
   }
 
+
   if (rootHigherMarkTrigger) {
 
     rootHigherMarkTrigger.classList.add(
       "completed"
     );
 
+
     rootHigherMarkTrigger.textContent =
       "Marques révélées";
+
 
     rootHigherMarkTrigger.disabled =
       true;
@@ -1390,6 +1702,7 @@ const dragonTrigger =
     "dragonTrigger"
   );
 
+
 const dragonReveal =
   document.getElementById(
     "dragonReveal"
@@ -1403,6 +1716,7 @@ function revealDragon() {
     "1"
   );
 
+
   if (dragonReveal) {
 
     dragonReveal.classList.add(
@@ -1411,21 +1725,26 @@ function revealDragon() {
 
   }
 
+
   if (dragonTrigger) {
 
     dragonTrigger.classList.add(
       "completed"
     );
 
+
     dragonTrigger.textContent =
       "Dragon révélé";
+
 
     dragonTrigger.disabled =
       true;
 
   }
 
+
   playDragonSound();
+
 
   showSecret(
     "hope-dragon",
@@ -1459,14 +1778,17 @@ if (
 
   }
 
+
   if (dragonTrigger) {
 
     dragonTrigger.classList.add(
       "completed"
     );
 
+
     dragonTrigger.textContent =
       "Dragon révélé";
+
 
     dragonTrigger.disabled =
       true;
@@ -1485,7 +1807,15 @@ const chapter3RootMark =
     "societeOmbre_chapitre3_rootMark"
   );
 
+
+/*
+  Nouveau nom utilisé par le chapitre 3 corrigé.
+*/
+
 const chapter3Finished =
+  localStorage.getItem(
+    "societeOmbre_chapitre3_termine"
+  ) ||
   localStorage.getItem(
     "societeOmbre_chapitre3_finished"
   );
@@ -1500,26 +1830,41 @@ if (
       "scene-58"
     );
 
+
   const textBlock =
     scene58?.querySelector(
       ".text-block"
     );
 
-  if (textBlock) {
+
+  if (
+    textBlock &&
+    !document.getElementById(
+      "chapter3RootMemory"
+    )
+  ) {
 
     const memory =
       document.createElement(
         "p"
       );
 
+
+    memory.id =
+      "chapter3RootMemory";
+
+
     memory.className =
       "emphasis";
+
 
     memory.style.marginTop =
       "30px";
 
+
     memory.textContent =
       "Vous avez déjà vu une première marque de Root. Cette fois, Hope va révéler ce qui se cachait encore sous la surface.";
+
 
     textBlock.appendChild(
       memory
@@ -1539,26 +1884,41 @@ if (
       "scene-2"
     );
 
+
   const textBlock =
     scene2?.querySelector(
       ".text-block"
     );
 
-  if (textBlock) {
+
+  if (
+    textBlock &&
+    !document.getElementById(
+      "chapter3FinishedMemory"
+    )
+  ) {
 
     const memory =
       document.createElement(
         "p"
       );
 
+
+    memory.id =
+      "chapter3FinishedMemory";
+
+
     memory.className =
       "emphasis";
+
 
     memory.style.marginTop =
       "30px";
 
+
     memory.textContent =
       "Au chapitre précédent, le cercle s’était rapproché. Cette fois, la confiance va être mise à l’épreuve.";
+
 
     textBlock.appendChild(
       memory
@@ -1586,20 +1946,33 @@ if (prologueChoice) {
       "scene-55"
     );
 
+
   const textBlock =
     scene55?.querySelector(
       ".text-block"
     );
 
-  if (textBlock) {
+
+  if (
+    textBlock &&
+    !document.getElementById(
+      "chapter4PrologueMemory"
+    )
+  ) {
 
     const memory =
       document.createElement(
         "p"
       );
 
+
+    memory.id =
+      "chapter4PrologueMemory";
+
+
     memory.className =
       "emphasis";
+
 
     memory.style.marginTop =
       "34px";
@@ -1659,8 +2032,19 @@ if (scene60) {
               entry.isIntersecting
             ) {
 
+              /*
+                Le menu général considère
+                maintenant le chapitre comme lu.
+              */
+
               localStorage.setItem(
-                STORAGE_FINISHED,
+                STORAGE_COMPLETED,
+                "1"
+              );
+
+
+              localStorage.setItem(
+                STORAGE_PROGRESS,
                 "1"
               );
 
@@ -1675,6 +2059,7 @@ if (scene60) {
       }
     );
 
+
   endObserver.observe(
     scene60
   );
@@ -1686,11 +2071,20 @@ if (scene60) {
    SON D'AMBIANCE
 ========================================================= */
 
-let audioCtx = null;
-let masterGain = null;
-let ambienceOsc1 = null;
-let ambienceOsc2 = null;
-let soundActive = false;
+let audioCtx =
+  null;
+
+let masterGain =
+  null;
+
+let ambienceOsc1 =
+  null;
+
+let ambienceOsc2 =
+  null;
+
+let soundActive =
+  false;
 
 
 function startSound() {
@@ -1699,22 +2093,28 @@ function startSound() {
     return;
   }
 
+
   const AudioContextClass =
     window.AudioContext ||
     window.webkitAudioContext;
+
 
   if (!AudioContextClass) {
     return;
   }
 
+
   audioCtx =
     new AudioContextClass();
+
 
   masterGain =
     audioCtx.createGain();
 
+
   masterGain.gain.value =
     0.021;
+
 
   masterGain.connect(
     audioCtx.destination
@@ -1724,12 +2124,14 @@ function startSound() {
   ambienceOsc1 =
     audioCtx.createOscillator();
 
+
   ambienceOsc2 =
     audioCtx.createOscillator();
 
 
   const gain1 =
     audioCtx.createGain();
+
 
   const gain2 =
     audioCtx.createGain();
@@ -1738,8 +2140,10 @@ function startSound() {
   ambienceOsc1.type =
     "sine";
 
+
   ambienceOsc1.frequency.value =
     39;
+
 
   gain1.gain.value =
     0.62;
@@ -1748,8 +2152,10 @@ function startSound() {
   ambienceOsc2.type =
     "triangle";
 
+
   ambienceOsc2.frequency.value =
     77;
+
 
   gain2.gain.value =
     0.06;
@@ -1759,6 +2165,7 @@ function startSound() {
     .connect(gain1)
     .connect(masterGain);
 
+
   ambienceOsc2
     .connect(gain2)
     .connect(masterGain);
@@ -1766,10 +2173,12 @@ function startSound() {
 
   ambienceOsc1.start();
 
+
   ambienceOsc2.start();
 
 
-  soundActive = true;
+  soundActive =
+    true;
 
 
   if (soundBtn) {
@@ -1777,6 +2186,7 @@ function startSound() {
     soundBtn.classList.add(
       "sound-active"
     );
+
 
     soundBtn.textContent =
       "♪";
@@ -1795,12 +2205,17 @@ function stopSound() {
     return;
   }
 
-  masterGain.gain
-    .exponentialRampToValueAtTime(
-      0.0001,
-      audioCtx.currentTime +
-      0.35
-    );
+
+  if (masterGain) {
+
+    masterGain.gain
+      .exponentialRampToValueAtTime(
+        0.0001,
+        audioCtx.currentTime +
+          0.35
+      );
+
+  }
 
 
   setTimeout(
@@ -1809,26 +2224,42 @@ function stopSound() {
       try {
 
         ambienceOsc1?.stop();
+
+
         ambienceOsc2?.stop();
 
-        audioCtx.close();
+
+        audioCtx?.close();
 
       } catch (error) {
+
         /* rien */
+
       }
 
 
-      audioCtx = null;
-      masterGain = null;
-      ambienceOsc1 = null;
-      ambienceOsc2 = null;
+      audioCtx =
+        null;
+
+
+      masterGain =
+        null;
+
+
+      ambienceOsc1 =
+        null;
+
+
+      ambienceOsc2 =
+        null;
 
     },
     450
   );
 
 
-  soundActive = false;
+  soundActive =
+    false;
 
 
   if (soundBtn) {
@@ -1836,6 +2267,7 @@ function stopSound() {
     soundBtn.classList.remove(
       "sound-active"
     );
+
 
     soundBtn.textContent =
       "♫";
@@ -1885,8 +2317,10 @@ function playTone(
     return;
   }
 
+
   const oscillator =
     audioCtx.createOscillator();
+
 
   const gain =
     audioCtx.createGain();
@@ -1894,6 +2328,7 @@ function playTone(
 
   oscillator.type =
     type;
+
 
   oscillator.frequency.value =
     frequency;
@@ -1909,7 +2344,7 @@ function playTone(
     .exponentialRampToValueAtTime(
       0.0001,
       audioCtx.currentTime +
-      duration
+        duration
     );
 
 
@@ -1922,9 +2357,10 @@ function playTone(
 
   oscillator.start();
 
+
   oscillator.stop(
     audioCtx.currentTime +
-    duration
+      duration
   );
 
 }
@@ -1937,6 +2373,7 @@ function playClueSound() {
     0.35,
     0.018
   );
+
 
   setTimeout(
     () => {
@@ -1962,6 +2399,7 @@ function playRevealSound() {
     0.022
   );
 
+
   setTimeout(
     () => {
 
@@ -1986,6 +2424,7 @@ function playAnalysisSound() {
     0.018,
     "triangle"
   );
+
 
   setTimeout(
     () => {
@@ -2013,6 +2452,7 @@ function playDataSound() {
     "square"
   );
 
+
   setTimeout(
     () => {
 
@@ -2038,6 +2478,7 @@ function playMarkSound() {
     0.02
   );
 
+
   setTimeout(
     () => {
 
@@ -2050,6 +2491,7 @@ function playMarkSound() {
     },
     160
   );
+
 
   setTimeout(
     () => {
@@ -2076,6 +2518,7 @@ function playDarkMarkSound() {
     "triangle"
   );
 
+
   setTimeout(
     () => {
 
@@ -2101,6 +2544,7 @@ function playSentinelSound() {
     0.02
   );
 
+
   setTimeout(
     () => {
 
@@ -2113,6 +2557,7 @@ function playSentinelSound() {
     },
     170
   );
+
 
   setTimeout(
     () => {
@@ -2139,6 +2584,7 @@ function playDragonSound() {
     "sine"
   );
 
+
   setTimeout(
     () => {
 
@@ -2153,6 +2599,7 @@ function playDragonSound() {
     180
   );
 
+
   setTimeout(
     () => {
 
@@ -2166,6 +2613,7 @@ function playDragonSound() {
     },
     360
   );
+
 
   setTimeout(
     () => {
@@ -2192,6 +2640,7 @@ function playSecretSound() {
     0.022
   );
 
+
   setTimeout(
     () => {
 
@@ -2217,10 +2666,13 @@ document.addEventListener(
   (event) => {
 
     if (
-      event.key === "Escape"
+      event.key ===
+      "Escape"
     ) {
 
       closeMenu();
+
+      hideSecretPopup();
 
     }
 
@@ -2236,11 +2688,37 @@ window.addEventListener(
   "beforeunload",
   () => {
 
+    /*
+      Si le chapitre est justement
+      en cours de réinitialisation,
+      on ne recrée pas une sauvegarde.
+    */
+
+    const params =
+      new URLSearchParams(
+        window.location.search
+      );
+
+
+    if (
+      params.get("lecture") ===
+      "recommencer"
+    ) {
+      return;
+    }
+
+
     localStorage.setItem(
       STORAGE_SCROLL,
       Math.round(
         window.scrollY
       )
+    );
+
+
+    localStorage.setItem(
+      STORAGE_PROGRESS,
+      "1"
     );
 
   }
@@ -2255,6 +2733,7 @@ const firstScene =
   document.querySelector(
     ".scene"
   );
+
 
 if (firstScene) {
 
