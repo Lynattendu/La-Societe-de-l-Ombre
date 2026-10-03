@@ -295,6 +295,15 @@ window.addEventListener(
             )
           );
 
+          /*
+            Indique au menu général
+            que le chapitre a été commencé.
+          */
+          localStorage.setItem(
+            STORAGE_PROGRESS,
+            "1"
+          );
+
         },
         250
       );
