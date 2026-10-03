@@ -453,7 +453,21 @@ window.addEventListener(
   "load",
   () => {
 
-    showScene(scene1);
+    const params =
+      new URLSearchParams(window.location.search);
+
+    const depart =
+      params.get("depart");
+
+    if (depart === "prologue") {
+
+      showScene(scene9);
+
+    } else {
+
+      showScene(scene1);
+
+    }
 
   }
 );
