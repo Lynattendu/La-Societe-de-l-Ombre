@@ -315,19 +315,97 @@ window.addEventListener(
 );
 
 
+
 /* =========================================================
-   REPRISE DE LECTURE
+   OUVERTURE DU CHAPITRE
+   REPRENDRE / RECOMMENCER
 ========================================================= */
 
-const savedScroll =
-  parseInt(
-    localStorage.getItem(
-      STORAGE_SCROLL
-    ),
-    10
+const urlParams =
+  new URLSearchParams(
+    window.location.search
+  );
+
+const lectureMode =
+  urlParams.get(
+    "lecture"
   );
 
 
+/*
+  Si le lecteur arrive depuis le menu
+  avec "Reprendre la lecture".
+*/
+
+if (
+  lectureMode === "reprendre"
+) {
+
+  const savedPosition =
+    parseInt(
+      localStorage.getItem(
+        STORAGE_SCROLL
+      ),
+      10
+    );
+
+
+  if (
+    !Number.isNaN(
+      savedPosition
+    ) &&
+    savedPosition > 0
+  ) {
+
+    /*
+      Petit délai pour laisser les images
+      et la mise en page se placer.
+    */
+
+    setTimeout(
+      () => {
+
+        window.scrollTo({
+          top: savedPosition,
+          behavior: "instant"
+        });
+
+        updateProgress();
+
+      },
+      350
+    );
+
+  }
+
+}
+
+
+/*
+  Si le chapitre vient d'être recommencé,
+  on garantit un départ tout en haut.
+*/
+
+if (
+  lectureMode === "recommencer"
+) {
+
+  setTimeout(
+    () => {
+
+      window.scrollTo({
+        top: 0,
+        left: 0,
+        behavior: "instant"
+      });
+
+      updateProgress();
+
+    },
+    100
+  );
+
+}
 /* =========================================================
    BOUTONS CONTINUER / COMMENCER
 ========================================================= */
