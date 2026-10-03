@@ -233,11 +233,10 @@ skipBtn.addEventListener(
     );
 
     window.location.href =
-      PAGE_SUIVANTE;
+      "ouverture.html?depart=prologue";
 
   }
 );
-
 /* =========================
    PREMIÈRE VISITE UNIQUEMENT
    ========================= */
