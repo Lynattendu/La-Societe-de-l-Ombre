@@ -8,21 +8,47 @@
    RÉFÉRENCES DES SCÈNES
    ========================= */
 
-const scenes = document.querySelectorAll(".scene");
+const scenes =
+  document.querySelectorAll(".scene");
 
-const scene1 = document.getElementById("scene1");
-const scene2 = document.getElementById("scene2");
-const scene3 = document.getElementById("scene3");
-const scene4 = document.getElementById("scene4");
-const scene5 = document.getElementById("scene5");
-const scene6 = document.getElementById("scene6");
-const scene7 = document.getElementById("scene7");
-const scene8 = document.getElementById("scene8");
-const scene9 = document.getElementById("scene9");
-const scene10 = document.getElementById("scene10");
-const scene11 = document.getElementById("scene11");
-const scene12 = document.getElementById("scene12");
-const scene13 = document.getElementById("scene13");
+const scene1 =
+  document.getElementById("scene1");
+
+const scene2 =
+  document.getElementById("scene2");
+
+const scene3 =
+  document.getElementById("scene3");
+
+const scene4 =
+  document.getElementById("scene4");
+
+const scene5 =
+  document.getElementById("scene5");
+
+const scene6 =
+  document.getElementById("scene6");
+
+const scene7 =
+  document.getElementById("scene7");
+
+const scene8 =
+  document.getElementById("scene8");
+
+const scene9 =
+  document.getElementById("scene9");
+
+const scene10 =
+  document.getElementById("scene10");
+
+const scene11 =
+  document.getElementById("scene11");
+
+const scene12 =
+  document.getElementById("scene12");
+
+const scene13 =
+  document.getElementById("scene13");
 
 
 /* =========================
@@ -30,43 +56,69 @@ const scene13 = document.getElementById("scene13");
    ========================= */
 
 const startStoryBtn =
-  document.getElementById("startStoryBtn");
+  document.getElementById(
+    "startStoryBtn"
+  );
 
 const portalBtn =
-  document.getElementById("portalBtn");
+  document.getElementById(
+    "portalBtn"
+  );
 
 const guardianBtn =
-  document.getElementById("guardianBtn");
+  document.getElementById(
+    "guardianBtn"
+  );
 
 const sentinelBtn =
-  document.getElementById("sentinelBtn");
+  document.getElementById(
+    "sentinelBtn"
+  );
 
 const continueScene4Btn =
-  document.getElementById("continueScene4Btn");
+  document.getElementById(
+    "continueScene4Btn"
+  );
 
 const secretContinueBtn =
-  document.getElementById("secretContinueBtn");
+  document.getElementById(
+    "secretContinueBtn"
+  );
 
 const butterflyBtn =
-  document.getElementById("butterflyBtn");
+  document.getElementById(
+    "butterflyBtn"
+  );
 
 const goPrologueBtn =
-  document.getElementById("goPrologueBtn");
+  document.getElementById(
+    "goPrologueBtn"
+  );
 
 const choiceScreenBtn =
-  document.getElementById("choiceScreenBtn");
+  document.getElementById(
+    "choiceScreenBtn"
+  );
 
 const illusionBtn =
-  document.getElementById("illusionBtn");
+  document.getElementById(
+    "illusionBtn"
+  );
 
 const awakeBtn =
-  document.getElementById("awakeBtn");
+  document.getElementById(
+    "awakeBtn"
+  );
 
 const consequenceContinueBtns =
-  document.querySelectorAll(".consequenceContinueBtn");
+  document.querySelectorAll(
+    ".consequenceContinueBtn"
+  );
 
 const chapter1Btn =
-  document.getElementById("chapter1Btn");
+  document.getElementById(
+    "chapter1Btn"
+  );
 
 
 /* =========================
@@ -79,21 +131,40 @@ const STORAGE_CHOICE =
 const STORAGE_SECRET =
   "societeOmbre_secretOuverture";
 
+const STORAGE_SYMBOL_CHOICE =
+  "societeOmbre_symboleChoisi";
+
 const STORAGE_OUVERTURE_VUE =
   "societeOmbre_ouvertureVue";
 
 
 /* =========================
-   FONCTION : CHANGER DE SCÈNE
+   FONCTION :
+   CHANGER DE SCÈNE
    ========================= */
 
 function showScene(scene) {
 
-  scenes.forEach((item) => {
-    item.classList.remove("active");
-  });
+  if (!scene) {
+    return;
+  }
 
-  scene.classList.add("active");
+
+  scenes.forEach(
+    (item) => {
+
+      item.classList.remove(
+        "active"
+      );
+
+    }
+  );
+
+
+  scene.classList.add(
+    "active"
+  );
+
 
   window.scrollTo({
     top: 0,
@@ -109,14 +180,20 @@ function showScene(scene) {
    PRÉSENTATION
    ========================= */
 
-startStoryBtn.addEventListener(
-  "click",
-  () => {
+if (startStoryBtn) {
 
-    showScene(scene2);
+  startStoryBtn.addEventListener(
+    "click",
+    () => {
 
-  }
-);
+      showScene(
+        scene2
+      );
+
+    }
+  );
+
+}
 
 
 /* =========================
@@ -124,31 +201,41 @@ startStoryBtn.addEventListener(
    PASSAGE
    ========================= */
 
-portalBtn.addEventListener(
-  "click",
-  () => {
+if (portalBtn) {
 
-    showScene(scene3);
+  portalBtn.addEventListener(
+    "click",
+    () => {
 
-    setTimeout(
-      () => {
-
-        showScene(scene4);
-
-      },
-      1900
-    );
-
-  }
-);
+      showScene(
+        scene3
+      );
 
 
-//* =========================
+      setTimeout(
+        () => {
+
+          showScene(
+            scene4
+          );
+
+        },
+        1900
+      );
+
+    }
+  );
+
+}
+
+
+/* =========================
    SCÈNE 4
    GARDIENS / SENTINELLES
    ========================= */
 
-let symbolChosen = false;
+let symbolChosen =
+  false;
 
 
 function discoverSecret(origin) {
@@ -158,10 +245,14 @@ function discoverSecret(origin) {
   }
 
 
-  symbolChosen = true;
+  symbolChosen =
+    true;
 
 
-  /* Sauvegarder le secret */
+  /*
+    Mémoriser que le secret
+    de l'ouverture a été découvert.
+  */
 
   localStorage.setItem(
     STORAGE_SECRET,
@@ -169,15 +260,20 @@ function discoverSecret(origin) {
   );
 
 
-  /* Sauvegarder le choix du lecteur */
+  /*
+    Mémoriser le camp choisi.
+  */
 
   localStorage.setItem(
-    "societeOmbre_symboleChoisi",
+    STORAGE_SYMBOL_CHOICE,
     origin
   );
 
 
-  /* Récupérer le texte de la scène 5 */
+  /*
+    Récupérer la phrase
+    de la scène 5.
+  */
 
   const secretChoiceText =
     document.getElementById(
@@ -185,18 +281,28 @@ function discoverSecret(origin) {
     );
 
 
-  /* Texte différent selon le choix */
+  /*
+    Phrase différente selon
+    le symbole choisi.
+  */
 
   if (secretChoiceText) {
 
-    if (origin === "gardiens") {
+    if (
+      origin ===
+      "gardiens"
+    ) {
 
       secretChoiceText.textContent =
         "Vous avez choisi les Gardiens Noirs. Pour eux, préserver l’équilibre peut parfois exiger de franchir des limites que d’autres refusent de dépasser.";
 
     }
 
-    else if (origin === "sentinelles") {
+
+    if (
+      origin ===
+      "sentinelles"
+    ) {
 
       secretChoiceText.textContent =
         "Vous avez choisi les Sentinelles de la Lumière. Pour elles, préserver l’équilibre signifie protéger la vie, même lorsque ce choix est le plus difficile.";
@@ -206,7 +312,9 @@ function discoverSecret(origin) {
   }
 
 
-  /* Afficher la scène 5 */
+  /*
+    Afficher le secret.
+  */
 
   showScene(
     scene5
@@ -254,19 +362,47 @@ if (sentinelBtn) {
 
 }
 
+
+/* =========================
+   BOUTON DE SECOURS
+   SCÈNE 4
+   ========================= */
+
+if (continueScene4Btn) {
+
+  continueScene4Btn.addEventListener(
+    "click",
+    () => {
+
+      showScene(
+        scene6
+      );
+
+    }
+  );
+
+}
+
+
 /* =========================
    SCÈNE 5
    SECRET DÉCOUVERT
    ========================= */
 
-secretContinueBtn.addEventListener(
-  "click",
-  () => {
+if (secretContinueBtn) {
 
-    showScene(scene6);
+  secretContinueBtn.addEventListener(
+    "click",
+    () => {
 
-  }
-);
+      showScene(
+        scene6
+      );
+
+    }
+  );
+
+}
 
 
 /* =========================
@@ -274,23 +410,32 @@ secretContinueBtn.addEventListener(
    PAPILLON
    ========================= */
 
-butterflyBtn.addEventListener(
-  "click",
-  () => {
+if (butterflyBtn) {
 
-    showScene(scene7);
+  butterflyBtn.addEventListener(
+    "click",
+    () => {
 
-    setTimeout(
-      () => {
+      showScene(
+        scene7
+      );
 
-        showScene(scene8);
 
-      },
-      1800
-    );
+      setTimeout(
+        () => {
 
-  }
-);
+          showScene(
+            scene8
+          );
+
+        },
+        1800
+      );
+
+    }
+  );
+
+}
 
 
 /* =========================
@@ -298,14 +443,20 @@ butterflyBtn.addEventListener(
    TOUT EFFET A UNE CAUSE
    ========================= */
 
-goPrologueBtn.addEventListener(
-  "click",
-  () => {
+if (goPrologueBtn) {
 
-    showScene(scene9);
+  goPrologueBtn.addEventListener(
+    "click",
+    () => {
 
-  }
-);
+      showScene(
+        scene9
+      );
+
+    }
+  );
+
+}
 
 
 /* =========================
@@ -313,14 +464,20 @@ goPrologueBtn.addEventListener(
    PROLOGUE
    ========================= */
 
-choiceScreenBtn.addEventListener(
-  "click",
-  () => {
+if (choiceScreenBtn) {
 
-    showScene(scene10);
+  choiceScreenBtn.addEventListener(
+    "click",
+    () => {
 
-  }
-);
+      showScene(
+        scene10
+      );
+
+    }
+  );
+
+}
 
 
 /* =========================
@@ -329,36 +486,56 @@ choiceScreenBtn.addEventListener(
    ========================= */
 
 
-/* VIVRE DANS L'ILLUSION */
-illusionBtn.addEventListener(
-  "click",
-  () => {
+/* =========================
+   VIVRE DANS L'ILLUSION
+   ========================= */
 
-    localStorage.setItem(
-      STORAGE_CHOICE,
-      "illusion"
-    );
+if (illusionBtn) {
 
-    showScene(scene11);
+  illusionBtn.addEventListener(
+    "click",
+    () => {
 
-  }
-);
+      localStorage.setItem(
+        STORAGE_CHOICE,
+        "illusion"
+      );
 
 
-/* OUVRIR LES YEUX */
-awakeBtn.addEventListener(
-  "click",
-  () => {
+      showScene(
+        scene11
+      );
 
-    localStorage.setItem(
-      STORAGE_CHOICE,
-      "eveil"
-    );
+    }
+  );
 
-    showScene(scene12);
+}
 
-  }
-);
+
+/* =========================
+   OUVRIR LES YEUX
+   ========================= */
+
+if (awakeBtn) {
+
+  awakeBtn.addEventListener(
+    "click",
+    () => {
+
+      localStorage.setItem(
+        STORAGE_CHOICE,
+        "eveil"
+      );
+
+
+      showScene(
+        scene12
+      );
+
+    }
+  );
+
+}
 
 
 /* =========================
@@ -378,7 +555,10 @@ consequenceContinueBtns.forEach(
           "1"
         );
 
-        showScene(scene13);
+
+        showScene(
+          scene13
+        );
 
       }
     );
@@ -392,21 +572,24 @@ consequenceContinueBtns.forEach(
    VERS LE CHAPITRE 1
    ========================= */
 
-chapter1Btn.addEventListener(
-  "click",
-  () => {
+if (chapter1Btn) {
 
-    window.location.href =
-      "chapitre1.html";
+  chapter1Btn.addEventListener(
+    "click",
+    () => {
 
-  }
-);
+      window.location.href =
+        "chapitre1.html";
+
+    }
+  );
+
+}
 
 
 /* =========================
-   PETITE PROTECTION
-   EMPÊCHE LES DOUBLES CLICS
-   SUR CERTAINES INTERACTIONS
+   PROTECTION CONTRE
+   LES DOUBLES CLICS
    ========================= */
 
 function lockButtonTemporarily(
@@ -414,12 +597,20 @@ function lockButtonTemporarily(
   duration = 1200
 ) {
 
-  button.disabled = true;
+  if (!button) {
+    return;
+  }
+
+
+  button.disabled =
+    true;
+
 
   setTimeout(
     () => {
 
-      button.disabled = false;
+      button.disabled =
+        false;
 
     },
     duration
@@ -428,36 +619,50 @@ function lockButtonTemporarily(
 }
 
 
-/* Passage */
-portalBtn.addEventListener(
-  "click",
-  () => {
+/* =========================
+   PASSAGE
+   ========================= */
 
-    lockButtonTemporarily(
-      portalBtn,
-      2000
-    );
+if (portalBtn) {
 
-  }
-);
+  portalBtn.addEventListener(
+    "click",
+    () => {
 
+      lockButtonTemporarily(
+        portalBtn,
+        2000
+      );
 
-/* Papillon */
-butterflyBtn.addEventListener(
-  "click",
-  () => {
+    }
+  );
 
-    lockButtonTemporarily(
-      butterflyBtn,
-      1900
-    );
-
-  }
-);
+}
 
 
 /* =========================
-   ACCESSIBILITÉ :
+   PAPILLON
+   ========================= */
+
+if (butterflyBtn) {
+
+  butterflyBtn.addEventListener(
+    "click",
+    () => {
+
+      lockButtonTemporarily(
+        butterflyBtn,
+        1900
+      );
+
+    }
+  );
+
+}
+
+
+/* =========================
+   ACCESSIBILITÉ
    CLAVIER
    ========================= */
 
@@ -473,12 +678,15 @@ document.addEventListener(
       const activeElement =
         document.activeElement;
 
+
       if (
         activeElement &&
-        activeElement.tagName === "BUTTON"
+        activeElement.tagName ===
+          "BUTTON"
       ) {
 
         event.preventDefault();
+
 
         activeElement.click();
 
@@ -499,18 +707,37 @@ window.addEventListener(
   () => {
 
     const params =
-      new URLSearchParams(window.location.search);
+      new URLSearchParams(
+        window.location.search
+      );
+
 
     const depart =
-      params.get("depart");
+      params.get(
+        "depart"
+      );
 
-    if (depart === "prologue") {
 
-      showScene(scene9);
+    /*
+      Le bouton
+      "Passer l'introduction"
+      arrive directement ici.
+    */
+
+    if (
+      depart ===
+      "prologue"
+    ) {
+
+      showScene(
+        scene9
+      );
 
     } else {
 
-      showScene(scene1);
+      showScene(
+        scene1
+      );
 
     }
 
