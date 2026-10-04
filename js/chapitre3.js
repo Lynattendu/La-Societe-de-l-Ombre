@@ -48,16 +48,11 @@ const secretPopup =
 const STORAGE_SCROLL =
   "societeOmbre_chapitre3_scroll";
 
-/*
-  Utilisées par le nouveau menu général.
-*/
-
 const STORAGE_PROGRESS =
   "societeOmbre_chapitre3_progression";
 
 const STORAGE_COMPLETED =
   "societeOmbre_chapitre3_termine";
-
 
 const STORAGE_SHIELD =
   "societeOmbre_chapitre3_shield";
@@ -76,16 +71,8 @@ const STORAGE_SECRETS =
 
 
 /* =========================================================
-   COMPATIBILITÉ AVEC L'ANCIENNE SAUVEGARDE
+   COMPATIBILITÉ ANCIENNE SAUVEGARDE
 ========================================================= */
-
-/*
-  Ton ancien chapitre utilisait :
-  societeOmbre_chapitre3_finished
-
-  Si quelqu'un avait déjà terminé le chapitre,
-  on convertit cette ancienne information.
-*/
 
 if (
   localStorage.getItem(
@@ -102,9 +89,7 @@ if (
 
 
 /* =========================================================
-   MODE D'OUVERTURE
-   ?lecture=reprendre
-   ?lecture=recommencer
+   MODE DE LECTURE
 ========================================================= */
 
 const urlParams =
@@ -148,7 +133,7 @@ document
 
 
 /* =========================================================
-   ANIMATION DES SCÈNES
+   APPARITION DES SCÈNES
 ========================================================= */
 
 const observer =
@@ -171,12 +156,6 @@ const observer =
           animateParagraphs(
             scene
           );
-
-
-          /*
-            Dès que le lecteur atteint une scène,
-            le chapitre est considéré comme commencé.
-          */
 
           localStorage.setItem(
             STORAGE_PROGRESS,
@@ -208,7 +187,8 @@ scenes.forEach((scene) => {
 function animateParagraphs(scene) {
 
   if (
-    scene.dataset.textAnimated === "1"
+    scene.dataset.textAnimated ===
+    "1"
   ) {
     return;
   }
@@ -243,6 +223,7 @@ function animateParagraphs(scene) {
                 transform:
                   "translateY(12px)"
               },
+
               {
                 opacity: 1,
                 transform:
@@ -282,8 +263,7 @@ function updateProgress() {
 
 
   const documentHeight =
-    document.documentElement
-      .scrollHeight -
+    document.documentElement.scrollHeight -
     window.innerHeight;
 
 
@@ -375,7 +355,8 @@ window.addEventListener(
 ========================================================= */
 
 if (
-  lectureMode === "reprendre"
+  lectureMode ===
+  "reprendre"
 ) {
 
   const savedPosition =
@@ -393,12 +374,6 @@ if (
     ) &&
     savedPosition > 0
   ) {
-
-    /*
-      On attend légèrement pour permettre
-      aux images et à la mise en page
-      de prendre leur taille définitive.
-    */
 
     setTimeout(
       () => {
@@ -422,11 +397,12 @@ if (
 
 
 /* =========================================================
-   RECOMMENCEMENT DEPUIS LE MENU GÉNÉRAL
+   RECOMMENCER DEPUIS LE MENU GÉNÉRAL
 ========================================================= */
 
 if (
-  lectureMode === "recommencer"
+  lectureMode ===
+  "recommencer"
 ) {
 
   setTimeout(
@@ -449,7 +425,7 @@ if (
 
 
 /* =========================================================
-   BOUTON CONTINUER
+   BOUTONS CONTINUER
 ========================================================= */
 
 document
@@ -463,7 +439,9 @@ document
       () => {
 
         const currentScene =
-          button.closest(".scene");
+          button.closest(
+            ".scene"
+          );
 
 
         if (!currentScene) {
@@ -472,17 +450,14 @@ document
 
 
         const nextScene =
-          currentScene
-            .nextElementSibling;
+          currentScene.nextElementSibling;
 
 
         if (nextScene) {
 
           nextScene.scrollIntoView({
-            behavior:
-              "smooth",
-            block:
-              "start"
+            behavior: "smooth",
+            block: "start"
           });
 
         }
@@ -589,8 +564,7 @@ if (chapterMenu) {
 
 
 /* =========================================================
-   REPRENDRE LA LECTURE
-   DEPUIS LE MENU INTERNE
+   REPRENDRE DEPUIS LE MENU INTERNE
 ========================================================= */
 
 if (resumeBtn) {
@@ -636,11 +610,6 @@ if (resumeBtn) {
 
 function restartChapterFunction() {
 
-  /*
-    Toutes les données propres au chapitre 3
-    commencent par ce préfixe.
-  */
-
   const prefix =
     "societeOmbre_chapitre3_";
 
@@ -675,13 +644,6 @@ function restartChapterFunction() {
   }
 
 
-  /*
-    Suppression de toute la mémoire
-    propre au chapitre 3 :
-    position, secrets, interactions,
-    statut terminé, etc.
-  */
-
   keysToDelete.forEach(
     (key) => {
 
@@ -691,14 +653,6 @@ function restartChapterFunction() {
 
     }
   );
-
-
-  /*
-    On ne touche PAS :
-    - au chapitre 1
-    - au chapitre 2
-    - au choix du prologue
-  */
 
 
   window.location.href =
@@ -1267,16 +1221,6 @@ function updateHopeConfirmations(
     }
 
 
-    /*
-      On affiche le popup uniquement
-      au moment où le lecteur termine
-      réellement l'interaction.
-
-      Ainsi, il ne réapparaît pas
-      automatiquement lorsqu'on reprend
-      le chapitre.
-    */
-
     if (showFinalSecret) {
 
       showSecret(
@@ -1367,11 +1311,6 @@ hopeConfirmButtons.forEach(
   }
 );
 
-
-/*
-  Restauration visuelle
-  sans rejouer le popup secret.
-*/
 
 updateHopeConfirmations(
   false
@@ -1467,4 +1406,757 @@ if (
 
   if (rootMarkTrigger) {
 
-   
+    rootMarkTrigger.classList.add(
+      "completed"
+    );
+
+
+    rootMarkTrigger.textContent =
+      "Marque révélée";
+
+
+    rootMarkTrigger.disabled =
+      true;
+
+  }
+
+}
+
+
+/* =========================================================
+   MÉMOIRE DU PACTE DU CHAPITRE 2
+========================================================= */
+
+const previousPact =
+  localStorage.getItem(
+    "societeOmbre_chapitre2_pact"
+  );
+
+
+if (
+  previousPact === "1"
+) {
+
+  const pactScene =
+    document.getElementById(
+      "scene-9"
+    );
+
+
+  const textBlock =
+    pactScene?.querySelector(
+      ".text-block"
+    );
+
+
+  if (
+    textBlock &&
+    !document.getElementById(
+      "chapter2PactMemory"
+    )
+  ) {
+
+    const memory =
+      document.createElement(
+        "p"
+      );
+
+
+    memory.id =
+      "chapter2PactMemory";
+
+
+    memory.className =
+      "emphasis";
+
+
+    memory.style.marginTop =
+      "32px";
+
+
+    memory.style.padding =
+      "18px 12px";
+
+
+    memory.style.borderTop =
+      "1px solid rgba(231,189,114,.24)";
+
+
+    memory.style.borderBottom =
+      "1px solid rgba(231,189,114,.24)";
+
+
+    memory.textContent =
+      "Lucy a déjà accepté cet accord. Betty est maintenant invitée à entrer, elle aussi, dans ce cercle de confiance.";
+
+
+    textBlock.appendChild(
+      memory
+    );
+
+  }
+
+}
+
+
+/* =========================================================
+   MÉMOIRE DU CHOIX DU PROLOGUE
+========================================================= */
+
+const prologueChoice =
+  localStorage.getItem(
+    "societeOmbre_premierChoix"
+  );
+
+
+if (prologueChoice) {
+
+  const scene27 =
+    document.getElementById(
+      "scene-27"
+    );
+
+
+  const textBlock =
+    scene27?.querySelector(
+      ".text-block"
+    );
+
+
+  if (
+    textBlock &&
+    !document.getElementById(
+      "chapter3PrologueMemory"
+    )
+  ) {
+
+    const memory =
+      document.createElement(
+        "p"
+      );
+
+
+    memory.id =
+      "chapter3PrologueMemory";
+
+
+    memory.className =
+      "emphasis";
+
+
+    memory.style.marginTop =
+      "36px";
+
+
+    if (
+      prologueChoice ===
+      "eveil"
+    ) {
+
+      memory.textContent =
+        "Vous aviez choisi d’ouvrir les yeux. Hope commence maintenant à montrer ce qui se cachait derrière les apparences.";
+
+    }
+
+
+    if (
+      prologueChoice ===
+      "illusion"
+    ) {
+
+      memory.textContent =
+        "Vous aviez choisi l’illusion. Pourtant, les apparences commencent maintenant à se fissurer.";
+
+    }
+
+
+    textBlock.appendChild(
+      memory
+    );
+
+  }
+
+}
+
+
+/* =========================================================
+   FIN DU CHAPITRE
+========================================================= */
+
+const scene50 =
+  document.getElementById(
+    "scene-50"
+  );
+
+
+if (scene50) {
+
+  const endObserver =
+    new IntersectionObserver(
+      (entries) => {
+
+        entries.forEach(
+          (entry) => {
+
+            if (
+              entry.isIntersecting
+            ) {
+
+              localStorage.setItem(
+                STORAGE_COMPLETED,
+                "1"
+              );
+
+
+              localStorage.setItem(
+                STORAGE_PROGRESS,
+                "1"
+              );
+
+            }
+
+          }
+        );
+
+      },
+      {
+        threshold: 0.5
+      }
+    );
+
+
+  endObserver.observe(
+    scene50
+  );
+
+}
+
+
+/* =========================================================
+   SON D'AMBIANCE
+========================================================= */
+
+let audioCtx =
+  null;
+
+let masterGain =
+  null;
+
+let ambienceOsc1 =
+  null;
+
+let ambienceOsc2 =
+  null;
+
+let soundActive =
+  false;
+
+
+function startSound() {
+
+  if (soundActive) {
+    return;
+  }
+
+
+  const AudioContextClass =
+    window.AudioContext ||
+    window.webkitAudioContext;
+
+
+  if (!AudioContextClass) {
+    return;
+  }
+
+
+  audioCtx =
+    new AudioContextClass();
+
+
+  masterGain =
+    audioCtx.createGain();
+
+
+  masterGain.gain.value =
+    0.022;
+
+
+  masterGain.connect(
+    audioCtx.destination
+  );
+
+
+  ambienceOsc1 =
+    audioCtx.createOscillator();
+
+
+  ambienceOsc2 =
+    audioCtx.createOscillator();
+
+
+  const gain1 =
+    audioCtx.createGain();
+
+
+  const gain2 =
+    audioCtx.createGain();
+
+
+  ambienceOsc1.type =
+    "sine";
+
+
+  ambienceOsc1.frequency.value =
+    41;
+
+
+  gain1.gain.value =
+    0.63;
+
+
+  ambienceOsc2.type =
+    "triangle";
+
+
+  ambienceOsc2.frequency.value =
+    82;
+
+
+  gain2.gain.value =
+    0.065;
+
+
+  ambienceOsc1
+    .connect(gain1)
+    .connect(masterGain);
+
+
+  ambienceOsc2
+    .connect(gain2)
+    .connect(masterGain);
+
+
+  ambienceOsc1.start();
+
+
+  ambienceOsc2.start();
+
+
+  soundActive =
+    true;
+
+
+  if (soundBtn) {
+
+    soundBtn.classList.add(
+      "sound-active"
+    );
+
+
+    soundBtn.textContent =
+      "♪";
+
+  }
+
+}
+
+
+function stopSound() {
+
+  if (
+    !soundActive ||
+    !audioCtx
+  ) {
+    return;
+  }
+
+
+  if (masterGain) {
+
+    masterGain.gain
+      .exponentialRampToValueAtTime(
+        0.0001,
+        audioCtx.currentTime +
+          0.35
+      );
+
+  }
+
+
+  setTimeout(
+    () => {
+
+      try {
+
+        ambienceOsc1?.stop();
+
+        ambienceOsc2?.stop();
+
+        audioCtx?.close();
+
+      } catch (error) {
+
+        /* rien */
+
+      }
+
+
+      audioCtx =
+        null;
+
+      masterGain =
+        null;
+
+      ambienceOsc1 =
+        null;
+
+      ambienceOsc2 =
+        null;
+
+    },
+    450
+  );
+
+
+  soundActive =
+    false;
+
+
+  if (soundBtn) {
+
+    soundBtn.classList.remove(
+      "sound-active"
+    );
+
+
+    soundBtn.textContent =
+      "♫";
+
+  }
+
+}
+
+
+if (soundBtn) {
+
+  soundBtn.addEventListener(
+    "click",
+    () => {
+
+      if (soundActive) {
+
+        stopSound();
+
+      } else {
+
+        startSound();
+
+      }
+
+    }
+  );
+
+}
+
+
+/* =========================================================
+   PETITS EFFETS SONORES
+========================================================= */
+
+function playTone(
+  frequency,
+  duration,
+  volume = 0.04,
+  type = "sine"
+) {
+
+  if (
+    !soundActive ||
+    !audioCtx
+  ) {
+    return;
+  }
+
+
+  const oscillator =
+    audioCtx.createOscillator();
+
+
+  const gain =
+    audioCtx.createGain();
+
+
+  oscillator.type =
+    type;
+
+
+  oscillator.frequency.value =
+    frequency;
+
+
+  gain.gain.setValueAtTime(
+    volume,
+    audioCtx.currentTime
+  );
+
+
+  gain.gain
+    .exponentialRampToValueAtTime(
+      0.0001,
+      audioCtx.currentTime +
+        duration
+    );
+
+
+  oscillator
+    .connect(gain)
+    .connect(
+      audioCtx.destination
+    );
+
+
+  oscillator.start();
+
+
+  oscillator.stop(
+    audioCtx.currentTime +
+      duration
+  );
+
+}
+
+
+function playClueSound() {
+
+  playTone(
+    430,
+    0.35,
+    0.018
+  );
+
+
+  setTimeout(
+    () => {
+
+      playTone(
+        580,
+        0.45,
+        0.015
+      );
+
+    },
+    100
+  );
+
+}
+
+
+function playRevealSound() {
+
+  playTone(
+    420,
+    0.65,
+    0.022
+  );
+
+
+  setTimeout(
+    () => {
+
+      playTone(
+        640,
+        0.8,
+        0.018
+      );
+
+    },
+    160
+  );
+
+}
+
+
+function playSecretSound() {
+
+  playTone(
+    540,
+    0.65,
+    0.022
+  );
+
+
+  setTimeout(
+    () => {
+
+      playTone(
+        760,
+        0.8,
+        0.018
+      );
+
+    },
+    140
+  );
+
+}
+
+
+function playHologramSound() {
+
+  playTone(
+    520,
+    0.45,
+    0.018,
+    "sine"
+  );
+
+
+  setTimeout(
+    () => {
+
+      playTone(
+        720,
+        0.65,
+        0.015,
+        "triangle"
+      );
+
+    },
+    120
+  );
+
+}
+
+
+function playMarkSound() {
+
+  playTone(
+    350,
+    0.7,
+    0.02
+  );
+
+
+  setTimeout(
+    () => {
+
+      playTone(
+        470,
+        0.9,
+        0.018
+      );
+
+    },
+    160
+  );
+
+
+  setTimeout(
+    () => {
+
+      playTone(
+        610,
+        1.0,
+        0.015
+      );
+
+    },
+    310
+  );
+
+}
+
+
+/* =========================================================
+   ESCAPE
+========================================================= */
+
+document.addEventListener(
+  "keydown",
+  (event) => {
+
+    if (
+      event.key ===
+      "Escape"
+    ) {
+
+      closeMenu();
+
+      hideSecretPopup();
+
+    }
+
+  }
+);
+
+
+/* =========================================================
+   SAUVEGARDE AVANT DE QUITTER
+========================================================= */
+
+window.addEventListener(
+  "beforeunload",
+  () => {
+
+    const params =
+      new URLSearchParams(
+        window.location.search
+      );
+
+
+    if (
+      params.get("lecture") ===
+      "recommencer"
+    ) {
+      return;
+    }
+
+
+    localStorage.setItem(
+      STORAGE_SCROLL,
+      Math.round(
+        window.scrollY
+      )
+    );
+
+
+    localStorage.setItem(
+      STORAGE_PROGRESS,
+      "1"
+    );
+
+  }
+);
+
+
+/* =========================================================
+   PREMIÈRE SCÈNE
+========================================================= */
+
+const firstScene =
+  document.querySelector(
+    ".scene"
+  );
+
+
+if (firstScene) {
+
+  setTimeout(
+    () => {
+
+      firstScene.classList.add(
+        "is-visible"
+      );
+
+    },
+    100
+  );
+
+}
+
+
+/* =========================================================
+   FIN INITIALISATION
+========================================================= */
+
+});
