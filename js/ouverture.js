@@ -44,9 +44,6 @@ const sentinelBtn =
 const continueScene4Btn =
   document.getElementById("continueScene4Btn");
 
-const secretChoiceText =
-  document.getElementById("secretChoiceText");
-
 const secretContinueBtn =
   document.getElementById("secretContinueBtn");
 
