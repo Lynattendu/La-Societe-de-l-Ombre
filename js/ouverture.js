@@ -44,6 +44,9 @@ const sentinelBtn =
 const continueScene4Btn =
   document.getElementById("continueScene4Btn");
 
+const secretChoiceText =
+  document.getElementById("secretChoiceText");
+
 const secretContinueBtn =
   document.getElementById("secretContinueBtn");
 
@@ -158,56 +161,46 @@ function discoverSecret(origin) {
 
   symbolChosen = true;
 
+
   localStorage.setItem(
     STORAGE_SECRET,
     "1"
   );
+
 
   localStorage.setItem(
     "societeOmbre_symboleChoisi",
     origin
   );
 
+
+  /* =========================
+     PHRASE SELON LE CHOIX
+     ========================= */
+
+  if (secretChoiceText) {
+
+    if (origin === "gardiens") {
+
+      secretChoiceText.textContent =
+        "Vous avez choisi les Gardiens Noirs. Pour eux, préserver l’équilibre peut parfois exiger de franchir des limites que d’autres refusent de dépasser.";
+
+    }
+
+
+    if (origin === "sentinelles") {
+
+      secretChoiceText.textContent =
+        "Vous avez choisi les Sentinelles de la Lumière. Pour elles, préserver l’équilibre signifie protéger la vie, même lorsque ce choix est le plus difficile.";
+
+    }
+
+  }
+
+
   showScene(scene5);
 
 }
-
-
-/* Gardiens Noirs */
-guardianBtn.addEventListener(
-  "click",
-  () => {
-
-    discoverSecret("gardiens");
-
-  }
-);
-
-
-/* Sentinelles de la Lumière */
-sentinelBtn.addEventListener(
-  "click",
-  () => {
-
-    discoverSecret("sentinelles");
-
-  }
-);
-
-
-/*
-  Ce bouton reste prévu au cas où,
-  mais il est masqué dans le HTML au départ.
-*/
-continueScene4Btn.addEventListener(
-  "click",
-  () => {
-
-    showScene(scene6);
-
-  }
-);
-
 
 /* =========================
    SCÈNE 5
