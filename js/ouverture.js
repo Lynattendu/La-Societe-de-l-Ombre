@@ -146,12 +146,13 @@ portalBtn.addEventListener(
 );
 
 
-/* =========================
+//* =========================
    SCÈNE 4
    GARDIENS / SENTINELLES
    ========================= */
 
 let symbolChosen = false;
+
 
 function discoverSecret(origin) {
 
@@ -159,8 +160,11 @@ function discoverSecret(origin) {
     return;
   }
 
+
   symbolChosen = true;
 
+
+  /* Sauvegarder le secret */
 
   localStorage.setItem(
     STORAGE_SECRET,
@@ -168,15 +172,23 @@ function discoverSecret(origin) {
   );
 
 
+  /* Sauvegarder le choix du lecteur */
+
   localStorage.setItem(
     "societeOmbre_symboleChoisi",
     origin
   );
 
 
-  /* =========================
-     PHRASE SELON LE CHOIX
-     ========================= */
+  /* Récupérer le texte de la scène 5 */
+
+  const secretChoiceText =
+    document.getElementById(
+      "secretChoiceText"
+    );
+
+
+  /* Texte différent selon le choix */
 
   if (secretChoiceText) {
 
@@ -187,8 +199,7 @@ function discoverSecret(origin) {
 
     }
 
-
-    if (origin === "sentinelles") {
+    else if (origin === "sentinelles") {
 
       secretChoiceText.textContent =
         "Vous avez choisi les Sentinelles de la Lumière. Pour elles, préserver l’équilibre signifie protéger la vie, même lorsque ce choix est le plus difficile.";
@@ -198,7 +209,51 @@ function discoverSecret(origin) {
   }
 
 
-  showScene(scene5);
+  /* Afficher la scène 5 */
+
+  showScene(
+    scene5
+  );
+
+}
+
+
+/* =========================
+   GARDIENS NOIRS
+   ========================= */
+
+if (guardianBtn) {
+
+  guardianBtn.addEventListener(
+    "click",
+    () => {
+
+      discoverSecret(
+        "gardiens"
+      );
+
+    }
+  );
+
+}
+
+
+/* =========================
+   SENTINELLES DE LA LUMIÈRE
+   ========================= */
+
+if (sentinelBtn) {
+
+  sentinelBtn.addEventListener(
+    "click",
+    () => {
+
+      discoverSecret(
+        "sentinelles"
+      );
+
+    }
+  );
 
 }
 
