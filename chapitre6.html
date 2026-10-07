@@ -1,1 +1,3223 @@
+<!DOCTYPE html>
+<html lang="fr">
 
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+  >
+
+  <meta
+    name="theme-color"
+    content="#050505"
+  >
+
+  <title>
+    Chapitre 6 — Le mystère de la clé | La Société de l'Ombre
+  </title>
+
+  <link
+    rel="stylesheet"
+    href="css/chapitre6.css"
+  >
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     BARRE DE PROGRESSION
+===================================================== -->
+
+<div
+  class="progress-bar"
+  aria-hidden="true"
+>
+  <div
+    class="progress-fill"
+    id="progressFill"
+  ></div>
+</div>
+
+
+
+<!-- =====================================================
+     COMMANDES
+===================================================== -->
+
+<div class="chapter-controls">
+
+  <button
+    class="control-btn"
+    id="menuBtn"
+    aria-label="Ouvrir le menu"
+  >
+    ☰
+  </button>
+
+  <button
+    class="control-btn"
+    id="soundBtn"
+    aria-label="Activer ou désactiver le son"
+  >
+    ♫
+  </button>
+
+</div>
+
+
+
+<main
+  class="chapter"
+  id="chapter"
+>
+
+
+<!-- =====================================================
+     VISUEL 1
+     TITRE
+===================================================== -->
+
+<section
+  class="scene scene-cover"
+  id="scene-1"
+>
+
+  <div
+    class="visual full-visual"
+    data-visual="1"
+  >
+
+    <img
+      src="images/chapitre6/Visuel-1.PNG"
+      alt="Chapitre 6 — Le mystère de la clé"
+      loading="eager"
+    >
+
+  </div>
+
+
+  <div class="chapter-title-overlay">
+
+    <p class="chapter-number">
+      Chapitre 6
+    </p>
+
+    <h1>
+      Le mystère de la clé
+    </h1>
+
+    <button
+      class="continue-btn"
+      data-next
+    >
+      Continuer
+    </button>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     SÉQUENCE 1
+     MUSÉE TEMPASS
+===================================================== -->
+
+<section
+  class="scene"
+  id="scene-2"
+>
+
+  <div class="location-card">
+
+    <span>
+      Musée Tempass
+    </span>
+
+    <strong>
+      Zone privée
+    </strong>
+
+  </div>
+
+
+  <div class="text-block">
+
+    <p>
+      Hope rejoint Root
+      au musée Tempass.
+    </p>
+
+    <p>
+      À son arrivée,
+      elle salue plusieurs membres
+      de la sécurité
+      ainsi que les Sentinelles
+      présentes dans le bâtiment.
+    </p>
+
+    <p>
+      Elle traverse une grande partie
+      du musée
+      avant d’atteindre un couloir
+      beaucoup moins fréquenté.
+    </p>
+
+    <p>
+      Au fond se trouve une porte
+      d’apparence presque ordinaire.
+    </p>
+
+    <p class="impact-text">
+      Presque.
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     INTERACTION 1
+     CONTRÔLES DE SÉCURITÉ
+===================================================== -->
+
+<section
+  class="scene investigation-scene interaction-scene"
+  id="scene-3"
+>
+
+  <div class="text-block">
+
+    <p>
+      Hope s’arrête devant elle.
+    </p>
+
+    <p>
+      Une première caméra
+      analyse son visage.
+    </p>
+
+    <p>
+      Une seconde vérifie
+      la rétine de son œil droit.
+    </p>
+
+    <p>
+      Puis elle pose la main
+      sur une surface intégrée
+      à la poignée.
+    </p>
+
+  </div>
+
+
+  <div class="security-buttons">
+
+    <button
+      class="interaction-btn security-trigger"
+      data-security="face"
+    >
+      Analyse du visage
+    </button>
+
+    <button
+      class="interaction-btn security-trigger"
+      data-security="retina"
+    >
+      Analyse rétinienne
+    </button>
+
+    <button
+      class="interaction-btn security-trigger"
+      data-security="hand"
+    >
+      Identification de la main
+    </button>
+
+  </div>
+
+
+  <div
+    class="reveal-box"
+    id="securityReveal"
+  >
+  </div>
+
+</section>
+
+
+
+<section
+  class="scene"
+  id="scene-4"
+>
+
+  <div class="text-block">
+
+    <p>
+      Quelques secondes plus tard,
+      un déclic sourd retentit.
+    </p>
+
+    <p>
+      La lourde porte blindée s’ouvre.
+    </p>
+
+    <p>
+      Hope la franchit
+      et jette instinctivement
+      un regard derrière elle.
+    </p>
+
+    <p>
+      Elle attend que le verrouillage
+      soit totalement réactivé
+      avant d’avancer
+      jusqu’à une petite plateforme.
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     VISUEL 2
+     JUNGLE ARTIFICIELLE
+===================================================== -->
+
+<section
+  class="scene artifact-scene"
+  id="scene-5"
+>
+
+  <div
+    class="visual"
+    data-visual="2"
+  >
+    <img
+      src="images/chapitre6/Visuel-2.PNG"
+      alt="Le passage secret du musée Tempass transformé en jungle artificielle"
+      loading="lazy"
+    >
+  </div>
+
+
+  <div class="text-block">
+
+    <p>
+      Devant elle s’étend
+      un passage pour le moins inhabituel.
+    </p>
+
+    <p class="impact-text">
+      Une véritable jungle artificielle.
+    </p>
+
+    <p>
+      De l’eau recouvre
+      une partie du sol.
+    </p>
+
+    <p>
+      De gros rochers
+      émergent ici et là.
+    </p>
+
+    <p>
+      Des lianes descendent
+      des murs et du plafond.
+    </p>
+
+    <p>
+      Tout au bout du parcours,
+      une cascade dissimule
+      complètement la sortie.
+    </p>
+
+    <p>
+      Hope sourit.
+    </p>
+
+    <p class="emphasis">
+      Elle a toujours adoré cet endroit.
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     INTERACTION 2
+     PARCOURS
+===================================================== -->
+
+<section
+  class="scene interaction-scene"
+  id="scene-6"
+>
+
+  <div class="text-block">
+
+    <p>
+      Mais elle sait aussi
+      que ce décor n’a rien
+      d’une simple fantaisie de Root.
+    </p>
+
+    <p>
+      Certaines pierres
+      peuvent être utilisées.
+    </p>
+
+    <p>
+      D’autres déclencheraient immédiatement
+      le système de sécurité.
+    </p>
+
+    <p>
+      Certaines lianes
+      permettent de progresser.
+    </p>
+
+    <p>
+      D’autres sont
+      de véritables capteurs.
+    </p>
+
+  </div>
+
+
+  <div
+    class="jungle-step"
+    id="jungleStep1"
+  >
+
+    <p class="interaction-question">
+      Première étape
+    </p>
+
+    <button
+      class="interaction-btn jungle-trigger"
+      data-step="1"
+      data-choice="left"
+    >
+      Pierre gauche
+    </button>
+
+    <button
+      class="interaction-btn jungle-trigger"
+      data-step="1"
+      data-choice="center"
+    >
+      Pierre centrale
+    </button>
+
+    <button
+      class="interaction-btn jungle-trigger"
+      data-step="1"
+      data-choice="right"
+    >
+      Pierre droite
+    </button>
+
+  </div>
+
+
+  <div
+    class="jungle-step"
+    id="jungleStep2"
+    hidden
+  >
+
+    <p class="interaction-question">
+      Deuxième étape
+    </p>
+
+    <button
+      class="interaction-btn jungle-trigger"
+      data-step="2"
+      data-choice="dark"
+    >
+      Liane sombre
+    </button>
+
+    <button
+      class="interaction-btn jungle-trigger"
+      data-step="2"
+      data-choice="light"
+    >
+      Liane claire
+    </button>
+
+  </div>
+
+
+  <div
+    class="jungle-step"
+    id="jungleStep3"
+    hidden
+  >
+
+    <p class="interaction-question">
+      Dernière étape
+    </p>
+
+    <button
+      class="interaction-btn jungle-trigger"
+      data-step="3"
+      data-choice="water"
+    >
+      Traverser l’eau
+    </button>
+
+    <button
+      class="interaction-btn jungle-trigger"
+      data-step="3"
+      data-choice="platform"
+    >
+      Rejoindre la plateforme
+    </button>
+
+  </div>
+
+
+  <div
+    class="reveal-box"
+    id="jungleReveal"
+  >
+  </div>
+
+</section>
+
+
+
+<section
+  class="scene"
+  id="scene-7"
+>
+
+  <div class="text-block">
+
+    <p>
+      Hope connaît le parcours.
+    </p>
+
+    <p>
+      Elle saute sur une première pierre,
+      évite soigneusement la suivante,
+      saisit une liane
+      et rejoint une autre plateforme.
+    </p>
+
+    <p>
+      Quelques instants plus tard,
+      elle arrive devant la cascade.
+    </p>
+
+    <p>
+      L’eau s’interrompt aussitôt.
+    </p>
+
+    <p class="emphasis">
+      — Toujours aussi théâtrale, Root…
+    </p>
+
+    <p>
+      Hope traverse.
+    </p>
+
+    <p>
+      Un scanner procède alors
+      à une analyse corporelle complète.
+    </p>
+
+  </div>
+
+
+  <button
+    class="interaction-btn"
+    id="bodyScanTrigger"
+  >
+    Lancer l’analyse
+  </button>
+
+
+  <div
+    class="reveal-box"
+    id="bodyScanReveal"
+  >
+
+    <p>
+      IDENTITÉ — CONFIRMÉE
+    </p>
+
+    <p>
+      ANALYSE — TERMINÉE
+    </p>
+
+    <p>
+      MENACE DÉTECTÉE — AUCUNE
+    </p>
+
+    <p class="emphasis">
+      ACCÈS AUTORISÉ
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<section
+  class="scene"
+  id="scene-8"
+>
+
+  <div class="text-block">
+
+    <p>
+      Quelques secondes plus tard,
+      une dernière porte s’ouvre.
+    </p>
+
+    <p class="impact-text">
+      Le laboratoire privé de Root apparaît.
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     VISUEL 3
+     LA CLÉ
+===================================================== -->
+
+<section
+  class="scene artifact-scene"
+  id="scene-9"
+>
+
+  <div
+    class="visual"
+    data-visual="3"
+  >
+    <img
+      src="images/chapitre6/Visuel-3.PNG"
+      alt="La mystérieuse lame-clé sous une cloche de protection"
+      loading="lazy"
+    >
+  </div>
+
+
+  <div class="text-block dialogue">
+
+    <p>
+      Root se retourne
+      dès qu’Hope entre.
+    </p>
+
+    <p>
+      — Enfin !
+    </p>
+
+    <p>
+      Hope regarde l’heure.
+    </p>
+
+    <p>
+      — Enfin ?
+    </p>
+
+    <p>
+      — Ça fait un moment
+      que je t’attends.
+    </p>
+
+    <p>
+      — Nous avions dit dix heures.
+    </p>
+
+    <p>
+      Hope lui montre son poignet.
+    </p>
+
+    <p>
+      — J’ai même cinq minutes d’avance.
+    </p>
+
+    <p>
+      Root sourit.
+    </p>
+
+    <p>
+      — C’est vrai.
+    </p>
+
+    <p>
+      Puis elle se tourne
+      vers sa table de travail.
+    </p>
+
+    <p>
+      — Mais je me languissais tellement
+      de te montrer cette merveille.
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     INTERACTION 3
+     EXAMINER LA CLÉ
+===================================================== -->
+
+<section
+  class="scene artifact-scene interaction-scene"
+  id="scene-10"
+>
+
+  <div class="text-block">
+
+    <p>
+      Hope remarque immédiatement
+      l’objet placé
+      sous une cloche de protection.
+    </p>
+
+    <p>
+      Une lame ancienne.
+    </p>
+
+    <p>
+      Fine.
+    </p>
+
+    <p>
+      Étrangement élégante.
+    </p>
+
+    <p>
+      Sa forme évoque une dague,
+      mais quelque chose
+      dans ses proportions
+      lui donne davantage
+      l’apparence d’une clé.
+    </p>
+
+    <p>
+      Sa surface est entièrement recouverte
+      de minuscules symboles.
+    </p>
+
+  </div>
+
+
+  <div class="observation-buttons">
+
+    <button
+      class="interaction-btn key-observe-trigger"
+      data-key-observe="shape"
+    >
+      Examiner la forme
+    </button>
+
+    <button
+      class="interaction-btn key-observe-trigger"
+      data-key-observe="material"
+    >
+      Examiner la matière
+    </button>
+
+    <button
+      class="interaction-btn key-observe-trigger"
+      data-key-observe="symbols"
+    >
+      Examiner les symboles
+    </button>
+
+  </div>
+
+
+  <div
+    class="reveal-box"
+    id="keyObserveReveal"
+  >
+  </div>
+
+</section>
+
+
+
+<section
+  class="scene"
+  id="scene-11"
+>
+
+  <div class="text-block dialogue">
+
+    <p>
+      Root s’approche.
+    </p>
+
+    <p>
+      — Elle réagit à…
+    </p>
+
+    <p>
+      Hope la coupe.
+    </p>
+
+    <p>
+      — À la boîte
+      lorsque tu l’approches
+      de ta poitrine.
+    </p>
+
+    <p>
+      Root la regarde.
+    </p>
+
+    <p>
+      Hope poursuit :
+    </p>
+
+    <p>
+      — Et à ta marque
+      lorsque tu la prends
+      dans ta main droite.
+    </p>
+
+    <p>
+      Root reste bouche bée.
+    </p>
+
+    <p>
+      — Tu la connais ?
+    </p>
+
+    <p>
+      — Non.
+    </p>
+
+    <p>
+      Hope s’approche.
+    </p>
+
+    <p>
+      Son expression devient
+      beaucoup plus sérieuse.
+    </p>
+
+    <p>
+      — Je ne l’avais jamais vue.
+    </p>
+
+    <p>
+      — Mais ?
+    </p>
+
+    <p class="emphasis">
+      — Mais elle ressemble énormément
+      à un objet décrit
+      dans la légende du Cercle.
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     INTERACTION 4
+     LÉGENDE DU CERCLE
+===================================================== -->
+
+<section
+  class="scene revelation-scene interaction-scene"
+  id="scene-12"
+>
+
+  <div class="text-block dialogue">
+
+    <p>
+      Root se tourne aussitôt vers elle.
+    </p>
+
+    <p>
+      — La fameuse légende
+      dont tu refuses toujours
+      de me raconter
+      les passages intéressants ?
+    </p>
+
+    <p>
+      — Celle-là même.
+    </p>
+
+    <p>
+      Root lève les yeux au ciel.
+    </p>
+
+  </div>
+
+
+  <div class="observation-buttons">
+
+    <button
+      class="interaction-btn legend-trigger"
+      data-legend="key"
+    >
+      La clé
+    </button>
+
+    <button
+      class="interaction-btn legend-trigger"
+      data-legend="box"
+    >
+      La boîte de Pandore
+    </button>
+
+    <button
+      class="interaction-btn legend-trigger"
+      data-legend="symbols"
+    >
+      Les symboles
+    </button>
+
+  </div>
+
+
+  <div
+    class="reveal-box"
+    id="legendReveal"
+  >
+  </div>
+
+</section>
+
+
+
+<section
+  class="scene revelation-scene"
+  id="scene-13"
+>
+
+  <div class="text-block dialogue">
+
+    <p>
+      Hope observe les symboles.
+    </p>
+
+    <p>
+      — Au premier regard,
+      elle ressemble
+      à une très ancienne dague.
+    </p>
+
+    <p>
+      Elle se penche légèrement.
+    </p>
+
+    <p>
+      — Mais les textes
+      ne la décrivent jamais véritablement
+      comme une arme.
+    </p>
+
+    <p>
+      — Comme une clé ?
+    </p>
+
+    <p>
+      — Oui.
+    </p>
+
+    <p>
+      Hope désigne les inscriptions.
+    </p>
+
+    <p>
+      — Selon certains récits,
+      les symboles doivent être lus
+      dans un ordre précis.
+    </p>
+
+    <p>
+      — Pour ouvrir quelque chose ?
+    </p>
+
+    <p>
+      Hope hésite.
+    </p>
+
+    <p class="impact-text">
+      — Ou pour l’activer.
+    </p>
+
+    <p>
+      Root s’intéresse immédiatement
+      à la nuance.
+    </p>
+
+    <p class="emphasis">
+      — Ce n’est pas la même chose.
+    </p>
+
+    <p>
+      — Exactement.
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<section
+  class="scene"
+  id="scene-14"
+>
+
+  <div class="text-block dialogue">
+
+    <p>
+      Hope poursuit :
+    </p>
+
+    <p>
+      — La légende associe également
+      cette clé à la boîte de Pandore.
+    </p>
+
+    <p>
+      Root porte instinctivement
+      une main à sa poitrine.
+    </p>
+
+    <p>
+      — À ma boîte ?
+    </p>
+
+    <p>
+      — Peut-être.
+    </p>
+
+    <p>
+      — Tu viens de dire
+      que tu ne savais pas exactement.
+    </p>
+
+    <p>
+      — Je sais.
+    </p>
+
+    <p>
+      Hope sourit.
+    </p>
+
+    <p>
+      — Et je compte bien éviter
+      de transformer des légendes
+      en certitudes
+      tant qu’on n’aura rien vérifié.
+    </p>
+
+    <p>
+      Root semble presque déçue.
+    </p>
+
+    <p>
+      — Tu deviens raisonnable avec l’âge.
+    </p>
+
+    <p>
+      — Profite,
+      ça ne durera peut-être pas.
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     SÉQUENCE 2
+     LES INDÉCIS
+===================================================== -->
+
+<section
+  class="scene choice-scene"
+  id="scene-15"
+>
+
+  <div class="text-block dialogue">
+
+    <p>
+      Hope tourne encore
+      autour de la table.
+    </p>
+
+    <p>
+      — Il y a cependant
+      une partie de la légende
+      que je prends beaucoup plus au sérieux.
+    </p>
+
+    <p>
+      — Laquelle ?
+    </p>
+
+    <p>
+      Hope regarde Root.
+    </p>
+
+    <p class="name-reveal">
+      Les Indécis.
+    </p>
+
+    <p>
+      Le sourire de Root disparaît.
+    </p>
+
+    <p>
+      — Lucy.
+    </p>
+
+    <p>
+      — Peut-être Lucy.
+    </p>
+
+    <p>
+      Hope insiste :
+    </p>
+
+    <p>
+      — Tout indique
+      qu’elle pourrait être
+      celle dont parlent certains textes.
+    </p>
+
+    <p class="emphasis">
+      Mais je refuse encore
+      d’en faire une certitude.
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     INTERACTION 5
+     RAPPEL SUR LUCY
+===================================================== -->
+
+<section
+  class="scene mark-scene interaction-scene"
+  id="scene-16"
+>
+
+  <div class="text-block">
+
+    <p>
+      Plusieurs éléments
+      semblent pourtant converger.
+    </p>
+
+  </div>
+
+
+  <div class="observation-buttons">
+
+    <button
+      class="interaction-btn indecis-trigger"
+      data-indecis="mark"
+    >
+      La marque de Lucy
+    </button>
+
+    <button
+      class="interaction-btn indecis-trigger"
+      data-indecis="root"
+    >
+      Sa réaction avec Root
+    </button>
+
+    <button
+      class="interaction-btn indecis-trigger"
+      data-indecis="opaque"
+    >
+      L’Opaque
+    </button>
+
+  </div>
+
+
+  <div
+    class="reveal-box"
+    id="indecisReveal"
+  >
+  </div>
+
+</section>
+
+
+
+<section
+  class="scene choice-scene"
+  id="scene-17"
+>
+
+  <div class="text-block dialogue">
+
+    <p>
+      Hope reprend :
+    </p>
+
+    <p>
+      — La clé serait liée
+      au moment où un Indécis
+      prend une décision
+      suffisamment importante
+      pour modifier définitivement
+      son appartenance.
+    </p>
+
+    <p>
+      — Quand il devient Opaque ?
+    </p>
+
+    <p>
+      Hope la regarde.
+    </p>
+
+    <p>
+      — C’est ainsi
+      que les textes le nomment.
+    </p>
+
+    <p>
+      Root observe la dague.
+    </p>
+
+    <p>
+      — Et la clé sert
+      à valider son choix ?
+    </p>
+
+    <p>
+      — Selon la légende,
+      oui.
+    </p>
+
+    <p>
+      — Alors où est le danger ?
+    </p>
+
+    <p>
+      Hope ne répond pas immédiatement.
+    </p>
+
+    <p class="impact-text">
+      — Parce qu’un choix
+      peut également être forcé.
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     INTERACTION 6
+     LE DANGER
+===================================================== -->
+
+<section
+  class="scene danger-scene interaction-scene"
+  id="scene-18"
+>
+
+  <div class="text-block dialogue">
+
+    <p>
+      Root comprend.
+    </p>
+
+    <p>
+      — On pourrait obliger
+      un Indécis
+      à choisir un camp.
+    </p>
+
+    <p>
+      — C’est ce que racontent
+      certains textes.
+    </p>
+
+  </div>
+
+
+  <button
+    class="interaction-btn"
+    id="forcedChoiceTrigger"
+  >
+    Comprendre le danger
+  </button>
+
+
+  <div
+    class="reveal-box"
+    id="forcedChoiceReveal"
+  >
+
+    <p>
+      Si la légende est exacte,
+      posséder la clé
+      pourrait permettre
+      de contraindre un Indécis.
+    </p>
+
+    <p>
+      Son choix ne serait alors
+      plus réellement un choix.
+    </p>
+
+    <p class="emphasis">
+      Un camp pourrait imposer
+      définitivement son appartenance.
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<section
+  class="scene danger-scene"
+  id="scene-19"
+>
+
+  <div class="text-block dialogue">
+
+    <p>
+      Hope poursuit :
+    </p>
+
+    <p>
+      — Je ne sais pas exactement comment.
+    </p>
+
+    <p>
+      — Mais si c’est vrai,
+      les Gardiens Noirs
+      ne doivent surtout pas
+      mettre la main dessus.
+    </p>
+
+    <p>
+      Root baisse les yeux vers la clé.
+    </p>
+
+    <p>
+      — Ils pourraient utiliser Lucy.
+    </p>
+
+    <p>
+      — Ou quelqu’un d’autre
+      portant la même marque.
+    </p>
+
+    <p>
+      Hope ajoute :
+    </p>
+
+    <p>
+      — Et je refuse
+      que les Sentinelles
+      s’en servent de cette façon également.
+    </p>
+
+    <p>
+      Root la regarde.
+    </p>
+
+    <p>
+      — Même si cela permettait
+      d’éviter qu’un Indécis
+      rejoigne les Gardiens ?
+    </p>
+
+    <p>
+      — Surtout dans ce cas.
+    </p>
+
+    <p>
+      Hope ne laisse aucune place au doute.
+    </p>
+
+    <p class="impact-text">
+      Si notre idée de la Lumière
+      exige d’asservir quelqu’un
+      pour le contraindre à nous rejoindre,
+      alors elle ne mérite plus son nom.
+    </p>
+
+    <p>
+      Root sourit légèrement.
+    </p>
+
+    <p class="emphasis">
+      — Voilà pourquoi tu es Hope.
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     MATIÈRE DE LA CLÉ
+===================================================== -->
+
+<section
+  class="scene artifact-scene"
+  id="scene-20"
+>
+
+  <div class="text-block dialogue">
+
+    <p>
+      Root retire délicatement
+      la protection autour de la clé.
+    </p>
+
+    <p>
+      — Regarde-la.
+    </p>
+
+    <p>
+      Elle semble presque émerveillée.
+    </p>
+
+    <p>
+      — Elle est magnifique.
+    </p>
+
+    <p>
+      Hope acquiesce.
+    </p>
+
+    <p>
+      La lame possède
+      un éclat impossible à définir.
+    </p>
+
+    <p>
+      Ni véritablement métallique,
+      ni minéral.
+    </p>
+
+    <p>
+      — Les légendes racontent
+      qu’elle aurait été forgée
+      dans une matière tombée du ciel.
+    </p>
+
+    <p>
+      Root relève immédiatement la tête.
+    </p>
+
+    <p>
+      — Une météorite ?
+    </p>
+
+    <p>
+      — Possible.
+    </p>
+
+    <p>
+      — Ça,
+      je peux le vérifier.
+    </p>
+
+    <p>
+      — Enfin quelque chose
+      qui parle à l’archéologue.
+    </p>
+
+    <p>
+      — Très drôle.
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     INTERACTION 7
+     HYPOTHÈSES SCIENTIFIQUES
+===================================================== -->
+
+<section
+  class="scene investigation-scene interaction-scene"
+  id="scene-21"
+>
+
+  <div class="text-block">
+
+    <p>
+      Pour l’instant,
+      aucune origine ne peut être affirmée.
+    </p>
+
+  </div>
+
+
+  <div class="observation-buttons">
+
+    <button
+      class="interaction-btn material-trigger"
+      data-material="meteorite"
+    >
+      Hypothèse météoritique
+    </button>
+
+    <button
+      class="interaction-btn material-trigger"
+      data-material="earth"
+    >
+      Matière terrestre inconnue
+    </button>
+
+    <button
+      class="interaction-btn material-trigger"
+      data-material="unknown"
+    >
+      Origine indéterminée
+    </button>
+
+  </div>
+
+
+  <div
+    class="reveal-box"
+    id="materialReveal"
+  >
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     VISUEL 4
+     ROOT ET LA CLÉ
+===================================================== -->
+
+<section
+  class="scene mark-scene"
+  id="scene-22"
+>
+
+  <div
+    class="visual"
+    data-visual="4"
+  >
+    <img
+      src="images/chapitre6/Visuel-4.PNG"
+      alt="Root rapproche la clé de la marque laissée par Pandore"
+      loading="lazy"
+    >
+  </div>
+
+
+  <div class="text-block dialogue">
+
+    <p>
+      Root observe la clé.
+    </p>
+
+    <p>
+      — Il y a autre chose.
+    </p>
+
+    <p>
+      — Quoi ?
+    </p>
+
+    <p>
+      — Elle me fait un effet étrange.
+    </p>
+
+    <p>
+      Hope la regarde.
+    </p>
+
+    <p>
+      — Quel genre d’effet ?
+    </p>
+
+    <p>
+      Root hésite.
+    </p>
+
+    <p>
+      Hope comprend immédiatement.
+    </p>
+
+    <p>
+      — Comme samedi soir avec Lucy ?
+    </p>
+
+    <p>
+      Root se fige.
+    </p>
+
+    <p class="impact-text">
+      — Tu l’as vu ?
+    </p>
+
+    <p>
+      — Évidemment.
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<section
+  class="scene"
+  id="scene-23"
+>
+
+  <div class="text-block dialogue">
+
+    <p>
+      Root grimace.
+    </p>
+
+    <p>
+      — Tu crois que quelqu’un d’autre
+      s’en est aperçu ?
+    </p>
+
+    <p>
+      — Je ne pense pas.
+    </p>
+
+    <p>
+      Hope réfléchit.
+    </p>
+
+    <p>
+      — Il fallait vraiment
+      vous connaître toutes les deux
+      pour remarquer quelque chose.
+    </p>
+
+    <p>
+      — Lucy aussi ?
+    </p>
+
+    <p>
+      — Dès que tu l’as touchée,
+      elle a plaqué son poignet
+      contre sa hanche.
+    </p>
+
+    <p>
+      Root réfléchit.
+    </p>
+
+    <p>
+      — Comme si elle voulait
+      cacher sa marque.
+    </p>
+
+    <p>
+      — Exactement.
+    </p>
+
+    <p>
+      Hope poursuit :
+    </p>
+
+    <p>
+      — Et toi,
+      tu as immédiatement porté
+      la main à ta poitrine.
+    </p>
+
+    <p>
+      Root baisse les yeux
+      vers la marque
+      en forme de cascade.
+    </p>
+
+    <p>
+      — Je n’ai pas pu m’en empêcher.
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<section
+  class="scene"
+  id="scene-24"
+>
+
+  <div class="text-block dialogue">
+
+    <p>
+      — Qu’est-ce que tu as ressenti ?
+    </p>
+
+    <p>
+      Root cherche ses mots.
+    </p>
+
+    <p>
+      — C’est difficile à expliquer.
+    </p>
+
+    <p>
+      Elle pose lentement sa main
+      sur le haut de sa poitrine.
+    </p>
+
+    <p>
+      — J’ai eu l’impression
+      que la cascade
+      augmentait brutalement de puissance.
+    </p>
+
+    <p>
+      Hope écoute.
+    </p>
+
+    <p>
+      — Comme si quelque chose
+      déferlait dans tout mon corps.
+    </p>
+
+    <p>
+      — Une douleur ?
+    </p>
+
+    <p>
+      — Absolument pas.
+    </p>
+
+    <p>
+      Root ferme les yeux
+      quelques secondes.
+    </p>
+
+    <p>
+      — Tout le contraire.
+    </p>
+
+    <p class="emphasis">
+      — Un immense bien-être.
+    </p>
+
+    <p>
+      — Une paix profonde.
+    </p>
+
+    <p>
+      Puis elle sourit légèrement.
+    </p>
+
+    <p>
+      — Une impression
+      d’exister pleinement.
+    </p>
+
+    <p class="impact-text">
+      — D’être incroyablement vivante.
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     INTERACTION 8
+     RÉACTION DE ROOT
+===================================================== -->
+
+<section
+  class="scene mark-scene interaction-scene"
+  id="scene-25"
+>
+
+  <div class="text-block dialogue">
+
+    <p>
+      Root poursuit :
+    </p>
+
+    <p>
+      — Et quand je l’approche
+      de la marque…
+    </p>
+
+  </div>
+
+
+  <button
+    class="interaction-btn"
+    id="rootKeyTrigger"
+  >
+    Approcher la clé
+  </button>
+
+
+  <div
+    class="reveal-box"
+    id="rootKeyReveal"
+  >
+
+    <p>
+      Les contours de la cascade
+      apparaissent lentement
+      sous le vêtement de Root.
+    </p>
+
+    <p>
+      Sa respiration change.
+    </p>
+
+    <p class="emphasis">
+      La marque semble répondre
+      à la proximité de la clé.
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<section
+  class="scene"
+  id="scene-26"
+>
+
+  <div class="text-block dialogue">
+
+    <p>
+      Root prend délicatement la dague.
+    </p>
+
+    <p>
+      À mesure qu’elle la rapproche
+      de sa poitrine,
+      les contours de la cascade
+      apparaissent lentement
+      sous son chemisier.
+    </p>
+
+    <p>
+      Hope observe sans intervenir.
+    </p>
+
+    <p>
+      Root inspire profondément.
+    </p>
+
+    <p>
+      — Voilà.
+    </p>
+
+    <p>
+      Sa voix a changé.
+    </p>
+
+    <p>
+      — C’est exactement ça.
+    </p>
+
+    <p>
+      Hope reprend doucement la clé
+      et l’éloigne.
+    </p>
+
+    <p>
+      La marque s’apaise.
+    </p>
+
+    <p>
+      — Intéressant.
+    </p>
+
+    <p>
+      — « Intéressant » ?
+    </p>
+
+    <p>
+      Root rit.
+    </p>
+
+    <p class="emphasis">
+      — Tu as vraiment trop fréquenté Peter.
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     LUCY ET LA CLÉ
+===================================================== -->
+
+<section
+  class="scene choice-scene"
+  id="scene-27"
+>
+
+  <div class="text-block dialogue">
+
+    <p>
+      Hope réfléchit.
+    </p>
+
+    <p>
+      — Tout cela renforce
+      mon intuition concernant Lucy.
+    </p>
+
+    <p>
+      Root la regarde.
+    </p>
+
+    <p>
+      — Sa marque ?
+    </p>
+
+    <p>
+      — Elle représentait
+      comme une séparation.
+    </p>
+
+    <p>
+      — Deux terres qui s’écartent.
+    </p>
+
+    <p>
+      Root acquiesce.
+    </p>
+
+    <p>
+      Hope poursuit :
+    </p>
+
+    <p>
+      — Si Lucy est réellement l’Indécise
+      dont parlent certains textes,
+      alors cette clé pourrait finir
+      par lui appartenir.
+    </p>
+
+    <p>
+      — Tu veux la lui donner ?
+    </p>
+
+    <p>
+      — Pas encore.
+    </p>
+
+    <p>
+      Root semble surprise.
+    </p>
+
+    <p>
+      — Pourquoi ?
+    </p>
+
+    <p>
+      — Parce que nous ne savons
+      absolument pas ce qu’elle fait.
+    </p>
+
+    <p>
+      Hope désigne la clé.
+    </p>
+
+    <p>
+      — Et je ne vais certainement pas
+      remettre à Lucy
+      un objet capable
+      de modifier sa destinée
+      sans savoir comment il fonctionne.
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     INTERACTION 9
+     AVIS DU LECTEUR
+===================================================== -->
+
+<section
+  class="scene choice-scene interaction-scene"
+  id="scene-28"
+>
+
+  <div class="text-block">
+
+    <p>
+      Que feriez-vous
+      à la place de Hope ?
+    </p>
+
+  </div>
+
+
+  <div class="observation-buttons">
+
+    <button
+      class="interaction-btn key-decision-trigger"
+      data-key-decision="give"
+    >
+      Donner la clé à Lucy
+    </button>
+
+    <button
+      class="interaction-btn key-decision-trigger"
+      data-key-decision="keep"
+    >
+      La conserver
+    </button>
+
+    <button
+      class="interaction-btn key-decision-trigger"
+      data-key-decision="study"
+    >
+      L’étudier davantage
+    </button>
+
+  </div>
+
+
+  <div
+    class="reveal-box"
+    id="keyDecisionReveal"
+  >
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     SÉCURITÉ
+===================================================== -->
+
+<section
+  class="scene investigation-scene"
+  id="scene-29"
+>
+
+  <div class="text-block dialogue">
+
+    <p>
+      Root sourit.
+    </p>
+
+    <p>
+      — Je savais
+      que tu devenais raisonnable.
+    </p>
+
+    <p>
+      Hope lui lance un regard.
+    </p>
+
+    <p>
+      — En attendant,
+      nous la protégeons.
+    </p>
+
+    <p>
+      — Ici ?
+    </p>
+
+    <p>
+      — Oui.
+    </p>
+
+    <p>
+      Hope réfléchit.
+    </p>
+
+    <p>
+      — Dans ton coffre biosécurisé.
+    </p>
+
+    <p>
+      Puis elle ajoute :
+    </p>
+
+    <p>
+      — Et je veux
+      une protection supplémentaire
+      de Peter.
+    </p>
+
+    <p>
+      — Tu veux combien
+      de couches de sécurité ?
+    </p>
+
+    <p>
+      — Suffisamment
+      pour qu’il me dise
+      que j’exagère.
+    </p>
+
+    <p>
+      Root rit.
+    </p>
+
+    <p>
+      — Donc énormément.
+    </p>
+
+    <p class="emphasis">
+      — Exactement.
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<section
+  class="scene investigation-scene interaction-scene"
+  id="scene-30"
+>
+
+  <button
+    class="interaction-btn"
+    id="keySecurityTrigger"
+  >
+    Vérifier la protection
+  </button>
+
+
+  <div
+    class="reveal-box"
+    id="keySecurityReveal"
+  >
+
+    <p>
+      COFFRE BIOSÉCURISÉ — ACTIF
+    </p>
+
+    <p>
+      SÉCURITÉ DU MUSÉE — ACTIVE
+    </p>
+
+    <p>
+      ACCÈS PRIVÉ — ACTIF
+    </p>
+
+    <p class="emphasis">
+      PROTECTION SUPPLÉMENTAIRE DE PETER — À AJOUTER
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     HOPE CHANGE D'AVIS
+===================================================== -->
+
+<section
+  class="scene"
+  id="scene-31"
+>
+
+  <div class="text-block dialogue">
+
+    <p>
+      Hope allait laisser Root
+      ranger la clé
+      lorsqu’elle s’arrête.
+    </p>
+
+    <p class="impact-text">
+      — Attends.
+    </p>
+
+    <p>
+      Root la regarde.
+    </p>
+
+    <p>
+      — Quoi ?
+    </p>
+
+    <p>
+      — Je veux vérifier quelque chose.
+    </p>
+
+    <p>
+      — Tu viens de dire
+      que tu étais devenue raisonnable.
+    </p>
+
+    <p>
+      Hope sourit.
+    </p>
+
+    <p class="emphasis">
+      — J’ai dit « presque ».
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     INTERACTION 10
+     SYMBOLES
+===================================================== -->
+
+<section
+  class="scene artifact-scene interaction-scene"
+  id="scene-32"
+>
+
+  <div class="text-block dialogue">
+
+    <p>
+      Hope prend délicatement la clé
+      dans sa main gauche.
+    </p>
+
+    <p>
+      Elle observe les symboles.
+    </p>
+
+    <p>
+      Puis commence à les lire
+      à voix haute
+      dans un ordre
+      qui ne correspond visiblement pas
+      à leur disposition.
+    </p>
+
+    <p>
+      Root la regarde,
+      fascinée.
+    </p>
+
+    <p>
+      — Comment tu connais cet ordre ?
+    </p>
+
+    <p class="emphasis">
+      — Maître Lee.
+    </p>
+
+  </div>
+
+
+  <div
+    class="symbol-sequence"
+    id="symbolSequence"
+  >
+
+    <button
+      class="symbol-btn"
+      data-symbol="1"
+    >
+      △
+    </button>
+
+    <button
+      class="symbol-btn"
+      data-symbol="2"
+    >
+      ◇
+    </button>
+
+    <button
+      class="symbol-btn"
+      data-symbol="3"
+    >
+      ○
+    </button>
+
+    <button
+      class="symbol-btn"
+      data-symbol="4"
+    >
+      ⟡
+    </button>
+
+    <button
+      class="symbol-btn"
+      data-symbol="5"
+    >
+      ∞
+    </button>
+
+  </div>
+
+
+  <div
+    class="reveal-box"
+    id="symbolReveal"
+  >
+  </div>
+
+</section>
+
+
+
+<section
+  class="scene"
+  id="scene-33"
+>
+
+  <div class="text-block dialogue">
+
+    <p>
+      Hope poursuit la récitation.
+    </p>
+
+    <p>
+      Lorsque le dernier symbole
+      est prononcé,
+      elle approche doucement
+      la pointe de la clé
+      de son avant-bras.
+    </p>
+
+    <p>
+      Là où dort normalement
+      le dragon.
+    </p>
+
+    <p>
+      — Hope…
+    </p>
+
+    <p>
+      — Je ne vais pas
+      me transpercer le bras.
+    </p>
+
+    <p>
+      — Avec toi,
+      je préfère préciser.
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     VISUEL 5
+     LE DRAGON
+===================================================== -->
+
+<section
+  class="scene dragon-scene"
+  id="scene-34"
+>
+
+  <div
+    class="visual"
+    data-visual="5"
+  >
+    <img
+      src="images/chapitre6/Visuel-5.PNG"
+      alt="Le dragon de Hope s'illumine au contact de la clé"
+      loading="lazy"
+    >
+  </div>
+
+
+  <div class="text-block">
+
+    <p>
+      Hope pose simplement
+      la pointe contre sa peau.
+    </p>
+
+    <p>
+      Immédiatement,
+      son corps se raidit.
+    </p>
+
+    <p class="impact-text">
+      Le dragon apparaît.
+    </p>
+
+    <p>
+      Mais cette fois,
+      il ne se contente pas
+      de se dessiner.
+    </p>
+
+    <p>
+      Ses couleurs explosent.
+    </p>
+
+    <p class="emphasis">
+      Rouge.
+    </p>
+
+    <p class="emphasis">
+      Or.
+    </p>
+
+    <p class="emphasis">
+      Bleu.
+    </p>
+
+    <p class="emphasis">
+      Vert.
+    </p>
+
+    <p class="emphasis">
+      Violet.
+    </p>
+
+    <p>
+      Les écailles semblent parcourues
+      par une énergie vivante.
+    </p>
+
+    <p>
+      Hope inspire brutalement.
+    </p>
+
+    <p>
+      — Hope ?
+    </p>
+
+    <p>
+      Elle ne répond pas.
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     RÉVÉLATION PHÉNIX
+===================================================== -->
+
+<section
+  class="scene dragon-scene interaction-scene"
+  id="scene-35"
+>
+
+  <div class="text-block">
+
+    <p>
+      Une chaleur intense
+      parcourt soudain son dos.
+    </p>
+
+    <p>
+      Le tissu de son débardeur
+      commence à se détériorer.
+    </p>
+
+    <p>
+      — Euh…
+    </p>
+
+    <p>
+      Root fait un pas en arrière.
+    </p>
+
+    <p class="emphasis">
+      — Ça,
+      je ne crois pas
+      que ce soit prévu.
+    </p>
+
+    <p>
+      Le tissu se désagrège
+      progressivement.
+    </p>
+
+    <p>
+      Et dans son dos apparaît
+      une nouvelle marque.
+    </p>
+
+  </div>
+
+
+  <button
+    class="interaction-btn"
+    id="phoenixTrigger"
+  >
+    Révéler la marque
+  </button>
+
+</section>
+
+
+
+<!-- =====================================================
+     VISUEL 6
+     LE PHÉNIX
+===================================================== -->
+
+<section
+  class="scene dragon-scene hidden-scene"
+  id="scene-36"
+>
+
+  <div
+    class="visual"
+    data-visual="6"
+  >
+    <img
+      src="images/chapitre6/Visuel-6.PNG"
+      alt="Un immense phénix multicolore apparaît dans le dos de Hope"
+      loading="lazy"
+    >
+  </div>
+
+
+  <div class="text-block">
+
+    <p>
+      Root reste immobile.
+    </p>
+
+    <p>
+      — Oh…
+    </p>
+
+    <p class="name-reveal">
+      Le Phénix.
+    </p>
+
+    <p>
+      Un immense phénix
+      recouvre presque entièrement
+      le dos de Hope.
+    </p>
+
+    <p>
+      Ses ailes semblent s’étendre
+      de ses épaules
+      jusqu’à sa taille.
+    </p>
+
+    <p>
+      Ses plumes lumineuses
+      paraissent parcourues
+      par des braises multicolores.
+    </p>
+
+    <p class="impact-text">
+      Le dragon et le phénix
+      semblent presque se répondre.
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     INTERACTION 11
+     DRAGON + PHÉNIX
+===================================================== -->
+
+<section
+  class="scene revelation-scene interaction-scene"
+  id="scene-37"
+>
+
+  <div class="text-block">
+
+    <p>
+      Deux marques.
+    </p>
+
+    <p>
+      Deux manifestations.
+    </p>
+
+    <p>
+      Mais peut-être
+      une seule origine.
+    </p>
+
+  </div>
+
+
+  <div class="observation-buttons">
+
+    <button
+      class="interaction-btn mark-observe-trigger"
+      data-mark="dragon"
+    >
+      Observer le Dragon
+    </button>
+
+    <button
+      class="interaction-btn mark-observe-trigger"
+      data-mark="phoenix"
+    >
+      Observer le Phénix
+    </button>
+
+    <button
+      class="interaction-btn mark-observe-trigger"
+      data-mark="both"
+    >
+      Observer les deux
+    </button>
+
+  </div>
+
+
+  <div
+    class="reveal-box"
+    id="markObserveReveal"
+  >
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     RÉGÉNÉRATION
+===================================================== -->
+
+<section
+  class="scene revelation-scene"
+  id="scene-38"
+>
+
+  <div class="text-block dialogue">
+
+    <p>
+      Hope prend
+      une profonde inspiration.
+    </p>
+
+    <p>
+      Puis une seconde.
+    </p>
+
+    <p>
+      Lorsqu’elle ouvre les yeux,
+      son visage exprime
+      une sensation
+      qu’elle-même semble
+      incapable d’identifier.
+    </p>
+
+    <p>
+      — Ça va ?
+    </p>
+
+    <p>
+      Hope regarde ses mains.
+    </p>
+
+    <p>
+      — Oui.
+    </p>
+
+    <p>
+      Puis elle sourit.
+    </p>
+
+    <p>
+      — Même beaucoup trop bien.
+    </p>
+
+    <p>
+      — C’est-à-dire ?
+    </p>
+
+    <p>
+      Hope inspire encore profondément.
+    </p>
+
+    <p>
+      — J’ai l’impression
+      de respirer pour la première fois.
+    </p>
+
+    <p>
+      Elle bouge lentement ses épaules.
+    </p>
+
+    <p>
+      — Je me sens…
+    </p>
+
+    <p>
+      Elle cherche le mot.
+    </p>
+
+    <p class="name-reveal">
+      Régénérée.
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     INTERACTION 12
+     ÉTAT PHYSIQUE
+===================================================== -->
+
+<section
+  class="scene investigation-scene interaction-scene"
+  id="scene-39"
+>
+
+  <button
+    class="interaction-btn"
+    id="stateTrigger"
+  >
+    Analyser l’état de Hope
+  </button>
+
+
+  <div
+    class="reveal-box"
+    id="stateReveal"
+  >
+
+    <p>
+      DOULEUR — AUCUNE
+    </p>
+
+    <p>
+      RESPIRATION — AMPLIFIÉE
+    </p>
+
+    <p>
+      SENSATION — RÉGÉNÉRATION
+    </p>
+
+    <p class="emphasis">
+      CAUSE — INCONNUE
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<section
+  class="scene revelation-scene"
+  id="scene-40"
+>
+
+  <div class="text-block dialogue">
+
+    <p>
+      Root regarde le phénix.
+    </p>
+
+    <p>
+      — Hope…
+    </p>
+
+    <p>
+      — Oui ?
+    </p>
+
+    <p>
+      — Je crois que nous venons
+      officiellement de prouver
+      que cette légende contient
+      au moins une part de vérité.
+    </p>
+
+    <p>
+      Hope observe la clé
+      dans sa main.
+    </p>
+
+    <p>
+      Son expression devient soudain
+      plus sérieuse.
+    </p>
+
+    <p>
+      — Oui.
+    </p>
+
+    <p>
+      Elle la tend immédiatement
+      à Root.
+    </p>
+
+    <p class="impact-text">
+      — Et c’est précisément
+      pour cette raison
+      qu’elle doit être mise en sécurité.
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<section
+  class="scene"
+  id="scene-41"
+>
+
+  <div class="text-block">
+
+    <p>
+      Root récupère la clé.
+    </p>
+
+    <p>
+      À mesure qu’elle quitte
+      la main de Hope,
+      le phénix disparaît progressivement.
+    </p>
+
+    <p>
+      Le dragon,
+      lui,
+      conserve encore
+      pendant quelques secondes
+      une luminosité inhabituelle
+      avant de s’estomper à son tour.
+    </p>
+
+    <p class="emphasis">
+      Un silence.
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     SÉQUENCE FINALE
+     LE DÉBARDEUR
+===================================================== -->
+
+<section
+  class="scene interaction-scene"
+  id="scene-42"
+>
+
+  <div class="text-block dialogue">
+
+    <p>
+      Puis Root regarde le sol.
+    </p>
+
+    <p>
+      Plus exactement…
+    </p>
+
+    <p>
+      les restes du débardeur
+      de Hope.
+    </p>
+
+    <p>
+      Elle relève les yeux.
+    </p>
+
+    <p>
+      — Tu vas avoir besoin
+      d’un nouveau haut.
+    </p>
+
+    <p>
+      Hope baisse les yeux
+      sur elle-même.
+    </p>
+
+    <p class="impact-text">
+      — Ah.
+    </p>
+
+    <p>
+      — Tu n’aurais pas
+      un débardeur dans un tiroir ?
+    </p>
+
+    <p>
+      — Dans mon laboratoire
+      archéologique ultrasécurisé ?
+    </p>
+
+    <p>
+      — Oui.
+    </p>
+
+    <p>
+      Root réfléchit.
+    </p>
+
+    <p>
+      — Étonnamment…
+    </p>
+
+  </div>
+
+
+  <button
+    class="interaction-btn"
+    id="drawerTrigger"
+  >
+    Ouvrir le tiroir
+  </button>
+
+
+  <div
+    class="reveal-box"
+    id="drawerReveal"
+  >
+
+    <p class="impact-text">
+      Un débardeur.
+    </p>
+
+    <p class="emphasis">
+      Objet improbable découvert
+      dans un laboratoire
+      archéologique ultrasécurisé.
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<section
+  class="scene"
+  id="scene-43"
+>
+
+  <div class="text-block dialogue">
+
+    <p>
+      Elle ouvre un tiroir.
+    </p>
+
+    <p>
+      — Si.
+    </p>
+
+    <p>
+      Hope éclate de rire.
+    </p>
+
+    <p>
+      — Je ne veux même pas
+      savoir pourquoi.
+    </p>
+
+    <p>
+      Root lui tend le vêtement.
+    </p>
+
+    <p>
+      — La première règle
+      de l’archéologie :
+      toujours prévoir l’imprévisible.
+    </p>
+
+    <p>
+      Hope saisit le débardeur.
+    </p>
+
+    <p>
+      — Je suis presque certaine
+      que cette règle n’existe pas.
+    </p>
+
+    <p class="emphasis">
+      — Elle existe depuis aujourd’hui.
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     FIN DU CHAPITRE
+===================================================== -->
+
+<section
+  class="scene chapter-end"
+  id="scene-44"
+>
+
+  <div class="text-block">
+
+    <p>
+      Une clé ancienne.
+    </p>
+
+    <p>
+      Une matière
+      peut-être tombée du ciel.
+    </p>
+
+    <p>
+      Une légende
+      reliant Pandore,
+      les Indécis
+      et l’Opaque.
+    </p>
+
+    <p>
+      Une possibilité
+      beaucoup plus inquiétante :
+    </p>
+
+    <p class="impact-text">
+      forcer un choix.
+    </p>
+
+    <p>
+      Root réagit directement
+      à la présence de la clé.
+    </p>
+
+    <p>
+      Lucy pourrait un jour
+      y être liée.
+    </p>
+
+    <p>
+      Et Hope vient de découvrir
+      qu’elle porte
+      bien plus que son dragon.
+    </p>
+
+    <p class="name-reveal">
+      Dragon + Phénix.
+    </p>
+
+    <p>
+      Une question demeure.
+    </p>
+
+    <p class="impact-text">
+      La clé sert-elle réellement
+      à ouvrir quelque chose…
+    </p>
+
+    <p class="emphasis">
+      ou à activer quelqu’un ?
+    </p>
+
+  </div>
+
+
+  <div class="end-symbol">
+    ∞
+  </div>
+
+
+  <div class="end-actions">
+
+    <button
+      class="chapter-btn"
+      id="restartChapter"
+    >
+      Relire le chapitre
+    </button>
+
+    <!--
+      Lorsque le chapitre 7 sera créé,
+      remplace le lien ci-dessous par :
+
+      href="chapitre7.html"
+      texte : Continuer
+    -->
+
+    <a
+      class="chapter-btn primary"
+      href="index.html"
+    >
+      Retour à l’accueil
+    </a>
+
+  </div>
+
+</section>
+
+
+</main>
+
+
+
+<!-- =====================================================
+     POPUP INFORMATION / SECRET
+===================================================== -->
+
+<div
+  class="secret-popup"
+  id="secretPopup"
+  aria-hidden="true"
+>
+
+  <div class="secret-popup-inner">
+
+    <span class="secret-symbol">
+      ∞
+    </span>
+
+    <span>
+      INFORMATION DÉCOUVERTE
+    </span>
+
+  </div>
+
+</div>
+
+
+
+<!-- =====================================================
+     MENU
+===================================================== -->
+
+<div
+  class="chapter-menu"
+  id="chapterMenu"
+  aria-hidden="true"
+>
+
+  <div class="chapter-menu-panel">
+
+    <button
+      class="menu-close"
+      id="menuClose"
+      aria-label="Fermer le menu"
+    >
+      ×
+    </button>
+
+    <h2>
+      Chapitre 6
+    </h2>
+
+    <p>
+      Le mystère de la clé
+    </p>
+
+    <button
+      id="resumeBtn"
+      class="menu-action"
+    >
+      Reprendre la lecture
+    </button>
+
+    <button
+      id="restartBtn"
+      class="menu-action"
+    >
+      Recommencer le chapitre
+    </button>
+
+    <a
+      href="index.html"
+      class="menu-action"
+    >
+      Retour à l’accueil
+    </a>
+
+  </div>
+
+</div>
+
+
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
+<script src="js/chapitre6.js"></script>
+
+
+</body>
+</html>
