@@ -42,38 +42,32 @@ const secretPopup =
 
 
 /* =========================================================
-   CLÉS LOCALSTORAGE
+   STOCKAGE
 ========================================================= */
 
 const STORAGE_SCROLL =
   "societeOmbre_chapitre5_scroll";
 
-const STORAGE_SOUND =
-  "societeOmbre_chapitre5_sound";
+const STORAGE_PROGRESS =
+  "societeOmbre_chapitre5_progression";
+
+const STORAGE_COMPLETED =
+  "societeOmbre_chapitre5_termine";
 
 const STORAGE_NEXUS =
   "societeOmbre_chapitre5_nexus";
 
-const STORAGE_PERSON =
-  "societeOmbre_chapitre5_person";
+const STORAGE_ANNA =
+  "societeOmbre_chapitre5_anna";
 
-const STORAGE_PROBLEM =
-  "societeOmbre_chapitre5_problem";
+const STORAGE_ELIE =
+  "societeOmbre_chapitre5_elie";
 
-const STORAGE_VIEWPOINT =
-  "societeOmbre_chapitre5_viewpoint";
-
-const STORAGE_ELIE_OPTIONS =
-  "societeOmbre_chapitre5_elieOptions";
-
-const STORAGE_PHOENIX =
-  "societeOmbre_chapitre5_phoenix";
+const STORAGE_TRACKING =
+  "societeOmbre_chapitre5_tracking";
 
 const STORAGE_CALL =
   "societeOmbre_chapitre5_call";
-
-const STORAGE_TECH =
-  "societeOmbre_chapitre5_techChoice";
 
 const STORAGE_BUTTERFLY =
   "societeOmbre_chapitre5_butterfly";
@@ -81,377 +75,158 @@ const STORAGE_BUTTERFLY =
 const STORAGE_RESONANCE =
   "societeOmbre_chapitre5_resonance";
 
-const STORAGE_GROUP =
-  "societeOmbre_chapitre5_group";
-
 const STORAGE_SECRETS =
   "societeOmbre_chapitre5_secrets";
 
 
 /* =========================================================
-   OUTILS
+   MODE DE LECTURE
 ========================================================= */
 
-function getStoredArray(key) {
-
-  try {
-
-    const data = localStorage.getItem(key);
-
-    if (!data) {
-      return [];
-    }
-
-    const parsed = JSON.parse(data);
-
-    return Array.isArray(parsed)
-      ? parsed
-      : [];
-
-  } catch (error) {
-
-    console.warn(
-      "Erreur lecture localStorage :",
-      key,
-      error
-    );
-
-    return [];
-
-  }
-
-}
-
-
-function saveStoredArray(key, array) {
-
-  localStorage.setItem(
-    key,
-    JSON.stringify(array)
+const urlParams =
+  new URLSearchParams(
+    window.location.search
   );
 
-}
-
-
-function addStoredValue(key, value) {
-
-  const values =
-    getStoredArray(key);
-
-  if (!values.includes(value)) {
-
-    values.push(value);
-
-    saveStoredArray(
-      key,
-      values
-    );
-
-  }
-
-  return values;
-
-}
-
-
-function showResult(element, html) {
-
-  if (!element) {
-    return;
-  }
-
-  element.innerHTML = html;
-
-  element.classList.add("visible");
-
-}
-
-
-function showSecret(message) {
-
-  if (!secretPopup) {
-    return;
-  }
-
-  secretPopup.textContent = message;
-
-  secretPopup.classList.add("show");
-
-  clearTimeout(showSecret.timeout);
-
-  showSecret.timeout =
-    setTimeout(() => {
-
-      secretPopup.classList.remove("show");
-
-    }, 3500);
-
-}
-
-
-function addSecret(secretName, message) {
-
-  const secrets =
-    addStoredValue(
-      STORAGE_SECRETS,
-      secretName
-    );
-
-  if (message) {
-
-    showSecret(message);
-
-  }
-
-  return secrets;
-
-}
+const lectureMode =
+  urlParams.get("lecture");
 
 
 /* =========================================================
-   SONS
+   IMAGES MANQUANTES
 ========================================================= */
 
-let soundEnabled =
-  localStorage.getItem(STORAGE_SOUND) !== "off";
+document
+  .querySelectorAll(".visual img")
+  .forEach((img) => {
 
+    img.addEventListener(
+      "error",
+      () => {
 
-function updateSoundButton() {
+        const visual =
+          img.closest(".visual");
 
-  if (!soundBtn) {
-    return;
-  }
+        if (visual) {
 
-  soundBtn.textContent =
-    soundEnabled
-      ? "🔊"
-      : "🔇";
+          visual.classList.add(
+            "visual-missing"
+          );
 
-  soundBtn.setAttribute(
-    "aria-label",
-    soundEnabled
-      ? "Couper les sons"
-      : "Activer les sons"
-  );
-
-}
-
-
-function playTone({
-  frequency = 440,
-  duration = 0.15,
-  type = "sine",
-  volume = 0.035
-} = {}) {
-
-  if (!soundEnabled) {
-    return;
-  }
-
-  try {
-
-    const AudioContext =
-      window.AudioContext ||
-      window.webkitAudioContext;
-
-    if (!AudioContext) {
-      return;
-    }
-
-    const context =
-      new AudioContext();
-
-    const oscillator =
-      context.createOscillator();
-
-    const gain =
-      context.createGain();
-
-    oscillator.type =
-      type;
-
-    oscillator.frequency.value =
-      frequency;
-
-    gain.gain.value =
-      volume;
-
-    oscillator.connect(gain);
-
-    gain.connect(
-      context.destination
-    );
-
-    oscillator.start();
-
-    gain.gain.exponentialRampToValueAtTime(
-      0.0001,
-      context.currentTime + duration
-    );
-
-    oscillator.stop(
-      context.currentTime + duration
-    );
-
-    setTimeout(() => {
-
-      context.close();
-
-    }, 300);
-
-  } catch (error) {
-
-    console.warn(
-      "Son non disponible :",
-      error
-    );
-
-  }
-
-}
-
-
-function playObserveSound() {
-
-  playTone({
-    frequency: 520,
-    duration: 0.12,
-    type: "sine",
-    volume: 0.03
-  });
-
-}
-
-
-function playChoiceSound() {
-
-  playTone({
-    frequency: 420,
-    duration: 0.18,
-    type: "triangle",
-    volume: 0.035
-  });
-
-}
-
-
-function playSecretSound() {
-
-  playTone({
-    frequency: 760,
-    duration: 0.28,
-    type: "sine",
-    volume: 0.04
-  });
-
-}
-
-
-/* =========================================================
-   MENU
-========================================================= */
-
-function openMenu() {
-
-  if (!chapterMenu) {
-    return;
-  }
-
-  chapterMenu.classList.add("open");
-
-  chapterMenu.setAttribute(
-    "aria-hidden",
-    "false"
-  );
-
-}
-
-
-function closeMenu() {
-
-  if (!chapterMenu) {
-    return;
-  }
-
-  chapterMenu.classList.remove("open");
-
-  chapterMenu.setAttribute(
-    "aria-hidden",
-    "true"
-  );
-
-}
-
-
-if (menuBtn) {
-
-  menuBtn.addEventListener(
-    "click",
-    openMenu
-  );
-
-}
-
-
-if (menuClose) {
-
-  menuClose.addEventListener(
-    "click",
-    closeMenu
-  );
-
-}
-
-
-if (chapterMenu) {
-
-  chapterMenu.addEventListener(
-    "click",
-    event => {
-
-      if (event.target === chapterMenu) {
-
-        closeMenu();
+        }
 
       }
+    );
 
+  });
+
+
+/* =========================================================
+   APPARITION DES SCÈNES
+========================================================= */
+
+const observer =
+  new IntersectionObserver(
+    (entries) => {
+
+      entries.forEach((entry) => {
+
+        if (entry.isIntersecting) {
+
+          const scene =
+            entry.target;
+
+          scene.classList.add(
+            "is-visible"
+          );
+
+          animateParagraphs(scene);
+
+          localStorage.setItem(
+            STORAGE_PROGRESS,
+            "1"
+          );
+
+        }
+
+      });
+
+    },
+    {
+      threshold: 0.14
     }
   );
 
-}
+
+scenes.forEach((scene) => {
+
+  observer.observe(scene);
+
+});
 
 
-if (soundBtn) {
+/* =========================================================
+   TEXTE PROGRESSIF
+========================================================= */
 
-  soundBtn.addEventListener(
-    "click",
-    () => {
+function animateParagraphs(scene) {
 
-      soundEnabled =
-        !soundEnabled;
+  if (
+    scene.dataset.textAnimated ===
+    "1"
+  ) {
+    return;
+  }
 
-      localStorage.setItem(
-        STORAGE_SOUND,
-        soundEnabled
-          ? "on"
-          : "off"
+  scene.dataset.textAnimated =
+    "1";
+
+  const paragraphs =
+    scene.querySelectorAll(
+      ".text-block p"
+    );
+
+  paragraphs.forEach(
+    (paragraph, index) => {
+
+      paragraph.style.opacity =
+        "0";
+
+      paragraph.style.transform =
+        "translateY(12px)";
+
+      setTimeout(
+        () => {
+
+          paragraph.animate(
+            [
+              {
+                opacity: 0,
+                transform:
+                  "translateY(12px)"
+              },
+
+              {
+                opacity: 1,
+                transform:
+                  "translateY(0)"
+              }
+            ],
+            {
+              duration: 650,
+              easing: "ease-out",
+              fill: "forwards"
+            }
+          );
+
+        },
+        index * 105
       );
 
-      updateSoundButton();
-
-      if (soundEnabled) {
-
-        playObserveSound();
-
-      }
-
     }
   );
 
 }
-
-
-updateSoundButton();
 
 
 /* =========================================================
@@ -464,26 +239,34 @@ function updateProgress() {
     return;
   }
 
-  const documentHeight =
-    document.documentElement.scrollHeight -
-    window.innerHeight;
-
-  const currentScroll =
+  const scrollTop =
     window.scrollY;
 
-  const percent =
-    documentHeight > 0
-      ? Math.min(
-          100,
-          Math.max(
-            0,
-            (currentScroll / documentHeight) * 100
-          )
-        )
-      : 0;
+  const documentHeight =
+    document.documentElement
+      .scrollHeight -
+    window.innerHeight;
+
+  if (
+    documentHeight <= 0
+  ) {
+    return;
+  }
+
+  const percentage =
+    Math.min(
+      100,
+      Math.max(
+        0,
+        (
+          scrollTop /
+          documentHeight
+        ) * 100
+      )
+    );
 
   progressFill.style.width =
-    `${percent}%`;
+    percentage + "%";
 
 }
 
@@ -491,13 +274,9 @@ function updateProgress() {
 window.addEventListener(
   "scroll",
   updateProgress,
-  { passive: true }
-);
-
-
-window.addEventListener(
-  "resize",
-  updateProgress
+  {
+    passive: true
+  }
 );
 
 
@@ -505,10 +284,11 @@ updateProgress();
 
 
 /* =========================================================
-   SAUVEGARDE DU SCROLL
+   SAUVEGARDE POSITION
 ========================================================= */
 
-let scrollSaveTimer = null;
+let saveScrollTimer =
+  null;
 
 
 window.addEventListener(
@@ -516,21 +296,33 @@ window.addEventListener(
   () => {
 
     clearTimeout(
-      scrollSaveTimer
+      saveScrollTimer
     );
 
-    scrollSaveTimer =
-      setTimeout(() => {
+    saveScrollTimer =
+      setTimeout(
+        () => {
 
-        localStorage.setItem(
-          STORAGE_SCROLL,
-          String(window.scrollY)
-        );
+          localStorage.setItem(
+            STORAGE_SCROLL,
+            Math.round(
+              window.scrollY
+            )
+          );
 
-      }, 250);
+          localStorage.setItem(
+            STORAGE_PROGRESS,
+            "1"
+          );
+
+        },
+        250
+      );
 
   },
-  { passive: true }
+  {
+    passive: true
+  }
 );
 
 
@@ -538,31 +330,41 @@ window.addEventListener(
    REPRENDRE
 ========================================================= */
 
-if (resumeBtn) {
+if (
+  lectureMode === "reprendre"
+) {
 
-  resumeBtn.addEventListener(
-    "click",
-    () => {
+  const savedPosition =
+    parseInt(
+      localStorage.getItem(
+        STORAGE_SCROLL
+      ),
+      10
+    );
 
-      closeMenu();
+  if (
+    !Number.isNaN(
+      savedPosition
+    ) &&
+    savedPosition > 0
+  ) {
 
-      const savedScroll =
-        Number(
-          localStorage.getItem(
-            STORAGE_SCROLL
-          )
-        );
+    setTimeout(
+      () => {
 
-      window.scrollTo({
-        top:
-          Number.isFinite(savedScroll)
-            ? savedScroll
-            : 0,
-        behavior: "smooth"
-      });
+        window.scrollTo({
+          top: savedPosition,
+          left: 0,
+          behavior: "instant"
+        });
 
-    }
-  );
+        updateProgress();
+
+      },
+      400
+    );
+
+  }
 
 }
 
@@ -571,148 +373,24 @@ if (resumeBtn) {
    RECOMMENCER
 ========================================================= */
 
-function restartChapterProgress() {
+if (
+  lectureMode === "recommencer"
+) {
 
-  [
-    STORAGE_SCROLL,
-    STORAGE_NEXUS,
-    STORAGE_PERSON,
-    STORAGE_PROBLEM,
-    STORAGE_VIEWPOINT,
-    STORAGE_ELIE_OPTIONS,
-    STORAGE_PHOENIX,
-    STORAGE_CALL,
-    STORAGE_TECH,
-    STORAGE_BUTTERFLY,
-    STORAGE_RESONANCE,
-    STORAGE_GROUP
+  setTimeout(
+    () => {
 
-  ].forEach(key => {
+      window.scrollTo({
+        top: 0,
+        left: 0,
+        behavior: "instant"
+      });
 
-    localStorage.removeItem(key);
+      updateProgress();
 
-  });
-
-
-  window.scrollTo({
-    top: 0,
-    behavior: "smooth"
-  });
-
-
-  setTimeout(() => {
-
-    window.location.reload();
-
-  }, 350);
-
-}
-
-
-if (restartBtn) {
-
-  restartBtn.addEventListener(
-    "click",
-    restartChapterProgress
+    },
+    100
   );
-
-}
-
-
-if (restartChapter) {
-
-  restartChapter.addEventListener(
-    "click",
-    restartChapterProgress
-  );
-
-}
-
-
-/* =========================================================
-   APPARITION DES PARAGRAPHES
-========================================================= */
-
-function animateParagraphs(scene) {
-
-  const elements =
-    scene.querySelectorAll(
-      "p, .dialogue, .interaction-card, .tracking-panel, .links-panel"
-    );
-
-  elements.forEach(
-    (element, index) => {
-
-      if (
-        element.classList.contains(
-          "paragraph-visible"
-        )
-      ) {
-        return;
-      }
-
-      setTimeout(() => {
-
-        element.classList.add(
-          "paragraph-visible"
-        );
-
-      }, Math.min(index * 65, 650));
-
-    }
-  );
-
-}
-
-
-if ("IntersectionObserver" in window) {
-
-  const observer =
-    new IntersectionObserver(
-      entries => {
-
-        entries.forEach(entry => {
-
-          if (
-            entry.isIntersecting
-          ) {
-
-            entry.target.classList.add(
-              "scene-visible"
-            );
-
-            animateParagraphs(
-              entry.target
-            );
-
-          }
-
-        });
-
-      },
-      {
-        threshold: 0.16
-      }
-    );
-
-
-  scenes.forEach(scene => {
-
-    observer.observe(scene);
-
-  });
-
-} else {
-
-  scenes.forEach(scene => {
-
-    scene.classList.add(
-      "scene-visible"
-    );
-
-    animateParagraphs(scene);
-
-  });
 
 }
 
@@ -721,51 +399,37 @@ if ("IntersectionObserver" in window) {
    BOUTONS CONTINUER
 ========================================================= */
 
-function scrollToScene(scene) {
-
-  if (!scene) {
-    return;
-  }
-
-  scene.scrollIntoView({
-    behavior: "smooth",
-    block: "start"
-  });
-
-}
-
-
 document
-  .querySelectorAll("[data-next]")
-  .forEach(button => {
+  .querySelectorAll(
+    "[data-next]"
+  )
+  .forEach((button) => {
 
     button.addEventListener(
       "click",
       () => {
 
         const currentScene =
-          button.closest(".scene");
+          button.closest(
+            ".scene"
+          );
 
         if (!currentScene) {
           return;
         }
 
-        let nextScene =
-          currentScene.nextElementSibling;
+        const nextScene =
+          currentScene
+            .nextElementSibling;
 
-        while (
-          nextScene &&
-          !nextScene.classList.contains("scene")
-        ) {
+        if (nextScene) {
 
-          nextScene =
-            nextScene.nextElementSibling;
+          nextScene.scrollIntoView({
+            behavior: "smooth",
+            block: "start"
+          });
 
         }
-
-        playChoiceSound();
-
-        scrollToScene(nextScene);
 
       }
     );
@@ -774,1575 +438,1453 @@ document
 
 
 /* =========================================================
-   SCÈNE 2
-   EXPLORER LE NEXUS
+   MENU
 ========================================================= */
 
-const nexusButtons =
-  document.querySelectorAll(
-    ".nexus-btn"
+function openMenu() {
+
+  if (!chapterMenu) {
+    return;
+  }
+
+  chapterMenu.classList.add(
+    "open"
   );
 
-const nexusResult =
-  document.getElementById(
-    "nexusResult"
+  chapterMenu.setAttribute(
+    "aria-hidden",
+    "false"
   );
 
+  document.body.classList.add(
+    "no-scroll"
+  );
 
-const nexusTexts = {
-
-  architecture:
-    `
-      <strong>Architecture</strong><br><br>
-      Pierre ancienne, végétation, eau et structures contemporaines semblent appartenir au même lieu depuis toujours.
-    `,
-
-  cuisine:
-    `
-      <strong>Cuisine</strong><br><br>
-      La France et le Mexique se rencontrent ici dans des associations que personne n’aurait forcément osé imaginer.
-    `,
-
-  securite:
-    `
-      <strong>Sécurité</strong><br><br>
-      Certains membres du personnel observent davantage les invités que les assiettes. Au NEXUS, la sécurité se fond dans le décor.
-    `
-
-};
+}
 
 
-function updateNexusResult(
-  selected = null
-) {
+function closeMenu() {
 
-  const visited =
-    getStoredArray(
-      STORAGE_NEXUS
-    );
+  if (!chapterMenu) {
+    return;
+  }
 
-  let html = "";
+  chapterMenu.classList.remove(
+    "open"
+  );
 
-  if (
-    selected &&
-    nexusTexts[selected]
+  chapterMenu.setAttribute(
+    "aria-hidden",
+    "true"
+  );
+
+  document.body.classList.remove(
+    "no-scroll"
+  );
+
+}
+
+
+menuBtn?.addEventListener(
+  "click",
+  openMenu
+);
+
+
+menuClose?.addEventListener(
+  "click",
+  closeMenu
+);
+
+
+chapterMenu?.addEventListener(
+  "click",
+  (event) => {
+
+    if (
+      event.target ===
+      chapterMenu
+    ) {
+
+      closeMenu();
+
+    }
+
+  }
+);
+
+
+/* =========================================================
+   REPRENDRE DEPUIS LE MENU
+========================================================= */
+
+resumeBtn?.addEventListener(
+  "click",
+  () => {
+
+    closeMenu();
+
+    const position =
+      parseInt(
+        localStorage.getItem(
+          STORAGE_SCROLL
+        ),
+        10
+      );
+
+    if (
+      !Number.isNaN(
+        position
+      )
+    ) {
+
+      window.scrollTo({
+        top: position,
+        behavior: "smooth"
+      });
+
+    }
+
+  }
+);
+
+
+/* =========================================================
+   RECOMMENCER LE CHAPITRE
+========================================================= */
+
+function restartChapterFunction() {
+
+  const prefix =
+    "societeOmbre_chapitre5_";
+
+  const keysToDelete =
+    [];
+
+  for (
+    let i = 0;
+    i < localStorage.length;
+    i++
   ) {
 
-    html =
-      nexusTexts[selected];
+    const key =
+      localStorage.key(i);
+
+    if (
+      key &&
+      key.startsWith(
+        prefix
+      )
+    ) {
+
+      keysToDelete.push(
+        key
+      );
+
+    }
 
   }
 
+  keysToDelete.forEach(
+    (key) => {
 
-  if (visited.length === 3) {
+      localStorage.removeItem(
+        key
+      );
 
-    html += `
-      <div class="secret-discovery">
-        <strong>Observation complète</strong><br><br>
-        Au NEXUS, presque rien n’est exactement ce qu’il semble être.
-      </div>
-    `;
+    }
+  );
 
-  }
+  window.location.href =
+    "chapitre5.html?lecture=recommencer";
 
-  if (html) {
+}
 
-    showResult(
-      nexusResult,
-      html
-    );
+
+restartBtn?.addEventListener(
+  "click",
+  restartChapterFunction
+);
+
+
+restartChapter?.addEventListener(
+  "click",
+  restartChapterFunction
+);
+
+
+/* =========================================================
+   SECRETS
+========================================================= */
+
+function getSecrets() {
+
+  try {
+
+    return JSON.parse(
+      localStorage.getItem(
+        STORAGE_SECRETS
+      )
+    ) || [];
+
+  } catch (error) {
+
+    return [];
 
   }
 
 }
 
 
-nexusButtons.forEach(button => {
+function saveSecret(secret) {
 
-  button.addEventListener(
-    "click",
-    () => {
+  const secrets =
+    getSecrets();
 
-      const key =
-        button.dataset.nexus;
+  if (
+    !secrets.includes(
+      secret
+    )
+  ) {
 
-      const visited =
-        addStoredValue(
-          STORAGE_NEXUS,
-          key
-        );
+    secrets.push(secret);
 
-      button.classList.add(
-        "selected"
-      );
-
-      playObserveSound();
-
-      updateNexusResult(key);
-
-
-      if (visited.length === 3) {
-
-        addSecret(
-          "nexus-observe",
-          "Observation découverte — Le NEXUS dissimule plus qu’il ne montre."
-        );
-
-      }
-
-    }
-  );
-
-});
-
-
-getStoredArray(
-  STORAGE_NEXUS
-).forEach(key => {
-
-  const button =
-    document.querySelector(
-      `.nexus-btn[data-nexus="${key}"]`
-    );
-
-  if (button) {
-
-    button.classList.add(
-      "selected"
+    localStorage.setItem(
+      STORAGE_SECRETS,
+      JSON.stringify(
+        secrets
+      )
     );
 
   }
-
-});
-
-
-if (
-  getStoredArray(
-    STORAGE_NEXUS
-  ).length === 3
-) {
-
-  updateNexusResult();
 
 }
 
 
 /* =========================================================
-   SCÈNE 4
+   POPUP INFORMATION
+========================================================= */
+
+let secretTimer =
+  null;
+
+
+function hideSecretPopup() {
+
+  if (!secretPopup) {
+    return;
+  }
+
+  secretPopup.classList.remove(
+    "show"
+  );
+
+  secretPopup.setAttribute(
+    "aria-hidden",
+    "true"
+  );
+
+}
+
+
+function showSecret(
+  secretName,
+  secretText
+) {
+
+  saveSecret(secretName);
+
+  if (!secretPopup) {
+    return;
+  }
+
+  const inner =
+    secretPopup.querySelector(
+      ".secret-popup-inner"
+    );
+
+  if (!inner) {
+    return;
+  }
+
+  let description =
+    inner.querySelector(
+      ".secret-description"
+    );
+
+  if (!description) {
+
+    description =
+      document.createElement(
+        "p"
+      );
+
+    description.className =
+      "secret-description";
+
+    description.style.marginTop =
+      "14px";
+
+    description.style.fontSize =
+      "15px";
+
+    description.style.lineHeight =
+      "1.55";
+
+    description.style.letterSpacing =
+      "0";
+
+    description.style.color =
+      "#f4eee6";
+
+    inner.appendChild(
+      description
+    );
+
+  }
+
+  description.textContent =
+    secretText;
+
+  secretPopup.classList.add(
+    "show"
+  );
+
+  secretPopup.setAttribute(
+    "aria-hidden",
+    "false"
+  );
+
+  playSecretSound();
+
+  clearTimeout(
+    secretTimer
+  );
+
+  secretTimer =
+    setTimeout(
+      hideSecretPopup,
+      3200
+    );
+
+}
+
+
+/* =========================================================
+   PETITE FONCTION DE RÉVÉLATION
+========================================================= */
+
+function activateReveal(
+  trigger,
+  reveal,
+  storageKey,
+  completedText,
+  secretName,
+  secretText,
+  soundFunction
+) {
+
+  localStorage.setItem(
+    storageKey,
+    "1"
+  );
+
+  reveal?.classList.add(
+    "open"
+  );
+
+  if (trigger) {
+
+    trigger.classList.add(
+      "completed"
+    );
+
+    trigger.textContent =
+      completedText;
+
+    trigger.disabled =
+      true;
+
+  }
+
+  soundFunction?.();
+
+  if (
+    secretName &&
+    secretText
+  ) {
+
+    showSecret(
+      secretName,
+      secretText
+    );
+
+  }
+
+}
+
+
+/* =========================================================
+   INTERACTION NEXUS
+========================================================= */
+
+const nexusTrigger =
+  document.getElementById(
+    "nexusTrigger"
+  );
+
+const nexusReveal =
+  document.getElementById(
+    "nexusReveal"
+  );
+
+
+nexusTrigger?.addEventListener(
+  "click",
+  () => {
+
+    activateReveal(
+      nexusTrigger,
+      nexusReveal,
+      STORAGE_NEXUS,
+      "NEXUS observé",
+      "nexus",
+      "Le NEXUS mêle spectacle, hospitalité et sécurité. Plusieurs membres du personnel surveillent discrètement la soirée.",
+      playRevealSound
+    );
+
+  }
+);
+
+
+if (
+  localStorage.getItem(
+    STORAGE_NEXUS
+  ) === "1"
+) {
+
+  nexusReveal?.classList.add(
+    "open"
+  );
+
+  if (nexusTrigger) {
+
+    nexusTrigger.classList.add(
+      "completed"
+    );
+
+    nexusTrigger.textContent =
+      "NEXUS observé";
+
+    nexusTrigger.disabled =
+      true;
+
+  }
+
+}
+
+
+/* =========================================================
    OBSERVER ANNA
 ========================================================= */
 
-const observeAnna =
+const annaTrigger =
   document.getElementById(
-    "observeAnna"
+    "annaTrigger"
   );
 
-const annaResult =
+const annaReveal =
   document.getElementById(
-    "annaResult"
+    "annaReveal"
   );
 
-let annaObservationCount = 0;
 
+annaTrigger?.addEventListener(
+  "click",
+  () => {
 
-if (observeAnna) {
+    activateReveal(
+      annaTrigger,
+      annaReveal,
+      STORAGE_ANNA,
+      "Anna observée",
+      null,
+      null,
+      playClueSound
+    );
 
-  observeAnna.addEventListener(
-    "click",
-    () => {
-
-      annaObservationCount++;
-
-      playObserveSound();
-
-
-      if (
-        annaObservationCount === 1
-      ) {
-
-        showResult(
-          annaResult,
-          "Anna fixe Clark Stephen."
-        );
-
-      } else if (
-        annaObservationCount === 2
-      ) {
-
-        showResult(
-          annaResult,
-          "Anna fixe toujours Clark Stephen."
-        );
-
-      } else {
-
-        showResult(
-          annaResult,
-          "Anna semble momentanément avoir oublié comment fonctionne la respiration humaine."
-        );
-
-      }
-
-    }
-  );
-
-}
+  }
+);
 
 
 /* =========================================================
-   SCÈNE 5
    OBSERVER ANNA / BETTY / LUCY
 ========================================================= */
 
-const personButtons =
-  document.querySelectorAll(
-    ".person-btn"
-  );
-
-const personResult =
+const personReveal =
   document.getElementById(
-    "personResult"
+    "personReveal"
   );
 
 
-const personTexts = {
-
-  anna:
-    `
-      <strong>Anna</strong><br><br>
-      Elle essaie visiblement de mémoriser chaque mot que prononce Max.
-    `,
-
-  betty:
-    `
-      <strong>Betty</strong><br><br>
-      Elle paraît amusée, mais remarque immédiatement que Peter regarde régulièrement dans leur direction.
-    `,
-
-  lucy:
-    `
-      <strong>Lucy</strong><br><br>
-      Contrairement aux deux autres, Lucy observe autant la salle que Max.
-    `
-
-};
-
-
-personButtons.forEach(button => {
-
-  button.addEventListener(
-    "click",
-    () => {
-
-      const key =
-        button.dataset.person;
-
-      addStoredValue(
-        STORAGE_PERSON,
-        key
-      );
-
-      button.classList.add(
-        "selected"
-      );
-
-      playObserveSound();
-
-      showResult(
-        personResult,
-        personTexts[key]
-      );
-
-    }
-  );
-
-});
-
-
-getStoredArray(
-  STORAGE_PERSON
-).forEach(key => {
-
-  const button =
-    document.querySelector(
-      `.person-btn[data-person="${key}"]`
-    );
-
-  if (button) {
-
-    button.classList.add(
-      "selected"
-    );
-
-  }
-
-});
-
-
-/* =========================================================
-   SCÈNE 6
-   MÉMOIRE DE CLARK
-========================================================= */
-
-const clarkMemoryBtn =
-  document.getElementById(
-    "clarkMemoryBtn"
-  );
-
-const clarkMemoryResult =
-  document.getElementById(
-    "clarkMemoryResult"
-  );
-
-
-if (
-  clarkMemoryBtn &&
-  clarkMemoryResult
-) {
-
-  clarkMemoryBtn.addEventListener(
-    "click",
-    () => {
-
-      playObserveSound();
-
-      showResult(
-        clarkMemoryResult,
-        `
-          <strong>Souvenir incomplet</strong><br><br>
-
-          Lucy a autrefois croisé la route de Clark lors d’une intervention.<br><br>
-
-          Son geste a indirectement rendu possible l’audition qui allait changer sa vie.<br><br>
-
-          Un détail banal.<br>
-          Une conséquence immense.
-        `
-      );
-
-      addSecret(
-        "clark-butterfly",
-        "Observation découverte — Une action minuscule peut modifier toute une vie."
-      );
-
-    }
-  );
-
-}
-
-
-/* =========================================================
-   SCÈNE 7
-   OBSERVER LE PROBLÈME
-========================================================= */
-
-const problemButtons =
-  document.querySelectorAll(
-    ".problem-btn"
-  );
-
-const problemResult =
-  document.getElementById(
-    "problemResult"
-  );
-
-
-const problemTexts = {
-
-  hope:
-    `
-      <strong>Hope</strong><br><br>
-      Elle donne plusieurs instructions très courtes à Peter. Son calme paraît intact, mais son attention s’est totalement déplacée vers l’extérieur.
-    `,
-
-  root:
-    `
-      <strong>Root</strong><br><br>
-      Elle semble contrariée. Ce qui vient de se produire ne lui plaît manifestement pas.
-    `,
-
-  max:
-    `
-      <strong>Max</strong><br><br>
-      Son sourire a disparu d’un seul coup. Il a compris avant les autres que quelque chose venait de changer.
-    `
-
-};
-
-
-problemButtons.forEach(button => {
-
-  button.addEventListener(
-    "click",
-    () => {
-
-      const key =
-        button.dataset.problem;
-
-      addStoredValue(
-        STORAGE_PROBLEM,
-        key
-      );
-
-      button.classList.add(
-        "selected"
-      );
-
-      playObserveSound();
-
-      showResult(
-        problemResult,
-        problemTexts[key]
-      );
-
-    }
-  );
-
-});
-
-
-getStoredArray(
-  STORAGE_PROBLEM
-).forEach(key => {
-
-  const button =
-    document.querySelector(
-      `.problem-btn[data-problem="${key}"]`
-    );
-
-  if (button) {
-
-    button.classList.add(
-      "selected"
-    );
-
-  }
-
-});
-
-
-/* =========================================================
-   SCÈNE 8
-   CHOIX DU POINT DE VUE
-========================================================= */
-
-const viewpointChoice =
-  document.getElementById(
-    "viewpointChoice"
-  );
-
-const stayLucyBtn =
-  document.getElementById(
-    "stayLucyBtn"
-  );
-
-const followHopeBtn =
-  document.getElementById(
-    "followHopeBtn"
-  );
-
-const lucyView =
-  document.getElementById(
-    "lucyView"
-  );
-
-const hopeView =
-  document.getElementById(
-    "hopeView"
-  );
-
-const goHopeView =
-  document.getElementById(
-    "goHopeView"
-  );
-
-const goLucyView =
-  document.getElementById(
-    "goLucyView"
-  );
-
-const finishViewpoints =
-  document.getElementById(
-    "finishViewpoints"
-  );
-
-
-let visitedLucyView =
-  false;
-
-let visitedHopeView =
-  false;
-
-
-function updateViewpointFinish() {
-
-  if (
-    !finishViewpoints
-  ) {
-    return;
-  }
-
-  if (
-    visitedLucyView &&
-    visitedHopeView
-  ) {
-
-    finishViewpoints.hidden =
-      false;
-
-  }
-
-}
-
-
-function showLucyView({
-  scroll = true
-} = {}) {
-
-  if (!lucyView) {
-    return;
-  }
-
-  lucyView.hidden =
-    false;
-
-  visitedLucyView =
-    true;
-
-  addStoredValue(
-    STORAGE_VIEWPOINT,
-    "lucy"
-  );
-
-  updateViewpointFinish();
-
-  if (scroll) {
-
-    setTimeout(() => {
-
-      lucyView.scrollIntoView({
-        behavior: "smooth",
-        block: "start"
-      });
-
-    }, 50);
-
-  }
-
-}
-
-
-function showHopeView({
-  scroll = true
-} = {}) {
-
-  if (!hopeView) {
-    return;
-  }
-
-  hopeView.hidden =
-    false;
-
-  visitedHopeView =
-    true;
-
-  addStoredValue(
-    STORAGE_VIEWPOINT,
-    "hope"
-  );
-
-  updateViewpointFinish();
-
-  if (scroll) {
-
-    setTimeout(() => {
-
-      hopeView.scrollIntoView({
-        behavior: "smooth",
-        block: "start"
-      });
-
-    }, 50);
-
-  }
-
-}
-
-
-if (stayLucyBtn) {
-
-  stayLucyBtn.addEventListener(
-    "click",
-    () => {
-
-      playChoiceSound();
-
-      stayLucyBtn.classList.add(
-        "selected"
-      );
-
-      showLucyView();
-
-    }
-  );
-
-}
-
-
-if (followHopeBtn) {
-
-  followHopeBtn.addEventListener(
-    "click",
-    () => {
-
-      playChoiceSound();
-
-      followHopeBtn.classList.add(
-        "selected"
-      );
-
-      showHopeView();
-
-    }
-  );
-
-}
-
-
-if (goHopeView) {
-
-  goHopeView.addEventListener(
-    "click",
-    () => {
-
-      playChoiceSound();
-
-      showHopeView();
-
-    }
-  );
-
-}
-
-
-if (goLucyView) {
-
-  goLucyView.addEventListener(
-    "click",
-    () => {
-
-      playChoiceSound();
-
-      showLucyView();
-
-    }
-  );
-
-}
-
-
-if (finishViewpoints) {
-
-  finishViewpoints.addEventListener(
-    "click",
-    () => {
-
-      playChoiceSound();
-
-      const currentScene =
-        finishViewpoints.closest(".scene");
-
-      let nextScene =
-        currentScene
-          ? currentScene.nextElementSibling
-          : null;
-
-      while (
-        nextScene &&
-        !nextScene.classList.contains("scene")
-      ) {
-
-        nextScene =
-          nextScene.nextElementSibling;
-
-      }
-
-      scrollToScene(nextScene);
-
-    }
-  );
-
-}
-
-
-const savedViewpoints =
-  getStoredArray(
-    STORAGE_VIEWPOINT
-  );
-
-
-if (
-  savedViewpoints.includes("lucy")
-) {
-
-  visitedLucyView =
-    true;
-
-  if (lucyView) {
-
-    lucyView.hidden =
-      false;
-
-  }
-
-}
-
-
-if (
-  savedViewpoints.includes("hope")
-) {
-
-  visitedHopeView =
-    true;
-
-  if (hopeView) {
-
-    hopeView.hidden =
-      false;
-
-  }
-
-}
-
-
-updateViewpointFinish();
-
-
-/* =========================================================
-   SCÈNE 8
-   LES DEUX OPTIONS DE HOPE
-========================================================= */
-
-const elieOptionButtons =
-  document.querySelectorAll(
-    ".elie-option"
-  );
-
-const elieOptionResult =
-  document.getElementById(
-    "elieOptionResult"
-  );
-
-
-const elieOptionTexts = {
-
-  partir:
-    `
-      <strong>Vous repartez.</strong><br><br>
-      Hope lui offre une sortie honorable : partir sans perdre la face.
-    `,
-
-  forcer:
-    `
-      <strong>Vous forcez le passage.</strong><br><br>
-      Cette seconde possibilité ressemble beaucoup moins à une invitation qu’à un avertissement.
-    `
-
-};
-
-
-elieOptionButtons.forEach(button => {
-
-  button.addEventListener(
-    "click",
-    () => {
-
-      const key =
-        button.dataset.elieOption;
-
-      addStoredValue(
-        STORAGE_ELIE_OPTIONS,
-        key
-      );
-
-      button.classList.add(
-        "selected"
-      );
-
-      playChoiceSound();
-
-      showResult(
-        elieOptionResult,
-        elieOptionTexts[key]
-      );
-
-    }
-  );
-
-});
-
-
-getStoredArray(
-  STORAGE_ELIE_OPTIONS
-).forEach(key => {
-
-  const button =
-    document.querySelector(
-      `.elie-option[data-elie-option="${key}"]`
-    );
-
-  if (button) {
-
-    button.classList.add(
-      "selected"
-    );
-
-  }
-
-});
-
-
-/* =========================================================
-   SCÈNE 9
-   SECRET PHÉNIX
-========================================================= */
-
-const phoenixSecret =
-  document.getElementById(
-    "phoenixSecret"
-  );
-
-
-if (phoenixSecret) {
-
-  phoenixSecret.addEventListener(
-    "click",
-    () => {
-
-      localStorage.setItem(
-        STORAGE_PHOENIX,
-        "found"
-      );
-
-      phoenixSecret.classList.add(
-        "found"
-      );
-
-      playSecretSound();
-
-      addSecret(
-        "phoenix",
-        "Secret découvert — Le Phénix. Peter n’a jamais cessé de surveiller Élie."
-      );
-
-    }
-  );
-
-}
-
-
-if (
-  localStorage.getItem(
-    STORAGE_PHOENIX
-  ) === "found"
-) {
-
-  if (phoenixSecret) {
-
-    phoenixSecret.classList.add(
-      "found"
-    );
-
-  }
-
-}
-
-
-/* =========================================================
-   SCÈNE 10
-   INTERCEPTION DE L'APPEL
-========================================================= */
-
-const listenCallBtn =
-  document.getElementById(
-    "listenCallBtn"
-  );
-
-const callTranscript =
-  document.getElementById(
-    "callTranscript"
-  );
-
-
-let callPlaying =
-  false;
-
-
-function revealCallTranscript() {
-
-  if (
-    !callTranscript ||
-    callPlaying
-  ) {
-    return;
-  }
-
-  callPlaying =
-    true;
-
-  callTranscript.innerHTML =
-    "";
-
-  callTranscript.classList.add(
-    "visible"
-  );
-
-
-  const fragments = [
-
-    "… grésillement …",
-
-    "Élie : « … »",
-
-    "… voix féminine …",
-
-    "Femme : « … »",
-
-    "… signal instable …",
-
-    "Élie : « … d’accord … »",
-
-    "… fragment inaudible …",
-
-    "Femme : « … pas maintenant … »",
-
-    "… fin de transmission exploitable …"
-
-  ];
-
-
-  fragments.forEach(
-    (fragment, index) => {
-
-      setTimeout(() => {
-
-        const line =
-          document.createElement("p");
-
-        line.textContent =
-          fragment;
-
-        line.classList.add(
-          "call-line"
-        );
-
-        callTranscript.appendChild(
-          line
-        );
-
+document
+  .querySelectorAll(
+    ".person-trigger"
+  )
+  .forEach((button) => {
+
+    button.addEventListener(
+      "click",
+      () => {
+
+        const person =
+          button.dataset.person;
+
+        if (!personReveal) {
+          return;
+        }
+
+        let text =
+          "";
 
         if (
-          index ===
-          fragments.length - 1
+          person === "anna"
         ) {
 
-          callPlaying =
-            false;
-
-          localStorage.setItem(
-            STORAGE_CALL,
-            "listened"
-          );
+          text =
+            "Anna essaie visiblement de mémoriser chaque mot prononcé par Max.";
 
         }
 
-      }, index * 450);
+        if (
+          person === "betty"
+        ) {
 
-    }
-  );
+          text =
+            "Betty paraît amusée, mais elle remarque immédiatement que Peter regarde régulièrement dans leur direction.";
 
-}
+        }
 
+        if (
+          person === "lucy"
+        ) {
 
-if (listenCallBtn) {
+          text =
+            "Contrairement aux deux autres, Lucy observe autant la salle que Max.";
 
-  listenCallBtn.addEventListener(
-    "click",
-    () => {
+        }
 
-      playObserveSound();
+        personReveal.innerHTML =
+          `<p>${text}</p>`;
 
-      revealCallTranscript();
+        personReveal.classList.add(
+          "open"
+        );
 
-    }
-  );
+        playClueSound();
 
-}
-
-
-/* =========================================================
-   OBSERVER HOPE APRÈS L'APPEL
-========================================================= */
-
-const observeHopeCall =
-  document.getElementById(
-    "observeHopeCall"
-  );
-
-const hopeCallResult =
-  document.getElementById(
-    "hopeCallResult"
-  );
-
-
-if (
-  observeHopeCall &&
-  hopeCallResult
-) {
-
-  observeHopeCall.addEventListener(
-    "click",
-    () => {
-
-      playObserveSound();
-
-      showResult(
-        hopeCallResult,
-        `
-          Pendant une fraction de seconde, Hope n’a pas eu l’air certaine de sa réponse.<br><br>
-          Elle a répondu vite.<br>
-          Peut-être trop vite.
-        `
-      );
-
-      addSecret(
-        "hope-call",
-        "Observation découverte — Hope n’est peut-être pas certaine de ne pas connaître cette voix."
-      );
-
-    }
-  );
-
-}
-
-
-/* =========================================================
-   SCÈNE 11
-   CHOIX TECHNOLOGIE / HUMAIN
-========================================================= */
-
-const techChoices =
-  document.querySelectorAll(
-    ".tech-choice"
-  );
-
-const techChoiceResult =
-  document.getElementById(
-    "techChoiceResult"
-  );
-
-
-const techTexts = {
-
-  depasse:
-    `
-      <strong>Votre choix</strong><br><br>
-      La technologie finira peut-être par dépasser certains aspects du jugement humain.
-    `,
-
-  humain:
-    `
-      <strong>Votre choix</strong><br><br>
-      L’humain restera indispensable là où le contexte, l’éthique et l’intuition comptent.
-    `,
-
-  ensemble:
-    `
-      <strong>Votre choix</strong><br><br>
-      La complémentarité entre intelligence humaine et technologie pourrait devenir la véritable force.
-    `
-
-};
-
-
-function selectTechChoice(
-  key,
-  {
-    save = true,
-    sound = true
-  } = {}
-) {
-
-  techChoices.forEach(button => {
-
-    button.classList.toggle(
-      "selected",
-      button.dataset.tech === key
+      }
     );
 
   });
 
 
-  if (
-    techTexts[key]
-  ) {
+/* =========================================================
+   ÉLIE
+========================================================= */
 
-    showResult(
-      techChoiceResult,
-      techTexts[key]
+const elieTrigger =
+  document.getElementById(
+    "elieTrigger"
+  );
+
+const elieReveal =
+  document.getElementById(
+    "elieReveal"
+  );
+
+
+elieTrigger?.addEventListener(
+  "click",
+  () => {
+
+    activateReveal(
+      elieTrigger,
+      elieReveal,
+      STORAGE_ELIE,
+      "Possibilités révélées",
+      "elie-choice",
+      "Hope ne menace pas Élie. Elle lui offre une sortie honorable tout en lui faisant comprendre que les règles ont changé.",
+      playRevealSound
     );
 
   }
-
-
-  if (save) {
-
-    localStorage.setItem(
-      STORAGE_TECH,
-      key
-    );
-
-  }
-
-
-  if (sound) {
-
-    playChoiceSound();
-
-  }
-
-}
-
-
-techChoices.forEach(button => {
-
-  button.addEventListener(
-    "click",
-    () => {
-
-      selectTechChoice(
-        button.dataset.tech
-      );
-
-    }
-  );
-
-});
-
-
-const savedTechChoice =
-  localStorage.getItem(
-    STORAGE_TECH
-  );
-
-
-if (
-  savedTechChoice &&
-  techTexts[savedTechChoice]
-) {
-
-  selectTechChoice(
-    savedTechChoice,
-    {
-      save: false,
-      sound: false
-    }
-  );
-
-}
+);
 
 
 /* =========================================================
-   SCÈNE 12
+   SUIVI DU CONVOI
+========================================================= */
+
+const trackingTrigger =
+  document.getElementById(
+    "trackingTrigger"
+  );
+
+const trackingReveal =
+  document.getElementById(
+    "trackingReveal"
+  );
+
+
+trackingTrigger?.addEventListener(
+  "click",
+  () => {
+
+    activateReveal(
+      trackingTrigger,
+      trackingReveal,
+      STORAGE_TRACKING,
+      "Suivi actif",
+      "elie-tracking",
+      "Le Phénix et deux microtraceurs permettent désormais à Peter de suivre certains déplacements d’Élie.",
+      playAnalysisSound
+    );
+
+  }
+);
+
+
+/* =========================================================
+   APPEL
+========================================================= */
+
+const callTrigger =
+  document.getElementById(
+    "callTrigger"
+  );
+
+const callReveal =
+  document.getElementById(
+    "callReveal"
+  );
+
+
+callTrigger?.addEventListener(
+  "click",
+  () => {
+
+    activateReveal(
+      callTrigger,
+      callReveal,
+      STORAGE_CALL,
+      "Communication écoutée",
+      "mysterious-woman",
+      "Élie parle avec une femme dont l’identité reste inconnue.",
+      playDataSound
+    );
+
+  }
+);
+
+
+/* =========================================================
    EFFET PAPILLON
 ========================================================= */
 
-const butterflyBtn =
+const butterflyTrigger =
   document.getElementById(
-    "butterflyBtn"
+    "butterflyTrigger"
   );
 
-const butterflyResult =
+const butterflyReveal =
   document.getElementById(
-    "butterflyResult"
+    "butterflyReveal"
   );
 
 
-function revealButterfly() {
+butterflyTrigger?.addEventListener(
+  "click",
+  () => {
 
-  if (!butterflyResult) {
-    return;
-  }
-
-  showResult(
-    butterflyResult,
-    `
-      <strong>🦋 Effet papillon</strong><br><br>
-
-      Lucy sauve Clark.<br>
-      ↓<br>
-      Clark passe son audition.<br>
-      ↓<br>
-      Sa carrière commence.<br>
-      ↓<br>
-      Il rencontre Root.<br>
-      ↓<br>
-      Root se retrouve ce soir au NEXUS.<br><br>
-
-      <em>
-        Une action minuscule.<br>
-        Des conséquences impossibles à prévoir.
-      </em>
-    `
-  );
-
-}
-
-
-if (butterflyBtn) {
-
-  butterflyBtn.addEventListener(
-    "click",
-    () => {
-
-      localStorage.setItem(
-        STORAGE_BUTTERFLY,
-        "opened"
-      );
-
-      butterflyBtn.classList.add(
-        "opened"
-      );
-
-      playSecretSound();
-
-      revealButterfly();
-
-      addSecret(
-        "butterfly",
-        "Observation découverte — Effet papillon."
-      );
-
-    }
-  );
-
-}
-
-
-if (
-  localStorage.getItem(
-    STORAGE_BUTTERFLY
-  ) === "opened"
-) {
-
-  if (butterflyBtn) {
-
-    butterflyBtn.classList.add(
-      "opened"
+    activateReveal(
+      butterflyTrigger,
+      butterflyReveal,
+      STORAGE_BUTTERFLY,
+      "Conséquences observées",
+      "butterfly",
+      "Le geste de Lucy envers Clark a provoqué une chaîne d’événements qu’aucun d’eux ne pouvait prévoir.",
+      playSentinelSound
     );
 
   }
-
-  revealButterfly();
-
-}
+);
 
 
 /* =========================================================
-   SCÈNE 13
    RÉSONANCE ROOT / LUCY
 ========================================================= */
 
-const resonanceButtons =
-  document.querySelectorAll(
-    ".resonance-btn"
-  );
-
-const resonanceResult =
+const resonanceTrigger =
   document.getElementById(
-    "resonanceResult"
+    "resonanceTrigger"
+  );
+
+const resonanceReveal =
+  document.getElementById(
+    "resonanceReveal"
   );
 
 
-const resonanceTexts = {
+resonanceTrigger?.addEventListener(
+  "click",
+  () => {
 
-  lucy:
-    `
-      <strong>Lucy</strong><br><br>
-      Elle protège presque instinctivement son poignet droit, comme si elle craignait qu’un signe apparaisse.
-    `,
-
-  root:
-    `
-      <strong>Root</strong><br><br>
-      Sa main se porte vers la marque laissée par Pandore avant qu’elle transforme le geste en mouvement banal.
-    `,
-
-  hope:
-    `
-      <strong>Hope</strong><br><br>
-      Elle est la seule à avoir remarqué les deux réactions au même instant.
-    `
-
-};
-
-
-function updateResonanceResult(
-  selected = null
-) {
-
-  const observed =
-    getStoredArray(
-      STORAGE_RESONANCE
-    );
-
-  let html = "";
-
-  if (
-    selected &&
-    resonanceTexts[selected]
-  ) {
-
-    html =
-      resonanceTexts[selected];
-
-  }
-
-
-  if (
-    observed.length === 3
-  ) {
-
-    html += `
-      <div class="secret-discovery">
-        <strong>SECRET DÉCOUVERT — RÉSONANCE</strong><br><br>
-
-        Quelque chose a réagi lorsque Root et Lucy se sont touchées.<br><br>
-
-        Mais ni l’une ni l’autre ne semble encore comprendre pourquoi.
-      </div>
-    `;
-
-  }
-
-
-  if (html) {
-
-    showResult(
-      resonanceResult,
-      html
+    activateReveal(
+      resonanceTrigger,
+      resonanceReveal,
+      STORAGE_RESONANCE,
+      "Résonance observée",
+      "root-lucy-resonance",
+      "Quelque chose semble réagir lorsque Root et Lucy entrent en contact. Hope est la seule à avoir observé les deux réactions.",
+      playMarkSound
     );
 
   }
+);
 
-}
+
+/* =========================================================
+   RESTAURATION DES INTERACTIONS
+========================================================= */
+
+const savedInteractions = [
+
+  [
+    STORAGE_ANNA,
+    annaTrigger,
+    annaReveal,
+    "Anna observée"
+  ],
+
+  [
+    STORAGE_ELIE,
+    elieTrigger,
+    elieReveal,
+    "Possibilités révélées"
+  ],
+
+  [
+    STORAGE_TRACKING,
+    trackingTrigger,
+    trackingReveal,
+    "Suivi actif"
+  ],
+
+  [
+    STORAGE_CALL,
+    callTrigger,
+    callReveal,
+    "Communication écoutée"
+  ],
+
+  [
+    STORAGE_BUTTERFLY,
+    butterflyTrigger,
+    butterflyReveal,
+    "Conséquences observées"
+  ],
+
+  [
+    STORAGE_RESONANCE,
+    resonanceTrigger,
+    resonanceReveal,
+    "Résonance observée"
+  ]
+
+];
 
 
-resonanceButtons.forEach(button => {
+savedInteractions.forEach(
+  ([
+    key,
+    trigger,
+    reveal,
+    text
+  ]) => {
 
-  button.addEventListener(
-    "click",
-    () => {
-
-      const key =
-        button.dataset.resonance;
-
-      const observed =
-        addStoredValue(
-          STORAGE_RESONANCE,
-          key
-        );
-
-      button.classList.add(
-        "selected"
-      );
-
-      playObserveSound();
-
-      updateResonanceResult(
+    if (
+      localStorage.getItem(
         key
+      ) === "1"
+    ) {
+
+      reveal?.classList.add(
+        "open"
       );
 
+      if (trigger) {
 
-      if (
-        observed.length === 3
-      ) {
-
-        playSecretSound();
-
-        addSecret(
-          "resonance",
-          "Secret découvert — Résonance."
+        trigger.classList.add(
+          "completed"
         );
+
+        trigger.textContent =
+          text;
+
+        trigger.disabled =
+          true;
 
       }
 
     }
-  );
-
-});
-
-
-getStoredArray(
-  STORAGE_RESONANCE
-).forEach(key => {
-
-  const button =
-    document.querySelector(
-      `.resonance-btn[data-resonance="${key}"]`
-    );
-
-  if (button) {
-
-    button.classList.add(
-      "selected"
-    );
 
   }
+);
 
-});
+
+/* =========================================================
+   MÉMOIRE DU CHAPITRE 4
+========================================================= */
+
+const chapter4Finished =
+  localStorage.getItem(
+    "societeOmbre_chapitre4_termine"
+  ) ||
+  localStorage.getItem(
+    "societeOmbre_chapitre4_finished"
+  );
 
 
 if (
-  getStoredArray(
-    STORAGE_RESONANCE
-  ).length === 3
+  chapter4Finished === "1"
 ) {
 
-  updateResonanceResult();
+  const scene2 =
+    document.getElementById(
+      "scene-2"
+    );
+
+  const textBlock =
+    scene2?.querySelector(
+      ".text-block"
+    );
+
+  if (
+    textBlock &&
+    !document.getElementById(
+      "chapter4Memory"
+    )
+  ) {
+
+    const memory =
+      document.createElement(
+        "p"
+      );
+
+    memory.id =
+      "chapter4Memory";
+
+    memory.className =
+      "emphasis";
+
+    memory.style.marginTop =
+      "30px";
+
+    memory.textContent =
+      "La nuit précédente, Lucy découvrait l’existence des Indécis tandis que Root révélait l’existence d’une mystérieuse clé.";
+
+    textBlock.appendChild(
+      memory
+    );
+
+  }
 
 }
 
 
 /* =========================================================
-   SCÈNE 14
-   OBSERVER LE GROUPE
+   FIN DU CHAPITRE
 ========================================================= */
 
-const groupButtons =
-  document.querySelectorAll(
-    ".group-btn"
-  );
-
-const groupResult =
+const finalScene =
   document.getElementById(
-    "groupResult"
+    "scene-38"
   );
 
 
-const groupTexts = {
+if (finalScene) {
 
-  "anna-max":
-    `
-      <strong>Anna + Max</strong><br><br>
-      Journalisme, voyages, enquêtes et probablement beaucoup trop peu de sommeil.
-    `,
+  const endObserver =
+    new IntersectionObserver(
+      (entries) => {
 
-  "betty-peter":
-    `
-      <strong>Betty + Peter</strong><br><br>
-      Technologie, génétique… et plusieurs sujets que Peter évite soigneusement.
-    `,
+        entries.forEach(
+          (entry) => {
 
-  "lucy-clive":
-    `
-      <strong>Lucy + Clive</strong><br><br>
-      Clive raconte une histoire. Lucy corrige déjà la moitié des faits.
-    `,
+            if (
+              entry.isIntersecting
+            ) {
 
-  "root-clark":
-    `
-      <strong>Root + Clark</strong><br><br>
-      Il suffit d’un regard pour comprendre qu’Anna avait raison.
-    `,
+              localStorage.setItem(
+                STORAGE_COMPLETED,
+                "1"
+              );
 
-  "hope":
-    `
-      <strong>Hope</strong><br><br>
-      Elle observe tout le monde avec un sourire qu’elle ne cherche même plus à cacher.
-    `
+              localStorage.setItem(
+                STORAGE_PROGRESS,
+                "1"
+              );
 
-};
+            }
 
+          }
+        );
 
-groupButtons.forEach(button => {
+      },
+      {
+        threshold: 0.5
+      }
+    );
 
-  button.addEventListener(
-    "click",
-    () => {
-
-      const key =
-        button.dataset.group;
-
-      addStoredValue(
-        STORAGE_GROUP,
-        key
-      );
-
-      button.classList.add(
-        "selected"
-      );
-
-      playObserveSound();
-
-      showResult(
-        groupResult,
-        groupTexts[key]
-      );
-
-    }
+  endObserver.observe(
+    finalScene
   );
 
-});
-
-
-getStoredArray(
-  STORAGE_GROUP
-).forEach(key => {
-
-  const button =
-    document.querySelector(
-      `.group-btn[data-group="${key}"]`
-    );
-
-  if (button) {
-
-    button.classList.add(
-      "selected"
-    );
-
-  }
-
-});
+}
 
 
 /* =========================================================
-   RESTAURATION DU SCROLL
+   SON D'AMBIANCE
 ========================================================= */
 
-const storedScroll =
-  Number(
-    localStorage.getItem(
-      STORAGE_SCROLL
-    )
+let audioCtx =
+  null;
+
+let masterGain =
+  null;
+
+let ambienceOsc1 =
+  null;
+
+let ambienceOsc2 =
+  null;
+
+let soundActive =
+  false;
+
+
+function startSound() {
+
+  if (soundActive) {
+    return;
+  }
+
+  const AudioContextClass =
+    window.AudioContext ||
+    window.webkitAudioContext;
+
+  if (!AudioContextClass) {
+    return;
+  }
+
+  audioCtx =
+    new AudioContextClass();
+
+  masterGain =
+    audioCtx.createGain();
+
+  masterGain.gain.value =
+    0.021;
+
+  masterGain.connect(
+    audioCtx.destination
+  );
+
+  ambienceOsc1 =
+    audioCtx.createOscillator();
+
+  ambienceOsc2 =
+    audioCtx.createOscillator();
+
+  const gain1 =
+    audioCtx.createGain();
+
+  const gain2 =
+    audioCtx.createGain();
+
+  ambienceOsc1.type =
+    "sine";
+
+  ambienceOsc1.frequency.value =
+    39;
+
+  gain1.gain.value =
+    0.62;
+
+  ambienceOsc2.type =
+    "triangle";
+
+  ambienceOsc2.frequency.value =
+    77;
+
+  gain2.gain.value =
+    0.06;
+
+  ambienceOsc1
+    .connect(gain1)
+    .connect(masterGain);
+
+  ambienceOsc2
+    .connect(gain2)
+    .connect(masterGain);
+
+  ambienceOsc1.start();
+
+  ambienceOsc2.start();
+
+  soundActive =
+    true;
+
+  if (soundBtn) {
+
+    soundBtn.classList.add(
+      "sound-active"
+    );
+
+    soundBtn.textContent =
+      "♪";
+
+  }
+
+}
+
+
+function stopSound() {
+
+  if (
+    !soundActive ||
+    !audioCtx
+  ) {
+    return;
+  }
+
+  if (masterGain) {
+
+    masterGain.gain
+      .exponentialRampToValueAtTime(
+        0.0001,
+        audioCtx.currentTime +
+          0.35
+      );
+
+  }
+
+  setTimeout(
+    () => {
+
+      try {
+
+        ambienceOsc1?.stop();
+
+        ambienceOsc2?.stop();
+
+        audioCtx?.close();
+
+      } catch (error) {
+
+        /* rien */
+
+      }
+
+      audioCtx =
+        null;
+
+      masterGain =
+        null;
+
+      ambienceOsc1 =
+        null;
+
+      ambienceOsc2 =
+        null;
+
+    },
+    450
+  );
+
+  soundActive =
+    false;
+
+  if (soundBtn) {
+
+    soundBtn.classList.remove(
+      "sound-active"
+    );
+
+    soundBtn.textContent =
+      "♫";
+
+  }
+
+}
+
+
+soundBtn?.addEventListener(
+  "click",
+  () => {
+
+    if (soundActive) {
+
+      stopSound();
+
+    } else {
+
+      startSound();
+
+    }
+
+  }
+);
+
+
+/* =========================================================
+   PETITS SONS
+========================================================= */
+
+function playTone(
+  frequency,
+  duration,
+  volume = 0.04,
+  type = "sine"
+) {
+
+  if (
+    !soundActive ||
+    !audioCtx
+  ) {
+    return;
+  }
+
+  const oscillator =
+    audioCtx.createOscillator();
+
+  const gain =
+    audioCtx.createGain();
+
+  oscillator.type =
+    type;
+
+  oscillator.frequency.value =
+    frequency;
+
+  gain.gain.setValueAtTime(
+    volume,
+    audioCtx.currentTime
+  );
+
+  gain.gain
+    .exponentialRampToValueAtTime(
+      0.0001,
+      audioCtx.currentTime +
+        duration
+    );
+
+  oscillator
+    .connect(gain)
+    .connect(
+      audioCtx.destination
+    );
+
+  oscillator.start();
+
+  oscillator.stop(
+    audioCtx.currentTime +
+      duration
+  );
+
+}
+
+
+function playClueSound() {
+
+  playTone(
+    430,
+    0.35,
+    0.018
+  );
+
+  setTimeout(
+    () => {
+
+      playTone(
+        575,
+        0.45,
+        0.015
+      );
+
+    },
+    100
+  );
+
+}
+
+
+function playRevealSound() {
+
+  playTone(
+    420,
+    0.65,
+    0.022
+  );
+
+  setTimeout(
+    () => {
+
+      playTone(
+        640,
+        0.8,
+        0.018
+      );
+
+    },
+    150
+  );
+
+}
+
+
+function playAnalysisSound() {
+
+  playTone(
+    490,
+    0.45,
+    0.018,
+    "triangle"
+  );
+
+  setTimeout(
+    () => {
+
+      playTone(
+        620,
+        0.6,
+        0.016,
+        "sine"
+      );
+
+    },
+    120
+  );
+
+}
+
+
+function playDataSound() {
+
+  playTone(
+    360,
+    0.35,
+    0.018,
+    "square"
+  );
+
+  setTimeout(
+    () => {
+
+      playTone(
+        440,
+        0.42,
+        0.015,
+        "triangle"
+      );
+
+    },
+    110
+  );
+
+}
+
+
+function playMarkSound() {
+
+  playTone(
+    350,
+    0.75,
+    0.02
+  );
+
+  setTimeout(
+    () => {
+
+      playTone(
+        470,
+        0.9,
+        0.018
+      );
+
+    },
+    160
+  );
+
+  setTimeout(
+    () => {
+
+      playTone(
+        610,
+        1.0,
+        0.015
+      );
+
+    },
+    310
+  );
+
+}
+
+
+function playSentinelSound() {
+
+  playTone(
+    420,
+    0.75,
+    0.02
+  );
+
+  setTimeout(
+    () => {
+
+      playTone(
+        560,
+        0.9,
+        0.018
+      );
+
+    },
+    170
+  );
+
+  setTimeout(
+    () => {
+
+      playTone(
+        710,
+        1.05,
+        0.014
+      );
+
+    },
+    330
+  );
+
+}
+
+
+function playSecretSound() {
+
+  playTone(
+    540,
+    0.65,
+    0.022
+  );
+
+  setTimeout(
+    () => {
+
+      playTone(
+        760,
+        0.8,
+        0.018
+      );
+
+    },
+    140
+  );
+
+}
+
+
+/* =========================================================
+   ESCAPE
+========================================================= */
+
+document.addEventListener(
+  "keydown",
+  (event) => {
+
+    if (
+      event.key ===
+      "Escape"
+    ) {
+
+      closeMenu();
+
+      hideSecretPopup();
+
+    }
+
+  }
+);
+
+
+/* =========================================================
+   SAUVEGARDE AVANT QUITTER
+========================================================= */
+
+window.addEventListener(
+  "beforeunload",
+  () => {
+
+    const params =
+      new URLSearchParams(
+        window.location.search
+      );
+
+    if (
+      params.get("lecture") ===
+      "recommencer"
+    ) {
+      return;
+    }
+
+    localStorage.setItem(
+      STORAGE_SCROLL,
+      Math.round(
+        window.scrollY
+      )
+    );
+
+    localStorage.setItem(
+      STORAGE_PROGRESS,
+      "1"
+    );
+
+  }
+);
+
+
+/* =========================================================
+   PREMIÈRE SCÈNE
+========================================================= */
+
+const firstScene =
+  document.querySelector(
+    ".scene"
   );
 
 
-if (
-  Number.isFinite(storedScroll) &&
-  storedScroll > 0
-) {
+if (firstScene) {
 
-  setTimeout(() => {
+  setTimeout(
+    () => {
 
-    window.scrollTo({
-      top: storedScroll,
-      behavior: "auto"
-    });
+      firstScene.classList.add(
+        "is-visible"
+      );
 
-    updateProgress();
-
-  }, 150);
+    },
+    100
+  );
 
 }
 
