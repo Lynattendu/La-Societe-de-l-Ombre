@@ -1,8 +1,60 @@
 /* =========================================================
    LA SOCIÉTÉ DE L’OMBRE
    CHAPITRE 5 — L’INAUGURATION DU NEXUS
-   STYLE COHÉRENT AVEC LES AUTRES CHAPITRES
+   Mobile-first / 9:16
 ========================================================= */
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  background: #050505;
+}
+
+body {
+  margin: 0;
+
+  min-height: 100vh;
+
+  background:
+    radial-gradient(
+      circle at top,
+      rgba(18, 20, 27, 0.96),
+      #050505 62%
+    );
+
+  color: #f4eee6;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  overflow-x: hidden;
+}
+
+img {
+  display: block;
+  width: 100%;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button {
+  font: inherit;
+}
 
 
 /* =========================================================
@@ -11,112 +63,40 @@
 
 :root {
 
-  --bg: #05070a;
+  --bg: #050505;
+  --bg-soft: #0b0c10;
+  --panel: rgba(13, 15, 20, 0.86);
 
-  --bg-soft: #0a0d12;
+  --text: #f5efe8;
+  --text-soft: #c9c0b7;
+  --text-dim: #8e8884;
 
-  --bg-card: rgba(10, 14, 20, 0.82);
+  --gold: #e8bd70;
+  --gold-soft: #f5dfaa;
 
-  --bg-card-strong: rgba(7, 10, 15, 0.94);
+  --blue: #72cdf8;
+  --blue-soft: #bce9ff;
 
-  --text: #f2f2f2;
+  --green: #82d6a8;
+  --green-soft: #caf3dc;
 
-  --text-soft: #c8cbd0;
+  --violet: #aa8cff;
+  --violet-soft: #dbd2ff;
 
-  --muted: #9298a2;
+  --red: #ba4f53;
+  --red-soft: #f0a5a7;
 
-  --gold: #c7a768;
+  --orange: #e69a59;
+  --orange-soft: #ffd2a3;
 
-  --gold-light: #e5cf9e;
+  --border: rgba(255, 255, 255, 0.11);
 
-  --blue: #7fa6c9;
+  --shadow:
+    0 20px 60px rgba(0, 0, 0, 0.58);
 
-  --blue-light: #b1c9dc;
+  --radius: 22px;
 
-  --green: #82a995;
-
-  --red: #b66d6d;
-
-  --border: rgba(255, 255, 255, 0.10);
-
-  --border-soft: rgba(255, 255, 255, 0.06);
-
-  --border-gold: rgba(199, 167, 104, 0.42);
-
-  --shadow: 0 12px 40px rgba(0, 0, 0, 0.45);
-
-}
-
-
-/* =========================================================
-   RESET
-========================================================= */
-
-*,
-*::before,
-*::after {
-
-  box-sizing: border-box;
-
-}
-
-
-html {
-
-  margin: 0;
-
-  padding: 0;
-
-  scroll-behavior: smooth;
-
-  background: var(--bg);
-
-}
-
-
-body {
-
-  margin: 0;
-
-  padding: 0;
-
-  min-height: 100%;
-
-  background:
-    radial-gradient(
-      circle at top,
-      #11151c 0%,
-      #080b10 34%,
-      #05070a 72%,
-      #030406 100%
-    );
-
-  color: var(--text);
-
-  font-family:
-    Georgia,
-    "Times New Roman",
-    serif;
-
-  line-height: 1.75;
-
-  overflow-x: hidden;
-
-}
-
-
-button,
-a {
-
-  -webkit-tap-highlight-color: transparent;
-
-}
-
-
-button {
-
-  font: inherit;
-
+  --max-width: 820px;
 }
 
 
@@ -125,500 +105,348 @@ button {
 ========================================================= */
 
 .progress-bar {
-
   position: fixed;
-
   top: 0;
-
   left: 0;
 
   width: 100%;
-
-  height: 4px;
-
-  z-index: 1000;
+  height: 3px;
 
   background:
-    rgba(255, 255, 255, 0.04);
+    rgba(255, 255, 255, 0.05);
 
+  z-index: 9999;
 }
 
-
-#progressFill {
-
-  width: 0;
-
+.progress-fill {
+  width: 0%;
   height: 100%;
 
   background:
     linear-gradient(
       90deg,
-      var(--gold),
-      var(--gold-light)
+      var(--blue),
+      var(--gold-soft),
+      var(--violet)
     );
 
   box-shadow:
-    0 0 10px
-    rgba(199, 167, 104, 0.45);
+    0 0 14px rgba(232, 189, 112, 0.48);
 
   transition:
     width 0.15s linear;
-
 }
 
 
 /* =========================================================
-   BARRE SUPÉRIEURE
+   COMMANDES
 ========================================================= */
 
-.topbar {
-
+.chapter-controls {
   position: fixed;
 
-  top: 4px;
-
-  left: 0;
-
-  right: 0;
-
-  height: 58px;
-
-  display: grid;
-
-  grid-template-columns:
-    48px
-    1fr
-    48px;
-
-  align-items: center;
-
-  padding:
-    0
-    12px;
-
-  z-index: 900;
-
-  background:
-    linear-gradient(
-      to bottom,
-      rgba(3, 5, 8, 0.95),
-      rgba(3, 5, 8, 0.7),
-      rgba(3, 5, 8, 0)
+  top:
+    calc(
+      16px +
+      env(safe-area-inset-top)
     );
 
-}
-
-
-.chapter-title {
-
-  text-align: center;
-
-  font-family:
-    Arial,
-    Helvetica,
-    sans-serif;
-
-  font-size: 0.76rem;
-
-  letter-spacing: 0.18em;
-
-  text-transform: uppercase;
-
-  color: var(--text-soft);
-
-}
-
-
-.icon-btn {
-
-  width: 40px;
-
-  height: 40px;
+  right: 14px;
 
   display: flex;
+  gap: 10px;
 
-  align-items: center;
+  z-index: 9000;
+}
 
-  justify-content: center;
-
-  border:
-    1px solid
-    var(--border);
+.control-btn {
+  width: 44px;
+  height: 44px;
 
   border-radius: 50%;
 
+  border:
+    1px solid rgba(255, 255, 255, 0.18);
+
   background:
-    rgba(7, 10, 14, 0.76);
+    rgba(10, 10, 13, 0.66);
 
-  color: white;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
 
-  font-size: 1rem;
+  color: #fff;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 18px;
 
   cursor: pointer;
+
+  box-shadow:
+    0 8px 22px rgba(0, 0, 0, 0.42);
 
   transition:
     transform 0.2s ease,
     border-color 0.2s ease,
     background 0.2s ease;
-
 }
 
-
-.icon-btn:hover {
-
-  transform: scale(1.05);
-
-  border-color:
-    var(--border-gold);
-
-  background:
-    rgba(16, 20, 26, 0.9);
-
+.control-btn:active {
+  transform: scale(0.92);
 }
 
 
 /* =========================================================
-   MENU
+   CONTENEUR GLOBAL
 ========================================================= */
 
-.chapter-menu {
+.chapter {
+  width: 100%;
+  overflow: hidden;
+}
 
-  position: fixed;
+.scene {
+  position: relative;
 
-  inset: 0;
+  width: 100%;
+  max-width: var(--max-width);
 
-  z-index: 1200;
+  margin: 0 auto;
+
+  min-height: 100svh;
+
+  padding:
+    74px
+    18px
+    72px;
 
   display: flex;
+  flex-direction: column;
+  justify-content: center;
 
-  align-items: stretch;
+  isolation: isolate;
+}
 
-  background:
-    rgba(0, 0, 0, 0.62);
+.scene + .scene {
+  border-top:
+    1px solid rgba(255, 255, 255, 0.035);
+}
 
-  opacity: 0;
+
+/* =========================================================
+   AMBIANCE DE FOND
+========================================================= */
+
+.scene::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
 
   pointer-events: none;
 
-  transition:
-    opacity 0.25s ease;
+  background:
+    radial-gradient(
+      circle at 50% 18%,
+      rgba(255, 255, 255, 0.03),
+      transparent 42%
+    );
 
+  z-index: -2;
+}
+
+.scene::after {
+  content: "";
+
+  position: absolute;
+
+  left: 50%;
+  bottom: 0;
+
+  width: 82%;
+  height: 1px;
+
+  transform: translateX(-50%);
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.11),
+      transparent
+    );
+
+  opacity: 0.45;
 }
 
 
-.chapter-menu.open {
+/* =========================================================
+   VISUELS
+========================================================= */
 
-  opacity: 1;
-
-  pointer-events: auto;
-
-}
-
-
-.menu-panel {
-
+.visual {
   position: relative;
 
-  width:
-    min(88vw, 380px);
+  width: 100%;
 
-  min-height: 100%;
+  margin:
+    0 auto
+    28px;
 
-  padding:
-    84px
-    24px
-    36px;
+  border-radius: var(--radius);
+
+  overflow: hidden;
+
+  border:
+    1px solid rgba(255, 255, 255, 0.08);
 
   background:
     linear-gradient(
       180deg,
-      #0a0d12 0%,
-      #0d1117 60%,
-      #080a0f 100%
+      #111216,
+      #070708
     );
 
-  border-right:
-    1px solid
-    var(--border);
-
-  box-shadow:
-    20px 0 50px
-    rgba(0, 0, 0, 0.45);
-
-}
-
-
-.menu-close {
-
-  position: absolute;
-
-  top: 18px;
-
-  right: 18px;
-
-  width: 40px;
-
-  height: 40px;
-
-  display: flex;
-
-  align-items: center;
-
-  justify-content: center;
-
-  border:
-    1px solid
-    var(--border);
-
-  border-radius: 50%;
-
-  background: transparent;
-
-  color: white;
-
-  font-size: 1.5rem;
-
-  cursor: pointer;
-
-}
-
-
-.menu-panel h2 {
-
-  margin:
-    0
-    0
-    8px;
-
-  color:
-    var(--gold-light);
-
-  font-size:
-    1.7rem;
-
-  font-weight: 500;
-
-}
-
-
-.menu-panel p {
-
-  margin:
-    0
-    0
-    24px;
-
-  color:
-    var(--text-soft);
-
-}
-
-
-.menu-action,
-.menu-link {
-
-  width: 100%;
-
-  min-height: 50px;
-
-  margin-bottom: 12px;
-
-  padding:
-    13px
-    18px;
-
-  display: flex;
-
-  align-items: center;
-
-  justify-content: center;
-
-  border:
-    1px solid
-    var(--border-gold);
-
-  border-radius: 999px;
-
-  background:
-    rgba(199, 167, 104, 0.08);
-
-  color: var(--text);
-
-  text-decoration: none;
-
-  font-family:
-    Arial,
-    Helvetica,
-    sans-serif;
-
-  font-size: 0.9rem;
-
-  text-align: center;
-
-  cursor: pointer;
-
-  transition:
-    transform 0.2s ease,
-    background 0.2s ease;
-
-}
-
-
-.menu-action:hover,
-.menu-link:hover {
-
-  transform:
-    translateY(-1px);
-
-  background:
-    rgba(199, 167, 104, 0.14);
-
-}
-
-
-.menu-action.secondary {
-
-  border-color:
-    var(--border);
-
-  background:
-    rgba(255, 255, 255, 0.03);
-
-}
-
-
-/* =========================================================
-   POPUP SECRET
-========================================================= */
-
-.secret-popup {
-
-  position: fixed;
-
-  left: 50%;
-
-  bottom: 24px;
-
-  width:
-    min(90vw, 520px);
-
-  padding:
-    14px
-    18px;
-
-  transform:
-    translate(-50%, 18px);
-
-  border:
-    1px solid
-    var(--border-gold);
-
-  border-radius: 14px;
-
-  background:
-    rgba(5, 8, 12, 0.96);
-
-  color:
-    var(--gold-light);
-
-  font-family:
-    Arial,
-    Helvetica,
-    sans-serif;
-
-  font-size: 0.86rem;
-
-  text-align: center;
-
-  box-shadow:
-    var(--shadow);
+  box-shadow: var(--shadow);
 
   opacity: 0;
 
-  pointer-events: none;
-
-  z-index: 1300;
+  transform:
+    translateY(26px)
+    scale(0.985);
 
   transition:
-    opacity 0.25s ease,
-    transform 0.25s ease;
-
+    opacity 0.8s ease,
+    transform 0.8s ease;
 }
 
-
-.secret-popup.show {
-
+.scene.is-visible .visual {
   opacity: 1;
 
   transform:
-    translate(-50%, 0);
+    translateY(0)
+    scale(1);
+}
 
+.visual img {
+  width: 100%;
+  height: auto;
+
+  object-fit: contain;
+
+  background: #050505;
+}
+
+.visual:not(.full-visual) img {
+  max-height: 84svh;
+}
+
+.visual.visual-missing {
+  display: none;
 }
 
 
 /* =========================================================
-   CONTENU DU CHAPITRE
+   COUVERTURE
 ========================================================= */
 
-#chapterContent {
+.scene-cover {
+  max-width: none;
 
+  min-height: 100svh;
+
+  padding: 0;
+}
+
+.scene-cover::after {
+  display: none;
+}
+
+.full-visual {
+  margin: 0;
+
+  min-height: 100svh;
+
+  border: none;
+  border-radius: 0;
+
+  box-shadow: none;
+}
+
+.full-visual img {
   width: 100%;
+  height: 100svh;
+  min-height: 100svh;
 
+  object-fit: cover;
 }
 
-
-.scene {
-
-  position: relative;
-
-  width: 100%;
-
-  min-height: 100vh;
-
-  display: flex;
-
-  align-items: center;
-
-  justify-content: center;
-
-  padding:
-    96px
-    20px
-    68px;
-
-  overflow: hidden;
-
-}
-
-
-.scene + .scene {
-
-  border-top:
-    1px solid
-    rgba(255, 255, 255, 0.025);
-
-}
-
-
-.scene-content {
-
-  position: relative;
+.chapter-title-overlay {
+  position: absolute;
+  inset: 0;
 
   z-index: 3;
 
-  width:
-    min(100%, 760px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
 
-  margin: 0 auto;
+  text-align: center;
 
+  padding:
+    90px
+    24px
+    calc(
+      60px +
+      env(safe-area-inset-bottom)
+    );
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.05),
+      rgba(0, 0, 0, 0.14) 45%,
+      rgba(0, 0, 0, 0.84) 100%
+    );
 }
 
+.chapter-number {
+  margin-bottom: 12px;
 
-.reading {
+  color: var(--gold-soft);
 
-  width:
-    min(100%, 720px);
+  text-transform: uppercase;
 
+  letter-spacing: 0.36em;
+
+  font-size: 13px;
+}
+
+.chapter-title-overlay h1 {
+  max-width: 700px;
+
+  margin-bottom: 18px;
+
+  font-size:
+    clamp(
+      34px,
+      9vw,
+      70px
+    );
+
+  line-height: 1;
+
+  font-weight: 400;
+
+  text-shadow:
+    0 4px 18px rgba(0, 0, 0, 0.9);
+}
+
+.chapter-title-overlay .emphasis {
+  margin-bottom: 28px;
 }
 
 
@@ -626,290 +454,112 @@ button {
    TEXTE
 ========================================================= */
 
-.reading p {
+.text-block {
+  width: 100%;
+
+  margin: 0 auto;
+
+  padding:
+    4px
+    4px
+    0;
+
+  opacity: 0;
+
+  transform:
+    translateY(20px);
+
+  transition:
+    opacity 0.9s ease 0.18s,
+    transform 0.9s ease 0.18s;
+}
+
+.scene.is-visible .text-block {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.text-block p {
+  max-width: 720px;
 
   margin:
-    0
-    0
-    1.3em;
+    0 auto
+    18px;
+
+  color: var(--text);
 
   font-size:
     clamp(
-      1.08rem,
-      2.7vw,
-      1.24rem
+      18px,
+      4.7vw,
+      24px
     );
 
-  line-height: 1.75;
+  line-height: 1.72;
 
-  color:
-    var(--text);
-
+  text-wrap: pretty;
 }
 
-
-.reading p:last-child {
-
+.text-block p:last-child {
   margin-bottom: 0;
-
-}
-
-
-.emphasis {
-
-  margin:
-    28px
-    0 !important;
-
-  padding:
-    16px
-    18px;
-
-  border-left:
-    2px solid
-    var(--gold);
-
-  background:
-    rgba(199, 167, 104, 0.04);
-
-  color:
-    var(--gold-light) !important;
-
-  font-style: italic;
-
 }
 
 
 /* =========================================================
-   SCÈNE D'OUVERTURE
+   EMPHASES
 ========================================================= */
 
-.hero-scene {
-
-  min-height: 100svh;
-
-  padding: 0;
-
-}
-
-
-.hero-scene .scene-image {
-
-  position: absolute;
-
-  inset: 0;
-
-  width: 100%;
-
-  height: 100%;
-
-  object-fit: cover;
-
-}
-
-
-.overlay-dark {
-
-  position: absolute;
-
-  inset: 0;
-
-  z-index: 1;
-
-  background:
-    linear-gradient(
-      180deg,
-      rgba(0, 0, 0, 0.18) 0%,
-      rgba(0, 0, 0, 0.48) 55%,
-      rgba(4, 6, 9, 0.92) 100%
-    );
-
-}
-
-
-.hero-content {
-
-  min-height: 100svh;
-
-  display: flex;
-
-  flex-direction: column;
-
-  align-items: center;
-
-  justify-content: flex-end;
-
-  padding:
-    80px
-    20px
-    11vh;
+.emphasis {
+  color: var(--gold-soft) !important;
 
   text-align: center;
 
+  font-style: italic;
+
+  letter-spacing: 0.02em;
 }
 
+.impact-text {
+  margin-top: 26px !important;
+  margin-bottom: 26px !important;
 
-.eyebrow {
+  color: #fff !important;
 
-  margin:
-    0
-    0
-    12px !important;
-
-  font-family:
-    Arial,
-    Helvetica,
-    sans-serif;
+  text-align: center;
 
   font-size:
-    0.76rem !important;
+    clamp(
+      24px,
+      7vw,
+      38px
+    ) !important;
 
-  letter-spacing: 0.22em;
+  line-height: 1.25 !important;
+
+  text-shadow:
+    0 0 22px rgba(255, 255, 255, 0.08);
+}
+
+.name-reveal {
+  margin:
+    38px auto !important;
+
+  color: var(--gold-soft) !important;
+
+  text-align: center;
 
   text-transform: uppercase;
 
-  color:
-    var(--gold-light) !important;
-
-}
-
-
-.hero-content h1 {
-
-  margin: 0;
-
-  max-width: 760px;
+  letter-spacing: 0.1em;
 
   font-size:
     clamp(
-      2.4rem,
-      8vw,
-      4.7rem
-    );
+      32px,
+      10vw,
+      62px
+    ) !important;
 
-  line-height: 1.04;
-
-  font-weight: 500;
-
-  color: white;
-
-  text-shadow:
-    0 6px 24px
-    rgba(0, 0, 0, 0.6);
-
-}
-
-
-.hero-content h2 {
-
-  margin:
-    10px
-    0
-    26px;
-
-  font-size:
-    clamp(
-      1.05rem,
-      3.5vw,
-      1.45rem
-    );
-
-  font-weight: 400;
-
-  color:
-    var(--gold-light);
-
-}
-
-
-/* =========================================================
-   VISUELS DANS LES SCÈNES
-========================================================= */
-
-.visual-scene {
-
-  display: block;
-
-  min-height: auto;
-
-  padding:
-    0
-    0
-    70px;
-
-}
-
-
-.visual-scene .scene-image {
-
-  position: relative;
-
-  display: block;
-
-  width: 100%;
-
-  max-height: 88vh;
-
-  object-fit: cover;
-
-  object-position: center;
-
-}
-
-
-.visual-scene .overlay-gradient {
-
-  display: none;
-
-}
-
-
-.visual-scene .scene-content {
-
-  margin:
-    -58px
-    auto
-    0;
-
-  position: relative;
-
-  z-index: 4;
-
-}
-
-
-/* =========================================================
-   CARTE DE TEXTE SOUS VISUEL
-========================================================= */
-
-.bottom-card {
-
-  width:
-    min(calc(100% - 28px), 720px);
-
-  padding:
-    28px
-    24px
-    34px;
-
-  border:
-    1px solid
-    var(--border-soft);
-
-  border-radius:
-    20px;
-
-  background:
-    linear-gradient(
-      180deg,
-      rgba(10, 13, 18, 0.94),
-      rgba(6, 8, 12, 0.98)
-    );
-
-  box-shadow:
-    0 16px 40px
-    rgba(0, 0, 0, 0.4);
-
+  line-height: 1.1 !important;
 }
 
 
@@ -918,164 +568,70 @@ button {
 ========================================================= */
 
 .dialogue {
-
-  margin:
-    0
-    0
-    18px;
-
-  padding:
-    14px
-    16px;
-
-  border-left:
-    2px solid
-    rgba(199, 167, 104, 0.55);
-
-  background:
-    linear-gradient(
-      90deg,
-      rgba(199, 167, 104, 0.055),
-      rgba(255, 255, 255, 0.01)
-    );
-
+  padding-top: 6px;
 }
-
 
 .dialogue p {
+  padding-left: 16px;
 
-  margin: 0;
+  border-left:
+    2px solid rgba(232, 189, 112, 0.35);
 
-  font-size:
-    clamp(
-      1.05rem,
-      2.5vw,
-      1.19rem
-    );
-
-  color:
-    #f4f1ea;
-
-}
-
-
-.speaker {
-
-  display: block;
-
-  margin-bottom: 5px;
-
-  font-family:
-    Arial,
-    Helvetica,
-    sans-serif;
-
-  font-size:
-    0.7rem;
-
-  letter-spacing: 0.16em;
-
-  text-transform: uppercase;
-
-  color:
-    var(--gold);
-
-}
-
-
-.important-dialogue {
-
-  border-left-color:
-    var(--red);
-
-  background:
-    linear-gradient(
-      90deg,
-      rgba(182, 109, 109, 0.07),
-      rgba(255, 255, 255, 0.01)
-    );
-
-}
-
-
-.important-dialogue .speaker {
-
-  color:
-    #d79b9b;
-
+  color: #f9f3ed;
 }
 
 
 /* =========================================================
-   BOUTONS CONTINUER
+   BOUTONS
 ========================================================= */
 
-.continue-btn {
-
-  min-width: 180px;
-
-  min-height: 50px;
-
-  margin:
-    30px
-    auto
-    0;
+.continue-btn,
+.chapter-btn,
+.menu-action,
+.interaction-btn {
+  min-height: 48px;
 
   padding:
-    13px
-    22px;
+    14px
+    24px;
 
-  display: flex;
-
-  align-items: center;
-
-  justify-content: center;
+  border-radius: 999px;
 
   border:
-    1px solid
-    var(--border-gold);
-
-  border-radius:
-    999px;
+    1px solid rgba(232, 189, 112, 0.55);
 
   background:
-    rgba(199, 167, 104, 0.08);
+    linear-gradient(
+      180deg,
+      rgba(30, 25, 18, 0.93),
+      rgba(10, 10, 12, 0.97)
+    );
 
-  color:
-    #fff7e7;
-
-  font-family:
-    Arial,
-    Helvetica,
-    sans-serif;
-
-  font-size: 0.9rem;
-
-  text-align: center;
+  color: var(--gold-soft);
 
   text-decoration: none;
+  text-align: center;
+
+  letter-spacing: 0.06em;
 
   cursor: pointer;
 
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.45),
+    inset 0 0 18px rgba(232, 189, 112, 0.05);
+
   transition:
     transform 0.2s ease,
+    border-color 0.2s ease,
     background 0.2s ease,
-    border-color 0.2s ease;
-
+    box-shadow 0.2s ease;
 }
 
-
-.continue-btn:hover {
-
-  transform:
-    translateY(-2px);
-
-  background:
-    rgba(199, 167, 104, 0.14);
-
-  border-color:
-    rgba(199, 167, 104, 0.62);
-
+.continue-btn:active,
+.chapter-btn:active,
+.menu-action:active,
+.interaction-btn:active {
+  transform: scale(0.97);
 }
 
 
@@ -1083,737 +639,155 @@ button {
    INTERACTIONS
 ========================================================= */
 
-.interaction-card {
+.interaction-scene {
+  text-align: center;
+}
+
+.interaction-btn {
+  display: inline-flex;
+
+  align-self: center;
+  justify-content: center;
+
+  width: min(100%, 360px);
 
   margin:
-    30px
+    28px auto
     0;
-
-  padding:
-    20px;
-
-  border:
-    1px solid
-    var(--border);
-
-  border-radius:
-    16px;
-
-  background:
-    rgba(8, 11, 16, 0.72);
-
 }
 
+.observation-buttons {
+  width: 100%;
+  max-width: 440px;
 
-.interaction-card.compact {
-
-  padding:
-    16px;
-
-}
-
-
-.interaction-card h3 {
-
-  margin:
-    0
-    0
-    12px;
-
-  font-family:
-    Arial,
-    Helvetica,
-    sans-serif;
-
-  font-size:
-    0.88rem;
-
-  letter-spacing: 0.11em;
-
-  text-transform: uppercase;
-
-  color:
-    var(--gold-light);
-
-}
-
-
-.interaction-hint {
-
-  margin:
-    0
-    0
-    16px !important;
-
-  font-family:
-    Arial,
-    Helvetica,
-    sans-serif;
-
-  font-size:
-    0.87rem !important;
-
-  color:
-    var(--muted) !important;
-
-}
-
-
-/* =========================================================
-   GRILLES
-========================================================= */
-
-.button-grid {
+  margin: 20px auto 0;
 
   display: grid;
-
-  gap: 10px;
-
+  gap: 12px;
 }
 
-
-.button-grid.one {
-
-  grid-template-columns: 1fr;
-
-}
-
-
-.button-grid.two {
-
-  grid-template-columns:
-    repeat(2, 1fr);
-
-}
-
-
-.button-grid.three {
-
-  grid-template-columns:
-    repeat(3, 1fr);
-
+.observation-buttons .interaction-btn {
+  margin: 0;
+  width: 100%;
 }
 
 
 /* =========================================================
-   BOUTONS D'INTERACTION
+   BOÎTES DE RÉVÉLATION
 ========================================================= */
 
-.observe-btn,
-.choice-btn {
+.reveal-box {
+  width: 100%;
 
-  min-height: 46px;
+  max-width: 620px;
+
+  margin:
+    24px auto
+    0;
 
   padding:
-    11px
-    14px;
+    20px;
+
+  border-radius: 18px;
 
   border:
-    1px solid
-    var(--border);
-
-  border-radius:
-    999px;
+    1px solid rgba(232, 189, 112, 0.22);
 
   background:
-    rgba(255, 255, 255, 0.025);
+    rgba(15, 13, 11, 0.84);
 
-  color:
-    var(--text);
-
-  font-family:
-    Arial,
-    Helvetica,
-    sans-serif;
-
-  font-size:
-    0.86rem;
-
-  cursor: pointer;
-
-  transition:
-    transform 0.18s ease,
-    background 0.18s ease,
-    border-color 0.18s ease;
-
-}
-
-
-.observe-btn:hover,
-.choice-btn:hover {
+  opacity: 0;
 
   transform:
-    translateY(-1px);
+    translateY(14px)
+    scale(0.98);
 
-  border-color:
-    var(--border-gold);
+  pointer-events: none;
 
-  background:
-    rgba(199, 167, 104, 0.06);
-
+  transition:
+    opacity 0.55s ease,
+    transform 0.55s ease;
 }
 
+.reveal-box.open {
+  opacity: 1;
 
-.observe-btn.selected,
-.choice-btn.selected {
+  transform:
+    translateY(0)
+    scale(1);
 
-  border-color:
-    rgba(199, 167, 104, 0.6);
-
-  background:
-    rgba(199, 167, 104, 0.1);
-
-  color:
-    var(--gold-light);
-
+  pointer-events: auto;
 }
 
+.reveal-box p {
+  margin-bottom: 14px;
 
-/* =========================================================
-   RÉSULTATS
-========================================================= */
-
-.result-box {
-
-  display: none;
-
-  margin-top:
-    16px;
-
-  padding:
-    15px
-    16px;
-
-  border-left:
-    2px solid
-    rgba(199, 167, 104, 0.5);
-
-  background:
-    rgba(255, 255, 255, 0.025);
-
-  color:
-    var(--text-soft);
-
-  font-family:
-    Arial,
-    Helvetica,
-    sans-serif;
+  color: var(--text);
 
   font-size:
-    0.88rem;
+    clamp(
+      17px,
+      4.4vw,
+      22px
+    );
 
-  line-height: 1.6;
-
+  line-height: 1.65;
 }
 
-
-.result-box.visible {
-
-  display: block;
-
-  animation:
-    revealResult 0.35s ease;
-
-}
-
-
-.result-box strong {
-
-  color:
-    var(--gold-light);
-
+.reveal-box p:last-child {
+  margin-bottom: 0;
 }
 
 
 /* =========================================================
-   SECRET DÉCOUVERT
+   AMBIANCES CHAPITRE 5
 ========================================================= */
 
-.secret-discovery {
-
-  margin-top:
-    16px;
-
-  padding:
-    14px
-    16px;
-
-  border:
-    1px solid
-    var(--border-gold);
-
-  border-radius:
-    12px;
-
+.nexus-scene {
   background:
-    rgba(199, 167, 104, 0.05);
-
-  color:
-    var(--gold-light);
-
+    radial-gradient(
+      circle at 50% 30%,
+      rgba(130, 214, 168, 0.07),
+      rgba(232, 189, 112, 0.05),
+      transparent 62%
+    );
 }
 
-
-/* =========================================================
-   POINTS DE VUE
-========================================================= */
-
-.viewpoint-card {
-
-  border-color:
-    rgba(127, 166, 201, 0.24);
-
-}
-
-
-.viewpoint-section {
-
-  margin:
-    30px
-    0;
-
-  padding:
-    20px;
-
-  border:
-    1px solid
-    var(--border);
-
-  border-radius:
-    16px;
-
+.investigation-scene {
   background:
-    rgba(7, 10, 15, 0.66);
-
+    radial-gradient(
+      circle at 50% 20%,
+      rgba(114, 205, 248, 0.08),
+      transparent 58%
+    );
 }
 
-
-.viewpoint-section[hidden] {
-
-  display: none;
-
-}
-
-
-.viewpoint-title {
-
-  margin:
-    0
-    0
-    22px;
-
-  font-family:
-    Arial,
-    Helvetica,
-    sans-serif;
-
-  font-size:
-    0.76rem;
-
-  letter-spacing:
-    0.16em;
-
-  text-transform: uppercase;
-
-  color:
-    var(--blue-light);
-
-}
-
-
-/* =========================================================
-   IMAGE INTERNE
-========================================================= */
-
-.scene-inline-visual {
-
-  margin:
-    0
-    0
-    24px;
-
-  text-align: center;
-
-}
-
-
-.inline-image {
-
-  display: block;
-
-  width:
-    min(100%, 500px);
-
-  margin: 0 auto;
-
-  max-height: 78vh;
-
-  object-fit: contain;
-
-  border-radius:
-    14px;
-
-  box-shadow:
-    var(--shadow);
-
-}
-
-
-/* =========================================================
-   SUIVI DU PHÉNIX
-========================================================= */
-
-.tracking-panel {
-
-  margin:
-    28px
-    0;
-
-  padding:
-    16px;
-
-  border:
-    1px solid
-    rgba(127, 166, 201, 0.22);
-
-  border-radius:
-    12px;
-
+.danger-scene {
   background:
-    rgba(5, 9, 13, 0.78);
-
-  font-family:
-    "Courier New",
-    monospace;
-
+    radial-gradient(
+      circle at center,
+      rgba(128, 35, 42, 0.16),
+      transparent 60%
+    );
 }
 
-
-.tracking-title {
-
-  margin-bottom:
-    14px;
-
-  color:
-    var(--blue-light);
-
-  font-size:
-    0.76rem;
-
-  letter-spacing:
-    0.14em;
-
-}
-
-
-.tracking-row {
-
-  display: flex;
-
-  justify-content: space-between;
-
-  gap: 14px;
-
-  padding:
-    8px
-    0;
-
-  border-bottom:
-    1px solid
-    rgba(255, 255, 255, 0.05);
-
-  font-size:
-    0.8rem;
-
-}
-
-
-.tracking-row:last-child {
-
-  border-bottom: none;
-
-}
-
-
-.tracking-row span {
-
-  color:
-    var(--muted);
-
-}
-
-
-.tracking-row strong {
-
-  color:
-    var(--green);
-
-  font-weight: 600;
-
-}
-
-
-/* =========================================================
-   SECRET PHÉNIX
-========================================================= */
-
-.hidden-secret {
-
-  position: absolute;
-
-  z-index: 6;
-
-  border: none;
-
-  background: transparent;
-
-  cursor: pointer;
-
-}
-
-
-.phoenix-secret {
-
-  top: 12%;
-
-  right: 14%;
-
-  width: 42px;
-
-  height: 42px;
-
-  border-radius: 50%;
-
-  color:
-    rgba(255, 244, 208, 0.36);
-
-  font-size: 1.1rem;
-
-  animation:
-    secretPulse
-    2.4s
-    ease-in-out
-    infinite;
-
-}
-
-
-.phoenix-secret.found {
-
-  color:
-    var(--gold-light);
-
-  text-shadow:
-    0 0 12px
-    rgba(199, 167, 104, 0.7);
-
-}
-
-
-/* =========================================================
-   APPEL INTERCEPTÉ
-========================================================= */
-
-.audio-card {
-
-  border-color:
-    rgba(127, 166, 201, 0.2);
-
-}
-
-
-.call-transcript {
-
-  display: none;
-
-  margin-top:
-    16px;
-
-  padding:
-    15px;
-
-  border:
-    1px solid
-    rgba(127, 166, 201, 0.18);
-
-  border-radius:
-    10px;
-
+.unity-scene {
   background:
-    rgba(2, 5, 8, 0.86);
-
-  font-family:
-    "Courier New",
-    monospace;
-
+    radial-gradient(
+      circle at center,
+      rgba(232, 189, 112, 0.09),
+      transparent 62%
+    );
 }
 
-
-.call-transcript.visible {
-
-  display: block;
-
-}
-
-
-.call-line {
-
-  margin:
-    0
-    0
-    7px !important;
-
-  font-size:
-    0.86rem !important;
-
-  color:
-    #a9bdc8 !important;
-
-}
-
-
-/* =========================================================
-   PAPILLON
-========================================================= */
-
-.butterfly-card {
-
-  text-align: center;
-
-}
-
-
-.butterfly-btn {
-
-  width: 70px;
-
-  height: 70px;
-
-  border:
-    1px solid
-    var(--border-gold);
-
-  border-radius: 50%;
-
+.mark-scene {
   background:
-    rgba(199, 167, 104, 0.04);
-
-  font-size: 2.2rem;
-
-  cursor: pointer;
-
-  animation:
-    butterflyFloat
-    2.5s
-    ease-in-out
-    infinite;
-
-}
-
-
-.butterfly-btn.opened {
-
-  background:
-    rgba(199, 167, 104, 0.08);
-
-  box-shadow:
-    0 0 16px
-    rgba(199, 167, 104, 0.16);
-
-}
-
-
-/* =========================================================
-   PANNEAU DES LIENS
-========================================================= */
-
-.links-panel {
-
-  margin:
-    38px
-    0
-    0;
-
-  padding:
-    20px;
-
-  border:
-    1px solid
-    var(--border);
-
-  border-radius:
-    16px;
-
-  background:
-    rgba(7, 10, 14, 0.8);
-
-  text-align: center;
-
-}
-
-
-.links-panel h3 {
-
-  margin:
-    0
-    0
-    18px;
-
-  font-family:
-    Arial,
-    Helvetica,
-    sans-serif;
-
-  font-size:
-    0.82rem;
-
-  letter-spacing:
-    0.13em;
-
-  text-transform: uppercase;
-
-  color:
-    var(--gold-light);
-
-}
-
-
-.links-panel div {
-
-  margin:
-    7px
-    0;
-
-  padding:
-    8px
-    10px;
-
-  font-family:
-    Arial,
-    Helvetica,
-    sans-serif;
-
-  font-size:
-    0.86rem;
-
-  color:
-    var(--text-soft);
-
-}
-
-
-.links-panel .anomaly {
-
-  margin-top:
-    14px;
-
-  border-top:
-    1px solid
-    rgba(182, 109, 109, 0.22);
-
-  color:
-    #d59b9b;
-
+    radial-gradient(
+      circle at 50% 35%,
+      rgba(170, 140, 255, 0.11),
+      rgba(114, 205, 248, 0.05),
+      transparent 62%
+    );
 }
 
 
@@ -1821,100 +795,305 @@ button {
    FIN DU CHAPITRE
 ========================================================= */
 
-.final-scene {
-
-  padding-bottom:
-    80px;
-
-}
-
-
-.final-line {
-
-  margin:
-    36px
-    0 !important;
-
-  padding:
-    22px
-    16px;
+.chapter-end {
+  min-height: 100svh;
 
   text-align: center;
 
-  color:
-    var(--gold-light) !important;
+  padding-bottom:
+    calc(
+      60px +
+      env(safe-area-inset-bottom)
+    );
+}
+
+.end-symbol {
+  margin:
+    36px auto
+    30px;
+
+  color: var(--gold-soft);
 
   font-size:
     clamp(
-      1.25rem,
-      4vw,
-      1.55rem
-    ) !important;
+      72px,
+      20vw,
+      140px
+    );
 
+  line-height: 1;
+
+  text-shadow:
+    0 0 34px rgba(232, 189, 112, 0.28);
+
+  animation:
+    subtleFloat
+    4s
+    ease-in-out
+    infinite;
 }
 
-
-.chapter-end {
-
-  margin-top:
-    46px;
-
-  padding-top:
-    28px;
-
-  border-top:
-    1px solid
-    var(--border);
-
-  text-align: center;
-
-}
-
-
-.chapter-end h2 {
+.end-actions {
+  width: 100%;
+  max-width: 480px;
 
   margin:
-    0
-    0
-    22px;
+    44px auto
+    0;
 
-  font-weight: 500;
+  display: grid;
+  gap: 14px;
+}
 
-  color:
-    var(--gold-light);
+.chapter-btn {
+  display: block;
+  width: 100%;
+}
 
+.chapter-btn.primary {
+  background:
+    linear-gradient(
+      180deg,
+      rgba(232, 189, 112, 0.22),
+      rgba(50, 37, 18, 0.86)
+    );
+
+  border-color:
+    rgba(232, 189, 112, 0.8);
+
+  color: #fff;
 }
 
 
 /* =========================================================
-   APPARITION PROGRESSIVE
+   POPUP SECRET
 ========================================================= */
 
-.scene p,
-.scene .dialogue,
-.scene .interaction-card,
-.scene .tracking-panel,
-.scene .links-panel {
+.secret-popup {
+  position: fixed;
+  inset: 0;
+
+  z-index: 9500;
+
+  pointer-events: none;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 30px;
 
   opacity: 0;
 
-  transform:
-    translateY(10px);
+  transition:
+    opacity 0.35s ease;
+}
+
+.secret-popup.show {
+  opacity: 1;
+}
+
+.secret-popup::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background:
+    rgba(0, 0, 0, 0.62);
+
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.secret-popup-inner {
+  position: relative;
+
+  min-width: 260px;
+
+  padding:
+    28px
+    24px;
+
+  border-radius: 22px;
+
+  border:
+    1px solid rgba(232, 189, 112, 0.65);
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(26, 20, 13, 0.97),
+      rgba(8, 8, 10, 0.98)
+    );
+
+  color: var(--gold-soft);
+
+  text-align: center;
+
+  letter-spacing: 0.14em;
+
+  box-shadow:
+    0 20px 80px rgba(0, 0, 0, 0.75),
+    0 0 30px rgba(232, 189, 112, 0.09);
+
+  transform: scale(0.9);
 
   transition:
-    opacity 0.55s ease,
-    transform 0.55s ease;
+    transform 0.35s ease;
+}
 
+.secret-popup.show .secret-popup-inner {
+  transform: scale(1);
+}
+
+.secret-symbol {
+  display: block;
+
+  margin-bottom: 12px;
+
+  font-size: 46px;
 }
 
 
-.scene .paragraph-visible {
+/* =========================================================
+   MENU
+========================================================= */
 
+.chapter-menu {
+  position: fixed;
+  inset: 0;
+
+  z-index: 10000;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding:
+    30px
+    20px;
+
+  background:
+    rgba(0, 0, 0, 0.72);
+
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+
+  opacity: 0;
+  visibility: hidden;
+
+  transition:
+    opacity 0.35s ease,
+    visibility 0.35s ease;
+}
+
+.chapter-menu.open {
   opacity: 1;
+  visibility: visible;
+}
 
-  transform:
-    translateY(0);
+.chapter-menu-panel {
+  position: relative;
 
+  width: 100%;
+  max-width: 430px;
+
+  padding:
+    36px
+    24px
+    26px;
+
+  border-radius: 24px;
+
+  border:
+    1px solid rgba(255, 255, 255, 0.12);
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(23, 21, 20, 0.98),
+      rgba(6, 6, 7, 0.98)
+    );
+
+  box-shadow:
+    0 24px 80px rgba(0, 0, 0, 0.72);
+
+  text-align: center;
+}
+
+.chapter-menu-panel h2 {
+  margin-bottom: 8px;
+
+  color: var(--gold-soft);
+
+  font-size: 30px;
+
+  font-weight: 400;
+}
+
+.chapter-menu-panel > p {
+  margin-bottom: 28px;
+
+  color: var(--text-soft);
+}
+
+.menu-close {
+  position: absolute;
+
+  top: 10px;
+  right: 12px;
+
+  width: 42px;
+  height: 42px;
+
+  border: none;
+
+  background: transparent;
+
+  color: #fff;
+
+  font-size: 32px;
+
+  cursor: pointer;
+}
+
+.menu-action {
+  display: block;
+
+  width: 100%;
+
+  margin-top: 12px;
+}
+
+
+/* =========================================================
+   ÉTATS JAVASCRIPT
+========================================================= */
+
+.no-scroll {
+  overflow: hidden;
+}
+
+.sound-active {
+  color: var(--gold-soft);
+
+  border-color:
+    rgba(232, 189, 112, 0.55);
+
+  background:
+    rgba(60, 45, 20, 0.82);
+}
+
+.completed {
+  border-color:
+    var(--green) !important;
+
+  color:
+    var(--green-soft) !important;
+
+  background:
+    rgba(18, 49, 37, 0.78) !important;
 }
 
 
@@ -1922,68 +1101,18 @@ button {
    ANIMATIONS
 ========================================================= */
 
-@keyframes revealResult {
+@keyframes subtleFloat {
 
-  from {
-
-    opacity: 0;
-
-    transform:
-      translateY(5px);
-
-  }
-
-  to {
-
-    opacity: 1;
-
-    transform:
-      translateY(0);
-
-  }
-
-}
-
-
-@keyframes secretPulse {
-
-  0%,
-  100% {
-
-    opacity: 0.3;
-
-    transform:
-      scale(1);
-
+  0% {
+    transform: translateY(0);
   }
 
   50% {
-
-    opacity: 0.78;
-
-    transform:
-      scale(1.1);
-
+    transform: translateY(-4px);
   }
 
-}
-
-
-@keyframes butterflyFloat {
-
-  0%,
   100% {
-
-    transform:
-      translateY(0);
-
-  }
-
-  50% {
-
-    transform:
-      translateY(-6px);
-
+    transform: translateY(0);
   }
 
 }
@@ -1994,293 +1123,72 @@ button {
 ========================================================= */
 
 @media
-(max-width: 900px) {
+  (min-width: 700px) {
 
   .scene {
-
-    padding-left: 16px;
-
-    padding-right: 16px;
-
+    padding-left: 34px;
+    padding-right: 34px;
   }
 
-
-  .reading {
-
-    width: 100%;
-
-  }
-
-
-  .bottom-card {
-
-    width:
-      calc(100% - 24px);
-
+  .text-block {
+    padding-left: 22px;
+    padding-right: 22px;
   }
 
 }
 
 
 /* =========================================================
-   MOBILE
+   GRAND ÉCRAN
 ========================================================= */
 
 @media
-(max-width: 640px) {
+  (min-width: 1100px) {
 
-  .topbar {
-
-    grid-template-columns:
-      44px
-      1fr
-      44px;
-
-    padding:
-      0
-      8px;
-
+  .scene:not(.scene-cover) {
+    padding-top: 100px;
+    padding-bottom: 100px;
   }
 
-
-  .icon-btn {
-
-    width: 36px;
-
-    height: 36px;
-
+  .visual:not(.full-visual) {
+    max-width: 720px;
   }
 
-
-  .chapter-title {
-
-    font-size:
-      0.68rem;
-
-    letter-spacing:
-      0.15em;
-
-  }
-
-
-  .scene {
-
-    min-height: auto;
-
-    padding:
-      88px
-      14px
-      56px;
-
-  }
-
-
-  .hero-scene {
-
-    min-height:
-      100svh;
-
-    padding: 0;
-
-  }
-
-
-  .visual-scene {
-
-    padding:
-      0
-      0
-      56px;
-
-  }
-
-
-  .visual-scene .scene-image {
-
-    max-height:
-      72vh;
-
-  }
-
-
-  .visual-scene .scene-content {
-
-    margin-top:
-      -36px;
-
-  }
-
-
-  .bottom-card {
-
-    width:
-      calc(100% - 20px);
-
-    padding:
-      22px
-      16px
-      28px;
-
-    border-radius:
-      16px;
-
-  }
-
-
-  .reading p {
-
-    font-size:
-      1.06rem;
-
-  }
-
-
-  .dialogue {
-
-    padding:
-      13px
-      14px;
-
-  }
-
-
-  .dialogue p {
-
-    font-size:
-      1.04rem;
-
-  }
-
-
-  .interaction-card {
-
-    margin:
-      24px
-      0;
-
-    padding:
-      16px
-      14px;
-
-  }
-
-
-  .button-grid.two,
-  .button-grid.three {
-
-    grid-template-columns:
-      1fr;
-
-  }
-
-
-  .observe-btn,
-  .choice-btn {
-
-    width: 100%;
-
-  }
-
-
-  .continue-btn {
-
-    width: 100%;
-
-    max-width:
-      340px;
-
-  }
-
-
-  .viewpoint-section {
-
-    padding:
-      16px
-      14px;
-
-  }
-
-
-  .tracking-row {
-
-    flex-direction: column;
-
-    gap: 2px;
-
-  }
-
-
-  .phoenix-secret {
-
-    top: 8%;
-
-    right: 8%;
-
-  }
-
-
-  .secret-popup {
-
-    bottom: 16px;
-
-    width:
-      calc(100vw - 28px);
-
-    font-size:
-      0.8rem;
-
-  }
-
-
-  .menu-panel {
-
-    width:
-      90vw;
-
+  .text-block {
+    max-width: 760px;
   }
 
 }
 
 
 /* =========================================================
-   PETITS MOBILES
+   PETITS TÉLÉPHONES
 ========================================================= */
 
 @media
-(max-width: 390px) {
+  (max-width: 390px) {
 
-  .hero-content h1 {
-
-    font-size:
-      2.1rem;
-
+  .scene {
+    padding-left: 14px;
+    padding-right: 14px;
   }
 
-
-  .reading p {
-
-    font-size:
-      1.01rem;
-
+  .text-block p {
+    font-size: 17px;
+    line-height: 1.68;
   }
 
-
-  .interaction-card {
-
-    padding:
-      14px
-      12px;
-
+  .impact-text {
+    font-size: 26px !important;
   }
 
+  .chapter-controls {
+    right: 10px;
+  }
 
-  .bottom-card {
-
-    padding:
-      20px
-      14px
-      26px;
-
+  .control-btn {
+    width: 40px;
+    height: 40px;
   }
 
 }
@@ -2291,12 +1199,15 @@ button {
 ========================================================= */
 
 @media
-(prefers-reduced-motion: reduce) {
+  (prefers-reduced-motion: reduce) {
+
+  html {
+    scroll-behavior: auto;
+  }
 
   *,
   *::before,
   *::after {
-
     animation-duration:
       0.01ms !important;
 
@@ -2305,10 +1216,6 @@ button {
 
     transition-duration:
       0.01ms !important;
-
-    scroll-behavior:
-      auto !important;
-
   }
 
 }
