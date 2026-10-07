@@ -1,1 +1,4786 @@
+<!DOCTYPE html>
+<html lang="fr">
 
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+  >
+
+  <meta
+    name="theme-color"
+    content="#050505"
+  >
+
+  <title>
+    Chapitre 7 — L’incident de trop | La Société de l'Ombre
+  </title>
+
+  <link
+    rel="stylesheet"
+    href="css/chapitre7.css"
+  >
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     BARRE DE PROGRESSION
+===================================================== -->
+
+<div
+  class="progress-bar"
+  aria-hidden="true"
+>
+  <div
+    class="progress-fill"
+    id="progressFill"
+  ></div>
+</div>
+
+
+
+<!-- =====================================================
+     COMMANDES
+===================================================== -->
+
+<div class="chapter-controls">
+
+  <button
+    class="control-btn"
+    id="menuBtn"
+    aria-label="Ouvrir le menu"
+  >
+    ☰
+  </button>
+
+  <button
+    class="control-btn"
+    id="soundBtn"
+    aria-label="Activer ou désactiver le son"
+  >
+    ♫
+  </button>
+
+</div>
+
+
+
+<main
+  class="chapter"
+  id="chapter"
+>
+
+
+<!-- =====================================================
+     VISUEL 1
+     TITRE / HACIENDA FLORES
+===================================================== -->
+
+<section
+  class="scene scene-cover"
+  id="scene-1"
+>
+
+  <div
+    class="visual full-visual"
+    data-visual="1"
+  >
+
+    <img
+      src="images/chapitre7/Visuel-1.PNG"
+      alt="Chapitre 7 — L’incident de trop"
+      loading="eager"
+    >
+
+  </div>
+
+
+  <div class="chapter-title-overlay">
+
+    <p class="chapter-number">
+      Chapitre 7
+    </p>
+
+    <h1>
+      L’incident de trop
+    </h1>
+
+    <button
+      class="continue-btn"
+      data-next
+    >
+      Continuer
+    </button>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     SÉQUENCE 1
+     LA NUIT À L'HACIENDA FLORES
+===================================================== -->
+
+<section
+  class="scene"
+  id="scene-2"
+>
+
+  <div class="location-card">
+
+    <span>
+      Hacienda Flores
+    </span>
+
+    <strong>
+      Nuit
+    </strong>
+
+  </div>
+
+
+  <div class="text-block">
+
+    <p>
+      La nuit est calme
+      à l’hacienda Flores.
+    </p>
+
+    <p class="impact-text">
+      Trop calme.
+    </p>
+
+    <p>
+      Hale accompagne Anna
+      jusqu’à sa chambre.
+    </p>
+
+    <p>
+      Depuis la tentative d’enlèvement,
+      les procédures de sécurité
+      ont encore été renforcées.
+    </p>
+
+    <p>
+      Caméras.
+    </p>
+
+    <p>
+      Capteurs.
+    </p>
+
+    <p>
+      Patrouilles.
+    </p>
+
+    <p>
+      Contrôle biométrique.
+    </p>
+
+    <p class="emphasis">
+      Aucun accès ne devrait être possible
+      sans autorisation.
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     INTERACTION 1
+     OBSERVER LA SÉCURITÉ
+===================================================== -->
+
+<section
+  class="scene investigation-scene interaction-scene"
+  id="scene-3"
+>
+
+  <div
+    class="visual interactive-visual"
+    data-visual="1"
+  >
+    <img
+      src="images/chapitre7/Visuel-1.PNG"
+      alt="Anna et Hale dans les couloirs sécurisés de l'hacienda Flores"
+      loading="lazy"
+    >
+  </div>
+
+
+  <div class="text-block">
+
+    <p>
+      En apparence,
+      tout est sous contrôle.
+    </p>
+
+    <p>
+      Pourtant,
+      quelque chose ne va pas.
+    </p>
+
+  </div>
+
+
+  <div class="observation-buttons">
+
+    <button
+      class="interaction-btn security-observe-trigger"
+      data-security-observe="cameras"
+    >
+      Observer les caméras
+    </button>
+
+    <button
+      class="interaction-btn security-observe-trigger"
+      data-security-observe="sensors"
+    >
+      Observer les capteurs
+    </button>
+
+    <button
+      class="interaction-btn security-observe-trigger"
+      data-security-observe="patrols"
+    >
+      Observer les patrouilles
+    </button>
+
+    <button
+      class="interaction-btn security-observe-trigger"
+      data-security-observe="biometric"
+    >
+      Observer la biométrie
+    </button>
+
+  </div>
+
+
+  <div
+    class="reveal-box"
+    id="securityObserveReveal"
+  >
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     VISUEL 2
+     ALERTE HALE
+===================================================== -->
+
+<section
+  class="scene danger-scene interaction-scene"
+  id="scene-4"
+>
+
+  <div
+    class="visual interactive-visual"
+    data-visual="2"
+  >
+    <img
+      src="images/chapitre7/Visuel-2.PNG"
+      alt="Hale reçoit une alerte silencieuse d'intrusion interne"
+      loading="lazy"
+    >
+  </div>
+
+
+  <div class="text-block dialogue">
+
+    <p>
+      Hale s’immobilise.
+    </p>
+
+    <p>
+      Anna le remarque immédiatement.
+    </p>
+
+    <p>
+      — Qu’est-ce qu’il y a ?
+    </p>
+
+    <p>
+      Il ne répond pas.
+    </p>
+
+    <p>
+      Sa main vient instinctivement
+      se poser contre son oreille.
+    </p>
+
+    <p>
+      Aucun signal.
+    </p>
+
+    <p>
+      Puis une alerte silencieuse
+      apparaît sur son dispositif personnel.
+    </p>
+
+  </div>
+
+
+  <button
+    class="interaction-btn"
+    id="internalAlertTrigger"
+  >
+    Lire l’alerte
+  </button>
+
+
+  <div
+    class="reveal-box"
+    id="internalAlertReveal"
+  >
+
+    <p class="impact-text">
+      INTRUSION INTERNE
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<section
+  class="scene danger-scene"
+  id="scene-5"
+>
+
+  <div class="text-block dialogue">
+
+    <p>
+      Hale se retourne brusquement.
+    </p>
+
+    <p>
+      — Anna,
+      derrière moi.
+    </p>
+
+    <p>
+      — Hale…
+    </p>
+
+    <p class="impact-text">
+      — Maintenant.
+    </p>
+
+    <p>
+      Le ton ne permet
+      aucune discussion.
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     HOPE REÇOIT LE SIGNAL
+===================================================== -->
+
+<section
+  class="scene investigation-scene"
+  id="scene-6"
+>
+
+  <div class="text-block">
+
+    <p>
+      À quelques kilomètres de là,
+      Hope reçoit elle aussi
+      une alerte.
+    </p>
+
+    <p>
+      Pas celle du système
+      de sécurité de l’hacienda Flores.
+    </p>
+
+    <p>
+      Une autre.
+    </p>
+
+    <p>
+      Plus ancienne.
+    </p>
+
+    <p class="emphasis">
+      Réservée aux Sentinelles.
+    </p>
+
+    <p>
+      Le signal de Hale.
+    </p>
+
+    <p>
+      Hope ne perd pas une seconde.
+    </p>
+
+    <p>
+      Elle active son Airfly
+      et quitte immédiatement
+      l’hacienda Awake.
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     VISUEL 3
+     INTRUSION ORGANISÉE
+===================================================== -->
+
+<section
+  class="scene danger-scene interaction-scene"
+  id="scene-7"
+>
+
+  <div
+    class="visual interactive-visual"
+    data-visual="3"
+  >
+    <img
+      src="images/chapitre7/Visuel-3.PNG"
+      alt="Des silhouettes progressent dans l'hacienda Flores en utilisant les angles morts"
+      loading="lazy"
+    >
+  </div>
+
+
+  <div class="text-block">
+
+    <p>
+      À l’intérieur de la propriété Flores,
+      plusieurs silhouettes progressent
+      avec une précision inquiétante.
+    </p>
+
+    <p>
+      Elles ne cherchent pas
+      à éviter les systèmes de sécurité.
+    </p>
+
+    <p class="impact-text">
+      Elles savent déjà où ils sont.
+    </p>
+
+  </div>
+
+
+  <div class="observation-buttons">
+
+    <button
+      class="interaction-btn intrusion-trigger"
+      data-intrusion="angles"
+    >
+      Angles morts
+    </button>
+
+    <button
+      class="interaction-btn intrusion-trigger"
+      data-intrusion="procedures"
+    >
+      Procédures
+    </button>
+
+    <button
+      class="interaction-btn intrusion-trigger"
+      data-intrusion="rotations"
+    >
+      Rotations
+    </button>
+
+    <button
+      class="interaction-btn intrusion-trigger"
+      data-intrusion="internal"
+    >
+      Accès interne
+    </button>
+
+  </div>
+
+
+  <div
+    class="reveal-box"
+    id="intrusionReveal"
+  >
+  </div>
+
+</section>
+
+
+
+<section
+  class="scene danger-scene"
+  id="scene-8"
+>
+
+  <div class="text-block">
+
+    <p>
+      Elles connaissent
+      les angles morts.
+    </p>
+
+    <p>
+      Les procédures.
+    </p>
+
+    <p>
+      Les temps de rotation
+      des équipes.
+    </p>
+
+    <p>
+      Hale comprend immédiatement.
+    </p>
+
+    <p class="impact-text">
+      Ce n’est pas une intrusion improvisée.
+    </p>
+
+    <p class="emphasis">
+      Quelqu’un leur a fourni
+      les informations nécessaires.
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     ANNA DANS SA CHAMBRE
+===================================================== -->
+
+<section
+  class="scene danger-scene"
+  id="scene-9"
+>
+
+  <div class="text-block dialogue">
+
+    <p>
+      Hale pousse Anna
+      dans sa chambre
+      et verrouille la porte.
+    </p>
+
+    <p>
+      — Reste ici.
+    </p>
+
+    <p>
+      — Et toi ?
+    </p>
+
+    <p>
+      — Je reste avec toi.
+    </p>
+
+    <p>
+      Une première détonation
+      retentit dans le couloir.
+    </p>
+
+    <p>
+      Puis une seconde.
+    </p>
+
+    <p>
+      La porte blindée
+      encaisse le choc.
+    </p>
+
+    <p>
+      Anna pâlit.
+    </p>
+
+    <p>
+      — Ils viennent pour moi ?
+    </p>
+
+    <p class="emphasis">
+      Hale ne répond pas.
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     VISUEL 4
+     AIRFLY
+===================================================== -->
+
+<section
+  class="scene danger-scene interaction-scene"
+  id="scene-10"
+>
+
+  <div
+    class="visual interactive-visual"
+    data-visual="4"
+  >
+    <img
+      src="images/chapitre7/Visuel-4.PNG"
+      alt="Hope arrive en Airfly près de la chambre d'Anna"
+      loading="lazy"
+    >
+  </div>
+
+
+  <div class="text-block">
+
+    <p>
+      À l’extérieur,
+      Hope arrive au niveau
+      de la propriété.
+    </p>
+
+    <p>
+      Elle n’essaie même pas
+      d’entrer par les accès habituels.
+    </p>
+
+    <p>
+      L’Airfly la dépose
+      à proximité de l’étage
+      où se trouve la chambre d’Anna.
+    </p>
+
+  </div>
+
+
+  <button
+    class="interaction-btn"
+    id="airflyTrigger"
+  >
+    Rejoindre Anna
+  </button>
+
+
+  <div
+    class="reveal-box"
+    id="airflyReveal"
+  >
+
+    <p>
+      ACCÈS DIRECT
+    </p>
+
+    <p>
+      ÉTAGE CIBLE — LOCALISÉ
+    </p>
+
+    <p class="emphasis">
+      Hope contourne entièrement
+      les accès habituels.
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     COMBAT / HALE BLESSÉ
+===================================================== -->
+
+<section
+  class="scene combat-scene"
+  id="scene-11"
+>
+
+  <div class="text-block">
+
+    <p>
+      Hope rejoint rapidement
+      une fenêtre.
+    </p>
+
+    <p>
+      À l’intérieur,
+      Hale vient tout juste
+      de repousser un premier assaillant.
+    </p>
+
+    <p>
+      Un second apparaît.
+    </p>
+
+    <p>
+      Puis un troisième.
+    </p>
+
+    <p>
+      Hope pénètre dans la pièce
+      au moment précis
+      où un tir part
+      en direction d’Anna.
+    </p>
+
+    <p>
+      Elle dévie brutalement
+      le bras de l’agresseur.
+    </p>
+
+    <p>
+      Le projectile frappe le mur.
+    </p>
+
+    <p>
+      — Hope !
+    </p>
+
+    <p>
+      — Plus tard.
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     VISUEL 5
+     HALE / CAPSULE
+===================================================== -->
+
+<section
+  class="scene combat-scene interaction-scene"
+  id="scene-12"
+>
+
+  <div
+    class="visual interactive-visual"
+    data-visual="5"
+  >
+    <img
+      src="images/chapitre7/Visuel-5.PNG"
+      alt="Hale blessé et Hope appliquant une capsule médicale"
+      loading="lazy"
+    >
+  </div>
+
+
+  <div class="text-block dialogue">
+
+    <p>
+      Hope neutralise l’homme.
+    </p>
+
+    <p>
+      Hale affronte le second.
+    </p>
+
+    <p>
+      Mais une lame
+      le frappe profondément au flanc.
+    </p>
+
+    <p>
+      Il s’effondre.
+    </p>
+
+    <p>
+      — Hale !
+    </p>
+
+    <p>
+      Anna veut courir vers lui.
+    </p>
+
+    <p>
+      Hope la retient.
+    </p>
+
+    <p>
+      — Non.
+    </p>
+
+    <p>
+      Elle s’accroupit immédiatement
+      auprès de lui.
+    </p>
+
+    <p>
+      Un seul regard lui suffit
+      pour comprendre la gravité
+      de la blessure.
+    </p>
+
+    <p>
+      Hope sort sa capsule.
+    </p>
+
+  </div>
+
+
+  <div class="observation-buttons">
+
+    <button
+      class="interaction-btn capsule-trigger"
+      data-capsule="coagulation"
+    >
+      Coagulation
+    </button>
+
+    <button
+      class="interaction-btn capsule-trigger"
+      data-capsule="tissue"
+    >
+      Protection tissulaire
+    </button>
+
+    <button
+      class="interaction-btn capsule-trigger"
+      data-capsule="repair"
+    >
+      Réparation cellulaire
+    </button>
+
+  </div>
+
+
+  <div
+    class="reveal-box"
+    id="capsuleReveal"
+  >
+  </div>
+
+</section>
+
+
+
+<section
+  class="scene combat-scene"
+  id="scene-13"
+>
+
+  <div class="text-block dialogue">
+
+    <p>
+      Hale secoue aussitôt la tête.
+    </p>
+
+    <p>
+      — Garde-la.
+    </p>
+
+    <p>
+      — Non.
+    </p>
+
+    <p>
+      — Hope,
+      tu vas devoir continuer à te battre.
+    </p>
+
+    <p>
+      Elle le regarde
+      droit dans les yeux.
+    </p>
+
+    <p>
+      — Et toi,
+      tu vas devoir continuer
+      à protéger Anna.
+    </p>
+
+    <p>
+      Hale comprend parfaitement
+      ce qu’elle veut dire.
+    </p>
+
+    <p>
+      Il veille sur Anna
+      depuis sa naissance.
+    </p>
+
+    <p>
+      Il connaît ses habitudes.
+    </p>
+
+    <p>
+      Ses réactions.
+    </p>
+
+    <p>
+      Son entourage.
+    </p>
+
+    <p>
+      Les équipes de sécurité.
+    </p>
+
+    <p>
+      Les procédures de l’hacienda Flores.
+    </p>
+
+    <p class="emphasis">
+      Et surtout,
+      il pourrait être l’un des mieux placés
+      pour découvrir une faille interne.
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<section
+  class="scene"
+  id="scene-14"
+>
+
+  <div class="text-block dialogue">
+
+    <p>
+      Hope active la capsule.
+    </p>
+
+    <p>
+      — Tu es beaucoup trop important
+      pour elle
+      pour que je prenne le risque
+      de te perdre maintenant.
+    </p>
+
+    <p>
+      Elle ajoute :
+    </p>
+
+    <p>
+      — Et quand tout ça sera terminé,
+      tu vas m’aider à comprendre
+      comment ils sont entrés.
+    </p>
+
+    <p>
+      Hale acquiesce.
+    </p>
+
+    <p>
+      — Compris.
+    </p>
+
+    <p>
+      Hope applique la capsule
+      contre sa blessure.
+    </p>
+
+    <p>
+      Une fine membrane
+      se déploie autour de la plaie.
+    </p>
+
+    <p>
+      Le saignement commence
+      progressivement à ralentir.
+    </p>
+
+    <p>
+      Hale serre les dents.
+    </p>
+
+    <p>
+      Hope observe
+      quelques secondes les données.
+    </p>
+
+    <p>
+      — Ça ne te remettra pas sur pied
+      comme si rien ne s’était passé.
+    </p>
+
+    <p>
+      Puis elle ajoute :
+    </p>
+
+    <p class="emphasis">
+      — Mais ça devrait te maintenir
+      suffisamment opérationnel.
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     VISUEL 6
+     BULLE CRASH ANNA
+===================================================== -->
+
+<section
+  class="scene interaction-scene"
+  id="scene-15"
+>
+
+  <div
+    class="visual interactive-visual"
+    data-visual="6"
+  >
+    <img
+      src="images/chapitre7/Visuel-6.PNG"
+      alt="Anna protégée par une bulle Crash"
+      loading="lazy"
+    >
+  </div>
+
+
+  <div class="text-block dialogue">
+
+    <p>
+      Hope se tourne vers Anna.
+    </p>
+
+    <p>
+      — Maintenant,
+      toi.
+    </p>
+
+    <p>
+      Hope sort
+      un autre dispositif.
+    </p>
+
+    <p>
+      — Qu’est-ce que c’est ?
+    </p>
+
+    <p>
+      — Une bulle Crash.
+    </p>
+
+  </div>
+
+
+  <button
+    class="interaction-btn"
+    id="crashAnnaTrigger"
+  >
+    Activer la bulle Crash
+  </button>
+
+
+  <div
+    class="reveal-box"
+    id="crashAnnaReveal"
+  >
+
+    <p>
+      PROTECTION — DÉPLOYÉE
+    </p>
+
+    <p>
+      STRUCTURE — STABILISÉE
+    </p>
+
+    <p class="emphasis">
+      Anna est désormais
+      protégée par une enveloppe transparente.
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<section
+  class="scene"
+  id="scene-16"
+>
+
+  <div class="text-block dialogue">
+
+    <p>
+      — Reste avec Hale.
+    </p>
+
+    <p>
+      Anna secoue la tête.
+    </p>
+
+    <p>
+      — Et toi ?
+    </p>
+
+    <p>
+      Hope regarde le couloir.
+    </p>
+
+    <p class="impact-text">
+      — Ta mère.
+    </p>
+
+    <p>
+      Anna comprend immédiatement.
+    </p>
+
+    <p>
+      — Hope…
+    </p>
+
+    <p>
+      — Je vais la chercher.
+    </p>
+
+    <p>
+      Elle disparaît
+      avant qu’Anna ait le temps
+      de protester.
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     BETTY EN DANGER
+===================================================== -->
+
+<section
+  class="scene danger-scene"
+  id="scene-17"
+>
+
+  <div class="text-block dialogue">
+
+    <p>
+      Betty se trouve
+      dans une autre partie
+      de l’hacienda.
+    </p>
+
+    <p>
+      Elle comprend
+      que quelque chose se passe
+      lorsque l’éclairage de sécurité
+      change brutalement.
+    </p>
+
+    <p>
+      — Anna ?
+    </p>
+
+    <p>
+      Elle attrape son téléphone.
+    </p>
+
+    <p>
+      Aucun réseau.
+    </p>
+
+    <p>
+      — Anna !
+    </p>
+
+    <p>
+      Betty quitte la pièce.
+    </p>
+
+    <p>
+      Une silhouette apparaît
+      à l’extrémité du couloir.
+    </p>
+
+    <p>
+      Elle n’a pas le temps
+      de comprendre.
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     VISUEL 7
+     HOPE PROTÈGE BETTY
+===================================================== -->
+
+<section
+  class="scene danger-scene interaction-scene"
+  id="scene-18"
+>
+
+  <div
+    class="visual interactive-visual"
+    data-visual="7"
+  >
+    <img
+      src="images/chapitre7/Visuel-7.PNG"
+      alt="Hope se jette devant Betty au moment d'un tir"
+      loading="lazy"
+    >
+  </div>
+
+
+  <div class="text-block">
+
+    <p>
+      Hope surgit.
+    </p>
+
+    <p>
+      Mais cette fois,
+      quelque chose est différent.
+    </p>
+
+    <p>
+      Elle n’est plus
+      aussi parfaitement concentrée
+      qu’à son habitude.
+    </p>
+
+    <p>
+      L’attaque contre Anna.
+    </p>
+
+    <p>
+      Hale blessé.
+    </p>
+
+    <p>
+      Betty.
+    </p>
+
+    <p>
+      Deux personnes
+      qu’elle commence à vouloir protéger
+      d’une manière devenue
+      beaucoup trop personnelle.
+    </p>
+
+    <p>
+      Hope sait exactement
+      ce que cela signifie.
+    </p>
+
+    <p class="emphasis">
+      Une Sentinelle qui s’attache
+      se découvre un talon d’Achille.
+    </p>
+
+  </div>
+
+
+  <button
+    class="interaction-btn"
+    id="hopeMistakeTrigger"
+  >
+    Comprendre l’erreur de Hope
+  </button>
+
+
+  <div
+    class="reveal-box"
+    id="hopeMistakeReveal"
+  >
+
+    <p>
+      Hope agit trop vite.
+    </p>
+
+    <p>
+      Elle ne prend pas
+      cette fraction de seconde
+      qui lui permet normalement
+      d’anticiper les mouvements.
+    </p>
+
+    <p class="emphasis">
+      Son attachement modifie
+      sa manière de combattre.
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<section
+  class="scene danger-scene"
+  id="scene-19"
+>
+
+  <div class="text-block dialogue">
+
+    <p>
+      Lorsqu’elle voit l’arme
+      se lever en direction de Betty,
+      elle ne réfléchit pas.
+    </p>
+
+    <p>
+      Elle agit.
+    </p>
+
+    <p>
+      Trop vite.
+    </p>
+
+    <p>
+      — Betty !
+    </p>
+
+    <p class="impact-text">
+      La détonation retentit.
+    </p>
+
+    <p>
+      Hope se jette contre elle
+      et la pousse hors de la trajectoire.
+    </p>
+
+    <p>
+      Cette fois,
+      elle ne parvient pas
+      à éviter le projectile.
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     VISUEL 8
+     HOPE BLESSÉE
+===================================================== -->
+
+<section
+  class="scene combat-scene interaction-scene"
+  id="scene-20"
+>
+
+  <div
+    class="visual interactive-visual"
+    data-visual="8"
+  >
+    <img
+      src="images/chapitre7/Visuel-8.PNG"
+      alt="Hope blessée au flanc, Betty près d'elle"
+      loading="lazy"
+    >
+  </div>
+
+
+  <div class="text-block dialogue">
+
+    <p>
+      Betty tombe avec elle.
+    </p>
+
+    <p>
+      Elle entend le choc.
+    </p>
+
+    <p>
+      Puis sent quelque chose
+      de chaud sur ses mains.
+    </p>
+
+    <p class="impact-text">
+      Du sang.
+    </p>
+
+    <p>
+      — Hope ?
+    </p>
+
+    <p>
+      Hope se redresse malgré tout.
+    </p>
+
+    <p>
+      Son flanc est couvert de sang.
+    </p>
+
+    <p>
+      — Reste derrière moi.
+    </p>
+
+    <p>
+      — Tu es blessée !
+    </p>
+
+    <p>
+      — Je sais.
+    </p>
+
+  </div>
+
+
+  <button
+    class="interaction-btn"
+    id="hopeStateTrigger"
+  >
+    Analyser l’état de Hope
+  </button>
+
+
+  <div
+    class="reveal-box"
+    id="hopeStateReveal"
+  >
+
+    <p>
+      BLESSURE — GRAVE
+    </p>
+
+    <p>
+      HÉMORRAGIE — IMPORTANTE
+    </p>
+
+    <p>
+      PRÉCISION — ENCORE ÉLEVÉE
+    </p>
+
+    <p class="emphasis">
+      ENDURANCE — EN BAISSE
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<section
+  class="scene combat-scene"
+  id="scene-21"
+>
+
+  <div class="text-block">
+
+    <p>
+      Un nouvel assaillant apparaît.
+    </p>
+
+    <p>
+      Hope le neutralise.
+    </p>
+
+    <p>
+      Puis un autre.
+    </p>
+
+    <p>
+      Elle continue à se battre.
+    </p>
+
+    <p>
+      Mais elle ralentit.
+    </p>
+
+    <p>
+      Ses gestes restent précis.
+    </p>
+
+    <p>
+      Ses réactions efficaces.
+    </p>
+
+    <p>
+      Pourtant,
+      sa respiration devient
+      de plus en plus lourde.
+    </p>
+
+    <p>
+      Betty le remarque.
+    </p>
+
+    <p>
+      — Arrête !
+    </p>
+
+    <p>
+      Hope ne répond pas.
+    </p>
+
+    <p>
+      Un dernier homme attaque.
+    </p>
+
+    <p>
+      Hope l’esquive,
+      le désarme
+      et le met hors d’état de nuire.
+    </p>
+
+    <p>
+      Puis elle s’appuie brutalement
+      contre le mur.
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<section
+  class="scene"
+  id="scene-22"
+>
+
+  <div class="text-block dialogue">
+
+    <p>
+      Betty se précipite vers elle.
+    </p>
+
+    <p>
+      — Assieds-toi.
+    </p>
+
+    <p>
+      — Anna ?
+    </p>
+
+    <p>
+      — Je n’en sais rien !
+    </p>
+
+    <p>
+      — Hale est avec elle.
+    </p>
+
+    <p>
+      Hope tente malgré tout
+      d’avancer.
+    </p>
+
+    <p>
+      Ses jambes fléchissent.
+    </p>
+
+    <p>
+      Betty la rattrape.
+    </p>
+
+    <p>
+      — Cette fois,
+      tu restes là.
+    </p>
+
+    <p>
+      Elle appuie immédiatement
+      sur la blessure.
+    </p>
+
+    <p>
+      — Tu perds beaucoup trop de sang.
+    </p>
+
+    <p>
+      Hope ferme brièvement les yeux.
+    </p>
+
+    <p>
+      — J’ai connu mieux.
+    </p>
+
+    <p>
+      — Très drôle.
+    </p>
+
+    <p>
+      Betty retire sa veste
+      et comprime davantage la plaie.
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     PETER ARRIVE
+===================================================== -->
+
+<section
+  class="scene"
+  id="scene-23"
+>
+
+  <div class="text-block dialogue">
+
+    <p>
+      Peter arrive
+      quelques minutes plus tard.
+    </p>
+
+    <p>
+      Il traverse l’hacienda
+      accompagné de plusieurs
+      dispositifs de sécurité.
+    </p>
+
+    <p>
+      Il trouve d’abord Anna.
+    </p>
+
+    <p>
+      La bulle Crash
+      l’enveloppe toujours.
+    </p>
+
+    <p>
+      Hale est assis contre un mur,
+      pâle mais conscient.
+    </p>
+
+    <p>
+      Toujours vigilant.
+    </p>
+
+    <p>
+      — Anna !
+    </p>
+
+    <p>
+      — Peter !
+    </p>
+
+    <p>
+      — Tu vas bien ?
+    </p>
+
+    <p>
+      — Oui.
+      Hope est partie chercher Maman.
+    </p>
+
+    <p>
+      Peter regarde Hale.
+    </p>
+
+    <p>
+      — Et toi ?
+    </p>
+
+    <p>
+      Hale désigne la capsule
+      appliquée contre son flanc.
+    </p>
+
+    <p>
+      — Elle m’a donné la sienne.
+    </p>
+
+    <p class="impact-text">
+      — Elle a fait quoi ?
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     VISUEL 9
+     HOPE / BETTY / PETER
+===================================================== -->
+
+<section
+  class="scene danger-scene"
+  id="scene-24"
+>
+
+  <div
+    class="visual"
+    data-visual="9"
+  >
+    <img
+      src="images/chapitre7/Visuel-9.PNG"
+      alt="Peter découvre Hope gravement blessée près de Betty"
+      loading="lazy"
+    >
+  </div>
+
+
+  <div class="text-block dialogue">
+
+    <p>
+      Lorsqu’il finit
+      par trouver Hope,
+      Betty est agenouillée près d’elle.
+    </p>
+
+    <p>
+      Ses mains sont couvertes de sang.
+    </p>
+
+    <p>
+      Hope est presque inconsciente.
+    </p>
+
+    <p>
+      Peter s’arrête.
+    </p>
+
+    <p>
+      Betty relève immédiatement la tête.
+    </p>
+
+    <p>
+      — Peter !
+    </p>
+
+    <p>
+      Il s’approche.
+    </p>
+
+    <p>
+      — Depuis combien de temps ?
+    </p>
+
+    <p>
+      — Quelques minutes.
+    </p>
+
+    <p>
+      Betty le regarde,
+      stupéfaite de le voir
+      encore relativement calme.
+    </p>
+
+    <p>
+      — Tu comptes faire quelque chose
+      ou la regarder mourir ?
+    </p>
+
+    <p>
+      Peter ne réagit pas
+      à l’agressivité.
+    </p>
+
+    <p>
+      Il examine rapidement Hope.
+    </p>
+
+    <p>
+      — Hope a plus d’un tour
+      dans son sac.
+    </p>
+
+    <p>
+      Hope entrouvre
+      difficilement les yeux.
+    </p>
+
+    <p>
+      — Peter…
+    </p>
+
+    <p>
+      — Oui ?
+    </p>
+
+    <p>
+      — Je n’ai plus de capsule.
+    </p>
+
+    <p>
+      Le visage de Peter
+      se décompose.
+    </p>
+
+    <p class="impact-text">
+      — Quoi ?
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<section
+  class="scene"
+  id="scene-25"
+>
+
+  <div class="text-block dialogue">
+
+    <p>
+      — Tu plaisantes ?
+    </p>
+
+    <p>
+      Hope ferme les yeux.
+    </p>
+
+    <p>
+      — Hale.
+    </p>
+
+    <p>
+      Peter comprend immédiatement.
+    </p>
+
+    <p>
+      — Tu veux mourir ou quoi ?
+    </p>
+
+    <p>
+      Betty regarde Peter.
+    </p>
+
+    <p>
+      — Elle a besoin
+      d’une intervention chirurgicale
+      immédiatement.
+    </p>
+
+    <p>
+      Peter secoue la tête.
+    </p>
+
+    <p>
+      — Pas ici.
+    </p>
+
+    <p>
+      Puis il se tourne vers Hope.
+    </p>
+
+    <p class="impact-text">
+      — Je vais te mettre en stase.
+    </p>
+
+    <p>
+      Hope acquiesce faiblement.
+    </p>
+
+    <p>
+      — Fais-le.
+    </p>
+
+    <p>
+      Elle ajoute :
+    </p>
+
+    <p>
+      — Et emmène-les avec nous.
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     VISUEL 10
+     STASE
+===================================================== -->
+
+<section
+  class="scene investigation-scene interaction-scene"
+  id="scene-26"
+>
+
+  <div
+    class="visual interactive-visual"
+    data-visual="10"
+  >
+    <img
+      src="images/chapitre7/Visuel-10.PNG"
+      alt="Hope enfermée dans une bulle Crash en mode stase"
+      loading="lazy"
+    >
+  </div>
+
+
+  <div class="text-block dialogue">
+
+    <p>
+      Peter attrape le bras de Betty.
+    </p>
+
+    <p>
+      — Reculez.
+    </p>
+
+    <p>
+      — Certainement pas.
+    </p>
+
+    <p>
+      — Betty,
+      maintenant !
+    </p>
+
+    <p>
+      Son ton est tellement inhabituel
+      qu’elle obéit malgré elle.
+    </p>
+
+    <p>
+      Peter déploie
+      une bulle Crash autour de Hope.
+    </p>
+
+    <p>
+      Mais cette fois,
+      il active un mode différent.
+    </p>
+
+  </div>
+
+
+  <button
+    class="interaction-btn"
+    id="stasisTrigger"
+  >
+    Activer le mode stase
+  </button>
+
+
+  <div
+    class="reveal-box"
+    id="stasisReveal"
+  >
+
+    <p>
+      RESPIRATION ↓
+    </p>
+
+    <p>
+      RYTHME CARDIAQUE ↓
+    </p>
+
+    <p>
+      CONSOMMATION D’OXYGÈNE ↓
+    </p>
+
+    <p>
+      CIRCULATION ↓
+    </p>
+
+    <p class="emphasis">
+      HÉMORRAGIE ↓
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<section
+  class="scene investigation-scene"
+  id="scene-27"
+>
+
+  <div class="text-block dialogue">
+
+    <p>
+      La structure se referme doucement
+      autour de son corps.
+    </p>
+
+    <p>
+      Les paramètres vitaux
+      apparaissent
+      sur le bracelet de Peter.
+    </p>
+
+    <p>
+      — Mode stase.
+    </p>
+
+    <p>
+      La respiration de Hope ralentit.
+    </p>
+
+    <p>
+      Son rythme cardiaque également.
+    </p>
+
+    <p>
+      Betty se redresse brutalement.
+    </p>
+
+    <p>
+      — Qu’est-ce que tu lui fais ?
+    </p>
+
+    <p>
+      — Je ralentis son métabolisme.
+    </p>
+
+    <p>
+      — À ce niveau-là ?
+    </p>
+
+    <p>
+      Betty observe les données.
+    </p>
+
+    <p>
+      — Peter,
+      elle va mourir !
+    </p>
+
+    <p>
+      — Non.
+    </p>
+
+    <p>
+      — Son rythme cardiaque s’effondre !
+    </p>
+
+    <p>
+      — C’est volontaire.
+    </p>
+
+    <p>
+      Betty tente de s’approcher.
+    </p>
+
+    <p>
+      Peter l’arrête.
+    </p>
+
+    <p>
+      — Ne touchez à rien.
+    </p>
+
+    <p>
+      — Je suis médecin
+      et généticienne !
+    </p>
+
+    <p>
+      — Et moi,
+      j’ai conçu le système
+      qui la maintient actuellement en vie.
+    </p>
+
+    <p>
+      Un silence.
+    </p>
+
+    <p>
+      Peter lui montre les constantes.
+    </p>
+
+    <p>
+      — La stase ralentit la circulation,
+      la consommation d’oxygène
+      et l’hémorragie.
+    </p>
+
+    <p class="impact-text">
+      — Ça ne la soigne pas.
+    </p>
+
+    <p>
+      Betty se calme légèrement.
+    </p>
+
+    <p>
+      Elle comprend enfin.
+    </p>
+
+    <p class="emphasis">
+      — Ça nous donne du temps.
+    </p>
+
+    <p>
+      — Exactement.
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     L'ILLUMINÉ
+===================================================== -->
+
+<section
+  class="scene revelation-scene"
+  id="scene-28"
+>
+
+  <div class="text-block dialogue">
+
+    <p>
+      Hope entrouvre
+      une dernière fois les yeux.
+    </p>
+
+    <p>
+      — Peter…
+    </p>
+
+    <p>
+      — Je suis là.
+    </p>
+
+    <p class="impact-text">
+      — Appelle… l’Illuminé.
+    </p>
+
+    <p>
+      Puis sa tête retombe.
+    </p>
+
+    <p>
+      Betty se fige.
+    </p>
+
+    <p>
+      — L’Illuminé ?
+    </p>
+
+    <p>
+      Peter soupire.
+    </p>
+
+    <p class="name-reveal">
+      Charles.
+    </p>
+
+    <p>
+      Betty le regarde.
+    </p>
+
+    <p>
+      — Charles Loutcho ?
+    </p>
+
+    <p>
+      — Oui.
+    </p>
+
+    <p>
+      — Comment connaît-elle Charles ?
+    </p>
+
+    <p>
+      — Pas maintenant.
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     RAISONNEMENT DE HOPE
+===================================================== -->
+
+<section
+  class="scene interaction-scene"
+  id="scene-29"
+>
+
+  <div class="text-block">
+
+    <p>
+      Plus tard,
+      Hale explique
+      ce qui s’est passé.
+    </p>
+
+    <p>
+      Peter comprend peu à peu
+      la véritable logique
+      de la décision de Hope.
+    </p>
+
+  </div>
+
+
+  <button
+    class="interaction-btn"
+    id="haleReasoningTrigger"
+  >
+    Reconstituer son raisonnement
+  </button>
+
+
+  <div
+    class="reveal-box"
+    id="haleReasoningReveal"
+  >
+
+    <p>
+      Hale connaît Anna depuis sa naissance.
+    </p>
+
+    <p>
+      ↓
+    </p>
+
+    <p>
+      Il connaît l’hacienda Flores.
+    </p>
+
+    <p>
+      ↓
+    </p>
+
+    <p>
+      Il connaît les procédures
+      et les équipes.
+    </p>
+
+    <p>
+      ↓
+    </p>
+
+    <p>
+      Il peut repérer
+      une faille interne.
+    </p>
+
+    <p>
+      ↓
+    </p>
+
+    <p class="emphasis">
+      Maintenir Hale opérationnel,
+      c’était continuer à protéger Anna.
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     APPEL À ROOT
+===================================================== -->
+
+<section
+  class="scene"
+  id="scene-30"
+>
+
+  <div class="text-block dialogue">
+
+    <p>
+      Une fois dans la Jeep,
+      Peter contacte Root.
+    </p>
+
+    <p>
+      Elle répond immédiatement.
+    </p>
+
+    <p>
+      — Peter ?
+    </p>
+
+    <p>
+      Le simple silence
+      qui suit
+      suffit à lui faire comprendre.
+    </p>
+
+    <p class="impact-text">
+      — Elle va mal.
+    </p>
+
+    <p>
+      Ce n’est pas une question.
+    </p>
+
+    <p>
+      — Oui.
+    </p>
+
+    <p>
+      Root ferme les yeux
+      à l’autre bout
+      de la communication.
+    </p>
+
+    <p>
+      — Je le savais.
+    </p>
+
+    <p>
+      Peter regarde Hope.
+    </p>
+
+    <p>
+      — Elle a pris une balle
+      destinée à Betty.
+    </p>
+
+    <p>
+      Root ne répond pas.
+    </p>
+
+    <p>
+      Peter poursuit :
+    </p>
+
+    <p>
+      — Elle a donné sa capsule à Hale.
+    </p>
+
+    <p>
+      — Quoi ?
+    </p>
+
+    <p>
+      — Exactement ma réaction.
+    </p>
+
+    <p>
+      Root respire profondément.
+    </p>
+
+    <p>
+      — Pourquoi elle a fait ça ?
+    </p>
+
+    <p>
+      Peter regarde brièvement Hale
+      dans le rétroviseur.
+    </p>
+
+    <p>
+      Puis Anna.
+    </p>
+
+    <p>
+      Quelque chose commence
+      à s’emboîter.
+    </p>
+
+    <p>
+      — Demande-lui
+      quand elle se réveillera.
+    </p>
+
+    <p>
+      Il ajoute :
+    </p>
+
+    <p class="emphasis">
+      — Mais je crois
+      que je commence à comprendre.
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<section
+  class="scene"
+  id="scene-31"
+>
+
+  <div class="text-block dialogue">
+
+    <p>
+      Peter reprend :
+    </p>
+
+    <p class="impact-text">
+      — Prépare la chambre blanche.
+    </p>
+
+    <p>
+      — C’est déjà fait.
+    </p>
+
+    <p>
+      — Charles Loutcho nous rejoint.
+    </p>
+
+    <p>
+      Root se fige.
+    </p>
+
+    <p>
+      — L’Illuminé ?
+    </p>
+
+    <p>
+      Betty intervient
+      depuis le véhicule.
+    </p>
+
+    <p>
+      — Oui.
+    </p>
+
+    <p>
+      Peter poursuit :
+    </p>
+
+    <p>
+      — Betty vient de l’appeler.
+    </p>
+
+    <p>
+      — Combien de temps
+      avant votre arrivée ?
+    </p>
+
+    <p>
+      Peter regarde la route.
+    </p>
+
+    <p>
+      — Moins de cinq minutes.
+    </p>
+
+    <p>
+      — Et Charles ?
+    </p>
+
+    <p>
+      Betty répond :
+    </p>
+
+    <p>
+      — Il arrive aussi vite qu’il peut.
+    </p>
+
+    <p>
+      Root prend une inspiration.
+    </p>
+
+    <p>
+      Peter entend néanmoins
+      l’inquiétude dans sa voix.
+    </p>
+
+    <p>
+      — Root.
+    </p>
+
+    <p>
+      — Oui ?
+    </p>
+
+    <p>
+      — Elle va s’en sortir.
+    </p>
+
+    <p>
+      Un silence.
+    </p>
+
+    <p>
+      — Je sais.
+    </p>
+
+    <p class="emphasis">
+      Mais sa voix dit exactement le contraire.
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     VISUEL 11
+     CHAMBRE BLANCHE
+===================================================== -->
+
+<section
+  class="scene investigation-scene interaction-scene"
+  id="scene-32"
+>
+
+  <div
+    class="visual interactive-visual"
+    data-visual="11"
+  >
+    <img
+      src="images/chapitre7/Visuel-11.PNG"
+      alt="Hope dans la chambre blanche avec Charles Peter et Root"
+      loading="lazy"
+    >
+  </div>
+
+
+  <div class="text-block">
+
+    <p>
+      La Jeep franchit
+      les grilles de l’hacienda Awake
+      à vive allure.
+    </p>
+
+    <p>
+      Root les attend déjà.
+    </p>
+
+    <p>
+      Charles Loutcho apparaît
+      derrière elle.
+    </p>
+
+    <p>
+      Il porte déjà
+      une tenue médicale.
+    </p>
+
+    <p>
+      Root les mène
+      jusqu’à un accès
+      dissimulé au sous-sol.
+    </p>
+
+    <p>
+      Une porte s’ouvre.
+    </p>
+
+    <p>
+      Puis une deuxième.
+    </p>
+
+    <p>
+      Puis une troisième.
+    </p>
+
+    <p class="impact-text">
+      La chambre blanche.
+    </p>
+
+  </div>
+
+
+  <div class="observation-buttons">
+
+    <button
+      class="interaction-btn white-room-trigger"
+      data-white-room="surgery"
+    >
+      Chirurgie
+    </button>
+
+    <button
+      class="interaction-btn white-room-trigger"
+      data-white-room="robotics"
+    >
+      Bras robotisés
+    </button>
+
+    <button
+      class="interaction-btn white-room-trigger"
+      data-white-room="monitors"
+    >
+      Moniteurs
+    </button>
+
+    <button
+      class="interaction-btn white-room-trigger"
+      data-white-room="technology"
+    >
+      Technologie de Peter
+    </button>
+
+  </div>
+
+
+  <div
+    class="reveal-box"
+    id="whiteRoomReveal"
+  >
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     CHARLES PREND LE CONTRÔLE
+===================================================== -->
+
+<section
+  class="scene"
+  id="scene-33"
+>
+
+  <div class="text-block dialogue">
+
+    <p>
+      Charles aperçoit Hope.
+    </p>
+
+    <p>
+      Son expression change.
+    </p>
+
+    <p>
+      — C’est elle ?
+    </p>
+
+    <p>
+      Peter acquiesce.
+    </p>
+
+    <p>
+      — Plaie par balle.
+      Hémorragie importante.
+      Stase active depuis quelques minutes.
+    </p>
+
+    <p>
+      Charles s’approche immédiatement.
+    </p>
+
+    <p>
+      — Où est l’impact ?
+    </p>
+
+    <p>
+      Peter lui montre les données.
+    </p>
+
+    <p>
+      — Flanc gauche.
+    </p>
+
+    <p>
+      — Sortie ?
+    </p>
+
+    <p>
+      — Non.
+    </p>
+
+    <p>
+      Charles grimace.
+    </p>
+
+    <p class="emphasis">
+      — Donc balle toujours à l’intérieur.
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     INTERACTION CHIRURGIE
+===================================================== -->
+
+<section
+  class="scene investigation-scene interaction-scene"
+  id="scene-34"
+>
+
+  <div class="text-block">
+
+    <p>
+      L’intervention commence.
+    </p>
+
+    <p>
+      Pendant près d’une heure,
+      Charles travaille
+      sans presque prononcer un mot.
+    </p>
+
+  </div>
+
+
+  <div class="surgery-steps">
+
+    <button
+      class="interaction-btn surgery-trigger"
+      data-surgery="locate"
+    >
+      Localiser la balle
+    </button>
+
+    <button
+      class="interaction-btn surgery-trigger"
+      data-surgery="extract"
+    >
+      Extraire
+    </button>
+
+    <button
+      class="interaction-btn surgery-trigger"
+      data-surgery="bleeding"
+    >
+      Contrôler l’hémorragie
+    </button>
+
+    <button
+      class="interaction-btn surgery-trigger"
+      data-surgery="repair"
+    >
+      Réparer les tissus
+    </button>
+
+  </div>
+
+
+  <div
+    class="reveal-box"
+    id="surgeryReveal"
+  >
+  </div>
+
+</section>
+
+
+
+<section
+  class="scene"
+  id="scene-35"
+>
+
+  <div class="text-block dialogue">
+
+    <p>
+      La balle est localisée.
+    </p>
+
+    <p>
+      Extraite.
+    </p>
+
+    <p>
+      L’hémorragie contrôlée.
+    </p>
+
+    <p>
+      Les tissus endommagés
+      sont réparés
+      autant que possible.
+    </p>
+
+    <p>
+      Enfin,
+      Charles recule.
+    </p>
+
+    <p>
+      — Voilà.
+    </p>
+
+    <p>
+      Peter regarde les constantes.
+    </p>
+
+    <p class="impact-text">
+      — Stable.
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     VISUEL 12
+     CAPSULES COMPLÈTES
+===================================================== -->
+
+<section
+  class="scene investigation-scene interaction-scene"
+  id="scene-36"
+>
+
+  <div
+    class="visual interactive-visual"
+    data-visual="12"
+  >
+    <img
+      src="images/chapitre7/Visuel-12.PNG"
+      alt="Peter présente plusieurs capsules médicales différentes"
+      loading="lazy"
+    >
+  </div>
+
+
+  <div class="text-block dialogue">
+
+    <p>
+      Charles enlève ses gants.
+    </p>
+
+    <p>
+      — Maintenant,
+      c’est à vous.
+    </p>
+
+    <p>
+      Il désigne les capsules.
+    </p>
+
+    <p>
+      — Je veux voir
+      ce que ces fameuses merveilles
+      sont réellement capables de faire.
+    </p>
+
+    <p>
+      Peter prend plusieurs
+      petites capsules translucides.
+    </p>
+
+  </div>
+
+
+  <div class="observation-buttons">
+
+    <button
+      class="interaction-btn medical-capsule-trigger"
+      data-medical-capsule="vascular"
+    >
+      Capsule vasculaire
+    </button>
+
+    <button
+      class="interaction-btn medical-capsule-trigger"
+      data-medical-capsule="muscle"
+    >
+      Capsule musculaire
+    </button>
+
+    <button
+      class="interaction-btn medical-capsule-trigger"
+      data-medical-capsule="cellular"
+    >
+      Priorisation cellulaire
+    </button>
+
+  </div>
+
+
+  <div
+    class="reveal-box"
+    id="medicalCapsuleReveal"
+  >
+  </div>
+
+</section>
+
+
+
+<section
+  class="scene investigation-scene"
+  id="scene-37"
+>
+
+  <div class="text-block dialogue">
+
+    <p>
+      Peter applique
+      la première capsule.
+    </p>
+
+    <p>
+      Une fine membrane
+      se développe sur la plaie.
+    </p>
+
+    <p>
+      Puis la seconde.
+    </p>
+
+    <p>
+      Les écrans commencent
+      progressivement
+      à afficher des modifications.
+    </p>
+
+    <p>
+      Charles se rapproche.
+    </p>
+
+    <p>
+      — Attends…
+    </p>
+
+    <p>
+      Il observe les paramètres.
+    </p>
+
+    <p class="impact-text">
+      — Ça augmente réellement
+      l’activité réparatrice.
+    </p>
+
+    <p>
+      Peter acquiesce.
+    </p>
+
+    <p>
+      Charles regarde encore.
+    </p>
+
+    <p>
+      — Sans prolifération anarchique ?
+    </p>
+
+    <p>
+      — C’est justement tout l’intérêt.
+    </p>
+
+    <p>
+      Charles se tourne vers lui.
+    </p>
+
+    <p>
+      — Peter…
+    </p>
+
+    <p>
+      — Oui ?
+    </p>
+
+    <p>
+      — Si ce que je vois
+      fonctionne de manière reproductible…
+    </p>
+
+    <p>
+      Il se retourne vers Hope.
+    </p>
+
+    <p>
+      — Tu te rends compte
+      de ce que ça représente
+      pour la médecine ?
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<section
+  class="scene investigation-scene"
+  id="scene-38"
+>
+
+  <div class="text-block">
+
+    <p>
+      Traumatologie.
+    </p>
+
+    <p>
+      Chirurgie.
+    </p>
+
+    <p>
+      Brûlures.
+    </p>
+
+    <p>
+      Certaines lésions musculaires.
+    </p>
+
+    <p>
+      Peut-être même
+      certains dommages neurologiques
+      selon les molécules impliquées.
+    </p>
+
+    <p class="emphasis">
+      Hypothèses à confirmer.
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     HALE / CICATRISATION
+===================================================== -->
+
+<section
+  class="scene investigation-scene"
+  id="scene-39"
+>
+
+  <div class="text-block dialogue">
+
+    <p>
+      Pendant ce temps,
+      à l’étage,
+      Anna refuse de s’éloigner
+      de la porte menant au sous-sol.
+    </p>
+
+    <p>
+      Betty est assise près d’elle.
+    </p>
+
+    <p>
+      Hale reste debout.
+    </p>
+
+    <p>
+      Ce détail finit
+      par attirer l’attention de Betty.
+    </p>
+
+    <p>
+      Elle regarde son flanc.
+    </p>
+
+    <p>
+      — Hale.
+    </p>
+
+    <p>
+      — Oui ?
+    </p>
+
+    <p>
+      — Il y a moins de deux heures,
+      vous aviez une plaie profonde
+      à cet endroit.
+    </p>
+
+    <p>
+      — Exact.
+    </p>
+
+    <p>
+      — Et vous êtes debout.
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<section
+  class="scene interaction-scene"
+  id="scene-40"
+>
+
+  <button
+    class="interaction-btn"
+    id="healingTrigger"
+  >
+    Comparer la cicatrisation
+  </button>
+
+
+  <div
+    class="reveal-box"
+    id="healingReveal"
+  >
+
+    <p>
+      TEMPS ÉCOULÉ
+      — MOINS DE 2 HEURES
+    </p>
+
+    <p>
+      ASPECT DE LA PLAIE
+      — CICATRISATION DE PLUSIEURS JOURS
+    </p>
+
+    <p class="emphasis">
+      Ce n’est pas une guérison instantanée.
+      C’est une accélération biologique
+      exceptionnellement forte.
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     LUCY ET CLIVE ARRIVENT
+===================================================== -->
+
+<section
+  class="scene"
+  id="scene-41"
+>
+
+  <div class="text-block dialogue">
+
+    <p>
+      Quelques minutes plus tard,
+      un véhicule arrive.
+    </p>
+
+    <p>
+      Lucy descend la première.
+    </p>
+
+    <p>
+      Clive apparaît
+      de l’autre côté.
+    </p>
+
+    <p>
+      Lucy aperçoit immédiatement Anna.
+    </p>
+
+    <p>
+      — Ça va ?
+    </p>
+
+    <p>
+      Anna se jette dans ses bras.
+    </p>
+
+    <p>
+      — Oui.
+    </p>
+
+    <p>
+      Lucy la serre contre elle.
+    </p>
+
+    <p>
+      Puis regarde Betty.
+    </p>
+
+    <p>
+      — Et Hope ?
+    </p>
+
+    <p>
+      — En chirurgie.
+    </p>
+
+    <p>
+      Le visage de Lucy se ferme.
+    </p>
+
+    <p>
+      — Grave ?
+    </p>
+
+    <p>
+      Betty acquiesce.
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     HOPE STABLE
+===================================================== -->
+
+<section
+  class="scene"
+  id="scene-42"
+>
+
+  <div class="text-block dialogue">
+
+    <p>
+      Presque deux heures plus tard,
+      Root remonte enfin.
+    </p>
+
+    <p>
+      Anna se lève immédiatement.
+    </p>
+
+    <p>
+      — Alors ?
+    </p>
+
+    <p>
+      Root sourit.
+    </p>
+
+    <p class="impact-text">
+      — Elle est stable.
+    </p>
+
+    <p>
+      Le soulagement est immédiat.
+    </p>
+
+    <p>
+      Betty ferme les yeux.
+    </p>
+
+    <p>
+      Anna inspire profondément.
+    </p>
+
+    <p>
+      Lucy demande :
+    </p>
+
+    <p>
+      — Et ?
+    </p>
+
+    <p>
+      — Charles a retiré la balle.
+    </p>
+
+    <p>
+      Root poursuit :
+    </p>
+
+    <p>
+      — Peter a utilisé
+      plusieurs capsules.
+    </p>
+
+    <p>
+      Pour l’instant,
+      son organisme réagit très bien.
+    </p>
+
+    <p>
+      Anna regarde Root.
+    </p>
+
+    <p>
+      — Elle va s’en sortir ?
+    </p>
+
+    <p>
+      Root s’approche d’elle.
+    </p>
+
+    <p class="impact-text">
+      — Oui.
+    </p>
+
+    <p class="emphasis">
+      — Elle va s’en sortir.
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     CHARLES ET BETTY
+===================================================== -->
+
+<section
+  class="scene investigation-scene"
+  id="scene-43"
+>
+
+  <div class="text-block dialogue">
+
+    <p>
+      Hope dort.
+    </p>
+
+    <p>
+      Elle est extrêmement pâle.
+    </p>
+
+    <p>
+      Mais ses constantes
+      sont désormais régulières.
+    </p>
+
+    <p>
+      Betty reste quelques instants
+      près d’elle.
+    </p>
+
+    <p>
+      Puis Charles entre.
+    </p>
+
+    <p>
+      — Elle est impressionnante.
+    </p>
+
+    <p>
+      Betty regarde Hope.
+    </p>
+
+    <p>
+      — Tu parles de la patiente
+      ou de sa capacité de récupération ?
+    </p>
+
+    <p>
+      — Les deux.
+    </p>
+
+    <p>
+      Il s’approche.
+    </p>
+
+    <p>
+      — Betty,
+      nous allons devoir parler.
+    </p>
+
+    <p>
+      — De Hope ?
+    </p>
+
+    <p>
+      — Des capsules.
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<section
+  class="scene investigation-scene"
+  id="scene-44"
+>
+
+  <div class="text-block dialogue">
+
+    <p>
+      Charles poursuit :
+    </p>
+
+    <p>
+      — Elles ne guérissent pas
+      miraculeusement.
+    </p>
+
+    <p>
+      — Heureusement.
+    </p>
+
+    <p>
+      — Mais elles accélèrent
+      certains processus biologiques
+      d’une manière
+      que je n’ai jamais observée.
+    </p>
+
+    <p>
+      Charles réfléchit.
+    </p>
+
+    <p>
+      — Et surtout,
+      elles semblent savoir
+      où agir.
+    </p>
+
+    <p>
+      Betty fronce les sourcils.
+    </p>
+
+    <p>
+      — « Savoir » ?
+    </p>
+
+    <p>
+      — Mauvais mot.
+    </p>
+
+    <p>
+      — Mais tu comprends
+      ce que je veux dire.
+    </p>
+
+    <p>
+      Il regarde Hope.
+    </p>
+
+    <p>
+      — Il y a une sélectivité impressionnante.
+    </p>
+
+    <p>
+      — Pas de croissance incontrôlée.
+    </p>
+
+    <p>
+      — Pas de réaction inflammatoire disproportionnée.
+    </p>
+
+    <p>
+      — Pas de destruction visible
+      des tissus sains.
+    </p>
+
+    <p>
+      Betty devient silencieuse.
+    </p>
+
+    <p>
+      Charles sourit.
+    </p>
+
+    <p>
+      — Tu veux déjà les analyser.
+    </p>
+
+    <p>
+      — Évidemment.
+    </p>
+
+    <p>
+      — Moi aussi.
+    </p>
+
+    <p>
+      Il devient sérieux.
+    </p>
+
+    <p class="emphasis">
+      — Mais avant de vouloir sauver le monde avec,
+      découvrons d’abord ce qu’elles contiennent
+      et quels sont leurs risques.
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     ANNA AUPRÈS DE HOPE
+===================================================== -->
+
+<section
+  class="scene"
+  id="scene-45"
+>
+
+  <div class="text-block dialogue">
+
+    <p>
+      Lucy finit par entrer.
+    </p>
+
+    <p>
+      — Betty.
+    </p>
+
+    <p>
+      Elle lui fait signe.
+    </p>
+
+    <p>
+      — Il faut rentrer.
+    </p>
+
+    <p>
+      Betty regarde Hope
+      une dernière fois.
+    </p>
+
+    <p>
+      Puis acquiesce.
+    </p>
+
+    <p>
+      Anna vient également
+      lui dire au revoir.
+    </p>
+
+    <p>
+      Elle s’approche du lit.
+    </p>
+
+    <p>
+      — Tu as intérêt
+      à te réveiller rapidement.
+    </p>
+
+    <p>
+      Hope ne bouge pas.
+    </p>
+
+    <p>
+      Puis elle ouvre les yeux
+      et lui sourit.
+    </p>
+
+    <p>
+      Anna sourit,
+      surprise et heureuse.
+    </p>
+
+    <p>
+      — Parce que je n’ai pas fini
+      de t’embêter.
+    </p>
+
+    <p>
+      Root,
+      derrière elle,
+      murmure :
+    </p>
+
+    <p class="emphasis">
+      — Ça devrait fonctionner.
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     VISUEL 13
+     UNE SEMAINE PLUS TARD
+===================================================== -->
+
+<section
+  class="scene unity-scene interaction-scene"
+  id="scene-46"
+>
+
+  <div
+    class="visual interactive-visual"
+    data-visual="13"
+  >
+    <img
+      src="images/chapitre7/Visuel-13.PNG"
+      alt="Hope s'entraîne une semaine après son opération sous le regard de Peter et Root"
+      loading="lazy"
+    >
+  </div>
+
+
+  <div class="location-card">
+
+    <span>
+      Une semaine plus tard
+    </span>
+
+    <strong>
+      Hacienda Awake
+    </strong>
+
+  </div>
+
+
+  <div class="text-block dialogue">
+
+    <p>
+      Peter regarde
+      l’écran devant lui.
+    </p>
+
+    <p>
+      Puis Hope.
+    </p>
+
+    <p>
+      Puis l’écran.
+    </p>
+
+    <p>
+      Puis encore Hope.
+    </p>
+
+    <p>
+      — Non.
+    </p>
+
+    <p>
+      Hope continue ses mouvements.
+    </p>
+
+    <p>
+      — Si.
+    </p>
+
+    <p>
+      — Non.
+    </p>
+
+    <p>
+      Elle frappe
+      dans le sac d’entraînement.
+    </p>
+
+    <p>
+      — Tu as été opérée
+      il y a sept jours.
+    </p>
+
+    <p>
+      — Je sais compter.
+    </p>
+
+    <p>
+      — Apparemment pas mesurer
+      ton propre niveau de stupidité.
+    </p>
+
+    <p>
+      Root entre dans la salle.
+    </p>
+
+    <p>
+      — Je vois que tout
+      est revenu à la normale.
+    </p>
+
+  </div>
+
+
+  <button
+    class="interaction-btn"
+    id="recoveryTrigger"
+  >
+    Comparer la récupération
+  </button>
+
+
+  <div
+    class="reveal-box"
+    id="recoveryReveal"
+  >
+
+    <p>
+      PLAIE — REFERMÉE
+    </p>
+
+    <p>
+      TISSUS — PRESQUE CICATRISÉS
+    </p>
+
+    <p>
+      ENTRAÎNEMENT — REPRIS
+    </p>
+
+    <p class="emphasis">
+      Une récupération humaine ordinaire
+      aurait nécessité plusieurs semaines.
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<section
+  class="scene unity-scene"
+  id="scene-47"
+>
+
+  <div class="text-block dialogue">
+
+    <p>
+      Hope sourit.
+    </p>
+
+    <p>
+      — Je vais parfaitement bien.
+    </p>
+
+    <p>
+      Peter soupire.
+    </p>
+
+    <p>
+      — C’est justement ça
+      qui m’inquiète.
+    </p>
+
+    <p>
+      Il regarde les données.
+    </p>
+
+    <p>
+      La récupération
+      est spectaculaire.
+    </p>
+
+    <p>
+      La plaie est refermée.
+    </p>
+
+    <p>
+      Les tissus ont presque entièrement
+      cicatrisé.
+    </p>
+
+    <p>
+      Une personne ordinaire
+      aurait encore besoin
+      de plusieurs semaines.
+    </p>
+
+    <p>
+      Hope,
+      elle,
+      a déjà repris
+      un entraînement contrôlé.
+    </p>
+
+    <p>
+      Root croise les bras.
+    </p>
+
+    <p>
+      — Doucement quand même.
+    </p>
+
+    <p>
+      Hope s’arrête.
+    </p>
+
+    <p>
+      — Vous êtes tous devenus
+      insupportables.
+    </p>
+
+    <p>
+      Peter répond :
+    </p>
+
+    <p class="impact-text">
+      — On t’aime aussi.
+    </p>
+
+    <p>
+      Hope le regarde.
+    </p>
+
+    <p>
+      Peter réalise
+      ce qu’il vient de dire.
+    </p>
+
+    <p>
+      Un silence.
+    </p>
+
+    <p>
+      Root sourit.
+    </p>
+
+    <p>
+      — Intéressant.
+    </p>
+
+    <p>
+      — Tais-toi.
+    </p>
+
+    <p>
+      Hope reprend son entraînement.
+    </p>
+
+    <p class="emphasis">
+      Mais elle sourit.
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     VISUEL 14
+     CENTRE D'ANALYSE
+===================================================== -->
+
+<section
+  class="scene investigation-scene"
+  id="scene-48"
+>
+
+  <div
+    class="visual"
+    data-visual="14"
+  >
+    <img
+      src="images/chapitre7/Visuel-14.PNG"
+      alt="Lucy Root Clive et Hale dans un centre d'analyse de l'hacienda Flores"
+      loading="lazy"
+    >
+  </div>
+
+
+  <div class="text-block">
+
+    <p>
+      Pendant que Hope récupère,
+      une autre enquête progresse.
+    </p>
+
+    <p>
+      Lucy a transformé
+      une pièce de l’hacienda Flores
+      en véritable centre d’analyse.
+    </p>
+
+    <p>
+      Sur les murs apparaissent
+      photographies,
+      cartes,
+      noms
+      et chronologies.
+    </p>
+
+    <p>
+      Root est assise
+      devant plusieurs dossiers.
+    </p>
+
+    <p>
+      Clive fait tourner
+      un stylo entre ses doigts.
+    </p>
+
+    <p>
+      Hale,
+      encore légèrement raide
+      lorsqu’il bouge trop rapidement,
+      les rejoint régulièrement
+      avec les résultats
+      de son enquête interne.
+    </p>
+
+    <p>
+      Lucy regarde l’écran principal.
+    </p>
+
+    <p class="impact-text">
+      — On reprend depuis le début.
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     INTERACTION 13
+     MORTS ADMINISTRATIFS
+===================================================== -->
+
+<section
+  class="scene investigation-scene interaction-scene"
+  id="scene-49"
+>
+
+  <div class="text-block">
+
+    <p>
+      IA2 affiche six portraits.
+    </p>
+
+    <p>
+      Les hommes
+      ayant attaqué Hope,
+      Root,
+      Lucy
+      et Clive quelques jours auparavant.
+    </p>
+
+    <p class="emphasis">
+      Tous officiellement morts.
+    </p>
+
+  </div>
+
+
+  <div class="file-grid">
+
+    <button
+      class="interaction-btn dead-file-trigger"
+      data-dead-file="sergio"
+    >
+      Sergio Velázquez
+    </button>
+
+    <button
+      class="interaction-btn dead-file-trigger"
+      data-dead-file="michael"
+    >
+      Michael Reeves
+    </button>
+
+    <button
+      class="interaction-btn dead-file-trigger"
+      data-dead-file="nicolas"
+    >
+      Nicolas Varga
+    </button>
+
+    <button
+      class="interaction-btn dead-file-trigger"
+      data-dead-file="dimitri"
+    >
+      Dimitri Orlov
+    </button>
+
+    <button
+      class="interaction-btn dead-file-trigger"
+      data-dead-file="samuel"
+    >
+      Samuel Knox
+    </button>
+
+    <button
+      class="interaction-btn dead-file-trigger"
+      data-dead-file="mateo"
+    >
+      Mateo Cruz
+    </button>
+
+  </div>
+
+
+  <div
+    class="reveal-box"
+    id="deadFilesReveal"
+  >
+  </div>
+
+</section>
+
+
+
+<section
+  class="scene investigation-scene"
+  id="scene-50"
+>
+
+  <div class="text-block dialogue">
+
+    <p>
+      Clive regarde
+      les six hommes.
+    </p>
+
+    <p>
+      — Donc les Gardiens
+      recrutent partout.
+    </p>
+
+    <p>
+      Root acquiesce.
+    </p>
+
+    <p>
+      — Militaires.
+    </p>
+
+    <p>
+      — Policiers.
+    </p>
+
+    <p>
+      — Sportifs.
+    </p>
+
+    <p>
+      — Agents clandestins.
+    </p>
+
+    <p>
+      — Criminels.
+    </p>
+
+    <p>
+      Lucy poursuit :
+    </p>
+
+    <p class="impact-text">
+      — Le profil social ne compte pas.
+    </p>
+
+    <p>
+      Root termine :
+    </p>
+
+    <p class="emphasis">
+      — Seulement les capacités.
+    </p>
+
+    <p>
+      Lucy regarde les six photos.
+    </p>
+
+    <p>
+      — Et leur capacité
+      à disparaître.
+    </p>
+
+    <p>
+      Clive sourit.
+    </p>
+
+    <p>
+      — Il faut reconnaître
+      qu’être mort facilite considérablement
+      certaines activités illégales.
+    </p>
+
+    <p>
+      Lucy lui lance un regard.
+    </p>
+
+    <p>
+      — Merci pour cette analyse brillante.
+    </p>
+
+    <p>
+      — À votre service.
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     VICTIMES DE LA CAMÉLÉON
+===================================================== -->
+
+<section
+  class="scene investigation-scene interaction-scene"
+  id="scene-51"
+>
+
+  <div class="text-block">
+
+    <p>
+      Lucy change l’écran.
+    </p>
+
+    <p>
+      Cette fois,
+      ce sont les victimes
+      de la Caméléon
+      qui apparaissent.
+    </p>
+
+    <p>
+      — Maintenant,
+      la vraie question.
+    </p>
+
+    <p>
+      Root se rapproche.
+    </p>
+
+    <p>
+      Lucy poursuit :
+    </p>
+
+    <p>
+      — Nous avons cherché
+      ce que toutes ces personnes
+      avaient fait avant leur mort.
+    </p>
+
+    <p>
+      Elle marque une pause.
+    </p>
+
+    <p>
+      — Mais Hope nous a demandé
+      autre chose.
+    </p>
+
+    <p class="impact-text">
+      QUE SE SERAIT-IL PASSÉ
+      SI ELLES AVAIENT VÉCU ?
+    </p>
+
+  </div>
+
+
+  <div class="file-grid">
+
+    <button
+      class="interaction-btn victim-trigger"
+      data-victim="moreno"
+    >
+      Dr Elias Moreno
+    </button>
+
+    <button
+      class="interaction-btn victim-trigger"
+      data-victim="laurent"
+    >
+      Camille Laurent
+    </button>
+
+    <button
+      class="interaction-btn victim-trigger"
+      data-victim="okafor"
+    >
+      Daniel Okafor
+    </button>
+
+  </div>
+
+
+  <div
+    class="reveal-box"
+    id="victimReveal"
+  >
+  </div>
+
+</section>
+
+
+
+<section
+  class="scene deduction-scene"
+  id="scene-52"
+>
+
+  <div class="text-block dialogue">
+
+    <p>
+      Root regarde
+      les trois victimes affichées.
+    </p>
+
+    <p>
+      — Attendez.
+    </p>
+
+    <p>
+      Elle se lève.
+    </p>
+
+    <p>
+      — Moreno aurait modifié
+      l’accès aux greffes.
+    </p>
+
+    <p>
+      — Laurent aurait changé
+      un équilibre industriel.
+    </p>
+
+    <p>
+      — Okafor allait déclencher
+      une procédure susceptible
+      de toucher plusieurs multinationales.
+    </p>
+
+    <p>
+      Lucy acquiesce.
+    </p>
+
+    <p>
+      — Aucun d’eux
+      n’était une personnalité mondiale.
+    </p>
+
+    <p>
+      — Mais tous étaient
+      sur le point de provoquer quelque chose.
+    </p>
+
+    <p>
+      Root sourit légèrement.
+    </p>
+
+    <p class="impact-text">
+      — L’effet papillon.
+    </p>
+
+    <p>
+      Lucy lève immédiatement
+      un doigt.
+    </p>
+
+    <p>
+      — Ne commence pas.
+    </p>
+
+    <p>
+      Clive rit.
+    </p>
+
+    <p>
+      — Elle l’attendait
+      depuis une semaine.
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<section
+  class="scene deduction-scene"
+  id="scene-53"
+>
+
+  <div class="text-block dialogue">
+
+    <p>
+      Root poursuit malgré tout.
+    </p>
+
+    <p>
+      — Ce ne sont pas
+      les victimes
+      qui sont importantes.
+    </p>
+
+    <p>
+      Elle désigne l’écran.
+    </p>
+
+    <p class="impact-text">
+      — Ce sont les futurs
+      qui ont disparu avec elles.
+    </p>
+
+    <p>
+      Lucy regarde les dossiers.
+    </p>
+
+    <p>
+      Cette phrase la frappe.
+    </p>
+
+    <p>
+      Elle se tourne vers IA2.
+    </p>
+
+    <p>
+      — Analyse toutes les victimes
+      selon ce principe.
+    </p>
+
+    <p>
+      — Pas ce qu’elles
+      avaient accompli.
+    </p>
+
+    <p>
+      — Ce qu’elles auraient probablement fait
+      dans les semaines,
+      les mois
+      ou les années
+      suivant leur mort.
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     INTERACTION 14
+     ANALYSE CONTREFACTUELLE / BÉNÉFICIAIRES
+===================================================== -->
+
+<section
+  class="scene deduction-scene interaction-scene"
+  id="scene-54"
+>
+
+  <button
+    class="interaction-btn"
+    id="counterfactualTrigger"
+  >
+    Lancer l’analyse contrefactuelle
+  </button>
+
+
+  <div
+    class="reveal-box"
+    id="counterfactualReveal"
+  >
+
+    <p>
+      ANALYSE CONTREFACTUELLE EN COURS…
+    </p>
+
+    <p>
+      Décisions.
+    </p>
+
+    <p>
+      Rencontres.
+    </p>
+
+    <p>
+      Projets.
+    </p>
+
+    <p>
+      Successeurs.
+    </p>
+
+    <p>
+      Rachats.
+    </p>
+
+    <p>
+      Contrats.
+    </p>
+
+    <p>
+      Décisions politiques.
+    </p>
+
+    <p class="impact-text">
+      BÉNÉFICIAIRES
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<section
+  class="scene deduction-scene"
+  id="scene-55"
+>
+
+  <div class="text-block dialogue">
+
+    <p>
+      Les données commencent
+      à défiler.
+    </p>
+
+    <p>
+      Quelques secondes plus tard,
+      plusieurs lignes apparaissent.
+    </p>
+
+    <p>
+      Lucy se rapproche.
+    </p>
+
+    <p>
+      — Qu’est-ce que…
+    </p>
+
+    <p>
+      Root se lève.
+    </p>
+
+    <p>
+      Sur l’écran,
+      IA2 vient de faire apparaître
+      plusieurs connexions.
+    </p>
+
+    <p>
+      Entre les entreprises.
+    </p>
+
+    <p>
+      Les successeurs.
+    </p>
+
+    <p>
+      Les rachats.
+    </p>
+
+    <p>
+      Les décisions politiques
+      prises après certains décès.
+    </p>
+
+    <p>
+      Les contrats attribués.
+    </p>
+
+    <p>
+      Les personnes promues.
+    </p>
+
+    <p>
+      Les projets abandonnés.
+    </p>
+
+    <p>
+      Puis un mot apparaît
+      au centre.
+    </p>
+
+    <p class="name-reveal">
+      BÉNÉFICIAIRES.
+    </p>
+
+    <p>
+      Clive ne sourit plus.
+    </p>
+
+    <p>
+      — Intéressant.
+    </p>
+
+    <p>
+      Lucy regarde
+      les ramifications.
+    </p>
+
+    <p>
+      — IA2.
+    </p>
+
+    <p>
+      — Compare les bénéficiaires indirects
+      de toutes les morts.
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<section
+  class="scene revelation-scene"
+  id="scene-56"
+>
+
+  <div class="text-block">
+
+    <p>
+      Quelques secondes passent.
+    </p>
+
+    <p class="impact-text">
+      CORRÉLATIONS DÉTECTÉES.
+    </p>
+
+    <p>
+      Root s’approche encore.
+    </p>
+
+    <p>
+      — Combien ?
+    </p>
+
+    <p class="name-reveal">
+      7 STRUCTURES
+    </p>
+
+    <p class="emphasis">
+      apparaissent dans plusieurs
+      chaînes de conséquences.
+    </p>
+
+    <p>
+      Lucy regarde Root.
+    </p>
+
+    <p>
+      Root regarde Lucy.
+    </p>
+
+    <p>
+      Clive repose son stylo.
+    </p>
+
+    <p>
+      — Je crois
+      qu’on vient enfin
+      de trouver quelque chose.
+    </p>
+
+    <p>
+      Lucy fixe
+      les sept noms affichés.
+    </p>
+
+    <p>
+      — Non.
+    </p>
+
+    <p>
+      Elle secoue légèrement
+      la tête.
+    </p>
+
+    <p class="impact-text">
+      — On vient de trouver
+      l’endroit où commencer à chercher.
+    </p>
+
+    <p>
+      Root sourit.
+    </p>
+
+    <p>
+      — Nuance de flic.
+    </p>
+
+    <p>
+      — Nuance essentielle.
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     FIN DU CHAPITRE
+===================================================== -->
+
+<section
+  class="scene chapter-end"
+  id="scene-57"
+>
+
+  <div class="text-block">
+
+    <p>
+      Lucy regarde
+      de nouveau l’écran.
+    </p>
+
+    <p>
+      Les morts administratifs.
+    </p>
+
+    <p>
+      Les victimes de la Caméléon.
+    </p>
+
+    <p>
+      Les futurs supprimés.
+    </p>
+
+    <p>
+      Les bénéficiaires.
+    </p>
+
+    <p>
+      Pour la première fois
+      depuis le début de son enquête,
+      elle ne voyait plus
+      une succession de cadavres.
+    </p>
+
+    <p class="impact-text">
+      Elle voyait une architecture.
+    </p>
+
+    <p>
+      Et quelque part
+      derrière cette architecture…
+    </p>
+
+    <p class="name-reveal">
+      quelqu’un construisait quelque chose.
+    </p>
+
+  </div>
+
+
+  <div class="end-symbol">
+    ∞
+  </div>
+
+
+  <div class="end-actions">
+
+    <button
+      class="chapter-btn"
+      id="restartChapter"
+    >
+      Relire le chapitre
+    </button>
+
+    <!--
+      Lorsque le chapitre 8 sera créé :
+
+      <a
+        class="chapter-btn primary"
+        href="chapitre8.html"
+      >
+        Continuer
+      </a>
+    -->
+
+    <a
+      class="chapter-btn primary"
+      href="index.html"
+    >
+      Retour à l’accueil
+    </a>
+
+  </div>
+
+</section>
+
+
+</main>
+
+
+
+<!-- =====================================================
+     POPUP INFORMATION / SECRET
+===================================================== -->
+
+<div
+  class="secret-popup"
+  id="secretPopup"
+  aria-hidden="true"
+>
+
+  <div class="secret-popup-inner">
+
+    <span class="secret-symbol">
+      ∞
+    </span>
+
+    <span>
+      INFORMATION DÉCOUVERTE
+    </span>
+
+  </div>
+
+</div>
+
+
+
+<!-- =====================================================
+     MENU
+===================================================== -->
+
+<div
+  class="chapter-menu"
+  id="chapterMenu"
+  aria-hidden="true"
+>
+
+  <div class="chapter-menu-panel">
+
+    <button
+      class="menu-close"
+      id="menuClose"
+      aria-label="Fermer le menu"
+    >
+      ×
+    </button>
+
+    <h2>
+      Chapitre 7
+    </h2>
+
+    <p>
+      L’incident de trop
+    </p>
+
+    <button
+      id="resumeBtn"
+      class="menu-action"
+    >
+      Reprendre la lecture
+    </button>
+
+    <button
+      id="restartBtn"
+      class="menu-action"
+    >
+      Recommencer le chapitre
+    </button>
+
+    <a
+      href="index.html"
+      class="menu-action"
+    >
+      Retour à l’accueil
+    </a>
+
+  </div>
+
+</div>
+
+
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
+<script src="js/chapitre7.js"></script>
+
+
+</body>
+</html>
