@@ -1,1 +1,2510 @@
+/* =========================================================
+   LA SOCIÉTÉ DE L’OMBRE
+   CHAPITRE 5 — L’INAUGURATION DU NEXUS
+========================================================= */
 
+
+/* =========================================================
+   VARIABLES
+========================================================= */
+
+:root {
+
+  --bg:
+    #07090c;
+
+  --bg-soft:
+    #0d1116;
+
+  --panel:
+    rgba(14, 18, 24, 0.88);
+
+  --panel-strong:
+    rgba(10, 13, 18, 0.96);
+
+  --text:
+    #f4f1ea;
+
+  --text-soft:
+    #cfc9bd;
+
+  --muted:
+    #9f9a90;
+
+  --gold:
+    #d8b46b;
+
+  --gold-soft:
+    #f2d596;
+
+  --green:
+    #6f9c7d;
+
+  --green-soft:
+    #a6c3ad;
+
+  --blue:
+    #7bb4c8;
+
+  --red:
+    #c76b6b;
+
+  --border:
+    rgba(255, 255, 255, 0.11);
+
+  --border-gold:
+    rgba(216, 180, 107, 0.4);
+
+  --shadow:
+    0 18px 50px rgba(0, 0, 0, 0.45);
+
+  --radius:
+    18px;
+
+  --radius-small:
+    12px;
+
+}
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+*,
+*::before,
+*::after {
+
+  box-sizing:
+    border-box;
+
+}
+
+
+html {
+
+  scroll-behavior:
+    smooth;
+
+  background:
+    var(--bg);
+
+}
+
+
+body {
+
+  margin:
+    0;
+
+  background:
+    radial-gradient(
+      circle at top,
+      #11161c 0%,
+      #090c10 34%,
+      #050608 100%
+    );
+
+  color:
+    var(--text);
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  line-height:
+    1.7;
+
+  overflow-x:
+    hidden;
+
+}
+
+
+/* =========================================================
+   SÉLECTION
+========================================================= */
+
+::selection {
+
+  background:
+    rgba(216, 180, 107, 0.28);
+
+  color:
+    #ffffff;
+
+}
+
+
+/* =========================================================
+   BARRE DE PROGRESSION
+========================================================= */
+
+.progress-bar {
+
+  position:
+    fixed;
+
+  top:
+    0;
+
+  left:
+    0;
+
+  width:
+    100%;
+
+  height:
+    4px;
+
+  z-index:
+    1000;
+
+  background:
+    rgba(255, 255, 255, 0.04);
+
+}
+
+
+#progressFill {
+
+  width:
+    0;
+
+  height:
+    100%;
+
+  background:
+    linear-gradient(
+      90deg,
+      var(--gold),
+      var(--gold-soft),
+      var(--green-soft)
+    );
+
+  box-shadow:
+    0 0 12px
+    rgba(216, 180, 107, 0.5);
+
+  transition:
+    width 0.15s linear;
+
+}
+
+
+/* =========================================================
+   BARRE DU HAUT
+========================================================= */
+
+.topbar {
+
+  position:
+    fixed;
+
+  top:
+    4px;
+
+  left:
+    0;
+
+  right:
+    0;
+
+  min-height:
+    58px;
+
+  display:
+    grid;
+
+  grid-template-columns:
+    52px 1fr 52px;
+
+  align-items:
+    center;
+
+  padding:
+    0 12px;
+
+  z-index:
+    900;
+
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(5, 7, 10, 0.93),
+      rgba(5, 7, 10, 0.62),
+      rgba(5, 7, 10, 0)
+    );
+
+  backdrop-filter:
+    blur(7px);
+
+}
+
+
+.chapter-title {
+
+  text-align:
+    center;
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  font-size:
+    0.86rem;
+
+  letter-spacing:
+    0.22em;
+
+  text-transform:
+    uppercase;
+
+  color:
+    var(--text-soft);
+
+}
+
+
+.icon-btn {
+
+  width:
+    42px;
+
+  height:
+    42px;
+
+  border:
+    1px solid var(--border);
+
+  border-radius:
+    50%;
+
+  background:
+    rgba(10, 13, 17, 0.62);
+
+  color:
+    var(--text);
+
+  font-size:
+    1.15rem;
+
+  cursor:
+    pointer;
+
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  justify-content:
+    center;
+
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease,
+    background 0.2s ease;
+
+}
+
+
+.icon-btn:hover {
+
+  transform:
+    scale(1.05);
+
+  border-color:
+    var(--border-gold);
+
+  background:
+    rgba(20, 24, 29, 0.9);
+
+}
+
+
+/* =========================================================
+   MENU LATÉRAL
+========================================================= */
+
+.chapter-menu {
+
+  position:
+    fixed;
+
+  inset:
+    0;
+
+  z-index:
+    1200;
+
+  background:
+    rgba(0, 0, 0, 0.58);
+
+  backdrop-filter:
+    blur(8px);
+
+  opacity:
+    0;
+
+  pointer-events:
+    none;
+
+  transition:
+    opacity 0.25s ease;
+
+}
+
+
+.chapter-menu.open {
+
+  opacity:
+    1;
+
+  pointer-events:
+    auto;
+
+}
+
+
+.menu-panel {
+
+  position:
+    absolute;
+
+  top:
+    0;
+
+  left:
+    0;
+
+  width:
+    min(88vw, 380px);
+
+  min-height:
+    100%;
+
+  padding:
+    92px 26px 40px;
+
+  background:
+    linear-gradient(
+      180deg,
+      #0b0e12 0%,
+      #11161a 55%,
+      #0a0c10 100%
+    );
+
+  border-right:
+    1px solid var(--border);
+
+  box-shadow:
+    18px 0 50px rgba(0, 0, 0, 0.45);
+
+}
+
+
+.menu-panel h2 {
+
+  margin:
+    0 0 8px;
+
+  font-size:
+    1.8rem;
+
+  color:
+    var(--gold-soft);
+
+}
+
+
+.menu-panel p {
+
+  margin:
+    0 0 28px;
+
+  color:
+    var(--text-soft);
+
+}
+
+
+.menu-close {
+
+  position:
+    absolute;
+
+  top:
+    20px;
+
+  right:
+    18px;
+
+  width:
+    42px;
+
+  height:
+    42px;
+
+  border:
+    1px solid var(--border);
+
+  border-radius:
+    50%;
+
+  background:
+    transparent;
+
+  color:
+    #ffffff;
+
+  font-size:
+    1.6rem;
+
+  cursor:
+    pointer;
+
+}
+
+
+.menu-action,
+.menu-link {
+
+  width:
+    100%;
+
+  min-height:
+    52px;
+
+  margin:
+    0 0 12px;
+
+  padding:
+    14px 18px;
+
+  border:
+    1px solid var(--border-gold);
+
+  border-radius:
+    14px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(216, 180, 107, 0.16),
+      rgba(255, 255, 255, 0.03)
+    );
+
+  color:
+    var(--text);
+
+  text-decoration:
+    none;
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  font-size:
+    0.94rem;
+
+  cursor:
+    pointer;
+
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  justify-content:
+    center;
+
+  text-align:
+    center;
+
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease;
+
+}
+
+
+.menu-action:hover,
+.menu-link:hover {
+
+  transform:
+    translateY(-1px);
+
+  background:
+    rgba(216, 180, 107, 0.18);
+
+}
+
+
+.menu-action.secondary {
+
+  border-color:
+    var(--border);
+
+  background:
+    rgba(255, 255, 255, 0.04);
+
+}
+
+
+/* =========================================================
+   POPUP SECRET
+========================================================= */
+
+.secret-popup {
+
+  position:
+    fixed;
+
+  left:
+    50%;
+
+  bottom:
+    28px;
+
+  transform:
+    translate(-50%, 20px);
+
+  width:
+    min(90vw, 520px);
+
+  padding:
+    16px 18px;
+
+  border:
+    1px solid rgba(216, 180, 107, 0.48);
+
+  border-radius:
+    14px;
+
+  background:
+    rgba(10, 13, 18, 0.95);
+
+  color:
+    var(--gold-soft);
+
+  text-align:
+    center;
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  font-size:
+    0.88rem;
+
+  letter-spacing:
+    0.04em;
+
+  box-shadow:
+    var(--shadow);
+
+  opacity:
+    0;
+
+  pointer-events:
+    none;
+
+  z-index:
+    1300;
+
+  transition:
+    opacity 0.25s ease,
+    transform 0.25s ease;
+
+}
+
+
+.secret-popup.show {
+
+  opacity:
+    1;
+
+  transform:
+    translate(-50%, 0);
+
+}
+
+
+/* =========================================================
+   STRUCTURE DU CHAPITRE
+========================================================= */
+
+#chapterContent {
+
+  width:
+    100%;
+
+}
+
+
+.scene {
+
+  position:
+    relative;
+
+  min-height:
+    100vh;
+
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  justify-content:
+    center;
+
+  padding:
+    100px 18px 70px;
+
+  overflow:
+    hidden;
+
+  border-bottom:
+    1px solid
+    rgba(255, 255, 255, 0.035);
+
+}
+
+
+.scene:nth-child(even) {
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.01),
+      rgba(255, 255, 255, 0.025)
+    );
+
+}
+
+
+.scene-content {
+
+  position:
+    relative;
+
+  z-index:
+    3;
+
+  width:
+    min(100%, 760px);
+
+  margin:
+    0 auto;
+
+}
+
+
+.reading {
+
+  max-width:
+    760px;
+
+}
+
+
+.reading > p {
+
+  margin:
+    0 0 1.15em;
+
+  font-size:
+    clamp(
+      1.08rem,
+      2.8vw,
+      1.28rem
+    );
+
+  color:
+    var(--text);
+
+}
+
+
+.reading > p:last-child {
+
+  margin-bottom:
+    0;
+
+}
+
+
+/* =========================================================
+   APPARITION DES TEXTES
+========================================================= */
+
+.scene p,
+.scene .dialogue,
+.scene .interaction-card,
+.scene .tracking-panel,
+.scene .links-panel {
+
+  opacity:
+    0;
+
+  transform:
+    translateY(10px);
+
+  transition:
+    opacity 0.55s ease,
+    transform 0.55s ease;
+
+}
+
+
+.scene .paragraph-visible {
+
+  opacity:
+    1;
+
+  transform:
+    translateY(0);
+
+}
+
+
+/* =========================================================
+   VISUELS PLEIN ÉCRAN
+========================================================= */
+
+.hero-scene,
+.visual-scene {
+
+  min-height:
+    100svh;
+
+  padding:
+    0;
+
+}
+
+
+.scene-image {
+
+  position:
+    absolute;
+
+  inset:
+    0;
+
+  width:
+    100%;
+
+  height:
+    100%;
+
+  object-fit:
+    cover;
+
+}
+
+
+.overlay-dark {
+
+  position:
+    absolute;
+
+  inset:
+    0;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.28) 0%,
+      rgba(0, 0, 0, 0.56) 48%,
+      rgba(0, 0, 0, 0.86) 100%
+    );
+
+  z-index:
+    1;
+
+}
+
+
+.overlay-gradient {
+
+  position:
+    absolute;
+
+  inset:
+    0;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.10) 0%,
+      rgba(0, 0, 0, 0.18) 38%,
+      rgba(4, 6, 8, 0.94) 86%,
+      #07090c 100%
+    );
+
+  z-index:
+    1;
+
+}
+
+
+/* =========================================================
+   OUVERTURE
+========================================================= */
+
+.hero-content {
+
+  text-align:
+    center;
+
+  padding:
+    0 24px;
+
+  display:
+    flex;
+
+  min-height:
+    100svh;
+
+  flex-direction:
+    column;
+
+  justify-content:
+    flex-end;
+
+  align-items:
+    center;
+
+  padding-bottom:
+    11vh;
+
+}
+
+
+.eyebrow {
+
+  margin:
+    0 0 12px !important;
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  font-size:
+    0.78rem !important;
+
+  letter-spacing:
+    0.28em;
+
+  text-transform:
+    uppercase;
+
+  color:
+    var(--gold-soft) !important;
+
+}
+
+
+.hero-content h1 {
+
+  margin:
+    0;
+
+  max-width:
+    780px;
+
+  font-size:
+    clamp(
+      2.3rem,
+      8vw,
+      4.8rem
+    );
+
+  line-height:
+    1.02;
+
+  font-weight:
+    500;
+
+  text-shadow:
+    0 6px 24px rgba(0, 0, 0, 0.6);
+
+}
+
+
+.hero-content h2 {
+
+  margin:
+    12px 0 28px;
+
+  font-size:
+    clamp(
+      1.05rem,
+      3.5vw,
+      1.55rem
+    );
+
+  font-weight:
+    400;
+
+  letter-spacing:
+    0.08em;
+
+  color:
+    var(--gold-soft);
+
+}
+
+
+/* =========================================================
+   CARTES BASSES SUR VISUELS
+========================================================= */
+
+.bottom-card {
+
+  margin-top:
+    46vh;
+
+  padding:
+    24px;
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.08);
+
+  border-radius:
+    24px 24px 0 0;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(10, 13, 17, 0.74),
+      rgba(7, 9, 12, 0.96)
+    );
+
+  backdrop-filter:
+    blur(9px);
+
+  box-shadow:
+    0 -20px 55px rgba(0, 0, 0, 0.26);
+
+}
+
+
+/* =========================================================
+   DIALOGUES
+========================================================= */
+
+.dialogue {
+
+  margin:
+    0 0 18px;
+
+  padding:
+    16px 18px;
+
+  border-left:
+    2px solid
+    rgba(216, 180, 107, 0.6);
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(216, 180, 107, 0.08),
+      rgba(255, 255, 255, 0.015)
+    );
+
+  border-radius:
+    0 12px 12px 0;
+
+}
+
+
+.dialogue p {
+
+  margin:
+    0;
+
+  color:
+    #f3eee3;
+
+  font-size:
+    clamp(
+      1.05rem,
+      2.5vw,
+      1.22rem
+    );
+
+}
+
+
+.speaker {
+
+  display:
+    block;
+
+  margin:
+    0 0 6px;
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  font-size:
+    0.74rem;
+
+  letter-spacing:
+    0.2em;
+
+  text-transform:
+    uppercase;
+
+  color:
+    var(--gold);
+
+}
+
+
+.important-dialogue {
+
+  border-left-color:
+    var(--red);
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(199, 107, 107, 0.12),
+      rgba(255, 255, 255, 0.015)
+    );
+
+}
+
+
+.important-dialogue .speaker {
+
+  color:
+    #f0a8a8;
+
+}
+
+
+/* =========================================================
+   BOUTON CONTINUER
+========================================================= */
+
+.continue-btn {
+
+  min-width:
+    180px;
+
+  min-height:
+    52px;
+
+  margin:
+    30px auto 0;
+
+  padding:
+    14px 24px;
+
+  border:
+    1px solid var(--border-gold);
+
+  border-radius:
+    999px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(216, 180, 107, 0.2),
+      rgba(216, 180, 107, 0.08)
+    );
+
+  color:
+    #fff8e9;
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  font-size:
+    0.92rem;
+
+  letter-spacing:
+    0.05em;
+
+  text-decoration:
+    none;
+
+  cursor:
+    pointer;
+
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  justify-content:
+    center;
+
+  text-align:
+    center;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+
+}
+
+
+.continue-btn:hover {
+
+  transform:
+    translateY(-2px);
+
+  box-shadow:
+    0 8px 24px
+    rgba(216, 180, 107, 0.16);
+
+  background:
+    rgba(216, 180, 107, 0.2);
+
+}
+
+
+/* =========================================================
+   BLOCS D'INTERACTION
+========================================================= */
+
+.interaction-card {
+
+  margin:
+    32px 0;
+
+  padding:
+    22px;
+
+  border:
+    1px solid var(--border);
+
+  border-radius:
+    var(--radius);
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(18, 23, 29, 0.9),
+      rgba(9, 12, 16, 0.9)
+    );
+
+  box-shadow:
+    var(--shadow);
+
+  backdrop-filter:
+    blur(6px);
+
+}
+
+
+.interaction-card.compact {
+
+  padding:
+    18px;
+
+}
+
+
+.interaction-card h3 {
+
+  margin:
+    0 0 12px;
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  font-size:
+    0.95rem;
+
+  letter-spacing:
+    0.08em;
+
+  text-transform:
+    uppercase;
+
+  color:
+    var(--gold-soft);
+
+}
+
+
+.interaction-hint {
+
+  margin:
+    0 0 18px !important;
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  font-size:
+    0.9rem !important;
+
+  color:
+    var(--muted) !important;
+
+}
+
+
+/* =========================================================
+   GRILLES DE BOUTONS
+========================================================= */
+
+.button-grid {
+
+  display:
+    grid;
+
+  gap:
+    10px;
+
+}
+
+
+.button-grid.one {
+
+  grid-template-columns:
+    1fr;
+
+}
+
+
+.button-grid.two {
+
+  grid-template-columns:
+    repeat(2, 1fr);
+
+}
+
+
+.button-grid.three {
+
+  grid-template-columns:
+    repeat(3, 1fr);
+
+}
+
+
+/* =========================================================
+   BOUTONS D'OBSERVATION / CHOIX
+========================================================= */
+
+.observe-btn,
+.choice-btn {
+
+  min-height:
+    48px;
+
+  padding:
+    12px 14px;
+
+  border:
+    1px solid var(--border);
+
+  border-radius:
+    12px;
+
+  background:
+    rgba(255, 255, 255, 0.035);
+
+  color:
+    var(--text);
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  font-size:
+    0.88rem;
+
+  cursor:
+    pointer;
+
+  transition:
+    transform 0.18s ease,
+    border-color 0.18s ease,
+    background 0.18s ease,
+    color 0.18s ease;
+
+}
+
+
+.observe-btn:hover,
+.choice-btn:hover {
+
+  transform:
+    translateY(-1px);
+
+  border-color:
+    var(--border-gold);
+
+  background:
+    rgba(216, 180, 107, 0.08);
+
+}
+
+
+.observe-btn.selected,
+.choice-btn.selected {
+
+  border-color:
+    rgba(216, 180, 107, 0.7);
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(216, 180, 107, 0.18),
+      rgba(111, 156, 125, 0.12)
+    );
+
+  color:
+    #fff4d7;
+
+}
+
+
+/* =========================================================
+   RÉSULTATS D'INTERACTION
+========================================================= */
+
+.result-box {
+
+  display:
+    none;
+
+  margin-top:
+    18px;
+
+  padding:
+    16px 18px;
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.08);
+
+  border-radius:
+    12px;
+
+  background:
+    rgba(0, 0, 0, 0.22);
+
+  color:
+    var(--text-soft);
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  font-size:
+    0.92rem;
+
+  line-height:
+    1.6;
+
+}
+
+
+.result-box.visible {
+
+  display:
+    block;
+
+  animation:
+    revealResult 0.35s ease both;
+
+}
+
+
+.result-box strong {
+
+  color:
+    var(--gold-soft);
+
+}
+
+
+.result-box em {
+
+  color:
+    var(--green-soft);
+
+}
+
+
+/* =========================================================
+   SECRET DÉCOUVERT
+========================================================= */
+
+.secret-discovery {
+
+  margin-top:
+    16px;
+
+  padding:
+    16px;
+
+  border:
+    1px solid
+    rgba(216, 180, 107, 0.32);
+
+  border-radius:
+    12px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(216, 180, 107, 0.08),
+      rgba(111, 156, 125, 0.06)
+    );
+
+  color:
+    var(--gold-soft);
+
+}
+
+
+/* =========================================================
+   POINTS DE VUE
+========================================================= */
+
+.viewpoint-card {
+
+  border-color:
+    rgba(123, 180, 200, 0.3);
+
+}
+
+
+.viewpoint-section {
+
+  margin:
+    36px 0 0;
+
+  padding:
+    24px;
+
+  border:
+    1px solid var(--border);
+
+  border-radius:
+    var(--radius);
+
+  background:
+    rgba(12, 16, 21, 0.82);
+
+}
+
+
+.viewpoint-section[hidden] {
+
+  display:
+    none;
+
+}
+
+
+.viewpoint-title {
+
+  margin:
+    0 0 24px;
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  font-size:
+    0.8rem;
+
+  letter-spacing:
+    0.18em;
+
+  text-transform:
+    uppercase;
+
+  color:
+    var(--blue);
+
+}
+
+
+.viewpoint-switch {
+
+  margin-top:
+    24px;
+
+}
+
+
+/* =========================================================
+   IMAGE INTERNE
+========================================================= */
+
+.scene-inline-visual {
+
+  margin:
+    0 0 24px;
+
+  overflow:
+    hidden;
+
+  border-radius:
+    16px;
+
+  border:
+    1px solid var(--border);
+
+  box-shadow:
+    var(--shadow);
+
+}
+
+
+.inline-image {
+
+  display:
+    block;
+
+  width:
+    100%;
+
+  aspect-ratio:
+    9 / 16;
+
+  object-fit:
+    cover;
+
+}
+
+
+/* =========================================================
+   INTERFACE DE SUIVI DU PHÉNIX
+========================================================= */
+
+.tracking-panel {
+
+  margin:
+    28px 0;
+
+  padding:
+    18px;
+
+  border:
+    1px solid
+    rgba(123, 180, 200, 0.24);
+
+  border-radius:
+    14px;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(8, 16, 20, 0.95),
+      rgba(5, 9, 12, 0.95)
+    );
+
+  box-shadow:
+    inset 0 0 20px
+    rgba(123, 180, 200, 0.03);
+
+  font-family:
+    "Courier New",
+    monospace;
+
+}
+
+
+.tracking-title {
+
+  margin:
+    0 0 14px;
+
+  font-size:
+    0.8rem;
+
+  letter-spacing:
+    0.16em;
+
+  color:
+    var(--blue);
+
+}
+
+
+.tracking-row {
+
+  display:
+    flex;
+
+  justify-content:
+    space-between;
+
+  gap:
+    12px;
+
+  padding:
+    10px 0;
+
+  border-bottom:
+    1px solid
+    rgba(255, 255, 255, 0.05);
+
+  font-size:
+    0.82rem;
+
+}
+
+
+.tracking-row:last-child {
+
+  border-bottom:
+    0;
+
+}
+
+
+.tracking-row span {
+
+  color:
+    var(--muted);
+
+}
+
+
+.tracking-row strong {
+
+  color:
+    var(--green-soft);
+
+  font-weight:
+    600;
+
+}
+
+
+/* =========================================================
+   SECRET PHÉNIX
+========================================================= */
+
+.hidden-secret {
+
+  position:
+    absolute;
+
+  z-index:
+    5;
+
+  border:
+    0;
+
+  background:
+    transparent;
+
+  color:
+    rgba(255, 245, 205, 0.38);
+
+  cursor:
+    pointer;
+
+}
+
+
+.phoenix-secret {
+
+  top:
+    13%;
+
+  right:
+    16%;
+
+  width:
+    44px;
+
+  height:
+    44px;
+
+  border-radius:
+    50%;
+
+  font-size:
+    1.2rem;
+
+  animation:
+    secretPulse 2.5s ease-in-out infinite;
+
+}
+
+
+.phoenix-secret.found {
+
+  color:
+    var(--gold-soft);
+
+  text-shadow:
+    0 0 12px
+    rgba(216, 180, 107, 0.8);
+
+}
+
+
+/* =========================================================
+   APPEL INTERCEPTÉ
+========================================================= */
+
+.audio-card {
+
+  border-color:
+    rgba(123, 180, 200, 0.25);
+
+}
+
+
+.call-transcript {
+
+  display:
+    none;
+
+  margin-top:
+    18px;
+
+  padding:
+    16px;
+
+  border-radius:
+    12px;
+
+  background:
+    #050709;
+
+  border:
+    1px solid
+    rgba(123, 180, 200, 0.2);
+
+  font-family:
+    "Courier New",
+    monospace;
+
+}
+
+
+.call-transcript.visible {
+
+  display:
+    block;
+
+}
+
+
+.call-line {
+
+  margin:
+    0 0 8px !important;
+
+  color:
+    #a8bdc5 !important;
+
+  font-size:
+    0.88rem !important;
+
+  animation:
+    transcriptIn 0.3s ease both;
+
+}
+
+
+/* =========================================================
+   TEXTE EN ACCENT
+========================================================= */
+
+.emphasis {
+
+  margin:
+    28px 0 !important;
+
+  padding:
+    18px 20px;
+
+  border-left:
+    2px solid var(--gold);
+
+  color:
+    var(--gold-soft) !important;
+
+  font-style:
+    italic;
+
+  background:
+    rgba(216, 180, 107, 0.05);
+
+}
+
+
+/* =========================================================
+   PAPILLON
+========================================================= */
+
+.butterfly-card {
+
+  text-align:
+    center;
+
+}
+
+
+.butterfly-btn {
+
+  width:
+    76px;
+
+  height:
+    76px;
+
+  border:
+    1px solid
+    rgba(216, 180, 107, 0.24);
+
+  border-radius:
+    50%;
+
+  background:
+    rgba(255, 255, 255, 0.03);
+
+  font-size:
+    2.35rem;
+
+  cursor:
+    pointer;
+
+  animation:
+    butterflyFloat 2.5s ease-in-out infinite;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+
+}
+
+
+.butterfly-btn:hover {
+
+  transform:
+    scale(1.07);
+
+  box-shadow:
+    0 0 24px
+    rgba(216, 180, 107, 0.16);
+
+}
+
+
+.butterfly-btn.opened {
+
+  border-color:
+    var(--gold);
+
+  box-shadow:
+    0 0 18px
+    rgba(216, 180, 107, 0.18);
+
+}
+
+
+/* =========================================================
+   LIENS DE FIN
+========================================================= */
+
+.links-panel {
+
+  margin:
+    42px 0 0;
+
+  padding:
+    22px;
+
+  border:
+    1px solid
+    rgba(216, 180, 107, 0.26);
+
+  border-radius:
+    var(--radius);
+
+  background:
+    rgba(8, 10, 13, 0.86);
+
+  text-align:
+    center;
+
+}
+
+
+.links-panel h3 {
+
+  margin:
+    0 0 20px;
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  font-size:
+    0.86rem;
+
+  letter-spacing:
+    0.14em;
+
+  text-transform:
+    uppercase;
+
+  color:
+    var(--gold-soft);
+
+}
+
+
+.links-panel div {
+
+  margin:
+    8px 0;
+
+  padding:
+    10px;
+
+  border-radius:
+    10px;
+
+  background:
+    rgba(255, 255, 255, 0.025);
+
+  color:
+    var(--text-soft);
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  font-size:
+    0.88rem;
+
+}
+
+
+.links-panel .anomaly {
+
+  margin-top:
+    16px;
+
+  border:
+    1px solid
+    rgba(199, 107, 107, 0.28);
+
+  color:
+    #e8b1b1;
+
+  background:
+    rgba(199, 107, 107, 0.07);
+
+}
+
+
+/* =========================================================
+   FIN DU CHAPITRE
+========================================================= */
+
+.final-scene {
+
+  padding-bottom:
+    0;
+
+}
+
+
+.final-line {
+
+  margin:
+    38px 0 !important;
+
+  padding:
+    26px 20px;
+
+  text-align:
+    center;
+
+  font-size:
+    clamp(
+      1.3rem,
+      4vw,
+      1.65rem
+    ) !important;
+
+  color:
+    #fff4da !important;
+
+}
+
+
+.chapter-end {
+
+  margin:
+    54px 0 20px;
+
+  padding:
+    30px 22px;
+
+  border-top:
+    1px solid
+    rgba(255, 255, 255, 0.08);
+
+  text-align:
+    center;
+
+}
+
+
+.chapter-end h2 {
+
+  margin:
+    0 0 24px;
+
+  color:
+    var(--gold-soft);
+
+  font-weight:
+    500;
+
+}
+
+
+.next-link {
+
+  margin-top:
+    14px;
+
+}
+
+
+/* =========================================================
+   ANIMATIONS
+========================================================= */
+
+@keyframes revealResult {
+
+  from {
+
+    opacity:
+      0;
+
+    transform:
+      translateY(6px);
+
+  }
+
+  to {
+
+    opacity:
+      1;
+
+    transform:
+      translateY(0);
+
+  }
+
+}
+
+
+@keyframes secretPulse {
+
+  0%,
+  100% {
+
+    transform:
+      scale(1);
+
+    opacity:
+      0.35;
+
+  }
+
+  50% {
+
+    transform:
+      scale(1.12);
+
+    opacity:
+      0.8;
+
+  }
+
+}
+
+
+@keyframes butterflyFloat {
+
+  0%,
+  100% {
+
+    transform:
+      translateY(0)
+      rotate(-2deg);
+
+  }
+
+  50% {
+
+    transform:
+      translateY(-7px)
+      rotate(2deg);
+
+  }
+
+}
+
+
+@keyframes transcriptIn {
+
+  from {
+
+    opacity:
+      0;
+
+    transform:
+      translateX(-6px);
+
+  }
+
+  to {
+
+    opacity:
+      1;
+
+    transform:
+      translateX(0);
+
+  }
+
+}
+
+
+/* =========================================================
+   TABLETTES
+========================================================= */
+
+@media
+(max-width: 900px) {
+
+  .scene {
+
+    padding-left:
+      16px;
+
+    padding-right:
+      16px;
+
+  }
+
+
+  .bottom-card {
+
+    width:
+      calc(100% - 20px);
+
+    margin-left:
+      auto;
+
+    margin-right:
+      auto;
+
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media
+(max-width: 640px) {
+
+  .topbar {
+
+    grid-template-columns:
+      46px 1fr 46px;
+
+    padding:
+      0 8px;
+
+  }
+
+
+  .icon-btn {
+
+    width:
+      38px;
+
+    height:
+      38px;
+
+    font-size:
+      1rem;
+
+  }
+
+
+  .chapter-title {
+
+    font-size:
+      0.72rem;
+
+    letter-spacing:
+      0.17em;
+
+  }
+
+
+  .scene {
+
+    min-height:
+      auto;
+
+    padding:
+      92px 14px 58px;
+
+  }
+
+
+  .hero-scene,
+  .visual-scene {
+
+    min-height:
+      100svh;
+
+    padding:
+      0;
+
+  }
+
+
+  .reading > p {
+
+    font-size:
+      1.08rem;
+
+    line-height:
+      1.72;
+
+  }
+
+
+  .bottom-card {
+
+    margin-top:
+      46vh;
+
+    padding:
+      20px 16px 34px;
+
+    border-radius:
+      20px 20px 0 0;
+
+  }
+
+
+  .interaction-card {
+
+    margin:
+      26px 0;
+
+    padding:
+      18px 14px;
+
+  }
+
+
+  .button-grid.two,
+  .button-grid.three {
+
+    grid-template-columns:
+      1fr;
+
+  }
+
+
+  .dialogue {
+
+    padding:
+      14px 14px;
+
+  }
+
+
+  .dialogue p {
+
+    font-size:
+      1.05rem;
+
+  }
+
+
+  .continue-btn {
+
+    width:
+      100%;
+
+    max-width:
+      360px;
+
+  }
+
+
+  .viewpoint-section {
+
+    padding:
+      18px 14px;
+
+  }
+
+
+  .tracking-row {
+
+    align-items:
+      flex-start;
+
+    flex-direction:
+      column;
+
+    gap:
+      3px;
+
+  }
+
+
+  .phoenix-secret {
+
+    top:
+      10%;
+
+    right:
+      8%;
+
+  }
+
+
+  .secret-popup {
+
+    bottom:
+      18px;
+
+    width:
+      calc(100vw - 28px);
+
+    font-size:
+      0.82rem;
+
+  }
+
+
+  .menu-panel {
+
+    width:
+      90vw;
+
+  }
+
+}
+
+
+/* =========================================================
+   PETITS ÉCRANS
+========================================================= */
+
+@media
+(max-width: 390px) {
+
+  .hero-content h1 {
+
+    font-size:
+      2.15rem;
+
+  }
+
+
+  .bottom-card {
+
+    margin-top:
+      42vh;
+
+  }
+
+
+  .reading > p {
+
+    font-size:
+      1.02rem;
+
+  }
+
+
+  .interaction-card {
+
+    padding:
+      16px 12px;
+
+  }
+
+}
+
+
+/* =========================================================
+   ACCESSIBILITÉ
+========================================================= */
+
+@media
+(prefers-reduced-motion: reduce) {
+
+  *,
+  *::before,
+  *::after {
+
+    scroll-behavior:
+      auto !important;
+
+    animation-duration:
+      0.01ms !important;
+
+    animation-iteration-count:
+      1 !important;
+
+    transition-duration:
+      0.01ms !important;
+
+  }
+
+}
