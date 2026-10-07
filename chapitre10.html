@@ -1,1 +1,3214 @@
+<!DOCTYPE html>
+<html lang="fr">
 
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+  >
+
+  <meta
+    name="theme-color"
+    content="#050505"
+  >
+
+  <title>
+    Chapitre 10 — La Disparition | La Société de l'Ombre
+  </title>
+
+  <link
+    rel="stylesheet"
+    href="css/chapitre10.css"
+  >
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     BARRE DE PROGRESSION
+===================================================== -->
+
+<div
+  class="progress-bar"
+  aria-hidden="true"
+>
+  <div
+    class="progress-fill"
+    id="progressFill"
+  ></div>
+</div>
+
+
+
+<!-- =====================================================
+     COMMANDES
+===================================================== -->
+
+<div class="chapter-controls">
+
+  <button
+    class="control-btn"
+    id="menuBtn"
+    aria-label="Ouvrir le menu"
+  >
+    ☰
+  </button>
+
+  <button
+    class="control-btn"
+    id="soundBtn"
+    aria-label="Activer ou désactiver le son"
+  >
+    ♫
+  </button>
+
+</div>
+
+
+
+<main
+  class="chapter"
+  id="chapter"
+>
+
+
+<!-- =====================================================
+     VISUEL 1
+     COUVERTURE / BETTY AU CANYON
+===================================================== -->
+
+<section
+  class="scene scene-cover"
+  id="scene-1"
+>
+
+  <div
+    class="visual full-visual"
+    data-visual="1"
+  >
+
+    <img
+      src="images/chapitre10/Visuel-1.PNG"
+      alt="Chapitre 10 — La Disparition"
+      loading="eager"
+    >
+
+  </div>
+
+
+  <div class="chapter-title-overlay">
+
+    <p class="chapter-number">
+      Chapitre 10
+    </p>
+
+    <h1>
+      La Disparition
+    </h1>
+
+    <button
+      class="continue-btn"
+      data-next
+    >
+      Continuer
+    </button>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     INTERACTION 1
+     BETTY CHERCHE HOPE
+===================================================== -->
+
+<section
+  class="scene danger-scene interaction-scene"
+  id="scene-2"
+>
+
+  <div
+    class="visual interactive-visual"
+    data-visual="1"
+  >
+    <img
+      src="images/chapitre10/Visuel-1.PNG"
+      alt="Betty observe la rivière depuis le bord du canyon"
+      loading="lazy"
+    >
+  </div>
+
+
+  <div class="text-block">
+
+    <p>
+      Betty reste figée.
+    </p>
+
+    <p>
+      Longtemps.
+    </p>
+
+    <p>
+      Trop longtemps.
+    </p>
+
+    <p>
+      Elle fixe la rivière
+      au fond du canyon.
+    </p>
+
+    <p>
+      Espérant apercevoir
+      un mouvement.
+    </p>
+
+    <p>
+      Une silhouette.
+    </p>
+
+    <p>
+      N’importe quoi.
+    </p>
+
+  </div>
+
+
+  <div class="observation-buttons">
+
+    <button
+      class="interaction-btn canyon-search-trigger"
+      data-canyon-search="river"
+    >
+      Observer la rivière
+    </button>
+
+    <button
+      class="interaction-btn canyon-search-trigger"
+      data-canyon-search="banks"
+    >
+      Observer les berges
+    </button>
+
+    <button
+      class="interaction-btn canyon-search-trigger"
+      data-canyon-search="movement"
+    >
+      Chercher un mouvement
+    </button>
+
+    <button
+      class="interaction-btn canyon-search-trigger"
+      data-canyon-search="sound"
+    >
+      Écouter
+    </button>
+
+  </div>
+
+
+  <div
+    class="reveal-box"
+    id="canyonSearchReveal"
+  >
+  </div>
+
+</section>
+
+
+
+<section
+  class="scene revelation-scene"
+  id="scene-3"
+>
+
+  <div class="text-block">
+
+    <p>
+      Mais rien.
+    </p>
+
+    <p>
+      Betty ferme les yeux.
+    </p>
+
+    <p>
+      Une larme coule lentement
+      le long de sa joue.
+    </p>
+
+    <p>
+      Lorsqu’elle les rouvre,
+      quelque chose a changé.
+    </p>
+
+    <p>
+      Hope s’est sacrifiée
+      pour elles.
+    </p>
+
+    <p>
+      Pour Anna.
+    </p>
+
+    <p>
+      Pour elle.
+    </p>
+
+    <p>
+      Betty refuse
+      que ce sacrifice
+      ait été inutile.
+    </p>
+
+    <p class="impact-text">
+      — Anna…
+    </p>
+
+    <p>
+      Elle se relève.
+    </p>
+
+    <p class="emphasis">
+      — Je dois retrouver Anna.
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     VISUEL 2
+     APPEL À ROOT
+===================================================== -->
+
+<section
+  class="scene investigation-scene interaction-scene"
+  id="scene-4"
+>
+
+  <div
+    class="visual interactive-visual"
+    data-visual="2"
+  >
+    <img
+      src="images/chapitre10/Visuel-2.PNG"
+      alt="Betty appelle Root depuis une route secondaire"
+      loading="lazy"
+    >
+  </div>
+
+
+  <div class="text-block">
+
+    <p>
+      Betty marche
+      pendant plusieurs heures.
+    </p>
+
+    <p>
+      Le réseau revient progressivement
+      lorsqu’elle se rapproche
+      d’une route secondaire.
+    </p>
+
+    <p>
+      Elle sort immédiatement
+      son téléphone.
+    </p>
+
+    <p>
+      Un seul nom.
+    </p>
+
+    <p class="name-reveal">
+      Root.
+    </p>
+
+  </div>
+
+
+  <div class="observation-buttons">
+
+    <button
+      class="interaction-btn root-call-trigger"
+      data-root-call="anna"
+    >
+      Parler d’Anna
+    </button>
+
+    <button
+      class="interaction-btn root-call-trigger"
+      data-root-call="hope"
+    >
+      Parler de Hope
+    </button>
+
+    <button
+      class="interaction-btn root-call-trigger"
+      data-root-call="amy"
+    >
+      Parler d’Amy
+    </button>
+
+    <button
+      class="interaction-btn root-call-trigger"
+      data-root-call="death"
+    >
+      Dire ce que Betty pense
+    </button>
+
+  </div>
+
+
+  <div
+    class="reveal-box"
+    id="rootCallReveal"
+  >
+  </div>
+
+</section>
+
+
+
+<section
+  class="scene revelation-scene"
+  id="scene-5"
+>
+
+  <div class="text-block dialogue">
+
+    <p>
+      La communication s’établit
+      presque instantanément.
+    </p>
+
+    <p>
+      — Betty ?
+    </p>
+
+    <p>
+      Root reconnaît immédiatement
+      quelque chose
+      dans sa respiration.
+    </p>
+
+    <p>
+      — Qu’est-ce qu’il s’est passé ?
+    </p>
+
+    <p>
+      — Anna.
+    </p>
+
+    <p>
+      — Elle est avec Max.
+    </p>
+
+    <p>
+      Betty ferme les yeux
+      de soulagement.
+    </p>
+
+    <p>
+      — Elle va bien ?
+    </p>
+
+    <p>
+      — Oui.
+    </p>
+
+    <p>
+      — Où ?
+    </p>
+
+    <p>
+      — En sécurité.
+    </p>
+
+    <p>
+      Betty s’adosse
+      à un arbre.
+    </p>
+
+    <p>
+      — Hope…
+    </p>
+
+    <p>
+      Root se fige.
+    </p>
+
+    <p>
+      — Quoi, Hope ?
+    </p>
+
+    <p>
+      Betty ne trouve pas les mots.
+    </p>
+
+    <p>
+      — Elle est tombée.
+    </p>
+
+    <p>
+      — Où ?
+    </p>
+
+    <p>
+      — Dans le canyon.
+    </p>
+
+    <p>
+      — Avec une autre femme.
+    </p>
+
+    <p>
+      — Amy, je crois.
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<section
+  class="scene revelation-scene"
+  id="scene-6"
+>
+
+  <div class="text-block dialogue">
+
+    <p>
+      Silence.
+    </p>
+
+    <p>
+      Puis Betty murmure :
+    </p>
+
+    <p>
+      — Je pense
+      qu’elle est morte.
+    </p>
+
+    <p class="impact-text">
+      — Non.
+    </p>
+
+    <p>
+      Betty se fige.
+    </p>
+
+    <p>
+      — Root…
+    </p>
+
+    <p>
+      — Elle n’est pas morte.
+    </p>
+
+    <p>
+      — Tu ne sais même pas
+      ce qui s’est passé.
+    </p>
+
+    <p>
+      — Je m’en fiche.
+    </p>
+
+    <p>
+      La voix de Root
+      tremble légèrement.
+    </p>
+
+    <p class="emphasis">
+      — Elle est vivante.
+    </p>
+
+    <p>
+      Betty ferme les yeux.
+    </p>
+
+    <p>
+      — Comment tu peux
+      en être aussi sûre ?
+    </p>
+
+    <p>
+      Root ne répond pas immédiatement.
+    </p>
+
+    <p>
+      — Je ne sais pas.
+    </p>
+
+    <p class="impact-text">
+      — Mais je le sais.
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     VISUEL 3
+     CHUTE DE HOPE
+===================================================== -->
+
+<section
+  class="scene combat-scene interaction-scene"
+  id="scene-7"
+>
+
+  <div
+    class="visual interactive-visual"
+    data-visual="3"
+  >
+    <img
+      src="images/chapitre10/Visuel-3.PNG"
+      alt="Hope active sa bulle Crash pendant la chute avec Amy"
+      loading="lazy"
+    >
+  </div>
+
+
+  <div class="text-block">
+
+    <p>
+      À plusieurs kilomètres de là,
+      profondément sous la roche,
+      l’eau poursuit sa course.
+    </p>
+
+    <p>
+      Hope ne sait plus
+      depuis combien de temps
+      elle est inconsciente.
+    </p>
+
+    <p>
+      Au moment de la chute,
+      elle a activé
+      sa bulle Crash
+      au dernier instant.
+    </p>
+
+  </div>
+
+
+  <div class="observation-buttons">
+
+    <button
+      class="interaction-btn crash-fall-trigger"
+      data-crash-fall="activation"
+    >
+      Activation
+    </button>
+
+    <button
+      class="interaction-btn crash-fall-trigger"
+      data-crash-fall="impact"
+    >
+      Absorption de l’impact
+    </button>
+
+    <button
+      class="interaction-btn crash-fall-trigger"
+      data-crash-fall="separation"
+    >
+      Séparation
+    </button>
+
+    <button
+      class="interaction-btn crash-fall-trigger"
+      data-crash-fall="currents"
+    >
+      Courants
+    </button>
+
+  </div>
+
+
+  <div
+    class="reveal-box"
+    id="crashFallReveal"
+  >
+  </div>
+
+</section>
+
+
+
+<section
+  class="scene combat-scene"
+  id="scene-8"
+>
+
+  <div class="text-block">
+
+    <p>
+      Pas suffisamment tôt
+      pour éviter l’impact.
+    </p>
+
+    <p>
+      Mais suffisamment
+      pour en absorber
+      une grande partie.
+    </p>
+
+    <p>
+      Lorsque leurs corps
+      frappent l’eau,
+      Hope et Amy
+      sont brutalement séparées.
+    </p>
+
+    <p>
+      La bulle se disloque.
+    </p>
+
+    <p>
+      Le courant les emporte.
+    </p>
+
+    <p>
+      Amy reste entraînée
+      vers le lit principal
+      du cours d’eau.
+    </p>
+
+    <p>
+      Hope,
+      elle,
+      est happée
+      par un bras secondaire.
+    </p>
+
+    <p>
+      Étroit.
+    </p>
+
+    <p>
+      Violent.
+    </p>
+
+    <p class="impact-text">
+      Invisible depuis la surface.
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     VISUEL 4
+     SOUS LA MONTAGNE
+===================================================== -->
+
+<section
+  class="scene shadow-scene interaction-scene"
+  id="scene-9"
+>
+
+  <div
+    class="visual interactive-visual"
+    data-visual="4"
+  >
+    <img
+      src="images/chapitre10/Visuel-4.PNG"
+      alt="Hope est emportée sous la montagne par un courant souterrain"
+      loading="lazy"
+    >
+  </div>
+
+
+  <div class="text-block">
+
+    <p>
+      Son corps disparaît
+      sous la montagne.
+    </p>
+
+  </div>
+
+
+  <div class="story-path">
+
+    <button
+      class="interaction-btn underground-trigger"
+      data-underground="impact"
+    >
+      Impact
+    </button>
+
+    <button
+      class="interaction-btn underground-trigger"
+      data-underground="violent"
+    >
+      Courant violent
+    </button>
+
+    <button
+      class="interaction-btn underground-trigger"
+      data-underground="narrow"
+    >
+      Passage étroit
+    </button>
+
+    <button
+      class="interaction-btn underground-trigger"
+      data-underground="darkness"
+    >
+      Obscurité
+    </button>
+
+    <button
+      class="interaction-btn underground-trigger"
+      data-underground="slow"
+    >
+      Ralentissement
+    </button>
+
+  </div>
+
+
+  <div
+    class="reveal-box"
+    id="undergroundReveal"
+  >
+  </div>
+
+</section>
+
+
+
+<section
+  class="scene shadow-scene"
+  id="scene-10"
+>
+
+  <div class="text-block">
+
+    <p>
+      Le courant l’emporte
+      dans l’obscurité.
+    </p>
+
+    <p>
+      Puis,
+      progressivement,
+      ralentit.
+    </p>
+
+    <p>
+      L’eau finit
+      par la rejeter
+      sur une petite plage.
+    </p>
+
+    <p>
+      Hope reste immobile.
+    </p>
+
+    <p class="impact-text">
+      Inconsciente.
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     VISUEL 5
+     GROTTE SOUTERRAINE
+===================================================== -->
+
+<section
+  class="scene artifact-scene interaction-scene"
+  id="scene-11"
+>
+
+  <div
+    class="visual interactive-visual"
+    data-visual="5"
+  >
+    <img
+      src="images/chapitre10/Visuel-5.PNG"
+      alt="Hope inconsciente dans une étrange grotte souterraine"
+      loading="lazy"
+    >
+  </div>
+
+
+  <div class="text-block">
+
+    <p>
+      Autour d’elle,
+      une étrange grotte souterraine.
+    </p>
+
+  </div>
+
+
+  <div class="observation-buttons">
+
+    <button
+      class="interaction-btn cave-trigger"
+      data-cave="pool"
+    >
+      Observer la vasque
+    </button>
+
+    <button
+      class="interaction-btn cave-trigger"
+      data-cave="sand"
+    >
+      Observer le sable
+    </button>
+
+    <button
+      class="interaction-btn cave-trigger"
+      data-cave="temperature"
+    >
+      Observer l’eau
+    </button>
+
+    <button
+      class="interaction-btn cave-trigger"
+      data-cave="light"
+    >
+      Observer la lumière
+    </button>
+
+    <button
+      class="interaction-btn cave-trigger"
+      data-cave="walls"
+    >
+      Observer les parois
+    </button>
+
+  </div>
+
+
+  <div
+    class="reveal-box"
+    id="caveReveal"
+  >
+  </div>
+
+</section>
+
+
+
+<section
+  class="scene artifact-scene"
+  id="scene-12"
+>
+
+  <div class="text-block">
+
+    <p>
+      Une vasque profonde.
+    </p>
+
+    <p>
+      Une petite langue de sable
+      aux reflets multicolores.
+    </p>
+
+    <p>
+      Curieusement tiède.
+    </p>
+
+    <p>
+      Très haut au-dessus d’elle,
+      un mince puits de lumière
+      traverse la roche.
+    </p>
+
+    <p>
+      À peine quelques rayons.
+    </p>
+
+    <p>
+      Mais suffisamment
+      pour révéler
+      quelque chose d’étrange.
+    </p>
+
+    <p>
+      Des reflets
+      dans les parois.
+    </p>
+
+    <p>
+      Des formes.
+    </p>
+
+    <p class="emphasis">
+      Peut-être naturelles.
+    </p>
+
+    <p class="impact-text">
+      Peut-être pas.
+    </p>
+
+    <p>
+      Hope ne les voit pas.
+    </p>
+
+    <p>
+      Pas encore.
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     VISUEL 6
+     BETTY RETROUVE ANNA
+===================================================== -->
+
+<section
+  class="scene revelation-scene interaction-scene"
+  id="scene-13"
+>
+
+  <div
+    class="visual interactive-visual"
+    data-visual="6"
+  >
+    <img
+      src="images/chapitre10/Visuel-6.PNG"
+      alt="Betty retrouve Anna Root et Max"
+      loading="lazy"
+    >
+  </div>
+
+
+  <div class="text-block">
+
+    <p>
+      Quelques heures plus tard,
+      Betty rejoint enfin Anna.
+    </p>
+
+    <p>
+      La jeune femme court
+      immédiatement vers elle.
+    </p>
+
+    <p>
+      — Maman !
+    </p>
+
+    <p>
+      Betty la serre contre elle.
+    </p>
+
+    <p>
+      Très fort.
+    </p>
+
+    <p>
+      Trop fort.
+    </p>
+
+  </div>
+
+
+  <div class="observation-buttons">
+
+    <button
+      class="interaction-btn reunion-trigger"
+      data-reunion="anna"
+    >
+      Observer Anna
+    </button>
+
+    <button
+      class="interaction-btn reunion-trigger"
+      data-reunion="betty"
+    >
+      Observer Betty
+    </button>
+
+    <button
+      class="interaction-btn reunion-trigger"
+      data-reunion="max"
+    >
+      Observer Max
+    </button>
+
+    <button
+      class="interaction-btn reunion-trigger"
+      data-reunion="root"
+    >
+      Observer Root
+    </button>
+
+  </div>
+
+
+  <div
+    class="reveal-box"
+    id="reunionReveal"
+  >
+  </div>
+
+</section>
+
+
+
+<section
+  class="scene revelation-scene"
+  id="scene-14"
+>
+
+  <div class="text-block dialogue">
+
+    <p>
+      Anna comprend aussitôt.
+    </p>
+
+    <p>
+      — Où est Hope ?
+    </p>
+
+    <p>
+      Betty ne répond pas.
+    </p>
+
+    <p>
+      Anna recule légèrement.
+    </p>
+
+    <p>
+      — Maman ?
+    </p>
+
+    <p>
+      Max baisse les yeux.
+    </p>
+
+    <p>
+      Root s’approche.
+    </p>
+
+    <p>
+      — Betty…
+    </p>
+
+    <p>
+      Betty regarde sa fille.
+    </p>
+
+    <p>
+      — Elle est tombée
+      dans le canyon.
+    </p>
+
+    <p>
+      Anna pâlit.
+    </p>
+
+    <p>
+      — Non.
+    </p>
+
+    <p>
+      — Avec Amy.
+    </p>
+
+    <p>
+      — Non…
+    </p>
+
+    <p>
+      Betty lui reprend les mains.
+    </p>
+
+    <p>
+      — Elle nous a sauvées.
+    </p>
+
+    <p>
+      Anna secoue la tête.
+    </p>
+
+    <p class="impact-text">
+      — Elle n’est pas morte.
+    </p>
+
+    <p>
+      Betty la regarde.
+    </p>
+
+    <p>
+      — Tu n’en sais rien.
+    </p>
+
+    <p>
+      Anna répond,
+      presque furieuse :
+    </p>
+
+    <p class="emphasis">
+      — Elle n’est pas morte.
+    </p>
+
+    <p>
+      Root tourne la tête vers elle.
+    </p>
+
+    <p>
+      Pendant une fraction de seconde,
+      les deux femmes
+      semblent ressentir
+      exactement la même chose.
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     VISUEL 7
+     INSTITUT TEMPASS
+===================================================== -->
+
+<section
+  class="scene investigation-scene interaction-scene"
+  id="scene-15"
+>
+
+  <div
+    class="visual interactive-visual"
+    data-visual="7"
+  >
+    <img
+      src="images/chapitre10/Visuel-7.PNG"
+      alt="Institut Tempass du Mexique"
+      loading="lazy"
+    >
+  </div>
+
+
+  <div class="text-block dialogue">
+
+    <p>
+      Betty regarde autour d’elle.
+    </p>
+
+    <p>
+      — Où sommes-nous ?
+    </p>
+
+    <p>
+      Root répond :
+    </p>
+
+    <p class="impact-text">
+      — Institut Tempass du Mexique.
+    </p>
+
+  </div>
+
+
+  <div class="observation-buttons">
+
+    <button
+      class="interaction-btn institute-trigger"
+      data-institute="security"
+    >
+      Observer la sécurité
+    </button>
+
+    <button
+      class="interaction-btn institute-trigger"
+      data-institute="research"
+    >
+      Observer les laboratoires
+    </button>
+
+    <button
+      class="interaction-btn institute-trigger"
+      data-institute="private"
+    >
+      Observer les zones privées
+    </button>
+
+    <button
+      class="interaction-btn institute-trigger"
+      data-institute="sentinels"
+    >
+      Observer les Sentinelles
+    </button>
+
+  </div>
+
+
+  <div
+    class="reveal-box"
+    id="instituteReveal"
+  >
+  </div>
+
+</section>
+
+
+
+<section
+  class="scene unity-scene"
+  id="scene-16"
+>
+
+  <div class="text-block dialogue">
+
+    <p>
+      Betty la regarde.
+    </p>
+
+    <p>
+      — Tu as aussi
+      un institut ici ?
+    </p>
+
+    <p>
+      Root hausse les épaules.
+    </p>
+
+    <p>
+      — J’en ai plusieurs.
+    </p>
+
+    <p>
+      — Combien ?
+    </p>
+
+    <p>
+      — Assez.
+    </p>
+
+    <p>
+      Max sourit légèrement.
+    </p>
+
+    <p class="emphasis">
+      — Ne pose pas la question
+      si tu ne veux pas
+      être agacée.
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     VISUEL 8
+     IA2 DÉTECTE LA MOBILISATION
+===================================================== -->
+
+<section
+  class="scene investigation-scene interaction-scene"
+  id="scene-17"
+>
+
+  <div
+    class="visual interactive-visual"
+    data-visual="8"
+  >
+    <img
+      src="images/chapitre10/Visuel-8.PNG"
+      alt="Lucy et IA2 détectent des mouvements inhabituels vers le Mexique"
+      loading="lazy"
+    >
+  </div>
+
+
+  <div class="text-block">
+
+    <p>
+      Pendant ce temps,
+      à plusieurs centaines
+      de kilomètres,
+      Lucy travaille seule
+      avec IA2.
+    </p>
+
+    <p>
+      Elle ignore encore tout
+      de la disparition d’Hope.
+    </p>
+
+    <p>
+      Les écrans devant elle
+      affichent toujours
+      les dossiers de la Caméléon.
+    </p>
+
+    <p>
+      Puis soudain :
+    </p>
+
+    <p>
+      une première alerte.
+    </p>
+
+    <p>
+      Puis une deuxième.
+    </p>
+
+    <p>
+      Puis dix.
+    </p>
+
+  </div>
+
+
+  <div class="observation-buttons">
+
+    <button
+      class="interaction-btn movement-trigger"
+      data-movement="private"
+    >
+      Avions privés
+    </button>
+
+    <button
+      class="interaction-btn movement-trigger"
+      data-movement="commercial"
+    >
+      Vols commerciaux
+    </button>
+
+    <button
+      class="interaction-btn movement-trigger"
+      data-movement="ground"
+    >
+      Déplacements terrestres
+    </button>
+
+    <button
+      class="interaction-btn movement-trigger"
+      data-movement="bookings"
+    >
+      Réservations urgentes
+    </button>
+
+  </div>
+
+
+  <div
+    class="reveal-box"
+    id="movementReveal"
+  >
+  </div>
+
+</section>
+
+
+
+<section
+  class="scene investigation-scene"
+  id="scene-18"
+>
+
+  <div class="text-block dialogue">
+
+    <p>
+      Lucy se redresse.
+    </p>
+
+    <p>
+      — IA2 ?
+    </p>
+
+    <p class="impact-text">
+      — MOUVEMENTS INHABITUELS DÉTECTÉS.
+    </p>
+
+    <p>
+      Une carte apparaît.
+    </p>
+
+    <p>
+      Plusieurs trajets
+      convergent vers le Mexique.
+    </p>
+
+    <p>
+      Avions privés.
+    </p>
+
+    <p>
+      Vols commerciaux.
+    </p>
+
+    <p>
+      Déplacements terrestres.
+    </p>
+
+    <p>
+      Réservations effectuées
+      en urgence.
+    </p>
+
+    <p>
+      Lucy fronce les sourcils.
+    </p>
+
+    <p>
+      — Qui ?
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     VISUEL 9
+     PROFILS INTERNATIONAUX
+===================================================== -->
+
+<section
+  class="scene deduction-scene interaction-scene"
+  id="scene-19"
+>
+
+  <div
+    class="visual interactive-visual"
+    data-visual="9"
+  >
+    <img
+      src="images/chapitre10/Visuel-9.PNG"
+      alt="Profils internationaux convergeant vers le Mexique"
+      loading="lazy"
+    >
+  </div>
+
+
+  <div class="text-block">
+
+    <p>
+      Des profils apparaissent.
+    </p>
+
+  </div>
+
+
+  <div class="observation-buttons">
+
+    <button
+      class="interaction-btn profiles-trigger"
+      data-profile="finance"
+    >
+      Financiers
+    </button>
+
+    <button
+      class="interaction-btn profiles-trigger"
+      data-profile="military"
+    >
+      Anciens militaires
+    </button>
+
+    <button
+      class="interaction-btn profiles-trigger"
+      data-profile="research"
+    >
+      Chercheurs
+    </button>
+
+    <button
+      class="interaction-btn profiles-trigger"
+      data-profile="diplomacy"
+    >
+      Diplomates
+    </button>
+
+    <button
+      class="interaction-btn profiles-trigger"
+      data-profile="religion"
+    >
+      Religieux
+    </button>
+
+    <button
+      class="interaction-btn profiles-trigger"
+      data-profile="humanitarian"
+    >
+      Humanitaires
+    </button>
+
+    <button
+      class="interaction-btn profiles-trigger"
+      data-profile="security"
+    >
+      Sécurité privée
+    </button>
+
+    <button
+      class="interaction-btn profiles-trigger"
+      data-profile="criminal"
+    >
+      Réseaux indirects
+    </button>
+
+  </div>
+
+
+  <div
+    class="reveal-box"
+    id="profilesReveal"
+  >
+  </div>
+
+</section>
+
+
+
+<section
+  class="scene deduction-scene"
+  id="scene-20"
+>
+
+  <div class="text-block dialogue">
+
+    <p>
+      Pris séparément,
+      rien de suffisamment extraordinaire.
+    </p>
+
+    <p>
+      Ensemble…
+    </p>
+
+    <p>
+      Lucy se rapproche.
+    </p>
+
+    <p>
+      — IA2.
+    </p>
+
+    <p>
+      — Compare leurs relations.
+    </p>
+
+    <p>
+      Plusieurs réseaux
+      commencent à apparaître.
+    </p>
+
+    <p>
+      Sociétés écrans.
+    </p>
+
+    <p>
+      Associations.
+    </p>
+
+    <p>
+      Fondations.
+    </p>
+
+    <p>
+      Entreprises.
+    </p>
+
+    <p>
+      Anciens employeurs.
+    </p>
+
+    <p>
+      Voyages communs.
+    </p>
+
+    <p>
+      — Impossible…
+    </p>
+
+    <p>
+      Lucy agrandit la carte.
+    </p>
+
+    <p>
+      Tous ne vont pas
+      au même endroit.
+    </p>
+
+    <p>
+      Mais beaucoup convergent
+      vers le même pays.
+    </p>
+
+    <p class="name-reveal">
+      Le Mexique.
+    </p>
+
+    <p>
+      Lucy murmure :
+    </p>
+
+    <p>
+      — Pris séparément,
+      ce sont des voyages.
+    </p>
+
+    <p>
+      Elle observe
+      toutes les lignes.
+    </p>
+
+    <p class="impact-text">
+      — Ensemble…
+      c’est une mobilisation.
+    </p>
+
+    <p>
+      IA2 répond :
+    </p>
+
+    <p class="emphasis">
+      — PROBABILITÉ
+      D’UNE COÏNCIDENCE GLOBALE :
+      FAIBLE.
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     VISUEL 10
+     ARRIVÉE DE MAÎTRE LEE
+===================================================== -->
+
+<section
+  class="scene sentinel-scene interaction-scene"
+  id="scene-21"
+>
+
+  <div
+    class="visual interactive-visual"
+    data-visual="10"
+  >
+    <img
+      src="images/chapitre10/Visuel-10.PNG"
+      alt="Maître Lee entre dans l'Institut Tempass"
+      loading="lazy"
+    >
+  </div>
+
+
+  <div class="text-block">
+
+    <p>
+      À l’Institut Tempass,
+      les Sentinelles présentes
+      commencent elles aussi
+      à recevoir des messages.
+    </p>
+
+    <p>
+      Les visages changent.
+    </p>
+
+    <p>
+      Les déplacements
+      s’accélèrent.
+    </p>
+
+    <p>
+      Root le remarque.
+    </p>
+
+    <p>
+      Max également.
+    </p>
+
+    <p>
+      Puis la grande porte
+      s’ouvre.
+    </p>
+
+  </div>
+
+
+  <div class="observation-buttons">
+
+    <button
+      class="interaction-btn lee-authority-trigger"
+      data-lee-authority="sentinels"
+    >
+      Observer les Sentinelles
+    </button>
+
+    <button
+      class="interaction-btn lee-authority-trigger"
+      data-lee-authority="root"
+    >
+      Observer Root
+    </button>
+
+    <button
+      class="interaction-btn lee-authority-trigger"
+      data-lee-authority="max"
+    >
+      Observer Max
+    </button>
+
+    <button
+      class="interaction-btn lee-authority-trigger"
+      data-lee-authority="betty"
+    >
+      Observer Betty
+    </button>
+
+  </div>
+
+
+  <div
+    class="reveal-box"
+    id="leeAuthorityReveal"
+  >
+  </div>
+
+</section>
+
+
+
+<section
+  class="scene sentinel-scene"
+  id="scene-22"
+>
+
+  <div class="text-block dialogue">
+
+    <p>
+      Un homme apparaît.
+    </p>
+
+    <p class="name-reveal">
+      Maître Lee.
+    </p>
+
+    <p>
+      Le silence tombe
+      immédiatement.
+    </p>
+
+    <p>
+      Les Sentinelles présentes
+      s’inclinent.
+    </p>
+
+    <p>
+      Root elle-même
+      se redresse.
+    </p>
+
+    <p>
+      Max incline légèrement
+      la tête.
+    </p>
+
+    <p>
+      Betty observe la scène,
+      stupéfaite.
+    </p>
+
+    <p>
+      Maître Lee avance lentement.
+    </p>
+
+    <p>
+      Root va immédiatement
+      vers lui.
+    </p>
+
+    <p>
+      — Elle est vivante.
+    </p>
+
+    <p>
+      Il la regarde.
+    </p>
+
+    <p class="impact-text">
+      — Je sais.
+    </p>
+
+    <p>
+      Root se fige.
+    </p>
+
+    <p>
+      — Vous aussi ?
+    </p>
+
+    <p>
+      — Oui.
+    </p>
+
+    <p>
+      — Comment ?
+    </p>
+
+    <p>
+      Il ne répond pas.
+    </p>
+
+    <p>
+      Root poursuit :
+    </p>
+
+    <p>
+      — Je ne pourrais pas
+      l’expliquer.
+    </p>
+
+    <p>
+      — Mais je la sens.
+    </p>
+
+    <p>
+      Maître Lee acquiesce.
+    </p>
+
+    <p class="emphasis">
+      — Alors écoute
+      ce que tu ressens.
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     VISUEL 11
+     ANNA / MAÎTRE LEE
+===================================================== -->
+
+<section
+  class="scene sentinel-scene interaction-scene"
+  id="scene-23"
+>
+
+  <div
+    class="visual interactive-visual"
+    data-visual="11"
+  >
+    <img
+      src="images/chapitre10/Visuel-11.PNG"
+      alt="Maître Lee aide Anna à écouter son intuition"
+      loading="lazy"
+    >
+  </div>
+
+
+  <div class="text-block dialogue">
+
+    <p>
+      Anna s’approche.
+    </p>
+
+    <p>
+      — Vous êtes Maître Lee ?
+    </p>
+
+    <p>
+      Il se tourne vers elle.
+    </p>
+
+    <p>
+      Un sourire apparaît
+      sur son visage.
+    </p>
+
+    <p>
+      — Et toi,
+      tu es Anna.
+    </p>
+
+    <p>
+      Elle acquiesce.
+    </p>
+
+  </div>
+
+
+  <div class="observation-buttons">
+
+    <button
+      class="interaction-btn inner-listening-trigger"
+      data-inner-listening="fear"
+    >
+      Écouter la peur
+    </button>
+
+    <button
+      class="interaction-btn inner-listening-trigger"
+      data-inner-listening="instinct"
+    >
+      Écouter l’instinct
+    </button>
+
+    <button
+      class="interaction-btn inner-listening-trigger"
+      data-inner-listening="silence"
+    >
+      Écouter le silence
+    </button>
+
+  </div>
+
+
+  <div
+    class="reveal-box"
+    id="innerListeningReveal"
+  >
+  </div>
+
+</section>
+
+
+
+<section
+  class="scene sentinel-scene"
+  id="scene-24"
+>
+
+  <div class="text-block dialogue">
+
+    <p>
+      — Pourquoi tout le monde
+      a l’air de paniquer ?
+    </p>
+
+    <p>
+      Personne ne répond
+      immédiatement.
+    </p>
+
+    <p>
+      Anna regarde autour d’elle.
+    </p>
+
+    <p>
+      — Pourquoi faut-il absolument
+      retrouver Hope ?
+    </p>
+
+    <p>
+      Maître Lee s’approche.
+    </p>
+
+    <p>
+      — Parce qu’elle ne protège pas
+      seulement ta vie.
+    </p>
+
+    <p>
+      Anna fronce les sourcils.
+    </p>
+
+    <p>
+      — Qu’est-ce que ça veut dire ?
+    </p>
+
+    <p>
+      Lee pose doucement
+      une main sur son épaule.
+    </p>
+
+    <p>
+      — Que certaines personnes
+      commencent à comprendre
+      ton importance
+      avant toi-même.
+    </p>
+
+    <p>
+      — Quelle importance ?
+    </p>
+
+    <p class="emphasis">
+      — Celle que Hope
+      devait justement
+      t’aider à découvrir.
+    </p>
+
+    <p>
+      Anna reste silencieuse.
+    </p>
+
+    <p>
+      — Elle est morte ?
+    </p>
+
+    <p>
+      Lee secoue lentement la tête.
+    </p>
+
+    <p class="impact-text">
+      — Non.
+    </p>
+
+    <p>
+      — Comment vous le savez ?
+    </p>
+
+    <p>
+      — Parce que si son souffle
+      s’était réellement éteint…
+    </p>
+
+    <p>
+      Il ferme brièvement
+      les yeux.
+    </p>
+
+    <p class="emphasis">
+      — Certains d’entre nous
+      le sauraient.
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<section
+  class="scene sentinel-scene"
+  id="scene-25"
+>
+
+  <div class="text-block">
+
+    <p>
+      Anna comprend
+      qu’il ne dira rien de plus.
+    </p>
+
+    <p>
+      Lee ajoute :
+    </p>
+
+    <p>
+      — Ta peur te dit
+      qu’elle est morte.
+    </p>
+
+    <p>
+      — Essaie d’écouter
+      autre chose.
+    </p>
+
+    <p>
+      Anna ferme les yeux.
+    </p>
+
+    <p>
+      Quelques secondes.
+    </p>
+
+    <p>
+      Puis plus longtemps.
+    </p>
+
+    <p>
+      Betty la regarde.
+    </p>
+
+    <p>
+      Anna inspire lentement.
+    </p>
+
+    <p>
+      Puis ouvre les yeux.
+    </p>
+
+    <p class="name-reveal">
+      — Elle est vivante.
+    </p>
+
+    <p>
+      Betty reste figée.
+    </p>
+
+    <p>
+      Anna murmure :
+    </p>
+
+    <p>
+      — Je ne sais pas comment…
+    </p>
+
+    <p class="emphasis">
+      — Mais elle est vivante.
+    </p>
+
+    <p>
+      Lee sourit.
+    </p>
+
+    <p>
+      — Alors nous allons
+      la retrouver.
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     VISUEL 12
+     LUCY ARRIVE
+===================================================== -->
+
+<section
+  class="scene investigation-scene interaction-scene"
+  id="scene-26"
+>
+
+  <div
+    class="visual interactive-visual"
+    data-visual="12"
+  >
+    <img
+      src="images/chapitre10/Visuel-12.PNG"
+      alt="Lucy arrive à l'Institut Tempass avec les données d'IA2"
+      loading="lazy"
+    >
+  </div>
+
+
+  <div class="text-block dialogue">
+
+    <p>
+      Au même moment,
+      Lucy entre brusquement
+      dans l’institut.
+    </p>
+
+    <p>
+      Elle n’a même pas attendu
+      qu’on lui indique
+      correctement le chemin.
+    </p>
+
+    <p>
+      — Root !
+    </p>
+
+    <p>
+      Tout le monde se tourne.
+    </p>
+
+    <p>
+      Lucy ralentit
+      en apercevant Maître Lee.
+    </p>
+
+    <p>
+      — Vous êtes qui ?
+    </p>
+
+    <p>
+      Lee ouvre la bouche.
+    </p>
+
+    <p>
+      Lucy lève une main.
+    </p>
+
+    <p class="emphasis">
+      — Non,
+      finalement,
+      peu importe.
+      On fera les présentations après.
+    </p>
+
+  </div>
+
+
+  <div class="observation-buttons">
+
+    <button
+      class="interaction-btn cross-data-trigger"
+      data-cross-data="hope"
+    >
+      Disparition de Hope
+    </button>
+
+    <button
+      class="interaction-btn cross-data-trigger"
+      data-cross-data="world"
+    >
+      Mobilisation mondiale
+    </button>
+
+    <button
+      class="interaction-btn cross-data-trigger"
+      data-cross-data="sentinels"
+    >
+      Sentinelles en mouvement
+    </button>
+
+    <button
+      class="interaction-btn cross-data-trigger"
+      data-cross-data="lee"
+    >
+      Arrivée de Maître Lee
+    </button>
+
+  </div>
+
+
+  <div
+    class="reveal-box"
+    id="crossDataReveal"
+  >
+  </div>
+
+</section>
+
+
+
+<section
+  class="scene investigation-scene"
+  id="scene-27"
+>
+
+  <div class="text-block dialogue">
+
+    <p>
+      Root manque de sourire.
+    </p>
+
+    <p>
+      — Qu’est-ce qu’il se passe ?
+    </p>
+
+    <p>
+      Lucy active son écran.
+    </p>
+
+    <p>
+      — IA2 détecte
+      des mouvements internationaux
+      complètement anormaux.
+    </p>
+
+    <p>
+      Elle projette la carte.
+    </p>
+
+    <p>
+      — Des dizaines de personnes
+      liées indirectement
+      à plusieurs réseaux
+      convergent vers le Mexique.
+    </p>
+
+    <p>
+      Max s’approche.
+    </p>
+
+    <p>
+      — Depuis quand ?
+    </p>
+
+    <p>
+      — Quelques heures.
+    </p>
+
+    <p>
+      Root regarde Lee.
+    </p>
+
+    <p>
+      Lucy remarque cet échange.
+    </p>
+
+    <p class="impact-text">
+      — Vous savez quelque chose.
+    </p>
+
+    <p>
+      Personne ne répond.
+    </p>
+
+    <p>
+      Lucy soupire.
+    </p>
+
+    <p class="emphasis">
+      — Génial.
+      Encore un secret.
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     VISUEL 13
+     FEMME RETROUVÉE VIVANTE
+===================================================== -->
+
+<section
+  class="scene deduction-scene interaction-scene"
+  id="scene-28"
+>
+
+  <div
+    class="visual interactive-visual"
+    data-visual="13"
+  >
+    <img
+      src="images/chapitre10/Visuel-13.PNG"
+      alt="IA2 analyse la femme retrouvée vivante en aval de Tamul"
+      loading="lazy"
+    >
+  </div>
+
+
+  <div class="text-block dialogue">
+
+    <p>
+      Max reçoit soudain
+      une notification.
+    </p>
+
+    <p>
+      Son expression change.
+    </p>
+
+    <p>
+      — Attendez.
+    </p>
+
+    <p>
+      Il lit.
+    </p>
+
+    <p>
+      — Une femme
+      a été retrouvée vivante
+      sur une rive
+      en aval du secteur de Tamul.
+    </p>
+
+    <p>
+      Betty se redresse.
+    </p>
+
+    <p>
+      — Hope ?
+    </p>
+
+    <p>
+      Max continue de lire.
+    </p>
+
+    <p>
+      — Les secours
+      n’ont jamais pu la récupérer.
+    </p>
+
+    <p>
+      — Pourquoi ?
+    </p>
+
+    <p class="impact-text">
+      — Un groupe est arrivé
+      avant eux
+      et l’a emmenée.
+    </p>
+
+  </div>
+
+
+  <div class="observation-buttons">
+
+    <button
+      class="interaction-btn survivor-trigger"
+      data-survivor="location"
+    >
+      Zone de découverte
+    </button>
+
+    <button
+      class="interaction-btn survivor-trigger"
+      data-survivor="description"
+    >
+      Description
+    </button>
+
+    <button
+      class="interaction-btn survivor-trigger"
+      data-survivor="clothes"
+    >
+      Vêtements
+    </button>
+
+    <button
+      class="interaction-btn survivor-trigger"
+      data-survivor="injuries"
+    >
+      Blessures
+    </button>
+
+    <button
+      class="interaction-btn survivor-trigger"
+      data-survivor="time"
+    >
+      Heure estimée
+    </button>
+
+  </div>
+
+
+  <div
+    class="reveal-box"
+    id="survivorReveal"
+  >
+  </div>
+
+</section>
+
+
+
+<section
+  class="scene investigation-scene"
+  id="scene-29"
+>
+
+  <div class="text-block dialogue">
+
+    <p>
+      Anna répond :
+    </p>
+
+    <p>
+      — Nous étions là-bas.
+    </p>
+
+    <p>
+      Lucy se tourne vers elle.
+    </p>
+
+    <p>
+      Anna poursuit :
+    </p>
+
+    <p>
+      — Avec Maman,
+      Hope et Max.
+    </p>
+
+    <p>
+      — Une femme
+      nous a attaqués.
+    </p>
+
+    <p>
+      Lucy regarde Betty.
+    </p>
+
+    <p>
+      Puis Max.
+    </p>
+
+    <p>
+      Puis Root.
+    </p>
+
+    <p>
+      — Quoi ?
+    </p>
+
+    <p>
+      Anna continue :
+    </p>
+
+    <p>
+      — Hope nous a sauvés.
+    </p>
+
+    <p>
+      — Elle a entraîné
+      l’autre femme avec elle
+      dans le canyon.
+    </p>
+
+    <p>
+      Lucy reste silencieuse.
+    </p>
+
+    <p>
+      — Et personne
+      n’a pensé à m’appeler ?
+    </p>
+
+    <p>
+      Anna la regarde.
+    </p>
+
+    <p>
+      — Il n’y avait pas de réseau.
+    </p>
+
+    <p>
+      Lucy ouvre la bouche.
+    </p>
+
+    <p>
+      Puis la referme.
+    </p>
+
+    <p class="emphasis">
+      — D’accord.
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<section
+  class="scene investigation-scene"
+  id="scene-30"
+>
+
+  <div class="text-block dialogue">
+
+    <p>
+      Anna s’approche.
+    </p>
+
+    <p>
+      — Tata.
+    </p>
+
+    <p>
+      Lucy la regarde.
+    </p>
+
+    <p>
+      — Si la femme retrouvée
+      est Hope,
+      il faut la retrouver.
+    </p>
+
+    <p>
+      — Et si ce n’est pas Hope…
+    </p>
+
+    <p>
+      Anna marque une pause.
+    </p>
+
+    <p>
+      — C’est peut-être
+      celle qui nous a attaqués.
+    </p>
+
+    <p>
+      Root termine :
+    </p>
+
+    <p class="impact-text">
+      — Amy.
+    </p>
+
+    <p>
+      Lucy se tourne brusquement.
+    </p>
+
+    <p>
+      — Amy ?
+    </p>
+
+    <p>
+      Root regarde Lee.
+    </p>
+
+    <p>
+      Puis Betty.
+    </p>
+
+    <p>
+      Betty acquiesce.
+    </p>
+
+    <p>
+      — Hope m’a donné
+      son prénom.
+    </p>
+
+    <p>
+      Lucy ne bouge plus.
+    </p>
+
+    <p>
+      — La femme dont Hope pensait
+      qu’elle pouvait correspondre
+      au profil de la Caméléon ?
+    </p>
+
+    <p>
+      Root répond :
+    </p>
+
+    <p class="emphasis">
+      — Oui.
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<section
+  class="scene deduction-scene"
+  id="scene-31"
+>
+
+  <div class="text-block dialogue">
+
+    <p>
+      Silence.
+    </p>
+
+    <p>
+      Lucy regarde l’écran.
+    </p>
+
+    <p>
+      — Alors maintenant,
+      on a enfin un nom.
+    </p>
+
+    <p>
+      Elle se tourne vers IA2.
+    </p>
+
+    <p class="impact-text">
+      — Cherche tout.
+    </p>
+
+    <p>
+      Puis elle ajoute :
+    </p>
+
+    <p class="emphasis">
+      — Mais aucune conclusion
+      sans preuve.
+    </p>
+
+    <p>
+      Root sourit légèrement.
+    </p>
+
+    <p>
+      — Ça,
+      c’est bien toi.
+    </p>
+
+    <p>
+      Lucy la fixe.
+    </p>
+
+    <p>
+      — Et toi,
+      plus tard,
+      tu m’expliqueras
+      pourquoi tu savais tout ça.
+    </p>
+
+    <p>
+      — Avec plaisir.
+    </p>
+
+    <p>
+      — Je doute énormément
+      de cette réponse.
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<section
+  class="scene deduction-scene"
+  id="scene-32"
+>
+
+  <div class="text-block">
+
+    <p>
+      IA2 travaille
+      plusieurs minutes.
+    </p>
+
+    <p>
+      Puis une série
+      de résultats apparaît.
+    </p>
+
+    <p>
+      Lucy analyse les données.
+    </p>
+
+    <p>
+      — La femme retrouvée
+      en aval
+      ne correspond probablement pas
+      à Hope.
+    </p>
+
+    <p>
+      Anna pâlit.
+    </p>
+
+    <p>
+      — Tu en es sûre ?
+    </p>
+
+    <p>
+      — Non.
+    </p>
+
+    <p>
+      Lucy précise :
+    </p>
+
+    <p>
+      — Mais plusieurs indices
+      concordent avec l’autre femme.
+    </p>
+
+    <p>
+      Root s’approche.
+    </p>
+
+    <p>
+      — Amy.
+    </p>
+
+    <p>
+      Lucy acquiesce.
+    </p>
+
+    <p class="name-reveal">
+      95 % DE CONCORDANCE
+    </p>
+
+    <p>
+      sur les éléments disponibles.
+    </p>
+
+    <p>
+      Root inspire.
+    </p>
+
+    <p>
+      — Si Amy a survécu…
+    </p>
+
+    <p>
+      Elle regarde Anna.
+    </p>
+
+    <p class="impact-text">
+      — Hope aussi.
+    </p>
+
+    <p>
+      — Ce n’est pas une preuve,
+      répond Lucy.
+    </p>
+
+    <p>
+      — Non.
+    </p>
+
+    <p>
+      Root serre les mâchoires.
+    </p>
+
+    <p class="emphasis">
+      — Mais c’est mieux que rien.
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     VISUEL 14
+     MOBILISATION POUR HOPE
+===================================================== -->
+
+<section
+  class="scene revelation-scene interaction-scene"
+  id="scene-33"
+>
+
+  <div
+    class="visual interactive-visual"
+    data-visual="14"
+  >
+    <img
+      src="images/chapitre10/Visuel-14.PNG"
+      alt="Carte mondiale montrant une mobilisation vers le Mexique"
+      loading="lazy"
+    >
+  </div>
+
+
+  <div class="text-block">
+
+    <p>
+      Lucy regarde
+      la carte mondiale
+      encore affichée.
+    </p>
+
+  </div>
+
+
+  <div class="observation-buttons">
+
+    <button
+      class="interaction-btn mobilisation-trigger"
+      data-mobilisation="sentinels"
+    >
+      Sentinelles
+    </button>
+
+    <button
+      class="interaction-btn mobilisation-trigger"
+      data-mobilisation="allies"
+    >
+      Anciens alliés
+    </button>
+
+    <button
+      class="interaction-btn mobilisation-trigger"
+      data-mobilisation="contacts"
+    >
+      Contacts
+    </button>
+
+    <button
+      class="interaction-btn mobilisation-trigger"
+      data-mobilisation="organizations"
+    >
+      Organisations
+    </button>
+
+    <button
+      class="interaction-btn mobilisation-trigger"
+      data-mobilisation="unknown"
+    >
+      Réseaux inconnus
+    </button>
+
+  </div>
+
+
+  <div
+    class="reveal-box"
+    id="mobilisationReveal"
+  >
+  </div>
+
+</section>
+
+
+
+<section
+  class="scene revelation-scene"
+  id="scene-34"
+>
+
+  <div class="text-block dialogue">
+
+    <p>
+      Lucy regarde
+      la carte mondiale
+      encore affichée.
+    </p>
+
+    <p>
+      — Maintenant,
+      expliquez-moi pourquoi
+      la moitié de vos amis secrets
+      semble soudain
+      avoir décidé
+      de venir au Mexique.
+    </p>
+
+    <p>
+      Maître Lee répond calmement :
+    </p>
+
+    <p class="impact-text">
+      — Parce qu’ils pensent
+      Hope disparue.
+    </p>
+
+    <p>
+      Lucy le regarde.
+    </p>
+
+    <p>
+      Silence.
+    </p>
+
+    <p>
+      Puis :
+    </p>
+
+    <p class="emphasis">
+      — Je sens que les présentations
+      vont finalement être longues.
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     FIN DU CHAPITRE
+===================================================== -->
+
+<section
+  class="scene chapter-end"
+  id="scene-35"
+>
+
+  <div class="text-block">
+
+    <p>
+      Quelque part
+      sous la montagne,
+      Hope respire encore.
+    </p>
+
+    <p>
+      À l’extérieur,
+      personne ne sait
+      où elle se trouve.
+    </p>
+
+    <p>
+      Mais sa disparition
+      vient déjà
+      de mettre en mouvement
+      des dizaines de personnes.
+    </p>
+
+    <p>
+      Certains veulent
+      la retrouver.
+    </p>
+
+    <p>
+      Certains veulent
+      comprendre.
+    </p>
+
+    <p>
+      Et peut-être que certains…
+    </p>
+
+    <p class="impact-text">
+      préfèreraient
+      qu’elle ne revienne jamais.
+    </p>
+
+  </div>
+
+
+  <div class="end-symbol">
+    ∞
+  </div>
+
+
+  <div class="end-actions">
+
+    <button
+      class="chapter-btn"
+      id="restartChapter"
+    >
+      Relire le chapitre
+    </button>
+
+    <!--
+      Quand le chapitre 11 sera prêt :
+
+      <a
+        class="chapter-btn primary"
+        href="chapitre11.html"
+      >
+        Continuer
+      </a>
+    -->
+
+    <a
+      class="chapter-btn primary"
+      href="index.html"
+    >
+      Retour à l’accueil
+    </a>
+
+  </div>
+
+</section>
+
+
+</main>
+
+
+
+<!-- =====================================================
+     POPUP INFORMATION / SECRET
+===================================================== -->
+
+<div
+  class="secret-popup"
+  id="secretPopup"
+  aria-hidden="true"
+>
+
+  <div class="secret-popup-inner">
+
+    <span class="secret-symbol">
+      ∞
+    </span>
+
+    <span>
+      INFORMATION DÉCOUVERTE
+    </span>
+
+  </div>
+
+</div>
+
+
+
+<!-- =====================================================
+     MENU
+===================================================== -->
+
+<div
+  class="chapter-menu"
+  id="chapterMenu"
+  aria-hidden="true"
+>
+
+  <div class="chapter-menu-panel">
+
+    <button
+      class="menu-close"
+      id="menuClose"
+      aria-label="Fermer le menu"
+    >
+      ×
+    </button>
+
+    <h2>
+      Chapitre 10
+    </h2>
+
+    <p>
+      La Disparition
+    </p>
+
+    <button
+      id="resumeBtn"
+      class="menu-action"
+    >
+      Reprendre la lecture
+    </button>
+
+    <button
+      id="restartBtn"
+      class="menu-action"
+    >
+      Recommencer le chapitre
+    </button>
+
+    <a
+      href="index.html"
+      class="menu-action"
+    >
+      Retour à l’accueil
+    </a>
+
+  </div>
+
+</div>
+
+
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
+<script src="js/chapitre10.js"></script>
+
+
+</body>
+</html>
