@@ -1,1 +1,3453 @@
+<!DOCTYPE html>
+<html lang="fr">
 
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+  >
+
+  <meta
+    name="theme-color"
+    content="#050505"
+  >
+
+  <title>
+    Chapitre 9 — La Traque | La Société de l'Ombre
+  </title>
+
+  <link
+    rel="stylesheet"
+    href="css/chapitre9.css"
+  >
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     BARRE DE PROGRESSION
+===================================================== -->
+
+<div
+  class="progress-bar"
+  aria-hidden="true"
+>
+  <div
+    class="progress-fill"
+    id="progressFill"
+  ></div>
+</div>
+
+
+
+<!-- =====================================================
+     COMMANDES
+===================================================== -->
+
+<div class="chapter-controls">
+
+  <button
+    class="control-btn"
+    id="menuBtn"
+    aria-label="Ouvrir le menu"
+  >
+    ☰
+  </button>
+
+  <button
+    class="control-btn"
+    id="soundBtn"
+    aria-label="Activer ou désactiver le son"
+  >
+    ♫
+  </button>
+
+</div>
+
+
+
+<main
+  class="chapter"
+  id="chapter"
+>
+
+
+<!-- =====================================================
+     VISUEL 1
+     COUVERTURE / HUASTECA POTOSINA
+===================================================== -->
+
+<section
+  class="scene scene-cover"
+  id="scene-1"
+>
+
+  <div
+    class="visual full-visual"
+    data-visual="1"
+  >
+
+    <img
+      src="images/chapitre9/Visuel-1.PNG"
+      alt="Chapitre 9 — La Traque"
+      loading="eager"
+    >
+
+  </div>
+
+
+  <div class="chapter-title-overlay">
+
+    <p class="chapter-number">
+      Chapitre 9
+    </p>
+
+    <h1>
+      La Traque
+    </h1>
+
+    <button
+      class="continue-btn"
+      data-next
+    >
+      Continuer
+    </button>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     HUASTECA POTOSINA
+===================================================== -->
+
+<section
+  class="scene"
+  id="scene-2"
+>
+
+  <div class="location-card">
+
+    <span>
+      État de San Luis Potosí
+    </span>
+
+    <strong>
+      Huasteca Potosina
+    </strong>
+
+  </div>
+
+
+  <div class="text-block">
+
+    <p>
+      Hope, Max, Anna et Betty
+      ont décidé de s’offrir
+      quelques jours loin
+      des événements récents.
+    </p>
+
+    <p>
+      Enfin,
+      « s’offrir quelques jours »
+      était surtout la manière
+      dont Hope avait présenté les choses.
+    </p>
+
+    <p>
+      Pour Anna,
+      ce séjour représentait
+      autre chose.
+    </p>
+
+    <p>
+      L’occasion de passer du temps
+      avec Max Speedman.
+    </p>
+
+    <p>
+      Son modèle.
+    </p>
+
+    <p>
+      Son futur mentor,
+      peut-être.
+    </p>
+
+    <p>
+      Et surtout,
+      l’occasion de parler journalisme
+      avec lui
+      sans avoir autour d’eux
+      Peter,
+      Lucy,
+      Root,
+      Clive
+      et la moitié du Mexique
+      pour interrompre leur conversation.
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     INTERACTION 1
+     EXPLORER LA HUASTECA
+===================================================== -->
+
+<section
+  class="scene investigation-scene interaction-scene"
+  id="scene-3"
+>
+
+  <div
+    class="visual interactive-visual"
+    data-visual="1"
+  >
+    <img
+      src="images/chapitre9/Visuel-1.PNG"
+      alt="Hope Max Anna et Betty marchent dans la Huasteca Potosina"
+      loading="lazy"
+    >
+  </div>
+
+
+  <div class="text-block">
+
+    <p>
+      Après de longues heures de route,
+      ils atteignent la région
+      de la Huasteca Potosina.
+    </p>
+
+    <p>
+      Ils passent la nuit
+      près du village
+      d’El Naranjito.
+    </p>
+
+    <p>
+      Le lendemain,
+      très tôt,
+      ils partent
+      à travers une végétation
+      dense et luxuriante.
+    </p>
+
+  </div>
+
+
+  <div class="observation-buttons">
+
+    <button
+      class="interaction-btn huasteca-trigger"
+      data-huasteca="forest"
+    >
+      Observer la forêt
+    </button>
+
+    <button
+      class="interaction-btn huasteca-trigger"
+      data-huasteca="birds"
+    >
+      Observer les oiseaux
+    </button>
+
+    <button
+      class="interaction-btn huasteca-trigger"
+      data-huasteca="plants"
+    >
+      Observer la végétation
+    </button>
+
+    <button
+      class="interaction-btn huasteca-trigger"
+      data-huasteca="water"
+    >
+      Écouter l’eau
+    </button>
+
+    <button
+      class="interaction-btn huasteca-trigger"
+      data-huasteca="canyon"
+    >
+      Observer le relief
+    </button>
+
+  </div>
+
+
+  <div
+    class="reveal-box"
+    id="huastecaReveal"
+  >
+  </div>
+
+</section>
+
+
+
+<section
+  class="scene"
+  id="scene-4"
+>
+
+  <div class="text-block">
+
+    <p>
+      La chaleur commence déjà
+      à se faire sentir.
+    </p>
+
+    <p>
+      Tout autour d’eux,
+      la forêt semble vivante.
+    </p>
+
+    <p>
+      Oiseaux multicolores.
+    </p>
+
+    <p>
+      Insectes.
+    </p>
+
+    <p>
+      Feuilles gigantesques.
+    </p>
+
+    <p>
+      Bruits d’eau au loin.
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     VISUEL 2
+     MAX / ANNA
+===================================================== -->
+
+<section
+  class="scene unity-scene interaction-scene"
+  id="scene-5"
+>
+
+  <div
+    class="visual interactive-visual"
+    data-visual="2"
+  >
+    <img
+      src="images/chapitre9/Visuel-2.PNG"
+      alt="Max et Anna discutent de journalisme pendant la randonnée"
+      loading="lazy"
+    >
+  </div>
+
+
+  <div class="text-block dialogue">
+
+    <p>
+      Max marche
+      aux côtés d’Anna.
+    </p>
+
+    <p>
+      — Alors,
+      future grande reporter,
+      première question.
+    </p>
+
+    <p>
+      Anna sourit.
+    </p>
+
+    <p>
+      — Je t’écoute.
+    </p>
+
+    <p>
+      — Pourquoi le journalisme ?
+    </p>
+
+  </div>
+
+
+  <div class="observation-buttons">
+
+    <button
+      class="interaction-btn journalism-trigger"
+      data-journalism="understand"
+    >
+      Pour comprendre
+    </button>
+
+    <button
+      class="interaction-btn journalism-trigger"
+      data-journalism="inform"
+    >
+      Pour informer
+    </button>
+
+    <button
+      class="interaction-btn journalism-trigger"
+      data-journalism="truth"
+    >
+      Pour chercher la vérité
+    </button>
+
+  </div>
+
+
+  <div
+    class="reveal-box"
+    id="journalismReveal"
+  >
+  </div>
+
+</section>
+
+
+
+<section
+  class="scene unity-scene"
+  id="scene-6"
+>
+
+  <div class="text-block dialogue">
+
+    <p>
+      Anna réfléchit.
+    </p>
+
+    <p>
+      — Parce que j’aime comprendre.
+    </p>
+
+    <p>
+      — Mauvaise réponse.
+    </p>
+
+    <p>
+      Elle le regarde.
+    </p>
+
+    <p>
+      — Pourquoi ?
+    </p>
+
+    <p>
+      — Tout le monde aime comprendre.
+    </p>
+
+    <p>
+      Il poursuit :
+    </p>
+
+    <p class="impact-text">
+      — La vraie question,
+      c’est :
+      qu’est-ce que tu es prête à faire
+      lorsque ce que tu découvres
+      ne te plaît pas ?
+    </p>
+
+    <p>
+      Anna ralentit légèrement.
+    </p>
+
+    <p>
+      Max sourit.
+    </p>
+
+    <p>
+      — Là,
+      on commence à parler journalisme.
+    </p>
+
+    <p>
+      Quelques mètres devant eux,
+      Betty lève les yeux au ciel.
+    </p>
+
+    <p>
+      — Tu pourrais lui laisser
+      au moins vingt-quatre heures
+      avant de commencer
+      à lui retourner le cerveau.
+    </p>
+
+    <p>
+      — Impossible.
+    </p>
+
+    <p>
+      Max regarde Anna.
+    </p>
+
+    <p>
+      — Elle a choisi
+      le pire métier du monde.
+    </p>
+
+    <p>
+      — J’ai entendu !
+    </p>
+
+    <p>
+      Hope sourit
+      sans se retourner.
+    </p>
+
+    <p class="emphasis">
+      — Il a raison.
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     VISUEL 3
+     CHUTES DE TAMUL
+===================================================== -->
+
+<section
+  class="scene revelation-scene interaction-scene"
+  id="scene-7"
+>
+
+  <div
+    class="visual interactive-visual"
+    data-visual="3"
+  >
+    <img
+      src="images/chapitre9/Visuel-3.PNG"
+      alt="Les chutes de Tamul et le canyon"
+      loading="lazy"
+    >
+  </div>
+
+
+  <div class="text-block">
+
+    <p>
+      La randonnée les conduit
+      progressivement
+      au-dessus du canyon.
+    </p>
+
+    <p>
+      Au loin,
+      le Río Gallinas
+      plonge dans le vide
+      et rejoint le Río Santa María.
+    </p>
+
+    <p>
+      Les chutes de Tamul
+      apparaissent enfin.
+    </p>
+
+    <p>
+      Une immense masse d’eau turquoise
+      se précipite
+      du haut de la falaise.
+    </p>
+
+  </div>
+
+
+  <div class="observation-buttons">
+
+    <button
+      class="interaction-btn tamul-trigger"
+      data-tamul="waterfall"
+    >
+      Observer la cascade
+    </button>
+
+    <button
+      class="interaction-btn tamul-trigger"
+      data-tamul="rainbow"
+    >
+      Observer la brume
+    </button>
+
+    <button
+      class="interaction-btn tamul-trigger"
+      data-tamul="canyon"
+    >
+      Observer le canyon
+    </button>
+
+    <button
+      class="interaction-btn tamul-trigger"
+      data-tamul="birds"
+    >
+      Observer les oiseaux
+    </button>
+
+  </div>
+
+
+  <div
+    class="reveal-box"
+    id="tamulReveal"
+  >
+  </div>
+
+</section>
+
+
+
+<section
+  class="scene revelation-scene"
+  id="scene-8"
+>
+
+  <div class="text-block dialogue">
+
+    <p>
+      Par endroits,
+      la brume forme
+      un léger arc-en-ciel.
+    </p>
+
+    <p>
+      Anna reste sans voix.
+    </p>
+
+    <p>
+      — Waouh…
+    </p>
+
+    <p>
+      Max sourit.
+    </p>
+
+    <p>
+      — Enfin une réaction
+      journalistiquement exploitable.
+    </p>
+
+    <p>
+      — Tais-toi.
+    </p>
+
+    <p>
+      Plus loin,
+      le fleuve poursuit
+      sa course
+      au fond du canyon.
+    </p>
+
+    <p>
+      Des oiseaux traversent le vide.
+    </p>
+
+    <p>
+      La forêt semble
+      s’étendre à l’infini.
+    </p>
+
+    <p>
+      Betty observe le paysage.
+    </p>
+
+    <p>
+      — Je comprends
+      pourquoi tu voulais venir ici.
+    </p>
+
+    <p>
+      Hope ne répond pas immédiatement.
+    </p>
+
+    <p>
+      Elle regarde l’eau.
+    </p>
+
+    <p class="emphasis">
+      — Il y a des endroits
+      qui remettent les choses
+      à leur place.
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<section
+  class="scene"
+  id="scene-9"
+>
+
+  <div class="text-block dialogue">
+
+    <p>
+      Ils poursuivent encore
+      un moment
+      avant de rejoindre
+      un secteur plus calme.
+    </p>
+
+    <p>
+      Plusieurs vasques naturelles.
+    </p>
+
+    <p>
+      Une petite grotte
+      remplie d’eau claire.
+    </p>
+
+    <p>
+      Anna regarde Max.
+    </p>
+
+    <p>
+      — On se baigne ?
+    </p>
+
+    <p>
+      — J’attendais
+      que quelqu’un propose.
+    </p>
+
+    <p>
+      Betty rit.
+    </p>
+
+    <p class="impact-text">
+      Mais Hope s’est arrêtée.
+    </p>
+
+    <p>
+      Son regard vient de changer.
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     VISUEL 4
+     HOPE DÉTECTE LA TRAQUE
+===================================================== -->
+
+<section
+  class="scene investigation-scene interaction-scene"
+  id="scene-10"
+>
+
+  <div
+    class="visual interactive-visual"
+    data-visual="4"
+  >
+    <img
+      src="images/chapitre9/Visuel-4.PNG"
+      alt="Hope observe la forêt et comprend qu'ils sont suivis"
+      loading="lazy"
+    >
+  </div>
+
+
+  <div class="text-block">
+
+    <p>
+      Quelque chose ne va pas.
+    </p>
+
+    <p>
+      Elle ne sait pas immédiatement quoi.
+    </p>
+
+  </div>
+
+
+  <div class="observation-buttons">
+
+    <button
+      class="interaction-btn tracking-trigger"
+      data-tracking="birds"
+    >
+      Écouter les oiseaux
+    </button>
+
+    <button
+      class="interaction-btn tracking-trigger"
+      data-tracking="movement"
+    >
+      Observer les feuillages
+    </button>
+
+    <button
+      class="interaction-btn tracking-trigger"
+      data-tracking="branch"
+    >
+      Observer la branche
+    </button>
+
+    <button
+      class="interaction-btn tracking-trigger"
+      data-tracking="silence"
+    >
+      Écouter le silence
+    </button>
+
+  </div>
+
+
+  <div
+    class="reveal-box"
+    id="trackingReveal"
+  >
+  </div>
+
+</section>
+
+
+
+<section
+  class="scene danger-scene"
+  id="scene-11"
+>
+
+  <div class="text-block">
+
+    <p>
+      Le bruit des oiseaux
+      s’est modifié.
+    </p>
+
+    <p>
+      Un mouvement trop régulier
+      dans les feuillages.
+    </p>
+
+    <p>
+      Une branche revenue
+      trop lentement en place.
+    </p>
+
+    <p>
+      Puis ce silence infime
+      que seuls ceux
+      qui passent leur vie
+      à observer
+      finissent par remarquer.
+    </p>
+
+    <p>
+      Hope tourne légèrement la tête.
+    </p>
+
+    <p class="impact-text">
+      Quelqu’un les suit.
+    </p>
+
+    <p>
+      Elle ne voit personne.
+    </p>
+
+    <p>
+      Mais elle sait.
+    </p>
+
+    <p class="emphasis">
+      Son corps l’a compris
+      avant son esprit.
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     VISUEL 5
+     INVERSION DES SILHOUETTES
+===================================================== -->
+
+<section
+  class="scene danger-scene interaction-scene"
+  id="scene-12"
+>
+
+  <div
+    class="visual interactive-visual"
+    data-visual="5"
+  >
+    <img
+      src="images/chapitre9/Visuel-5.PNG"
+      alt="Hope Betty Anna et Max échangent des vestes pour brouiller les silhouettes"
+      loading="lazy"
+    >
+  </div>
+
+
+  <div class="text-block dialogue">
+
+    <p>
+      — Max.
+    </p>
+
+    <p>
+      Il reconnaît immédiatement le ton.
+    </p>
+
+    <p>
+      — Oui ?
+    </p>
+
+    <p>
+      Hope retire son sac à dos
+      et le lui tend.
+    </p>
+
+    <p>
+      — Prends ça.
+    </p>
+
+    <p>
+      Max ne pose aucune question.
+    </p>
+
+    <p>
+      Betty les regarde.
+    </p>
+
+    <p>
+      — Qu’est-ce qui se passe ?
+    </p>
+
+    <p>
+      Hope fixe la forêt.
+    </p>
+
+    <p class="impact-text">
+      — Nous ne sommes plus seuls.
+    </p>
+
+  </div>
+
+
+  <div class="observation-buttons">
+
+    <button
+      class="interaction-btn disguise-trigger"
+      data-disguise="hope"
+    >
+      Hope prend la veste d’Anna
+    </button>
+
+    <button
+      class="interaction-btn disguise-trigger"
+      data-disguise="anna"
+    >
+      Anna prend celle de Betty
+    </button>
+
+    <button
+      class="interaction-btn disguise-trigger"
+      data-disguise="max"
+    >
+      Max protège Anna
+    </button>
+
+    <button
+      class="interaction-btn disguise-trigger"
+      data-disguise="silhouette"
+    >
+      Comparer les silhouettes
+    </button>
+
+  </div>
+
+
+  <div
+    class="reveal-box"
+    id="disguiseReveal"
+  >
+  </div>
+
+</section>
+
+
+
+<section
+  class="scene danger-scene"
+  id="scene-13"
+>
+
+  <div class="text-block dialogue">
+
+    <p>
+      Hope regarde Anna.
+    </p>
+
+    <p>
+      — Tu pars avec lui.
+    </p>
+
+    <p>
+      — Pourquoi ?
+    </p>
+
+    <p>
+      — Parce que je te le demande.
+    </p>
+
+    <p>
+      — Hope…
+    </p>
+
+    <p class="impact-text">
+      — Anna.
+    </p>
+
+    <p>
+      Sa voix suffit.
+    </p>
+
+    <p>
+      Hope prend la veste d’Anna.
+    </p>
+
+    <p>
+      — Donne-moi ça.
+    </p>
+
+    <p>
+      Anna la lui tend.
+    </p>
+
+    <p>
+      Hope regarde Betty.
+    </p>
+
+    <p>
+      — Donne-lui la tienne.
+    </p>
+
+    <p>
+      Betty comprend.
+    </p>
+
+    <p>
+      Max comprend immédiatement.
+    </p>
+
+    <p>
+      — Vous voulez inverser
+      les silhouettes.
+    </p>
+
+    <p>
+      Hope acquiesce.
+    </p>
+
+    <p class="emphasis">
+      — De loin,
+      oui.
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     VISUEL 6
+     BOUCLIER FRAIS
+===================================================== -->
+
+<section
+  class="scene investigation-scene interaction-scene"
+  id="scene-14"
+>
+
+  <div
+    class="visual interactive-visual"
+    data-visual="6"
+  >
+    <img
+      src="images/chapitre9/Visuel-6.PNG"
+      alt="Max active les dispositifs de camouflage conçus par Peter"
+      loading="lazy"
+    >
+  </div>
+
+
+  <div class="text-block">
+
+    <p>
+      Max active
+      plusieurs dispositifs
+      conçus par Peter.
+    </p>
+
+  </div>
+
+
+  <div class="observation-buttons">
+
+    <button
+      class="interaction-btn shield-trigger"
+      data-shield="optical"
+    >
+      Camouflage optique
+    </button>
+
+    <button
+      class="interaction-btn shield-trigger"
+      data-shield="ballistic"
+    >
+      Protection balistique
+    </button>
+
+    <button
+      class="interaction-btn shield-trigger"
+      data-shield="thermal"
+    >
+      Réduction thermique
+    </button>
+
+    <button
+      class="interaction-btn shield-trigger"
+      data-shield="jamming"
+    >
+      Brouillage
+    </button>
+
+  </div>
+
+
+  <div
+    class="reveal-box"
+    id="shieldReveal"
+  >
+  </div>
+
+</section>
+
+
+
+<section
+  class="scene investigation-scene"
+  id="scene-15"
+>
+
+  <div class="text-block">
+
+    <p>
+      Une fine membrane lumineuse
+      se déploie
+      autour d’Anna et de Max.
+    </p>
+
+    <p>
+      Puis disparaît
+      presque immédiatement.
+    </p>
+
+    <p>
+      Leurs silhouettes commencent
+      à se confondre
+      avec l’environnement.
+    </p>
+
+    <p class="emphasis">
+      Pas de véritable invisibilité.
+    </p>
+
+    <p>
+      Mais un camouflage optique
+      suffisamment sophistiqué
+      pour tromper
+      un regard humain à distance.
+    </p>
+
+    <p>
+      Un second système
+      se met en fonctionnement.
+    </p>
+
+    <p>
+      Protection balistique partielle.
+    </p>
+
+    <p>
+      Réduction
+      de la signature thermique.
+    </p>
+
+    <p>
+      Brouillage
+      de plusieurs systèmes
+      de détection.
+    </p>
+
+    <p>
+      Peter appelle ça :
+    </p>
+
+    <p class="impact-text">
+      un bouclier frais.
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<section
+  class="scene"
+  id="scene-16"
+>
+
+  <div class="text-block dialogue">
+
+    <p>
+      Max attrape doucement Anna
+      par le bras.
+    </p>
+
+    <p>
+      — On y va.
+    </p>
+
+    <p>
+      Anna regarde Hope.
+    </p>
+
+    <p>
+      — Sois prudente.
+    </p>
+
+    <p>
+      Hope lui sourit.
+    </p>
+
+    <p>
+      — Toujours.
+    </p>
+
+    <p>
+      Anna disparaît progressivement
+      avec Max
+      entre les arbres.
+    </p>
+
+    <p>
+      Hope attend quelques secondes.
+    </p>
+
+    <p>
+      Puis elle se tourne vers Betty.
+    </p>
+
+    <p>
+      — Maintenant,
+      nous allons faire croire
+      qu’elle est encore avec moi.
+    </p>
+
+    <p>
+      Betty la regarde.
+    </p>
+
+    <p>
+      — Et moi ?
+    </p>
+
+    <p>
+      — Tu vas jouer le rôle de Max.
+    </p>
+
+    <p>
+      — Très flatteur.
+    </p>
+
+    <p>
+      Hope sourit.
+    </p>
+
+    <p class="emphasis">
+      — Tu as la bonne veste.
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     VISUEL 7
+     PLAN DE DIVERSION
+===================================================== -->
+
+<section
+  class="scene deduction-scene interaction-scene"
+  id="scene-17"
+>
+
+  <div
+    class="visual interactive-visual"
+    data-visual="7"
+  >
+    <img
+      src="images/chapitre9/Visuel-7.PNG"
+      alt="Hope et Betty continuent seules dans la forêt pour attirer Amy"
+      loading="lazy"
+    >
+  </div>
+
+
+  <div class="text-block">
+
+    <p>
+      Elles reprennent leur marche.
+    </p>
+
+    <p>
+      Hope connaît suffisamment
+      son adversaire
+      pour savoir
+      comment elle raisonne.
+    </p>
+
+  </div>
+
+
+  <div class="observation-buttons">
+
+    <button
+      class="interaction-btn diversion-trigger"
+      data-diversion="anna"
+    >
+      Éloigner Anna
+    </button>
+
+    <button
+      class="interaction-btn diversion-trigger"
+      data-diversion="visible"
+    >
+      Rester visibles
+    </button>
+
+    <button
+      class="interaction-btn diversion-trigger"
+      data-diversion="amy"
+    >
+      Tromper Amy
+    </button>
+
+    <button
+      class="interaction-btn diversion-trigger"
+      data-diversion="time"
+    >
+      Gagner du temps
+    </button>
+
+  </div>
+
+
+  <div
+    class="reveal-box"
+    id="diversionReveal"
+  >
+  </div>
+
+</section>
+
+
+
+<section
+  class="scene deduction-scene"
+  id="scene-18"
+>
+
+  <div class="text-block">
+
+    <p>
+      Si Amy les suit réellement,
+      elle supposera qu’Hope
+      ne laissera jamais Anna
+      partir sans elle.
+    </p>
+
+    <p class="emphasis">
+      C’est exactement
+      ce qu’Hope veut
+      qu’elle pense.
+    </p>
+
+    <p>
+      Elles progressent encore
+      plusieurs kilomètres.
+    </p>
+
+    <p>
+      Puis Hope ralentit.
+    </p>
+
+    <p>
+      — Nous les avons
+      suffisamment éloignés.
+    </p>
+
+    <p>
+      Betty tourne la tête.
+    </p>
+
+    <p>
+      — « Les » ?
+    </p>
+
+    <p>
+      Hope ne répond pas.
+    </p>
+
+    <p>
+      Elle regarde autour d’elle.
+    </p>
+
+    <p>
+      — Nous avons
+      quelques minutes.
+    </p>
+
+    <p>
+      — Quelques minutes
+      avant quoi ?
+    </p>
+
+    <p>
+      Hope inspire profondément.
+    </p>
+
+    <p class="impact-text">
+      — Avant que mon passé
+      nous rattrape.
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     VISUEL 8
+     PASSÉ HOPE / AMY
+===================================================== -->
+
+<section
+  class="scene revelation-scene interaction-scene"
+  id="scene-19"
+>
+
+  <div
+    class="visual interactive-visual"
+    data-visual="8"
+  >
+    <img
+      src="images/chapitre9/Visuel-8.PNG"
+      alt="Hope raconte à Betty son passé avec Amy"
+      loading="lazy"
+    >
+  </div>
+
+
+  <div class="text-block dialogue">
+
+    <p>
+      Elles s’abritent
+      derrière un relief rocheux.
+    </p>
+
+    <p>
+      Hope écoute quelques secondes.
+    </p>
+
+    <p>
+      Puis elle commence.
+    </p>
+
+    <p class="impact-text">
+      — Elle s’appelle Amy.
+    </p>
+
+    <p>
+      Betty ne dit rien.
+    </p>
+
+    <p>
+      — Elle avait douze ans
+      lorsque je l’ai rencontrée.
+    </p>
+
+    <p>
+      Hope regarde la forêt.
+    </p>
+
+    <p>
+      — Le même âge que moi.
+    </p>
+
+  </div>
+
+
+  <div class="story-path">
+
+    <button
+      class="interaction-btn past-trigger"
+      data-past="crash"
+    >
+      Le crash
+    </button>
+
+    <button
+      class="interaction-btn past-trigger"
+      data-past="survivors"
+    >
+      Deux survivantes
+    </button>
+
+    <button
+      class="interaction-btn past-trigger"
+      data-past="camps"
+    >
+      Deux camps
+    </button>
+
+    <button
+      class="interaction-btn past-trigger"
+      data-past="friendship"
+    >
+      L’amitié secrète
+    </button>
+
+    <button
+      class="interaction-btn past-trigger"
+      data-past="punishment"
+    >
+      Les punitions
+    </button>
+
+    <button
+      class="interaction-btn past-trigger"
+      data-past="separation"
+    >
+      La séparation
+    </button>
+
+  </div>
+
+
+  <div
+    class="reveal-box"
+    id="pastReveal"
+  >
+  </div>
+
+</section>
+
+
+
+<section
+  class="scene revelation-scene"
+  id="scene-20"
+>
+
+  <div class="text-block dialogue">
+
+    <p>
+      Hope hésite.
+    </p>
+
+    <p>
+      — Lorsque l’A380
+      s’est écrasé,
+      il n’a pas seulement
+      détruit ma vie.
+    </p>
+
+    <p>
+      Betty comprend.
+    </p>
+
+    <p>
+      — Son village ?
+    </p>
+
+    <p>
+      Hope acquiesce.
+    </p>
+
+    <p>
+      — Une partie de sa communauté
+      a été frappée par le crash.
+    </p>
+
+    <p>
+      — Elle aussi a tout perdu.
+    </p>
+
+    <p>
+      — Oui.
+    </p>
+
+    <p>
+      Hope reste silencieuse.
+    </p>
+
+    <p>
+      — Moi,
+      j’ai été recueillie
+      par ceux qui allaient devenir
+      ma famille.
+    </p>
+
+    <p>
+      — Les Sentinelles.
+    </p>
+
+    <p>
+      — Oui.
+    </p>
+
+    <p>
+      — Et Amy ?
+    </p>
+
+    <p class="impact-text">
+      — Par les Gardiens Noirs.
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<section
+  class="scene revelation-scene"
+  id="scene-21"
+>
+
+  <div class="text-block dialogue">
+
+    <p>
+      — Deux gamines.
+    </p>
+
+    <p>
+      — Deux survivantes.
+    </p>
+
+    <p>
+      — Deux mondes
+      complètement opposés.
+    </p>
+
+    <p>
+      Hope sourit légèrement.
+    </p>
+
+    <p>
+      — Ça ne nous a pas empêchées
+      de nous retrouver.
+    </p>
+
+    <p>
+      Betty fronce les sourcils.
+    </p>
+
+    <p>
+      — Vous étiez amies ?
+    </p>
+
+    <p>
+      — En secret.
+    </p>
+
+    <p>
+      Hope laisse échapper
+      un petit rire.
+    </p>
+
+    <p>
+      — Très secrètement.
+    </p>
+
+    <p>
+      — Pourquoi ?
+    </p>
+
+    <p>
+      — Parce que c’était
+      strictement interdit.
+    </p>
+
+    <p>
+      Hope poursuit :
+    </p>
+
+    <p>
+      — Nous nous retrouvions
+      pour jouer.
+    </p>
+
+    <p>
+      — Parler.
+    </p>
+
+    <p>
+      — Nous raconter
+      ce qu’on apprenait.
+    </p>
+
+    <p>
+      — Nous faisions parfois
+      des kilomètres
+      simplement pour passer
+      une heure ensemble.
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<section
+  class="scene revelation-scene"
+  id="scene-22"
+>
+
+  <div class="text-block dialogue">
+
+    <p>
+      Betty regarde Hope
+      avec étonnement.
+    </p>
+
+    <p>
+      — Et personne ne savait ?
+    </p>
+
+    <p>
+      — Ils ont fini par savoir.
+    </p>
+
+    <p>
+      Son sourire disparaît.
+    </p>
+
+    <p>
+      — Et nous avons été punies.
+    </p>
+
+    <p>
+      — Toutes les deux.
+    </p>
+
+    <p>
+      — De plus en plus sévèrement.
+    </p>
+
+    <p>
+      Hope baisse les yeux.
+    </p>
+
+    <p>
+      — Alors nous avons commencé
+      à nous voir moins souvent.
+    </p>
+
+    <p>
+      Puis plus du tout.
+    </p>
+
+    <p>
+      — Vous ne vous êtes
+      jamais revues ?
+    </p>
+
+    <p>
+      Hope hésite.
+    </p>
+
+    <p>
+      — Pas vraiment.
+    </p>
+
+    <p>
+      Elle relève les yeux.
+    </p>
+
+    <p class="emphasis">
+      — Mais nous avons toujours gardé
+      un œil l’une sur l’autre.
+    </p>
+
+    <p>
+      — Sans parler.
+    </p>
+
+    <p>
+      — Sans nous rencontrer.
+    </p>
+
+    <p>
+      — Sans jamais réellement
+      nous perdre.
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     VISUEL 9
+     LE FANTÔME DE L'OMBRE
+===================================================== -->
+
+<section
+  class="scene shadow-scene interaction-scene"
+  id="scene-23"
+>
+
+  <div
+    class="visual interactive-visual"
+    data-visual="9"
+  >
+    <img
+      src="images/chapitre9/Visuel-9.PNG"
+      alt="Amy devenue le Fantôme de l'Ombre"
+      loading="lazy"
+    >
+  </div>
+
+
+  <div class="text-block dialogue">
+
+    <p>
+      Betty comprend
+      que quelque chose
+      de bien plus profond
+      les relie.
+    </p>
+
+    <p>
+      — Qu’est-elle devenue ?
+    </p>
+
+    <p>
+      Hope répond simplement :
+    </p>
+
+    <p class="name-reveal">
+      Le Fantôme de l’Ombre.
+    </p>
+
+  </div>
+
+
+  <div class="observation-buttons">
+
+    <button
+      class="interaction-btn ghost-profile-trigger"
+      data-ghost-profile="tracker"
+    >
+      Traqueuse
+    </button>
+
+    <button
+      class="interaction-btn ghost-profile-trigger"
+      data-ghost-profile="killer"
+    >
+      Tueuse
+    </button>
+
+    <button
+      class="interaction-btn ghost-profile-trigger"
+      data-ghost-profile="observer"
+    >
+      Observation
+    </button>
+
+    <button
+      class="interaction-btn ghost-profile-trigger"
+      data-ghost-profile="hope"
+    >
+      Connaissance de Hope
+    </button>
+
+  </div>
+
+
+  <div
+    class="reveal-box"
+    id="ghostProfileReveal"
+  >
+  </div>
+
+</section>
+
+
+
+<section
+  class="scene shadow-scene"
+  id="scene-24"
+>
+
+  <div class="text-block dialogue">
+
+    <p>
+      Betty fronce les sourcils.
+    </p>
+
+    <p>
+      — C’est-à-dire ?
+    </p>
+
+    <p>
+      — L’un des recours
+      les plus dangereux
+      des Gardiens Noirs.
+    </p>
+
+    <p>
+      — Une professionnelle.
+    </p>
+
+    <p>
+      — Une traqueuse.
+    </p>
+
+    <p>
+      — Une tueuse.
+    </p>
+
+    <p>
+      Betty pâlit.
+    </p>
+
+    <p>
+      Hope poursuit :
+    </p>
+
+    <p>
+      — Si elle est ici pour Anna,
+      la situation vient de devenir
+      beaucoup plus grave.
+    </p>
+
+    <p>
+      — Et tu la connais
+      suffisamment pour la battre ?
+    </p>
+
+    <p>
+      Hope ne répond pas immédiatement.
+    </p>
+
+    <p class="impact-text">
+      — Je la connais suffisamment
+      pour savoir
+      que je ne veux pas l’affronter.
+    </p>
+
+    <p>
+      Betty la regarde.
+    </p>
+
+    <p>
+      — Pourquoi ?
+    </p>
+
+    <p class="emphasis">
+      — Parce qu’elle aussi
+      me connaît.
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     VISUEL 10
+     AMY APPARAÎT
+===================================================== -->
+
+<section
+  class="scene danger-scene interaction-scene"
+  id="scene-25"
+>
+
+  <div
+    class="visual interactive-visual"
+    data-visual="10"
+  >
+    <img
+      src="images/chapitre9/Visuel-10.PNG"
+      alt="Amy apparaît derrière Hope et Betty dans la forêt"
+      loading="lazy"
+    >
+  </div>
+
+
+  <div class="text-block dialogue">
+
+    <p>
+      Une voix résonne
+      derrière elles.
+    </p>
+
+    <p>
+      — Toujours autant de mal
+      à parler de moi
+      quand je suis là ?
+    </p>
+
+    <p>
+      Hope ferme les yeux.
+    </p>
+
+    <p>
+      Puis se retourne.
+    </p>
+
+    <p>
+      Amy se tient
+      quelques mètres plus loin.
+    </p>
+
+    <p>
+      Calme.
+    </p>
+
+    <p>
+      Immobile.
+    </p>
+
+    <p>
+      Un léger sourire
+      aux lèvres.
+    </p>
+
+    <p class="impact-text">
+      — Bonjour, Hope.
+    </p>
+
+  </div>
+
+
+  <div class="observation-buttons">
+
+    <button
+      class="interaction-btn amy-deduction-trigger"
+      data-amy-deduction="jacket"
+    >
+      Observer la veste de Hope
+    </button>
+
+    <button
+      class="interaction-btn amy-deduction-trigger"
+      data-amy-deduction="betty"
+    >
+      Observer Betty
+    </button>
+
+    <button
+      class="interaction-btn amy-deduction-trigger"
+      data-amy-deduction="max"
+    >
+      Chercher Max
+    </button>
+
+    <button
+      class="interaction-btn amy-deduction-trigger"
+      data-amy-deduction="anna"
+    >
+      Chercher Anna
+    </button>
+
+  </div>
+
+
+  <div
+    class="reveal-box"
+    id="amyDeductionReveal"
+  >
+  </div>
+
+</section>
+
+
+
+<section
+  class="scene danger-scene"
+  id="scene-26"
+>
+
+  <div class="text-block dialogue">
+
+    <p>
+      Betty se raidit.
+    </p>
+
+    <p>
+      Amy regarde sa veste.
+    </p>
+
+    <p>
+      Puis celle d’Hope.
+    </p>
+
+    <p>
+      Son sourire s’élargit.
+    </p>
+
+    <p>
+      — Magnifique.
+    </p>
+
+    <p>
+      — Tu m’as réellement trompée.
+    </p>
+
+    <p>
+      Hope ne répond pas.
+    </p>
+
+    <p>
+      Amy poursuit :
+    </p>
+
+    <p>
+      — Je dois reconnaître
+      que peu de gens peuvent se vanter
+      d’avoir réussi cet exploit.
+    </p>
+
+    <p>
+      Elle regarde autour d’elle.
+    </p>
+
+    <p class="impact-text">
+      — La petite n’est plus là.
+    </p>
+
+    <p>
+      Betty déglutit.
+    </p>
+
+    <p>
+      Amy reporte son attention
+      sur Hope.
+    </p>
+
+    <p>
+      — Tu l’as éloignée.
+    </p>
+
+    <p>
+      — Oui.
+    </p>
+
+    <p>
+      — Avec Max,
+      j’imagine.
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     VISUEL 11
+     DUEL VERBAL / NE CHANGE JAMAIS
+===================================================== -->
+
+<section
+  class="scene revelation-scene interaction-scene"
+  id="scene-27"
+>
+
+  <div
+    class="visual interactive-visual"
+    data-visual="11"
+  >
+    <img
+      src="images/chapitre9/Visuel-11.PNG"
+      alt="Hope et Amy se confrontent verbalement"
+      loading="lazy"
+    >
+  </div>
+
+
+  <div class="text-block dialogue">
+
+    <p>
+      Amy sourit.
+    </p>
+
+    <p>
+      — Ce n’est pas grave.
+    </p>
+
+    <p>
+      — C’est le jeu.
+    </p>
+
+    <p>
+      Puis son visage
+      devient plus froid.
+    </p>
+
+    <p>
+      — Mais je déteste
+      modifier mes plans.
+    </p>
+
+    <p>
+      Hope répond :
+    </p>
+
+    <p>
+      — C’est ton problème.
+    </p>
+
+  </div>
+
+
+  <button
+    class="interaction-btn"
+    id="lastWordsTrigger"
+  >
+    Révéler les trois mots
+  </button>
+
+
+  <div
+    class="reveal-box"
+    id="lastWordsReveal"
+  >
+
+    <p>
+      La dernière fois
+      qu’elles s’étaient réellement vues…
+    </p>
+
+    <p class="name-reveal">
+      NE CHANGE JAMAIS.
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<section
+  class="scene revelation-scene"
+  id="scene-28"
+>
+
+  <div class="text-block dialogue">
+
+    <p>
+      Amy avance
+      de quelques pas.
+    </p>
+
+    <p>
+      — On m’avait demandé
+      de l’observer.
+    </p>
+
+    <p>
+      Hope fronce légèrement
+      les sourcils.
+    </p>
+
+    <p>
+      — Anna ?
+    </p>
+
+    <p>
+      — Oui.
+    </p>
+
+    <p>
+      — Et ?
+    </p>
+
+    <p>
+      Amy sourit.
+    </p>
+
+    <p>
+      — J’ai vu suffisamment.
+    </p>
+
+    <p>
+      Hope comprend.
+    </p>
+
+    <p>
+      — Tu es venue la tuer.
+    </p>
+
+    <p>
+      Amy incline légèrement
+      la tête.
+    </p>
+
+    <p>
+      — C’était l’idée.
+    </p>
+
+    <p>
+      Hope relève immédiatement
+      cette nuance.
+    </p>
+
+    <p class="impact-text">
+      — C’était ?
+    </p>
+
+    <p>
+      Amy sourit davantage.
+    </p>
+
+    <p>
+      — Je trouve ça
+      terriblement dommage.
+    </p>
+
+    <p>
+      — Une fille pareille…
+    </p>
+
+    <p>
+      Elle secoue doucement la tête.
+    </p>
+
+    <p>
+      — Quel gâchis.
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<section
+  class="scene danger-scene"
+  id="scene-29"
+>
+
+  <div class="text-block dialogue">
+
+    <p>
+      Hope reste silencieuse.
+    </p>
+
+    <p>
+      — Je préférerais
+      la convaincre.
+    </p>
+
+    <p>
+      Betty intervient :
+    </p>
+
+    <p>
+      — De quoi ?
+    </p>
+
+    <p>
+      Amy la regarde
+      pour la première fois réellement.
+    </p>
+
+    <p>
+      — Vous devez être Betty.
+    </p>
+
+    <p>
+      Elle sourit.
+    </p>
+
+    <p>
+      — La maman.
+    </p>
+
+    <p>
+      Hope se place
+      légèrement devant elle.
+    </p>
+
+    <p>
+      Amy rit doucement.
+    </p>
+
+    <p>
+      — Voilà.
+    </p>
+
+    <p>
+      — C’est exactement ça.
+    </p>
+
+    <p>
+      Hope ne bouge pas.
+    </p>
+
+    <p>
+      — Quoi ?
+    </p>
+
+    <p>
+      Amy la regarde.
+    </p>
+
+    <p>
+      — Tu sais
+      ce qui a changé chez toi ?
+    </p>
+
+    <p>
+      — Éclaire-moi.
+    </p>
+
+    <p>
+      Amy désigne Betty
+      du regard.
+    </p>
+
+    <p>
+      — Avant,
+      pour te vaincre,
+      il fallait t’atteindre.
+    </p>
+
+    <p class="impact-text">
+      — Maintenant,
+      ce n’est plus nécessaire.
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<section
+  class="scene revelation-scene"
+  id="scene-30"
+>
+
+  <div class="text-block dialogue">
+
+    <p>
+      Hope comprend immédiatement.
+    </p>
+
+    <p>
+      Elle attrape Betty
+      par l’avant-bras
+      et la place derrière elle.
+    </p>
+
+    <p>
+      Amy éclate de rire.
+    </p>
+
+    <p>
+      — Tu comprends vite.
+    </p>
+
+    <p>
+      — Il faut simplement
+      t’expliquer longtemps.
+    </p>
+
+    <p>
+      Hope la fixe.
+    </p>
+
+    <p>
+      — Tu n’as pas changé.
+    </p>
+
+    <p>
+      Le sourire d’Amy
+      disparaît presque complètement.
+    </p>
+
+    <p>
+      Hope poursuit :
+    </p>
+
+    <p>
+      — La dernière fois
+      que nous nous sommes vues,
+      tu m’as dit trois mots.
+    </p>
+
+    <p>
+      Amy serre légèrement
+      la mâchoire.
+    </p>
+
+    <p class="name-reveal">
+      Ne change jamais.
+    </p>
+
+    <p>
+      Silence.
+    </p>
+
+    <p>
+      Le regard d’Amy
+      se durcit.
+    </p>
+
+    <p>
+      — Je savais qu’un jour
+      ces trois mots
+      nous conduiraient ici.
+    </p>
+
+    <p>
+      — Alors tu savais aussi
+      que je ne te suivrais jamais.
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     VISUEL 12
+     PROPOSITION D'AMY
+===================================================== -->
+
+<section
+  class="scene choice-scene interaction-scene"
+  id="scene-31"
+>
+
+  <div
+    class="visual interactive-visual"
+    data-visual="12"
+  >
+    <img
+      src="images/chapitre9/Visuel-12.PNG"
+      alt="Amy propose une alliance entre elle Hope et Anna"
+      loading="lazy"
+    >
+  </div>
+
+
+  <div class="text-block dialogue">
+
+    <p>
+      Amy avance.
+    </p>
+
+    <p>
+      — Tu pourrais encore.
+    </p>
+
+    <p>
+      Hope rit.
+    </p>
+
+    <p>
+      — Qu’est-ce que tu as pris ?
+    </p>
+
+    <p>
+      Amy ne sourit plus.
+    </p>
+
+    <p>
+      — Toi.
+    </p>
+
+    <p>
+      — Moi.
+    </p>
+
+    <p>
+      — Anna.
+    </p>
+
+    <p>
+      Elle regarde Betty.
+    </p>
+
+    <p>
+      — Peut-être même elle.
+    </p>
+
+  </div>
+
+
+  <div class="observation-buttons">
+
+    <button
+      class="interaction-btn alliance-trigger"
+      data-alliance="amy"
+    >
+      Amy
+    </button>
+
+    <button
+      class="interaction-btn alliance-trigger"
+      data-alliance="hope"
+    >
+      Hope
+    </button>
+
+    <button
+      class="interaction-btn alliance-trigger"
+      data-alliance="anna"
+    >
+      Anna
+    </button>
+
+    <button
+      class="interaction-btn alliance-trigger"
+      data-alliance="betty"
+    >
+      Betty
+    </button>
+
+  </div>
+
+
+  <div
+    class="reveal-box"
+    id="allianceReveal"
+  >
+  </div>
+
+</section>
+
+
+
+<section
+  class="scene choice-scene"
+  id="scene-32"
+>
+
+  <div class="text-block dialogue">
+
+    <p>
+      Hope secoue la tête.
+    </p>
+
+    <p>
+      — Tu rêves.
+    </p>
+
+    <p>
+      — Non.
+    </p>
+
+    <p>
+      Amy répond calmement :
+    </p>
+
+    <p>
+      — J’imagine simplement
+      ce que nous pourrions devenir
+      ensemble.
+    </p>
+
+    <p>
+      — Nous trois.
+    </p>
+
+    <p class="impact-text">
+      — Personne ne pourrait
+      nous arrêter.
+    </p>
+
+    <p>
+      Hope hausse les épaules.
+    </p>
+
+    <p>
+      — Tu viens de perdre
+      tout sens des réalités.
+    </p>
+
+    <p>
+      Amy sourit.
+    </p>
+
+    <p>
+      — Alors il ne me reste
+      qu’une autre solution.
+    </p>
+
+    <p>
+      — Laquelle ?
+    </p>
+
+    <p class="name-reveal">
+      — Te tuer.
+    </p>
+
+    <p>
+      Puis elle regarde Betty.
+    </p>
+
+    <p>
+      — Et puisque sa mère
+      est ici…
+    </p>
+
+    <p>
+      Hope change immédiatement
+      d’expression.
+    </p>
+
+    <p>
+      — Laisse-la
+      en dehors de ça.
+    </p>
+
+    <p>
+      Amy sourit.
+    </p>
+
+    <p class="emphasis">
+      — Voilà ton problème.
+      Tu as désormais
+      trop de choses à perdre.
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     VISUEL 13
+     FUITE
+===================================================== -->
+
+<section
+  class="scene danger-scene interaction-scene"
+  id="scene-33"
+>
+
+  <div
+    class="visual interactive-visual"
+    data-visual="13"
+  >
+    <img
+      src="images/chapitre9/Visuel-13.PNG"
+      alt="Hope et Betty fuient Amy dans la forêt"
+      loading="lazy"
+    >
+  </div>
+
+
+  <div class="text-block">
+
+    <p>
+      Hope glisse discrètement
+      une main
+      dans sa poche.
+    </p>
+
+    <p>
+      Amy le remarque.
+    </p>
+
+    <p>
+      — Je te connais
+      trop bien.
+    </p>
+
+    <p>
+      — Pas suffisamment.
+    </p>
+
+  </div>
+
+
+  <button
+    class="interaction-btn"
+    id="smokeTrigger"
+  >
+    Déployer le nuage
+  </button>
+
+
+  <div
+    class="reveal-box"
+    id="smokeReveal"
+  >
+
+    <p class="impact-text">
+      NUAGE DÉPLOYÉ
+    </p>
+
+    <p>
+      Visibilité réduite.
+    </p>
+
+    <p>
+      Quelques secondes
+      d’avance.
+    </p>
+
+    <p class="emphasis">
+      COURS.
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<section
+  class="scene combat-scene"
+  id="scene-34"
+>
+
+  <div class="text-block">
+
+    <p>
+      Hope laisse tomber
+      une petite bille au sol.
+    </p>
+
+    <p>
+      Un nuage blanc
+      explose autour d’elles.
+    </p>
+
+    <p class="impact-text">
+      — COURS !
+    </p>
+
+    <p>
+      Hope attrape Betty.
+    </p>
+
+    <p>
+      Elles disparaissent
+      dans la végétation.
+    </p>
+
+    <p>
+      Amy se lance immédiatement
+      à leur poursuite.
+    </p>
+
+    <p>
+      La course dure
+      plusieurs minutes.
+    </p>
+
+    <p>
+      Branches.
+    </p>
+
+    <p>
+      Racines.
+    </p>
+
+    <p>
+      Rochers humides.
+    </p>
+
+    <p>
+      Hope adapte constamment
+      leur trajectoire.
+    </p>
+
+    <p>
+      Betty lutte
+      pour suivre.
+    </p>
+
+    <p>
+      — Hope !
+    </p>
+
+    <p>
+      — Continue !
+    </p>
+
+    <p>
+      — Où est-ce qu’on va ?
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     VISUEL 14
+     LA FALAISE
+===================================================== -->
+
+<section
+  class="scene danger-scene interaction-scene"
+  id="scene-35"
+>
+
+  <div
+    class="visual interactive-visual"
+    data-visual="14"
+  >
+    <img
+      src="images/chapitre9/Visuel-14.PNG"
+      alt="Hope Betty et Amy au bord d'une falaise dominant le canyon"
+      loading="lazy"
+    >
+  </div>
+
+
+  <div class="text-block">
+
+    <p>
+      Hope regarde devant elle.
+    </p>
+
+    <p>
+      Puis s’arrête brusquement.
+    </p>
+
+    <p>
+      Betty manque
+      de la percuter.
+    </p>
+
+    <p>
+      Devant elles :
+    </p>
+
+    <p class="impact-text">
+      le vide.
+    </p>
+
+    <p>
+      Une falaise secondaire
+      domine
+      un bassin profond du canyon.
+    </p>
+
+  </div>
+
+
+  <button
+    class="interaction-btn"
+    id="finalChoiceTrigger"
+  >
+    Comprendre les paroles de Hope
+  </button>
+
+
+  <div
+    class="reveal-box"
+    id="finalChoiceReveal"
+  >
+
+    <p>
+      Hope sait qu’Anna
+      devra un jour
+      comprendre sa véritable nature.
+    </p>
+
+    <p>
+      Elle demande à Betty
+      de ne pas empêcher
+      cette évolution.
+    </p>
+
+    <p class="emphasis">
+      « Elle est bien plus
+      que ta fille. »
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<section
+  class="scene danger-scene"
+  id="scene-36"
+>
+
+  <div class="text-block dialogue">
+
+    <p>
+      Betty pâlit.
+    </p>
+
+    <p>
+      — Dis-moi
+      que tu avais prévu ça.
+    </p>
+
+    <p>
+      Hope regarde derrière elles.
+    </p>
+
+    <p>
+      — Pas exactement.
+    </p>
+
+    <p>
+      Amy apparaît
+      quelques secondes plus tard.
+    </p>
+
+    <p>
+      Elle ralentit.
+    </p>
+
+    <p>
+      Puis sourit.
+    </p>
+
+    <p>
+      — Tu as perdu
+      ton sens de l’orientation ?
+    </p>
+
+    <p>
+      Hope ne répond pas.
+    </p>
+
+    <p>
+      Amy s’approche.
+    </p>
+
+    <p class="impact-text">
+      — C’est terminé.
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<section
+  class="scene revelation-scene"
+  id="scene-37"
+>
+
+  <div class="text-block dialogue">
+
+    <p>
+      Hope se tourne
+      vers Betty.
+    </p>
+
+    <p>
+      — Écoute-moi.
+    </p>
+
+    <p>
+      — Non.
+    </p>
+
+    <p>
+      — Betty.
+    </p>
+
+    <p>
+      — Ne prends pas
+      ce ton-là.
+    </p>
+
+    <p>
+      Hope lui saisit
+      les épaules.
+    </p>
+
+    <p>
+      — Prends soin d’Anna.
+    </p>
+
+    <p>
+      Betty secoue immédiatement
+      la tête.
+    </p>
+
+    <p>
+      — Non.
+    </p>
+
+    <p>
+      — Root la guidera.
+    </p>
+
+    <p>
+      — Max la protégera.
+    </p>
+
+    <p>
+      — Hale restera près d’elle.
+    </p>
+
+    <p>
+      — Et toi aussi.
+    </p>
+
+    <p>
+      Hope la regarde profondément.
+    </p>
+
+    <p class="name-reveal">
+      — Elle est bien plus
+      que ta fille.
+    </p>
+
+    <p>
+      Betty se fige.
+    </p>
+
+    <p>
+      — Qu’est-ce que tu veux dire ?
+    </p>
+
+    <p>
+      — Tu le sais déjà.
+    </p>
+
+    <p>
+      — Accepte-le.
+    </p>
+
+    <p>
+      — Et lorsqu’elle sera prête,
+      laisse-la devenir
+      ce qu’elle doit devenir.
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<section
+  class="scene danger-scene"
+  id="scene-38"
+>
+
+  <div class="text-block dialogue">
+
+    <p>
+      Betty comprend soudain.
+    </p>
+
+    <p>
+      — Hope,
+      ne fais rien de stupide.
+    </p>
+
+    <p>
+      Hope lui sourit.
+    </p>
+
+    <p>
+      Un sourire calme.
+    </p>
+
+    <p>
+      Presque rassurant.
+    </p>
+
+    <p>
+      — Ça va aller.
+    </p>
+
+    <p>
+      Puis elle se retourne.
+    </p>
+
+    <p>
+      Amy est désormais
+      tout près.
+    </p>
+
+    <p>
+      — Touchant,
+      dit-elle.
+    </p>
+
+    <p>
+      Hope la regarde.
+    </p>
+
+    <p class="impact-text">
+      — Tu veux jouer ?
+    </p>
+
+    <p>
+      Amy sourit.
+    </p>
+
+    <p class="emphasis">
+      — Depuis toujours.
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     FIN DU CHAPITRE
+===================================================== -->
+
+<section
+  class="scene chapter-end"
+  id="scene-39"
+>
+
+  <div class="text-block">
+
+    <p>
+      Hope se jette sur elle.
+    </p>
+
+    <p>
+      Amy n’a pas
+      le temps de comprendre.
+    </p>
+
+    <p>
+      Hope l’agrippe.
+    </p>
+
+    <p class="impact-text">
+      Et toutes les deux
+      basculent dans le vide.
+    </p>
+
+    <p>
+      — HOPE !
+    </p>
+
+    <p>
+      Betty se précipite
+      au bord de la falaise.
+    </p>
+
+    <p>
+      Elle voit
+      les deux femmes disparaître.
+    </p>
+
+    <p>
+      Puis l’eau.
+    </p>
+
+    <p>
+      Puis plus rien.
+    </p>
+
+    <p class="name-reveal">
+      — NOOOOOON !
+    </p>
+
+    <p class="emphasis">
+      Sa voix se perd
+      dans le canyon.
+    </p>
+
+  </div>
+
+
+  <div class="end-symbol">
+    ∞
+  </div>
+
+
+  <div class="end-actions">
+
+    <button
+      class="chapter-btn"
+      id="restartChapter"
+    >
+      Relire le chapitre
+    </button>
+
+    <!--
+      Quand le chapitre 10 sera prêt :
+
+      <a
+        class="chapter-btn primary"
+        href="chapitre10.html"
+      >
+        Continuer
+      </a>
+    -->
+
+    <a
+      class="chapter-btn primary"
+      href="index.html"
+    >
+      Retour à l’accueil
+    </a>
+
+  </div>
+
+</section>
+
+
+</main>
+
+
+
+<!-- =====================================================
+     POPUP INFORMATION / SECRET
+===================================================== -->
+
+<div
+  class="secret-popup"
+  id="secretPopup"
+  aria-hidden="true"
+>
+
+  <div class="secret-popup-inner">
+
+    <span class="secret-symbol">
+      ∞
+    </span>
+
+    <span>
+      INFORMATION DÉCOUVERTE
+    </span>
+
+  </div>
+
+</div>
+
+
+
+<!-- =====================================================
+     MENU
+===================================================== -->
+
+<div
+  class="chapter-menu"
+  id="chapterMenu"
+  aria-hidden="true"
+>
+
+  <div class="chapter-menu-panel">
+
+    <button
+      class="menu-close"
+      id="menuClose"
+      aria-label="Fermer le menu"
+    >
+      ×
+    </button>
+
+    <h2>
+      Chapitre 9
+    </h2>
+
+    <p>
+      La Traque
+    </p>
+
+    <button
+      id="resumeBtn"
+      class="menu-action"
+    >
+      Reprendre la lecture
+    </button>
+
+    <button
+      id="restartBtn"
+      class="menu-action"
+    >
+      Recommencer le chapitre
+    </button>
+
+    <a
+      href="index.html"
+      class="menu-action"
+    >
+      Retour à l’accueil
+    </a>
+
+  </div>
+
+</div>
+
+
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
+<script src="js/chapitre9.js"></script>
+
+
+</body>
+</html>
