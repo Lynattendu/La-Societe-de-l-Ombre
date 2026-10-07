@@ -1,1 +1,3263 @@
+<!DOCTYPE html>
+<html lang="fr">
 
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+  >
+
+  <meta
+    name="theme-color"
+    content="#050505"
+  >
+
+  <title>
+    Chapitre 8 — L’équilibre | La Société de l'Ombre
+  </title>
+
+  <link
+    rel="stylesheet"
+    href="css/chapitre8.css"
+  >
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     BARRE DE PROGRESSION
+===================================================== -->
+
+<div
+  class="progress-bar"
+  aria-hidden="true"
+>
+  <div
+    class="progress-fill"
+    id="progressFill"
+  ></div>
+</div>
+
+
+
+<!-- =====================================================
+     COMMANDES
+===================================================== -->
+
+<div class="chapter-controls">
+
+  <button
+    class="control-btn"
+    id="menuBtn"
+    aria-label="Ouvrir le menu"
+  >
+    ☰
+  </button>
+
+  <button
+    class="control-btn"
+    id="soundBtn"
+    aria-label="Activer ou désactiver le son"
+  >
+    ♫
+  </button>
+
+</div>
+
+
+
+<main
+  class="chapter"
+  id="chapter"
+>
+
+
+<!-- =====================================================
+     VISUEL 1
+     TITRE / SALLE NOIRE
+===================================================== -->
+
+<section
+  class="scene scene-cover"
+  id="scene-1"
+>
+
+  <div
+    class="visual full-visual"
+    data-visual="1"
+  >
+
+    <img
+      src="images/chapitre8/Visuel-1.PNG"
+      alt="Chapitre 8 — L’équilibre"
+      loading="eager"
+    >
+
+  </div>
+
+
+  <div class="chapter-title-overlay">
+
+    <p class="chapter-number">
+      Chapitre 8
+    </p>
+
+    <h1>
+      L’équilibre
+    </h1>
+
+    <button
+      class="continue-btn"
+      data-next
+    >
+      Continuer
+    </button>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     SÉQUENCE 1
+     QUELQUE PART AU MEXIQUE
+===================================================== -->
+
+<section
+  class="scene shadow-scene"
+  id="scene-2"
+>
+
+  <div class="location-card">
+
+    <span>
+      Quelque part au Mexique
+    </span>
+
+    <strong>
+      Lieu inconnu
+    </strong>
+
+  </div>
+
+
+  <div class="text-block">
+
+    <p>
+      La pièce est plongée
+      dans une obscurité presque totale.
+    </p>
+
+    <p>
+      Aucune fenêtre.
+    </p>
+
+    <p>
+      Aucun bruit extérieur.
+    </p>
+
+    <p>
+      Seulement une longue table noire,
+      éclairée par une lumière blanche
+      tombant du plafond.
+    </p>
+
+    <p>
+      Un homme attend.
+    </p>
+
+    <p class="impact-text">
+      Immobile.
+    </p>
+
+    <p>
+      Devant lui,
+      plusieurs écrans affichent
+      des images de l’hacienda Flores.
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     INTERACTION 1
+     SURVEILLANCE D'ANNA
+===================================================== -->
+
+<section
+  class="scene shadow-scene interaction-scene"
+  id="scene-3"
+>
+
+  <div
+    class="visual interactive-visual"
+    data-visual="1"
+  >
+    <img
+      src="images/chapitre8/Visuel-1.PNG"
+      alt="Plusieurs écrans surveillent Anna Flores"
+      loading="lazy"
+    >
+  </div>
+
+
+  <div class="text-block">
+
+    <p>
+      Les images se succèdent.
+    </p>
+
+    <p>
+      Anna quittant la propriété.
+    </p>
+
+    <p>
+      Anna discutant avec Betty.
+    </p>
+
+    <p>
+      Anna s’entraînant seule
+      et avec Hale.
+    </p>
+
+    <p>
+      Anna avec Lucy.
+    </p>
+
+    <p>
+      Anna avec Hope.
+    </p>
+
+    <p>
+      Anna devant un écran
+      avec Hale.
+    </p>
+
+    <p>
+      Puis une autre photographie.
+    </p>
+
+    <p>
+      Anna aux côtés de Max Speedman
+      lors de l’inauguration du NEXUS.
+    </p>
+
+  </div>
+
+
+  <div class="observation-buttons">
+
+    <button
+      class="interaction-btn surveillance-trigger"
+      data-surveillance="betty"
+    >
+      Anna avec Betty
+    </button>
+
+    <button
+      class="interaction-btn surveillance-trigger"
+      data-surveillance="hale"
+    >
+      Anna avec Hale
+    </button>
+
+    <button
+      class="interaction-btn surveillance-trigger"
+      data-surveillance="lucy"
+    >
+      Anna avec Lucy
+    </button>
+
+    <button
+      class="interaction-btn surveillance-trigger"
+      data-surveillance="hope"
+    >
+      Anna avec Hope
+    </button>
+
+    <button
+      class="interaction-btn surveillance-trigger"
+      data-surveillance="max"
+    >
+      Anna avec Max
+    </button>
+
+  </div>
+
+
+  <div
+    class="reveal-box"
+    id="surveillanceReveal"
+  >
+  </div>
+
+</section>
+
+
+
+<section
+  class="scene shadow-scene"
+  id="scene-4"
+>
+
+  <div class="text-block dialogue">
+
+    <p>
+      L’homme observe
+      la dernière image
+      quelques secondes.
+    </p>
+
+    <p>
+      — Continuez.
+    </p>
+
+    <p>
+      Une voix féminine
+      lui répond depuis
+      un écran sécurisé.
+    </p>
+
+    <p>
+      Son visage n’apparaît pas.
+    </p>
+
+    <p>
+      Seulement une silhouette.
+    </p>
+
+    <p>
+      — Son évolution
+      s’est considérablement accélérée
+      depuis l’arrivée
+      d’Hope Awake au Mexique.
+    </p>
+
+    <p>
+      L’homme ne bouge pas.
+    </p>
+
+    <p>
+      — Des exemples.
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     VISUEL 2
+     APPRENTISSAGE D'ANNA
+===================================================== -->
+
+<section
+  class="scene investigation-scene interaction-scene"
+  id="scene-5"
+>
+
+  <div
+    class="visual interactive-visual"
+    data-visual="2"
+  >
+    <img
+      src="images/chapitre8/Visuel-2.PNG"
+      alt="Anna apprend rapidement plusieurs compétences"
+      loading="lazy"
+    >
+  </div>
+
+
+  <div class="text-block">
+
+    <p>
+      Une nouvelle série
+      de dossiers apparaît.
+    </p>
+
+  </div>
+
+
+  <div class="observation-buttons">
+
+    <button
+      class="interaction-btn learning-trigger"
+      data-learning="french"
+    >
+      Français
+    </button>
+
+    <button
+      class="interaction-btn learning-trigger"
+      data-learning="combat"
+    >
+      Self-défense
+    </button>
+
+    <button
+      class="interaction-btn learning-trigger"
+      data-learning="justice"
+    >
+      Justice et information
+    </button>
+
+    <button
+      class="interaction-btn learning-trigger"
+      data-learning="journalism"
+    >
+      Journalisme
+    </button>
+
+  </div>
+
+
+  <div
+    class="reveal-box"
+    id="learningReveal"
+  >
+  </div>
+
+</section>
+
+
+
+<section
+  class="scene"
+  id="scene-6"
+>
+
+  <div class="text-block dialogue">
+
+    <p>
+      — Il y a encore quelques semaines,
+      Anna Flores ne parlait
+      pratiquement pas français.
+    </p>
+
+    <p>
+      Une nouvelle image apparaît.
+    </p>
+
+    <p>
+      Anna discute avec Hale.
+    </p>
+
+    <p>
+      — Aujourd’hui,
+      elle tient déjà
+      des conversations simples
+      et comprend
+      des échanges beaucoup plus complexes.
+    </p>
+
+    <p>
+      — Combien de temps ?
+    </p>
+
+    <p>
+      — Quelques jours.
+    </p>
+
+    <p>
+      Silence.
+    </p>
+
+    <p>
+      — Continuez.
+    </p>
+
+    <p>
+      Un autre dossier s’affiche.
+    </p>
+
+    <p>
+      — Elle a également commencé
+      un entraînement régulier
+      de self-défense.
+    </p>
+
+    <p>
+      Des photographies apparaissent.
+    </p>
+
+    <p>
+      Hope corrigeant sa position.
+    </p>
+
+    <p>
+      Anna observant.
+    </p>
+
+    <p>
+      Reproduisant.
+    </p>
+
+    <p>
+      Corrigeant elle-même son mouvement.
+    </p>
+
+    <p>
+      — Hope Awake ?
+    </p>
+
+    <p>
+      — Principalement.
+    </p>
+
+    <p>
+      — Mais Hale participe également
+      à son apprentissage.
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<section
+  class="scene"
+  id="scene-7"
+>
+
+  <div class="text-block dialogue">
+
+    <p>
+      Une autre image.
+    </p>
+
+    <p>
+      Anna en conversation avec Lucy.
+    </p>
+
+    <p>
+      — Elle s’intéresse
+      de plus en plus
+      au travail de sa tante.
+    </p>
+
+    <p>
+      — Cybercriminalité ?
+    </p>
+
+    <p>
+      — Pas seulement.
+    </p>
+
+    <p>
+      La femme marque une pause.
+    </p>
+
+    <p>
+      — Justice.
+    </p>
+
+    <p>
+      — Manipulation de données.
+    </p>
+
+    <p>
+      — Désinformation.
+    </p>
+
+    <p>
+      — Recherche d’informations.
+    </p>
+
+    <p>
+      — Fonctionnement
+      des réseaux criminels.
+    </p>
+
+    <p>
+      L’homme relève légèrement
+      la tête.
+    </p>
+
+    <p>
+      — Et IA2 ?
+    </p>
+
+    <p>
+      — Elle n’y a pas accès directement.
+    </p>
+
+    <p>
+      — Pour l’instant.
+    </p>
+
+    <p>
+      La femme ne répond pas.
+    </p>
+
+    <p class="impact-text">
+      — Pour l’instant.
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     VISUEL 3
+     ENTOURAGE D'ANNA
+===================================================== -->
+
+<section
+  class="scene deduction-scene interaction-scene"
+  id="scene-8"
+>
+
+  <div
+    class="visual interactive-visual"
+    data-visual="3"
+  >
+    <img
+      src="images/chapitre8/Visuel-3.PNG"
+      alt="Anna entourée de Betty Lucy Root Max Peter Hope et Hale"
+      loading="lazy"
+    >
+  </div>
+
+
+  <div class="text-block">
+
+    <p>
+      Une nouvelle série d’images apparaît.
+    </p>
+
+    <p>
+      Betty Flores.
+    </p>
+
+    <p>
+      Root Tempass.
+    </p>
+
+    <p>
+      Max Speedman.
+    </p>
+
+    <p>
+      Peter Evanos.
+    </p>
+
+    <p>
+      Lucy Adverse.
+    </p>
+
+    <p>
+      Hope Awake.
+    </p>
+
+    <p>
+      Hale.
+    </p>
+
+  </div>
+
+
+  <div class="observation-buttons">
+
+    <button
+      class="interaction-btn entourage-trigger"
+      data-entourage="betty"
+    >
+      Betty
+    </button>
+
+    <button
+      class="interaction-btn entourage-trigger"
+      data-entourage="lucy"
+    >
+      Lucy
+    </button>
+
+    <button
+      class="interaction-btn entourage-trigger"
+      data-entourage="root"
+    >
+      Root
+    </button>
+
+    <button
+      class="interaction-btn entourage-trigger"
+      data-entourage="max"
+    >
+      Max
+    </button>
+
+    <button
+      class="interaction-btn entourage-trigger"
+      data-entourage="peter"
+    >
+      Peter
+    </button>
+
+    <button
+      class="interaction-btn entourage-trigger"
+      data-entourage="hope"
+    >
+      Hope
+    </button>
+
+    <button
+      class="interaction-btn entourage-trigger"
+      data-entourage="hale"
+    >
+      Hale
+    </button>
+
+  </div>
+
+
+  <div
+    class="reveal-box"
+    id="entourageReveal"
+  >
+  </div>
+
+</section>
+
+
+
+<section
+  class="scene deduction-scene"
+  id="scene-9"
+>
+
+  <div class="text-block dialogue">
+
+    <p>
+      L’homme les regarde
+      une à une.
+    </p>
+
+    <p class="impact-text">
+      — Elle les rassemble.
+    </p>
+
+    <p>
+      — Pardon ?
+    </p>
+
+    <p>
+      Il désigne Anna.
+    </p>
+
+    <p>
+      — Vous m’avez transmis
+      des centaines de rapports
+      sur ses capacités.
+    </p>
+
+    <p>
+      — Sur ce qu’elle apprend.
+    </p>
+
+    <p>
+      — Sur ce qu’elle comprend.
+    </p>
+
+    <p>
+      — Sur ses déplacements.
+    </p>
+
+    <p>
+      Il pose lentement
+      les mains sur la table.
+    </p>
+
+    <p>
+      — Mais vous n’avez pas compris
+      l’information la plus importante.
+    </p>
+
+    <p class="emphasis">
+      — Regardez autour d’elle.
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     VISUEL 4
+     CONVERGENCE
+===================================================== -->
+
+<section
+  class="scene deduction-scene interaction-scene"
+  id="scene-10"
+>
+
+  <div
+    class="visual interactive-visual"
+    data-visual="4"
+  >
+    <img
+      src="images/chapitre8/Visuel-4.PNG"
+      alt="Les compétences de plusieurs personnages convergent vers Anna"
+      loading="lazy"
+    >
+  </div>
+
+
+  <div class="text-block">
+
+    <p>
+      Science.
+    </p>
+
+    <p>
+      Information.
+    </p>
+
+    <p>
+      Histoire.
+    </p>
+
+    <p>
+      Journalisme.
+    </p>
+
+    <p>
+      Technologie.
+    </p>
+
+    <p>
+      Combat.
+    </p>
+
+    <p>
+      Protection.
+    </p>
+
+  </div>
+
+
+  <button
+    class="interaction-btn"
+    id="convergenceTrigger"
+  >
+    Observer la convergence
+  </button>
+
+
+  <div
+    class="reveal-box"
+    id="convergenceReveal"
+  >
+
+    <p>
+      Anna ne possède pas
+      toutes ces compétences.
+    </p>
+
+    <p>
+      Elle n’a pas besoin
+      de les posséder toutes.
+    </p>
+
+    <p class="impact-text">
+      Elle a accès
+      à ceux qui les possèdent.
+    </p>
+
+    <p class="emphasis">
+      Elle apprend.
+      Elle observe.
+      Elle relie.
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<section
+  class="scene deduction-scene"
+  id="scene-11"
+>
+
+  <div class="text-block dialogue">
+
+    <p>
+      — Une généticienne
+      disposant de moyens financiers
+      et scientifiques considérables.
+    </p>
+
+    <p>
+      — Une enquêtrice
+      ayant accès à l’une
+      des intelligences artificielles
+      les plus avancées que nous connaissions.
+    </p>
+
+    <p>
+      — Une femme capable
+      de comprendre le passé
+      et d’en déduire
+      les conséquences futures.
+    </p>
+
+    <p>
+      — Un journaliste
+      capable de faire parvenir
+      une information presque partout
+      dans le monde.
+    </p>
+
+    <p>
+      — Un inventeur
+      capable de créer
+      ce qui n’existe pas encore.
+    </p>
+
+    <p>
+      Puis Hope.
+    </p>
+
+    <p>
+      Il s’arrête plus longtemps
+      sur son image.
+    </p>
+
+    <p>
+      — Et elle.
+    </p>
+
+    <p>
+      La voix féminine murmure :
+    </p>
+
+    <p>
+      — Une restauratrice…
+      mais surtout
+      un maître en arts martiaux.
+    </p>
+
+    <p>
+      — Oui.
+    </p>
+
+    <p>
+      Enfin Hale.
+    </p>
+
+    <p>
+      — Son garde du corps personnel.
+    </p>
+
+    <p>
+      — Il me fait fortement penser
+      à une Sentinelle.
+    </p>
+
+    <p>
+      — Présent auprès d’Anna
+      depuis sa naissance.
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<section
+  class="scene deduction-scene"
+  id="scene-12"
+>
+
+  <div class="text-block dialogue">
+
+    <p>
+      Il se redresse.
+    </p>
+
+    <p>
+      — Anna Flores n’est pas dangereuse
+      parce qu’elle sait se battre.
+    </p>
+
+    <p>
+      — Elle n’est pas dangereuse
+      parce qu’elle apprend rapidement.
+    </p>
+
+    <p>
+      — Elle n’est même pas dangereuse
+      parce qu’elle possède
+      des ressources considérables.
+    </p>
+
+    <p>
+      Il marque une pause.
+    </p>
+
+    <p class="impact-text">
+      — Elle devient dangereuse
+      parce que toutes ces choses
+      commencent à converger vers elle.
+    </p>
+
+    <p>
+      La femme ne répond rien.
+    </p>
+
+    <p>
+      — Elle apprend des uns.
+    </p>
+
+    <p>
+      — Elle observe les autres.
+    </p>
+
+    <p>
+      — Et surtout…
+    </p>
+
+    <p>
+      Il regarde une photographie
+      prise pendant l’inauguration du NEXUS.
+    </p>
+
+    <p>
+      Tous sont réunis.
+    </p>
+
+    <p>
+      Anna se trouve presque
+      au milieu du groupe.
+    </p>
+
+    <p class="name-reveal">
+      Elle crée des liens.
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     VISUEL 5
+     RAPPORT DES ÉCHECS
+===================================================== -->
+
+<section
+  class="scene danger-scene interaction-scene"
+  id="scene-13"
+>
+
+  <div
+    class="visual interactive-visual"
+    data-visual="5"
+  >
+    <img
+      src="images/chapitre8/Visuel-5.PNG"
+      alt="Un rapport présente les deux opérations échouées contre Anna"
+      loading="lazy"
+    >
+  </div>
+
+
+  <div class="text-block">
+
+    <p>
+      Une porte s’ouvre derrière lui.
+    </p>
+
+    <p>
+      Un homme entre.
+    </p>
+
+    <p>
+      Il s’incline légèrement.
+    </p>
+
+    <p>
+      — Maître.
+    </p>
+
+    <p>
+      — Le rapport
+      de l’hacienda Flores.
+    </p>
+
+    <p>
+      L’homme pose une tablette
+      sur la table.
+    </p>
+
+  </div>
+
+
+  <div class="observation-buttons">
+
+    <button
+      class="interaction-btn operation-trigger"
+      data-operation="capture"
+    >
+      Première opération
+    </button>
+
+    <button
+      class="interaction-btn operation-trigger"
+      data-operation="elimination"
+    >
+      Deuxième opération
+    </button>
+
+  </div>
+
+
+  <div
+    class="reveal-box"
+    id="operationReveal"
+  >
+  </div>
+
+</section>
+
+
+
+<section
+  class="scene danger-scene"
+  id="scene-14"
+>
+
+  <div class="text-block dialogue">
+
+    <p>
+      — L’opération a échoué.
+    </p>
+
+    <p>
+      Aucune réaction.
+    </p>
+
+    <p>
+      — Combien ?
+    </p>
+
+    <p>
+      — Tous neutralisés.
+    </p>
+
+    <p>
+      — Morts ?
+    </p>
+
+    <p>
+      — Non.
+    </p>
+
+    <p>
+      Cette fois,
+      le Maître Noir lève les yeux.
+    </p>
+
+    <p>
+      — Non ?
+    </p>
+
+    <p>
+      — Hope Awake était présente.
+    </p>
+
+    <p>
+      Silence.
+    </p>
+
+    <p>
+      L’homme poursuit :
+    </p>
+
+    <p>
+      — Elle a empêché
+      l’élimination d’Anna Flores.
+    </p>
+
+    <p>
+      — Et les autres ?
+    </p>
+
+    <p>
+      — Hale a été blessé.
+    </p>
+
+    <p>
+      — Betty Flores également visée.
+    </p>
+
+    <p>
+      — Hope a pris
+      le projectile à sa place.
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     VISUEL 6
+     DOSSIER HOPE
+===================================================== -->
+
+<section
+  class="scene revelation-scene interaction-scene"
+  id="scene-15"
+>
+
+  <div
+    class="visual interactive-visual"
+    data-visual="6"
+  >
+    <img
+      src="images/chapitre8/Visuel-6.PNG"
+      alt="Le Maître Noir étudie le dossier de Hope Awake"
+      loading="lazy"
+    >
+  </div>
+
+
+  <div class="text-block dialogue">
+
+    <p>
+      Le Maître Noir regarde
+      l’image de Hope.
+    </p>
+
+    <p>
+      — Son état ?
+    </p>
+
+    <p>
+      — Critique
+      immédiatement après l’attaque.
+    </p>
+
+    <p>
+      L’homme hésite.
+    </p>
+
+    <p>
+      — Une semaine plus tard,
+      elle aurait repris l’entraînement.
+    </p>
+
+    <p>
+      Un très léger sourire
+      apparaît sur le visage
+      du Maître Noir.
+    </p>
+
+    <p>
+      — Hope…
+    </p>
+
+    <p class="emphasis">
+      Sûrement le Maître Unique.
+    </p>
+
+    <p>
+      Il ne semble
+      ni surpris
+      ni réellement contrarié.
+    </p>
+
+    <p>
+      Presque admiratif.
+    </p>
+
+    <p class="impact-text">
+      — Toujours aussi difficile à tuer.
+    </p>
+
+  </div>
+
+
+  <div class="observation-buttons">
+
+    <button
+      class="interaction-btn hope-file-trigger"
+      data-hope-file="combat"
+    >
+      Maîtrise du combat
+    </button>
+
+    <button
+      class="interaction-btn hope-file-trigger"
+      data-hope-file="anna"
+    >
+      Protection d’Anna
+    </button>
+
+    <button
+      class="interaction-btn hope-file-trigger"
+      data-hope-file="betty"
+    >
+      Protection de Betty
+    </button>
+
+    <button
+      class="interaction-btn hope-file-trigger"
+      data-hope-file="recovery"
+    >
+      Récupération
+    </button>
+
+  </div>
+
+
+  <div
+    class="reveal-box"
+    id="hopeFileReveal"
+  >
+  </div>
+
+</section>
+
+
+
+<section
+  class="scene danger-scene"
+  id="scene-16"
+>
+
+  <div class="text-block dialogue">
+
+    <p>
+      — Et nos hommes ?
+    </p>
+
+    <p>
+      — Certains ont été récupérés.
+    </p>
+
+    <p>
+      — Les autres ?
+    </p>
+
+    <p>
+      — Disparus
+      avant l’arrivée officielle
+      des forces de l’ordre.
+    </p>
+
+    <p>
+      Le Maître Noir
+      se lève lentement.
+    </p>
+
+    <p class="impact-text">
+      — Deux échecs.
+    </p>
+
+    <p>
+      Personne ne répond.
+    </p>
+
+    <p>
+      — Première opération :
+      capture.
+    </p>
+
+    <p>
+      — Échec.
+    </p>
+
+    <p>
+      Il fait quelques pas.
+    </p>
+
+    <p>
+      — Deuxième opération :
+      élimination.
+    </p>
+
+    <p>
+      — Échec.
+    </p>
+
+    <p>
+      Il s’arrête.
+    </p>
+
+    <p class="emphasis">
+      — Nous avons sous-estimé
+      son environnement.
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     VISUEL 7
+     CHANGEMENT DE STRATÉGIE
+===================================================== -->
+
+<section
+  class="scene choice-scene interaction-scene"
+  id="scene-17"
+>
+
+  <div
+    class="visual interactive-visual"
+    data-visual="7"
+  >
+    <img
+      src="images/chapitre8/Visuel-7.PNG"
+      alt="Le Maître Noir décide du nouveau destin d'Anna"
+      loading="lazy"
+    >
+  </div>
+
+
+  <div class="text-block">
+
+    <p>
+      Sur l’écran,
+      Anna réapparaît.
+    </p>
+
+    <p>
+      Cette fois,
+      elle est seule.
+    </p>
+
+    <p>
+      Assise dans une bibliothèque.
+    </p>
+
+    <p>
+      Un livre ouvert devant elle.
+    </p>
+
+  </div>
+
+
+  <div class="strategy-path">
+
+    <button
+      class="interaction-btn strategy-trigger"
+      data-strategy="recover"
+    >
+      La récupérer
+    </button>
+
+    <button
+      class="interaction-btn strategy-trigger"
+      data-strategy="guide"
+    >
+      La guider
+    </button>
+
+    <button
+      class="interaction-btn strategy-trigger"
+      data-strategy="convince"
+    >
+      La convaincre
+    </button>
+
+    <button
+      class="interaction-btn strategy-trigger"
+      data-strategy="eliminate"
+    >
+      L’éliminer
+    </button>
+
+  </div>
+
+
+  <div
+    class="reveal-box"
+    id="strategyReveal"
+  >
+  </div>
+
+</section>
+
+
+
+<section
+  class="scene choice-scene"
+  id="scene-18"
+>
+
+  <div class="text-block dialogue">
+
+    <p>
+      — Lors de la première opération,
+      je pensais qu’elle pouvait encore
+      être récupérée.
+    </p>
+
+    <p>
+      L’homme près de lui demande :
+    </p>
+
+    <p>
+      — Récupérée ?
+    </p>
+
+    <p>
+      — Éduquée autrement.
+    </p>
+
+    <p>
+      — Guidée.
+    </p>
+
+    <p>
+      — Convaincue.
+    </p>
+
+    <p>
+      Il regarde Anna.
+    </p>
+
+    <p>
+      — Peut-être même amenée
+      à comprendre
+      notre vision du monde.
+    </p>
+
+    <p>
+      Puis son expression change.
+    </p>
+
+    <p class="impact-text">
+      — Ce temps est terminé.
+    </p>
+
+    <p>
+      La femme sur l’écran intervient :
+    </p>
+
+    <p>
+      — Pourquoi ?
+    </p>
+
+    <p>
+      Il se retourne vers elle.
+    </p>
+
+    <p>
+      — Parce qu’Anna Flores
+      n’est plus isolée.
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<section
+  class="scene choice-scene"
+  id="scene-19"
+>
+
+  <div class="text-block dialogue">
+
+    <p>
+      Il indique Hope.
+    </p>
+
+    <p>
+      — Elle a rencontré
+      celle qu’elle n’aurait jamais dû
+      rencontrer aussi tôt.
+    </p>
+
+    <p>
+      Lucy.
+    </p>
+
+    <p>
+      — Elle admire une femme
+      obsédée par la justice
+      et la vérité.
+    </p>
+
+    <p>
+      Max.
+    </p>
+
+    <p>
+      — Elle veut devenir journaliste.
+    </p>
+
+    <p>
+      Root.
+    </p>
+
+    <p>
+      — Elle commence à côtoyer
+      une femme qui pense le monde
+      en causes et conséquences.
+    </p>
+
+    <p>
+      Peter.
+    </p>
+
+    <p>
+      — Elle accède progressivement
+      à une technologie
+      que très peu de gouvernements possèdent.
+    </p>
+
+    <p>
+      Betty.
+    </p>
+
+    <p>
+      — Et sa mère
+      lui donnera absolument tout
+      ce dont elle aura besoin.
+    </p>
+
+    <p>
+      Il regarde de nouveau Anna.
+    </p>
+
+    <p>
+      — Plus nous attendrons,
+      plus elle apprendra.
+    </p>
+
+    <p>
+      — Plus elle apprendra,
+      plus elle posera de questions.
+    </p>
+
+    <p>
+      — Plus elle posera
+      de questions…
+    </p>
+
+    <p class="impact-text">
+      — Plus elle se rapprochera de nous.
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<section
+  class="scene danger-scene"
+  id="scene-20"
+>
+
+  <div class="text-block dialogue">
+
+    <p>
+      La femme demande :
+    </p>
+
+    <p>
+      — Quelle est votre décision ?
+    </p>
+
+    <p>
+      Le Maître Noir
+      ne répond pas immédiatement.
+    </p>
+
+    <p>
+      Il observe Anna
+      encore quelques secondes.
+    </p>
+
+    <p>
+      — Nous voulions savoir
+      ce qu’elle pouvait devenir.
+    </p>
+
+    <p>
+      Puis il murmure :
+    </p>
+
+    <p>
+      — Je crois que nous commençons
+      à le comprendre.
+    </p>
+
+    <p>
+      L’homme à ses côtés attend.
+    </p>
+
+    <p class="name-reveal">
+      Elle doit disparaître.
+    </p>
+
+    <p>
+      La phrase tombe
+      sans colère.
+    </p>
+
+    <p>
+      Sans haine.
+    </p>
+
+    <p class="emphasis">
+      Comme une simple conclusion logique.
+    </p>
+
+    <p>
+      La femme reste silencieuse.
+    </p>
+
+    <p>
+      — Définitivement ?
+    </p>
+
+    <p>
+      — Oui.
+    </p>
+
+    <p>
+      Puis il ajoute :
+    </p>
+
+    <p class="impact-text">
+      — Mais plus avec nos hommes.
+    </p>
+
+    <p>
+      L’homme comprend.
+    </p>
+
+    <p>
+      Son expression change légèrement.
+    </p>
+
+    <p>
+      — Vous voulez faire appel
+      au Fantôme ?
+    </p>
+
+    <p>
+      Le Maître Noir se retourne.
+    </p>
+
+    <p class="emphasis">
+      — Faites-la venir.
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     SÉQUENCE 2
+     HACIENDA FLORES — TROIS JOURS PLUS TÔT
+===================================================== -->
+
+<section
+  class="scene"
+  id="scene-21"
+>
+
+  <div class="location-card">
+
+    <span>
+      Hacienda Flores
+    </span>
+
+    <strong>
+      Trois jours plus tôt
+    </strong>
+
+  </div>
+
+
+  <div class="text-block">
+
+    <p>
+      Personne ne se méfie vraiment
+      d’Isabel Ortega.
+    </p>
+
+    <p class="impact-text">
+      Et c’est précisément
+      pour cette raison
+      qu’elle est si efficace.
+    </p>
+
+    <p>
+      Quarante-deux ans.
+    </p>
+
+    <p>
+      Employée à l’hacienda Flores
+      depuis presque onze ans.
+    </p>
+
+    <p>
+      Officiellement responsable
+      de la coordination interne
+      de la propriété.
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     VISUEL 8
+     ISABEL
+===================================================== -->
+
+<section
+  class="scene investigation-scene interaction-scene"
+  id="scene-22"
+>
+
+  <div
+    class="visual interactive-visual"
+    data-visual="8"
+  >
+    <img
+      src="images/chapitre8/Visuel-8.PNG"
+      alt="Isabel Ortega dans l'hacienda Flores"
+      loading="lazy"
+    >
+  </div>
+
+
+  <div class="text-block">
+
+    <p>
+      Une femme discrète.
+    </p>
+
+    <p>
+      Toujours souriante.
+    </p>
+
+    <p>
+      Toujours disponible.
+    </p>
+
+    <p>
+      Betty lui fait confiance.
+    </p>
+
+    <p>
+      Anna la connaît
+      depuis son enfance.
+    </p>
+
+    <p>
+      Hale lui-même
+      n’a jamais eu de raison sérieuse
+      de se méfier d’elle.
+    </p>
+
+  </div>
+
+
+  <div class="observation-buttons">
+
+    <button
+      class="interaction-btn isabel-profile-trigger"
+      data-isabel-profile="planning"
+    >
+      Planning
+    </button>
+
+    <button
+      class="interaction-btn isabel-profile-trigger"
+      data-isabel-profile="providers"
+    >
+      Prestataires
+    </button>
+
+    <button
+      class="interaction-btn isabel-profile-trigger"
+      data-isabel-profile="maintenance"
+    >
+      Maintenance
+    </button>
+
+    <button
+      class="interaction-btn isabel-profile-trigger"
+      data-isabel-profile="access"
+    >
+      Accès temporaires
+    </button>
+
+    <button
+      class="interaction-btn isabel-profile-trigger"
+      data-isabel-profile="travel"
+    >
+      Déplacements
+    </button>
+
+  </div>
+
+
+  <div
+    class="reveal-box"
+    id="isabelProfileReveal"
+  >
+  </div>
+
+</section>
+
+
+
+<section
+  class="scene investigation-scene"
+  id="scene-23"
+>
+
+  <div class="text-block">
+
+    <p>
+      Isabel ne fait pas partie
+      de la sécurité.
+    </p>
+
+    <p class="emphasis">
+      C’est encore mieux.
+    </p>
+
+    <p>
+      Elle n’a pas accès
+      à toutes les données sensibles.
+    </p>
+
+    <p>
+      Mais elle a accès
+      à suffisamment d’informations.
+    </p>
+
+    <p>
+      Qui travaille.
+    </p>
+
+    <p>
+      À quelle heure.
+    </p>
+
+    <p>
+      Quelle entreprise intervient.
+    </p>
+
+    <p>
+      Quand une caméra
+      doit être entretenue.
+    </p>
+
+    <p>
+      Quand une équipe change.
+    </p>
+
+    <p>
+      Quels invités sont attendus.
+    </p>
+
+    <p>
+      Quand Betty voyage.
+    </p>
+
+    <p>
+      Quand Anna quitte la propriété.
+    </p>
+
+    <p>
+      Et surtout…
+    </p>
+
+    <p class="impact-text">
+      qui entre désormais dans sa vie.
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     VISUEL 9
+     CONNEXION SECRÈTE
+===================================================== -->
+
+<section
+  class="scene shadow-scene interaction-scene"
+  id="scene-24"
+>
+
+  <div
+    class="visual interactive-visual"
+    data-visual="9"
+  >
+    <img
+      src="images/chapitre8/Visuel-9.PNG"
+      alt="Isabel utilise un faux tableau de gestion pour ouvrir une connexion secrète"
+      loading="lazy"
+    >
+  </div>
+
+
+  <div class="text-block">
+
+    <p>
+      Ce soir-là,
+      Isabel est seule
+      dans son bureau.
+    </p>
+
+    <p>
+      Elle ouvre son ordinateur.
+    </p>
+
+    <p>
+      Un banal tableau
+      de gestion apparaît.
+    </p>
+
+    <p>
+      Elle saisit
+      une série de chiffres
+      dans une cellule vide.
+    </p>
+
+  </div>
+
+
+  <button
+    class="interaction-btn"
+    id="secretConnectionTrigger"
+  >
+    Saisir la séquence
+  </button>
+
+
+  <div
+    class="reveal-box"
+    id="secretConnectionReveal"
+  >
+
+    <p>
+      TABLEAU DE GESTION — FERMÉ
+    </p>
+
+    <p>
+      INTERFACE SECONDAIRE — ACTIVE
+    </p>
+
+    <p class="impact-text">
+      CONNEXION SÉCURISÉE
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     VISUEL 10
+     RAPPORT D'ISABEL
+===================================================== -->
+
+<section
+  class="scene investigation-scene interaction-scene"
+  id="scene-25"
+>
+
+  <div
+    class="visual interactive-visual"
+    data-visual="10"
+  >
+    <img
+      src="images/chapitre8/Visuel-10.PNG"
+      alt="Isabel rédige un rapport secret sur Anna et Hope"
+      loading="lazy"
+    >
+  </div>
+
+
+  <div class="text-block">
+
+    <p>
+      Isabel attend.
+    </p>
+
+    <p>
+      Puis commence son rapport.
+    </p>
+
+    <p class="impact-text">
+      SUJET : A.F.
+    </p>
+
+  </div>
+
+
+  <div class="observation-buttons">
+
+    <button
+      class="interaction-btn report-trigger"
+      data-report="cognitive"
+    >
+      Évolution cognitive
+    </button>
+
+    <button
+      class="interaction-btn report-trigger"
+      data-report="training"
+    >
+      Entraînement physique
+    </button>
+
+    <button
+      class="interaction-btn report-trigger"
+      data-report="journalism"
+    >
+      Journalisme
+    </button>
+
+    <button
+      class="interaction-btn report-trigger"
+      data-report="lucy"
+    >
+      Influence de Lucy
+    </button>
+
+    <button
+      class="interaction-btn report-trigger"
+      data-report="hope"
+    >
+      Relation avec Hope
+    </button>
+
+  </div>
+
+
+  <div
+    class="reveal-box"
+    id="reportReveal"
+  >
+  </div>
+
+</section>
+
+
+
+<section
+  class="scene investigation-scene"
+  id="scene-26"
+>
+
+  <div class="text-block">
+
+    <p>
+      Isabel hésite
+      avant d’écrire la suite.
+    </p>
+
+    <p>
+      Relation avec H. Awake :
+      rapprochement très rapide.
+    </p>
+
+    <p>
+      Elle reste quelques secondes
+      devant l’écran.
+    </p>
+
+    <p>
+      Puis ajoute :
+    </p>
+
+    <p class="emphasis">
+      H. Awake semble également développer
+      un attachement inhabituel
+      envers le sujet.
+    </p>
+
+    <p>
+      Elle envoie le rapport.
+    </p>
+
+    <p>
+      Un message apparaît
+      presque immédiatement.
+    </p>
+
+    <p class="impact-text">
+      POURQUOI « INHABITUEL » ?
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<section
+  class="scene"
+  id="scene-27"
+>
+
+  <div class="text-block">
+
+    <p>
+      Isabel réfléchit.
+    </p>
+
+    <p>
+      Puis répond :
+    </p>
+
+    <p>
+      Awake prend des risques
+      qui ne correspondent pas
+      à son comportement habituel.
+    </p>
+
+    <p>
+      Nouveau message.
+    </p>
+
+    <p class="impact-text">
+      EXEMPLE.
+    </p>
+
+    <p>
+      Isabel tape :
+    </p>
+
+    <p class="emphasis">
+      Elle a été grièvement blessée
+      en protégeant Betty Flores
+      après avoir sécurisé Anna.
+    </p>
+
+    <p>
+      Silence.
+    </p>
+
+    <p>
+      Puis :
+    </p>
+
+    <p class="impact-text">
+      CONTINUEZ L’OBSERVATION.
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     VISUEL 11
+     ISABEL DOUTE
+===================================================== -->
+
+<section
+  class="scene revelation-scene interaction-scene"
+  id="scene-28"
+>
+
+  <div
+    class="visual interactive-visual"
+    data-visual="11"
+  >
+    <img
+      src="images/chapitre8/Visuel-11.PNG"
+      alt="Isabel seule devant son ordinateur commence à regretter ses actes"
+      loading="lazy"
+    >
+  </div>
+
+
+  <div class="text-block">
+
+    <p>
+      Isabel ferme la connexion.
+    </p>
+
+    <p>
+      Elle reste devant son écran
+      quelques secondes.
+    </p>
+
+    <p>
+      Pour la première fois
+      depuis longtemps,
+      ses mains tremblent légèrement.
+    </p>
+
+  </div>
+
+
+  <button
+    class="interaction-btn"
+    id="isabelConflictTrigger"
+  >
+    Comprendre son hésitation
+  </button>
+
+
+  <div
+    class="reveal-box"
+    id="isabelConflictReveal"
+  >
+
+    <p>
+      Au début :
+    </p>
+
+    <p>
+      horaires,
+      déplacements,
+      noms,
+      rapports.
+    </p>
+
+    <p>
+      Puis Anna a grandi.
+    </p>
+
+    <p>
+      Elle a ri avec Isabel.
+    </p>
+
+    <p>
+      Elle lui a raconté ses études.
+    </p>
+
+    <p>
+      Ses rêves.
+    </p>
+
+    <p>
+      Ses premières envies
+      d’indépendance.
+    </p>
+
+    <p class="emphasis">
+      Isabel sait désormais
+      à quoi servent réellement ses rapports.
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<section
+  class="scene revelation-scene"
+  id="scene-29"
+>
+
+  <div class="text-block">
+
+    <p>
+      Parce qu’une chose
+      commence à la déranger.
+    </p>
+
+    <p>
+      Elle observe Anna
+      depuis des années.
+    </p>
+
+    <p>
+      Au début,
+      ce n’était qu’un travail.
+    </p>
+
+    <p>
+      Puis Anna avait grandi.
+    </p>
+
+    <p>
+      Et désormais…
+    </p>
+
+    <p>
+      Isabel savait parfaitement
+      à quoi servaient ses rapports.
+    </p>
+
+    <p>
+      Elle ferme les yeux.
+    </p>
+
+    <p class="impact-text">
+      — Qu’est-ce que j’ai fait ?
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     SÉQUENCE 3
+     LE FANTÔME
+===================================================== -->
+
+<section
+  class="scene shadow-scene"
+  id="scene-30"
+>
+
+  <div class="location-card">
+
+    <span>
+      Quelque part ailleurs
+    </span>
+
+    <strong>
+      Lieu inconnu
+    </strong>
+
+  </div>
+
+
+  <div class="text-block">
+
+    <p>
+      Une femme s’entraîne seule.
+    </p>
+
+    <p>
+      Un couteau tourne
+      entre ses doigts.
+    </p>
+
+    <p>
+      Puis disparaît
+      dans sa manche.
+    </p>
+
+    <p>
+      Un bruit derrière elle.
+    </p>
+
+    <p>
+      Elle ne se retourne même pas.
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     VISUEL 12
+     AMY
+===================================================== -->
+
+<section
+  class="scene shadow-scene interaction-scene"
+  id="scene-31"
+>
+
+  <div
+    class="visual interactive-visual"
+    data-visual="12"
+  >
+    <img
+      src="images/chapitre8/Visuel-12.PNG"
+      alt="Amy s'entraîne seule avec un couteau"
+      loading="lazy"
+    >
+  </div>
+
+
+  <div class="text-block dialogue">
+
+    <p>
+      — Tu pourrais frapper
+      avant d’entrer.
+    </p>
+
+    <p>
+      L’homme resté près de la porte
+      répond :
+    </p>
+
+    <p>
+      — Le Maître veut te voir.
+    </p>
+
+    <p>
+      La femme s’immobilise.
+    </p>
+
+    <p>
+      — Pourquoi ?
+    </p>
+
+    <p>
+      — Une mission.
+    </p>
+
+    <p>
+      Elle soupire.
+    </p>
+
+    <p>
+      — J’étais en vacances.
+    </p>
+
+    <p>
+      — Apparemment plus maintenant.
+    </p>
+
+  </div>
+
+
+  <div class="observation-buttons">
+
+    <button
+      class="interaction-btn ghost-trigger"
+      data-ghost="movement"
+    >
+      Mouvement
+    </button>
+
+    <button
+      class="interaction-btn ghost-trigger"
+      data-ghost="precision"
+    >
+      Précision
+    </button>
+
+    <button
+      class="interaction-btn ghost-trigger"
+      data-ghost="awareness"
+    >
+      Perception
+    </button>
+
+    <button
+      class="interaction-btn ghost-trigger"
+      data-ghost="control"
+    >
+      Contrôle
+    </button>
+
+  </div>
+
+
+  <div
+    class="reveal-box"
+    id="ghostReveal"
+  >
+  </div>
+
+</section>
+
+
+
+<section
+  class="scene shadow-scene"
+  id="scene-32"
+>
+
+  <div class="text-block">
+
+    <p>
+      Elle se retourne enfin.
+    </p>
+
+    <p class="name-reveal">
+      Amy.
+    </p>
+
+    <p>
+      Calme.
+    </p>
+
+    <p>
+      Souriante.
+    </p>
+
+    <p>
+      Presque amusée.
+    </p>
+
+    <p>
+      — Qui ?
+    </p>
+
+    <p>
+      L’homme lui tend
+      une tablette.
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     VISUEL 13
+     ANNA / HOPE
+===================================================== -->
+
+<section
+  class="scene revelation-scene interaction-scene"
+  id="scene-33"
+>
+
+  <div
+    class="visual interactive-visual"
+    data-visual="13"
+  >
+    <img
+      src="images/chapitre8/Visuel-13.PNG"
+      alt="Amy découvre les photographies d'Anna puis de Hope"
+      loading="lazy"
+    >
+  </div>
+
+
+  <div class="text-block">
+
+    <p>
+      Amy regarde l’écran.
+    </p>
+
+    <p>
+      Une photographie apparaît.
+    </p>
+
+    <p class="impact-text">
+      Anna Flores.
+    </p>
+
+    <p>
+      Son sourire disparaît.
+    </p>
+
+    <p>
+      Elle fait défiler
+      quelques informations.
+    </p>
+
+    <p>
+      Puis une deuxième photographie.
+    </p>
+
+    <p class="impact-text">
+      Hope Awake.
+    </p>
+
+    <p>
+      Cette fois,
+      Amy s’immobilise complètement.
+    </p>
+
+  </div>
+
+
+  <div class="observation-buttons">
+
+    <button
+      class="interaction-btn amy-reaction-trigger"
+      data-amy-reaction="eyes"
+    >
+      Observer son regard
+    </button>
+
+    <button
+      class="interaction-btn amy-reaction-trigger"
+      data-amy-reaction="posture"
+    >
+      Observer sa posture
+    </button>
+
+    <button
+      class="interaction-btn amy-reaction-trigger"
+      data-amy-reaction="breathing"
+    >
+      Observer sa respiration
+    </button>
+
+  </div>
+
+
+  <div
+    class="reveal-box"
+    id="amyReactionReveal"
+  >
+  </div>
+
+</section>
+
+
+
+<section
+  class="scene"
+  id="scene-34"
+>
+
+  <div class="text-block dialogue">
+
+    <p>
+      — Intéressant…
+    </p>
+
+    <p>
+      L’homme demande :
+    </p>
+
+    <p>
+      — Tu la connais ?
+    </p>
+
+    <p>
+      Amy relève les yeux.
+    </p>
+
+    <p>
+      — Laquelle ?
+    </p>
+
+    <p>
+      — Hope Awake.
+    </p>
+
+    <p>
+      Amy lui rend la tablette.
+    </p>
+
+    <p>
+      — Tout le monde connaît
+      Hope Awake.
+    </p>
+
+    <p>
+      — Ce n’est pas
+      ce que je demandais.
+    </p>
+
+    <p>
+      Amy sourit.
+    </p>
+
+    <p class="emphasis">
+      — Alors pose
+      de meilleures questions.
+    </p>
+
+    <p>
+      Elle passe devant lui.
+    </p>
+
+    <p>
+      — Où est le Maître ?
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     VISUEL 14
+     MISSION DU FANTÔME
+===================================================== -->
+
+<section
+  class="scene danger-scene interaction-scene"
+  id="scene-35"
+>
+
+  <div
+    class="visual interactive-visual"
+    data-visual="14"
+  >
+    <img
+      src="images/chapitre8/Visuel-14.PNG"
+      alt="Amy reçoit sa mission devant le Maître Noir"
+      loading="lazy"
+    >
+  </div>
+
+
+  <div class="text-block dialogue">
+
+    <p>
+      Quelques minutes plus tard,
+      Amy entre
+      dans la salle noire.
+    </p>
+
+    <p>
+      Le Maître Noir l’attend.
+    </p>
+
+    <p>
+      La photographie d’Anna
+      occupe l’écran principal.
+    </p>
+
+    <p>
+      Amy la regarde.
+    </p>
+
+    <p>
+      — Elle est jeune.
+    </p>
+
+    <p>
+      — Dix-neuf ans.
+    </p>
+
+    <p>
+      — Et elle mérite
+      que tu interrompes mes vacances ?
+    </p>
+
+    <p>
+      — Oui.
+    </p>
+
+  </div>
+
+
+  <button
+    class="interaction-btn"
+    id="missionTrigger"
+  >
+    Ouvrir le dossier de mission
+  </button>
+
+
+  <div
+    class="reveal-box"
+    id="missionReveal"
+  >
+
+    <p>
+      SUJET
+    </p>
+
+    <p class="impact-text">
+      ANNA FLORES
+    </p>
+
+    <p>
+      ÂGE — 19 ANS
+    </p>
+
+    <p>
+      APPRENTISSAGE — ACCÉLÉRÉ
+    </p>
+
+    <p>
+      ENTOURAGE —
+      BETTY / LUCY / ROOT / MAX / PETER / HOPE / HALE
+    </p>
+
+    <p>
+      OPÉRATIONS PRÉCÉDENTES — 2
+    </p>
+
+    <p class="emphasis">
+      RÉSULTAT — 2 ÉCHECS
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<section
+  class="scene danger-scene"
+  id="scene-36"
+>
+
+  <div class="text-block dialogue">
+
+    <p>
+      Amy parcourt le dossier.
+    </p>
+
+    <p>
+      Apprentissage accéléré.
+    </p>
+
+    <p>
+      Betty.
+    </p>
+
+    <p>
+      Lucy.
+    </p>
+
+    <p>
+      Max.
+    </p>
+
+    <p>
+      Peter.
+    </p>
+
+    <p>
+      Root.
+    </p>
+
+    <p>
+      Hale.
+    </p>
+
+    <p>
+      Hope.
+    </p>
+
+    <p>
+      Amy s’arrête
+      sur ce dernier nom.
+    </p>
+
+    <p>
+      Mais son visage
+      reste parfaitement neutre.
+    </p>
+
+    <p>
+      — Deux équipes
+      ont déjà échoué ?
+    </p>
+
+    <p>
+      — Oui.
+    </p>
+
+    <p>
+      Amy sourit.
+    </p>
+
+    <p>
+      — Et maintenant
+      tu m’appelles.
+    </p>
+
+    <p>
+      — Maintenant,
+      je t’appelle.
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<section
+  class="scene danger-scene"
+  id="scene-37"
+>
+
+  <div class="text-block dialogue">
+
+    <p>
+      Amy continue de lire.
+    </p>
+
+    <p>
+      — Vous vouliez
+      d’abord l’enlever.
+    </p>
+
+    <p>
+      — Oui.
+    </p>
+
+    <p>
+      — Puis la tuer.
+    </p>
+
+    <p>
+      — Oui.
+    </p>
+
+    <p>
+      Amy referme le dossier.
+    </p>
+
+    <p>
+      — Et qu’est-ce que tu veux
+      exactement de moi ?
+    </p>
+
+    <p>
+      Le Maître Noir la fixe.
+    </p>
+
+    <p class="impact-text">
+      — Observe-la.
+    </p>
+
+    <p>
+      Amy hausse un sourcil.
+    </p>
+
+    <p>
+      — Seulement ?
+    </p>
+
+    <p>
+      — Je veux savoir
+      ce qu’elle est en train de devenir.
+    </p>
+
+    <p>
+      — Et si tes inquiétudes
+      sont justifiées ?
+    </p>
+
+    <p>
+      Un silence.
+    </p>
+
+    <p class="name-reveal">
+      Tu l’élimines.
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     FIN DU CHAPITRE
+===================================================== -->
+
+<section
+  class="scene chapter-end"
+  id="scene-38"
+>
+
+  <div class="text-block">
+
+    <p>
+      Amy regarde de nouveau
+      la photographie.
+    </p>
+
+    <p>
+      Une jeune femme souriante.
+    </p>
+
+    <p>
+      Apparemment ordinaire.
+    </p>
+
+    <p>
+      Elle pose deux doigts
+      sur l’écran.
+    </p>
+
+    <p>
+      Puis murmure :
+    </p>
+
+    <p class="impact-text">
+      — Anna Flores…
+    </p>
+
+    <p>
+      Le Maître Noir
+      l’observe.
+    </p>
+
+    <p>
+      Amy sourit doucement.
+    </p>
+
+    <p class="name-reveal">
+      Voyons donc
+      ce qui te rend si dangereuse.
+    </p>
+
+  </div>
+
+
+  <div class="end-symbol">
+    ∞
+  </div>
+
+
+  <div class="end-actions">
+
+    <button
+      class="chapter-btn"
+      id="restartChapter"
+    >
+      Relire le chapitre
+    </button>
+
+    <!--
+      Quand le chapitre 9 sera prêt,
+      remplacer par :
+
+      <a
+        class="chapter-btn primary"
+        href="chapitre9.html"
+      >
+        Continuer
+      </a>
+    -->
+
+    <a
+      class="chapter-btn primary"
+      href="index.html"
+    >
+      Retour à l’accueil
+    </a>
+
+  </div>
+
+</section>
+
+
+</main>
+
+
+
+<!-- =====================================================
+     POPUP INFORMATION / SECRET
+===================================================== -->
+
+<div
+  class="secret-popup"
+  id="secretPopup"
+  aria-hidden="true"
+>
+
+  <div class="secret-popup-inner">
+
+    <span class="secret-symbol">
+      ∞
+    </span>
+
+    <span>
+      INFORMATION DÉCOUVERTE
+    </span>
+
+  </div>
+
+</div>
+
+
+
+<!-- =====================================================
+     MENU
+===================================================== -->
+
+<div
+  class="chapter-menu"
+  id="chapterMenu"
+  aria-hidden="true"
+>
+
+  <div class="chapter-menu-panel">
+
+    <button
+      class="menu-close"
+      id="menuClose"
+      aria-label="Fermer le menu"
+    >
+      ×
+    </button>
+
+    <h2>
+      Chapitre 8
+    </h2>
+
+    <p>
+      L’équilibre
+    </p>
+
+    <button
+      id="resumeBtn"
+      class="menu-action"
+    >
+      Reprendre la lecture
+    </button>
+
+    <button
+      id="restartBtn"
+      class="menu-action"
+    >
+      Recommencer le chapitre
+    </button>
+
+    <a
+      href="index.html"
+      class="menu-action"
+    >
+      Retour à l’accueil
+    </a>
+
+  </div>
+
+</div>
+
+
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
+<script src="js/chapitre8.js"></script>
+
+
+</body>
+</html>
