@@ -721,7 +721,12 @@ function saveSecret(secret) {
 ========================================================= */
 
 let secretTimer = null;
+let secretSafetyTimer = null;
 
+
+/* =========================================================
+   FERMER LE POPUP
+========================================================= */
 
 function hideSecretPopup() {
 
@@ -729,6 +734,10 @@ function hideSecretPopup() {
     return;
   }
 
+
+  /*
+    On enlève l'état visible.
+  */
 
   secretPopup.classList.remove(
     "show"
@@ -742,16 +751,44 @@ function hideSecretPopup() {
 
 
   /*
-    Sécurité supplémentaire :
-    le popup ne pourra jamais
-    retenir l'interaction.
+    Le popup ne doit jamais
+    intercepter les clics.
   */
 
   secretPopup.style.pointerEvents =
     "none";
 
+
+  /*
+    Sécurité :
+    après la petite transition CSS,
+    on le retire réellement de l'écran.
+  */
+
+  setTimeout(
+    () => {
+
+      if (
+        !secretPopup.classList.contains(
+          "show"
+        )
+      ) {
+
+        secretPopup.style.display =
+          "none";
+
+      }
+
+    },
+    400
+  );
+
 }
 
+
+/* =========================================================
+   AFFICHER UN SECRET
+========================================================= */
 
 function showSecret(
   secretName,
@@ -762,7 +799,10 @@ function showSecret(
     return;
   }
 
-  saveSecret(secretName);
+
+  saveSecret(
+    secretName
+  );
 
 
   const inner =
@@ -785,10 +825,14 @@ function showSecret(
   if (!description) {
 
     description =
-      document.createElement("p");
+      document.createElement(
+        "p"
+      );
+
 
     description.className =
       "secret-description";
+
 
     description.style.marginTop =
       "14px";
@@ -805,7 +849,10 @@ function showSecret(
     description.style.color =
       "#f4eee6";
 
-    inner.appendChild(description);
+
+    inner.appendChild(
+      description
+    );
 
   }
 
@@ -814,35 +861,78 @@ function showSecret(
     secretText;
 
 
-  /* Afficher */
+  /*
+    Très important :
+    un ancien popup peut avoir été
+    mis en display:none.
+  */
 
-secretPopup.style.opacity =
-  "";
-
-secretPopup.style.visibility =
-  "";
-
-secretPopup.style.pointerEvents =
-  "none";
-
-secretPopup.classList.add(
-  "show"
-);
-
-secretPopup.setAttribute(
-  "aria-hidden",
-  "false"
-);
-
-  playSecretSound();
+  secretPopup.style.display =
+    "flex";
 
 
-  /* Annuler un ancien timer */
+  secretPopup.style.pointerEvents =
+    "none";
 
-  clearTimeout(secretTimer);
+
+  secretPopup.setAttribute(
+    "aria-hidden",
+    "false"
+  );
 
 
-  /* Disparition automatique après 3 secondes */
+  /*
+    On force d'abord un état propre.
+  */
+
+  secretPopup.classList.remove(
+    "show"
+  );
+
+
+  /*
+    On laisse au navigateur
+    une frame pour appliquer l'état.
+  */
+
+  requestAnimationFrame(
+    () => {
+
+      requestAnimationFrame(
+        () => {
+
+          secretPopup.classList.add(
+            "show"
+          );
+
+        }
+      );
+
+    }
+  );
+
+
+  /*
+    On annule les anciens timers.
+  */
+
+  clearTimeout(
+    secretTimer
+  );
+
+  clearTimeout(
+    secretSafetyTimer
+  );
+
+
+  /*
+    IMPORTANT :
+    le timer est créé AVANT le son.
+
+    Donc même si le système audio
+    rencontre un problème,
+    le popup se fermera quand même.
+  */
 
   secretTimer =
     setTimeout(
@@ -853,6 +943,63 @@ secretPopup.setAttribute(
       },
       3000
     );
+
+
+  /*
+    Deuxième sécurité absolue.
+    Au bout de 4 secondes,
+    le popup disparaît quoi qu'il arrive.
+  */
+
+  secretSafetyTimer =
+    setTimeout(
+      () => {
+
+        if (!secretPopup) {
+          return;
+        }
+
+
+        secretPopup.classList.remove(
+          "show"
+        );
+
+
+        secretPopup.setAttribute(
+          "aria-hidden",
+          "true"
+        );
+
+
+        secretPopup.style.pointerEvents =
+          "none";
+
+
+        secretPopup.style.display =
+          "none";
+
+      },
+      4000
+    );
+
+
+  /*
+    Le son arrive APRÈS
+    la programmation de la fermeture.
+  */
+
+  try {
+
+    playSecretSound();
+
+  } catch (error) {
+
+    console.warn(
+      "Son du secret indisponible :",
+      error
+    );
+
+  }
 
 }
 
@@ -866,6 +1013,7 @@ const fioleVisual =
     '[data-secret="fiole"]'
   );
 
+
 const fioleButton =
   document.querySelector(
     '[data-observe="fiole"]'
@@ -876,11 +1024,14 @@ let fioleDiscovered =
   false;
 
 
+/* =========================================================
+   DÉCOUVRIR LA FIOLE
+========================================================= */
+
 function discoverFiole() {
 
   /*
-    Empêche absolument tout
-    second déclenchement.
+    Un seul déclenchement possible.
   */
 
   if (fioleDiscovered) {
@@ -906,12 +1057,14 @@ function discoverFiole() {
     fioleButton.disabled =
       true;
 
-    fioleButton.textContent =
-      "Fiole observée";
 
     fioleButton.classList.add(
       "completed"
     );
+
+
+    fioleButton.textContent =
+      "Fiole observée";
 
   }
 
@@ -921,48 +1074,12 @@ function discoverFiole() {
     "Cette fiole est à l’origine d’une chaîne d’événements dont personne ne mesure encore les conséquences."
   );
 
-
-  /*
-    FERMETURE DE SÉCURITÉ SPÉCIFIQUE
-    À LA FIOLE.
-
-    Même si une animation ou une règle CSS
-    empêche la fermeture normale,
-    on force sa disparition.
-  */
-
-  setTimeout(
-    () => {
-
-      if (!secretPopup) {
-        return;
-      }
-
-
-      secretPopup.classList.remove(
-        "show"
-      );
-
-      secretPopup.setAttribute(
-        "aria-hidden",
-        "true"
-      );
-
-      secretPopup.style.opacity =
-        "0";
-
-      secretPopup.style.visibility =
-        "hidden";
-
-      secretPopup.style.pointerEvents =
-        "none";
-
-    },
-    3200
-  );
-
 }
 
+
+/* =========================================================
+   CLIC SUR OBSERVER
+========================================================= */
 
 if (fioleButton) {
 
@@ -971,13 +1088,12 @@ if (fioleButton) {
     (event) => {
 
       event.preventDefault();
+
       event.stopPropagation();
+
 
       discoverFiole();
 
-    },
-    {
-      once: true
     }
   );
 
