@@ -816,14 +816,23 @@ function showSecret(
 
   /* Afficher */
 
-  secretPopup.classList.add("show");
+secretPopup.style.opacity =
+  "";
+
+secretPopup.style.visibility =
+  "";
+
 secretPopup.style.pointerEvents =
   "none";
-  secretPopup.setAttribute(
-    "aria-hidden",
-    "false"
-  );
 
+secretPopup.classList.add(
+  "show"
+);
+
+secretPopup.setAttribute(
+  "aria-hidden",
+  "false"
+);
 
   playSecretSound();
 
@@ -863,7 +872,25 @@ const fioleButton =
   );
 
 
+let fioleDiscovered =
+  false;
+
+
 function discoverFiole() {
+
+  /*
+    Empêche absolument tout
+    second déclenchement.
+  */
+
+  if (fioleDiscovered) {
+    return;
+  }
+
+
+  fioleDiscovered =
+    true;
+
 
   if (fioleVisual) {
 
@@ -874,9 +901,64 @@ function discoverFiole() {
   }
 
 
+  if (fioleButton) {
+
+    fioleButton.disabled =
+      true;
+
+    fioleButton.textContent =
+      "Fiole observée";
+
+    fioleButton.classList.add(
+      "completed"
+    );
+
+  }
+
+
   showSecret(
     "fiole",
     "Cette fiole est à l’origine d’une chaîne d’événements dont personne ne mesure encore les conséquences."
+  );
+
+
+  /*
+    FERMETURE DE SÉCURITÉ SPÉCIFIQUE
+    À LA FIOLE.
+
+    Même si une animation ou une règle CSS
+    empêche la fermeture normale,
+    on force sa disparition.
+  */
+
+  setTimeout(
+    () => {
+
+      if (!secretPopup) {
+        return;
+      }
+
+
+      secretPopup.classList.remove(
+        "show"
+      );
+
+      secretPopup.setAttribute(
+        "aria-hidden",
+        "true"
+      );
+
+      secretPopup.style.opacity =
+        "0";
+
+      secretPopup.style.visibility =
+        "hidden";
+
+      secretPopup.style.pointerEvents =
+        "none";
+
+    },
+    3200
   );
 
 }
@@ -888,22 +970,18 @@ if (fioleButton) {
     "click",
     (event) => {
 
-      /*
-        Empêche le clic du bouton
-        de remonter vers le visuel.
-      */
-
       event.preventDefault();
       event.stopPropagation();
 
-
       discoverFiole();
 
+    },
+    {
+      once: true
     }
   );
 
 }
-
 
 /* =========================================================
    SECRET — BOÎTE DE PANDORE
