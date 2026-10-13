@@ -817,7 +817,8 @@ function showSecret(
   /* Afficher */
 
   secretPopup.classList.add("show");
-
+secretPopup.style.pointerEvents =
+  "none";
   secretPopup.setAttribute(
     "aria-hidden",
     "false"
