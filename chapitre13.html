@@ -1,1 +1,2719 @@
+<!DOCTYPE html>
+<html lang="fr">
 
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+  >
+
+  <meta
+    name="theme-color"
+    content="#050505"
+  >
+
+  <title>
+    Chapitre 13 — La remontée | La Société de l'Ombre
+  </title>
+
+  <link
+    rel="stylesheet"
+    href="css/chapitre13.css"
+  >
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     BARRE DE PROGRESSION
+===================================================== -->
+
+<div
+  class="progress-bar"
+  aria-hidden="true"
+>
+  <div
+    class="progress-fill"
+    id="progressFill"
+  ></div>
+</div>
+
+
+
+<!-- =====================================================
+     COMMANDES
+===================================================== -->
+
+<div class="chapter-controls">
+
+  <button
+    class="control-btn"
+    id="menuBtn"
+    aria-label="Ouvrir le menu"
+  >
+    ☰
+  </button>
+
+  <button
+    class="control-btn"
+    id="soundBtn"
+    aria-label="Activer ou désactiver le son"
+  >
+    ♫
+  </button>
+
+</div>
+
+
+
+<main
+  class="chapter"
+  id="chapter"
+>
+
+
+<!-- =====================================================
+     VISUEL 1
+     COUVERTURE
+===================================================== -->
+
+<section
+  class="scene scene-cover"
+  id="scene-1"
+>
+
+  <div
+    class="visual full-visual"
+    data-visual="1"
+  >
+
+    <img
+      src="images/chapitre13/Visuel-1.PNG"
+      alt="Chapitre 13 — La remontée"
+      loading="eager"
+    >
+
+  </div>
+
+
+  <div class="chapter-title-overlay">
+
+    <p class="chapter-number">
+      Chapitre 13
+    </p>
+
+    <h1>
+      La remontée
+    </h1>
+
+    <button
+      class="continue-btn"
+      data-next
+    >
+      Continuer
+    </button>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     INTERACTION 1
+     COMPRENDRE LA GROTTE
+===================================================== -->
+
+<section
+  class="scene artifact-scene interaction-scene"
+  id="scene-2"
+>
+
+  <div
+    class="visual interactive-visual"
+    data-visual="1"
+  >
+    <img
+      src="images/chapitre13/Visuel-1.PNG"
+      alt="Hope observe une dernière fois les fresques avant de chercher une sortie"
+      loading="lazy"
+    >
+  </div>
+
+
+  <div class="text-block">
+
+    <p>
+      Hope reste encore
+      quelques minutes
+      devant les fresques.
+    </p>
+
+    <p>
+      Anna.
+    </p>
+
+    <p>
+      La fiole.
+    </p>
+
+    <p>
+      Les Anciens.
+    </p>
+
+    <p>
+      L’Équilibre.
+    </p>
+
+    <p>
+      Trop de questions
+      se bousculent
+      dans son esprit.
+    </p>
+
+    <p>
+      Mais une certitude
+      finit par s’imposer.
+    </p>
+
+    <p>
+      — Allez…
+    </p>
+
+    <p>
+      Elle inspire profondément.
+    </p>
+
+    <p class="impact-text">
+      — Il faut sortir d’ici.
+    </p>
+
+  </div>
+
+
+  <div class="observation-buttons">
+
+    <button
+      class="interaction-btn cave-structure-trigger"
+      data-cave-structure="natural"
+    >
+      Passages naturels
+    </button>
+
+    <button
+      class="interaction-btn cave-structure-trigger"
+      data-cave-structure="shaped"
+    >
+      Zones façonnées
+    </button>
+
+    <button
+      class="interaction-btn cave-structure-trigger"
+      data-cave-structure="organized"
+    >
+      Parcours organisé
+    </button>
+
+    <button
+      class="interaction-btn cave-structure-trigger"
+      data-cave-structure="dragon"
+    >
+      Dragon
+    </button>
+
+    <button
+      class="interaction-btn cave-structure-trigger"
+      data-cave-structure="phoenix"
+    >
+      Phénix
+    </button>
+
+  </div>
+
+
+  <div
+    class="reveal-box"
+    id="caveStructureReveal"
+  >
+  </div>
+
+</section>
+
+
+
+<section
+  class="scene artifact-scene"
+  id="scene-3"
+>
+
+  <div class="text-block">
+
+    <p>
+      Elle regarde
+      une dernière fois
+      l’immense cavité.
+    </p>
+
+    <p class="emphasis">
+      — Mais je reviendrai.
+    </p>
+
+    <p>
+      Ça,
+      elle en est certaine.
+    </p>
+
+    <p>
+      Cet endroit
+      n’est pas une simple grotte.
+    </p>
+
+    <p>
+      Plus elle l’observe,
+      plus elle en est convaincue.
+    </p>
+
+    <p>
+      Certains passages
+      sont naturels.
+    </p>
+
+    <p>
+      D’autres semblent
+      avoir été façonnés.
+    </p>
+
+    <p>
+      Préparés.
+    </p>
+
+    <p>
+      Organisés.
+    </p>
+
+    <p>
+      Comme si quelqu’un
+      avait voulu créer
+      un parcours.
+    </p>
+
+    <p class="impact-text">
+      Un chemin.
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<section
+  class="scene deduction-scene"
+  id="scene-4"
+>
+
+  <div class="text-block">
+
+    <p>
+      Hope lève les yeux
+      vers les fresques.
+    </p>
+
+    <p>
+      — Pourquoi personne
+      ne vous a trouvées
+      avant moi ?
+    </p>
+
+    <p>
+      Elle réfléchit.
+    </p>
+
+    <p>
+      Puis regarde
+      son bras.
+    </p>
+
+    <p>
+      Le dragon.
+    </p>
+
+    <p>
+      Elle pense au phénix
+      apparu récemment
+      dans son dos.
+    </p>
+
+    <p>
+      Une hypothèse
+      lui vient.
+    </p>
+
+    <p>
+      Et si cet endroit
+      avait été fermé
+      pendant des siècles ?
+    </p>
+
+    <p>
+      Pas seulement caché
+      par la roche.
+    </p>
+
+    <p class="name-reveal">
+      Verrouillé.
+    </p>
+
+    <p>
+      En attente
+      de quelqu’un
+      portant les deux marques.
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     VISUEL 2
+     SYMBOLE D'ANNA
+===================================================== -->
+
+<section
+  class="scene symbol-scene interaction-scene"
+  id="scene-5"
+>
+
+  <div
+    class="visual interactive-visual"
+    data-visual="2"
+  >
+    <img
+      src="images/chapitre13/Visuel-2.PNG"
+      alt="Hope découvre un symbole ressemblant à la marque de naissance d'Anna"
+      loading="lazy"
+    >
+  </div>
+
+
+  <div class="text-block">
+
+    <p>
+      Hope recommence
+      à examiner les parois.
+    </p>
+
+    <p>
+      Longuement.
+    </p>
+
+    <p>
+      Certains symboles
+      lui sont désormais familiers.
+    </p>
+
+    <p>
+      D’autres restent
+      parfaitement incompréhensibles.
+    </p>
+
+    <p>
+      Puis son regard
+      s’arrête.
+    </p>
+
+    <p class="impact-text">
+      Un signe.
+    </p>
+
+    <p>
+      Simple.
+    </p>
+
+    <p>
+      Presque insignifiant.
+    </p>
+
+  </div>
+
+
+  <div class="observation-buttons">
+
+    <button
+      class="interaction-btn anna-symbol-trigger"
+      data-anna-symbol="shape"
+    >
+      Observer la forme
+    </button>
+
+    <button
+      class="interaction-btn anna-symbol-trigger"
+      data-anna-symbol="dragon"
+    >
+      Tester le dragon
+    </button>
+
+    <button
+      class="interaction-btn anna-symbol-trigger"
+      data-anna-symbol="phoenix"
+    >
+      Tester le phénix
+    </button>
+
+    <button
+      class="interaction-btn anna-symbol-trigger"
+      data-anna-symbol="memory"
+    >
+      Chercher dans sa mémoire
+    </button>
+
+  </div>
+
+
+  <div
+    class="reveal-box"
+    id="annaSymbolReveal"
+  >
+  </div>
+
+</section>
+
+
+
+<section
+  class="scene revelation-scene"
+  id="scene-6"
+>
+
+  <div class="text-block">
+
+    <p>
+      Hope s’en approche.
+    </p>
+
+    <p>
+      Elle fronce les sourcils.
+    </p>
+
+    <p>
+      — Je connais ça…
+    </p>
+
+    <p>
+      Elle passe doucement
+      ses doigts dessus.
+    </p>
+
+    <p>
+      Rien.
+    </p>
+
+    <p>
+      Le dragon
+      ne réagit pas.
+    </p>
+
+    <p>
+      Le phénix
+      non plus.
+    </p>
+
+    <p>
+      Pourtant,
+      quelque chose
+      la dérange.
+    </p>
+
+    <p>
+      Puis l’image
+      lui revient.
+    </p>
+
+    <p class="name-reveal">
+      Anna.
+    </p>
+
+    <p>
+      Près de son oreille.
+    </p>
+
+    <p>
+      Cette petite marque.
+    </p>
+
+    <p>
+      Une forme proche
+      de l’infini.
+    </p>
+
+    <p>
+      Hope recule
+      d’un pas.
+    </p>
+
+    <p>
+      — Non…
+    </p>
+
+    <p class="emphasis">
+      Ce n’est pas exactement
+      le même symbole.
+      Mais la ressemblance
+      est troublante.
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     VISUEL 3
+     PHÉNIX GRAVÉ
+===================================================== -->
+
+<section
+  class="scene dragon-scene interaction-scene"
+  id="scene-7"
+>
+
+  <div
+    class="visual interactive-visual"
+    data-visual="3"
+  >
+    <img
+      src="images/chapitre13/Visuel-3.PNG"
+      alt="Immense phénix gravé dans la roche avec le symbole au niveau du cœur"
+      loading="lazy"
+    >
+  </div>
+
+
+  <div class="text-block">
+
+    <p>
+      Son regard
+      traverse la pièce.
+    </p>
+
+    <p>
+      Sur la paroi opposée,
+      elle aperçoit
+      la même forme.
+    </p>
+
+    <p>
+      Mais cette fois…
+    </p>
+
+    <p class="impact-text">
+      elle se trouve au centre
+      d’un immense phénix
+      gravé dans la roche.
+    </p>
+
+  </div>
+
+
+  <div class="observation-buttons">
+
+    <button
+      class="interaction-btn phoenix-wall-trigger"
+      data-phoenix-wall="phoenix"
+    >
+      Observer le phénix
+    </button>
+
+    <button
+      class="interaction-btn phoenix-wall-trigger"
+      data-phoenix-wall="center"
+    >
+      Observer le symbole central
+    </button>
+
+    <button
+      class="interaction-btn phoenix-wall-trigger"
+      data-phoenix-wall="heart"
+    >
+      Observer sa position
+    </button>
+
+    <button
+      class="interaction-btn phoenix-wall-trigger"
+      data-phoenix-wall="dragon"
+    >
+      Utiliser la main du dragon
+    </button>
+
+  </div>
+
+
+  <div
+    class="reveal-box"
+    id="phoenixWallReveal"
+  >
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     VISUEL 4
+     ESCALIER SECRET
+===================================================== -->
+
+<section
+  class="scene artifact-scene interaction-scene"
+  id="scene-8"
+>
+
+  <div
+    class="visual interactive-visual"
+    data-visual="4"
+  >
+    <img
+      src="images/chapitre13/Visuel-4.PNG"
+      alt="La paroi bascule et révèle un escalier secret"
+      loading="lazy"
+    >
+  </div>
+
+
+  <div class="text-block">
+
+    <p>
+      Hope tend
+      la main droite.
+    </p>
+
+    <p>
+      La main du dragon.
+    </p>
+
+    <p>
+      Elle touche la pierre.
+    </p>
+
+    <p class="impact-text">
+      Instantanément,
+      le dragon s’illumine.
+    </p>
+
+  </div>
+
+
+  <div class="story-path">
+
+    <button
+      class="interaction-btn exit-opening-trigger"
+      data-exit-opening="touch"
+    >
+      Toucher
+    </button>
+
+    <button
+      class="interaction-btn exit-opening-trigger"
+      data-exit-opening="vibration"
+    >
+      Vibration
+    </button>
+
+    <button
+      class="interaction-btn exit-opening-trigger"
+      data-exit-opening="tilt"
+    >
+      Basculement
+    </button>
+
+    <button
+      class="interaction-btn exit-opening-trigger"
+      data-exit-opening="opening"
+    >
+      Ouverture
+    </button>
+
+    <button
+      class="interaction-btn exit-opening-trigger"
+      data-exit-opening="stairs"
+    >
+      Escalier
+    </button>
+
+  </div>
+
+
+  <div
+    class="reveal-box"
+    id="exitOpeningReveal"
+  >
+  </div>
+
+</section>
+
+
+
+<section
+  class="scene artifact-scene"
+  id="scene-9"
+>
+
+  <div class="text-block">
+
+    <p>
+      Un grondement sourd
+      traverse la cavité.
+    </p>
+
+    <p>
+      Une partie de la paroi
+      commence à basculer.
+    </p>
+
+    <p>
+      De la poussière
+      tombe du plafond.
+    </p>
+
+    <p>
+      Une ouverture apparaît.
+    </p>
+
+    <p>
+      Derrière :
+    </p>
+
+    <p class="name-reveal">
+      un escalier.
+    </p>
+
+    <p>
+      Étroit.
+    </p>
+
+    <p>
+      Abrupt.
+    </p>
+
+    <p>
+      Il monte
+      vers l’obscurité.
+    </p>
+
+    <p>
+      Hope sourit.
+    </p>
+
+    <p class="emphasis">
+      — Je savais bien
+      que vous aviez prévu une sortie.
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     VISUEL 5
+     PREMIERS MESSAGES
+===================================================== -->
+
+<section
+  class="scene revelation-scene interaction-scene"
+  id="scene-10"
+>
+
+  <div
+    class="visual interactive-visual"
+    data-visual="5"
+  >
+    <img
+      src="images/chapitre13/Visuel-5.PNG"
+      alt="Hope monte un escalier phosphorescent couvert de symboles"
+      loading="lazy"
+    >
+  </div>
+
+
+  <div class="text-block">
+
+    <p>
+      Elle commence à monter.
+    </p>
+
+    <p>
+      Dès qu’elle pose le pied
+      sur la première marche,
+      plusieurs symboles
+      s’illuminent autour d’elle.
+    </p>
+
+    <p>
+      Une lumière phosphorescente
+      se propage progressivement
+      le long des parois.
+    </p>
+
+  </div>
+
+
+  <div class="story-path">
+
+    <button
+      class="interaction-btn first-messages-trigger"
+      data-first-messages="unknown"
+    >
+      Ce que tu ignores…
+    </button>
+
+    <button
+      class="interaction-btn first-messages-trigger"
+      data-first-messages="understand"
+    >
+      Comprendre…
+    </button>
+
+    <button
+      class="interaction-btn first-messages-trigger"
+      data-first-messages="meeting"
+    >
+      Une rencontre…
+    </button>
+
+    <button
+      class="interaction-btn first-messages-trigger"
+      data-first-messages="transform"
+    >
+      Transformer…
+    </button>
+
+  </div>
+
+
+  <div
+    class="reveal-box"
+    id="firstMessagesReveal"
+  >
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     VISUEL 6
+     ENSEIGNEMENTS
+===================================================== -->
+
+<section
+  class="scene revelation-scene interaction-scene"
+  id="scene-11"
+>
+
+  <div
+    class="visual interactive-visual"
+    data-visual="6"
+  >
+    <img
+      src="images/chapitre13/Visuel-6.PNG"
+      alt="Hope découvre d'autres inscriptions pendant la remontée"
+      loading="lazy"
+    >
+  </div>
+
+
+  <div class="text-block">
+
+    <p>
+      Hope continue.
+    </p>
+
+    <p>
+      Une autre inscription
+      s’illumine.
+    </p>
+
+  </div>
+
+
+  <div class="observation-buttons">
+
+    <button
+      class="interaction-btn teachings-trigger"
+      data-teachings="body"
+    >
+      Le corps
+    </button>
+
+    <button
+      class="interaction-btn teachings-trigger"
+      data-teachings="beginning"
+    >
+      Fin / commencement
+    </button>
+
+    <button
+      class="interaction-btn teachings-trigger"
+      data-teachings="difficulty"
+    >
+      Difficulté
+    </button>
+
+    <button
+      class="interaction-btn teachings-trigger"
+      data-teachings="understanding"
+    >
+      Comprendre
+    </button>
+
+    <button
+      class="interaction-btn teachings-trigger"
+      data-teachings="choice"
+    >
+      Choix
+    </button>
+
+  </div>
+
+
+  <div
+    class="reveal-box"
+    id="teachingsReveal"
+  >
+  </div>
+
+</section>
+
+
+
+<section
+  class="scene revelation-scene"
+  id="scene-12"
+>
+
+  <div class="text-block">
+
+    <p class="emphasis">
+      Le corps est un passage.
+      Prends-en soin.
+      Mais n’oublie pas
+      ce qui le traverse.
+    </p>
+
+    <p>
+      Plus loin :
+    </p>
+
+    <p class="emphasis">
+      Ce que tu appelles une fin
+      peut n’être
+      qu’un commencement.
+    </p>
+
+    <p>
+      Hope sourit légèrement.
+    </p>
+
+    <p>
+      — Vous aimiez beaucoup
+      les énigmes,
+      apparemment.
+    </p>
+
+    <p>
+      Elle poursuit.
+    </p>
+
+    <p class="emphasis">
+      La difficulté
+      ne punit pas toujours.
+      Parfois,
+      elle prépare.
+    </p>
+
+    <p>
+      Puis :
+    </p>
+
+    <p class="emphasis">
+      Ne crains pas
+      ce que tu peux comprendre.
+    </p>
+
+    <p>
+      Et enfin,
+      presque au sommet :
+    </p>
+
+    <p class="impact-text">
+      Là où existe le déséquilibre
+      naît toujours
+      une possibilité de choix.
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     VISUEL 7
+     SORTIE
+===================================================== -->
+
+<section
+  class="scene unity-scene interaction-scene"
+  id="scene-13"
+>
+
+  <div
+    class="visual interactive-visual"
+    data-visual="7"
+  >
+    <img
+      src="images/chapitre13/Visuel-7.PNG"
+      alt="Hope sort de la montagne dans une forêt dense"
+      loading="lazy"
+    >
+  </div>
+
+
+  <div class="text-block">
+
+    <p>
+      Après un long effort,
+      elle atteint enfin
+      le haut de l’escalier.
+    </p>
+
+    <p>
+      Son corps
+      est encore douloureux.
+    </p>
+
+    <p>
+      La chute
+      a laissé des traces.
+    </p>
+
+    <p>
+      Puis la lumière naturelle
+      apparaît
+      devant elle.
+    </p>
+
+  </div>
+
+
+  <div class="observation-buttons">
+
+    <button
+      class="interaction-btn surface-trigger"
+      data-surface="air"
+    >
+      Air frais
+    </button>
+
+    <button
+      class="interaction-btn surface-trigger"
+      data-surface="vegetation"
+    >
+      Végétation
+    </button>
+
+    <button
+      class="interaction-btn surface-trigger"
+      data-surface="location"
+    >
+      Chercher des repères
+    </button>
+
+    <button
+      class="interaction-btn surface-trigger"
+      data-surface="pain"
+    >
+      Évaluer son état
+    </button>
+
+    <button
+      class="interaction-btn surface-trigger"
+      data-surface="closing"
+    >
+      Observer le passage
+    </button>
+
+  </div>
+
+
+  <div
+    class="reveal-box"
+    id="surfaceReveal"
+  >
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     VISUEL 8
+     VERROU EXTÉRIEUR
+===================================================== -->
+
+<section
+  class="scene dragon-scene interaction-scene"
+  id="scene-14"
+>
+
+  <div
+    class="visual interactive-visual"
+    data-visual="8"
+  >
+    <img
+      src="images/chapitre13/Visuel-8.PNG"
+      alt="Trois symboles sont gravés à l'extérieur : dragon, phénix et signe proche de celui d'Anna"
+      loading="lazy"
+    >
+  </div>
+
+
+  <div class="text-block">
+
+    <p>
+      À peine Hope
+      est-elle sortie
+      que le passage
+      commence à se refermer.
+    </p>
+
+    <p>
+      — Attends !
+    </p>
+
+    <p>
+      Trop tard.
+    </p>
+
+    <p>
+      La paroi reprend
+      sa position initiale.
+    </p>
+
+    <p>
+      En quelques secondes,
+      il ne reste plus
+      qu’une masse rocheuse
+      parfaitement banale.
+    </p>
+
+  </div>
+
+
+  <div class="observation-buttons">
+
+    <button
+      class="interaction-btn outer-lock-trigger"
+      data-outer-lock="dragon"
+    >
+      Symbole du dragon
+    </button>
+
+    <button
+      class="interaction-btn outer-lock-trigger"
+      data-outer-lock="phoenix"
+    >
+      Symbole du phénix
+    </button>
+
+    <button
+      class="interaction-btn outer-lock-trigger"
+      data-outer-lock="anna"
+    >
+      Troisième symbole
+    </button>
+
+  </div>
+
+
+  <div
+    class="reveal-box"
+    id="outerLockReveal"
+  >
+  </div>
+
+
+  <button
+    class="interaction-btn"
+    id="openOuterLockTrigger"
+  >
+    Tester l’ouverture
+  </button>
+
+
+  <div
+    class="reveal-box"
+    id="openOuterLockReveal"
+  >
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     VISUEL 9
+     FORÊT
+===================================================== -->
+
+<section
+  class="scene shadow-scene interaction-scene"
+  id="scene-15"
+>
+
+  <div
+    class="visual interactive-visual"
+    data-visual="9"
+  >
+    <img
+      src="images/chapitre13/Visuel-9.PNG"
+      alt="Hope avance prudemment dans une forêt sauvage"
+      loading="lazy"
+    >
+  </div>
+
+
+  <div class="text-block">
+
+    <p>
+      Hope se tourne
+      vers la forêt.
+    </p>
+
+    <p>
+      La végétation
+      est dense.
+    </p>
+
+    <p>
+      Sauvage.
+    </p>
+
+    <p>
+      Elle ne sait pas
+      exactement
+      où elle a émergé.
+    </p>
+
+    <p>
+      Ni combien de kilomètres
+      le courant souterrain
+      lui a fait parcourir.
+    </p>
+
+  </div>
+
+
+  <div class="observation-buttons">
+
+    <button
+      class="interaction-btn forest-survival-trigger"
+      data-forest-survival="observe"
+    >
+      Observer
+    </button>
+
+    <button
+      class="interaction-btn forest-survival-trigger"
+      data-forest-survival="listen"
+    >
+      Écouter
+    </button>
+
+    <button
+      class="interaction-btn forest-survival-trigger"
+      data-forest-survival="direction"
+    >
+      Changer de direction
+    </button>
+
+    <button
+      class="interaction-btn forest-survival-trigger"
+      data-forest-survival="paths"
+    >
+      Éviter les chemins
+    </button>
+
+    <button
+      class="interaction-btn forest-survival-trigger"
+      data-forest-survival="network"
+    >
+      Tester la pastille
+    </button>
+
+  </div>
+
+
+  <div
+    class="reveal-box"
+    id="forestSurvivalReveal"
+  >
+  </div>
+
+</section>
+
+
+
+<section
+  class="scene shadow-scene"
+  id="scene-16"
+>
+
+  <div class="text-block">
+
+    <p>
+      Rien.
+    </p>
+
+    <p>
+      Pas de réseau.
+    </p>
+
+    <p>
+      — Évidemment.
+    </p>
+
+    <p>
+      Hope commence
+      à marcher.
+    </p>
+
+    <p>
+      Son instinct
+      lui dit
+      de rester prudente.
+    </p>
+
+    <p>
+      Amy a survécu
+      à la chute ?
+    </p>
+
+    <p>
+      Probablement.
+    </p>
+
+    <p>
+      Où ?
+    </p>
+
+    <p>
+      Aucune idée.
+    </p>
+
+    <p>
+      Est-elle blessée ?
+    </p>
+
+    <p>
+      Très certainement.
+    </p>
+
+    <p>
+      Est-elle déjà
+      à sa recherche ?
+    </p>
+
+    <p class="emphasis">
+      Possible.
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     VISUEL 10
+     PHÉNIX DE PETER
+===================================================== -->
+
+<section
+  class="scene investigation-scene interaction-scene"
+  id="scene-17"
+>
+
+  <div
+    class="visual interactive-visual"
+    data-visual="10"
+  >
+    <img
+      src="images/chapitre13/Visuel-10.PNG"
+      alt="Le Phénix biotechnique de Peter survole Hope"
+      loading="lazy"
+    >
+  </div>
+
+
+  <div class="text-block">
+
+    <p>
+      Une heure passe.
+    </p>
+
+    <p>
+      Puis peut-être deux.
+    </p>
+
+    <p>
+      La fatigue
+      commence à revenir.
+    </p>
+
+    <p>
+      Puis quelque chose
+      traverse le ciel
+      entre les arbres.
+    </p>
+
+    <p class="impact-text">
+      Une silhouette ailée.
+    </p>
+
+  </div>
+
+
+  <div class="observation-buttons">
+
+    <button
+      class="interaction-btn phoenix-identify-trigger"
+      data-phoenix-identify="feathers"
+    >
+      Observer les plumes
+    </button>
+
+    <button
+      class="interaction-btn phoenix-identify-trigger"
+      data-phoenix-identify="flight"
+    >
+      Observer le vol
+    </button>
+
+    <button
+      class="interaction-btn phoenix-identify-trigger"
+      data-phoenix-identify="look"
+    >
+      Observer son regard
+    </button>
+
+    <button
+      class="interaction-btn phoenix-identify-trigger"
+      data-phoenix-identify="behavior"
+    >
+      Analyser son comportement
+    </button>
+
+  </div>
+
+
+  <div
+    class="reveal-box"
+    id="phoenixIdentifyReveal"
+  >
+  </div>
+
+</section>
+
+
+
+<section
+  class="scene investigation-scene"
+  id="scene-18"
+>
+
+  <div class="text-block">
+
+    <p>
+      L’oiseau revient.
+    </p>
+
+    <p>
+      Tourne au-dessus d’elle.
+    </p>
+
+    <p>
+      Ses mouvements
+      sont beaucoup trop précis.
+    </p>
+
+    <p>
+      Hope plisse les yeux.
+    </p>
+
+    <p>
+      — Non…
+    </p>
+
+    <p>
+      L’animal descend légèrement.
+    </p>
+
+    <p>
+      Ses plumes
+      semblent parfaitement naturelles.
+    </p>
+
+    <p>
+      Son comportement,
+      lui,
+      beaucoup moins.
+    </p>
+
+    <p>
+      Hope éclate presque de rire.
+    </p>
+
+    <p class="name-reveal">
+      — Peter…
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     VISUEL 11
+     DRONES ET RÉSEAU
+===================================================== -->
+
+<section
+  class="scene investigation-scene interaction-scene"
+  id="scene-19"
+>
+
+  <div
+    class="visual interactive-visual"
+    data-visual="11"
+  >
+    <img
+      src="images/chapitre13/Visuel-11.PNG"
+      alt="Le Phénix, des drones et la pastille holographique d'Hope rétablissent la communication"
+      loading="lazy"
+    >
+  </div>
+
+
+  <div class="text-block">
+
+    <p>
+      L’oiseau se pose
+      sur une branche.
+    </p>
+
+    <p>
+      Il incline la tête.
+    </p>
+
+    <p>
+      Comme s’il l’observait.
+    </p>
+
+    <p>
+      Quelques secondes plus tard,
+      plusieurs petits drones
+      apparaissent
+      à travers la végétation.
+    </p>
+
+  </div>
+
+
+  <div class="story-path">
+
+    <button
+      class="interaction-btn reconnect-trigger"
+      data-reconnect="drone"
+    >
+      Drone
+    </button>
+
+    <button
+      class="interaction-btn reconnect-trigger"
+      data-reconnect="relay"
+    >
+      Relais
+    </button>
+
+    <button
+      class="interaction-btn reconnect-trigger"
+      data-reconnect="network"
+    >
+      Réseau
+    </button>
+
+    <button
+      class="interaction-btn reconnect-trigger"
+      data-reconnect="communication"
+    >
+      Communication
+    </button>
+
+  </div>
+
+
+  <div
+    class="reveal-box"
+    id="reconnectReveal"
+  >
+  </div>
+
+</section>
+
+
+
+<section
+  class="scene unity-scene"
+  id="scene-20"
+>
+
+  <div class="text-block dialogue">
+
+    <p>
+      Hope déclenche
+      immédiatement
+      la communication.
+    </p>
+
+    <p>
+      Peter apparaît.
+    </p>
+
+    <p>
+      Son visage
+      se détend
+      dès qu’il la voit.
+    </p>
+
+    <p>
+      — Enfin.
+    </p>
+
+    <p>
+      Hope sourit.
+    </p>
+
+    <p>
+      — Heureuse
+      de te voir aussi.
+    </p>
+
+    <p>
+      — Tu sais
+      depuis combien de temps
+      on te cherche ?
+    </p>
+
+    <p>
+      — J’étais
+      légèrement occupée.
+    </p>
+
+    <p>
+      Peter la regarde
+      attentivement.
+    </p>
+
+    <p>
+      — Tu es blessée ?
+    </p>
+
+    <p>
+      — Un peu.
+    </p>
+
+    <p>
+      — « Un peu »
+      dans ton langage
+      ou dans celui
+      d’un être humain
+      normalement constitué ?
+    </p>
+
+    <p>
+      — Je marche.
+    </p>
+
+    <p class="emphasis">
+      — Donc dans ton langage.
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     VISUEL 12
+     NOUVELLES DU GROUPE
+===================================================== -->
+
+<section
+  class="scene unity-scene interaction-scene"
+  id="scene-21"
+>
+
+  <div
+    class="visual interactive-visual"
+    data-visual="12"
+  >
+    <img
+      src="images/chapitre13/Visuel-12.PNG"
+      alt="Peter donne à Hope des nouvelles du groupe"
+      loading="lazy"
+    >
+  </div>
+
+
+  <div class="text-block dialogue">
+
+    <p>
+      Peter poursuit :
+    </p>
+
+    <p>
+      — Tu es localisée.
+    </p>
+
+    <p>
+      — Les drones
+      ne détectent actuellement
+      aucune menace immédiate
+      autour de toi.
+    </p>
+
+    <p>
+      Puis son visage
+      redevient sérieux.
+    </p>
+
+    <p>
+      — Mais reste
+      sur tes gardes.
+    </p>
+
+    <p>
+      — Pourquoi ?
+    </p>
+
+    <p>
+      Peter hésite.
+    </p>
+
+    <p class="impact-text">
+      — Parce que beaucoup trop
+      de gens te cherchent.
+    </p>
+
+  </div>
+
+
+  <div class="observation-buttons">
+
+    <button
+      class="interaction-btn group-news-trigger"
+      data-group-news="anna"
+    >
+      Anna
+    </button>
+
+    <button
+      class="interaction-btn group-news-trigger"
+      data-group-news="betty"
+    >
+      Betty
+    </button>
+
+    <button
+      class="interaction-btn group-news-trigger"
+      data-group-news="max"
+    >
+      Max
+    </button>
+
+    <button
+      class="interaction-btn group-news-trigger"
+      data-group-news="root"
+    >
+      Root
+    </button>
+
+    <button
+      class="interaction-btn group-news-trigger"
+      data-group-news="guardians"
+    >
+      Gardiens
+    </button>
+
+  </div>
+
+
+  <div
+    class="reveal-box"
+    id="groupNewsReveal"
+  >
+  </div>
+
+</section>
+
+
+
+<section
+  class="scene investigation-scene"
+  id="scene-22"
+>
+
+  <div class="text-block dialogue">
+
+    <p>
+      Hope demande :
+    </p>
+
+    <p>
+      — Betty est avec eux ?
+    </p>
+
+    <p>
+      Peter la regarde.
+    </p>
+
+    <p>
+      — Pourquoi ?
+    </p>
+
+    <p>
+      Hope pense
+      aux fresques.
+    </p>
+
+    <p>
+      À la fiole.
+    </p>
+
+    <p>
+      À Anna.
+    </p>
+
+    <p>
+      — J’ai besoin
+      de lui parler.
+    </p>
+
+    <p>
+      Peter remarque immédiatement
+      son expression.
+    </p>
+
+    <p>
+      — Qu’est-ce que
+      tu as découvert ?
+    </p>
+
+    <p>
+      Hope regarde
+      autour d’elle.
+    </p>
+
+    <p class="impact-text">
+      — Pas par téléphone.
+    </p>
+
+    <p>
+      — Hope…
+    </p>
+
+    <p>
+      — Pas maintenant.
+    </p>
+
+    <p>
+      Puis elle ajoute :
+    </p>
+
+    <p>
+      — Dis simplement à Betty
+      que lorsqu’on se retrouvera,
+      elle et moi
+      allons avoir une conversation.
+    </p>
+
+    <p>
+      — Sur quoi ?
+    </p>
+
+    <p class="emphasis">
+      — Sur quelque chose
+      qu’elle aurait dû
+      nous raconter
+      depuis longtemps.
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     VISUEL 13
+     RETROUVAILLES
+===================================================== -->
+
+<section
+  class="scene unity-scene interaction-scene"
+  id="scene-23"
+>
+
+  <div
+    class="visual interactive-visual"
+    data-visual="13"
+  >
+    <img
+      src="images/chapitre13/Visuel-13.PNG"
+      alt="Hope retrouve Root Max et Betty dans la forêt"
+      loading="lazy"
+    >
+  </div>
+
+
+  <div class="text-block">
+
+    <p>
+      Près de cinquante minutes
+      plus tard,
+      Hope entend enfin
+      un moteur au loin.
+    </p>
+
+    <p>
+      Puis des voix.
+    </p>
+
+    <p>
+      Elle reconnaît immédiatement
+      celle de Max.
+    </p>
+
+    <p class="emphasis">
+      — Je te jure
+      que si elle nous fait
+      encore ce coup-là…
+    </p>
+
+  </div>
+
+
+  <div class="observation-buttons">
+
+    <button
+      class="interaction-btn reunion-trigger"
+      data-reunion="root"
+    >
+      Root
+    </button>
+
+    <button
+      class="interaction-btn reunion-trigger"
+      data-reunion="max"
+    >
+      Max
+    </button>
+
+    <button
+      class="interaction-btn reunion-trigger"
+      data-reunion="betty"
+    >
+      Betty
+    </button>
+
+  </div>
+
+
+  <div
+    class="reveal-box"
+    id="reunionReveal"
+  >
+  </div>
+
+</section>
+
+
+
+<section
+  class="scene unity-scene"
+  id="scene-24"
+>
+
+  <div class="text-block dialogue">
+
+    <p>
+      Quelques secondes plus tard,
+      Root apparaît
+      entre les arbres.
+    </p>
+
+    <p>
+      Elle s’immobilise.
+    </p>
+
+    <p>
+      Hope également.
+    </p>
+
+    <p>
+      Pendant une seconde,
+      aucune des deux
+      ne parle.
+    </p>
+
+    <p>
+      Puis Root traverse
+      la distance qui les sépare
+      et la serre brutalement
+      dans ses bras.
+    </p>
+
+    <p>
+      Hope grimace.
+    </p>
+
+    <p>
+      — Doucement…
+    </p>
+
+    <p>
+      Root recule aussitôt.
+    </p>
+
+    <p>
+      — Tu es blessée ?
+    </p>
+
+    <p>
+      — Pas gravement.
+    </p>
+
+    <p>
+      Root la frappe
+      immédiatement à l’épaule.
+    </p>
+
+    <p>
+      — Aïe !
+    </p>
+
+    <p>
+      — Ça,
+      c’était pour nous avoir fait croire
+      que tu étais morte.
+    </p>
+
+    <p>
+      — Techniquement,
+      je n’ai rien fait.
+    </p>
+
+    <p>
+      Root lève la main
+      une deuxième fois.
+    </p>
+
+    <p>
+      Hope recule.
+    </p>
+
+    <p class="emphasis">
+      — D’accord,
+      d’accord.
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<section
+  class="scene unity-scene"
+  id="scene-25"
+>
+
+  <div class="text-block dialogue">
+
+    <p>
+      Max arrive
+      derrière elle.
+    </p>
+
+    <p>
+      Il sourit.
+    </p>
+
+    <p>
+      — Personnellement,
+      j’attendrais
+      qu’elle soit totalement remise
+      avant de la battre.
+    </p>
+
+    <p>
+      Hope le prend
+      dans ses bras.
+    </p>
+
+    <p>
+      — Anna ?
+    </p>
+
+    <p>
+      — Elle va bien.
+    </p>
+
+    <p>
+      — Elle a eu peur.
+    </p>
+
+    <p>
+      Hope ferme les yeux
+      une seconde.
+    </p>
+
+    <p>
+      — Je sais.
+    </p>
+
+    <p>
+      Puis Betty apparaît.
+    </p>
+
+    <p>
+      Hope se fige.
+    </p>
+
+    <p>
+      Betty aussi.
+    </p>
+
+    <p>
+      Pendant un instant,
+      aucune des deux
+      ne parle.
+    </p>
+
+    <p>
+      Betty finit
+      par s’approcher.
+    </p>
+
+    <p>
+      Et contre toute attente,
+      elle serre Hope
+      dans ses bras.
+    </p>
+
+    <p>
+      Betty murmure :
+    </p>
+
+    <p class="impact-text">
+      — Ne refaites jamais ça.
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     VISUEL 14
+     CONFRONTATION BETTY
+===================================================== -->
+
+<section
+  class="scene revelation-scene interaction-scene"
+  id="scene-26"
+>
+
+  <div
+    class="visual interactive-visual"
+    data-visual="14"
+  >
+    <img
+      src="images/chapitre13/Visuel-14.PNG"
+      alt="Hope confronte Betty au sujet de la fiole et d'Anna"
+      loading="lazy"
+    >
+  </div>
+
+
+  <div class="text-block dialogue">
+
+    <p>
+      Betty recule.
+    </p>
+
+    <p>
+      — Vous êtes blessée.
+    </p>
+
+    <p>
+      — Un peu.
+    </p>
+
+    <p>
+      — Je vais regarder.
+    </p>
+
+    <p>
+      Hope lui attrape doucement
+      le poignet.
+    </p>
+
+    <p>
+      — Betty.
+    </p>
+
+    <p>
+      Quelque chose
+      dans son ton
+      fait immédiatement changer
+      l’expression de la généticienne.
+    </p>
+
+    <p>
+      Root le remarque.
+    </p>
+
+    <p>
+      Max également.
+    </p>
+
+  </div>
+
+
+  <div class="story-path">
+
+    <button
+      class="interaction-btn betty-truth-trigger"
+      data-betty-truth="ancients"
+    >
+      Les Anciens
+    </button>
+
+    <button
+      class="interaction-btn betty-truth-trigger"
+      data-betty-truth="vial"
+    >
+      La fiole
+    </button>
+
+    <button
+      class="interaction-btn betty-truth-trigger"
+      data-betty-truth="blood"
+    >
+      Le sang
+    </button>
+
+    <button
+      class="interaction-btn betty-truth-trigger"
+      data-betty-truth="age"
+    >
+      Dix-neuf ans
+    </button>
+
+    <button
+      class="interaction-btn betty-truth-trigger"
+      data-betty-truth="reaction"
+    >
+      Observer Betty
+    </button>
+
+  </div>
+
+
+  <div
+    class="reveal-box"
+    id="bettyTruthReveal"
+  >
+  </div>
+
+</section>
+
+
+
+<section
+  class="scene revelation-scene"
+  id="scene-27"
+>
+
+  <div class="text-block dialogue">
+
+    <p>
+      Hope regarde Betty
+      droit dans les yeux.
+    </p>
+
+    <p>
+      — J’ai découvert
+      quelque chose
+      là-dessous.
+    </p>
+
+    <p>
+      Betty ne dit rien.
+    </p>
+
+    <p>
+      Hope poursuit :
+    </p>
+
+    <p>
+      — Quelque chose
+      concernant les Anciens.
+    </p>
+
+    <p>
+      Le visage de Betty
+      se ferme légèrement.
+    </p>
+
+    <p>
+      Hope le voit.
+    </p>
+
+    <p>
+      — Et une fiole.
+    </p>
+
+    <p>
+      Cette fois,
+      Betty pâlit.
+    </p>
+
+    <p>
+      Root regarde
+      immédiatement Betty.
+    </p>
+
+    <p>
+      Max cesse
+      de sourire.
+    </p>
+
+    <p class="impact-text">
+      — Tu savais
+      qu’elle contenait du sang.
+    </p>
+
+    <p>
+      Silence.
+    </p>
+
+    <p>
+      Betty ne répond pas.
+    </p>
+
+    <p>
+      Hope poursuit calmement :
+    </p>
+
+    <p class="emphasis">
+      — Et tu ne t’es pas contentée
+      de l’étudier.
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<section
+  class="scene revelation-scene"
+  id="scene-28"
+>
+
+  <div class="text-block dialogue">
+
+    <p>
+      Betty reste
+      parfaitement immobile.
+    </p>
+
+    <p>
+      Hope murmure :
+    </p>
+
+    <p class="name-reveal">
+      — Anna a dix-neuf ans.
+    </p>
+
+    <p>
+      La respiration de Betty
+      se bloque
+      une fraction de seconde.
+    </p>
+
+    <p>
+      Hope comprend.
+    </p>
+
+    <p>
+      Elle n’avait jusque-là
+      qu’une hypothèse.
+    </p>
+
+    <p>
+      La réaction de Betty
+      vient de la transformer
+      en quelque chose
+      de beaucoup plus sérieux.
+    </p>
+
+    <p>
+      Root regarde Betty.
+    </p>
+
+    <p>
+      — Betty…
+    </p>
+
+    <p>
+      Hope ne la quitte pas
+      des yeux.
+    </p>
+
+    <p>
+      — Quand on sera
+      en sécurité,
+      tu vas me raconter
+      exactement
+      ce que tu as fait
+      avec cette fiole.
+    </p>
+
+    <p>
+      Betty baisse
+      légèrement les yeux.
+    </p>
+
+    <p>
+      Puis regarde Hope.
+    </p>
+
+    <p>
+      — Pas ici.
+    </p>
+
+    <p>
+      Hope acquiesce.
+    </p>
+
+    <p>
+      — Non.
+    </p>
+
+    <p>
+      Elle jette un regard
+      vers Root et Max.
+    </p>
+
+    <p>
+      Puis revient
+      vers Betty.
+    </p>
+
+    <p class="impact-text">
+      — Mais cette fois…
+    </p>
+
+    <p class="name-reveal">
+      pas de mensonge.
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     FIN DU CHAPITRE
+===================================================== -->
+
+<section
+  class="scene chapter-end"
+  id="scene-29"
+>
+
+  <div class="text-block">
+
+    <p>
+      Betty ne répond pas.
+    </p>
+
+    <p>
+      Et ce silence
+      suffit à inquiéter
+      tout le monde.
+    </p>
+
+  </div>
+
+
+  <div class="end-symbol">
+    ∞
+  </div>
+
+
+  <div class="end-actions">
+
+    <button
+      class="chapter-btn"
+      id="restartChapter"
+    >
+      Relire le chapitre
+    </button>
+
+    <!--
+      Quand le chapitre 14 sera prêt :
+
+      <a
+        class="chapter-btn primary"
+        href="chapitre14.html"
+      >
+        Continuer
+      </a>
+    -->
+
+    <a
+      class="chapter-btn primary"
+      href="index.html"
+    >
+      Retour à l’accueil
+    </a>
+
+  </div>
+
+</section>
+
+
+</main>
+
+
+
+<!-- =====================================================
+     POPUP INFORMATION / SECRET
+===================================================== -->
+
+<div
+  class="secret-popup"
+  id="secretPopup"
+  aria-hidden="true"
+>
+
+  <div class="secret-popup-inner">
+
+    <span class="secret-symbol">
+      ∞
+    </span>
+
+    <span>
+      INFORMATION DÉCOUVERTE
+    </span>
+
+  </div>
+
+</div>
+
+
+
+<!-- =====================================================
+     MENU
+===================================================== -->
+
+<div
+  class="chapter-menu"
+  id="chapterMenu"
+  aria-hidden="true"
+>
+
+  <div class="chapter-menu-panel">
+
+    <button
+      class="menu-close"
+      id="menuClose"
+      aria-label="Fermer le menu"
+    >
+      ×
+    </button>
+
+    <h2>
+      Chapitre 13
+    </h2>
+
+    <p>
+      La remontée
+    </p>
+
+    <button
+      id="resumeBtn"
+      class="menu-action"
+    >
+      Reprendre la lecture
+    </button>
+
+    <button
+      id="restartBtn"
+      class="menu-action"
+    >
+      Recommencer le chapitre
+    </button>
+
+    <a
+      href="index.html"
+      class="menu-action"
+    >
+      Retour à l’accueil
+    </a>
+
+  </div>
+
+</div>
+
+
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
+<script src="js/chapitre13.js"></script>
+
+
+</body>
+</html>
