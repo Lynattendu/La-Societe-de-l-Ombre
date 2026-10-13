@@ -858,6 +858,7 @@ function discoverFiole() {
 
   }
 
+
   showSecret(
     "fiole",
     "Cette fiole est à l’origine d’une chaîne d’événements dont personne ne mesure encore les conséquences."
@@ -866,26 +867,14 @@ function discoverFiole() {
 }
 
 
+/*
+  Un seul déclencheur :
+  le bouton d'observation.
+*/
+
 if (fioleButton) {
 
   fioleButton.addEventListener(
-    "click",
-    (event) => {
-
-      event.preventDefault();
-      event.stopPropagation();
-
-      discoverFiole();
-
-    }
-  );
-
-}
-
-
-if (fioleVisual) {
-
-  fioleVisual.addEventListener(
     "click",
     () => {
 
