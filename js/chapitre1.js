@@ -729,12 +729,26 @@ function hideSecretPopup() {
     return;
   }
 
-  secretPopup.classList.remove("show");
+
+  secretPopup.classList.remove(
+    "show"
+  );
+
 
   secretPopup.setAttribute(
     "aria-hidden",
     "true"
   );
+
+
+  /*
+    Sécurité supplémentaire :
+    le popup ne pourra jamais
+    retenir l'interaction.
+  */
+
+  secretPopup.style.pointerEvents =
+    "none";
 
 }
 
@@ -867,16 +881,20 @@ function discoverFiole() {
 }
 
 
-/*
-  Un seul déclencheur :
-  le bouton d'observation.
-*/
-
 if (fioleButton) {
 
   fioleButton.addEventListener(
     "click",
-    () => {
+    (event) => {
+
+      /*
+        Empêche le clic du bouton
+        de remonter vers le visuel.
+      */
+
+      event.preventDefault();
+      event.stopPropagation();
+
 
       discoverFiole();
 
