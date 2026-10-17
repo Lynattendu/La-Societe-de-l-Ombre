@@ -4,7 +4,15 @@
 ========================================================= */
 
 document.addEventListener("DOMContentLoaded", () => {
+localStorage.setItem(
+  "societeOmbre_dernierePage",
+  "chapitre13.html"
+);
 
+localStorage.setItem(
+  "societeOmbre_dernierTitre",
+  "Chapitre 13 - La remontée"
+);
 
 /* =========================================================
    ÉLÉMENTS PRINCIPAUX
