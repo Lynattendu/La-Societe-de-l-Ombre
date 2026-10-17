@@ -1,1 +1,202 @@
+<!DOCTYPE html>
+<html lang="fr">
 
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+  >
+
+  <meta
+    name="theme-color"
+    content="#050505"
+  >
+
+  <title>
+    La Société de l'Ombre
+  </title>
+
+  <link
+    rel="stylesheet"
+    href="css/livre.css"
+  >
+
+</head>
+
+
+<body>
+
+
+<main class="book-entry">
+
+
+  <!-- =====================================================
+       FOND / AMBIANCE
+  ===================================================== -->
+
+  <div
+    class="book-background"
+    aria-hidden="true"
+  ></div>
+
+
+  <div class="book-overlay"></div>
+
+
+  <!-- =====================================================
+       CONTENU
+  ===================================================== -->
+
+  <section class="book-panel">
+
+
+    <p class="book-kicker">
+      Livre interactif
+    </p>
+
+
+    <h1>
+      La Société de l’Ombre
+    </h1>
+
+
+    <p class="book-intro">
+      Chaque choix laisse une trace.
+      Chaque secret peut changer votre regard sur l’histoire.
+    </p>
+
+
+    <!-- ===================================================
+         INFORMATIONS DE REPRISE
+    ==================================================== -->
+
+    <div
+      class="resume-info hidden"
+      id="resumeInfo"
+    >
+
+      <span class="resume-label">
+        Dernière lecture
+      </span>
+
+      <strong
+        id="resumeChapterTitle"
+      >
+        Chapitre en cours
+      </strong>
+
+    </div>
+
+
+    <!-- ===================================================
+         ACTIONS
+    ==================================================== -->
+
+    <div class="book-actions">
+
+
+      <button
+        class="book-btn primary hidden"
+        id="resumeBookBtn"
+        type="button"
+      >
+        Reprendre ma lecture
+      </button>
+
+
+      <button
+        class="book-btn"
+        id="startBookBtn"
+        type="button"
+      >
+        Commencer le livre
+      </button>
+
+
+      <button
+        class="book-btn danger"
+        id="restartBookBtn"
+        type="button"
+      >
+        Recommencer le livre
+      </button>
+
+
+    </div>
+
+
+    <p class="book-note">
+      Votre progression est enregistrée sur cet appareil.
+    </p>
+
+
+  </section>
+
+
+</main>
+
+
+<!-- =====================================================
+     CONFIRMATION RECOMMENCER
+===================================================== -->
+
+<div
+  class="confirm-modal"
+  id="restartModal"
+  aria-hidden="true"
+>
+
+  <div class="confirm-panel">
+
+    <h2>
+      Recommencer le livre ?
+    </h2>
+
+    <p>
+      Toute votre progression sera effacée :
+      chapitres lus, choix, secrets et interactions.
+    </p>
+
+    <p class="confirm-warning">
+      Cette action est définitive.
+    </p>
+
+
+    <div class="confirm-actions">
+
+      <button
+        class="confirm-btn"
+        id="cancelRestartBtn"
+        type="button"
+      >
+        Annuler
+      </button>
+
+      <button
+        class="confirm-btn danger"
+        id="confirmRestartBtn"
+        type="button"
+      >
+        Recommencer
+      </button>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
+<script src="js/livre.js"></script>
+
+
+</body>
+
+</html>
