@@ -169,7 +169,7 @@ if (resumeBookBtn) {
         */
 
         window.location.href =
-          "index.html";
+  "index.html?commencer=1";
 
         return;
 
@@ -216,8 +216,8 @@ if (startBookBtn) {
         une ancienne sauvegarde.
       */
 
-      window.location.href =
-        "index.html";
+     window.location.href =
+  "index.html?commencer=1";
 
     }
   );
