@@ -4,7 +4,15 @@
 ========================================================= */
 
 document.addEventListener("DOMContentLoaded", () => {
+localStorage.setItem(
+  "societeOmbre_dernierePage",
+  "chapitre5.html"
+);
 
+localStorage.setItem(
+  "societeOmbre_dernierTitre",
+  "Chapitre 5 - L'inauguration du NEXUS"
+);
 
 /* =========================================================
    ÉLÉMENTS PRINCIPAUX
