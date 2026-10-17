@@ -4,7 +4,15 @@
 ========================================================= */
 
 document.addEventListener("DOMContentLoaded", () => {
+localStorage.setItem(
+  "societeOmbre_dernierePage",
+  "chapitre7.html"
+);
 
+localStorage.setItem(
+  "societeOmbre_dernierTitre",
+  "Chapitre 7 - L'incident de trop"
+);
 
 /* =========================================================
    ÉLÉMENTS PRINCIPAUX
