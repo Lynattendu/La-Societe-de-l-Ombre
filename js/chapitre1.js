@@ -5,7 +5,15 @@
 
 document.addEventListener("DOMContentLoaded", () => {
 
+localStorage.setItem(
+  "societeOmbre_dernierePage",
+  "chapitre1.html"
+);
 
+localStorage.setItem(
+  "societeOmbre_dernierTitre",
+  "Chapitre 1 — Embrasse ton destin"
+);
 /* =========================================================
    ÉLÉMENTS PRINCIPAUX
 ========================================================= */
