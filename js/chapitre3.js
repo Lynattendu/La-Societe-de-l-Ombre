@@ -4,7 +4,15 @@
 ========================================================= */
 
 document.addEventListener("DOMContentLoaded", () => {
+localStorage.setItem(
+  "societeOmbre_dernierePage",
+  "chapitre3.html"
+);
 
+localStorage.setItem(
+  "societeOmbre_dernierTitre",
+  "Chapitre 3 — La Confiance"
+);
 
 /* =========================================================
    ÉLÉMENTS PRINCIPAUX
