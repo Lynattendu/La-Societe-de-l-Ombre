@@ -40,55 +40,55 @@ const chapters = [
 
   {
     number: 5,
-    title: "Chapitre 5",
+    title: "L'inauguration du NEXUS",
     file: "chapitre5.html"
   },
 
   {
     number: 6,
-    title: "Chapitre 6",
+    title: "Le mystère de la clé",
     file: "chapitre6.html"
   },
 
   {
     number: 7,
-    title: "Chapitre 7",
+    title: "L'incident de trop",
     file: "chapitre7.html"
   },
 
   {
     number: 8,
-    title: "Chapitre 8",
+    title: "L'équilibre",
     file: "chapitre8.html"
   },
 
   {
     number: 9,
-    title: "Chapitre 9",
+    title: "La traque",
     file: "chapitre9.html"
   },
 
   {
     number: 10,
-    title: "Chapitre 10",
+    title: "La Disparition",
     file: "chapitre10.html"
   },
 
   {
     number: 11,
-    title: "Chapitre 11",
+    title: "Le monde Converge",
     file: "chapitre11.html"
   },
 
   {
     number: 12,
-    title: "Chapitre 12",
+    title: "Sous la montagne",
     file: "chapitre12.html"
   },
 
   {
     number: 13,
-    title: "Chapitre 13",
+    title: "La remontée",
     file: "chapitre13.html"
   },
 
