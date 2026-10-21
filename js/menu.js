@@ -100,7 +100,7 @@ const chapters = [
 
   {
     number: 15,
-    title: "Chapitre 15",
+    title: "Le jeu commence",
     file: "chapitre15.html"
   },
 
