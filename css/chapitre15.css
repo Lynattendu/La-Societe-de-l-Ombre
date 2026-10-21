@@ -114,6 +114,7 @@ button {
 
 .progress-bar {
   position: fixed;
+
   top: 0;
   left: 0;
 
@@ -139,7 +140,8 @@ button {
     );
 
   box-shadow:
-    0 0 14px rgba(232, 189, 112, 0.48);
+    0 0 14px
+    rgba(232, 189, 112, 0.48);
 
   transition:
     width 0.15s linear;
@@ -174,13 +176,17 @@ button {
   border-radius: 50%;
 
   border:
-    1px solid rgba(255, 255, 255, 0.18);
+    1px solid
+    rgba(255, 255, 255, 0.18);
 
   background:
     rgba(10, 10, 13, 0.66);
 
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
+  backdrop-filter:
+    blur(14px);
+
+  -webkit-backdrop-filter:
+    blur(14px);
 
   color: #fff;
 
@@ -193,7 +199,8 @@ button {
   cursor: pointer;
 
   box-shadow:
-    0 8px 22px rgba(0, 0, 0, 0.42);
+    0 8px 22px
+    rgba(0, 0, 0, 0.42);
 
   transition:
     transform 0.2s ease,
@@ -212,6 +219,7 @@ button {
 
 .chapter {
   width: 100%;
+
   overflow: hidden;
 }
 
@@ -239,12 +247,13 @@ button {
 
 .scene + .scene {
   border-top:
-    1px solid rgba(255, 255, 255, 0.035);
+    1px solid
+    rgba(255, 255, 255, 0.035);
 }
 
 
 /* =========================================================
-   AMBIANCE GÉNÉRALE
+   AMBIANCE DE FOND
 ========================================================= */
 
 .scene::before {
@@ -276,7 +285,8 @@ button {
   width: 82%;
   height: 1px;
 
-  transform: translateX(-50%);
+  transform:
+    translateX(-50%);
 
   background:
     linear-gradient(
@@ -303,12 +313,14 @@ button {
     0 auto
     28px;
 
-  border-radius: var(--radius);
+  border-radius:
+    var(--radius);
 
   overflow: hidden;
 
   border:
-    1px solid rgba(255, 255, 255, 0.08);
+    1px solid
+    rgba(255, 255, 255, 0.08);
 
   background:
     linear-gradient(
@@ -317,7 +329,8 @@ button {
       #070708
     );
 
-  box-shadow: var(--shadow);
+  box-shadow:
+    var(--shadow);
 
   opacity: 0;
 
@@ -384,7 +397,7 @@ button {
 
 
 /* =========================================================
-   VISUELS MANQUANTS
+   VISUEL MANQUANT
 ========================================================= */
 
 .visual.visual-missing {
@@ -451,26 +464,29 @@ button {
   background:
     linear-gradient(
       180deg,
-      rgba(0, 0, 0, 0.04),
-      rgba(0, 0, 0, 0.14) 42%,
-      rgba(0, 0, 0, 0.86) 100%
+      rgba(0, 0, 0, 0.05),
+      rgba(0, 0, 0, 0.14) 45%,
+      rgba(0, 0, 0, 0.84) 100%
     );
 }
 
 .chapter-number {
   margin-bottom: 12px;
 
-  color: var(--gold-soft);
+  color:
+    var(--gold-soft);
 
-  text-transform: uppercase;
+  text-transform:
+    uppercase;
 
-  letter-spacing: 0.36em;
+  letter-spacing:
+    0.36em;
 
   font-size: 13px;
 }
 
 .chapter-title-overlay h1 {
-  max-width: 760px;
+  max-width: 700px;
 
   margin-bottom: 34px;
 
@@ -486,7 +502,8 @@ button {
   font-weight: 400;
 
   text-shadow:
-    0 4px 18px rgba(0, 0, 0, 0.9);
+    0 4px 18px
+    rgba(0, 0, 0, 0.9);
 }
 
 
@@ -517,7 +534,8 @@ button {
 .scene.is-visible .text-block {
   opacity: 1;
 
-  transform: translateY(0);
+  transform:
+    translateY(0);
 }
 
 .text-block p {
@@ -527,7 +545,8 @@ button {
     0 auto
     18px;
 
-  color: var(--text);
+  color:
+    var(--text);
 
   font-size:
     clamp(
@@ -547,24 +566,30 @@ button {
 
 
 /* =========================================================
-   EMPHASES
+   EMPHASE
 ========================================================= */
 
 .emphasis {
-  color: var(--gold-soft) !important;
+  color:
+    var(--gold-soft) !important;
 
   text-align: center;
 
   font-style: italic;
 
-  letter-spacing: 0.02em;
+  letter-spacing:
+    0.02em;
 }
 
 .impact-text {
-  margin-top: 26px !important;
-  margin-bottom: 26px !important;
+  margin-top:
+    26px !important;
 
-  color: #fff !important;
+  margin-bottom:
+    26px !important;
+
+  color:
+    #fff !important;
 
   text-align: center;
 
@@ -575,32 +600,38 @@ button {
       38px
     ) !important;
 
-  line-height: 1.25 !important;
+  line-height:
+    1.25 !important;
 
   text-shadow:
-    0 0 22px rgba(255, 255, 255, 0.08);
+    0 0 22px
+    rgba(255, 255, 255, 0.08);
 }
 
 .name-reveal {
   margin:
     38px auto !important;
 
-  color: var(--gold-soft) !important;
+  color:
+    var(--gold-soft) !important;
 
   text-align: center;
 
-  text-transform: uppercase;
+  text-transform:
+    uppercase;
 
-  letter-spacing: 0.1em;
+  letter-spacing:
+    0.1em;
 
   font-size:
     clamp(
-      30px,
-      9vw,
-      58px
+      32px,
+      10vw,
+      62px
     ) !important;
 
-  line-height: 1.12 !important;
+  line-height:
+    1.1 !important;
 }
 
 
@@ -616,14 +647,16 @@ button {
   padding-left: 16px;
 
   border-left:
-    2px solid rgba(232, 189, 112, 0.35);
+    2px solid
+    rgba(232, 189, 112, 0.35);
 
-  color: #f9f3ed;
+  color:
+    #f9f3ed;
 }
 
 
 /* =========================================================
-   BOUTONS
+   BOUTONS GÉNÉRAUX
 ========================================================= */
 
 .continue-btn,
@@ -636,10 +669,12 @@ button {
     14px
     24px;
 
-  border-radius: 999px;
+  border-radius:
+    999px;
 
   border:
-    1px solid rgba(232, 189, 112, 0.55);
+    1px solid
+    rgba(232, 189, 112, 0.55);
 
   background:
     linear-gradient(
@@ -648,18 +683,23 @@ button {
       rgba(10, 10, 12, 0.97)
     );
 
-  color: var(--gold-soft);
+  color:
+    var(--gold-soft);
 
   text-decoration: none;
+
   text-align: center;
 
-  letter-spacing: 0.06em;
+  letter-spacing:
+    0.06em;
 
   cursor: pointer;
 
   box-shadow:
-    0 10px 30px rgba(0, 0, 0, 0.45),
-    inset 0 0 18px rgba(232, 189, 112, 0.05);
+    0 10px 30px
+    rgba(0, 0, 0, 0.45),
+    inset 0 0 18px
+    rgba(232, 189, 112, 0.05);
 
   transition:
     transform 0.2s ease,
@@ -673,7 +713,8 @@ button {
 .chapter-btn:active,
 .menu-action:active,
 .interaction-btn:active {
-  transform: scale(0.97);
+  transform:
+    scale(0.97);
 }
 
 
@@ -686,13 +727,20 @@ button {
 }
 
 .interaction-btn {
-  display: inline-flex;
+  display:
+    inline-flex;
 
-  align-self: center;
-  justify-content: center;
-  align-items: center;
+  align-self:
+    center;
 
-  width: min(100%, 370px);
+  justify-content:
+    center;
+
+  align-items:
+    center;
+
+  width:
+    min(100%, 360px);
 
   margin:
     28px auto
@@ -707,19 +755,21 @@ button {
 .observation-buttons,
 .story-path {
   width: 100%;
-  max-width: 570px;
+  max-width: 520px;
 
   margin:
     26px auto
     0;
 
   display: grid;
+
   gap: 12px;
 }
 
 .observation-buttons .interaction-btn,
 .story-path .interaction-btn {
   width: 100%;
+
   margin: 0;
 }
 
@@ -730,20 +780,19 @@ button {
 
 .reveal-box {
   width: 100%;
-
-  max-width: 640px;
+  max-width: 620px;
 
   margin:
     24px auto
     0;
 
-  padding:
-    20px;
+  padding: 20px;
 
   border-radius: 18px;
 
   border:
-    1px solid rgba(232, 189, 112, 0.22);
+    1px solid
+    rgba(232, 189, 112, 0.22);
 
   background:
     rgba(15, 13, 11, 0.84);
@@ -774,7 +823,8 @@ button {
 .reveal-box p {
   margin-bottom: 14px;
 
-  color: var(--text);
+  color:
+    var(--text);
 
   font-size:
     clamp(
@@ -792,7 +842,7 @@ button {
 
 
 /* =========================================================
-   INVESTIGATION / LUCY / CLIVE / ISABEL
+   INVESTIGATION
 ========================================================= */
 
 .investigation-scene {
@@ -800,18 +850,8 @@ button {
     radial-gradient(
       circle at 50% 20%,
       rgba(114, 205, 248, 0.08),
-      rgba(20, 45, 62, 0.025),
-      transparent 60%
+      transparent 58%
     );
-}
-
-.investigation-scene .visual {
-  border-color:
-    rgba(114, 205, 248, 0.17);
-
-  box-shadow:
-    var(--shadow),
-    0 0 45px rgba(114, 205, 248, 0.05);
 }
 
 .isabel-watch-trigger,
@@ -819,7 +859,7 @@ button {
 .chapel-trigger,
 .first-signal-trigger {
   border-color:
-    rgba(114, 205, 248, 0.32);
+    rgba(114, 205, 248, 0.3);
 
   color:
     var(--blue-soft);
@@ -849,7 +889,7 @@ button {
 
 
 /* =========================================================
-   DÉDUCTION / STRATÉGIE
+   DÉDUCTION
 ========================================================= */
 
 .deduction-scene {
@@ -872,14 +912,14 @@ button {
   background:
     linear-gradient(
       180deg,
-      rgba(34, 27, 17, 0.91),
+      rgba(34, 27, 17, 0.9),
       rgba(10, 9, 8, 0.98)
     );
 }
 
 #moleStrategyReveal {
   border-color:
-    rgba(232, 189, 112, 0.3);
+    rgba(232, 189, 112, 0.28);
 
   background:
     linear-gradient(
@@ -891,7 +931,7 @@ button {
 
 
 /* =========================================================
-   ANNA / MAX / HOPE
+   UNITY / ANNA / HOPE / MAX
 ========================================================= */
 
 .unity-scene {
@@ -949,32 +989,33 @@ button {
 
 
 /* =========================================================
-   HACIENDA DE LA SIERRA / OMBRE
+   OMBRE
 ========================================================= */
 
 .shadow-scene {
   background:
     radial-gradient(
-      circle at 50% 28%,
-      rgba(44, 46, 60, 0.15),
-      rgba(9, 9, 13, 0.12),
+      circle at 50% 30%,
+      rgba(40, 42, 55, 0.13),
+      rgba(8, 8, 12, 0.12),
       transparent 64%
     );
 }
 
 .shadow-scene .visual {
   border-color:
-    rgba(115, 120, 145, 0.16);
+    rgba(115, 120, 145, 0.14);
 
   box-shadow:
     var(--shadow),
-    0 0 50px rgba(80, 86, 120, 0.06);
+    0 0 45px
+    rgba(80, 86, 120, 0.05);
 }
 
 .black-hacienda-trigger,
 .dead-drop-trigger {
   border-color:
-    rgba(184, 196, 212, 0.3);
+    rgba(184, 196, 212, 0.28);
 
   color:
     var(--silver-soft);
@@ -990,7 +1031,7 @@ button {
 #blackHaciendaReveal,
 #deadDropReveal {
   border-color:
-    rgba(125, 130, 160, 0.26);
+    rgba(125, 130, 160, 0.25);
 
   background:
     linear-gradient(
@@ -1002,33 +1043,23 @@ button {
 
 
 /* =========================================================
-   MAÎTRE NOIR
+   MARQUE NOIRE / MAÎTRE NOIR
 ========================================================= */
 
 .dark-mark-scene {
   background:
     radial-gradient(
-      circle at 50% 25%,
-      rgba(186, 79, 83, 0.08),
-      rgba(50, 12, 22, 0.08),
-      rgba(5, 5, 7, 0.2),
+      circle at 50% 32%,
+      rgba(186, 79, 83, 0.07),
+      rgba(170, 140, 255, 0.05),
       transparent 64%
     );
-}
-
-.dark-mark-scene .visual {
-  border-color:
-    rgba(186, 79, 83, 0.2);
-
-  box-shadow:
-    var(--shadow),
-    0 0 50px rgba(186, 79, 83, 0.07);
 }
 
 .black-master-trigger,
 .origin-trace-trigger {
   border-color:
-    rgba(186, 79, 83, 0.38);
+    rgba(186, 79, 83, 0.34);
 
   color:
     var(--red-soft);
@@ -1036,37 +1067,27 @@ button {
   background:
     linear-gradient(
       180deg,
-      rgba(44, 17, 22, 0.92),
-      rgba(12, 7, 9, 0.98)
+      rgba(44, 17, 22, 0.9),
+      rgba(11, 7, 9, 0.98)
     );
 }
 
 #blackMasterReveal,
 #originTraceReveal {
   border-color:
-    rgba(186, 79, 83, 0.32);
+    rgba(186, 79, 83, 0.28);
 
   background:
     linear-gradient(
       180deg,
-      rgba(36, 14, 19, 0.92),
-      rgba(8, 6, 8, 0.98)
+      rgba(35, 14, 18, 0.92),
+      rgba(9, 6, 8, 0.98)
     );
-}
-
-.dark-mark-scene .impact-text {
-  color:
-    var(--red-soft) !important;
-}
-
-.dark-mark-scene .name-reveal {
-  color:
-    #f4b1b4 !important;
 }
 
 
 /* =========================================================
-   AMY / DANGER
+   DANGER / AMY
 ========================================================= */
 
 .danger-scene {
@@ -1077,15 +1098,6 @@ button {
       rgba(60, 12, 18, 0.04),
       transparent 62%
     );
-}
-
-.danger-scene .visual {
-  border-color:
-    rgba(186, 79, 83, 0.18);
-
-  box-shadow:
-    var(--shadow),
-    0 0 44px rgba(186, 79, 83, 0.06);
 }
 
 .amy-survival-trigger {
@@ -1115,59 +1127,55 @@ button {
     );
 }
 
-.danger-scene .impact-text {
-  color:
-    var(--red-soft) !important;
-}
-
 
 /* =========================================================
-   SYMBOLE ANCIEN
+   SYMBOLES
 ========================================================= */
 
 .symbol-scene {
   background:
     radial-gradient(
       circle at 50% 28%,
-      rgba(170, 140, 255, 0.08),
-      rgba(232, 189, 112, 0.04),
+      rgba(232, 189, 112, 0.08),
+      rgba(170, 140, 255, 0.04),
       transparent 64%
     );
 }
 
 .symbol-scene .visual {
   border-color:
-    rgba(170, 140, 255, 0.18);
+    rgba(232, 189, 112, 0.18);
 
   box-shadow:
     var(--shadow),
-    0 0 46px rgba(170, 140, 255, 0.06);
+    0 0 44px
+    rgba(232, 189, 112, 0.06);
 }
 
 .old-symbol-trigger {
   border-color:
-    rgba(170, 140, 255, 0.34);
+    rgba(232, 189, 112, 0.34);
 
   color:
-    var(--violet-soft);
+    var(--gold-soft);
 
   background:
     linear-gradient(
       180deg,
-      rgba(28, 22, 43, 0.9),
-      rgba(10, 8, 15, 0.98)
+      rgba(34, 27, 17, 0.9),
+      rgba(10, 9, 8, 0.98)
     );
 }
 
 #oldSymbolReveal {
   border-color:
-    rgba(170, 140, 255, 0.3);
+    rgba(232, 189, 112, 0.28);
 
   background:
     linear-gradient(
       180deg,
-      rgba(25, 19, 38, 0.92),
-      rgba(8, 7, 12, 0.98)
+      rgba(33, 25, 16, 0.92),
+      rgba(9, 8, 8, 0.98)
     );
 }
 
@@ -1179,25 +1187,16 @@ button {
 .sentinel-scene {
   background:
     radial-gradient(
-      circle at 50% 28%,
+      circle at 50% 30%,
       rgba(114, 205, 248, 0.07),
       rgba(232, 189, 112, 0.04),
       transparent 62%
     );
 }
 
-.sentinel-scene .visual {
-  border-color:
-    rgba(114, 205, 248, 0.2);
-
-  box-shadow:
-    var(--shadow),
-    0 0 48px rgba(114, 205, 248, 0.06);
-}
-
 .hale-memory-trigger {
   border-color:
-    rgba(114, 205, 248, 0.32);
+    rgba(114, 205, 248, 0.3);
 
   color:
     var(--blue-soft);
@@ -1231,7 +1230,8 @@ button {
   position: relative;
 }
 
-.story-path .interaction-btn.completed::after {
+.story-path
+.interaction-btn.completed::after {
   content: "✓";
 
   margin-left: 9px;
@@ -1239,52 +1239,12 @@ button {
   font-weight: bold;
 }
 
-.story-path .interaction-btn.wrong {
+.story-path
+.interaction-btn.wrong {
   animation:
     wrongShake
     0.35s
     ease;
-}
-
-
-/* =========================================================
-   RÉVÉLATIONS MAJEURES
-========================================================= */
-
-#blackMasterReveal.open {
-  box-shadow:
-    0 0 56px rgba(186, 79, 83, 0.1);
-}
-
-#deadDropReveal.open {
-  box-shadow:
-    0 0 48px rgba(184, 196, 212, 0.07);
-}
-
-#oldSymbolReveal.open {
-  box-shadow:
-    0 0 50px rgba(170, 140, 255, 0.08);
-}
-
-#firstSignalReveal.open {
-  border-color:
-    rgba(232, 189, 112, 0.34);
-
-  box-shadow:
-    0 0 58px rgba(232, 189, 112, 0.08);
-}
-
-#haleMemoryReveal.open {
-  box-shadow:
-    0 0 50px rgba(114, 205, 248, 0.08);
-}
-
-#originTraceReveal.open {
-  border-color:
-    rgba(186, 79, 83, 0.42);
-
-  box-shadow:
-    0 0 60px rgba(186, 79, 83, 0.1);
 }
 
 
@@ -1297,7 +1257,8 @@ button {
 }
 
 .sound-active {
-  color: var(--gold-soft);
+  color:
+    var(--gold-soft);
 
   border-color:
     rgba(232, 189, 112, 0.55);
@@ -1325,7 +1286,8 @@ button {
     var(--gold-soft) !important;
 
   box-shadow:
-    0 0 24px rgba(232, 189, 112, 0.12) !important;
+    0 0 24px
+    rgba(232, 189, 112, 0.12) !important;
 }
 
 .wrong {
@@ -1344,7 +1306,8 @@ button {
     rgba(232, 189, 112, 0.45);
 
   box-shadow:
-    0 0 40px rgba(232, 189, 112, 0.14);
+    0 0 40px
+    rgba(232, 189, 112, 0.14);
 }
 
 button:disabled {
@@ -1370,10 +1333,9 @@ button:disabled {
   background:
     radial-gradient(
       circle at 50% 25%,
-      rgba(186, 79, 83, 0.08),
+      rgba(232, 189, 112, 0.12),
       rgba(170, 140, 255, 0.08),
-      rgba(232, 189, 112, 0.05),
-      transparent 64%
+      transparent 62%
     );
 }
 
@@ -1382,7 +1344,8 @@ button:disabled {
     36px auto
     30px;
 
-  color: var(--gold-soft);
+  color:
+    var(--gold-soft);
 
   font-size:
     clamp(
@@ -1394,7 +1357,8 @@ button:disabled {
   line-height: 1;
 
   text-shadow:
-    0 0 34px rgba(232, 189, 112, 0.28);
+    0 0 34px
+    rgba(232, 189, 112, 0.28);
 
   animation:
     subtleFloat
@@ -1412,11 +1376,13 @@ button:disabled {
     0;
 
   display: grid;
+
   gap: 14px;
 }
 
 .chapter-btn {
   display: block;
+
   width: 100%;
 }
 
@@ -1472,15 +1438,17 @@ button:disabled {
   background:
     rgba(0, 0, 0, 0.62);
 
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter:
+    blur(8px);
+
+  -webkit-backdrop-filter:
+    blur(8px);
 }
 
 .secret-popup-inner {
   position: relative;
 
   min-width: 260px;
-  max-width: 420px;
 
   padding:
     28px
@@ -1489,7 +1457,8 @@ button:disabled {
   border-radius: 22px;
 
   border:
-    1px solid rgba(232, 189, 112, 0.65);
+    1px solid
+    rgba(232, 189, 112, 0.65);
 
   background:
     linear-gradient(
@@ -1498,24 +1467,31 @@ button:disabled {
       rgba(8, 8, 10, 0.98)
     );
 
-  color: var(--gold-soft);
+  color:
+    var(--gold-soft);
 
   text-align: center;
 
-  letter-spacing: 0.14em;
+  letter-spacing:
+    0.14em;
 
   box-shadow:
-    0 20px 80px rgba(0, 0, 0, 0.75),
-    0 0 30px rgba(232, 189, 112, 0.09);
+    0 20px 80px
+    rgba(0, 0, 0, 0.75),
+    0 0 30px
+    rgba(232, 189, 112, 0.09);
 
-  transform: scale(0.9);
+  transform:
+    scale(0.9);
 
   transition:
     transform 0.35s ease;
 }
 
-.secret-popup.show .secret-popup-inner {
-  transform: scale(1);
+.secret-popup.show
+.secret-popup-inner {
+  transform:
+    scale(1);
 }
 
 .secret-symbol {
@@ -1552,8 +1528,11 @@ button:disabled {
   background:
     rgba(0, 0, 0, 0.72);
 
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
+  backdrop-filter:
+    blur(16px);
+
+  -webkit-backdrop-filter:
+    blur(16px);
 
   opacity: 0;
   visibility: hidden;
@@ -1565,6 +1544,7 @@ button:disabled {
 
 .chapter-menu.open {
   opacity: 1;
+
   visibility: visible;
 }
 
@@ -1582,7 +1562,8 @@ button:disabled {
   border-radius: 24px;
 
   border:
-    1px solid rgba(255, 255, 255, 0.12);
+    1px solid
+    rgba(255, 255, 255, 0.12);
 
   background:
     linear-gradient(
@@ -1592,7 +1573,8 @@ button:disabled {
     );
 
   box-shadow:
-    0 24px 80px rgba(0, 0, 0, 0.72);
+    0 24px 80px
+    rgba(0, 0, 0, 0.72);
 
   text-align: center;
 }
@@ -1600,7 +1582,8 @@ button:disabled {
 .chapter-menu-panel h2 {
   margin-bottom: 8px;
 
-  color: var(--gold-soft);
+  color:
+    var(--gold-soft);
 
   font-size: 30px;
 
@@ -1610,7 +1593,8 @@ button:disabled {
 .chapter-menu-panel > p {
   margin-bottom: 28px;
 
-  color: var(--text-soft);
+  color:
+    var(--text-soft);
 }
 
 .menu-close {
@@ -1624,7 +1608,8 @@ button:disabled {
 
   border: none;
 
-  background: transparent;
+  background:
+    transparent;
 
   color: #fff;
 
@@ -1656,7 +1641,8 @@ button:disabled {
   50% {
     box-shadow:
       var(--shadow),
-      0 0 34px rgba(232, 189, 112, 0.08);
+      0 0 34px
+      rgba(232, 189, 112, 0.08);
   }
 
   100% {
@@ -1670,15 +1656,18 @@ button:disabled {
 @keyframes subtleFloat {
 
   0% {
-    transform: translateY(0);
+    transform:
+      translateY(0);
   }
 
   50% {
-    transform: translateY(-4px);
+    transform:
+      translateY(-4px);
   }
 
   100% {
-    transform: translateY(0);
+    transform:
+      translateY(0);
   }
 
 }
@@ -1687,23 +1676,28 @@ button:disabled {
 @keyframes wrongShake {
 
   0% {
-    transform: translateX(0);
+    transform:
+      translateX(0);
   }
 
   25% {
-    transform: translateX(-5px);
+    transform:
+      translateX(-5px);
   }
 
   50% {
-    transform: translateX(5px);
+    transform:
+      translateX(5px);
   }
 
   75% {
-    transform: translateX(-3px);
+    transform:
+      translateX(-3px);
   }
 
   100% {
-    transform: translateX(0);
+    transform:
+      translateX(0);
   }
 
 }
@@ -1757,7 +1751,7 @@ button:disabled {
 
   .observation-buttons,
   .story-path {
-    max-width: 640px;
+    max-width: 620px;
   }
 
 }
@@ -1782,11 +1776,13 @@ button:disabled {
   }
 
   .impact-text {
-    font-size: 26px !important;
+    font-size:
+      26px !important;
   }
 
   .name-reveal {
-    font-size: 30px !important;
+    font-size:
+      32px !important;
   }
 
   .chapter-controls {
@@ -1819,6 +1815,7 @@ button:disabled {
   *,
   *::before,
   *::after {
+
     animation-duration:
       0.01ms !important;
 
