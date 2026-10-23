@@ -1,1 +1,4937 @@
+<!DOCTYPE html>
+<html lang="fr">
 
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+  >
+
+  <meta
+    name="theme-color"
+    content="#050505"
+  >
+
+  <title>
+    Chapitre 17 — Les traces du vivant | La Société de l'Ombre
+  </title>
+
+  <link
+    rel="stylesheet"
+    href="css/chapitre17.css"
+  >
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     BARRE DE PROGRESSION
+===================================================== -->
+
+<div
+  class="progress-bar"
+  aria-hidden="true"
+>
+  <div
+    class="progress-fill"
+    id="progressFill"
+  ></div>
+</div>
+
+
+<!-- =====================================================
+     COMMANDES
+===================================================== -->
+
+<div class="chapter-controls">
+
+  <button
+    class="control-btn"
+    id="menuBtn"
+    aria-label="Ouvrir le menu"
+  >
+    ☰
+  </button>
+
+  <button
+    class="control-btn"
+    id="soundBtn"
+    aria-label="Activer ou désactiver le son"
+  >
+    ♫
+  </button>
+
+</div>
+
+
+<main
+  class="chapter"
+  id="chapter"
+>
+
+
+<!-- =====================================================
+     VISUEL 1
+     COUVERTURE
+===================================================== -->
+
+<section
+  class="scene scene-cover"
+  id="scene-1"
+>
+
+  <div
+    class="visual full-visual"
+    data-visual="1"
+  >
+
+    <img
+      src="images/chapitre17/Visuel-1.PNG"
+      alt="Chapitre 17 — Les traces du vivant"
+      loading="eager"
+    >
+
+  </div>
+
+
+  <div class="chapter-title-overlay">
+
+    <p class="chapter-number">
+      Chapitre 17
+    </p>
+
+    <h1>
+      Les traces du vivant
+    </h1>
+
+    <button
+      class="continue-btn"
+      data-next
+    >
+      Continuer
+    </button>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     VISUEL 1
+     ANALYSES D'HOPE
+===================================================== -->
+
+<section
+  class="scene microscopic-scene interaction-scene"
+  id="scene-2"
+>
+
+  <div
+    class="visual interactive-visual"
+    data-visual="1"
+  >
+
+    <img
+      src="images/chapitre17/Visuel-1.PNG"
+      alt="Betty analyse les résultats biologiques d'Hope pendant que Peter essaie de regarder"
+      loading="lazy"
+    >
+
+  </div>
+
+
+  <div class="text-block">
+
+    <p>
+      Hacienda Awake — Laboratoire.
+    </p>
+
+    <p>
+      Betty regarde
+      les résultats défiler.
+    </p>
+
+    <p>
+      Hope est assise
+      de l’autre côté
+      de la paillasse.
+    </p>
+
+    <p>
+      Peter,
+      lui,
+      fait semblant
+      de ne pas regarder
+      par-dessus l’épaule
+      de Betty.
+    </p>
+
+  </div>
+
+
+  <div class="observation-buttons">
+
+    <button
+      class="interaction-btn hope-results-trigger"
+      data-hope-results="blood"
+    >
+      Les globules
+    </button>
+
+    <button
+      class="interaction-btn hope-results-trigger"
+      data-hope-results="inflammation"
+    >
+      L’inflammation
+    </button>
+
+    <button
+      class="interaction-btn hope-results-trigger"
+      data-hope-results="organs"
+    >
+      Les fonctions vitales
+    </button>
+
+    <button
+      class="interaction-btn hope-results-trigger"
+      data-hope-results="immunity"
+    >
+      L’immunité
+    </button>
+
+    <button
+      class="interaction-btn hope-results-trigger"
+      data-hope-results="unusual"
+    >
+      Les données inhabituelles
+    </button>
+
+  </div>
+
+
+  <div
+    class="reveal-box"
+    id="hopeResultsReveal"
+  >
+  </div>
+
+</section>
+
+
+<section
+  class="scene microscopic-scene"
+  id="scene-3"
+>
+
+  <div class="text-block dialogue">
+
+    <p>
+      — Tu peux arrêter.
+    </p>
+
+    <p>
+      Peter recule.
+    </p>
+
+    <p>
+      — Je ne fais rien.
+    </p>
+
+    <p>
+      — Tu lis.
+    </p>
+
+    <p>
+      — C’est différent.
+    </p>
+
+    <p>
+      Betty tourne
+      légèrement l’écran.
+    </p>
+
+    <p>
+      — Maintenant,
+      tu ne lis plus.
+    </p>
+
+    <p>
+      Peter soupire.
+    </p>
+
+    <p>
+      Hope sourit.
+    </p>
+
+    <p>
+      — Je commence
+      à comprendre
+      pourquoi vous vous entendez
+      si bien.
+    </p>
+
+    <p>
+      Betty et Peter
+      répondent en même temps :
+    </p>
+
+    <p class="impact-text">
+      — On ne s’entend pas bien.
+    </p>
+
+    <p>
+      Hope les regarde.
+    </p>
+
+    <p class="emphasis">
+      — Bien sûr.
+    </p>
+
+  </div>
+
+</section>
+
+
+<section
+  class="scene microscopic-scene"
+  id="scene-4"
+>
+
+  <div class="text-block dialogue">
+
+    <p>
+      Betty agrandit
+      une première courbe.
+    </p>
+
+    <p>
+      — Pour l’instant,
+      rien d’alarmant.
+    </p>
+
+    <p>
+      Hope hausse
+      un sourcil.
+    </p>
+
+    <p>
+      — Pour l’instant ?
+    </p>
+
+    <p>
+      — Tes globules
+      sont normaux.
+    </p>
+
+    <p>
+      — Tes marqueurs inflammatoires
+      aussi.
+    </p>
+
+    <p>
+      — Fonction hépatique,
+      rénale,
+      immunitaire…
+    </p>
+
+    <p>
+      Peter intervient :
+    </p>
+
+    <p>
+      — Excellente
+      pour quelqu’un
+      qui aime sauter
+      dans les canyons.
+    </p>
+
+    <p>
+      Hope le regarde.
+    </p>
+
+    <p>
+      — Tu veux sortir ?
+    </p>
+
+    <p>
+      — Je me tais.
+    </p>
+
+    <p>
+      Betty poursuit :
+    </p>
+
+    <p class="impact-text">
+      — Mais certaines données
+      sont inhabituelles.
+    </p>
+
+    <p>
+      Hope se redresse.
+    </p>
+
+    <p>
+      — Lesquelles ?
+    </p>
+
+    <p>
+      Betty hésite.
+    </p>
+
+    <p>
+      — Je ne veux pas
+      avancer trop vite.
+    </p>
+
+    <p>
+      — Betty.
+    </p>
+
+    <p class="emphasis">
+      — J’ai besoin
+      d’un point de comparaison.
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     VISUEL 2
+     ANCIENS PRÉLÈVEMENTS
+===================================================== -->
+
+<section
+  class="scene microscopic-scene interaction-scene"
+  id="scene-5"
+>
+
+  <div
+    class="visual interactive-visual"
+    data-visual="2"
+  >
+
+    <img
+      src="images/chapitre17/Visuel-2.PNG"
+      alt="Betty révèle qu'elle possède d'anciens prélèvements de sang d'Hope"
+      loading="lazy"
+    >
+
+  </div>
+
+
+  <div class="text-block">
+
+    <p>
+      Hope réfléchit.
+    </p>
+
+    <p>
+      — Mon sang
+      d’avant la grotte ?
+    </p>
+
+    <p>
+      — Exactement.
+    </p>
+
+  </div>
+
+
+  <div class="story-path">
+
+    <button
+      class="interaction-btn old-samples-trigger"
+      data-old-samples="operation"
+    >
+      Après l’opération
+    </button>
+
+    <button
+      class="interaction-btn old-samples-trigger"
+      data-old-samples="recovery"
+    >
+      Récupération anormale
+    </button>
+
+    <button
+      class="interaction-btn old-samples-trigger"
+      data-old-samples="charles"
+    >
+      Charles
+    </button>
+
+    <button
+      class="interaction-btn old-samples-trigger"
+      data-old-samples="aliquots"
+    >
+      Les aliquots
+    </button>
+
+    <button
+      class="interaction-btn old-samples-trigger"
+      data-old-samples="betty"
+    >
+      Le secret de Betty
+    </button>
+
+  </div>
+
+
+  <div
+    class="reveal-box"
+    id="oldSamplesReveal"
+  >
+  </div>
+
+</section>
+
+
+<section
+  class="scene microscopic-scene"
+  id="scene-6"
+>
+
+  <div class="text-block dialogue">
+
+    <p>
+      Peter intervient :
+    </p>
+
+    <p>
+      — J’ai tes analyses
+      après la fusillade.
+    </p>
+
+    <p>
+      Betty secoue la tête.
+    </p>
+
+    <p>
+      — Des analyses,
+      ce n’est pas suffisant.
+    </p>
+
+    <p>
+      — Je veux
+      les prélèvements.
+    </p>
+
+    <p>
+      Peter fronce
+      les sourcils.
+    </p>
+
+    <p>
+      — Charles
+      en avait conservé.
+    </p>
+
+    <p>
+      Hope regarde Betty.
+    </p>
+
+    <p>
+      — Je suppose
+      que tu en as aussi ?
+    </p>
+
+    <p>
+      Betty ne répond
+      pas immédiatement.
+    </p>
+
+    <p>
+      Hope comprend.
+    </p>
+
+    <p class="impact-text">
+      — Tu en as.
+    </p>
+
+    <p>
+      Betty soupire.
+    </p>
+
+    <p>
+      — Oui.
+    </p>
+
+    <p>
+      — Pourquoi ?
+    </p>
+
+    <p>
+      Betty pose
+      les mains
+      sur la paillasse.
+    </p>
+
+    <p>
+      — Parce qu’après
+      ton opération,
+      Charles m’a appelée.
+    </p>
+
+    <p>
+      Peter tourne
+      la tête.
+    </p>
+
+    <p>
+      — Quand ça ?
+    </p>
+
+    <p>
+      — Quelques jours
+      plus tard.
+    </p>
+
+  </div>
+
+</section>
+
+
+<section
+  class="scene microscopic-scene"
+  id="scene-7"
+>
+
+  <div class="text-block dialogue">
+
+    <p>
+      Hope reste silencieuse.
+    </p>
+
+    <p>
+      Betty poursuit :
+    </p>
+
+    <p>
+      — Il trouvait
+      ta récupération
+      anormalement rapide.
+    </p>
+
+    <p>
+      — Moi aussi.
+    </p>
+
+    <p>
+      Hope plisse les yeux.
+    </p>
+
+    <p>
+      — Donc vous avez étudié
+      mon sang
+      sans me le dire ?
+    </p>
+
+    <p>
+      Betty grimace.
+    </p>
+
+    <p>
+      — Dit comme ça…
+    </p>
+
+    <p>
+      Hope regarde Peter.
+    </p>
+
+    <p>
+      — C’est contagieux
+      chez les scientifiques ?
+    </p>
+
+    <p>
+      Peter lève
+      les mains.
+    </p>
+
+    <p>
+      — Pour une fois,
+      je n’étais pas au courant.
+    </p>
+
+    <p>
+      Betty reprend :
+    </p>
+
+    <p>
+      — Je n’ai rien fait
+      de dangereux.
+    </p>
+
+    <p>
+      — Charles avait conservé
+      plusieurs aliquots
+      à cause des capsules
+      expérimentales.
+    </p>
+
+    <p>
+      — Je lui ai demandé
+      de m’en céder
+      une partie.
+    </p>
+
+    <p>
+      Hope croise les bras.
+    </p>
+
+    <p>
+      — En secret.
+    </p>
+
+    <p>
+      — Oui.
+    </p>
+
+    <p>
+      — Pourquoi ?
+    </p>
+
+    <p>
+      Betty la regarde
+      franchement.
+    </p>
+
+    <p class="impact-text">
+      — Parce que
+      tu m’intriguais.
+    </p>
+
+    <p>
+      — Ta récupération.
+    </p>
+
+    <p>
+      — Ton métabolisme.
+    </p>
+
+    <p>
+      — Tes réactions.
+    </p>
+
+    <p>
+      — Je voulais savoir
+      si Peter avait modifié
+      quelque chose
+      sans le comprendre.
+    </p>
+
+    <p>
+      Peter ouvre la bouche.
+    </p>
+
+    <p>
+      Betty le regarde.
+    </p>
+
+    <p>
+      — Ne dis rien.
+    </p>
+
+    <p>
+      Il la referme.
+    </p>
+
+    <p>
+      Hope finit
+      par sourire.
+    </p>
+
+    <p>
+      — Au moins,
+      maintenant,
+      j’ai la réponse
+      à une question.
+    </p>
+
+    <p>
+      — Laquelle ?
+    </p>
+
+    <p class="emphasis">
+      — Tu es vraiment incapable
+      de ne pas étudier
+      quelque chose
+      qui t’échappe.
+    </p>
+
+    <p>
+      Betty sourit légèrement.
+    </p>
+
+    <p>
+      — Absolument.
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     VISUEL 3
+     CHARLES REJOINT LA RECHERCHE
+===================================================== -->
+
+<section
+  class="scene microscopic-scene interaction-scene"
+  id="scene-8"
+>
+
+  <div
+    class="visual interactive-visual"
+    data-visual="3"
+  >
+
+    <img
+      src="images/chapitre17/Visuel-3.PNG"
+      alt="Charles apparaît en hologramme et rejoint les recherches sur Hope"
+      loading="lazy"
+    >
+
+  </div>
+
+
+  <div class="text-block">
+
+    <p>
+      Betty active
+      sa pastille holographique.
+    </p>
+
+    <p>
+      Quelques secondes
+      plus tard,
+      Charles apparaît.
+    </p>
+
+    <p>
+      Une écharpe
+      autour du cou.
+    </p>
+
+    <p>
+      Toujours
+      aussi impeccable.
+    </p>
+
+  </div>
+
+
+  <div class="observation-buttons">
+
+    <button
+      class="interaction-btn charles-research-trigger"
+      data-charles-research="samples"
+    >
+      Les anciens prélèvements
+    </button>
+
+    <button
+      class="interaction-btn charles-research-trigger"
+      data-charles-research="operation"
+    >
+      L’opération
+    </button>
+
+    <button
+      class="interaction-btn charles-research-trigger"
+      data-charles-research="products"
+    >
+      Les produits de Peter
+    </button>
+
+    <button
+      class="interaction-btn charles-research-trigger"
+      data-charles-research="recovery"
+    >
+      La récupération
+    </button>
+
+    <button
+      class="interaction-btn charles-research-trigger"
+      data-charles-research="consent"
+    >
+      L’accord d’Hope
+    </button>
+
+  </div>
+
+
+  <div
+    class="reveal-box"
+    id="charlesResearchReveal"
+  >
+  </div>
+
+</section>
+
+
+<section
+  class="scene microscopic-scene"
+  id="scene-9"
+>
+
+  <div class="text-block dialogue">
+
+    <p>
+      — Betty.
+    </p>
+
+    <p>
+      — Charles.
+    </p>
+
+    <p>
+      Il regarde Hope.
+    </p>
+
+    <p>
+      — Alors voilà
+      ma patiente impossible.
+    </p>
+
+    <p>
+      Hope sourit.
+    </p>
+
+    <p>
+      — Je vais très bien.
+    </p>
+
+    <p>
+      — C’est précisément
+      ce qui m’inquiète.
+    </p>
+
+    <p>
+      Peter intervient :
+    </p>
+
+    <p>
+      — Bonjour à toi aussi.
+    </p>
+
+    <p>
+      Charles lui accorde
+      un regard.
+    </p>
+
+    <p>
+      — Tu es encore vivant.
+    </p>
+
+    <p>
+      — J’apprécie
+      ta chaleur humaine.
+    </p>
+
+    <p>
+      Charles revient
+      vers Betty.
+    </p>
+
+    <p>
+      — Tu as reçu
+      les nouveaux prélèvements ?
+    </p>
+
+    <p>
+      — Oui.
+    </p>
+
+    <p>
+      — Et ?
+    </p>
+
+    <p>
+      Betty regarde Hope.
+    </p>
+
+    <p>
+      Puis l’écran.
+    </p>
+
+    <p class="impact-text">
+      — J’ai besoin
+      des anciens.
+    </p>
+
+  </div>
+
+</section>
+
+
+<section
+  class="scene microscopic-scene"
+  id="scene-10"
+>
+
+  <div class="text-block dialogue">
+
+    <p>
+      Charles ne répond
+      pas tout de suite.
+    </p>
+
+    <p>
+      — Tu as trouvé
+      quelque chose.
+    </p>
+
+    <p>
+      — Peut-être.
+    </p>
+
+    <p>
+      — Quelque chose
+      de grave ?
+    </p>
+
+    <p>
+      — Je n’en sais rien.
+    </p>
+
+    <p>
+      Charles sourit.
+    </p>
+
+    <p>
+      — Voilà enfin
+      une réponse scientifique.
+    </p>
+
+    <p>
+      Hope regarde Betty.
+    </p>
+
+    <p>
+      — Vous faites ça souvent ?
+    </p>
+
+    <p>
+      Charles répond :
+    </p>
+
+    <p>
+      — Nous nous entendons
+      très bien
+      tant qu’elle admet
+      qu’elle ne sait pas.
+    </p>
+
+    <p>
+      Betty soupire.
+    </p>
+
+    <p>
+      — Tu peux me transférer
+      les références
+      des aliquots ?
+    </p>
+
+    <p>
+      — Déjà fait.
+    </p>
+
+    <p>
+      Peter regarde Betty.
+    </p>
+
+    <p class="emphasis">
+      — Il est pire
+      que toi.
+    </p>
+
+  </div>
+
+</section>
+
+
+<section
+  class="scene microscopic-scene"
+  id="scene-11"
+>
+
+  <div class="text-block dialogue">
+
+    <p>
+      Charles poursuit :
+    </p>
+
+    <p>
+      — Et je veux participer.
+    </p>
+
+    <p>
+      Betty arque
+      un sourcil.
+    </p>
+
+    <p>
+      — À quoi ?
+    </p>
+
+    <p>
+      — Aux recherches.
+    </p>
+
+    <p>
+      — Tu ne sais même pas
+      ce que j’ai trouvé.
+    </p>
+
+    <p>
+      — Justement.
+    </p>
+
+    <p>
+      Il regarde Hope.
+    </p>
+
+    <p>
+      — J’ai retiré
+      une balle
+      de cette femme.
+    </p>
+
+    <p>
+      — J’ai vu son corps
+      réagir aux produits
+      de Peter.
+    </p>
+
+    <p>
+      — Puis j’ai vu
+      sa récupération.
+    </p>
+
+    <p>
+      — Si quelque chose
+      a changé depuis…
+    </p>
+
+    <p>
+      Il revient
+      vers Betty.
+    </p>
+
+    <p class="impact-text">
+      — Je veux comprendre.
+    </p>
+
+    <p>
+      Hope demande :
+    </p>
+
+    <p>
+      — Parce que
+      tu es curieux ?
+    </p>
+
+    <p>
+      Charles réfléchit.
+    </p>
+
+    <p>
+      — Parce que
+      je suis médecin.
+    </p>
+
+    <p>
+      Puis :
+    </p>
+
+    <p class="emphasis">
+      — Et parce que les deux
+      ne sont pas incompatibles.
+    </p>
+
+  </div>
+
+</section>
+
+
+<section
+  class="scene microscopic-scene"
+  id="scene-12"
+>
+
+  <div class="text-block dialogue">
+
+    <p>
+      Betty acquiesce.
+    </p>
+
+    <p class="impact-text">
+      — Très bien.
+    </p>
+
+    <p>
+      — Mais rien
+      ne sort de ce cercle
+      sans l’accord d’Hope.
+    </p>
+
+    <p>
+      Charles regarde Hope.
+    </p>
+
+    <p>
+      — Ça me paraît
+      raisonnable.
+    </p>
+
+    <p>
+      Hope sourit.
+    </p>
+
+    <p>
+      — Je commence presque
+      à vous apprécier.
+    </p>
+
+    <p>
+      Charles répond :
+    </p>
+
+    <p class="emphasis">
+      — Attends
+      qu’on recommence
+      les prélèvements.
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     VISUEL 4
+     ANNA / MAX / ROOT / SYMBOLES
+===================================================== -->
+
+<section
+  class="scene investigation-scene interaction-scene"
+  id="scene-13"
+>
+
+  <div
+    class="visual interactive-visual"
+    data-visual="4"
+  >
+
+    <img
+      src="images/chapitre17/Visuel-4.PNG"
+      alt="Anna Max et Root étudient les symboles dans la bibliothèque"
+      loading="lazy"
+    >
+
+  </div>
+
+
+  <div class="text-block">
+
+    <p>
+      Hacienda Awake — Bibliothèque.
+    </p>
+
+    <p>
+      Anna entre
+      avec son carnet.
+    </p>
+
+    <p>
+      Max et Root
+      sont déjà installés
+      devant une table
+      couverte de copies
+      de symboles.
+    </p>
+
+  </div>
+
+
+  <div class="observation-buttons">
+
+    <button
+      class="interaction-btn symbol-study-trigger"
+      data-symbol-study="birthmark"
+    >
+      La tache d’Anna
+    </button>
+
+    <button
+      class="interaction-btn symbol-study-trigger"
+      data-symbol-study="similarities"
+    >
+      Les ressemblances
+    </button>
+
+    <button
+      class="interaction-btn symbol-study-trigger"
+      data-symbol-study="differences"
+    >
+      Les différences
+    </button>
+
+    <button
+      class="interaction-btn symbol-study-trigger"
+      data-symbol-study="repetitions"
+    >
+      Les répétitions
+    </button>
+
+    <button
+      class="interaction-btn symbol-study-trigger"
+      data-symbol-study="proof"
+    >
+      La preuve
+    </button>
+
+  </div>
+
+
+  <div
+    class="reveal-box"
+    id="symbolStudyReveal"
+  >
+  </div>
+
+</section>
+
+
+<section
+  class="scene investigation-scene"
+  id="scene-14"
+>
+
+  <div class="text-block dialogue">
+
+    <p>
+      Root relève les yeux.
+    </p>
+
+    <p>
+      — Tu arrives
+      juste à temps.
+    </p>
+
+    <p>
+      Anna s’assoit.
+    </p>
+
+    <p>
+      — Pourquoi ?
+    </p>
+
+    <p>
+      — Pour te faire travailler.
+    </p>
+
+    <p>
+      Elle regarde Max.
+    </p>
+
+    <p>
+      — Encore ?
+    </p>
+
+    <p>
+      — Tu as dit
+      que tu voulais apprendre.
+    </p>
+
+    <p>
+      Anna pose son carnet.
+    </p>
+
+    <p>
+      — J’aurais dû préciser
+      « progressivement ».
+    </p>
+
+    <p>
+      Root sourit.
+    </p>
+
+    <p class="emphasis">
+      — Mauvais choix
+      de mentors.
+    </p>
+
+  </div>
+
+</section>
+
+
+<section
+  class="scene investigation-scene"
+  id="scene-15"
+>
+
+  <div class="text-block dialogue">
+
+    <p>
+      Sur la table
+      se trouvent plusieurs reproductions
+      des symboles vus par Hope
+      dans la grotte.
+    </p>
+
+    <p>
+      Anna les observe.
+    </p>
+
+    <p>
+      — Celui-là…
+    </p>
+
+    <p>
+      Elle pointe
+      un signe.
+    </p>
+
+    <p class="impact-text">
+      — Il ressemble
+      à ma tache de naissance.
+    </p>
+
+    <p>
+      Root acquiesce.
+    </p>
+
+    <p>
+      — C’est celui
+      qui nous intéresse
+      le plus.
+    </p>
+
+    <p>
+      Max regarde Anna.
+    </p>
+
+    <p>
+      — Première règle ?
+    </p>
+
+    <p>
+      Anna soupire.
+    </p>
+
+    <p>
+      — Ne pas conclure
+      trop vite.
+    </p>
+
+    <p>
+      — Bien.
+    </p>
+
+    <p>
+      — Deuxième ?
+    </p>
+
+    <p class="emphasis">
+      — Distinguer
+      ce qu’on voit
+      de ce qu’on pense voir.
+    </p>
+
+  </div>
+
+</section>
+
+
+<section
+  class="scene investigation-scene"
+  id="scene-16"
+>
+
+  <div class="text-block dialogue">
+
+    <p>
+      Root sourit.
+    </p>
+
+    <p>
+      — Il te transforme
+      vraiment en journaliste.
+    </p>
+
+    <p>
+      Anna regarde Max.
+    </p>
+
+    <p>
+      — J’ai surtout remarqué
+      qu’il adore donner
+      des règles
+      qu’il ne respecte
+      pas toujours.
+    </p>
+
+    <p>
+      Root éclate de rire.
+    </p>
+
+    <p>
+      Max la regarde.
+    </p>
+
+    <p>
+      — Depuis combien de temps
+      vous complotez
+      contre moi ?
+    </p>
+
+    <p>
+      — Depuis que tu es entré
+      dans la pièce.
+    </p>
+
+    <p>
+      Anna observe Root.
+    </p>
+
+    <p>
+      Puis Max.
+    </p>
+
+    <p>
+      Puis Root
+      de nouveau.
+    </p>
+
+    <p>
+      Max remarque.
+    </p>
+
+    <p>
+      — Quoi ?
+    </p>
+
+    <p>
+      Anna prend
+      son carnet.
+    </p>
+
+    <p>
+      — Rien.
+    </p>
+
+    <p>
+      — Anna.
+    </p>
+
+    <p class="emphasis">
+      — J’observe.
+    </p>
+
+    <p>
+      Root comprend
+      immédiatement.
+    </p>
+
+    <p>
+      — Ah.
+    </p>
+
+    <p>
+      Max ferme les yeux.
+    </p>
+
+    <p>
+      — Ne l’encourage pas.
+    </p>
+
+    <p>
+      Root sourit.
+    </p>
+
+    <p>
+      — Je ne fais rien.
+    </p>
+
+    <p>
+      Anna écrit
+      quelque chose.
+    </p>
+
+    <p>
+      Max tend la main.
+    </p>
+
+    <p>
+      — Donne-moi ça.
+    </p>
+
+    <p>
+      Anna serre
+      le carnet contre elle.
+    </p>
+
+    <p>
+      — Secret professionnel.
+    </p>
+
+    <p>
+      — Tu n’es pas encore
+      journaliste.
+    </p>
+
+    <p>
+      — Je m’entraîne.
+    </p>
+
+    <p>
+      Root regarde Max.
+    </p>
+
+    <p class="impact-text">
+      — Tu l’as mérité.
+    </p>
+
+  </div>
+
+</section>
+
+
+<section
+  class="scene investigation-scene"
+  id="scene-17"
+>
+
+  <div class="text-block dialogue">
+
+    <p>
+      Quelques minutes plus tard,
+      ils reprennent
+      l’étude des symboles.
+    </p>
+
+    <p>
+      Root montre
+      une série de motifs.
+    </p>
+
+    <p>
+      — Celui-ci apparaît
+      dans plusieurs traditions
+      anciennes.
+    </p>
+
+    <p>
+      — Pas identique.
+    </p>
+
+    <p>
+      — Mais proche.
+    </p>
+
+    <p>
+      Anna demande :
+    </p>
+
+    <p>
+      — À quel point
+      proche ?
+    </p>
+
+    <p>
+      Root lui montre.
+    </p>
+
+    <p class="emphasis">
+      — Voilà
+      la bonne question.
+    </p>
+
+    <p>
+      Max acquiesce.
+    </p>
+
+    <p class="impact-text">
+      — Une ressemblance
+      n’est pas une preuve.
+    </p>
+
+    <p>
+      Anna regarde
+      les dessins.
+    </p>
+
+    <p>
+      — Donc on cherche
+      les répétitions.
+    </p>
+
+    <p>
+      Root répond :
+    </p>
+
+    <p>
+      — Et les différences.
+    </p>
+
+    <p>
+      — Parce qu’une erreur répétée
+      peut devenir
+      une tradition.
+    </p>
+
+    <p>
+      Max ajoute :
+    </p>
+
+    <p>
+      — Et une vérité répétée
+      peut devenir
+      un mythe.
+    </p>
+
+    <p>
+      Anna regarde
+      les deux.
+    </p>
+
+    <p>
+      — Vous êtes fatigants
+      tous les deux.
+    </p>
+
+    <p>
+      Root sourit.
+    </p>
+
+    <p class="emphasis">
+      — Attends
+      de rencontrer
+      les universitaires.
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     VISUEL 5
+     ANNA OBSERVE MAX
+===================================================== -->
+
+<section
+  class="scene unity-scene interaction-scene"
+  id="scene-18"
+>
+
+  <div
+    class="visual interactive-visual"
+    data-visual="5"
+  >
+
+    <img
+      src="images/chapitre17/Visuel-5.PNG"
+      alt="Anna observe Max regarder Root et prend des notes"
+      loading="lazy"
+    >
+
+  </div>
+
+
+  <div class="text-block">
+
+    <p>
+      Root se lève
+      pour aller chercher
+      un livre.
+    </p>
+
+    <p>
+      Max suit Root
+      du regard.
+    </p>
+
+    <p>
+      Anna le voit.
+    </p>
+
+    <p>
+      Cette fois,
+      elle ne dit rien.
+    </p>
+
+    <p>
+      Elle attend.
+    </p>
+
+  </div>
+
+
+  <div class="observation-buttons">
+
+    <button
+      class="interaction-btn anna-observes-trigger"
+      data-anna-observes="look"
+    >
+      Le regard de Max
+    </button>
+
+    <button
+      class="interaction-btn anna-observes-trigger"
+      data-anna-observes="pause"
+    >
+      Son immobilité
+    </button>
+
+    <button
+      class="interaction-btn anna-observes-trigger"
+      data-anna-observes="root"
+    >
+      Root
+    </button>
+
+    <button
+      class="interaction-btn anna-observes-trigger"
+      data-anna-observes="notes"
+    >
+      Le carnet
+    </button>
+
+  </div>
+
+
+  <div
+    class="reveal-box"
+    id="annaObservesReveal"
+  >
+  </div>
+
+</section>
+
+
+<section
+  class="scene unity-scene"
+  id="scene-19"
+>
+
+  <div class="text-block dialogue">
+
+    <p>
+      Puis,
+      sans lever les yeux
+      de son livre :
+    </p>
+
+    <p class="impact-text">
+      — Elle est vraiment
+      fascinante.
+    </p>
+
+    <p>
+      Max se fige.
+    </p>
+
+    <p>
+      Root est concentrée
+      sur un autre écran
+      et ne semble pas
+      avoir entendu.
+    </p>
+
+    <p>
+      — Pardon ?
+    </p>
+
+    <p>
+      Anna murmure :
+    </p>
+
+    <p>
+      — Brillante.
+    </p>
+
+    <p>
+      — Courageuse.
+    </p>
+
+    <p>
+      — Incapable
+      de rester loin
+      du danger.
+    </p>
+
+    <p>
+      Max la fixe.
+    </p>
+
+    <p>
+      Anna sourit.
+    </p>
+
+    <p class="emphasis">
+      — Je prends
+      des notes.
+    </p>
+
+    <p>
+      — Tu es insupportable.
+    </p>
+
+    <p>
+      — Je ressemble
+      à mon professeur.
+    </p>
+
+    <p>
+      Max se penche
+      vers elle.
+    </p>
+
+    <p>
+      — Tu répètes ça
+      à personne.
+    </p>
+
+    <p>
+      — Lucy ?
+    </p>
+
+    <p>
+      — Surtout pas Lucy.
+    </p>
+
+    <p>
+      — Hope ?
+    </p>
+
+    <p>
+      — Non.
+    </p>
+
+    <p>
+      — Betty ?
+    </p>
+
+    <p>
+      — Anna.
+    </p>
+
+    <p>
+      Elle étouffe
+      un rire.
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     VISUEL 6
+     MAX PARLE DE ROOT
+===================================================== -->
+
+<section
+  class="scene unity-scene interaction-scene"
+  id="scene-20"
+>
+
+  <div
+    class="visual interactive-visual"
+    data-visual="6"
+  >
+
+    <img
+      src="images/chapitre17/Visuel-6.PNG"
+      alt="Max parle à Anna de ce qu'il ressent pour Root"
+      loading="lazy"
+    >
+
+  </div>
+
+
+  <div class="text-block">
+
+    <p>
+      Puis l’expression
+      d’Anna change.
+    </p>
+
+    <p>
+      — Tu l’aimes ?
+    </p>
+
+    <p>
+      Max ne répond
+      pas immédiatement.
+    </p>
+
+  </div>
+
+
+  <div class="observation-buttons">
+
+    <button
+      class="interaction-btn love-strength-trigger"
+      data-love-strength="attraction"
+    >
+      L’attirance
+    </button>
+
+    <button
+      class="interaction-btn love-strength-trigger"
+      data-love-strength="care"
+    >
+      L’attachement
+    </button>
+
+    <button
+      class="interaction-btn love-strength-trigger"
+      data-love-strength="complication"
+    >
+      La complication
+    </button>
+
+    <button
+      class="interaction-btn love-strength-trigger"
+      data-love-strength="weakness"
+    >
+      La faiblesse
+    </button>
+
+    <button
+      class="interaction-btn love-strength-trigger"
+      data-love-strength="strength"
+    >
+      La force
+    </button>
+
+  </div>
+
+
+  <div
+    class="reveal-box"
+    id="loveStrengthReveal"
+  >
+  </div>
+
+</section>
+
+
+<section
+  class="scene unity-scene"
+  id="scene-21"
+>
+
+  <div class="text-block dialogue">
+
+    <p>
+      — Je ne sais pas.
+    </p>
+
+    <p>
+      Anna attend.
+    </p>
+
+    <p>
+      — Je suis attiré
+      par elle.
+    </p>
+
+    <p>
+      — Beaucoup.
+    </p>
+
+    <p>
+      — Et je tiens
+      à elle.
+    </p>
+
+    <p>
+      Il regarde Root.
+    </p>
+
+    <p>
+      — Mais parfois,
+      tenir à quelqu’un
+      complique tout.
+    </p>
+
+    <p>
+      Anna murmure :
+    </p>
+
+    <p>
+      — Love is weakness ?
+    </p>
+
+    <p>
+      Max tourne la tête.
+    </p>
+
+    <p>
+      — Quoi ?
+    </p>
+
+    <p>
+      — Rien.
+    </p>
+
+    <p>
+      Elle referme
+      son carnet.
+    </p>
+
+    <p>
+      — Juste une phrase
+      qu’on entend beaucoup
+      autour de moi.
+    </p>
+
+    <p>
+      Max la regarde.
+    </p>
+
+    <p>
+      — Alors retiens
+      autre chose.
+    </p>
+
+    <p>
+      — Quoi ?
+    </p>
+
+    <p class="impact-text">
+      — Les gens qui disent
+      que l’amour est une faiblesse
+      oublient souvent
+      qu’il peut aussi être
+      la raison pour laquelle
+      quelqu’un refuse d’abandonner.
+    </p>
+
+    <p>
+      Anna réfléchit.
+    </p>
+
+    <p>
+      Puis sourit.
+    </p>
+
+    <p class="emphasis">
+      — Ça,
+      je vais le noter.
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     VISUEL 7
+     HALE ET ISABEL
+===================================================== -->
+
+<section
+  class="scene investigation-scene interaction-scene"
+  id="scene-22"
+>
+
+  <div
+    class="visual interactive-visual"
+    data-visual="7"
+  >
+
+    <img
+      src="images/chapitre17/Visuel-7.PNG"
+      alt="Hale parle normalement à Isabel malgré la surveillance"
+      loading="lazy"
+    >
+
+  </div>
+
+
+  <div class="text-block">
+
+    <p>
+      Hacienda Flores.
+    </p>
+
+    <p>
+      Isabel travaille
+      comme si rien
+      n’avait changé.
+    </p>
+
+    <p>
+      Hale passe
+      devant son bureau.
+    </p>
+
+  </div>
+
+
+  <div class="observation-buttons">
+
+    <button
+      class="interaction-btn hale-cover-trigger"
+      data-hale-cover="tone"
+    >
+      Le ton de Hale
+    </button>
+
+    <button
+      class="interaction-btn hale-cover-trigger"
+      data-hale-cover="isabel"
+    >
+      Le regard d’Isabel
+    </button>
+
+    <button
+      class="interaction-btn hale-cover-trigger"
+      data-hale-cover="planning"
+    >
+      Le planning d’Anna
+    </button>
+
+    <button
+      class="interaction-btn hale-cover-trigger"
+      data-hale-cover="vehicle"
+    >
+      Le véhicule
+    </button>
+
+    <button
+      class="interaction-btn hale-cover-trigger"
+      data-hale-cover="normal"
+    >
+      Ne rien changer
+    </button>
+
+  </div>
+
+
+  <div
+    class="reveal-box"
+    id="haleCoverReveal"
+  >
+  </div>
+
+</section>
+
+
+<section
+  class="scene investigation-scene"
+  id="scene-23"
+>
+
+  <div class="text-block dialogue">
+
+    <p>
+      — Bonjour.
+    </p>
+
+    <p>
+      Elle relève la tête.
+    </p>
+
+    <p>
+      — Bonjour,
+      Hale.
+    </p>
+
+    <p>
+      — Le planning
+      d’Anna est validé ?
+    </p>
+
+    <p>
+      — Oui.
+    </p>
+
+    <p>
+      — Véhicule prêt ?
+    </p>
+
+    <p>
+      — Tout est organisé.
+    </p>
+
+    <p>
+      Hale acquiesce.
+    </p>
+
+    <p>
+      — Merci.
+    </p>
+
+    <p>
+      Isabel lui sourit.
+    </p>
+
+    <p>
+      Il repart.
+    </p>
+
+    <p class="emphasis">
+      Son visage
+      ne change qu’une fois
+      hors de sa vue.
+    </p>
+
+    <p>
+      Lucy l’attend
+      plus loin.
+    </p>
+
+    <p>
+      — Parfait.
+    </p>
+
+    <p>
+      Hale murmure :
+    </p>
+
+    <p>
+      — Je déteste ça.
+    </p>
+
+    <p>
+      — Je sais.
+    </p>
+
+    <p>
+      — Elle me regarde
+      comme elle l’a toujours fait.
+    </p>
+
+  </div>
+
+</section>
+
+
+<section
+  class="scene investigation-scene"
+  id="scene-24"
+>
+
+  <div class="text-block dialogue">
+
+    <p>
+      Clive arrive
+      derrière eux.
+    </p>
+
+    <p>
+      — C’est le principe
+      d’une bonne couverture.
+    </p>
+
+    <p>
+      Hale se retourne.
+    </p>
+
+    <p>
+      — Je sais
+      ce qu’est une couverture.
+    </p>
+
+    <p>
+      Clive sourit.
+    </p>
+
+    <p>
+      — Je sais.
+    </p>
+
+    <p>
+      Lucy observe
+      les deux hommes.
+    </p>
+
+    <p>
+      — Elle va utiliser
+      l’oratoire.
+    </p>
+
+    <p>
+      — Probablement.
+    </p>
+
+    <p>
+      Clive acquiesce.
+    </p>
+
+    <p>
+      — Mais cette fois,
+      on ne touche à rien.
+    </p>
+
+    <p>
+      Hale fronce
+      les sourcils.
+    </p>
+
+    <p>
+      — Pourquoi ?
+    </p>
+
+    <p>
+      — Parce qu’ils savent
+      qu’on surveille.
+    </p>
+
+    <p>
+      Lucy complète :
+    </p>
+
+    <p>
+      — Et nous savons
+      qu’ils le savent.
+    </p>
+
+    <p>
+      Clive sourit.
+    </p>
+
+    <p class="emphasis">
+      — C’est presque romantique.
+    </p>
+
+    <p>
+      Lucy le regarde.
+    </p>
+
+    <p>
+      — Tu arrives vraiment
+      à dire n’importe quoi
+      dans n’importe quelle situation.
+    </p>
+
+    <p>
+      — C’est un talent.
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     VISUEL 8
+     LUCY / ROOT / CLIVE
+===================================================== -->
+
+<section
+  class="scene unity-scene interaction-scene"
+  id="scene-25"
+>
+
+  <div
+    class="visual interactive-visual"
+    data-visual="8"
+  >
+
+    <img
+      src="images/chapitre17/Visuel-8.PNG"
+      alt="Lucy parle avec Root tandis que Clive observe leur complicité"
+      loading="lazy"
+    >
+
+  </div>
+
+
+  <div class="text-block">
+
+    <p>
+      Lucy reçoit
+      une vibration
+      sur son bracelet.
+    </p>
+
+    <p class="name-reveal">
+      Root.
+    </p>
+
+    <p>
+      Elle hésite.
+    </p>
+
+    <p>
+      Clive le remarque.
+    </p>
+
+  </div>
+
+
+  <div class="observation-buttons">
+
+    <button
+      class="interaction-btn lucy-clive-trigger"
+      data-lucy-clive="call"
+    >
+      L’appel de Root
+    </button>
+
+    <button
+      class="interaction-btn lucy-clive-trigger"
+      data-lucy-clive="symbols"
+    >
+      Les symboles
+    </button>
+
+    <button
+      class="interaction-btn lucy-clive-trigger"
+      data-lucy-clive="dinner"
+    >
+      Le dîner scientifique
+    </button>
+
+    <button
+      class="interaction-btn lucy-clive-trigger"
+      data-lucy-clive="jealousy"
+    >
+      La jalousie
+    </button>
+
+    <button
+      class="interaction-btn lucy-clive-trigger"
+      data-lucy-clive="look"
+    >
+      Le regard de Clive
+    </button>
+
+  </div>
+
+
+  <div
+    class="reveal-box"
+    id="lucyCliveReveal"
+  >
+  </div>
+
+</section>
+
+
+<section
+  class="scene unity-scene"
+  id="scene-26"
+>
+
+  <div class="text-block dialogue">
+
+    <p>
+      — Tu réponds pas ?
+    </p>
+
+    <p>
+      — Ça ne te regarde pas.
+    </p>
+
+    <p>
+      — Évidemment.
+    </p>
+
+    <p>
+      Lucy accepte
+      l’appel.
+    </p>
+
+    <p>
+      Root apparaît.
+    </p>
+
+    <p>
+      — Tu as une minute ?
+    </p>
+
+    <p>
+      — Une seule.
+    </p>
+
+    <p>
+      — J’ai besoin de toi
+      pour vérifier quelque chose
+      sur les symboles.
+    </p>
+
+    <p>
+      Lucy acquiesce.
+    </p>
+
+    <p>
+      — Envoie.
+    </p>
+
+    <p>
+      Root lui transmet
+      plusieurs images.
+    </p>
+
+    <p>
+      — IA2 peut comparer ça
+      à des bases iconographiques,
+      linguistiques,
+      cultuelles ?
+    </p>
+
+    <p>
+      — Oui.
+    </p>
+
+    <p>
+      Root sourit.
+    </p>
+
+    <p>
+      — Merci.
+    </p>
+
+    <p>
+      Lucy répond :
+    </p>
+
+    <p>
+      — Tu me dois
+      un dîner.
+    </p>
+
+    <p>
+      Root sourit
+      davantage.
+    </p>
+
+    <p>
+      — Encore ?
+    </p>
+
+    <p>
+      — Celui-là
+      est scientifique.
+    </p>
+
+    <p>
+      — Alors je paierai.
+    </p>
+
+  </div>
+
+</section>
+
+
+<section
+  class="scene unity-scene"
+  id="scene-27"
+>
+
+  <div class="text-block dialogue">
+
+    <p>
+      Clive observe Lucy.
+    </p>
+
+    <p>
+      Lucy coupe l’appel.
+    </p>
+
+    <p>
+      Il demande :
+    </p>
+
+    <p>
+      — Un dîner ?
+    </p>
+
+    <p>
+      — Scientifique.
+    </p>
+
+    <p>
+      — Bien sûr.
+    </p>
+
+    <p>
+      Lucy le fixe.
+    </p>
+
+    <p class="impact-text">
+      — Tu es jaloux ?
+    </p>
+
+    <p>
+      Clive sourit.
+    </p>
+
+    <p>
+      — Moi ?
+    </p>
+
+    <p>
+      — Jamais.
+    </p>
+
+    <p class="emphasis">
+      — Dommage.
+    </p>
+
+    <p>
+      Clive ne répond
+      pas tout de suite.
+    </p>
+
+    <p>
+      Lucy sourit légèrement.
+    </p>
+
+    <p>
+      Puis se retourne
+      vers les écrans.
+    </p>
+
+    <p class="impact-text">
+      Cette fois,
+      Clive la regarde
+      autrement.
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     VISUEL 9
+     AMY QUITTE LA MAISON
+===================================================== -->
+
+<section
+  class="scene dark-mark-scene interaction-scene"
+  id="scene-28"
+>
+
+  <div
+    class="visual interactive-visual"
+    data-visual="9"
+  >
+
+    <img
+      src="images/chapitre17/Visuel-9.PNG"
+      alt="Le Maître Noir apprend qu'Amy a quitté la maison sans autorisation"
+      loading="lazy"
+    >
+
+  </div>
+
+
+  <div class="text-block">
+
+    <p>
+      Hacienda de la Sierra — Hidalgo.
+    </p>
+
+    <p>
+      Le Maître Noir
+      écoute le rapport.
+    </p>
+
+  </div>
+
+
+  <div class="story-path">
+
+    <button
+      class="interaction-btn amy-departure-trigger"
+      data-amy-departure="left"
+    >
+      Amy est partie
+    </button>
+
+    <button
+      class="interaction-btn amy-departure-trigger"
+      data-amy-departure="authorization"
+    >
+      Sans autorisation
+    </button>
+
+    <button
+      class="interaction-btn amy-departure-trigger"
+      data-amy-departure="follow"
+    >
+      Elle est suivie
+    </button>
+
+    <button
+      class="interaction-btn amy-departure-trigger"
+      data-amy-departure="knows"
+    >
+      Elle le sait
+    </button>
+
+    <button
+      class="interaction-btn amy-departure-trigger"
+      data-amy-departure="hope"
+    >
+      Rejoindra-t-elle Hope ?
+    </button>
+
+  </div>
+
+
+  <div
+    class="reveal-box"
+    id="amyDepartureReveal"
+  >
+  </div>
+
+</section>
+
+
+<section
+  class="scene dark-mark-scene"
+  id="scene-29"
+>
+
+  <div class="text-block dialogue">
+
+    <p>
+      — Isabel est toujours
+      en place.
+    </p>
+
+    <p>
+      — Hale ne semble
+      rien laisser paraître.
+    </p>
+
+    <p>
+      — Lucy surveille
+      les transmissions.
+    </p>
+
+    <p>
+      — Lynx cherche
+      le relais physique.
+    </p>
+
+    <p>
+      Le Maître Noir
+      acquiesce.
+    </p>
+
+    <p>
+      — Très bien.
+    </p>
+
+    <p>
+      Son lieutenant hésite.
+    </p>
+
+    <p class="impact-text">
+      — Amy a quitté
+      la maison
+      où nous l’avions installée.
+    </p>
+
+    <p>
+      Silence.
+    </p>
+
+    <p>
+      — Quand ?
+    </p>
+
+    <p>
+      — Cette nuit.
+    </p>
+
+    <p>
+      Le Maître Noir
+      se tourne lentement.
+    </p>
+
+    <p>
+      — Avec autorisation ?
+    </p>
+
+    <p>
+      — Non.
+    </p>
+
+    <p>
+      Son regard
+      se durcit.
+    </p>
+
+    <p>
+      — Où est-elle ?
+    </p>
+
+    <p>
+      — Nous la suivons.
+    </p>
+
+    <p>
+      — Elle le sait ?
+    </p>
+
+    <p>
+      — Impossible
+      à déterminer.
+    </p>
+
+    <p class="emphasis">
+      — Amy sait toujours
+      quand on la suit.
+    </p>
+
+  </div>
+
+</section>
+
+
+<section
+  class="scene dark-mark-scene"
+  id="scene-30"
+>
+
+  <div class="text-block dialogue">
+
+    <p>
+      — Elle l’a toujours su.
+    </p>
+
+    <p>
+      Sa voix contient
+      quelque chose
+      de différent.
+    </p>
+
+    <p>
+      Pas seulement
+      de la colère.
+    </p>
+
+    <p>
+      Une déception
+      presque personnelle.
+    </p>
+
+    <p>
+      — Vous voulez
+      que nous la ramenions ?
+    </p>
+
+    <p>
+      Le Maître Noir
+      secoue la tête.
+    </p>
+
+    <p>
+      — Pas encore.
+    </p>
+
+    <p>
+      — Alors nous continuons ?
+    </p>
+
+    <p>
+      — Oui.
+    </p>
+
+    <p>
+      Il se tourne.
+    </p>
+
+    <p class="impact-text">
+      — Je veux savoir
+      où elle va
+      quand elle croit
+      agir librement.
+    </p>
+
+    <p>
+      — Et si elle
+      rejoint Hope ?
+    </p>
+
+    <p>
+      Cette fois,
+      le silence dure
+      plus longtemps.
+    </p>
+
+    <p>
+      — Elle ne le fera pas.
+    </p>
+
+    <p>
+      Le lieutenant ose :
+    </p>
+
+    <p>
+      — Vous en êtes sûr ?
+    </p>
+
+    <p>
+      Le Maître Noir
+      relève les yeux.
+    </p>
+
+    <p class="emphasis">
+      — Oui.
+    </p>
+
+    <p>
+      Mais son ton
+      manque légèrement
+      de conviction.
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     VISUEL 10
+     AMY SÈME SES POURSuivants
+===================================================== -->
+
+<section
+  class="scene shadow-scene interaction-scene"
+  id="scene-31"
+>
+
+  <div
+    class="visual interactive-visual"
+    data-visual="10"
+  >
+
+    <img
+      src="images/chapitre17/Visuel-10.PNG"
+      alt="Amy repère et sème les hommes qui la suivent"
+      loading="lazy"
+    >
+
+  </div>
+
+
+  <div class="text-block">
+
+    <p>
+      Quelque part
+      entre San Luis Potosí
+      et Hidalgo.
+    </p>
+
+    <p>
+      Amy marche seule
+      le long
+      d’une route secondaire.
+    </p>
+
+  </div>
+
+
+  <div class="story-path">
+
+    <button
+      class="interaction-btn amy-escape-trigger"
+      data-amy-escape="cars"
+    >
+      Les véhicules
+    </button>
+
+    <button
+      class="interaction-btn amy-escape-trigger"
+      data-amy-escape="reflection"
+    >
+      Les reflets
+    </button>
+
+    <button
+      class="interaction-btn amy-escape-trigger"
+      data-amy-escape="market"
+    >
+      Le marché
+    </button>
+
+    <button
+      class="interaction-btn amy-escape-trigger"
+      data-amy-escape="clothes"
+    >
+      Changer d’apparence
+    </button>
+
+    <button
+      class="interaction-btn amy-escape-trigger"
+      data-amy-escape="roof"
+    >
+      Le toit
+    </button>
+
+  </div>
+
+
+  <div
+    class="reveal-box"
+    id="amyEscapeReveal"
+  >
+  </div>
+
+</section>
+
+
+<section
+  class="scene shadow-scene"
+  id="scene-32"
+>
+
+  <div class="text-block">
+
+    <p>
+      Un véhicule passe.
+    </p>
+
+    <p>
+      Elle ne se retourne pas.
+    </p>
+
+    <p>
+      Quelques minutes
+      plus tard,
+      un second véhicule.
+    </p>
+
+    <p>
+      Même modèle.
+    </p>
+
+    <p>
+      Autre couleur.
+    </p>
+
+    <p>
+      Elle continue.
+    </p>
+
+    <p>
+      Puis s’arrête
+      devant une petite station-service.
+    </p>
+
+    <p>
+      Entre.
+    </p>
+
+    <p>
+      Achète
+      une bouteille d’eau.
+    </p>
+
+    <p>
+      Observe les reflets
+      dans la vitre.
+    </p>
+
+    <p>
+      Deux hommes.
+    </p>
+
+    <p>
+      Pas ensemble.
+    </p>
+
+    <p>
+      Pas officiellement.
+    </p>
+
+    <p>
+      Amy sourit
+      à peine.
+    </p>
+
+    <p class="impact-text">
+      — Amateur.
+    </p>
+
+  </div>
+
+</section>
+
+
+<section
+  class="scene shadow-scene"
+  id="scene-33"
+>
+
+  <div class="text-block">
+
+    <p>
+      Elle ressort.
+    </p>
+
+    <p>
+      Prend une direction.
+    </p>
+
+    <p>
+      Puis une autre.
+    </p>
+
+    <p>
+      Traverse un marché.
+    </p>
+
+    <p>
+      Change de veste.
+    </p>
+
+    <p>
+      Entre dans un bus.
+    </p>
+
+    <p>
+      Descend
+      deux arrêts plus tard.
+    </p>
+
+    <p>
+      Vingt minutes après,
+      elle observe
+      depuis un toit.
+    </p>
+
+    <p class="emphasis">
+      Les deux hommes
+      cherchent encore.
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     VISUEL 11
+     AMY / TÉLÉPHONE / HOPE
+===================================================== -->
+
+<section
+  class="scene danger-scene interaction-scene"
+  id="scene-34"
+>
+
+  <div
+    class="visual interactive-visual"
+    data-visual="11"
+  >
+
+    <img
+      src="images/chapitre17/Visuel-11.PNG"
+      alt="Amy hésite à appeler Hope avec un téléphone prépayé"
+      loading="lazy"
+    >
+
+  </div>
+
+
+  <div class="text-block">
+
+    <p>
+      Amy sort
+      un téléphone prépayé.
+    </p>
+
+    <p>
+      Elle hésite.
+    </p>
+
+    <p class="name-reveal">
+      Hope.
+    </p>
+
+  </div>
+
+
+  <div class="observation-buttons">
+
+    <button
+      class="interaction-btn amy-call-trigger"
+      data-amy-call="phone"
+    >
+      Le téléphone
+    </button>
+
+    <button
+      class="interaction-btn amy-call-trigger"
+      data-amy-call="number"
+    >
+      Le numéro d’Hope
+    </button>
+
+    <button
+      class="interaction-btn amy-call-trigger"
+      data-amy-call="finger"
+    >
+      Son doigt hésite
+    </button>
+
+    <button
+      class="interaction-btn amy-call-trigger"
+      data-amy-call="choice"
+    >
+      Le choix
+    </button>
+
+  </div>
+
+
+  <div
+    class="reveal-box"
+    id="amyCallReveal"
+  >
+  </div>
+
+</section>
+
+
+<section
+  class="scene danger-scene"
+  id="scene-35"
+>
+
+  <div class="text-block">
+
+    <p>
+      Son doigt reste
+      au-dessus du numéro.
+    </p>
+
+    <p>
+      Puis elle renonce.
+    </p>
+
+    <p>
+      Elle range
+      l’appareil.
+    </p>
+
+    <p class="impact-text">
+      — Pas encore.
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     VISUEL 12
+     ÉLIE ET BETTY
+===================================================== -->
+
+<section
+  class="scene shadow-scene interaction-scene"
+  id="scene-36"
+>
+
+  <div
+    class="visual interactive-visual"
+    data-visual="12"
+  >
+
+    <img
+      src="images/chapitre17/Visuel-12.PNG"
+      alt="Élie regarde une ancienne photographie de jeunesse avec Betty"
+      loading="lazy"
+    >
+
+  </div>
+
+
+  <div class="text-block">
+
+    <p>
+      Mexico — Résidence Santalucibel.
+    </p>
+
+    <p>
+      Élie est assis
+      seul devant un verre
+      qu’il ne touche pas.
+    </p>
+
+    <p>
+      Un homme entre.
+    </p>
+
+  </div>
+
+
+  <div class="story-path">
+
+    <button
+      class="interaction-btn elie-betty-trigger"
+      data-elie-betty="movement"
+    >
+      Les mouvements
+    </button>
+
+    <button
+      class="interaction-btn elie-betty-trigger"
+      data-elie-betty="anna"
+    >
+      Anna
+    </button>
+
+    <button
+      class="interaction-btn elie-betty-trigger"
+      data-elie-betty="betty"
+    >
+      Betty
+    </button>
+
+    <button
+      class="interaction-btn elie-betty-trigger"
+      data-elie-betty="protect"
+    >
+      Personne ne la touche
+    </button>
+
+    <button
+      class="interaction-btn elie-betty-trigger"
+      data-elie-betty="photo"
+    >
+      La photographie
+    </button>
+
+  </div>
+
+
+  <div
+    class="reveal-box"
+    id="elieBettyReveal"
+  >
+  </div>
+
+</section>
+
+
+<section
+  class="scene shadow-scene"
+  id="scene-37"
+>
+
+  <div class="text-block dialogue">
+
+    <p>
+      — Señor.
+    </p>
+
+    <p>
+      — Oui ?
+    </p>
+
+    <p>
+      — Nous avons
+      des informations
+      sur l’Hacienda Flores.
+    </p>
+
+    <p>
+      Élie lève les yeux.
+    </p>
+
+    <p>
+      — Lesquelles ?
+    </p>
+
+    <p>
+      — Beaucoup de mouvements
+      depuis quelques jours.
+    </p>
+
+    <p>
+      — Sécurité renforcée.
+    </p>
+
+    <p>
+      — Plusieurs personnes
+      extérieures.
+    </p>
+
+    <p>
+      — Lucy Adverse.
+    </p>
+
+    <p>
+      — Clive Lynx.
+    </p>
+
+    <p>
+      Élie sourit.
+    </p>
+
+    <p>
+      — Le voleur
+      et la flic.
+    </p>
+
+    <p>
+      — Étrange couple.
+    </p>
+
+    <p>
+      — Il y a aussi
+      Root Tempass.
+    </p>
+
+    <p>
+      Élie ne réagit pas.
+    </p>
+
+    <p>
+      — Hope Awake ?
+    </p>
+
+    <p>
+      — À l’autre hacienda.
+    </p>
+
+    <p>
+      — Anna ?
+    </p>
+
+    <p>
+      — Également.
+    </p>
+
+    <p>
+      Élie attend.
+    </p>
+
+    <p>
+      L’homme hésite.
+    </p>
+
+    <p class="impact-text">
+      — Betty Flores aussi.
+    </p>
+
+  </div>
+
+</section>
+
+
+<section
+  class="scene shadow-scene"
+  id="scene-38"
+>
+
+  <div class="text-block dialogue">
+
+    <p>
+      Élie relève
+      immédiatement les yeux.
+    </p>
+
+    <p>
+      — Elle va bien ?
+    </p>
+
+    <p>
+      L’homme comprend
+      la nuance.
+    </p>
+
+    <p>
+      — À notre connaissance,
+      oui.
+    </p>
+
+    <p>
+      Élie se lève.
+    </p>
+
+    <p>
+      — À notre connaissance ?
+    </p>
+
+    <p>
+      — Personne n’a signalé
+      de blessure.
+    </p>
+
+    <p>
+      — Elle a quitté
+      l’Hacienda Flores.
+    </p>
+
+    <p>
+      — Elle se trouve
+      chez Awake.
+    </p>
+
+    <p>
+      Élie regarde
+      par la fenêtre.
+    </p>
+
+    <p>
+      — Depuis combien
+      de temps ?
+    </p>
+
+    <p>
+      — Quelques jours.
+    </p>
+
+    <p>
+      — Et tu me l’apprends
+      maintenant ?
+    </p>
+
+    <p>
+      L’homme baisse
+      légèrement la tête.
+    </p>
+
+    <p>
+      — Je pensais
+      que votre intérêt
+      concernait Anna.
+    </p>
+
+    <p>
+      Élie se retourne
+      lentement.
+    </p>
+
+    <p class="impact-text">
+      — Ne pense pas
+      à ma place.
+    </p>
+
+    <p>
+      — Oui,
+      señor.
+    </p>
+
+  </div>
+
+</section>
+
+
+<section
+  class="scene shadow-scene"
+  id="scene-39"
+>
+
+  <div class="text-block dialogue">
+
+    <p>
+      L’homme s’apprête
+      à partir.
+    </p>
+
+    <p>
+      Élie l’arrête.
+    </p>
+
+    <p>
+      — Attends.
+    </p>
+
+    <p>
+      — Oui ?
+    </p>
+
+    <p class="impact-text">
+      — Personne
+      ne touche Betty.
+    </p>
+
+    <p>
+      — Ni directement.
+    </p>
+
+    <p>
+      — Ni indirectement.
+    </p>
+
+    <p>
+      L’homme hésite.
+    </p>
+
+    <p>
+      — Même si…
+    </p>
+
+    <p>
+      Élie le coupe.
+    </p>
+
+    <p class="name-reveal">
+      — Personne.
+    </p>
+
+    <p>
+      — C’est clair ?
+    </p>
+
+    <p>
+      — Très clair.
+    </p>
+
+    <p>
+      L’homme quitte
+      la pièce.
+    </p>
+
+  </div>
+
+</section>
+
+
+<section
+  class="scene unity-scene"
+  id="scene-40"
+>
+
+  <div class="text-block">
+
+    <p>
+      Élie reste seul.
+    </p>
+
+    <p>
+      Il ouvre
+      un ancien tiroir.
+    </p>
+
+    <p>
+      Au fond,
+      une photographie.
+    </p>
+
+    <p>
+      Trois adolescents.
+    </p>
+
+    <p>
+      Betty.
+    </p>
+
+    <p>
+      Lui.
+    </p>
+
+    <p>
+      Et quelques autres élèves.
+    </p>
+
+    <p>
+      Betty sourit
+      à l’objectif.
+    </p>
+
+    <p>
+      Élie passe un doigt
+      sur l’image.
+    </p>
+
+    <p class="emphasis">
+      — Toujours en train
+      de sauver le monde…
+    </p>
+
+    <p>
+      Il referme
+      le tiroir.
+    </p>
+
+    <p>
+      Puis murmure :
+    </p>
+
+    <p class="impact-text">
+      — Tu n’as vraiment
+      pas changé.
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     RETOUR AU LABORATOIRE
+===================================================== -->
+
+<section
+  class="scene microscopic-scene"
+  id="scene-41"
+>
+
+  <div class="text-block">
+
+    <p>
+      Hacienda Awake — Laboratoire.
+    </p>
+
+    <p>
+      Charles apparaît
+      de nouveau
+      sur l’hologramme.
+    </p>
+
+  </div>
+
+</section>
+
+
+<section
+  class="scene microscopic-scene"
+  id="scene-42"
+>
+
+  <div class="text-block dialogue">
+
+    <p>
+      — Les échantillons
+      sont arrivés ?
+    </p>
+
+    <p>
+      Betty vérifie.
+    </p>
+
+    <p>
+      — Oui.
+    </p>
+
+    <p>
+      Une petite unité
+      réfrigérée
+      vient d’être déposée.
+    </p>
+
+    <p>
+      Peter s’approche.
+    </p>
+
+    <p>
+      — Ça,
+      c’est sérieux.
+    </p>
+
+    <p>
+      Charles répond :
+    </p>
+
+    <p>
+      — Éloigne-toi.
+    </p>
+
+    <p>
+      Peter regarde Hope.
+    </p>
+
+    <p>
+      — Tout le monde
+      me traite
+      comme un enfant.
+    </p>
+
+    <p>
+      Hope sourit.
+    </p>
+
+    <p class="emphasis">
+      — Il y a peut-être
+      une raison.
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     VISUEL 13
+     ANCIEN / NOUVEAU SANG D'HOPE
+===================================================== -->
+
+<section
+  class="scene microscopic-scene interaction-scene"
+  id="scene-43"
+>
+
+  <div
+    class="visual interactive-visual"
+    data-visual="13"
+  >
+
+    <img
+      src="images/chapitre17/Visuel-13.PNG"
+      alt="Betty compare les anciens et nouveaux prélèvements d'Hope avec ceux d'Anna"
+      loading="lazy"
+    >
+
+  </div>
+
+
+  <div class="text-block">
+
+    <p>
+      Betty ouvre
+      le contenant.
+    </p>
+
+    <p>
+      Plusieurs tubes.
+    </p>
+
+    <p>
+      Dates.
+    </p>
+
+    <p>
+      Références.
+    </p>
+
+    <p>
+      Prélèvements effectués
+      après l’opération.
+    </p>
+
+    <p>
+      Puis quelques jours
+      plus tard.
+    </p>
+
+  </div>
+
+
+  <div class="story-path">
+
+    <button
+      class="interaction-btn blood-compare-trigger"
+      data-blood-compare="old"
+    >
+      Ancien Hope
+    </button>
+
+    <button
+      class="interaction-btn blood-compare-trigger"
+      data-blood-compare="new"
+    >
+      Nouveau Hope
+    </button>
+
+    <button
+      class="interaction-btn blood-compare-trigger"
+      data-blood-compare="anna"
+    >
+      Ajouter Anna
+    </button>
+
+    <button
+      class="interaction-btn blood-compare-trigger"
+      data-blood-compare="absent"
+    >
+      Marqueur absent
+    </button>
+
+    <button
+      class="interaction-btn blood-compare-trigger"
+      data-blood-compare="present"
+    >
+      Marqueur présent
+    </button>
+
+  </div>
+
+
+  <div
+    class="reveal-box"
+    id="bloodCompareReveal"
+  >
+  </div>
+
+</section>
+
+
+<section
+  class="scene microscopic-scene"
+  id="scene-44"
+>
+
+  <div class="text-block dialogue">
+
+    <p>
+      Betty en sélectionne
+      un.
+    </p>
+
+    <p>
+      — Celui-ci date
+      d’avant ta récupération
+      complète.
+    </p>
+
+    <p>
+      Hope s’approche.
+    </p>
+
+    <p>
+      — Donc avant
+      la grotte.
+    </p>
+
+    <p>
+      — Très largement.
+    </p>
+
+    <p>
+      Betty prépare
+      l’analyse.
+    </p>
+
+    <p>
+      Peter demande :
+    </p>
+
+    <p>
+      — Tu cherches
+      quoi exactement ?
+    </p>
+
+    <p>
+      — Je ne sais pas
+      encore.
+    </p>
+
+    <p>
+      — Très scientifique.
+    </p>
+
+    <p>
+      Betty le regarde.
+    </p>
+
+    <p class="emphasis">
+      — Je cherche
+      si les anomalies
+      que je vois aujourd’hui
+      existaient déjà.
+    </p>
+
+    <p>
+      Charles intervient :
+    </p>
+
+    <p>
+      — Et si elles
+      n’existaient pas ?
+    </p>
+
+    <p>
+      Betty ne répond pas.
+    </p>
+
+    <p>
+      Hope,
+      elle,
+      le fait.
+    </p>
+
+    <p class="impact-text">
+      — Alors quelque chose
+      m’a changée.
+    </p>
+
+    <p>
+      Silence.
+    </p>
+
+  </div>
+
+</section>
+
+
+<section
+  class="scene microscopic-scene"
+  id="scene-45"
+>
+
+  <div class="text-block">
+
+    <p>
+      L’analyse commence.
+    </p>
+
+    <p>
+      Quelques minutes passent.
+    </p>
+
+    <p>
+      Peter s’impatiente.
+    </p>
+
+    <p>
+      Charles observe
+      à distance.
+    </p>
+
+    <p>
+      Hope reste debout.
+    </p>
+
+    <p>
+      Betty compare
+      les courbes.
+    </p>
+
+    <p>
+      Ancien prélèvement.
+    </p>
+
+    <p>
+      Nouveau prélèvement.
+    </p>
+
+    <p>
+      Elle zoome.
+    </p>
+
+    <p>
+      Puis recommence.
+    </p>
+
+    <p>
+      Peter remarque
+      son expression.
+    </p>
+
+    <p>
+      — Quoi ?
+    </p>
+
+    <p>
+      — Attends.
+    </p>
+
+    <p>
+      Elle change
+      de méthode.
+    </p>
+
+    <p>
+      Relance
+      une analyse.
+    </p>
+
+    <p>
+      Puis une troisième.
+    </p>
+
+    <p>
+      Hope croise
+      les bras.
+    </p>
+
+    <p>
+      — Betty.
+    </p>
+
+    <p>
+      — Pas encore.
+    </p>
+
+    <p>
+      Charles intervient :
+    </p>
+
+    <p>
+      — Tu vois
+      quelque chose.
+    </p>
+
+    <p class="emphasis">
+      — Je vérifie.
+    </p>
+
+  </div>
+
+</section>
+
+
+<section
+  class="scene microscopic-scene"
+  id="scene-46"
+>
+
+  <div class="text-block dialogue">
+
+    <p>
+      Peter approche
+      malgré elle.
+    </p>
+
+    <p>
+      — Ce marqueur…
+    </p>
+
+    <p>
+      Betty le regarde.
+    </p>
+
+    <p>
+      — Recule.
+    </p>
+
+    <p>
+      — Je l’ai vu.
+    </p>
+
+    <p>
+      Betty ne répond pas.
+    </p>
+
+    <p>
+      Elle ouvre
+      une autre base.
+    </p>
+
+    <p class="name-reveal">
+      Celle d’Anna.
+    </p>
+
+    <p>
+      Hope le remarque.
+    </p>
+
+    <p>
+      — Pourquoi Anna ?
+    </p>
+
+    <p>
+      Betty ne répond
+      toujours pas.
+    </p>
+
+    <p>
+      Elle aligne
+      les données.
+    </p>
+
+    <p>
+      Hope.
+    </p>
+
+    <p>
+      Anna.
+    </p>
+
+    <p>
+      Ancien Hope.
+    </p>
+
+    <p>
+      Nouveau Hope.
+    </p>
+
+    <p>
+      Puis elle reste
+      immobile.
+    </p>
+
+    <p>
+      Charles demande :
+    </p>
+
+    <p>
+      — Betty ?
+    </p>
+
+    <p>
+      Elle relève
+      enfin les yeux.
+    </p>
+
+    <p class="impact-text">
+      — J’ai besoin
+      de refaire
+      l’analyse demain.
+    </p>
+
+  </div>
+
+</section>
+
+
+<section
+  class="scene microscopic-scene"
+  id="scene-47"
+>
+
+  <div class="text-block dialogue">
+
+    <p>
+      Hope soupire.
+    </p>
+
+    <p>
+      — Ça veut dire quoi ?
+    </p>
+
+    <p>
+      Betty regarde Anna
+      sur l’écran.
+    </p>
+
+    <p>
+      Puis Hope.
+    </p>
+
+    <p>
+      — Ça veut dire
+      qu’il y a quelque chose
+      que je ne veux surtout pas
+      annoncer
+      avant d’être certaine.
+    </p>
+
+    <p>
+      Peter devient sérieux.
+    </p>
+
+    <p>
+      — Quelque chose
+      de grave ?
+    </p>
+
+    <p>
+      Betty secoue la tête.
+    </p>
+
+    <p>
+      — Je n’en sais rien.
+    </p>
+
+    <p>
+      Hope s’approche.
+    </p>
+
+    <p>
+      — Mais tu as
+      une hypothèse.
+    </p>
+
+    <p>
+      Betty hésite.
+    </p>
+
+    <p>
+      Puis pointe
+      l’écran.
+    </p>
+
+    <p class="impact-text">
+      — Ce marqueur apparaît
+      chez Anna
+      depuis les premiers prélèvements
+      que j’ai conservés.
+    </p>
+
+  </div>
+
+</section>
+
+
+<section
+  class="scene microscopic-scene"
+  id="scene-48"
+>
+
+  <div class="text-block dialogue">
+
+    <p>
+      Hope regarde
+      la courbe.
+    </p>
+
+    <p>
+      — Et chez moi ?
+    </p>
+
+    <p>
+      Betty ouvre
+      l’ancien échantillon.
+    </p>
+
+    <p>
+      — Ici…
+    </p>
+
+    <p class="name-reveal">
+      Rien.
+    </p>
+
+    <p>
+      Puis le nouveau.
+    </p>
+
+    <p>
+      — Et ici…
+    </p>
+
+    <p class="impact-text">
+      Une signature nette.
+    </p>
+
+    <p>
+      Hope ne dit rien.
+    </p>
+
+    <p>
+      Charles se penche
+      vers son écran.
+    </p>
+
+    <p>
+      Peter perd
+      son sourire.
+    </p>
+
+    <p>
+      Hope murmure :
+    </p>
+
+    <p>
+      — Donc je ne l’avais pas.
+    </p>
+
+    <p>
+      Betty corrige
+      immédiatement :
+    </p>
+
+    <p>
+      — Non.
+    </p>
+
+    <p>
+      Hope la regarde.
+    </p>
+
+    <p>
+      Betty poursuit :
+    </p>
+
+    <p class="emphasis">
+      — Ça veut dire
+      que je ne le détecte pas
+      dans cet échantillon-là
+      avec cette méthode.
+    </p>
+
+    <p class="emphasis">
+      — C’est différent.
+    </p>
+
+    <p>
+      Hope sourit faiblement.
+    </p>
+
+    <p>
+      — Merci
+      pour la prudence.
+    </p>
+
+    <p>
+      — Je refuse
+      de te raconter
+      une histoire
+      avant d’avoir
+      des preuves.
+    </p>
+
+    <p>
+      Hope acquiesce.
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     VISUEL 14
+     CLÉ / PONT / COMPLÉMENTARITÉ
+===================================================== -->
+
+<section
+  class="scene revelation-scene interaction-scene"
+  id="scene-49"
+>
+
+  <div
+    class="visual interactive-visual"
+    data-visual="14"
+  >
+
+    <img
+      src="images/chapitre17/Visuel-14.PNG"
+      alt="Les signatures biologiques d'Anna et Hope apparaissent différentes mais complémentaires"
+      loading="lazy"
+    >
+
+  </div>
+
+
+  <div class="text-block">
+
+    <p>
+      Betty regarde
+      encore les résultats.
+    </p>
+
+    <p>
+      Puis :
+    </p>
+
+    <p>
+      — Mais il y a
+      autre chose.
+    </p>
+
+    <p>
+      — Quoi ?
+    </p>
+
+    <p>
+      Elle superpose
+      les deux signatures.
+    </p>
+
+    <p class="name-reveal">
+      Anna.
+    </p>
+
+    <p class="name-reveal">
+      Hope.
+    </p>
+
+  </div>
+
+
+  <div class="story-path">
+
+    <button
+      class="interaction-btn complementarity-trigger"
+      data-complementarity="anna"
+    >
+      Signature d’Anna
+    </button>
+
+    <button
+      class="interaction-btn complementarity-trigger"
+      data-complementarity="hope"
+    >
+      Signature d’Hope
+    </button>
+
+    <button
+      class="interaction-btn complementarity-trigger"
+      data-complementarity="different"
+    >
+      Différentes
+    </button>
+
+    <button
+      class="interaction-btn complementarity-trigger"
+      data-complementarity="response"
+    >
+      Elles se répondent
+    </button>
+
+    <button
+      class="interaction-btn complementarity-trigger"
+      data-complementarity="complementary"
+    >
+      Complémentaires
+    </button>
+
+  </div>
+
+
+  <div
+    class="reveal-box"
+    id="complementarityReveal"
+  >
+  </div>
+
+</section>
+
+
+<section
+  class="scene revelation-scene"
+  id="scene-50"
+>
+
+  <div class="text-block">
+
+    <p>
+      Les courbes
+      ne sont pas identiques.
+    </p>
+
+    <p class="impact-text">
+      Mais elles
+      se répondent.
+    </p>
+
+    <p>
+      Comme deux formes
+      différentes
+      appartenant
+      au même système.
+    </p>
+
+    <p>
+      Peter s’approche.
+    </p>
+
+    <p>
+      — Ce n’est pas
+      le même marqueur.
+    </p>
+
+    <p>
+      Betty secoue
+      la tête.
+    </p>
+
+    <p>
+      — Non.
+    </p>
+
+    <p>
+      Charles murmure :
+    </p>
+
+    <p class="name-reveal">
+      — Complémentaire ?
+    </p>
+
+    <p>
+      Betty reste silencieuse.
+    </p>
+
+    <p>
+      Puis :
+    </p>
+
+    <p class="emphasis">
+      — C’est exactement
+      le mot
+      qui me dérange.
+    </p>
+
+  </div>
+
+</section>
+
+
+<section
+  class="scene revelation-scene"
+  id="scene-51"
+>
+
+  <div class="text-block dialogue">
+
+    <p>
+      Hope regarde
+      les deux courbes.
+    </p>
+
+    <p class="impact-text">
+      — Anna est le pont.
+    </p>
+
+    <p>
+      Betty tourne
+      la tête vers elle.
+    </p>
+
+    <p>
+      Hope poursuit :
+    </p>
+
+    <p>
+      — Et moi…
+    </p>
+
+    <p>
+      Elle pense
+      à la grotte.
+    </p>
+
+    <p>
+      Au Dragon.
+    </p>
+
+    <p>
+      Au Phénix.
+    </p>
+
+    <p>
+      Aux portes.
+    </p>
+
+    <p class="name-reveal">
+      — Moi,
+      je serais la clé.
+    </p>
+
+    <p>
+      Personne
+      ne répond.
+    </p>
+
+    <p>
+      Betty fixe
+      les résultats.
+    </p>
+
+    <p>
+      Puis murmure :
+    </p>
+
+    <p>
+      — Si c’est vrai…
+    </p>
+
+    <p>
+      Elle s’arrête.
+    </p>
+
+    <p>
+      Hope attend.
+    </p>
+
+    <p>
+      Betty relève
+      lentement les yeux.
+    </p>
+
+    <p class="impact-text">
+      — Alors ce que la grotte
+      a activé chez toi
+      était peut-être déjà là
+      depuis longtemps.
+    </p>
+
+    <p class="emphasis">
+      Et cette fois,
+      même Peter
+      ne trouve rien
+      à répondre.
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     FIN DU CHAPITRE
+===================================================== -->
+
+<section
+  class="scene chapter-end"
+  id="scene-52"
+>
+
+  <div class="text-block">
+
+    <p>
+      Certaines traces
+      se trouvent dans la pierre.
+    </p>
+
+    <p>
+      D’autres
+      dans les archives.
+    </p>
+
+    <p>
+      Certaines survivent
+      dans une photographie.
+    </p>
+
+    <p>
+      D’autres apparaissent
+      dans une goutte de sang.
+    </p>
+
+    <p>
+      Et parfois,
+      le vivant conserve
+      une mémoire
+      que personne
+      ne savait encore lire.
+    </p>
+
+    <p class="name-reveal">
+      Les traces du vivant.
+    </p>
+
+  </div>
+
+
+  <div class="end-symbol">
+    ∞
+  </div>
+
+
+  <div class="end-actions">
+
+    <button
+      class="chapter-btn"
+      id="restartChapter"
+    >
+      Relire le chapitre
+    </button>
+
+    <!--
+    Quand le chapitre 18 sera prêt :
+
+    <a
+      class="chapter-btn primary"
+      href="chapitre18.html"
+    >
+      Continuer
+    </a>
+    -->
+
+    <a
+      class="chapter-btn primary"
+      href="index.html"
+    >
+      Retour à l’accueil
+    </a>
+
+  </div>
+
+</section>
+
+
+</main>
+
+
+<!-- =====================================================
+     POPUP INFORMATION / SECRET
+===================================================== -->
+
+<div
+  class="secret-popup"
+  id="secretPopup"
+  aria-hidden="true"
+>
+
+  <div class="secret-popup-inner">
+
+    <span class="secret-symbol">
+      ∞
+    </span>
+
+    <span>
+      INFORMATION DÉCOUVERTE
+    </span>
+
+  </div>
+
+</div>
+
+
+<!-- =====================================================
+     MENU
+===================================================== -->
+
+<div
+  class="chapter-menu"
+  id="chapterMenu"
+  aria-hidden="true"
+>
+
+  <div class="chapter-menu-panel">
+
+    <button
+      class="menu-close"
+      id="menuClose"
+      aria-label="Fermer le menu"
+    >
+      ×
+    </button>
+
+    <h2>
+      Chapitre 17
+    </h2>
+
+    <p>
+      Les traces du vivant
+    </p>
+
+    <button
+      id="resumeBtn"
+      class="menu-action"
+    >
+      Reprendre la lecture
+    </button>
+
+    <button
+      id="restartBtn"
+      class="menu-action"
+    >
+      Recommencer le chapitre
+    </button>
+
+    <a
+      href="index.html"
+      class="menu-action"
+    >
+      Retour à l’accueil
+    </a>
+
+  </div>
+
+</div>
+
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
+<script src="js/chapitre17.js"></script>
+
+
+</body>
+</html>
