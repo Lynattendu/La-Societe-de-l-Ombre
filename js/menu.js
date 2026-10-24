@@ -106,7 +106,7 @@ const chapters = [
 
   {
     number: 16,
-    title: "Chapitre 16",
+    title: "Les liens invisibles",
     file: "chapitre16.html"
   },
 
