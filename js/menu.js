@@ -112,7 +112,7 @@ const chapters = [
 
   {
     number: 17,
-    title: "Chapitre 17",
+    title: "Les traces du vivant",
     file: "chapitre17.html"
   },
 
