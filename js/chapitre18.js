@@ -1406,17 +1406,18 @@ document
           );
 
 
-          showSecret(
+                 showSecret(
             "anna-became-person",
             "Pour Betty, le moment décisif survient lorsque continuer ou arrêter ne concerne plus une expérience mais Anna elle-même."
           );
 
+        }
+
       }
+
     );
 
   });
-
-
 document
   .querySelectorAll(
     ".anna-created-trigger"
