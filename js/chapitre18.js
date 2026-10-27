@@ -1411,8 +1411,6 @@ document
             "Pour Betty, le moment décisif survient lorsque continuer ou arrêter ne concerne plus une expérience mais Anna elle-même."
           );
 
-        }
-
       }
     );
 
