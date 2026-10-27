@@ -1436,8 +1436,7 @@ document
 
     }
 
-  );
-
+  });
 
 if (
   annaCreatedObserved.length >= 5
