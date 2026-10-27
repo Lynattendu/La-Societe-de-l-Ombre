@@ -1474,7 +1474,7 @@ document
 
     }
 
-  );
+  });
 
 
 if (
@@ -1817,9 +1817,7 @@ document
       );
 
     }
-
-  );
-
+  });
 
 if (
   isabelIdeaObserved.length >= 5
@@ -2306,7 +2304,7 @@ document
 
     }
 
-  );
+    });
 
 
 if (
