@@ -1490,7 +1490,7 @@ document
 
     }
 
-  );
+});
 
 
 if (
@@ -1648,9 +1648,7 @@ document
       );
 
     }
-
-  );
-
+});
 
 if (
   annaIdentityObserved.length >= 5
@@ -2342,7 +2340,7 @@ document
 
     }
 
-  );
+  });
 
 
 if (
