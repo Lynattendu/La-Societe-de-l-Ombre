@@ -1,226 +1,267 @@
 /* =========================================================
    LA SOCIÉTÉ DE L’OMBRE
    CHAPITRE 20 — LES LIGNES BOUGENT
+   Version corrigée et nettoyée
 ========================================================= */
 
 document.addEventListener("DOMContentLoaded", () => {
 
+  /* =========================================================
+     ÉLÉMENTS PRINCIPAUX
+  ========================================================= */
 
-/* =========================================================
-   ÉLÉMENTS PRINCIPAUX
-========================================================= */
+  const scenes =
+    document.querySelectorAll(".scene");
 
-const scenes =
-  document.querySelectorAll(".scene");
+  const progressFill =
+    document.getElementById("progressFill");
 
-const progressFill =
-  document.getElementById("progressFill");
+  const menuBtn =
+    document.getElementById("menuBtn");
 
-const menuBtn =
-  document.getElementById("menuBtn");
+  const soundBtn =
+    document.getElementById("soundBtn");
 
-const soundBtn =
-  document.getElementById("soundBtn");
+  const chapterMenu =
+    document.getElementById("chapterMenu");
 
-const chapterMenu =
-  document.getElementById("chapterMenu");
+  const menuClose =
+    document.getElementById("menuClose");
 
-const menuClose =
-  document.getElementById("menuClose");
+  const resumeBtn =
+    document.getElementById("resumeBtn");
 
-const resumeBtn =
-  document.getElementById("resumeBtn");
+  const restartBtn =
+    document.getElementById("restartBtn");
 
-const restartBtn =
-  document.getElementById("restartBtn");
+  const restartChapter =
+    document.getElementById("restartChapter");
 
-const restartChapter =
-  document.getElementById("restartChapter");
-
-const secretPopup =
-  document.getElementById("secretPopup");
-
-
-/* =========================================================
-   LOCALSTORAGE
-========================================================= */
-
-const STORAGE_PREFIX =
-  "societeOmbre_chapitre20_";
-
-const STORAGE_SCROLL =
-  STORAGE_PREFIX + "scroll";
-
-const STORAGE_PROGRESS =
-  STORAGE_PREFIX + "progression";
-
-const STORAGE_COMPLETED =
-  STORAGE_PREFIX + "termine";
-
-const STORAGE_SECRETS =
-  STORAGE_PREFIX + "secrets";
-
-const STORAGE_MARKS_CONTROL =
-  STORAGE_PREFIX + "marksControl";
-
-const STORAGE_LIVING_MARKS =
-  STORAGE_PREFIX + "livingMarks";
-
-const STORAGE_DESTINY_PATH =
-  STORAGE_PREFIX + "destinyPath";
-
-const STORAGE_ISABEL_CAUGHT =
-  STORAGE_PREFIX + "isabelCaught";
-
-const STORAGE_ISABEL_IDEA =
-  STORAGE_PREFIX + "isabelIdea";
-
-const STORAGE_AMY_CHOICE =
-  STORAGE_PREFIX + "amyChoice";
-
-const STORAGE_ERASER_ARRIVAL =
-  STORAGE_PREFIX + "eraserArrival";
-
-const STORAGE_CAVES_CLUE =
-  STORAGE_PREFIX + "cavesClue";
-
-const STORAGE_THREE_SITES =
-  STORAGE_PREFIX + "threeSites";
-
-const STORAGE_DRAGON_PHOENIX =
-  STORAGE_PREFIX + "dragonPhoenix";
-
-const STORAGE_ELIE_CARGO =
-  STORAGE_PREFIX + "elieCargo";
-
-const STORAGE_OLD_REFUGE =
-  STORAGE_PREFIX + "oldRefuge";
-
-const STORAGE_EXPEDITION_TEAM =
-  STORAGE_PREFIX + "expeditionTeam";
-
-const STORAGE_LINES_MOVE =
-  STORAGE_PREFIX + "linesMove";
+  const secretPopup =
+    document.getElementById("secretPopup");
 
 
-/* =========================================================
-   COMPATIBILITÉ ANCIENNE
-========================================================= */
+  /* =========================================================
+     LOCALSTORAGE
+  ========================================================= */
 
-if (
-  localStorage.getItem(
-    "societeOmbre_chapitre20_finished"
-  ) === "1"
-) {
+  const STORAGE_PREFIX =
+    "societeOmbre_chapitre20_";
 
-  localStorage.setItem(
-    STORAGE_COMPLETED,
-    "1"
-  );
+  const STORAGE_SCROLL =
+    STORAGE_PREFIX + "scroll";
 
-}
+  const STORAGE_PROGRESS =
+    STORAGE_PREFIX + "progression";
 
+  const STORAGE_COMPLETED =
+    STORAGE_PREFIX + "termine";
 
-/* =========================================================
-   MODE DE LECTURE
-========================================================= */
+  const STORAGE_SECRETS =
+    STORAGE_PREFIX + "secrets";
 
-const urlParams =
-  new URLSearchParams(
-    window.location.search
-  );
+  const STORAGE_MARKS_CONTROL =
+    STORAGE_PREFIX + "marksControl";
 
-const lectureMode =
-  urlParams.get("lecture");
+  const STORAGE_LIVING_MARKS =
+    STORAGE_PREFIX + "livingMarks";
 
+  const STORAGE_DESTINY_PATH =
+    STORAGE_PREFIX + "destinyPath";
 
-/* =========================================================
-   OUTILS LOCALSTORAGE
-========================================================= */
+  const STORAGE_ISABEL_CAUGHT =
+    STORAGE_PREFIX + "isabelCaught";
 
-function getStoredArray(key) {
+  const STORAGE_ISABEL_IDEA =
+    STORAGE_PREFIX + "isabelIdea";
 
-  try {
+  const STORAGE_AMY_CHOICE =
+    STORAGE_PREFIX + "amyChoice";
 
-    const value =
-      JSON.parse(
-        localStorage.getItem(key)
-      );
+  const STORAGE_ERASER_ARRIVAL =
+    STORAGE_PREFIX + "eraserArrival";
 
-    return Array.isArray(value)
-      ? value
-      : [];
+  const STORAGE_CAVES_CLUE =
+    STORAGE_PREFIX + "cavesClue";
 
-  } catch {
+  const STORAGE_THREE_SITES =
+    STORAGE_PREFIX + "threeSites";
 
-    return [];
+  const STORAGE_DRAGON_PHOENIX =
+    STORAGE_PREFIX + "dragonPhoenix";
 
-  }
+  const STORAGE_ELIE_CARGO =
+    STORAGE_PREFIX + "elieCargo";
 
-}
+  const STORAGE_OLD_REFUGE =
+    STORAGE_PREFIX + "oldRefuge";
 
+  const STORAGE_EXPEDITION_TEAM =
+    STORAGE_PREFIX + "expeditionTeam";
 
-function saveStoredArray(
-  key,
-  values
-) {
-
-  localStorage.setItem(
-    key,
-    JSON.stringify(values)
-  );
-
-}
+  const STORAGE_LINES_MOVE =
+    STORAGE_PREFIX + "linesMove";
 
 
-function addStoredValue(
-  key,
-  value
-) {
-
-  const values =
-    getStoredArray(key);
-
+  /* =========================================================
+     COMPATIBILITÉ ANCIENNE
+  ========================================================= */
 
   if (
-    !values.includes(value)
+    localStorage.getItem(
+      "societeOmbre_chapitre20_finished"
+    ) === "1"
   ) {
 
-    values.push(value);
-
-    saveStoredArray(
-      key,
-      values
+    localStorage.setItem(
+      STORAGE_COMPLETED,
+      "1"
     );
 
   }
 
 
-  return values;
+  /* =========================================================
+     MODE DE LECTURE
+  ========================================================= */
 
-}
+  const urlParams =
+    new URLSearchParams(
+      window.location.search
+    );
 
-
-/* =========================================================
-   IMAGES MANQUANTES
-========================================================= */
-
-document
-  .querySelectorAll(".visual img")
-  .forEach((img) => {
-
-    img.addEventListener(
-      "error",
-      () => {
-
-        const visual =
-          img.closest(".visual");
+  const lectureMode =
+    urlParams.get("lecture");
 
 
-        if (visual) {
+  /* =========================================================
+     OUTILS LOCALSTORAGE
+  ========================================================= */
 
-          visual.classList.add(
-            "visual-missing"
+  function getStoredArray(key) {
+
+    try {
+
+      const value =
+        JSON.parse(
+          localStorage.getItem(key)
+        );
+
+      return Array.isArray(value)
+        ? value
+        : [];
+
+    } catch {
+
+      return [];
+
+    }
+
+  }
+
+
+  function saveStoredArray(
+    key,
+    values
+  ) {
+
+    localStorage.setItem(
+      key,
+      JSON.stringify(values)
+    );
+
+  }
+
+
+  function addStoredValue(
+    key,
+    value
+  ) {
+
+    const values =
+      getStoredArray(key);
+
+    if (
+      !values.includes(value)
+    ) {
+
+      values.push(value);
+
+      saveStoredArray(
+        key,
+        values
+      );
+
+    }
+
+    return values;
+
+  }
+
+
+  /* =========================================================
+     OUTIL RÉVÉLATION
+  ========================================================= */
+
+  function setRevealHTML(
+    reveal,
+    html
+  ) {
+
+    if (!reveal) {
+      return;
+    }
+
+    reveal.innerHTML =
+      html;
+
+    reveal.classList.add(
+      "open"
+    );
+
+  }
+
+
+  /* =========================================================
+     OUTIL BOUTONS ORDONNÉS
+  ========================================================= */
+
+  function updateOrderedButtons(
+    buttons,
+    progress
+  ) {
+
+    buttons.forEach(
+      (button, index) => {
+
+        button.classList.remove(
+          "active"
+        );
+
+        if (
+          index < progress
+        ) {
+
+          button.classList.add(
+            "completed"
+          );
+
+          button.disabled =
+            true;
+
+        } else {
+
+          button.disabled =
+            false;
+
+        }
+
+        if (
+          index === progress
+        ) {
+
+          button.classList.add(
+            "active"
           );
 
         }
@@ -228,41 +269,30 @@ document
       }
     );
 
-  });
+  }
 
 
-/* =========================================================
-   APPARITION DES SCÈNES
-========================================================= */
+  /* =========================================================
+     IMAGES MANQUANTES
+  ========================================================= */
 
-const sceneObserver =
-  new IntersectionObserver(
-    (entries) => {
+  document
+    .querySelectorAll(
+      ".visual img"
+    )
+    .forEach((img) => {
 
-      entries.forEach(
-        (entry) => {
+      img.addEventListener(
+        "error",
+        () => {
 
-          if (
-            entry.isIntersecting
-          ) {
+          const visual =
+            img.closest(".visual");
 
-            const scene =
-              entry.target;
+          if (visual) {
 
-
-            scene.classList.add(
-              "is-visible"
-            );
-
-
-            animateParagraphs(
-              scene
-            );
-
-
-            localStorage.setItem(
-              STORAGE_PROGRESS,
-              "1"
+            visual.classList.add(
+              "visual-missing"
             );
 
           }
@@ -270,396 +300,232 @@ const sceneObserver =
         }
       );
 
-    },
-    {
-      threshold: 0.14
+    });
+
+
+  /* =========================================================
+     TEXTE PROGRESSIF
+  ========================================================= */
+
+  function animateParagraphs(scene) {
+
+    if (
+      scene.dataset.textAnimated === "1"
+    ) {
+      return;
     }
-  );
 
+    scene.dataset.textAnimated =
+      "1";
 
-scenes.forEach(
-  (scene) => {
+    const paragraphs =
+      scene.querySelectorAll(
+        ".text-block p"
+      );
 
-    sceneObserver.observe(
-      scene
-    );
+    paragraphs.forEach(
+      (paragraph, index) => {
 
-  }
-);
+        paragraph.style.opacity =
+          "0";
 
+        paragraph.style.transform =
+          "translateY(12px)";
 
-/* =========================================================
-   TEXTE PROGRESSIF
-========================================================= */
+        setTimeout(
+          () => {
 
-function animateParagraphs(scene) {
-
-  if (
-    scene.dataset.textAnimated === "1"
-  ) {
-    return;
-  }
-
-
-  scene.dataset.textAnimated =
-    "1";
-
-
-  const paragraphs =
-    scene.querySelectorAll(
-      ".text-block p"
-    );
-
-
-  paragraphs.forEach(
-    (paragraph, index) => {
-
-      paragraph.style.opacity =
-        "0";
-
-      paragraph.style.transform =
-        "translateY(12px)";
-
-
-      setTimeout(
-        () => {
-
-          paragraph.animate(
-            [
+            paragraph.animate(
+              [
+                {
+                  opacity: 0,
+                  transform:
+                    "translateY(12px)"
+                },
+                {
+                  opacity: 1,
+                  transform:
+                    "translateY(0)"
+                }
+              ],
               {
-                opacity: 0,
-                transform: "translateY(12px)"
-              },
-              {
-                opacity: 1,
-                transform: "translateY(0)"
+                duration: 650,
+                easing: "ease-out",
+                fill: "forwards"
               }
-            ],
-            {
-              duration: 650,
-              easing: "ease-out",
-              fill: "forwards"
-            }
-          );
-
-        },
-        index * 105
-      );
-
-    }
-  );
-
-}
-
-
-/* =========================================================
-   BARRE DE PROGRESSION
-========================================================= */
-
-function updateProgress() {
-
-  if (!progressFill) {
-    return;
-  }
-
-
-  const documentHeight =
-    document.documentElement.scrollHeight -
-    window.innerHeight;
-
-
-  if (
-    documentHeight <= 0
-  ) {
-
-    progressFill.style.width =
-      "0%";
-
-    return;
-
-  }
-
-
-  const percentage =
-    Math.min(
-      100,
-      Math.max(
-        0,
-        (
-          window.scrollY /
-          documentHeight
-        ) * 100
-      )
-    );
-
-
-  progressFill.style.width =
-    percentage + "%";
-
-}
-
-
-window.addEventListener(
-  "scroll",
-  updateProgress,
-  {
-    passive: true
-  }
-);
-
-
-updateProgress();
-
-
-/* =========================================================
-   SAUVEGARDE POSITION
-========================================================= */
-
-let saveScrollTimer =
-  null;
-
-
-window.addEventListener(
-  "scroll",
-  () => {
-
-    clearTimeout(
-      saveScrollTimer
-    );
-
-
-    saveScrollTimer =
-      setTimeout(
-        () => {
-
-          localStorage.setItem(
-            STORAGE_SCROLL,
-            Math.round(
-              window.scrollY
-            )
-          );
-
-
-          localStorage.setItem(
-            STORAGE_PROGRESS,
-            "1"
-          );
-
-        },
-        250
-      );
-
-  },
-  {
-    passive: true
-  }
-);
-
-
-/* =========================================================
-   REPRENDRE
-========================================================= */
-
-if (
-  lectureMode === "reprendre"
-) {
-
-  const savedPosition =
-    parseInt(
-      localStorage.getItem(
-        STORAGE_SCROLL
-      ),
-      10
-    );
-
-
-  if (
-    !Number.isNaN(savedPosition) &&
-    savedPosition > 0
-  ) {
-
-    setTimeout(
-      () => {
-
-        window.scrollTo({
-          top: savedPosition,
-          left: 0,
-          behavior: "auto"
-        });
-
-
-        updateProgress();
-
-      },
-      400
-    );
-
-  }
-
-}
-
-
-/* =========================================================
-   RECOMMENCER
-========================================================= */
-
-if (
-  lectureMode === "recommencer"
-) {
-
-  setTimeout(
-    () => {
-
-      window.scrollTo({
-        top: 0,
-        left: 0,
-        behavior: "auto"
-      });
-
-
-      updateProgress();
-
-    },
-    100
-  );
-
-}
-
-
-/* =========================================================
-   BOUTON CONTINUER
-========================================================= */
-
-document
-  .querySelectorAll("[data-next]")
-  .forEach((button) => {
-
-    button.addEventListener(
-      "click",
-      () => {
-
-        const currentScene =
-          button.closest(".scene");
-
-
-        if (!currentScene) {
-          return;
-        }
-
-
-        const nextScene =
-          currentScene.nextElementSibling;
-
-
-        if (nextScene) {
-
-          nextScene.scrollIntoView({
-            behavior: "smooth",
-            block: "start"
-          });
-
-        }
+            );
+
+          },
+          index * 105
+        );
 
       }
     );
 
-  });
-
-
-/* =========================================================
-   MENU
-========================================================= */
-
-function openMenu() {
-
-  if (!chapterMenu) {
-    return;
   }
 
 
-  chapterMenu.classList.add(
-    "open"
+  /* =========================================================
+     APPARITION DES SCÈNES
+  ========================================================= */
+
+  const sceneObserver =
+    new IntersectionObserver(
+      (entries) => {
+
+        entries.forEach(
+          (entry) => {
+
+            if (
+              entry.isIntersecting
+            ) {
+
+              const scene =
+                entry.target;
+
+              scene.classList.add(
+                "is-visible"
+              );
+
+              animateParagraphs(
+                scene
+              );
+
+              localStorage.setItem(
+                STORAGE_PROGRESS,
+                "1"
+              );
+
+            }
+
+          }
+        );
+
+      },
+      {
+        threshold: 0.14
+      }
+    );
+
+
+  scenes.forEach(
+    (scene) => {
+
+      sceneObserver.observe(
+        scene
+      );
+
+    }
   );
 
 
-  chapterMenu.setAttribute(
-    "aria-hidden",
-    "false"
-  );
+  /* =========================================================
+     BARRE DE PROGRESSION
+  ========================================================= */
 
+  function updateProgress() {
 
-  document.body.classList.add(
-    "no-scroll"
-  );
+    if (!progressFill) {
+      return;
+    }
 
-}
-
-
-function closeMenu() {
-
-  if (!chapterMenu) {
-    return;
-  }
-
-
-  chapterMenu.classList.remove(
-    "open"
-  );
-
-
-  chapterMenu.setAttribute(
-    "aria-hidden",
-    "true"
-  );
-
-
-  document.body.classList.remove(
-    "no-scroll"
-  );
-
-}
-
-
-menuBtn?.addEventListener(
-  "click",
-  openMenu
-);
-
-
-menuClose?.addEventListener(
-  "click",
-  closeMenu
-);
-
-
-chapterMenu?.addEventListener(
-  "click",
-  (event) => {
+    const documentHeight =
+      document.documentElement.scrollHeight -
+      window.innerHeight;
 
     if (
-      event.target === chapterMenu
+      documentHeight <= 0
     ) {
 
-      closeMenu();
+      progressFill.style.width =
+        "0%";
+
+      return;
 
     }
 
+    const percentage =
+      Math.min(
+        100,
+        Math.max(
+          0,
+          (
+            window.scrollY /
+            documentHeight
+          ) * 100
+        )
+      );
+
+    progressFill.style.width =
+      percentage + "%";
+
   }
-);
 
 
-/* =========================================================
-   REPRENDRE VIA MENU
-========================================================= */
-
-resumeBtn?.addEventListener(
-  "click",
-  () => {
-
-    closeMenu();
+  window.addEventListener(
+    "scroll",
+    updateProgress,
+    {
+      passive: true
+    }
+  );
 
 
-    const position =
+  updateProgress();
+
+
+  /* =========================================================
+     SAUVEGARDE POSITION
+  ========================================================= */
+
+  let saveScrollTimer =
+    null;
+
+
+  window.addEventListener(
+    "scroll",
+    () => {
+
+      clearTimeout(
+        saveScrollTimer
+      );
+
+      saveScrollTimer =
+        setTimeout(
+          () => {
+
+            localStorage.setItem(
+              STORAGE_SCROLL,
+              Math.round(
+                window.scrollY
+              )
+            );
+
+            localStorage.setItem(
+              STORAGE_PROGRESS,
+              "1"
+            );
+
+          },
+          250
+        );
+
+    },
+    {
+      passive: true
+    }
+  );
+
+
+  /* =========================================================
+     REPRENDRE
+  ========================================================= */
+
+  if (
+    lectureMode === "reprendre"
+  ) {
+
+    const savedPosition =
       parseInt(
         localStorage.getItem(
           STORAGE_SCROLL
@@ -667,400 +533,796 @@ resumeBtn?.addEventListener(
         10
       );
 
-
     if (
-      !Number.isNaN(position)
+      !Number.isNaN(
+        savedPosition
+      ) &&
+      savedPosition > 0
     ) {
 
-      window.scrollTo({
-        top: position,
-        behavior: "smooth"
-      });
+      setTimeout(
+        () => {
+
+          window.scrollTo({
+            top: savedPosition,
+            left: 0,
+            behavior: "auto"
+          });
+
+          updateProgress();
+
+        },
+        400
+      );
 
     }
 
   }
-);
 
 
-/* =========================================================
-   RECOMMENCER LE CHAPITRE
-========================================================= */
+  /* =========================================================
+     RECOMMENCER
+  ========================================================= */
 
-function restartChapterFunction() {
-
-  const keysToDelete =
-    [];
-
-
-  for (
-    let i = 0;
-    i < localStorage.length;
-    i++
+  if (
+    lectureMode === "recommencer"
   ) {
 
-    const key =
-      localStorage.key(i);
+    setTimeout(
+      () => {
 
+        window.scrollTo({
+          top: 0,
+          left: 0,
+          behavior: "auto"
+        });
+
+        updateProgress();
+
+      },
+      100
+    );
+
+  }
+
+
+  /* =========================================================
+     BOUTONS CONTINUER
+  ========================================================= */
+
+  document
+    .querySelectorAll(
+      "[data-next]"
+    )
+    .forEach((button) => {
+
+      button.addEventListener(
+        "click",
+        () => {
+
+          const currentScene =
+            button.closest(
+              ".scene"
+            );
+
+          if (!currentScene) {
+            return;
+          }
+
+          const nextScene =
+            currentScene
+              .nextElementSibling;
+
+          if (nextScene) {
+
+            nextScene.scrollIntoView({
+              behavior: "smooth",
+              block: "start"
+            });
+
+          }
+
+        }
+      );
+
+    });
+
+
+  /* =========================================================
+     MENU
+  ========================================================= */
+
+  function openMenu() {
+
+    if (!chapterMenu) {
+      return;
+    }
+
+    chapterMenu.classList.add(
+      "open"
+    );
+
+    chapterMenu.setAttribute(
+      "aria-hidden",
+      "false"
+    );
+
+    document.body.classList.add(
+      "no-scroll"
+    );
+
+  }
+
+
+  function closeMenu() {
+
+    if (!chapterMenu) {
+      return;
+    }
+
+    chapterMenu.classList.remove(
+      "open"
+    );
+
+    chapterMenu.setAttribute(
+      "aria-hidden",
+      "true"
+    );
+
+    document.body.classList.remove(
+      "no-scroll"
+    );
+
+  }
+
+
+  menuBtn?.addEventListener(
+    "click",
+    openMenu
+  );
+
+
+  menuClose?.addEventListener(
+    "click",
+    closeMenu
+  );
+
+
+  chapterMenu?.addEventListener(
+    "click",
+    (event) => {
+
+      if (
+        event.target ===
+        chapterMenu
+      ) {
+
+        closeMenu();
+
+      }
+
+    }
+  );
+
+
+  resumeBtn?.addEventListener(
+    "click",
+    () => {
+
+      closeMenu();
+
+      const position =
+        parseInt(
+          localStorage.getItem(
+            STORAGE_SCROLL
+          ),
+          10
+        );
+
+      if (
+        !Number.isNaN(
+          position
+        )
+      ) {
+
+        window.scrollTo({
+          top: position,
+          behavior: "smooth"
+        });
+
+      }
+
+    }
+  );
+
+
+  /* =========================================================
+     RECOMMENCER CHAPITRE
+  ========================================================= */
+
+  function restartChapterFunction() {
+
+    const keysToDelete =
+      [];
+
+    for (
+      let i = 0;
+      i < localStorage.length;
+      i++
+    ) {
+
+      const key =
+        localStorage.key(i);
+
+      if (
+        key &&
+        key.startsWith(
+          STORAGE_PREFIX
+        )
+      ) {
+
+        keysToDelete.push(
+          key
+        );
+
+      }
+
+    }
+
+    keysToDelete.forEach(
+      (key) => {
+
+        localStorage.removeItem(
+          key
+        );
+
+      }
+    );
+
+    window.location.href =
+      "chapitre20.html?lecture=recommencer";
+
+  }
+
+
+  restartBtn?.addEventListener(
+    "click",
+    restartChapterFunction
+  );
+
+
+  restartChapter?.addEventListener(
+    "click",
+    restartChapterFunction
+  );
+
+
+  /* =========================================================
+     SECRETS
+  ========================================================= */
+
+  function getSecrets() {
+
+    try {
+
+      const value =
+        JSON.parse(
+          localStorage.getItem(
+            STORAGE_SECRETS
+          )
+        );
+
+      return Array.isArray(value)
+        ? value
+        : [];
+
+    } catch {
+
+      return [];
+
+    }
+
+  }
+
+
+  function saveSecret(secret) {
+
+    const secrets =
+      getSecrets();
 
     if (
-      key &&
-      key.startsWith(
-        STORAGE_PREFIX
+      !secrets.includes(
+        secret
       )
     ) {
 
-      keysToDelete.push(key);
+      secrets.push(
+        secret
+      );
 
-    }
-
-  }
-
-
-  keysToDelete.forEach(
-    (key) => {
-
-      localStorage.removeItem(key);
-
-    }
-  );
-
-
-  window.location.href =
-    "chapitre20.html?lecture=recommencer";
-
-}
-
-
-restartBtn?.addEventListener(
-  "click",
-  restartChapterFunction
-);
-
-
-restartChapter?.addEventListener(
-  "click",
-  restartChapterFunction
-);
-
-
-/* =========================================================
-   SECRETS
-========================================================= */
-
-function getSecrets() {
-
-  try {
-
-    const value =
-      JSON.parse(
-        localStorage.getItem(
-          STORAGE_SECRETS
+      localStorage.setItem(
+        STORAGE_SECRETS,
+        JSON.stringify(
+          secrets
         )
       );
 
-
-    return Array.isArray(value)
-      ? value
-      : [];
-
-  } catch {
-
-    return [];
+    }
 
   }
 
-}
+
+  let secretTimer =
+    null;
 
 
-function saveSecret(secret) {
+  function hideSecretPopup() {
 
-  const secrets =
-    getSecrets();
+    if (!secretPopup) {
+      return;
+    }
+
+    secretPopup.classList.remove(
+      "show"
+    );
+
+    secretPopup.setAttribute(
+      "aria-hidden",
+      "true"
+    );
+
+  }
 
 
-  if (
-    !secrets.includes(secret)
+  function showSecret(
+    secretName,
+    secretText
   ) {
 
-    secrets.push(secret);
-
-
-    localStorage.setItem(
-      STORAGE_SECRETS,
-      JSON.stringify(secrets)
+    saveSecret(
+      secretName
     );
 
-  }
+    if (!secretPopup) {
+      return;
+    }
 
-}
+    const inner =
+      secretPopup.querySelector(
+        ".secret-popup-inner"
+      );
 
+    if (!inner) {
+      return;
+    }
 
-/* =========================================================
-   POPUP INFORMATION
-========================================================= */
+    let description =
+      inner.querySelector(
+        ".secret-description"
+      );
 
-let secretTimer =
-  null;
+    if (!description) {
 
+      description =
+        document.createElement(
+          "p"
+        );
 
-function hideSecretPopup() {
+      description.className =
+        "secret-description";
 
-  if (!secretPopup) {
-    return;
-  }
+      description.style.marginTop =
+        "14px";
 
+      description.style.fontSize =
+        "15px";
 
-  secretPopup.classList.remove(
-    "show"
-  );
+      description.style.lineHeight =
+        "1.55";
 
+      description.style.letterSpacing =
+        "0";
 
-  secretPopup.setAttribute(
-    "aria-hidden",
-    "true"
-  );
+      description.style.color =
+        "#f4eee6";
 
-}
+      inner.appendChild(
+        description
+      );
 
+    }
 
-function showSecret(
-  secretName,
-  secretText
-) {
+    description.textContent =
+      secretText;
 
-  saveSecret(secretName);
-
-
-  if (!secretPopup) {
-    return;
-  }
-
-
-  const inner =
-    secretPopup.querySelector(
-      ".secret-popup-inner"
+    secretPopup.classList.add(
+      "show"
     );
 
-
-  if (!inner) {
-    return;
-  }
-
-
-  let description =
-    inner.querySelector(
-      ".secret-description"
+    secretPopup.setAttribute(
+      "aria-hidden",
+      "false"
     );
 
+    playSecretSound();
 
-  if (!description) {
-
-    description =
-      document.createElement("p");
-
-
-    description.className =
-      "secret-description";
-
-
-    description.style.marginTop =
-      "14px";
-
-    description.style.fontSize =
-      "15px";
-
-    description.style.lineHeight =
-      "1.55";
-
-    description.style.letterSpacing =
-      "0";
-
-    description.style.color =
-      "#f4eee6";
-
-
-    inner.appendChild(
-      description
+    clearTimeout(
+      secretTimer
     );
+
+    secretTimer =
+      setTimeout(
+        hideSecretPopup,
+        3200
+      );
 
   }
 
 
-  description.textContent =
-    secretText;
+  /* =========================================================
+     INTERACTION LIBRE
+  ========================================================= */
 
+  function setupFreeInteraction({
+    selector,
+    datasetName,
+    storageKey,
+    revealId,
+    texts,
+    required,
+    finalHTML,
+    secretName = null,
+    secretText = null,
+    sound = playAnalysisSound
+  }) {
 
-  secretPopup.classList.add(
-    "show"
-  );
+    const reveal =
+      document.getElementById(
+        revealId
+      );
 
+    let observed =
+      getStoredArray(
+        storageKey
+      );
 
-  secretPopup.setAttribute(
-    "aria-hidden",
-    "false"
-  );
-
-
-  playSecretSound();
-
-
-  clearTimeout(
-    secretTimer
-  );
-
-
-  secretTimer =
-    setTimeout(
-      hideSecretPopup,
-      3200
-    );
-
-}
-
-
-/* =========================================================
-   OUTILS INTERACTIONS
-========================================================= */
-
-function setRevealHTML(
-  reveal,
-  html
-) {
-
-  if (!reveal) {
-    return;
-  }
-
-
-  reveal.innerHTML =
-    html;
-
-
-  reveal.classList.add(
-    "open"
-  );
-
-}
-
-
-function updateOrderedButtons(
-  buttons,
-  progress
-) {
-
-  buttons.forEach(
-    (button, index) => {
-
-      button.classList.remove(
-        "active"
+    const buttons =
+      document.querySelectorAll(
+        selector
       );
 
 
-      if (
-        index < progress
-      ) {
+    buttons.forEach(
+      (button) => {
 
-        button.classList.add(
-          "completed"
+        if (
+          observed.includes(
+            button.dataset[
+              datasetName
+            ]
+          )
+        ) {
+
+          button.classList.add(
+            "completed"
+          );
+
+        }
+
+
+        button.addEventListener(
+          "click",
+          () => {
+
+            const type =
+              button.dataset[
+                datasetName
+              ];
+
+            observed =
+              addStoredValue(
+                storageKey,
+                type
+              );
+
+            button.classList.add(
+              "completed"
+            );
+
+            setRevealHTML(
+              reveal,
+              `
+                <p>
+                  ${texts[type] || ""}
+                </p>
+              `
+            );
+
+            sound();
+
+            if (
+              observed.length >=
+              required
+            ) {
+
+              setRevealHTML(
+                reveal,
+                finalHTML
+              );
+
+              if (
+                secretName &&
+                secretText
+              ) {
+
+                showSecret(
+                  secretName,
+                  secretText
+                );
+
+              }
+
+            }
+
+          }
         );
 
-        button.disabled =
-          true;
-
-      } else {
-
-        button.disabled =
-          false;
-
       }
+    );
 
 
-      if (
-        index === progress
-      ) {
+    if (
+      observed.length >=
+      required
+    ) {
 
-        button.classList.add(
-          "active"
-        );
-
-      }
+      setRevealHTML(
+        reveal,
+        finalHTML
+      );
 
     }
-  );
 
-}
-
-
-/* =========================================================
-   INTERACTION 1
-   DRAGON / PHÉNIX / CONTRÔLE
-========================================================= */
-
-const marksControlReveal =
-  document.getElementById(
-    "marksControlReveal"
-  );
+  }
 
 
-const marksControlButtons =
-  document.querySelectorAll(
-    ".marks-control-trigger"
-  );
+  /* =========================================================
+     INTERACTION ORDONNÉE
+  ========================================================= */
+
+  function setupOrderedInteraction({
+    selector,
+    datasetName,
+    storageKey,
+    revealId,
+    order,
+    texts,
+    finalHTML,
+    secretName = null,
+    secretText = null,
+    sound = playRevealSound
+  }) {
+
+    const reveal =
+      document.getElementById(
+        revealId
+      );
+
+    const buttons =
+      document.querySelectorAll(
+        selector
+      );
+
+    let progress =
+      parseInt(
+        localStorage.getItem(
+          storageKey
+        ) || "0",
+        10
+      );
 
 
-const marksControlOrder = [
-  "breath",
-  "movement",
-  "dragon",
-  "phoenix",
-  "control"
-];
+    if (
+      !Number.isFinite(
+        progress
+      ) ||
+      progress < 0
+    ) {
+
+      progress = 0;
+
+    }
 
 
-let marksControlProgress =
-  parseInt(
-    localStorage.getItem(
-      STORAGE_MARKS_CONTROL
-    ) || "0",
-    10
-  );
+    if (
+      progress >
+      order.length
+    ) {
+
+      progress =
+        order.length;
+
+    }
 
 
-const marksControlTexts = {
-
-  breath:
-    "Hope commence par ralentir sa respiration et stabiliser son corps avant le moindre mouvement.",
-
-  movement:
-    "Ses gestes accélèrent progressivement, mais chaque frappe et chaque esquive restent parfaitement contrôlées.",
-
-  dragon:
-    "Le Dragon apparaît sur son bras pendant l’effort, ses couleurs suivant les mouvements de ses muscles.",
-
-  phoenix:
-    "Une chaleur gagne ensuite son dos et le Phénix lumineux se déploie presque d’une épaule à l’autre.",
-
-  control:
-    "Hope ne subit plus seulement les manifestations : elle semble désormais capable de les accompagner et de les contrôler beaucoup plus facilement."
-
-};
+    updateOrderedButtons(
+      buttons,
+      progress
+    );
 
 
-function restoreMarksControl() {
+    if (
+      progress >=
+      order.length
+    ) {
 
-  updateOrderedButtons(
-    marksControlButtons,
-    marksControlProgress
-  );
+      setRevealHTML(
+        reveal,
+        finalHTML
+      );
+
+    }
 
 
-  if (
-    marksControlProgress >= 5
-  ) {
+    buttons.forEach(
+      (button) => {
 
-    setRevealHTML(
-      marksControlReveal,
+        button.addEventListener(
+          "click",
+          () => {
+
+            const selected =
+              button.dataset[
+                datasetName
+              ];
+
+            const expected =
+              order[
+                progress
+              ];
+
+
+            if (
+              selected !==
+              expected
+            ) {
+
+              button.classList.add(
+                "wrong"
+              );
+
+              playWrongSound();
+
+
+              setTimeout(
+                () => {
+
+                  button.classList.remove(
+                    "wrong"
+                  );
+
+                },
+                650
+              );
+
+              return;
+
+            }
+
+
+            progress++;
+
+
+            localStorage.setItem(
+              storageKey,
+              String(
+                progress
+              )
+            );
+
+
+            updateOrderedButtons(
+              buttons,
+              progress
+            );
+
+
+            setRevealHTML(
+              reveal,
+              `
+                <p>
+                  ${texts[selected] || ""}
+                </p>
+              `
+            );
+
+
+            sound();
+
+
+            if (
+              progress >=
+              order.length
+            ) {
+
+              setRevealHTML(
+                reveal,
+                finalHTML
+              );
+
+
+              if (
+                secretName &&
+                secretText
+              ) {
+
+                showSecret(
+                  secretName,
+                  secretText
+                );
+
+              }
+
+            }
+
+          }
+        );
+
+      }
+    );
+
+  }
+
+
+  /* =========================================================
+     1 — DRAGON / PHÉNIX / CONTRÔLE
+  ========================================================= */
+
+  setupOrderedInteraction({
+
+    selector:
+      ".marks-control-trigger",
+
+    datasetName:
+      "marksControl",
+
+    storageKey:
+      STORAGE_MARKS_CONTROL,
+
+    revealId:
+      "marksControlReveal",
+
+    order: [
+      "breath",
+      "movement",
+      "dragon",
+      "phoenix",
+      "control"
+    ],
+
+    sound:
+      playRevealSound,
+
+    texts: {
+
+      breath:
+        "Hope commence par ralentir sa respiration et stabiliser son corps avant le moindre mouvement.",
+
+      movement:
+        "Ses gestes accélèrent progressivement, mais chaque frappe et chaque esquive restent parfaitement contrôlées.",
+
+      dragon:
+        "Le Dragon apparaît sur son bras pendant l’effort, ses couleurs suivant les mouvements de ses muscles.",
+
+      phoenix:
+        "Une chaleur gagne ensuite son dos et le Phénix lumineux se déploie presque d’une épaule à l’autre.",
+
+      control:
+        "Hope ne subit plus seulement les manifestations : elle semble désormais capable de les accompagner et de les contrôler beaucoup plus facilement."
+
+    },
+
+    finalHTML:
       `
         <p>
           Respiration.
@@ -1082,487 +1344,213 @@ function restoreMarksControl() {
           LE CONTRÔLE
           DEVIENT PLUS NATUREL.
         </p>
+      `,
+
+    secretName:
+      "hope-marks-control",
+
+    secretText:
+      "Depuis son passage dans la grotte, Hope semble pouvoir faire apparaître Dragon et Phénix plus facilement."
+
+  });
+
+
+  /* =========================================================
+     2 — LES MARQUES VIVANTES
+  ========================================================= */
+
+  setupFreeInteraction({
+
+    selector:
+      ".living-marks-trigger",
+
+    datasetName:
+      "livingMarks",
+
+    storageKey:
+      STORAGE_LIVING_MARKS,
+
+    revealId:
+      "livingMarksReveal",
+
+    required:
+      5,
+
+    sound:
+      playBiologySound,
+
+    texts: {
+
+      distance:
+        "Les couleurs du Dragon s’intensifient alors que la main de Betty se trouve encore à quelques centimètres de la peau.",
+
+      color:
+        "Les différentes couleurs ne restent pas fixes : elles semblent répondre à l’environnement et à l’état d’Hope.",
+
+      touch:
+        "Lorsque Betty touche enfin le bord du Dragon, une impulsion lumineuse traverse tout le dessin.",
+
+      heat:
+        "Hope décrit une chaleur interne accompagnée d’une concentration différente et parfois d’une légère euphorie.",
+
+      alive:
+        "Pour Betty, il ne s’agit ni d’un tatouage classique ni d’une simple modification de pigmentation."
+
+    },
+
+    finalHTML:
       `
-    );
+        <p>
+          Réaction avant contact.
+        </p>
 
-  }
+        <p>
+          Couleurs variables.
+        </p>
 
-}
+        <p>
+          Chaleur.
+        </p>
 
+        <p>
+          Réponse au toucher.
+        </p>
 
-marksControlButtons.forEach(
-  (button) => {
+        <p class="impact-text">
+          CE NE SONT PAS
+          DE SIMPLES TATOUAGES.
+        </p>
+      `,
 
-    button.addEventListener(
-      "click",
-      () => {
+    secretName:
+      "living-dragon-phoenix",
 
-        const selected =
-          button.dataset.marksControl;
-
-
-        const expected =
-          marksControlOrder[
-            marksControlProgress
-          ];
-
-
-        if (
-          selected !== expected
-        ) {
-
-          button.classList.add(
-            "wrong"
-          );
-
-
-          playWrongSound();
-
-
-          setTimeout(
-            () => {
-
-              button.classList.remove(
-                "wrong"
-              );
-
-            },
-            650
-          );
-
-
-          return;
-
-        }
-
-
-        marksControlProgress++;
-
-
-        localStorage.setItem(
-          STORAGE_MARKS_CONTROL,
-          marksControlProgress
-        );
-
-
-        updateOrderedButtons(
-          marksControlButtons,
-          marksControlProgress
-        );
-
-
-        setRevealHTML(
-          marksControlReveal,
-          `
-            <p>
-              ${marksControlTexts[selected]}
-            </p>
-          `
-        );
-
-
-        playRevealSound();
-
-
-        if (
-          marksControlProgress >= 5
-        ) {
-
-          showSecret(
-            "hope-marks-control",
-            "Depuis son passage dans la grotte, Hope semble pouvoir faire apparaître Dragon et Phénix plus facilement."
-          );
-
-        }
-
-      }
-    );
+    secretText:
+      "Dragon et Phénix se comportent comme des manifestations biologiquement actives, et non comme de simples tatouages."
 
   });
 
 
-restoreMarksControl();
+  /* =========================================================
+     3 — DESTINÉE / TRAJECTOIRE
+  ========================================================= */
 
+  setupFreeInteraction({
 
-/* =========================================================
-   INTERACTION 2
-   LES MARQUES VIVANTES
-========================================================= */
+    selector:
+      ".destiny-path-trigger",
 
-const livingMarksReveal =
-  document.getElementById(
-    "livingMarksReveal"
-  );
+    datasetName:
+      "destinyPath",
 
+    storageKey:
+      STORAGE_DESTINY_PATH,
 
-let livingMarksObserved =
-  getStoredArray(
-    STORAGE_LIVING_MARKS
-  );
+    revealId:
+      "destinyPathReveal",
 
+    required:
+      5,
 
-const livingMarksTexts = {
+    sound:
+      playWarmSound,
 
-  distance:
-    "Les couleurs du Dragon s’intensifient alors que la main de Betty se trouve encore à quelques centimètres de la peau.",
+    texts: {
 
-  color:
-    "Les différentes couleurs ne restent pas fixes : elles semblent répondre à l’environnement et à l’état d’Hope.",
+      event:
+        "Maître Lee savait seulement qu’un événement important avait eu lieu lors de la naissance d’Anna.",
 
-  touch:
-    "Lorsque Betty touche enfin le bord du Dragon, une impulsion lumineuse traverse tout le dessin.",
+      hale:
+        "Il savait qu’Hale devait protéger l’enfant, mais pas déterminer la manière dont elle devait vivre.",
 
-  heat:
-    "Hope décrit une chaleur interne accompagnée d’une concentration différente et parfois d’une légère euphorie.",
+      texts:
+        "Certains textes anciens pouvaient concerner Anna, sans permettre de savoir exactement qui elle deviendrait.",
 
-  alive:
-    "Pour Betty, il ne s’agit ni d’un tatouage classique ni d’une simple modification de pigmentation."
+      trajectory:
+        "Lee distingue une destinée imposée d’une trajectoire possible : une direction n’est pas une obligation.",
 
-};
+      choice:
+        "Même si Anna possède une fonction particulière, elle reste libre de décider ce qu’elle veut en faire."
 
+    },
 
-document
-  .querySelectorAll(
-    ".living-marks-trigger"
-  )
-  .forEach((button) => {
+    finalHTML:
+      `
+        <p>
+          Une direction
+          peut exister.
+        </p>
 
-    button.addEventListener(
-      "click",
-      () => {
+        <p>
+          Elle ne décide pas
+          de ce qu’Anna
+          doit devenir.
+        </p>
 
-        const type =
-          button.dataset.livingMarks;
+        <p class="impact-text">
+          DESTINÉE
+          N’EST PAS TRAJECTOIRE.
+        </p>
+      `,
 
+    secretName:
+      "anna-free-trajectory",
 
-        livingMarksObserved =
-          addStoredValue(
-            STORAGE_LIVING_MARKS,
-            type
-          );
-
-
-        button.classList.add(
-          "completed"
-        );
-
-
-        setRevealHTML(
-          livingMarksReveal,
-          `
-            <p>
-              ${livingMarksTexts[type]}
-            </p>
-          `
-        );
-
-
-        playBiologySound();
-
-
-        if (
-          livingMarksObserved.length >= 5
-        ) {
-
-          setRevealHTML(
-            livingMarksReveal,
-            `
-              <p>
-                Réaction avant contact.
-              </p>
-
-              <p>
-                Couleurs variables.
-              </p>
-
-              <p>
-                Chaleur.
-              </p>
-
-              <p>
-                Réponse au toucher.
-              </p>
-
-              <p class="impact-text">
-                CE NE SONT PAS
-                DE SIMPLES TATOUAGES.
-              </p>
-            `
-          );
-
-
-          showSecret(
-            "living-dragon-phoenix",
-            "Dragon et Phénix se comportent comme des manifestations biologiquement actives, et non comme de simples tatouages."
-          );
-
-        }
-
-      }
-    );
+    secretText:
+      "Les anciens textes peuvent indiquer une trajectoire possible pour Anna, mais pas lui imposer une destinée."
 
   });
 
 
-document
-  .querySelectorAll(
-    ".living-marks-trigger"
-  )
-  .forEach((button) => {
+  /* =========================================================
+     4 — ISABEL EST DÉMASQUÉE
+  ========================================================= */
 
-    if (
-      livingMarksObserved.includes(
-        button.dataset.livingMarks
-      )
-    ) {
+  setupOrderedInteraction({
 
-      button.classList.add(
-        "completed"
-      );
+    selector:
+      ".isabel-caught-trigger",
 
-    }
+    datasetName:
+      "isabelCaught",
 
-  });
+    storageKey:
+      STORAGE_ISABEL_CAUGHT,
 
+    revealId:
+      "isabelCaughtReveal",
 
-if (
-  livingMarksObserved.length >= 5
-) {
+    order: [
+      "deposit",
+      "clive",
+      "hale",
+      "lucy",
+      "understands"
+    ],
 
-  setRevealHTML(
-    livingMarksReveal,
-    `
-      <p class="impact-text">
-        ILS RÉAGISSENT.
-      </p>
-    `
-  );
+    sound:
+      playDeductionSound,
 
-}
+    texts: {
 
+      deposit:
+        "Isabel répète exactement son rituel habituel dans l’oratoire et dépose une nouvelle information.",
 
-/* =========================================================
-   INTERACTION 3
-   DESTINÉE / TRAJECTOIRE
-========================================================= */
+      clive:
+        "Cette fois, Clive est déjà caché dans la pièce et observe toute la scène.",
 
-const destinyPathReveal =
-  document.getElementById(
-    "destinyPathReveal"
-  );
+      hale:
+        "Lorsque Isabel cherche une sortie, Hale apparaît à son tour.",
 
+      lucy:
+        "Lucy rejoint finalement la pièce, fermant toute possibilité de faire semblant.",
 
-let destinyPathObserved =
-  getStoredArray(
-    STORAGE_DESTINY_PATH
-  );
+      understands:
+        "Isabel comprend immédiatement qu’ils connaissent désormais son rôle."
 
+    },
 
-const destinyPathTexts = {
-
-  event:
-    "Maître Lee savait seulement qu’un événement important avait eu lieu lors de la naissance d’Anna.",
-
-  hale:
-    "Il savait qu’Hale devait protéger l’enfant, mais pas déterminer la manière dont elle devait vivre.",
-
-  texts:
-    "Certains textes anciens pouvaient concerner Anna, sans permettre de savoir exactement qui elle deviendrait.",
-
-  trajectory:
-    "Lee distingue une destinée imposée d’une trajectoire possible : une direction n’est pas une obligation.",
-
-  choice:
-    "Même si Anna possède une fonction particulière, elle reste libre de décider ce qu’elle veut en faire."
-
-};
-
-
-document
-  .querySelectorAll(
-    ".destiny-path-trigger"
-  )
-  .forEach((button) => {
-
-    button.addEventListener(
-      "click",
-      () => {
-
-        const type =
-          button.dataset.destinyPath;
-
-
-        destinyPathObserved =
-          addStoredValue(
-            STORAGE_DESTINY_PATH,
-            type
-          );
-
-
-        button.classList.add(
-          "completed"
-        );
-
-
-        setRevealHTML(
-          destinyPathReveal,
-          `
-            <p>
-              ${destinyPathTexts[type]}
-            </p>
-          `
-        );
-
-
-        playWarmSound();
-
-
-        if (
-          destinyPathObserved.length >= 5
-        ) {
-
-          setRevealHTML(
-            destinyPathReveal,
-            `
-              <p>
-                Une direction
-                peut exister.
-              </p>
-
-              <p>
-                Elle ne décide pas
-                de ce qu’Anna
-                doit devenir.
-              </p>
-
-              <p class="impact-text">
-                DESTINÉE
-                N’EST PAS TRAJECTOIRE.
-              </p>
-            `
-          );
-
-
-          showSecret(
-            "anna-free-trajectory",
-            "Les anciens textes peuvent indiquer une trajectoire possible pour Anna, mais pas lui imposer une destinée."
-          );
-
-        }
-
-      }
-    );
-
-  });
-
-
-document
-  .querySelectorAll(
-    ".destiny-path-trigger"
-  )
-  .forEach((button) => {
-
-    if (
-      destinyPathObserved.includes(
-        button.dataset.destinyPath
-      )
-    ) {
-
-      button.classList.add(
-        "completed"
-      );
-
-    }
-
-  });
-
-
-if (
-  destinyPathObserved.length >= 5
-) {
-
-  setRevealHTML(
-    destinyPathReveal,
-    `
-      <p class="impact-text">
-        UNE DIRECTION
-        N’EST PAS UNE OBLIGATION.
-      </p>
-    `
-  );
-
-}
-
-
-/* =========================================================
-   INTERACTION 4
-   ISABEL EST DÉMASQUÉE
-========================================================= */
-
-const isabelCaughtReveal =
-  document.getElementById(
-    "isabelCaughtReveal"
-  );
-
-
-const isabelCaughtButtons =
-  document.querySelectorAll(
-    ".isabel-caught-trigger"
-  );
-
-
-const isabelCaughtOrder = [
-  "deposit",
-  "clive",
-  "hale",
-  "lucy",
-  "understands"
-];
-
-
-let isabelCaughtProgress =
-  parseInt(
-    localStorage.getItem(
-      STORAGE_ISABEL_CAUGHT
-    ) || "0",
-    10
-  );
-
-
-const isabelCaughtTexts = {
-
-  deposit:
-    "Isabel répète exactement son rituel habituel dans l’oratoire et dépose une nouvelle information.",
-
-  clive:
-    "Cette fois, Clive est déjà caché dans la pièce et observe toute la scène.",
-
-  hale:
-    "Lorsque Isabel cherche une sortie, Hale apparaît à son tour.",
-
-  lucy:
-    "Lucy rejoint finalement la pièce, fermant toute possibilité de faire semblant.",
-
-  understands:
-    "Isabel comprend immédiatement qu’ils connaissent désormais son rôle."
-
-};
-
-
-function restoreIsabelCaught() {
-
-  updateOrderedButtons(
-    isabelCaughtButtons,
-    isabelCaughtProgress
-  );
-
-
-  if (
-    isabelCaughtProgress >= 5
-  ) {
-
-    setRevealHTML(
-      isabelCaughtReveal,
+    finalHTML:
       `
         <p>
           Clive.
@@ -1579,480 +1567,209 @@ function restoreIsabelCaught() {
         <p class="impact-text">
           ISABEL EST DÉMASQUÉE.
         </p>
+      `,
+
+    secretName:
+      "isabel-exposed",
+
+    secretText:
+      "Le rôle d’Isabel comme taupe est désormais ouvertement révélé. Sa couverture est terminée."
+
+  });
+
+
+  /* =========================================================
+     5 — ISABEL TRAVAILLE POUR UNE IDÉE
+  ========================================================= */
+
+  setupFreeInteraction({
+
+    selector:
+      ".isabel-idea-trigger",
+
+    datasetName:
+      "isabelIdea",
+
+    storageKey:
+      STORAGE_ISABEL_IDEA,
+
+    revealId:
+      "isabelIdeaReveal",
+
+    required:
+      5,
+
+    sound:
+      playAnalysisSound,
+
+    texts: {
+
+      eighteen:
+        "Les rapports accumulés couvrent près de dix-huit années de surveillance.",
+
+      anna:
+        "Isabel a observé Anna grandir, ses habitudes, ses examens et ses progrès.",
+
+      betty:
+        "Betty lui faisait également confiance, ce qui rend la trahison beaucoup plus personnelle.",
+
+      name:
+        "Isabel comprend que Lucy, Hale et Clive cherchent naturellement à remonter jusqu’à un responsable.",
+
+      idea:
+        "Mais Isabel affirme qu’elle ne travaille pas simplement pour un homme : elle sert avant tout une idée."
+
+    },
+
+    finalHTML:
       `
-    );
+        <p>
+          Dix-huit années
+          de surveillance.
+        </p>
 
-  }
+        <p>
+          Une confiance
+          trahie.
+        </p>
 
-}
+        <p class="impact-text">
+          MAIS ISABEL
+          NE SERT PAS SEULEMENT
+          UN HOMME.
+        </p>
 
+        <p class="name-reveal">
+          ELLE SERT UNE IDÉE.
+        </p>
+      `,
 
-isabelCaughtButtons.forEach(
-  (button) => {
+    secretName:
+      "isabel-serves-idea",
 
-    button.addEventListener(
-      "click",
-      () => {
-
-        const selected =
-          button.dataset.isabelCaught;
-
-
-        const expected =
-          isabelCaughtOrder[
-            isabelCaughtProgress
-          ];
-
-
-        if (
-          selected !== expected
-        ) {
-
-          button.classList.add(
-            "wrong"
-          );
-
-
-          playWrongSound();
-
-
-          setTimeout(
-            () => {
-
-              button.classList.remove(
-                "wrong"
-              );
-
-            },
-            650
-          );
-
-
-          return;
-
-        }
-
-
-        isabelCaughtProgress++;
-
-
-        localStorage.setItem(
-          STORAGE_ISABEL_CAUGHT,
-          isabelCaughtProgress
-        );
-
-
-        updateOrderedButtons(
-          isabelCaughtButtons,
-          isabelCaughtProgress
-        );
-
-
-        setRevealHTML(
-          isabelCaughtReveal,
-          `
-            <p>
-              ${isabelCaughtTexts[selected]}
-            </p>
-          `
-        );
-
-
-        playDeductionSound();
-
-
-        if (
-          isabelCaughtProgress >= 5
-        ) {
-
-          showSecret(
-            "isabel-exposed",
-            "Le rôle d’Isabel comme taupe est désormais ouvertement révélé. Sa couverture est terminée."
-          );
-
-        }
-
-      }
-    );
+    secretText:
+      "Isabel se considère comme membre d’une cause et non comme simple employée d’un chef."
 
   });
 
 
-restoreIsabelCaught();
+  /* =========================================================
+     6 — AMY A CHOISI
+  ========================================================= */
 
+  setupFreeInteraction({
 
-/* =========================================================
-   INTERACTION 5
-   ISABEL TRAVAILLE POUR UNE IDÉE
-========================================================= */
+    selector:
+      ".amy-choice-trigger",
 
-const isabelIdeaReveal =
-  document.getElementById(
-    "isabelIdeaReveal"
-  );
+    datasetName:
+      "amyChoice",
 
+    storageKey:
+      STORAGE_AMY_CHOICE,
 
-let isabelIdeaObserved =
-  getStoredArray(
-    STORAGE_ISABEL_IDEA
-  );
+    revealId:
+      "amyChoiceReveal",
 
+    required:
+      5,
 
-const isabelIdeaTexts = {
+    sound:
+      playDarkSound,
 
-  eighteen:
-    "Les rapports accumulés couvrent près de dix-huit années de surveillance.",
+    texts: {
 
-  anna:
-    "Isabel a observé Anna grandir, ses habitudes, ses examens et ses progrès.",
+      followed:
+        "Amy découvre que le Maître Noir la fait suivre parce qu’il ne lui fait plus totalement confiance.",
 
-  betty:
-    "Betty lui faisait également confiance, ce qui rend la trahison beaucoup plus personnelle.",
+      hope:
+        "La raison centrale du conflit reste la mission concernant Hope.",
 
-  name:
-    "Isabel comprend que Lucy, Hale et Clive cherchent naturellement à remonter jusqu’à un responsable.",
+      spared:
+        "Le Maître Noir sait qu’Amy possédait les capacités nécessaires pour tuer Hope.",
 
-  idea:
-    "Mais Isabel affirme qu’elle ne travaille pas simplement pour un homme : elle sert avant tout une idée."
+      decision:
+        "Amy revendique pourtant clairement son choix : Hope est vivante parce qu’elle a décidé de l’épargner.",
 
-};
+      hesitation:
+        "Pour la première fois, Amy accepte même d’admettre qu’elle a peut-être hésité."
 
+    },
 
-document
-  .querySelectorAll(
-    ".isabel-idea-trigger"
-  )
-  .forEach((button) => {
+    finalHTML:
+      `
+        <p>
+          Elle pouvait tuer Hope.
+        </p>
 
-    button.addEventListener(
-      "click",
-      () => {
+        <p>
+          Elle ne l’a pas fait.
+        </p>
 
-        const type =
-          button.dataset.isabelIdea;
+        <p class="impact-text">
+          PARCE QU’ELLE
+          L’A DÉCIDÉ.
+        </p>
+      `,
 
+    secretName:
+      "amy-free-choice",
 
-        isabelIdeaObserved =
-          addStoredValue(
-            STORAGE_ISABEL_IDEA,
-            type
-          );
-
-
-        button.classList.add(
-          "completed"
-        );
-
-
-        setRevealHTML(
-          isabelIdeaReveal,
-          `
-            <p>
-              ${isabelIdeaTexts[type]}
-            </p>
-          `
-        );
-
-
-        playAnalysisSound();
-
-
-        if (
-          isabelIdeaObserved.length >= 5
-        ) {
-
-          setRevealHTML(
-            isabelIdeaReveal,
-            `
-              <p>
-                Dix-huit années
-                de surveillance.
-              </p>
-
-              <p>
-                Une confiance
-                trahie.
-              </p>
-
-              <p class="impact-text">
-                MAIS ISABEL
-                NE SERT PAS SEULEMENT
-                UN HOMME.
-              </p>
-
-              <p class="name-reveal">
-                ELLE SERT UNE IDÉE.
-              </p>
-            `
-          );
-
-
-          showSecret(
-            "isabel-serves-idea",
-            "Isabel se considère comme membre d’une cause et non comme simple employée d’un chef."
-          );
-
-        }
-
-      }
-    );
+    secretText:
+      "Amy affirme pour la première fois ouvertement que l’échec de la mission sur Hope était son propre choix."
 
   });
 
 
-document
-  .querySelectorAll(
-    ".isabel-idea-trigger"
-  )
-  .forEach((button) => {
+  /* =========================================================
+     7 — ARRIVÉE DE L’EFFACEUR
+  ========================================================= */
 
-    if (
-      isabelIdeaObserved.includes(
-        button.dataset.isabelIdea
-      )
-    ) {
+  setupOrderedInteraction({
 
-      button.classList.add(
-        "completed"
-      );
+    selector:
+      ".eraser-arrival-trigger",
 
-    }
-  });
+    datasetName:
+      "eraserArrival",
 
-if (
-  isabelIdeaObserved.length >= 5
-) {
+    storageKey:
+      STORAGE_ERASER_ARRIVAL,
 
-  setRevealHTML(
-    isabelIdeaReveal,
-    `
-      <p class="impact-text">
-        UNE IDÉE.
-      </p>
-    `
-  );
+    revealId:
+      "eraserArrivalReveal",
 
-}
+    order: [
+      "voice",
+      "freeze",
+      "man",
+      "butcher",
+      "eraser"
+    ],
 
+    sound:
+      playDarkSound,
 
-/* =========================================================
-   INTERACTION 6
-   AMY A CHOISI
-========================================================= */
+    texts: {
 
-const amyChoiceReveal =
-  document.getElementById(
-    "amyChoiceReveal"
-  );
+      voice:
+        "Une voix inconnue retentit derrière Amy alors qu’elle affronte le Maître Noir.",
 
+      freeze:
+        "Amy se fige immédiatement, réaction inhabituelle chez elle.",
 
-let amyChoiceObserved =
-  getStoredArray(
-    STORAGE_AMY_CHOICE
-  );
+      man:
+        "L’homme est grand et massif, avec un visage presque banal mais un regard profondément inquiétant.",
 
+      butcher:
+        "Amy le reconnaît et utilise un surnom qui suffit à définir sa réputation : le Boucher.",
 
-const amyChoiceTexts = {
+      eraser:
+        "L’homme préfère un autre nom : l’Effaceur."
 
-  followed:
-    "Amy découvre que le Maître Noir la fait suivre parce qu’il ne lui fait plus totalement confiance.",
+    },
 
-  hope:
-    "La raison centrale du conflit reste la mission concernant Hope.",
-
-  spared:
-    "Le Maître Noir sait qu’Amy possédait les capacités nécessaires pour tuer Hope.",
-
-  decision:
-    "Amy revendique pourtant clairement son choix : Hope est vivante parce qu’elle a décidé de l’épargner.",
-
-  hesitation:
-    "Pour la première fois, Amy accepte même d’admettre qu’elle a peut-être hésité."
-
-};
-
-
-document
-  .querySelectorAll(
-    ".amy-choice-trigger"
-  )
-  .forEach((button) => {
-
-    button.addEventListener(
-      "click",
-      () => {
-
-        const type =
-          button.dataset.amyChoice;
-
-
-        amyChoiceObserved =
-          addStoredValue(
-            STORAGE_AMY_CHOICE,
-            type
-          );
-
-
-        button.classList.add(
-          "completed"
-        );
-
-
-        setRevealHTML(
-          amyChoiceReveal,
-          `
-            <p>
-              ${amyChoiceTexts[type]}
-            </p>
-          `
-        );
-
-
-        playDarkSound();
-
-
-        if (
-          amyChoiceObserved.length >= 5
-        ) {
-
-          setRevealHTML(
-            amyChoiceReveal,
-            `
-              <p>
-                Elle pouvait tuer Hope.
-              </p>
-
-              <p>
-                Elle ne l’a pas fait.
-              </p>
-
-              <p class="impact-text">
-                PARCE QU’ELLE
-                L’A DÉCIDÉ.
-              </p>
-            `
-          );
-
-
-          showSecret(
-            "amy-free-choice",
-            "Amy affirme pour la première fois ouvertement que l’échec de la mission sur Hope était son propre choix."
-          );
-
-        }
-
-      }
-    );
-
-  });
-
-
-document
-  .querySelectorAll(
-    ".amy-choice-trigger"
-  )
-  .forEach((button) => {
-
-    if (
-      amyChoiceObserved.includes(
-        button.dataset.amyChoice
-      )
-    ) {
-
-      button.classList.add(
-        "completed"
-      );
-
-    }
-
-  );
-
-
-if (
-  amyChoiceObserved.length >= 5
-) {
-
-  setRevealHTML(
-    amyChoiceReveal,
-    `
-      <p class="impact-text">
-        PARCE QUE JE L’AI DÉCIDÉ.
-      </p>
-    `
-  );
-
-}
-
-
-/* =========================================================
-   INTERACTION 7
-   ARRIVÉE DE L’EFFACEUR
-========================================================= */
-
-const eraserArrivalReveal =
-  document.getElementById(
-    "eraserArrivalReveal"
-  );
-
-
-const eraserArrivalButtons =
-  document.querySelectorAll(
-    ".eraser-arrival-trigger"
-  );
-
-
-const eraserArrivalOrder = [
-  "voice",
-  "freeze",
-  "man",
-  "butcher",
-  "eraser"
-];
-
-
-let eraserArrivalProgress =
-  parseInt(
-    localStorage.getItem(
-      STORAGE_ERASER_ARRIVAL
-    ) || "0",
-    10
-  );
-
-
-const eraserArrivalTexts = {
-
-  voice:
-    "Une voix inconnue retentit derrière Amy alors qu’elle affronte le Maître Noir.",
-
-  freeze:
-    "Amy se fige immédiatement, réaction inhabituelle chez elle.",
-
-  man:
-    "L’homme est grand et massif, avec un visage presque banal mais un regard profondément inquiétant.",
-
-  butcher:
-    "Amy le reconnaît et utilise un surnom qui suffit à définir sa réputation : le Boucher.",
-
-  eraser:
-    "L’homme préfère un autre nom : l’Effaceur."
-
-};
-
-
-function restoreEraserArrival() {
-
-  updateOrderedButtons(
-    eraserArrivalButtons,
-    eraserArrivalProgress
-  );
-
-
-  if (
-    eraserArrivalProgress >= 5
-  ) {
-
-    setRevealHTML(
-      eraserArrivalReveal,
+    finalHTML:
       `
         <p>
           Amy le connaît.
@@ -2067,482 +1784,209 @@ function restoreEraserArrival() {
           L’EFFACEUR
           EST ENTRÉ EN JEU.
         </p>
+      `,
+
+    secretName:
+      "eraser-arrives",
+
+    secretText:
+      "Le Maître Noir a fait venir l’Effaceur, un homme qu’Amy considère comme particulièrement dangereux."
+
+  });
+
+
+  /* =========================================================
+     8 — LA PISTE DES GROTTES
+  ========================================================= */
+
+  setupFreeInteraction({
+
+    selector:
+      ".caves-clue-trigger",
+
+    datasetName:
+      "cavesClue",
+
+    storageKey:
+      STORAGE_CAVES_CLUE,
+
+    revealId:
+      "cavesClueReveal",
+
+    required:
+      5,
+
+    sound:
+      playDeductionSound,
+
+    texts: {
+
+      shelters:
+        "Lucy comprend qu’il existe plusieurs refuges liés au réseau des Gardiens.",
+
+      versions:
+        "Isabel rappelle que Sentinelles et Gardiens possèdent chacun leur propre version de l’histoire.",
+
+      camps:
+        "Lucy refuse désormais une lecture trop simple opposant un camp entièrement bon à un camp entièrement mauvais.",
+
+      caves:
+        "Isabel oriente finalement le groupe vers des grottes abandonnées brutalement par leurs anciens habitants.",
+
+      parques:
+        "Elle affirme que Root, en tant que Parques, possède précisément les connaissances nécessaires pour retrouver ces lieux."
+
+    },
+
+    finalHTML:
       `
-    );
+        <p>
+          Plusieurs refuges.
+        </p>
 
-  }
+        <p>
+          Des versions différentes.
+        </p>
 
-}
+        <p>
+          Des grottes abandonnées
+          sans raison claire.
+        </p>
 
+        <p class="impact-text">
+          ET UNE PARQUES
+          POUR LES RETROUVER.
+        </p>
+      `,
 
-eraserArrivalButtons.forEach(
-  (button) => {
+    secretName:
+      "caves-clue",
 
-    button.addEventListener(
-      "click",
-      () => {
-
-        const selected =
-          button.dataset.eraserArrival;
-
-
-        const expected =
-          eraserArrivalOrder[
-            eraserArrivalProgress
-          ];
-
-
-        if (
-          selected !== expected
-        ) {
-
-          button.classList.add(
-            "wrong"
-          );
-
-
-          playWrongSound();
-
-
-          setTimeout(
-            () => {
-
-              button.classList.remove(
-                "wrong"
-              );
-
-            },
-            650
-          );
-
-
-          return;
-
-        }
-
-
-        eraserArrivalProgress++;
-
-
-        localStorage.setItem(
-          STORAGE_ERASER_ARRIVAL,
-          eraserArrivalProgress
-        );
-
-
-        updateOrderedButtons(
-          eraserArrivalButtons,
-          eraserArrivalProgress
-        );
-
-
-        setRevealHTML(
-          eraserArrivalReveal,
-          `
-            <p>
-              ${eraserArrivalTexts[selected]}
-            </p>
-          `
-        );
-
-
-        playDarkSound();
-
-
-        if (
-          eraserArrivalProgress >= 5
-        ) {
-
-          showSecret(
-            "eraser-arrives",
-            "Le Maître Noir a fait venir l’Effaceur, un homme qu’Amy considère comme particulièrement dangereux."
-          );
-
-        }
-
-      }
-    );
+    secretText:
+      "Isabel fournit une piste exploitable : d’anciennes grottes abandonnées que Root pourrait identifier."
 
   });
 
 
-restoreEraserArrival();
+  /* =========================================================
+     9 — TROIS SITES
+  ========================================================= */
 
+  setupFreeInteraction({
 
-/* =========================================================
-   INTERACTION 8
-   LA PISTE DES GROTTES
-========================================================= */
+    selector:
+      ".three-sites-trigger",
 
-const cavesClueReveal =
-  document.getElementById(
-    "cavesClueReveal"
-  );
+    datasetName:
+      "threeSites",
 
+    storageKey:
+      STORAGE_THREE_SITES,
 
-let cavesClueObserved =
-  getStoredArray(
-    STORAGE_CAVES_CLUE
-  );
+    revealId:
+      "threeSitesReveal",
 
+    required:
+      5,
 
-const cavesClueTexts = {
+    sound:
+      playAnalysisSound,
 
-  shelters:
-    "Lucy comprend qu’il existe plusieurs refuges liés au réseau des Gardiens.",
+    texts: {
 
-  versions:
-    "Isabel rappelle que Sentinelles et Gardiens possèdent chacun leur propre version de l’histoire.",
+      abandoned:
+        "Root commence par rechercher les grottes correspondant à des occupations humaines anciennes puis abandonnées.",
 
-  camps:
-    "Lucy refuse désormais une lecture trop simple opposant un camp entièrement bon à un camp entièrement mauvais.",
+      undocumented:
+        "Certaines cavités ne sont pratiquement pas documentées dans les archives modernes.",
 
-  caves:
-    "Isabel oriente finalement le groupe vers des grottes abandonnées brutalement par leurs anciens habitants.",
+      excavated:
+        "D’autres ont été fouillées puis abandonnées sans explication convaincante.",
 
-  parques:
-    "Elle affirme que Root, en tant que Parques, possède précisément les connaissances nécessaires pour retrouver ces lieux."
+      stories:
+        "Plusieurs de ces sites apparaissent aussi dans des récits beaucoup plus anciens.",
 
-};
+      three:
+        "En croisant les informations d’Isabel et les cartes anciennes, Root isole finalement trois sites."
 
+    },
 
-document
-  .querySelectorAll(
-    ".caves-clue-trigger"
-  )
-  .forEach((button) => {
+    finalHTML:
+      `
+        <p>
+          Les informations
+          d’Isabel sont vagues.
+        </p>
 
-    button.addEventListener(
-      "click",
-      () => {
+        <p>
+          Mais Root parvient
+          à les croiser.
+        </p>
 
-        const type =
-          button.dataset.cavesClue;
+        <p class="impact-text">
+          TROIS SITES
+          CORRESPONDENT.
+        </p>
+      `,
 
+    secretName:
+      "three-ancient-sites",
 
-        cavesClueObserved =
-          addStoredValue(
-            STORAGE_CAVES_CLUE,
-            type
-          );
-
-
-        button.classList.add(
-          "completed"
-        );
-
-
-        setRevealHTML(
-          cavesClueReveal,
-          `
-            <p>
-              ${cavesClueTexts[type]}
-            </p>
-          `
-        );
-
-
-        playDeductionSound();
-
-
-        if (
-          cavesClueObserved.length >= 5
-        ) {
-
-          setRevealHTML(
-            cavesClueReveal,
-            `
-              <p>
-                Plusieurs refuges.
-              </p>
-
-              <p>
-                Des versions différentes.
-              </p>
-
-              <p>
-                Des grottes
-                abandonnées sans raison claire.
-              </p>
-
-              <p class="impact-text">
-                ET UNE PARQUES
-                POUR LES RETROUVER.
-              </p>
-            `
-          );
-
-
-          showSecret(
-            "caves-clue",
-            "Isabel fournit une piste exploitable : d’anciennes grottes abandonnées que Root pourrait identifier."
-          );
-
-        }
-
-      }
-    );
+    secretText:
+      "Root identifie trois grottes correspondant aux indications données par Isabel."
 
   });
 
 
-document
-  .querySelectorAll(
-    ".caves-clue-trigger"
-  )
-  .forEach((button) => {
+  /* =========================================================
+     10 — DRAGON / PHÉNIX / BIOLOGIE
+  ========================================================= */
 
-    if (
-      cavesClueObserved.includes(
-        button.dataset.cavesClue
-      )
-    ) {
+  setupOrderedInteraction({
 
-      button.classList.add(
-        "completed"
-      );
+    selector:
+      ".dragon-phoenix-trigger",
 
-    }
+    datasetName:
+      "dragonPhoenix",
 
-    });
+    storageKey:
+      STORAGE_DRAGON_PHOENIX,
 
+    revealId:
+      "dragonPhoenixReveal",
 
-if (
-  cavesClueObserved.length >= 5
-) {
+    order: [
+      "dragon",
+      "marker",
+      "phoenix",
+      "different",
+      "complementary"
+    ],
 
-  setRevealHTML(
-    cavesClueReveal,
-    `
-      <p class="impact-text">
-        DEMANDEZ À ROOT.
-      </p>
-    `
-  );
+    sound:
+      playBiologySound,
 
-}
+    texts: {
 
+      dragon:
+        "Lorsque le Dragon apparaît, plusieurs valeurs biologiques d’Hope se modifient immédiatement.",
 
-/* =========================================================
-   INTERACTION 9
-   TROIS SITES
-========================================================= */
+      marker:
+        "Le marqueur que Betty avait déjà repéré comme partiellement commun avec Anna augmente nettement.",
 
-const threeSitesReveal =
-  document.getElementById(
-    "threeSitesReveal"
-  );
+      phoenix:
+        "Hope fait ensuite apparaître le Phénix avec une séquence beaucoup plus lente et fluide.",
 
+      different:
+        "La réponse biologique obtenue n’est pas la même que celle du Dragon.",
 
-let threeSitesObserved =
-  getStoredArray(
-    STORAGE_THREE_SITES
-  );
+      complementary:
+        "Charles et Betty constatent cependant que les deux réponses semblent complémentaires."
 
+    },
 
-const threeSitesTexts = {
-
-  abandoned:
-    "Root commence par rechercher les grottes correspondant à des occupations humaines anciennes puis abandonnées.",
-
-  undocumented:
-    "Certaines cavités ne sont pratiquement pas documentées dans les archives modernes.",
-
-  excavated:
-    "D’autres ont été fouillées puis abandonnées sans explication convaincante.",
-
-  stories:
-    "Plusieurs de ces sites apparaissent aussi dans des récits beaucoup plus anciens.",
-
-  three:
-    "En croisant les informations d’Isabel et les cartes anciennes, Root isole finalement trois sites."
-
-};
-
-
-document
-  .querySelectorAll(
-    ".three-sites-trigger"
-  )
-  .forEach((button) => {
-
-    button.addEventListener(
-      "click",
-      () => {
-
-        const type =
-          button.dataset.threeSites;
-
-
-        threeSitesObserved =
-          addStoredValue(
-            STORAGE_THREE_SITES,
-            type
-          );
-
-
-        button.classList.add(
-          "completed"
-        );
-
-
-        setRevealHTML(
-          threeSitesReveal,
-          `
-            <p>
-              ${threeSitesTexts[type]}
-            </p>
-          `
-        );
-
-
-        playAnalysisSound();
-
-
-        if (
-          threeSitesObserved.length >= 5
-        ) {
-
-          setRevealHTML(
-            threeSitesReveal,
-            `
-              <p>
-                Les informations
-                d’Isabel sont vagues.
-              </p>
-
-              <p>
-                Mais Root parvient
-                à les croiser.
-              </p>
-
-              <p class="impact-text">
-                TROIS SITES
-                CORRESPONDENT.
-              </p>
-            `
-          );
-
-
-          showSecret(
-            "three-ancient-sites",
-            "Root identifie trois grottes correspondant aux indications données par Isabel."
-          );
-
-        }
-
-      }
-    );
-
-  });
-
-
-document
-  .querySelectorAll(
-    ".three-sites-trigger"
-  )
-  .forEach((button) => {
-
-    if (
-      threeSitesObserved.includes(
-        button.dataset.threeSites
-      )
-    ) {
-
-      button.classList.add(
-        "completed"
-      );
-
-    }
-
-  );
-
-
-if (
-  threeSitesObserved.length >= 5
-) {
-
-  setRevealHTML(
-    threeSitesReveal,
-    `
-      <p class="impact-text">
-        TROIS SITES.
-      </p>
-    `
-  );
-
-}
-
-
-/* =========================================================
-   INTERACTION 10
-   DRAGON / PHÉNIX / BIOLOGIE
-========================================================= */
-
-const dragonPhoenixReveal =
-  document.getElementById(
-    "dragonPhoenixReveal"
-  );
-
-
-const dragonPhoenixButtons =
-  document.querySelectorAll(
-    ".dragon-phoenix-trigger"
-  );
-
-
-const dragonPhoenixOrder = [
-  "dragon",
-  "marker",
-  "phoenix",
-  "different",
-  "complementary"
-];
-
-
-let dragonPhoenixProgress =
-  parseInt(
-    localStorage.getItem(
-      STORAGE_DRAGON_PHOENIX
-    ) || "0",
-    10
-  );
-
-
-const dragonPhoenixTexts = {
-
-  dragon:
-    "Lorsque le Dragon apparaît, plusieurs valeurs biologiques d’Hope se modifient immédiatement.",
-
-  marker:
-    "Le marqueur que Betty avait déjà repéré comme partiellement commun avec Anna augmente nettement.",
-
-  phoenix:
-    "Hope fait ensuite apparaître le Phénix avec une séquence beaucoup plus lente et fluide.",
-
-  different:
-    "La réponse biologique obtenue n’est pas la même que celle du Dragon.",
-
-  complementary:
-    "Charles et Betty constatent cependant que les deux réponses semblent complémentaires."
-
-};
-
-
-function restoreDragonPhoenix() {
-
-  updateOrderedButtons(
-    dragonPhoenixButtons,
-    dragonPhoenixProgress
-  );
-
-
-  if (
-    dragonPhoenixProgress >= 5
-  ) {
-
-    setRevealHTML(
-      dragonPhoenixReveal,
+    finalHTML:
       `
         <p>
           Dragon :
@@ -2561,177 +2005,66 @@ function restoreDragonPhoenix() {
         <p class="emphasis">
           Mais complémentaires.
         </p>
-      `
-    );
+      `,
 
-  }
+    secretName:
+      "dragon-phoenix-complementary",
 
-}
-
-
-dragonPhoenixButtons.forEach(
-  (button) => {
-
-    button.addEventListener(
-      "click",
-      () => {
-
-        const selected =
-          button.dataset.dragonPhoenix;
-
-
-        const expected =
-          dragonPhoenixOrder[
-            dragonPhoenixProgress
-          ];
-
-
-        if (
-          selected !== expected
-        ) {
-
-          button.classList.add(
-            "wrong"
-          );
-
-
-          playWrongSound();
-
-
-          setTimeout(
-            () => {
-
-              button.classList.remove(
-                "wrong"
-              );
-
-            },
-            650
-          );
-
-
-          return;
-
-        }
-
-
-        dragonPhoenixProgress++;
-
-
-        localStorage.setItem(
-          STORAGE_DRAGON_PHOENIX,
-          dragonPhoenixProgress
-        );
-
-
-        updateOrderedButtons(
-          dragonPhoenixButtons,
-          dragonPhoenixProgress
-        );
-
-
-        setRevealHTML(
-          dragonPhoenixReveal,
-          `
-            <p>
-              ${dragonPhoenixTexts[selected]}
-            </p>
-          `
-        );
-
-
-        playBiologySound();
-
-
-        if (
-          dragonPhoenixProgress >= 5
-        ) {
-
-          showSecret(
-            "dragon-phoenix-complementary",
-            "Dragon et Phénix provoquent chez Hope deux réponses biologiques différentes mais complémentaires."
-          );
-
-        }
-
-      }
-    );
+    secretText:
+      "Dragon et Phénix provoquent chez Hope deux réponses biologiques différentes mais complémentaires."
 
   });
 
 
-restoreDragonPhoenix();
+  /* =========================================================
+     11 — ÉLIE / CARGAISON
+  ========================================================= */
 
+  setupOrderedInteraction({
 
-/* =========================================================
-   INTERACTION 11
-   ÉLIE / CARGAISON ANCIENNE
-========================================================= */
+    selector:
+      ".elie-cargo-trigger",
 
-const elieCargoReveal =
-  document.getElementById(
-    "elieCargoReveal"
-  );
+    datasetName:
+      "elieCargo",
 
+    storageKey:
+      STORAGE_ELIE_CARGO,
 
-const elieCargoButtons =
-  document.querySelectorAll(
-    ".elie-cargo-trigger"
-  );
+    revealId:
+      "elieCargoReveal",
 
+    order: [
+      "vehicles",
+      "route",
+      "client",
+      "crates",
+      "objects"
+    ],
 
-const elieCargoOrder = [
-  "vehicles",
-  "route",
-  "client",
-  "crates",
-  "objects"
-];
+    sound:
+      playDeductionSound,
 
+    texts: {
 
-let elieCargoProgress =
-  parseInt(
-    localStorage.getItem(
-      STORAGE_ELIE_CARGO
-    ) || "0",
-    10
-  );
+      vehicles:
+        "Trois véhicules, deux chauffeurs et un conteneur ont disparu du réseau d’Élie.",
 
+      route:
+        "Les hommes ont reçu au dernier moment un nouvel itinéraire.",
 
-const elieCargoTexts = {
+      client:
+        "L’ordre venait d’un client lié à l’Hidalgo.",
 
-  vehicles:
-    "Trois véhicules, deux chauffeurs et un conteneur ont disparu du réseau d’Élie.",
+      crates:
+        "La cargaison contenait des caisses anciennes dont le contenu n’avait pas été vérifié.",
 
-  route:
-    "Les hommes ont reçu au dernier moment un nouvel itinéraire.",
+      objects:
+        "Les seules descriptions disponibles parlent de roches et d’objets anciens."
 
-  client:
-    "L’ordre venait d’un client lié à l’Hidalgo.",
+    },
 
-  crates:
-    "La cargaison contenait des caisses anciennes dont le contenu n’avait pas été vérifié.",
-
-  objects:
-    "Les seules descriptions disponibles parlent de roches et d’objets anciens."
-
-};
-
-
-function restoreElieCargo() {
-
-  updateOrderedButtons(
-    elieCargoButtons,
-    elieCargoProgress
-  );
-
-
-  if (
-    elieCargoProgress >= 5
-  ) {
-
-    setRevealHTML(
-      elieCargoReveal,
+    finalHTML:
       `
         <p>
           Hidalgo.
@@ -2757,177 +2090,66 @@ function restoreElieCargo() {
           QUELQU’UN UTILISE
           LE RÉSEAU D’ÉLIE.
         </p>
-      `
-    );
+      `,
 
-  }
+    secretName:
+      "elie-ancient-cargo",
 
-}
-
-
-elieCargoButtons.forEach(
-  (button) => {
-
-    button.addEventListener(
-      "click",
-      () => {
-
-        const selected =
-          button.dataset.elieCargo;
-
-
-        const expected =
-          elieCargoOrder[
-            elieCargoProgress
-          ];
-
-
-        if (
-          selected !== expected
-        ) {
-
-          button.classList.add(
-            "wrong"
-          );
-
-
-          playWrongSound();
-
-
-          setTimeout(
-            () => {
-
-              button.classList.remove(
-                "wrong"
-              );
-
-            },
-            650
-          );
-
-
-          return;
-
-        }
-
-
-        elieCargoProgress++;
-
-
-        localStorage.setItem(
-          STORAGE_ELIE_CARGO,
-          elieCargoProgress
-        );
-
-
-        updateOrderedButtons(
-          elieCargoButtons,
-          elieCargoProgress
-        );
-
-
-        setRevealHTML(
-          elieCargoReveal,
-          `
-            <p>
-              ${elieCargoTexts[selected]}
-            </p>
-          `
-        );
-
-
-        playDeductionSound();
-
-
-        if (
-          elieCargoProgress >= 5
-        ) {
-
-          showSecret(
-            "elie-ancient-cargo",
-            "Le réseau d’Élie a été utilisé pour transporter secrètement des roches et objets anciens liés à l’Hidalgo."
-          );
-
-        }
-
-      }
-    );
+    secretText:
+      "Le réseau d’Élie a été utilisé pour transporter secrètement des roches et objets anciens liés à l’Hidalgo."
 
   });
 
 
-restoreElieCargo();
+  /* =========================================================
+     12 — L’ANCIEN REFUGE
+  ========================================================= */
 
+  setupOrderedInteraction({
 
-/* =========================================================
-   INTERACTION 12
-   L’ANCIEN REFUGE
-========================================================= */
+    selector:
+      ".old-refuge-trigger",
 
-const oldRefugeReveal =
-  document.getElementById(
-    "oldRefugeReveal"
-  );
+    datasetName:
+      "oldRefuge",
 
+    storageKey:
+      STORAGE_OLD_REFUGE,
 
-const oldRefugeButtons =
-  document.querySelectorAll(
-    ".old-refuge-trigger"
-  );
+    revealId:
+      "oldRefugeReveal",
 
+    order: [
+      "occupation",
+      "abandon",
+      "texts",
+      "common",
+      "fragments"
+    ],
 
-const oldRefugeOrder = [
-  "occupation",
-  "abandon",
-  "texts",
-  "common",
-  "fragments"
-];
+    sound:
+      playMemorySound,
 
+    texts: {
 
-let oldRefugeProgress =
-  parseInt(
-    localStorage.getItem(
-      STORAGE_OLD_REFUGE
-    ) || "0",
-    10
-  );
+      occupation:
+        "Les sites étudiés montrent tous des traces d’occupation humaine ancienne.",
 
+      abandon:
+        "Plusieurs de ces lieux ont ensuite été abandonnés brutalement sans cause clairement établie.",
 
-const oldRefugeTexts = {
+      texts:
+        "Maître Lee reconnaît l’un des sites grâce aux anciens textes des Sentinelles.",
 
-  occupation:
-    "Les sites étudiés montrent tous des traces d’occupation humaine ancienne.",
+      common:
+        "Le lieu est antérieur à la séparation : il appartenait autrefois à l’ordre unique.",
 
-  abandon:
-    "Plusieurs de ces lieux ont ensuite été abandonnés brutalement sans cause clairement établie.",
+      fragments:
+        "Il pourrait donc conserver une version du savoir ancien et peut-être des fragments concernant le passage."
 
-  texts:
-    "Maître Lee reconnaît l’un des sites grâce aux anciens textes des Sentinelles.",
+    },
 
-  common:
-    "Le lieu est antérieur à la séparation : il appartenait autrefois à l’ordre unique.",
-
-  fragments:
-    "Il pourrait donc conserver une version du savoir ancien et peut-être des fragments concernant le passage."
-
-};
-
-
-function restoreOldRefuge() {
-
-  updateOrderedButtons(
-    oldRefugeButtons,
-    oldRefugeProgress
-  );
-
-
-  if (
-    oldRefugeProgress >= 5
-  ) {
-
-    setRevealHTML(
-      oldRefugeReveal,
+    finalHTML:
       `
         <p>
           Un lieu ancien.
@@ -2949,1201 +2171,839 @@ function restoreOldRefuge() {
           Et peut-être
           des fragments du passage.
         </p>
-      `
-    );
+      `,
 
-  }
+    secretName:
+      "old-common-refuge",
 
-}
-
-
-oldRefugeButtons.forEach(
-  (button) => {
-
-    button.addEventListener(
-      "click",
-      () => {
-
-        const selected =
-          button.dataset.oldRefuge;
-
-
-        const expected =
-          oldRefugeOrder[
-            oldRefugeProgress
-          ];
-
-
-        if (
-          selected !== expected
-        ) {
-
-          button.classList.add(
-            "wrong"
-          );
-
-
-          playWrongSound();
-
-
-          setTimeout(
-            () => {
-
-              button.classList.remove(
-                "wrong"
-              );
-
-            },
-            650
-          );
-
-
-          return;
-
-        }
-
-
-        oldRefugeProgress++;
-
-
-        localStorage.setItem(
-          STORAGE_OLD_REFUGE,
-          oldRefugeProgress
-        );
-
-
-        updateOrderedButtons(
-          oldRefugeButtons,
-          oldRefugeProgress
-        );
-
-
-        setRevealHTML(
-          oldRefugeReveal,
-          `
-            <p>
-              ${oldRefugeTexts[selected]}
-            </p>
-          `
-        );
-
-
-        playMemorySound();
-
-
-        if (
-          oldRefugeProgress >= 5
-        ) {
-
-          showSecret(
-            "old-common-refuge",
-            "Le refuge ciblé existait avant la séparation entre Sentinelles et Gardiens et pourrait contenir des fragments anciens du passage."
-          );
-
-        }
-
-      }
-    );
+    secretText:
+      "Le refuge ciblé existait avant la séparation entre Sentinelles et Gardiens et pourrait contenir des fragments anciens du passage."
 
   });
 
 
-restoreOldRefuge();
+  /* =========================================================
+     13 — FORMER L’ÉQUIPE
+  ========================================================= */
 
+  setupFreeInteraction({
 
-/* =========================================================
-   INTERACTION 13
-   FORMER L’ÉQUIPE
-========================================================= */
+    selector:
+      ".expedition-team-trigger",
 
-const expeditionTeamReveal =
-  document.getElementById(
-    "expeditionTeamReveal"
-  );
+    datasetName:
+      "expeditionTeam",
 
+    storageKey:
+      STORAGE_EXPEDITION_TEAM,
 
-let expeditionTeamObserved =
-  getStoredArray(
-    STORAGE_EXPEDITION_TEAM
-  );
+    revealId:
+      "expeditionTeamReveal",
 
+    required:
+      5,
 
-const expeditionTeamTexts = {
+    sound:
+      playRevealSound,
 
-  hale:
-    "Hale se porte immédiatement volontaire pour accompagner l’expédition.",
+    texts: {
 
-  lucy:
-    "Lucy veut être présente pour poursuivre directement les réponses obtenues grâce à Isabel.",
+      hale:
+        "Hale se porte immédiatement volontaire pour accompagner l’expédition.",
 
-  clive:
-    "Clive considère sa présence comme une évidence.",
+      lucy:
+        "Lucy veut être présente pour poursuivre directement les réponses obtenues grâce à Isabel.",
 
-  hope:
-    "Hope partira également, autant pour les Gardiens que pour les liens possibles avec le passage.",
+      clive:
+        "Clive considère sa présence comme une évidence.",
 
-  root:
-    "Root est indispensable pour lire les traces anciennes et comprendre ce que le refuge pourrait contenir."
+      hope:
+        "Hope partira également, autant pour les Gardiens que pour les liens possibles avec le passage.",
 
-};
+      root:
+        "Root est indispensable pour lire les traces anciennes et comprendre ce que le refuge pourrait contenir."
 
+    },
 
-document
-  .querySelectorAll(
-    ".expedition-team-trigger"
-  )
-  .forEach((button) => {
-
-    button.addEventListener(
-      "click",
-      () => {
-
-        const type =
-          button.dataset.expeditionTeam;
-
-
-        expeditionTeamObserved =
-          addStoredValue(
-            STORAGE_EXPEDITION_TEAM,
-            type
-          );
-
-
-        button.classList.add(
-          "completed"
-        );
-
-
-        setRevealHTML(
-          expeditionTeamReveal,
-          `
-            <p>
-              ${expeditionTeamTexts[type]}
-            </p>
-          `
-        );
-
-
-        playRevealSound();
-
-
-        if (
-          expeditionTeamObserved.length >= 5
-        ) {
-
-          setRevealHTML(
-            expeditionTeamReveal,
-            `
-              <p>
-                Hale.
-              </p>
-
-              <p>
-                Lucy.
-              </p>
-
-              <p>
-                Clive.
-              </p>
-
-              <p>
-                Hope.
-              </p>
-
-              <p>
-                Root.
-              </p>
-
-              <p class="impact-text">
-                L’ÉQUIPE EST FORMÉE.
-              </p>
-            `
-          );
-
-
-          showSecret(
-            "expedition-team",
-            "Hope, Root, Lucy, Hale et Clive formeront l’équipe envoyée vers l’ancien refuge."
-          );
-
-        }
-
-      }
-    );
-
-  });
-
-
-document
-  .querySelectorAll(
-    ".expedition-team-trigger"
-  )
-  .forEach((button) => {
-
-    if (
-      expeditionTeamObserved.includes(
-        button.dataset.expeditionTeam
-      )
-    ) {
-
-      button.classList.add(
-        "completed"
-      );
-
-    }
-
-  );
-
-
-if (
-  expeditionTeamObserved.length >= 5
-) {
-
-  setRevealHTML(
-    expeditionTeamReveal,
-    `
-      <p class="impact-text">
-        CINQ PERSONNES.
-        UN ANCIEN REFUGE.
-      </p>
-    `
-  );
-
-}
-
-
-/* =========================================================
-   INTERACTION 14
-   LES LIGNES BOUGENT
-========================================================= */
-
-const linesMoveReveal =
-  document.getElementById(
-    "linesMoveReveal"
-  );
-
-
-const linesMoveButtons =
-  document.querySelectorAll(
-    ".lines-move-trigger"
-  );
-
-
-const linesMoveOrder = [
-  "isabel",
-  "amy",
-  "eraser",
-  "guardians",
-  "expedition"
-];
-
-
-let linesMoveProgress =
-  parseInt(
-    localStorage.getItem(
-      STORAGE_LINES_MOVE
-    ) || "0",
-    10
-  );
-
-
-const linesMoveTexts = {
-
-  isabel:
-    "Isabel a perdu sa couverture et a commencé à fournir des informations exploitables.",
-
-  amy:
-    "Amy reconnaît désormais clairement qu’elle sait de quel côté elle veut se tenir.",
-
-  eraser:
-    "L’Effaceur a été appelé par le Maître Noir et s’intéresse déjà directement à Hope.",
-
-  guardians:
-    "Le Maître Noir sait où l’équipe se dirige et ordonne aux Gardiens de préparer l’ancien refuge.",
-
-  expedition:
-    "Hope, Root, Lucy, Hale et Clive se préparent au même moment à rejoindre exactement ce lieu."
-
-};
-
-
-function restoreLinesMove() {
-
-  updateOrderedButtons(
-    linesMoveButtons,
-    linesMoveProgress
-  );
-
-
-  if (
-    linesMoveProgress >= 5
-  ) {
-
-    setRevealHTML(
-      linesMoveReveal,
+    finalHTML:
       `
         <p>
-          Isabel a parlé.
+          Hale.
         </p>
 
         <p>
-          Amy a choisi.
+          Lucy.
         </p>
 
         <p>
-          L’Effaceur est là.
+          Clive.
         </p>
 
         <p>
-          Les Gardiens se préparent.
+          Hope.
         </p>
 
         <p>
-          L’équipe part.
+          Root.
         </p>
 
         <p class="impact-text">
-          LES LIGNES BOUGENT.
+          L’ÉQUIPE EST FORMÉE.
         </p>
-      `
-    );
+      `,
 
-  }
+    secretName:
+      "expedition-team",
 
-}
-
-
-linesMoveButtons.forEach(
-  (button) => {
-
-    button.addEventListener(
-      "click",
-      () => {
-
-        const selected =
-          button.dataset.linesMove;
-
-
-        const expected =
-          linesMoveOrder[
-            linesMoveProgress
-          ];
-
-
-        if (
-          selected !== expected
-        ) {
-
-          button.classList.add(
-            "wrong"
-          );
-
-
-          playWrongSound();
-
-
-          setTimeout(
-            () => {
-
-              button.classList.remove(
-                "wrong"
-              );
-
-            },
-            650
-          );
-
-
-          return;
-
-        }
-
-
-        linesMoveProgress++;
-
-
-        localStorage.setItem(
-          STORAGE_LINES_MOVE,
-          linesMoveProgress
-        );
-
-
-        updateOrderedButtons(
-          linesMoveButtons,
-          linesMoveProgress
-        );
-
-
-        setRevealHTML(
-          linesMoveReveal,
-          `
-            <p>
-              ${linesMoveTexts[selected]}
-            </p>
-          `
-        );
-
-
-        playDarkSound();
-
-
-        if (
-          linesMoveProgress >= 5
-        ) {
-
-          setRevealHTML(
-            linesMoveReveal,
-            `
-              <p>
-                Les deux camps
-                savent désormais
-                qu’ils vont se rencontrer.
-              </p>
-
-              <p class="impact-text">
-                PERSONNE
-                N’AVANCE PLUS
-                DANS L’OMBRE.
-              </p>
-
-              <p class="name-reveal">
-                LES GARDIENS
-                LES ATTENDENT.
-              </p>
-            `
-          );
-
-
-          showSecret(
-            "lines-are-moving",
-            "L’expédition avance vers un refuge où le Maître Noir a déjà ordonné aux Gardiens de les attendre."
-          );
-
-        }
-
-      }
-    );
+    secretText:
+      "Hope, Root, Lucy, Hale et Clive formeront l’équipe envoyée vers l’ancien refuge."
 
   });
 
 
-restoreLinesMove();
+  /* =========================================================
+     14 — LES LIGNES BOUGENT
+  ========================================================= */
+
+  setupOrderedInteraction({
+
+    selector:
+      ".lines-move-trigger",
+
+    datasetName:
+      "linesMove",
+
+    storageKey:
+      STORAGE_LINES_MOVE,
+
+    revealId:
+      "linesMoveReveal",
+
+    order: [
+      "isabel",
+      "amy",
+      "eraser",
+      "guardians",
+      "expedition"
+    ],
+
+    sound:
+      playDarkSound,
+
+    texts: {
+
+      isabel:
+        "Isabel a perdu sa couverture et a commencé à fournir des informations exploitables.",
+
+      amy:
+        "Amy reconnaît désormais clairement qu’elle sait de quel côté elle veut se tenir.",
+
+      eraser:
+        "L’Effaceur a été appelé par le Maître Noir et s’intéresse déjà directement à Hope.",
+
+      guardians:
+        "Le Maître Noir sait où l’équipe se dirige et ordonne aux Gardiens de préparer l’ancien refuge.",
+
+      expedition:
+        "Hope, Root, Lucy, Hale et Clive se préparent au même moment à rejoindre exactement ce lieu."
+
+    },
+
+    finalHTML:
+      `
+        <p>
+          Les deux camps
+          savent désormais
+          qu’ils vont se rencontrer.
+        </p>
+
+        <p class="impact-text">
+          PERSONNE
+          N’AVANCE PLUS
+          DANS L’OMBRE.
+        </p>
+
+        <p class="name-reveal">
+          LES GARDIENS
+          LES ATTENDENT.
+        </p>
+      `,
+
+    secretName:
+      "lines-are-moving",
+
+    secretText:
+      "L’expédition avance vers un refuge où le Maître Noir a déjà ordonné aux Gardiens de les attendre."
+
+  });
 
 
-/* =========================================================
-   FIN DU CHAPITRE
-========================================================= */
+  /* =========================================================
+     FIN DU CHAPITRE
+  ========================================================= */
 
-const finalScene =
-  document.getElementById(
-    "scene-63"
-  );
-
-
-if (finalScene) {
-
-  const endObserver =
-    new IntersectionObserver(
-      (entries) => {
-
-        entries.forEach(
-          (entry) => {
-
-            if (
-              entry.isIntersecting
-            ) {
-
-              localStorage.setItem(
-                STORAGE_COMPLETED,
-                "1"
-              );
+  const finalScene =
+    document.getElementById(
+      "scene-63"
+    );
 
 
-              localStorage.setItem(
-                STORAGE_PROGRESS,
-                "1"
-              );
+  if (finalScene) {
+
+    const endObserver =
+      new IntersectionObserver(
+        (entries) => {
+
+          entries.forEach(
+            (entry) => {
+
+              if (
+                entry.isIntersecting
+              ) {
+
+                localStorage.setItem(
+                  STORAGE_COMPLETED,
+                  "1"
+                );
+
+                localStorage.setItem(
+                  STORAGE_PROGRESS,
+                  "1"
+                );
+
+              }
 
             }
+          );
 
-          }
-        );
+        },
+        {
+          threshold: 0.5
+        }
+      );
 
-      },
-      {
-        threshold: 0.5
-      }
+
+    endObserver.observe(
+      finalScene
     );
 
-
-  endObserver.observe(
-    finalScene
-  );
-
-}
-
-
-/* =========================================================
-   SON D’AMBIANCE
-========================================================= */
-
-let audioCtx =
-  null;
-
-let masterGain =
-  null;
-
-let ambienceOsc1 =
-  null;
-
-let ambienceOsc2 =
-  null;
-
-let soundActive =
-  false;
-
-
-function startSound() {
-
-  if (soundActive) {
-    return;
   }
 
 
-  const AudioContextClass =
-    window.AudioContext ||
-    window.webkitAudioContext;
+  /* =========================================================
+     SON D’AMBIANCE
+  ========================================================= */
 
-
-  if (!AudioContextClass) {
-    return;
-  }
-
-
-  audioCtx =
-    new AudioContextClass();
-
-
-  masterGain =
-    audioCtx.createGain();
-
-
-  masterGain.gain.value =
-    0.021;
-
-
-  masterGain.connect(
-    audioCtx.destination
-  );
-
-
-  ambienceOsc1 =
-    audioCtx.createOscillator();
-
-
-  ambienceOsc2 =
-    audioCtx.createOscillator();
-
-
-  const gain1 =
-    audioCtx.createGain();
-
-
-  const gain2 =
-    audioCtx.createGain();
-
-
-  ambienceOsc1.type =
-    "sine";
-
-  ambienceOsc1.frequency.value =
-    39;
-
-
-  gain1.gain.value =
-    0.62;
-
-
-  ambienceOsc2.type =
-    "triangle";
-
-  ambienceOsc2.frequency.value =
-    77;
-
-
-  gain2.gain.value =
-    0.06;
-
-
-  ambienceOsc1
-    .connect(gain1)
-    .connect(masterGain);
-
-
-  ambienceOsc2
-    .connect(gain2)
-    .connect(masterGain);
-
-
-  ambienceOsc1.start();
-
-  ambienceOsc2.start();
-
-
-  soundActive =
-    true;
-
-
-  if (soundBtn) {
-
-    soundBtn.classList.add(
-      "sound-active"
-    );
-
-
-    soundBtn.textContent =
-      "♪";
-
-  }
-
-}
-
-
-/* =========================================================
-   ARRÊT DU SON
-========================================================= */
-
-function stopSound() {
-
-  if (
-    !soundActive ||
-    !audioCtx
-  ) {
-    return;
-  }
-
-
-  const ctx =
-    audioCtx;
-
-  const osc1 =
-    ambienceOsc1;
-
-  const osc2 =
-    ambienceOsc2;
-
-  const gain =
-    masterGain;
-
-
-  if (gain) {
-
-    try {
-
-      gain.gain
-        .exponentialRampToValueAtTime(
-          0.0001,
-          ctx.currentTime + 0.35
-        );
-
-    } catch {}
-
-  }
-
-
-  audioCtx =
+  let audioCtx =
     null;
 
-  masterGain =
+  let masterGain =
     null;
 
-  ambienceOsc1 =
+  let ambienceOsc1 =
     null;
 
-  ambienceOsc2 =
+  let ambienceOsc2 =
     null;
 
-  soundActive =
+  let soundActive =
     false;
 
 
-  if (soundBtn) {
-
-    soundBtn.classList.remove(
-      "sound-active"
-    );
-
-    soundBtn.textContent =
-      "♫";
-
-  }
-
-
-  setTimeout(
-    () => {
-
-      try {
-        osc1?.stop();
-      } catch {}
-
-      try {
-        osc2?.stop();
-      } catch {}
-
-      try {
-        ctx?.close();
-      } catch {}
-
-    },
-    450
-  );
-
-}
-
-
-soundBtn?.addEventListener(
-  "click",
-  () => {
+  function startSound() {
 
     if (soundActive) {
-
-      stopSound();
-
-    } else {
-
-      startSound();
-
+      return;
     }
 
-  }
-);
+    const AudioContextClass =
+      window.AudioContext ||
+      window.webkitAudioContext;
 
+    if (!AudioContextClass) {
+      return;
+    }
 
-/* =========================================================
-   GÉNÉRATEUR DE TONS
-========================================================= */
+    audioCtx =
+      new AudioContextClass();
 
-function playTone(
-  frequency,
-  duration,
-  volume = 0.04,
-  type = "sine"
-) {
+    masterGain =
+      audioCtx.createGain();
 
-  if (
-    !soundActive ||
-    !audioCtx
-  ) {
-    return;
-  }
+    masterGain.gain.value =
+      0.021;
 
-
-  const oscillator =
-    audioCtx.createOscillator();
-
-
-  const gain =
-    audioCtx.createGain();
-
-
-  oscillator.type =
-    type;
-
-
-  oscillator.frequency.value =
-    frequency;
-
-
-  gain.gain.setValueAtTime(
-    volume,
-    audioCtx.currentTime
-  );
-
-
-  gain.gain
-    .exponentialRampToValueAtTime(
-      0.0001,
-      audioCtx.currentTime + duration
-    );
-
-
-  oscillator
-    .connect(gain)
-    .connect(
+    masterGain.connect(
       audioCtx.destination
     );
 
+    ambienceOsc1 =
+      audioCtx.createOscillator();
 
-  oscillator.start();
+    ambienceOsc2 =
+      audioCtx.createOscillator();
 
+    const gain1 =
+      audioCtx.createGain();
 
-  oscillator.stop(
-    audioCtx.currentTime + duration
-  );
+    const gain2 =
+      audioCtx.createGain();
 
-}
+    ambienceOsc1.type =
+      "sine";
 
+    ambienceOsc1.frequency.value =
+      39;
 
-/* =========================================================
-   EFFETS SONORES
-========================================================= */
+    gain1.gain.value =
+      0.62;
 
-function playAnalysisSound() {
+    ambienceOsc2.type =
+      "triangle";
 
-  playTone(
-    490,
-    0.45,
-    0.018,
-    "triangle"
-  );
+    ambienceOsc2.frequency.value =
+      77;
 
+    gain2.gain.value =
+      0.06;
 
-  setTimeout(
-    () => {
+    ambienceOsc1
+      .connect(gain1)
+      .connect(masterGain);
 
-      playTone(
-        620,
-        0.6,
-        0.016
+    ambienceOsc2
+      .connect(gain2)
+      .connect(masterGain);
+
+    ambienceOsc1.start();
+
+    ambienceOsc2.start();
+
+    soundActive =
+      true;
+
+    if (soundBtn) {
+
+      soundBtn.classList.add(
+        "sound-active"
       );
 
-    },
-    120
-  );
-
-}
-
-
-function playDeductionSound() {
-
-  playTone(
-    390,
-    0.4,
-    0.017,
-    "triangle"
-  );
-
-
-  setTimeout(
-    () => {
-
-      playTone(
-        550,
-        0.55,
-        0.015,
-        "sine"
-      );
-
-    },
-    100
-  );
-
-
-  setTimeout(
-    () => {
-
-      playTone(
-        720,
-        0.75,
-        0.012
-      );
-
-    },
-    220
-  );
-
-}
-
-
-function playBiologySound() {
-
-  playTone(
-    360,
-    0.5,
-    0.018,
-    "sine"
-  );
-
-
-  setTimeout(
-    () => {
-
-      playTone(
-        510,
-        0.7,
-        0.015,
-        "triangle"
-      );
-
-    },
-    130
-  );
-
-
-  setTimeout(
-    () => {
-
-      playTone(
-        680,
-        0.75,
-        0.012,
-        "sine"
-      );
-
-    },
-    250
-  );
-
-}
-
-
-function playWarmSound() {
-
-  playTone(
-    420,
-    0.5,
-    0.017,
-    "sine"
-  );
-
-
-  setTimeout(
-    () => {
-
-      playTone(
-        560,
-        0.7,
-        0.014,
-        "triangle"
-      );
-
-    },
-    130
-  );
-
-}
-
-
-function playRevealSound() {
-
-  playTone(
-    420,
-    0.65,
-    0.022
-  );
-
-
-  setTimeout(
-    () => {
-
-      playTone(
-        640,
-        0.8,
-        0.018
-      );
-
-    },
-    150
-  );
-
-
-  setTimeout(
-    () => {
-
-      playTone(
-        820,
-        0.95,
-        0.012,
-        "triangle"
-      );
-
-    },
-    300
-  );
-
-}
-
-
-function playMemorySound() {
-
-  playTone(
-    330,
-    0.75,
-    0.016,
-    "sine"
-  );
-
-
-  setTimeout(
-    () => {
-
-      playTone(
-        440,
-        0.9,
-        0.014,
-        "triangle"
-      );
-
-    },
-    180
-  );
-
-}
-
-
-function playDarkSound() {
-
-  playTone(
-    170,
-    0.7,
-    0.018,
-    "sine"
-  );
-
-
-  setTimeout(
-    () => {
-
-      playTone(
-        260,
-        0.9,
-        0.013,
-        "triangle"
-      );
-
-    },
-    150
-  );
-
-}
-
-
-function playWrongSound() {
-
-  playTone(
-    150,
-    0.22,
-    0.02,
-    "square"
-  );
-
-}
-
-
-function playSecretSound() {
-
-  playTone(
-    540,
-    0.65,
-    0.022
-  );
-
-
-  setTimeout(
-    () => {
-
-      playTone(
-        760,
-        0.8,
-        0.018
-      );
-
-    },
-    140
-  );
-
-}
-
-
-/* =========================================================
-   TOUCHE ÉCHAP
-========================================================= */
-
-document.addEventListener(
-  "keydown",
-  (event) => {
-
-    if (
-      event.key === "Escape"
-    ) {
-
-      closeMenu();
-
-      hideSecretPopup();
+      soundBtn.textContent =
+        "♪";
 
     }
 
   }
-);
 
 
-/* =========================================================
-   SAUVEGARDE AVANT DE QUITTER
-========================================================= */
-
-window.addEventListener(
-  "beforeunload",
-  () => {
-
-    const params =
-      new URLSearchParams(
-        window.location.search
-      );
-
+  function stopSound() {
 
     if (
-      params.get("lecture") ===
-      "recommencer"
+      !soundActive ||
+      !audioCtx
     ) {
       return;
     }
 
+    const ctx =
+      audioCtx;
 
-    localStorage.setItem(
-      STORAGE_SCROLL,
-      Math.round(
-        window.scrollY
-      )
-    );
+    const osc1 =
+      ambienceOsc1;
 
+    const osc2 =
+      ambienceOsc2;
 
-    localStorage.setItem(
-      STORAGE_PROGRESS,
-      "1"
+    const gain =
+      masterGain;
+
+    if (gain) {
+
+      try {
+
+        gain.gain
+          .exponentialRampToValueAtTime(
+            0.0001,
+            ctx.currentTime + 0.35
+          );
+
+      } catch {}
+
+    }
+
+    audioCtx =
+      null;
+
+    masterGain =
+      null;
+
+    ambienceOsc1 =
+      null;
+
+    ambienceOsc2 =
+      null;
+
+    soundActive =
+      false;
+
+    if (soundBtn) {
+
+      soundBtn.classList.remove(
+        "sound-active"
+      );
+
+      soundBtn.textContent =
+        "♫";
+
+    }
+
+    setTimeout(
+      () => {
+
+        try {
+          osc1?.stop();
+        } catch {}
+
+        try {
+          osc2?.stop();
+        } catch {}
+
+        try {
+          ctx?.close();
+        } catch {}
+
+      },
+      450
     );
 
   }
-);
 
 
-/* =========================================================
-   PREMIÈRE SCÈNE
-========================================================= */
-
-const firstScene =
-  document.querySelector(
-    ".scene"
-  );
-
-
-if (firstScene) {
-
-  setTimeout(
+  soundBtn?.addEventListener(
+    "click",
     () => {
 
-      firstScene.classList.add(
-        "is-visible"
-      );
+      if (soundActive) {
 
-    },
-    100
+        stopSound();
+
+      } else {
+
+        startSound();
+
+      }
+
+    }
   );
 
-}
+
+  /* =========================================================
+     GÉNÉRATEUR DE TONS
+  ========================================================= */
+
+  function playTone(
+    frequency,
+    duration,
+    volume = 0.04,
+    type = "sine"
+  ) {
+
+    if (
+      !soundActive ||
+      !audioCtx
+    ) {
+      return;
+    }
+
+    const oscillator =
+      audioCtx.createOscillator();
+
+    const gain =
+      audioCtx.createGain();
+
+    oscillator.type =
+      type;
+
+    oscillator.frequency.value =
+      frequency;
+
+    gain.gain.setValueAtTime(
+      volume,
+      audioCtx.currentTime
+    );
+
+    gain.gain
+      .exponentialRampToValueAtTime(
+        0.0001,
+        audioCtx.currentTime +
+          duration
+      );
+
+    oscillator
+      .connect(gain)
+      .connect(
+        audioCtx.destination
+      );
+
+    oscillator.start();
+
+    oscillator.stop(
+      audioCtx.currentTime +
+        duration
+    );
+
+  }
 
 
-/* =========================================================
-   FIN INITIALISATION
-========================================================= */
+  /* =========================================================
+     EFFETS SONORES
+  ========================================================= */
+
+  function playAnalysisSound() {
+
+    playTone(
+      490,
+      0.45,
+      0.018,
+      "triangle"
+    );
+
+    setTimeout(
+      () => {
+
+        playTone(
+          620,
+          0.6,
+          0.016
+        );
+
+      },
+      120
+    );
+
+  }
+
+
+  function playDeductionSound() {
+
+    playTone(
+      390,
+      0.4,
+      0.017,
+      "triangle"
+    );
+
+    setTimeout(
+      () => {
+
+        playTone(
+          550,
+          0.55,
+          0.015,
+          "sine"
+        );
+
+      },
+      100
+    );
+
+    setTimeout(
+      () => {
+
+        playTone(
+          720,
+          0.75,
+          0.012
+        );
+
+      },
+      220
+    );
+
+  }
+
+
+  function playBiologySound() {
+
+    playTone(
+      360,
+      0.5,
+      0.018,
+      "sine"
+    );
+
+    setTimeout(
+      () => {
+
+        playTone(
+          510,
+          0.7,
+          0.015,
+          "triangle"
+        );
+
+      },
+      130
+    );
+
+    setTimeout(
+      () => {
+
+        playTone(
+          680,
+          0.75,
+          0.012,
+          "sine"
+        );
+
+      },
+      250
+    );
+
+  }
+
+
+  function playWarmSound() {
+
+    playTone(
+      420,
+      0.5,
+      0.017,
+      "sine"
+    );
+
+    setTimeout(
+      () => {
+
+        playTone(
+          560,
+          0.7,
+          0.014,
+          "triangle"
+        );
+
+      },
+      130
+    );
+
+  }
+
+
+  function playRevealSound() {
+
+    playTone(
+      420,
+      0.65,
+      0.022
+    );
+
+    setTimeout(
+      () => {
+
+        playTone(
+          640,
+          0.8,
+          0.018
+        );
+
+      },
+      150
+    );
+
+    setTimeout(
+      () => {
+
+        playTone(
+          820,
+          0.95,
+          0.012,
+          "triangle"
+        );
+
+      },
+      300
+    );
+
+  }
+
+
+  function playMemorySound() {
+
+    playTone(
+      330,
+      0.75,
+      0.016,
+      "sine"
+    );
+
+    setTimeout(
+      () => {
+
+        playTone(
+          440,
+          0.9,
+          0.014,
+          "triangle"
+        );
+
+      },
+      180
+    );
+
+  }
+
+
+  function playDarkSound() {
+
+    playTone(
+      170,
+      0.7,
+      0.018,
+      "sine"
+    );
+
+    setTimeout(
+      () => {
+
+        playTone(
+          260,
+          0.9,
+          0.013,
+          "triangle"
+        );
+
+      },
+      150
+    );
+
+  }
+
+
+  function playWrongSound() {
+
+    playTone(
+      150,
+      0.22,
+      0.02,
+      "square"
+    );
+
+  }
+
+
+  function playSecretSound() {
+
+    playTone(
+      540,
+      0.65,
+      0.022
+    );
+
+    setTimeout(
+      () => {
+
+        playTone(
+          760,
+          0.8,
+          0.018
+        );
+
+      },
+      140
+    );
+
+  }
+
+
+  /* =========================================================
+     TOUCHE ÉCHAP
+  ========================================================= */
+
+  document.addEventListener(
+    "keydown",
+    (event) => {
+
+      if (
+        event.key ===
+        "Escape"
+      ) {
+
+        closeMenu();
+
+        hideSecretPopup();
+
+      }
+
+    }
+  );
+
+
+  /* =========================================================
+     SAUVEGARDE AVANT DE QUITTER
+  ========================================================= */
+
+  window.addEventListener(
+    "beforeunload",
+    () => {
+
+      const params =
+        new URLSearchParams(
+          window.location.search
+        );
+
+      if (
+        params.get(
+          "lecture"
+        ) ===
+        "recommencer"
+      ) {
+        return;
+      }
+
+      localStorage.setItem(
+        STORAGE_SCROLL,
+        Math.round(
+          window.scrollY
+        )
+      );
+
+      localStorage.setItem(
+        STORAGE_PROGRESS,
+        "1"
+      );
+
+    }
+  );
+
+
+  /* =========================================================
+     PREMIÈRE SCÈNE
+  ========================================================= */
+
+  const firstScene =
+    document.querySelector(
+      ".scene"
+    );
+
+
+  if (firstScene) {
+
+    setTimeout(
+      () => {
+
+        firstScene.classList.add(
+          "is-visible"
+        );
+
+      },
+      100
+    );
+
+  }
+
+
+  /* =========================================================
+     FIN INITIALISATION
+  ========================================================= */
 
 });
