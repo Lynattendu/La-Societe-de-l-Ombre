@@ -141,7 +141,7 @@ const chapters = [
 
   {
     number: 22,
-    title: "Chapitre 22",
+    title: "Ceux qui veillent dans l'ombre",
     file: "chapitre22.html"
   },
 
