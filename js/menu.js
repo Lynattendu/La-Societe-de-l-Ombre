@@ -123,19 +123,19 @@ const chapters = [
 
   {
     number: 19,
-    title: "Chapitre 19",
+    title: "Les quatre points",
     file: "chapitre19.html"
   },
 
   {
     number: 20,
-    title: "Chapitre 20",
+    title: "Les lignes bougent",
     file: "chapitre20.html"
   },
 
   {
     number: 21,
-    title: "Chapitre 21",
+    title: "Le refuge des ombres",
     file: "chapitre21.html"
   },
 
