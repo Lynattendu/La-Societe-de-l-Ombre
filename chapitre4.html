@@ -1,1 +1,7725 @@
+<!DOCTYPE html>
+<html lang="fr">
 
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+  >
+
+  <meta
+    name="theme-color"
+    content="#050505"
+  >
+
+  <title>
+    Chapitre 4 — Mais qui est-elle ? | La Société de l'Ombre
+  </title>
+
+  <link
+    rel="stylesheet"
+    href="css/chapitre4.css"
+  >
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     BARRE DE PROGRESSION
+===================================================== -->
+
+<div
+  class="progress-bar"
+  aria-hidden="true"
+>
+  <div
+    class="progress-fill"
+    id="progressFill"
+  ></div>
+</div>
+
+
+<!-- =====================================================
+     COMMANDES
+===================================================== -->
+
+<div class="chapter-controls">
+
+  <button
+    class="control-btn"
+    id="menuBtn"
+    type="button"
+    aria-label="Ouvrir le menu"
+  >
+    ☰
+  </button>
+
+  <button
+    class="control-btn"
+    id="soundBtn"
+    type="button"
+    aria-label="Activer ou désactiver le son"
+  >
+    ♫
+  </button>
+
+</div>
+
+
+<main
+  class="chapter"
+  id="chapter"
+>
+
+
+<!-- =====================================================
+     VISUEL 1
+     COUVERTURE
+===================================================== -->
+
+<section
+  class="scene scene-cover"
+  id="scene-cover"
+>
+
+  <div
+    class="visual full-visual"
+    data-visual="1"
+  >
+
+    <img
+      src="images/chapitre4/Visuel-1.PNG"
+      alt="Chapitre 4 — Mais qui est-elle ?"
+      loading="eager"
+    >
+
+  </div>
+
+
+  <div class="chapter-title-overlay">
+
+    <p class="chapter-number">
+      Chapitre 4
+    </p>
+
+    <h1>
+      Mais qui est-elle ?
+    </h1>
+
+    <button
+      class="continue-btn"
+      type="button"
+      data-next
+    >
+      Continuer
+    </button>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     SÉQUENCE 1
+     ROOT VEUT COMPRENDRE
+===================================================== -->
+
+<section
+  class="scene"
+  id="root-enquete"
+>
+
+  <div class="text-block">
+
+    <p>
+      Root n’arrive pas à se débarrasser d’une question.
+    </p>
+
+    <p class="impact-text">
+      Sur quoi Lucy travaille-t-elle réellement avec Clive ?
+    </p>
+
+    <p>
+      Elle comprend parfaitement pourquoi sa présence au Mexique peut être liée à Betty et à la tentative d’enlèvement d’Anna.
+    </p>
+
+    <p>
+      Mais Clive ?
+    </p>
+
+    <p>
+      Lucy ne fait jamais rien au hasard.
+    </p>
+
+    <p>
+      Et elle sait parfaitement que Clive Lynx est l’un des cambrioleurs les plus recherchés des États-Unis.
+    </p>
+
+    <p>
+      Si elle accepte de travailler avec lui, c’est que l’affaire doit être particulièrement complexe.
+    </p>
+
+    <p class="emphasis">
+      Peut-être même officieuse.
+    </p>
+
+    <p>
+      Root repense également à sa tentative d’intrusion à l’hacienda Awake.
+    </p>
+
+    <p>
+      Qu’était-il venu chercher exactement ?
+    </p>
+
+    <p>
+      Des informations sur Hope ?
+    </p>
+
+    <p>
+      Une faille dans son système de sécurité ?
+    </p>
+
+    <p>
+      Ou simplement la preuve qu’elle pouvait représenter un danger pour Anna ?
+    </p>
+
+  </div>
+
+
+  <!-- INTERACTION 1 -->
+
+  <div class="interaction-block investigation-block">
+
+    <h2>
+      Pourquoi Clive ?
+    </h2>
+
+    <div class="observation-buttons">
+
+      <button
+        class="interaction-btn"
+        type="button"
+        data-clive-question="hope"
+      >
+        Des informations sur Hope
+      </button>
+
+      <button
+        class="interaction-btn"
+        type="button"
+        data-clive-question="security"
+      >
+        Tester la sécurité
+      </button>
+
+      <button
+        class="interaction-btn"
+        type="button"
+        data-clive-question="anna"
+      >
+        Vérifier le danger pour Anna
+      </button>
+
+      <button
+        class="interaction-btn"
+        type="button"
+        data-clive-question="secret"
+      >
+        Une enquête officieuse
+      </button>
+
+    </div>
+
+    <div
+      class="reveal-box"
+      id="cliveQuestionReveal"
+    ></div>
+
+  </div>
+
+
+  <div class="text-block dialogue">
+
+    <p>
+      Elle décide finalement de contacter Lucy.
+    </p>
+
+    <p>
+      Un verre.
+    </p>
+
+    <p>
+      Tous les trois.
+    </p>
+
+    <p>
+      Juste pour discuter.
+    </p>
+
+    <p>
+      Et, avec un peu de chance, comprendre ce qu’ils préparent.
+    </p>
+
+    <p>
+      Lucy accepte volontiers.
+    </p>
+
+    <p>
+      Clive, lui, pose une condition :
+    </p>
+
+    <p class="impact-text">
+      Hope doit être présente.
+    </p>
+
+    <p>
+      Et il choisit le bar.
+    </p>
+
+    <p>
+      Root accepte presque immédiatement, amusée par son attitude.
+    </p>
+
+    <p>
+      Lorsqu’elle raconte l’histoire à Hope, celle-ci sourit.
+    </p>
+
+    <p>
+      — Il veut m’observer.
+    </p>
+
+    <p>
+      — Très certainement.
+    </p>
+
+    <p>
+      — Et toi, tu veux les faire parler.
+    </p>
+
+    <p>
+      Root prend un air innocent.
+    </p>
+
+    <p>
+      — Moi ?
+    </p>
+
+    <p>
+      Hope rit.
+    </p>
+
+    <p>
+      — Très bien. Je vous rejoindrai vers vingt-deux heures.
+    </p>
+
+    <p>
+      — Parfait.
+    </p>
+
+    <p>
+      Root consulte son téléphone.
+    </p>
+
+    <p>
+      — Rendez-vous au Mayan Pub, près du parc Santa Lucía. Je les retrouve à vingt et une heures.
+    </p>
+
+    <p>
+      Elle sourit.
+    </p>
+
+    <p>
+      — Ça me laissera le temps de les mettre à l’aise.
+    </p>
+
+    <p>
+      Hope secoue la tête.
+    </p>
+
+    <p>
+      — Ne vole pas trop vite les secrets du voleur.
+    </p>
+
+    <p>
+      Root sourit.
+    </p>
+
+    <p>
+      — Aucune promesse.
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     VISUEL 2
+     MAYAN PUB
+===================================================== -->
+
+<section
+  class="scene"
+  id="mayan-pub"
+>
+
+  <div class="location-card">
+
+    <span>
+      21 h — Yucatán
+    </span>
+
+    <strong>
+      Mayan Pub
+    </strong>
+
+  </div>
+
+
+  <div
+    class="visual"
+    data-visual="2"
+  >
+
+    <img
+      src="images/chapitre4/Visuel-8.PNG"
+      alt="Root Lucy et Clive autour d'une table au Mayan Pub"
+      loading="lazy"
+    >
+
+  </div>
+
+
+  <div class="text-block dialogue">
+
+    <p>
+      Root, Lucy et Clive sont installés autour d’une table.
+    </p>
+
+    <p>
+      Depuis près d’une heure, ils parlent de tout.
+    </p>
+
+    <p class="emphasis">
+      Sauf de ce qui intéresse réellement Root.
+    </p>
+
+    <p>
+      Clive raconte plusieurs anecdotes.
+    </p>
+
+    <p>
+      Lucy questionne beaucoup Root au sujet de Hope.
+    </p>
+
+    <p>
+      Et Root répond juste assez pour ne pas réellement répondre.
+    </p>
+
+    <p>
+      — Il y a une chose que je ne comprends pas, finit par dire Lucy.
+    </p>
+
+    <p>
+      — Seulement une ?
+    </p>
+
+    <p>
+      — Pour l’instant.
+    </p>
+
+    <p>
+      Lucy poursuit :
+    </p>
+
+    <p>
+      — Comment Hope a-t-elle pu vivre aussi longtemps coupée du monde sans chercher à retrouver son frère ?
+    </p>
+
+    <p>
+      Root réfléchit.
+    </p>
+
+    <p>
+      — Parce qu’Hope ne pense pas comme nous.
+    </p>
+
+    <p>
+      — C’est-à-dire ?
+    </p>
+
+    <p>
+      — Elle regarde les événements avec beaucoup plus de distance.
+    </p>
+
+    <p>
+      Root cherche ses mots.
+    </p>
+
+    <p>
+      — Elle voit parfois des choses que nous ne remarquons qu’après plusieurs heures… ou plusieurs jours.
+    </p>
+
+    <p>
+      Clive sourit.
+    </p>
+
+    <p>
+      — Un sixième sens ?
+    </p>
+
+    <p>
+      Root hausse les épaules.
+    </p>
+
+    <p>
+      — Appelez ça comme vous voulez.
+    </p>
+
+    <p>
+      Puis elle retourne la conversation.
+    </p>
+
+    <p>
+      — Mais parlons plutôt de vous deux.
+    </p>
+
+    <p>
+      Lucy sourit.
+    </p>
+
+    <p>
+      — Ah.
+    </p>
+
+    <p>
+      — Vous n’êtes quand même pas venus jusqu’au Mexique pour prendre des vacances ensemble.
+    </p>
+
+    <p>
+      Clive semble presque offensé.
+    </p>
+
+    <p>
+      — Pourquoi pas ?
+    </p>
+
+    <p>
+      Root le regarde.
+    </p>
+
+    <p>
+      — Parce que Lucy ne partirait jamais en vacances avec toi.
+    </p>
+
+    <p>
+      — Charmant.
+    </p>
+
+    <p>
+      Root poursuit :
+    </p>
+
+    <p>
+      — Et surtout parce qu’elle sait exactement qui tu es.
+    </p>
+
+    <p>
+      Clive sourit.
+    </p>
+
+    <p>
+      — Qui suis-je ?
+    </p>
+
+    <p>
+      — Le cambrioleur le plus recherché des États-Unis.
+    </p>
+
+    <p>
+      Lucy rit.
+    </p>
+
+    <p>
+      Root continue :
+    </p>
+
+    <p>
+      — Donc si elle travaille avec toi, ce n’est sûrement pas sur une enquête officielle.
+    </p>
+
+    <p>
+      Lucy ne répond pas.
+    </p>
+
+    <p>
+      Root sourit.
+    </p>
+
+    <p>
+      — J’ai raison.
+    </p>
+
+    <p>
+      — Le travail reste le travail.
+    </p>
+
+    <p>
+      — Quand c’est officiel, peut-être.
+    </p>
+
+    <p>
+      Root se penche légèrement.
+    </p>
+
+    <p>
+      — Mais là, ça ne l’est visiblement pas.
+    </p>
+
+    <p>
+      Puis elle ajoute :
+    </p>
+
+    <p>
+      — Et si Clive peut t’aider, pourquoi pas moi ?
+    </p>
+
+    <p>
+      Lucy la regarde.
+    </p>
+
+    <p>
+      Root poursuit :
+    </p>
+
+    <p>
+      — J’ai des contacts partout dans le monde.
+    </p>
+
+    <p>
+      — Je sais.
+    </p>
+
+    <p>
+      — Des moyens technologiques assez particuliers.
+    </p>
+
+    <p>
+      — Ça aussi, je sais.
+    </p>
+
+    <p>
+      — Et quelques compétences utiles.
+    </p>
+
+    <p>
+      Clive intervient :
+    </p>
+
+    <p>
+      — Ça, j’ai remarqué.
+    </p>
+
+    <p>
+      Root sourit.
+    </p>
+
+    <p>
+      — Donc je pourrais vous aider.
+    </p>
+
+    <p>
+      Lucy hésite.
+    </p>
+
+    <p>
+      — IA2 fait l’essentiel du travail de recherche et de corrélation.
+    </p>
+
+    <p>
+      Puis elle regarde Clive.
+    </p>
+
+    <p>
+      — Et lui apporte une autre façon de voir les choses.
+    </p>
+
+    <p>
+      Root acquiesce.
+    </p>
+
+    <p>
+      — Justement.
+    </p>
+
+    <p>
+      Elle se penche davantage.
+    </p>
+
+    <p>
+      — Si ton enquête est aussi compliquée que je le pense, trois cerveaux valent mieux que deux.
+    </p>
+
+    <p>
+      Un silence.
+    </p>
+
+    <p>
+      Root observe Lucy.
+    </p>
+
+    <p>
+      Puis son expression change.
+    </p>
+
+    <p>
+      — À moins que…
+    </p>
+
+    <p>
+      Lucy la regarde.
+    </p>
+
+    <p>
+      — Que quoi ?
+    </p>
+
+    <p>
+      — Tu ne me fasses toujours pas confiance.
+    </p>
+
+    <p>
+      — Ce n’est pas ça.
+    </p>
+
+    <p>
+      — Alors quoi ?
+    </p>
+
+    <p>
+      Lucy hésite.
+    </p>
+
+    <p>
+      — Je ne veux pas te mettre en danger.
+    </p>
+
+    <p>
+      Root la fixe.
+    </p>
+
+    <p>
+      Puis prend un air faussement vexé.
+    </p>
+
+    <p>
+      — Tu te moques de moi ?
+    </p>
+
+    <p>
+      — Root…
+    </p>
+
+    <p>
+      — Laisse tomber.
+    </p>
+
+    <p>
+      Elle se redresse.
+    </p>
+
+    <p>
+      — J’attends Hope et je lui demande de me ramener.
+    </p>
+
+    <p>
+      Lucy soupire.
+    </p>
+
+    <p>
+      — Ne le prends pas comme ça.
+    </p>
+
+    <p>
+      Root ne répond pas.
+    </p>
+
+    <p>
+      Lucy finit par céder.
+    </p>
+
+    <p class="impact-text">
+      — Nous enquêtons sur la Tueuse Caméléon.
+    </p>
+
+    <p>
+      Root se retourne aussitôt.
+    </p>
+
+    <p>
+      Clive intervient :
+    </p>
+
+    <p>
+      — Plus précisément, Lucy enquête sur la Tueuse Caméléon.
+    </p>
+
+    <p>
+      Puis il sourit.
+    </p>
+
+    <p>
+      — Moi, je suis simplement le consultant criminel non déclaré.
+    </p>
+
+    <p>
+      Lucy lui lance un regard.
+    </p>
+
+    <p>
+      Root sourit.
+    </p>
+
+    <p>
+      — D’accord.
+    </p>
+
+  </div>
+
+
+  <!-- INTERACTION 2 -->
+
+  <div class="interaction-block investigation-block">
+
+    <h2>
+      Le dossier Caméléon
+    </h2>
+
+    <button
+      class="interaction-btn"
+      id="cameleonFileButton"
+      type="button"
+    >
+      Ouvrir le dossier
+    </button>
+
+    <div
+      class="reveal-box"
+      id="cameleonFileReveal"
+    ></div>
+
+  </div>
+
+
+  <div class="text-block dialogue">
+
+    <p>
+      Lucy poursuit :
+    </p>
+
+    <p>
+      — L’enquête officielle la considère comme une tueuse en série.
+    </p>
+
+    <p>
+      — Et toi non.
+    </p>
+
+    <p>
+      — Non.
+    </p>
+
+    <p>
+      — Pourquoi ?
+    </p>
+
+    <p>
+      Clive répond :
+    </p>
+
+    <p>
+      — Parce qu’elle est beaucoup trop propre.
+    </p>
+
+    <p>
+      Lucy acquiesce.
+    </p>
+
+    <p>
+      — Ses victimes n’ont pas de profil commun.
+    </p>
+
+    <p>
+      — Pas de même milieu.
+    </p>
+
+    <p>
+      — Pas de même pays.
+    </p>
+
+    <p>
+      — Pas de même méthode de mise à mort.
+    </p>
+
+    <p>
+      Root comprend.
+    </p>
+
+    <p>
+      — Donc pas de rituel personnel classique.
+    </p>
+
+    <p>
+      — Exactement.
+    </p>
+
+    <p>
+      Lucy poursuit :
+    </p>
+
+    <p>
+      — En revanche, quelque chose revient systématiquement.
+    </p>
+
+    <p>
+      — Sa signature ?
+    </p>
+
+    <p>
+      — Oui.
+    </p>
+
+    <p>
+      Root se rapproche.
+    </p>
+
+    <p>
+      — Et ça t’a conduit à penser à une tueuse à gages ?
+    </p>
+
+    <p>
+      Lucy sourit.
+    </p>
+
+    <p>
+      — Pas seulement.
+    </p>
+
+    <p>
+      — Alors ?
+    </p>
+
+    <p>
+      — Elle me l’a dit elle-même.
+    </p>
+
+    <p>
+      Root fronce les sourcils.
+    </p>
+
+    <p>
+      — Comment ça ?
+    </p>
+
+    <p>
+      — Sur chaque scène de crime, elle a laissé un indice.
+    </p>
+
+    <p>
+      Clive ajoute :
+    </p>
+
+    <p>
+      — Un indice que personne n’avait remarqué avant Lucy.
+    </p>
+
+    <p>
+      Root regarde Lucy.
+    </p>
+
+    <p>
+      — Comment tu l’as trouvé ?
+    </p>
+
+    <p>
+      Lucy sourit légèrement.
+    </p>
+
+    <p>
+      — Observation.
+    </p>
+
+    <p>
+      — Intuition.
+    </p>
+
+    <p>
+      — Réflexion.
+    </p>
+
+    <p>
+      Puis elle ajoute :
+    </p>
+
+    <p>
+      — Et peut-être un peu de chance.
+    </p>
+
+    <p>
+      Root sourit.
+    </p>
+
+    <p>
+      — Ou ton fameux sixième sens.
+    </p>
+
+    <p>
+      — Peut-être.
+    </p>
+
+    <p>
+      Lucy reprend :
+    </p>
+
+    <p>
+      — Sur chaque victime apparaît le même symbole.
+    </p>
+
+    <p>
+      — Toujours au même endroit ?
+    </p>
+
+    <p>
+      — Presque.
+    </p>
+
+    <p>
+      Root fronce les sourcils.
+    </p>
+
+    <p>
+      — Presque ?
+    </p>
+
+    <p>
+      — Le symbole est identique.
+    </p>
+
+    <p>
+      Lucy dessine avec son doigt sur la table.
+    </p>
+
+    <p>
+      — Mais son inclinaison change.
+    </p>
+
+    <p>
+      Root devient immédiatement attentive.
+    </p>
+
+    <p>
+      — Et cette inclinaison indique quelque chose.
+    </p>
+
+    <p>
+      Lucy la regarde.
+    </p>
+
+    <p>
+      — Voilà pourquoi je t’aime bien.
+    </p>
+
+    <p>
+      Root sourit.
+    </p>
+
+    <p>
+      Clive lève les yeux.
+    </p>
+
+    <p>
+      — Je suis là, au cas où.
+    </p>
+
+    <p>
+      Lucy l’ignore.
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     VISUEL 3
+     SYMBOLE CAMÉLÉON
+===================================================== -->
+
+<section
+  class="scene symbol-scene"
+  id="symbole-cameleon"
+>
+
+  <div
+    class="visual interactive-visual"
+    data-visual="3"
+  >
+
+    <img
+      src="images/chapitre4/Visuel-13.PNG"
+      alt="Symbole de la Tueuse Caméléon"
+      loading="lazy"
+    >
+
+  </div>
+
+
+  <!-- INTERACTION 3 -->
+
+  <div class="interaction-block">
+
+    <h2>
+      Observer le symbole
+    </h2>
+
+    <div class="observation-buttons">
+
+      <button
+        class="interaction-btn"
+        type="button"
+        data-symbol-clue="same"
+      >
+        Même symbole
+      </button>
+
+      <button
+        class="interaction-btn"
+        type="button"
+        data-symbol-clue="angle"
+      >
+        Inclinaison différente
+      </button>
+
+      <button
+        class="interaction-btn"
+        type="button"
+        data-symbol-clue="direction"
+      >
+        Prolonger la direction
+      </button>
+
+      <button
+        class="interaction-btn"
+        type="button"
+        data-symbol-clue="object"
+      >
+        Un objet est désigné
+      </button>
+
+    </div>
+
+    <div
+      class="reveal-box"
+      id="symbolClueReveal"
+    ></div>
+
+  </div>
+
+
+  <div class="text-block dialogue">
+
+    <p>
+      — En prolongeant mentalement l’orientation du symbole…
+    </p>
+
+    <p>
+      — Ça pointe vers un endroit précis.
+    </p>
+
+    <p>
+      — Exactement.
+    </p>
+
+    <p>
+      Lucy poursuit :
+    </p>
+
+    <p>
+      — Sur chaque scène, la ligne désignait un objet.
+    </p>
+
+    <p>
+      Root semble fascinée.
+    </p>
+
+    <p>
+      — Et sur les objets ?
+    </p>
+
+    <p>
+      — Un message.
+    </p>
+
+    <p>
+      — Visible ?
+    </p>
+
+    <p>
+      — Presque pas.
+    </p>
+
+    <p>
+      Lucy ajoute :
+    </p>
+
+    <p class="emphasis">
+      — Microscopique. Dissimulé sous l’objet ou à l’intérieur.
+    </p>
+
+    <p>
+      Root sourit.
+    </p>
+
+    <p>
+      — Elle voulait donc qu’on le trouve.
+    </p>
+
+    <p>
+      — Oui.
+    </p>
+
+    <p>
+      — Mais pas facilement.
+    </p>
+
+    <p>
+      — Exactement.
+    </p>
+
+    <p>
+      Root réfléchit.
+    </p>
+
+    <p>
+      — Elle ne cherche pas seulement à tuer.
+    </p>
+
+    <p>
+      — Non.
+    </p>
+
+    <p>
+      Lucy poursuit :
+    </p>
+
+    <p>
+      — Elle veut être comprise.
+    </p>
+
+    <p>
+      Root regarde Clive.
+    </p>
+
+    <p>
+      — Et qu’est-ce qu’elle dit ?
+    </p>
+
+    <p>
+      Hope arrive précisément à cet instant.
+    </p>
+
+    <p>
+      — Bonsoir.
+    </p>
+
+    <p>
+      Root tourne la tête.
+    </p>
+
+    <p>
+      — Tu arrives au bon moment.
+    </p>
+
+    <p>
+      Hope les rejoint.
+    </p>
+
+    <p>
+      — Apparemment.
+    </p>
+
+    <p>
+      Clive lui adresse un sourire.
+    </p>
+
+    <p>
+      — Merci d’avoir accepté mon invitation indirecte.
+    </p>
+
+    <p>
+      Hope s’assoit.
+    </p>
+
+    <p>
+      — J’étais curieuse de voir pourquoi vous teniez autant à ma présence.
+    </p>
+
+    <p>
+      Root répond avant lui :
+    </p>
+
+    <p>
+      — Parce qu’ils nous prennent pour des tueuses à gages.
+    </p>
+
+    <p>
+      Hope tourne lentement la tête vers Lucy et Clive.
+    </p>
+
+    <p>
+      Puis sourit.
+    </p>
+
+    <p>
+      — Intéressant.
+    </p>
+
+    <p>
+      Clive rit.
+    </p>
+
+    <p>
+      Lucy soupire.
+    </p>
+
+    <p>
+      Hope poursuit :
+    </p>
+
+    <p>
+      — Qu’est-ce qui vous a conduits à cette conclusion ?
+    </p>
+
+    <p>
+      Puis elle ajoute :
+    </p>
+
+    <p>
+      — Notre franchise ?
+    </p>
+
+    <p>
+      — Le cours de self-défense ?
+    </p>
+
+    <p>
+      — Ou simplement parce que nous semblons toutes les deux un peu trop difficiles à classer ?
+    </p>
+
+    <p>
+      Lucy secoue la tête.
+    </p>
+
+    <p>
+      — Très bien.
+    </p>
+
+    <p>
+      Elle pose ses mains sur la table.
+    </p>
+
+    <p>
+      — Jouons cartes sur table.
+    </p>
+
+    <p>
+      Hope sourit.
+    </p>
+
+    <p>
+      — Enfin.
+    </p>
+
+    <p>
+      Lucy reprend :
+    </p>
+
+    <p>
+      — La Tueuse Caméléon laisse un symbole sur chacune de ses victimes.
+    </p>
+
+    <p>
+      Elle explique rapidement l’inclinaison variable.
+    </p>
+
+    <p>
+      Puis les objets.
+    </p>
+
+    <p>
+      Puis les messages.
+    </p>
+
+    <p>
+      Hope écoute sans l’interrompre.
+    </p>
+
+    <p>
+      — Et que dit le message ? demande-t-elle.
+    </p>
+
+    <p>
+      Lucy prend une inspiration.
+    </p>
+
+    <p>
+      — Je le connais par cœur.
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     VISUEL 4
+     MESSAGE MICROSCOPIQUE
+===================================================== -->
+
+<section
+  class="scene microscopic-scene"
+  id="message-cameleon"
+>
+
+  <div
+    class="visual interactive-visual"
+    data-visual="4"
+  >
+
+    <img
+      src="images/chapitre4/Visuel-16.PNG"
+      alt="Message microscopique de la Tueuse Caméléon"
+      loading="lazy"
+    >
+
+  </div>
+
+
+  <!-- INTERACTION 4 -->
+
+  <div class="interaction-block">
+
+    <h2>
+      Message microscopique
+    </h2>
+
+    <button
+      class="interaction-btn"
+      id="microscopeTrigger"
+      type="button"
+    >
+      Agrandir le message
+    </button>
+
+    <div
+      class="reveal-box"
+      id="microscopeReveal"
+    >
+
+      <p>
+        « Certains métiers ne deviennent des arts qu’entre des mains d’exception.
+      </p>
+
+      <p>
+        Celui-ci appartient à une femme qui sait descendre dans les abysses de l’être humain sans s’y perdre.
+      </p>
+
+      <p>
+        Celui qui veut comprendre l’artiste devra accepter de suivre longtemps un chemin sans certitude, guidé seulement par l’espoir fragile d’apercevoir un jour la vérité.
+      </p>
+
+      <p>
+        Peut-être alors aura-t-il une chance de comprendre ce qu’il regarde. »
+      </p>
+
+    </div>
+
+  </div>
+
+
+  <div class="text-block dialogue">
+
+    <p>
+      Elle récite :
+    </p>
+
+    <p>
+      « Certains métiers ne deviennent des arts qu’entre des mains d’exception.
+      Celui-ci appartient à une femme qui sait descendre dans les abysses de l’être humain sans s’y perdre.
+      Celui qui veut comprendre l’artiste devra accepter de suivre longtemps un chemin sans certitude, guidé seulement par l’espoir fragile d’apercevoir un jour la vérité.
+      Peut-être alors aura-t-il une chance de comprendre ce qu’il regarde. »
+    </p>
+
+    <p>
+      Un silence.
+    </p>
+
+    <p>
+      Root réfléchit.
+    </p>
+
+    <p>
+      — D’accord.
+    </p>
+
+    <p>
+      Elle regarde Lucy.
+    </p>
+
+    <p>
+      — Je comprends pourquoi tu penses qu’il s’agit d’une femme.
+    </p>
+
+    <p>
+      Puis elle ajoute :
+    </p>
+
+    <p>
+      — Et elle se définit clairement comme une professionnelle.
+    </p>
+
+    <p>
+      Hope intervient :
+    </p>
+
+    <p>
+      — Ou elle veut que vous la perceviez ainsi.
+    </p>
+
+    <p>
+      Lucy la regarde.
+    </p>
+
+    <p>
+      — Vous pensez qu’elle ment ?
+    </p>
+
+    <p>
+      — Je pense seulement qu’une personne qui construit un message aussi soigneusement construit aussi l’image qu’elle veut donner d’elle-même.
+    </p>
+
+    <p>
+      Clive sourit.
+    </p>
+
+    <p>
+      — Je commence à comprendre pourquoi je voulais qu’elle soit là.
+    </p>
+
+    <p>
+      Root lui lance un regard.
+    </p>
+
+    <p>
+      Lucy poursuit :
+    </p>
+
+    <p>
+      — Quoi qu’il en soit, il y a autre chose.
+    </p>
+
+    <p>
+      Root sait déjà où elle veut en venir.
+    </p>
+
+    <p>
+      — Moi.
+    </p>
+
+    <p>
+      Lucy ne répond pas immédiatement.
+    </p>
+
+    <p>
+      Root sourit.
+    </p>
+
+    <p>
+      — Vas-y.
+    </p>
+
+    <p>
+      Lucy soupire.
+    </p>
+
+    <p>
+      — IA2 a découvert une corrélation géographique particulièrement troublante.
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     VISUEL 5
+     ROOT DEVIENT SUSPECTE
+===================================================== -->
+
+<section
+  class="scene investigation-scene"
+  id="root-suspecte"
+>
+
+  <div
+    class="visual"
+    data-visual="5"
+  >
+
+    <img
+      src="images/chapitre4/Visuel-21.PNG"
+      alt="Carte montrant les déplacements de Root et les crimes de la Caméléon"
+      loading="lazy"
+    >
+
+  </div>
+
+
+  <div class="text-block dialogue">
+
+    <p>
+      Hope demande :
+    </p>
+
+    <p>
+      — Laquelle ?
+    </p>
+
+    <p>
+      Lucy regarde Root.
+    </p>
+
+    <p>
+      — Les crimes attribués à la Caméléon sont répartis dans plusieurs pays.
+    </p>
+
+    <p>
+      Puis elle ajoute :
+    </p>
+
+    <p>
+      — Et pour chaque meurtre que j’ai pu recenser précisément, Root se trouvait dans le même pays.
+    </p>
+
+    <p>
+      Root cesse de sourire.
+    </p>
+
+    <p>
+      — À la même période ?
+    </p>
+
+    <p>
+      — Oui.
+    </p>
+
+    <p>
+      — Et parfois dans la même région ?
+    </p>
+
+    <p>
+      — Oui.
+    </p>
+
+    <p>
+      Root reste silencieuse.
+    </p>
+
+    <p>
+      Puis elle souffle :
+    </p>
+
+    <p>
+      — D’accord.
+    </p>
+
+    <p>
+      Un rire nerveux lui échappe.
+    </p>
+
+    <p>
+      — Là, je comprends beaucoup mieux.
+    </p>
+
+    <p>
+      Clive ajoute :
+    </p>
+
+    <p>
+      — Ça commence à faire beaucoup de coïncidences.
+    </p>
+
+    <p>
+      Root réfléchit.
+    </p>
+
+    <p>
+      — Et maintenant Hope devient suspecte parce qu’elle est liée à moi.
+    </p>
+
+    <p>
+      Lucy répond immédiatement :
+    </p>
+
+    <p>
+      — Pas au même niveau.
+    </p>
+
+    <p>
+      Hope l’observe.
+    </p>
+
+    <p>
+      Lucy poursuit :
+    </p>
+
+    <p>
+      — Votre passé est pratiquement inexistant dans les bases de données.
+    </p>
+
+    <p>
+      — Donc IA2 ne peut pas vérifier où j’étais.
+    </p>
+
+    <p>
+      — Exactement.
+    </p>
+
+    <p>
+      Hope acquiesce.
+    </p>
+
+    <p>
+      — C’est logique.
+    </p>
+
+    <p>
+      Root intervient :
+    </p>
+
+    <p>
+      — Mais tu vas devoir rallonger ta liste.
+    </p>
+
+    <p>
+      Lucy la regarde.
+    </p>
+
+    <p>
+      — Pourquoi ?
+    </p>
+
+    <p>
+      — Parce que Peter et Max ont souvent voyagé avec moi.
+    </p>
+
+    <p>
+      — Souvent, oui.
+    </p>
+
+    <p>
+      Root poursuit :
+    </p>
+
+    <p>
+      — Donc si ta corrélation se contente de mes déplacements, tu risques de retrouver leurs noms également.
+    </p>
+
+    <p>
+      Lucy sourit.
+    </p>
+
+    <p>
+      — Déjà vérifié.
+    </p>
+
+    <p>
+      — Et ?
+    </p>
+
+    <p>
+      — Ils apparaissent sur certaines périodes.
+    </p>
+
+    <p>
+      Root lève les mains.
+    </p>
+
+    <p>
+      — Voilà.
+    </p>
+
+    <p>
+      Lucy ajoute :
+    </p>
+
+    <p>
+      — Mais le message indique une femme.
+    </p>
+
+    <p>
+      — Donc il reste Hope et moi.
+    </p>
+
+    <p>
+      — Potentiellement.
+    </p>
+
+    <p>
+      Clive intervient :
+    </p>
+
+    <p>
+      — Sauf qu’IA2 ne peut pratiquement rien exclure concernant Hope.
+    </p>
+
+    <p>
+      Root regarde Lucy.
+    </p>
+
+    <p>
+      — Et moi, je suis ta suspecte numéro un.
+    </p>
+
+    <p>
+      Lucy hésite.
+    </p>
+
+    <p>
+      — Ton profil correspond à plusieurs éléments.
+    </p>
+
+    <p>
+      — Lesquels ?
+    </p>
+
+  </div>
+
+
+  <!-- INTERACTION 5 -->
+
+  <div class="interaction-block investigation-block">
+
+    <h2>
+      Pourquoi Root est-elle suspecte ?
+    </h2>
+
+    <div class="observation-buttons">
+
+      <button
+        class="interaction-btn"
+        type="button"
+        data-root-suspect="travel"
+      >
+        Ses voyages
+      </button>
+
+      <button
+        class="interaction-btn"
+        type="button"
+        data-root-suspect="combat"
+      >
+        Son niveau de combat
+      </button>
+
+      <button
+        class="interaction-btn"
+        type="button"
+        data-root-suspect="resources"
+      >
+        Ses ressources
+      </button>
+
+      <button
+        class="interaction-btn"
+        type="button"
+        data-root-suspect="sentinel"
+      >
+        Les Sentinelles
+      </button>
+
+      <button
+        class="interaction-btn"
+        type="button"
+        data-root-suspect="causality"
+      >
+        Causes et conséquences
+      </button>
+
+    </div>
+
+    <div
+      class="reveal-box"
+      id="rootSuspectReveal"
+    ></div>
+
+  </div>
+
+
+  <div class="text-block dialogue">
+
+    <p>
+      Lucy prend le temps de répondre.
+    </p>
+
+    <p>
+      — Tu voyages beaucoup.
+    </p>
+
+    <p>
+      — Comme des millions de gens.
+    </p>
+
+    <p>
+      — Tu es présente à proximité d’un nombre anormalement élevé de scènes attribuées à la Caméléon.
+    </p>
+
+    <p>
+      — Là, d’accord.
+    </p>
+
+    <p>
+      — Tu sais te battre à un niveau extrêmement élevé.
+    </p>
+
+    <p>
+      — Ça ne fait pas de moi une assassine.
+    </p>
+
+    <p>
+      — Non.
+    </p>
+
+    <p>
+      Lucy poursuit :
+    </p>
+
+    <p>
+      — Tu disposes de ressources financières importantes.
+    </p>
+
+    <p>
+      — Encore raté. Je n’ai pas besoin de tuer pour de l’argent.
+    </p>
+
+    <p>
+      — Je sais.
+    </p>
+
+    <p>
+      — Alors ?
+    </p>
+
+    <p>
+      Lucy la regarde.
+    </p>
+
+    <p>
+      — Tu recherches les situations extrêmes.
+    </p>
+
+    <p>
+      Root ne répond pas.
+    </p>
+
+    <p>
+      — Tu prends des risques.
+    </p>
+
+    <p>
+      — Oui.
+    </p>
+
+    <p>
+      — Tu appartiens désormais officiellement, à mes yeux, à une organisation secrète.
+    </p>
+
+    <p>
+      Root sourit sans joie.
+    </p>
+
+    <p>
+      — Les Sentinelles de la Lumière.
+    </p>
+
+    <p>
+      — Exactement.
+    </p>
+
+    <p>
+      Lucy poursuit :
+    </p>
+
+    <p>
+      — Et surtout…
+    </p>
+
+    <p>
+      Elle hésite.
+    </p>
+
+    <p>
+      Root comprend.
+    </p>
+
+    <p>
+      — Notre dîner.
+    </p>
+
+    <p>
+      — Oui.
+    </p>
+
+    <p>
+      Lucy la regarde droit dans les yeux.
+    </p>
+
+    <p>
+      — Tu m’as parlé de la façon dont certains événements apparemment insignifiants peuvent provoquer des conséquences majeures.
+    </p>
+
+    <p>
+      — Rosa Parks.
+    </p>
+
+    <p>
+      — Entre autres.
+    </p>
+
+    <p>
+      Lucy poursuit :
+    </p>
+
+    <p>
+      — Tu réfléchis en permanence en termes de causes, de conséquences, de trajectoires humaines.
+    </p>
+
+    <p>
+      Root comprend parfaitement.
+    </p>
+
+    <p>
+      — Donc, dans l’hypothèse où quelqu’un voudrait supprimer une personne pour modifier une chaîne d’événements futurs…
+    </p>
+
+    <p>
+      Lucy ne répond pas.
+    </p>
+
+    <p>
+      Root termine elle-même :
+    </p>
+
+    <p class="emphasis">
+      — Je pourrais correspondre.
+    </p>
+
+    <p>
+      — Oui.
+    </p>
+
+    <p>
+      Un silence.
+    </p>
+
+    <p>
+      Puis Root sourit légèrement.
+    </p>
+
+    <p>
+      — Tu sais ce qui est inquiétant ?
+    </p>
+
+    <p>
+      — Quoi ?
+    </p>
+
+    <p>
+      — Je trouve ton raisonnement plutôt bon.
+    </p>
+
+    <p>
+      Clive rit.
+    </p>
+
+    <p>
+      Root poursuit :
+    </p>
+
+    <p>
+      — Mais il y a un problème.
+    </p>
+
+    <p>
+      Lucy attend.
+    </p>
+
+    <p class="impact-text">
+      — Ton suspect est beaucoup trop parfait.
+    </p>
+
+    <p>
+      Lucy sourit.
+    </p>
+
+    <p>
+      — C’est exactement ce qui me dérange.
+    </p>
+
+    <p>
+      Root la regarde.
+    </p>
+
+    <p>
+      — Donc je reste ta suspecte numéro un.
+    </p>
+
+    <p>
+      Lucy hésite une fraction de seconde.
+    </p>
+
+    <p>
+      — Disons…
+    </p>
+
+    <p>
+      Root arque un sourcil.
+    </p>
+
+    <p>
+      — Lucy.
+    </p>
+
+    <p>
+      Lucy soupire.
+    </p>
+
+    <p>
+      — Oui.
+    </p>
+
+    <p>
+      Root se renverse dans son fauteuil.
+    </p>
+
+    <p>
+      — Génial.
+    </p>
+
+    <p>
+      Puis elle lève son verre.
+    </p>
+
+    <p class="impact-text">
+      — À la confiance.
+    </p>
+
+  </div>
+
+
+  <!-- INTERACTION 6 -->
+
+  <div class="interaction-block deduction-interaction">
+
+    <h2>
+      Le suspect parfait
+    </h2>
+
+    <button
+      class="interaction-btn"
+      id="perfectSuspectButton"
+      type="button"
+    >
+      Examiner le paradoxe
+    </button>
+
+    <div
+      class="reveal-box"
+      id="perfectSuspectReveal"
+    ></div>
+
+  </div>
+
+
+  <div class="text-block dialogue">
+
+    <p>
+      Hope reste silencieuse quelques secondes.
+    </p>
+
+    <p>
+      Puis elle regarde Lucy.
+    </p>
+
+    <p>
+      — Ton raisonnement est parfaitement plausible.
+    </p>
+
+    <p>
+      Lucy attend la suite.
+    </p>
+
+    <p>
+      — Mais tu commets une erreur.
+    </p>
+
+    <p>
+      — Laquelle ?
+    </p>
+
+    <p>
+      — Tu regardes exactement dans la direction que la Caméléon veut que tu regardes.
+    </p>
+
+    <p>
+      Root relève légèrement les yeux.
+    </p>
+
+    <p>
+      Hope poursuit :
+    </p>
+
+    <p>
+      — Au début de son message, elle peut effectivement faire penser à Root.
+    </p>
+
+    <p>
+      Elle compte presque les mots.
+    </p>
+
+    <p>
+      — « Art d’exception. Femme aguerrie. L’être qui sait. »
+    </p>
+
+    <p>
+      Root grimace.
+    </p>
+
+    <p>
+      — Merci.
+    </p>
+
+    <p>
+      — Mais ensuite, elle change de cible.
+    </p>
+
+    <p>
+      Lucy fronce les sourcils.
+    </p>
+
+    <p>
+      — Comment ça ?
+    </p>
+
+    <p>
+      Hope reprend lentement :
+    </p>
+
+    <p>
+      — « Un fragile espoir. Une persistance vaine. Être guidé sur le chemin de la vérité… »
+    </p>
+
+    <p>
+      Elle regarde Lucy.
+    </p>
+
+    <p class="impact-text">
+      — Là, elle ne parle plus d’elle.
+    </p>
+
+    <p>
+      — Elle parle de l’enquêteur.
+    </p>
+
+    <p>
+      Lucy ne répond pas.
+    </p>
+
+    <p>
+      Hope poursuit :
+    </p>
+
+    <p class="emphasis">
+      — De toi.
+    </p>
+
+    <p>
+      Clive cesse de sourire.
+    </p>
+
+    <p>
+      — Elle te dit presque ouvertement que tu vas persister.
+    </p>
+
+    <p>
+      — Que tu vas croire progresser.
+    </p>
+
+    <p>
+      — Et que cette persistance peut être vaine si tu continues à suivre uniquement le chemin qu’elle a préparé.
+    </p>
+
+    <p>
+      Lucy relit mentalement le message.
+    </p>
+
+    <p>
+      — Une fausse piste.
+    </p>
+
+    <p>
+      — Peut-être.
+    </p>
+
+    <p>
+      Hope nuance immédiatement :
+    </p>
+
+    <p>
+      — Ou une vraie piste construite pour conduire à une fausse conclusion.
+    </p>
+
+    <p>
+      Root sourit légèrement.
+    </p>
+
+    <p>
+      — C’est encore plus élégant.
+    </p>
+
+    <p>
+      Lucy la regarde.
+    </p>
+
+    <p>
+      — Pas quand c’est toi la conclusion.
+    </p>
+
+    <p>
+      Hope poursuit :
+    </p>
+
+    <p>
+      — Il y a surtout une autre partie qui m’intéresse.
+    </p>
+
+    <p>
+      — Laquelle ?
+    </p>
+
+    <p>
+      — « Approcher ou percevoir miraculeusement l’artiste. »
+    </p>
+
+    <p>
+      Hope marque une pause.
+    </p>
+
+    <p>
+      — Pourquoi « miraculeusement » ?
+    </p>
+
+    <p>
+      Clive réfléchit.
+    </p>
+
+    <p>
+      Lucy comprend progressivement.
+    </p>
+
+    <p>
+      — Parce qu’elle estime qu’on ne peut pas normalement la trouver.
+    </p>
+
+    <p>
+      Hope acquiesce.
+    </p>
+
+    <p>
+      — Exactement.
+    </p>
+
+    <p>
+      Puis elle ajoute :
+    </p>
+
+    <p class="impact-text">
+      — Ton Caméléon est peut-être un fantôme administratif.
+    </p>
+
+    <p>
+      Lucy se fige.
+    </p>
+
+    <p>
+      Hope poursuit :
+    </p>
+
+    <p>
+      — Quelqu’un qui n’apparaît pas dans les bases ordinaires.
+    </p>
+
+    <p>
+      — Pas d’identité exploitable.
+    </p>
+
+    <p>
+      — Pas de parcours permettant à IA2 de créer les corrélations habituelles.
+    </p>
+
+    <p>
+      Elle sourit légèrement.
+    </p>
+
+    <p>
+      — Un peu comme moi avant que je décide de réapparaître officiellement.
+    </p>
+
+    <p>
+      Lucy réfléchit.
+    </p>
+
+    <p>
+      — Donc quand elle parle d’un « espoir fou »…
+    </p>
+
+    <p>
+      — Elle te nargue peut-être.
+    </p>
+
+    <p>
+      Hope poursuit :
+    </p>
+
+    <p>
+      — Elle sait que tes outils sont extraordinaires.
+    </p>
+
+    <p>
+      — Mais elle sait aussi exactement ce qu’ils ne peuvent pas voir.
+    </p>
+
+    <p>
+      Clive siffle doucement.
+    </p>
+
+    <p>
+      — J’aime de moins en moins cette femme.
+    </p>
+
+  </div>
+
+
+  <!-- INTERACTION 7 -->
+
+  <div class="interaction-block investigation-block">
+
+    <h2>
+      Décrypter le message
+    </h2>
+
+    <div class="observation-buttons">
+
+      <button
+        class="interaction-btn"
+        type="button"
+        data-message-analysis="artist"
+      >
+        L’artiste
+      </button>
+
+      <button
+        class="interaction-btn"
+        type="button"
+        data-message-analysis="investigator"
+      >
+        L’enquêteur
+      </button>
+
+      <button
+        class="interaction-btn"
+        type="button"
+        data-message-analysis="miracle"
+      >
+        Le miracle
+      </button>
+
+      <button
+        class="interaction-btn"
+        type="button"
+        data-message-analysis="ghost"
+      >
+        Le fantôme administratif
+      </button>
+
+    </div>
+
+    <div
+      class="reveal-box"
+      id="messageAnalysisReveal"
+    ></div>
+
+  </div>
+
+
+  <div class="text-block dialogue">
+
+    <p>
+      Hope regarde Lucy.
+    </p>
+
+    <p>
+      — Elle a pourtant déjà commis des erreurs.
+    </p>
+
+    <p>
+      Lucy se redresse immédiatement.
+    </p>
+
+    <p>
+      — Lesquelles ?
+    </p>
+
+    <p>
+      Root intervient.
+    </p>
+
+    <p>
+      — La première, c’est moi.
+    </p>
+
+    <p>
+      Lucy tourne les yeux vers elle.
+    </p>
+
+    <p>
+      — Pourquoi te mettre sur ma piste ?
+    </p>
+
+    <p>
+      Root poursuit :
+    </p>
+
+    <p>
+      — Si elle voulait seulement rester invisible, elle aurait pu ne rien laisser.
+    </p>
+
+    <p>
+      — Pourtant elle t’a donné un chemin.
+    </p>
+
+    <p>
+      Clive acquiesce.
+    </p>
+
+    <p>
+      — Donc soit elle veut jouer…
+    </p>
+
+    <p>
+      — soit elle veut faire croire quelque chose, termine Lucy.
+    </p>
+
+    <p>
+      Root continue :
+    </p>
+
+    <p>
+      — Et surtout, quelqu’un comme elle ne travaille peut-être pas uniquement pour l’argent.
+    </p>
+
+    <p>
+      Elle réfléchit.
+    </p>
+
+    <p>
+      — Elle peut travailler seule.
+    </p>
+
+    <p>
+      — Pour une organisation.
+    </p>
+
+    <p>
+      — Pour un groupe.
+    </p>
+
+    <p>
+      Puis son expression devient plus sérieuse.
+    </p>
+
+    <p>
+      — Ou pour un ordre.
+    </p>
+
+    <p>
+      Hope ne réagit pas.
+    </p>
+
+    <p>
+      Lucy le remarque.
+    </p>
+
+    <p>
+      Root poursuit :
+    </p>
+
+    <p>
+      — Et il y a autre chose que nous ne regardons probablement pas assez.
+    </p>
+
+    <p>
+      — Les victimes.
+    </p>
+
+    <p>
+      — Exactement.
+    </p>
+
+    <p>
+      Root se rapproche de la table.
+    </p>
+
+    <p>
+      — Pourquoi ces personnes ?
+    </p>
+
+    <p>
+      — Pourquoi elles, précisément ?
+    </p>
+
+    <p>
+      — Qu’est-ce qui a changé après leur mort ?
+    </p>
+
+    <p>
+      Clive comprend.
+    </p>
+
+    <p>
+      — Tu veux chercher les conséquences plutôt que le mobile immédiat.
+    </p>
+
+    <p>
+      — Les deux.
+    </p>
+
+    <p>
+      Root sourit.
+    </p>
+
+    <p>
+      — Peter dirait qu’un effet possède toujours une cause.
+    </p>
+
+    <p>
+      Elle réfléchit.
+    </p>
+
+    <p>
+      — Trouve la cause qui rend ces morts nécessaires et tu comprendras peut-être qui commande la Caméléon.
+    </p>
+
+    <p>
+      Hope intervient :
+    </p>
+
+    <p>
+      — Je pousserais même un peu plus loin.
+    </p>
+
+    <p>
+      Tout le monde se tourne vers elle.
+    </p>
+
+    <p>
+      — IA2 ne devrait pas seulement étudier les effets de leurs morts.
+    </p>
+
+    <p>
+      — Mais quoi ?
+    </p>
+
+    <p class="impact-text">
+      — Leur absence.
+    </p>
+
+    <p>
+      Lucy fronce les sourcils.
+    </p>
+
+    <p>
+      Hope poursuit :
+    </p>
+
+    <p>
+      — Prenez chacune des victimes.
+    </p>
+
+    <p>
+      — Puis posez cette question :
+    </p>
+
+    <p class="emphasis">
+      — Que se serait-il passé si cette personne était encore vivante aujourd’hui ?
+    </p>
+
+    <p>
+      Lucy ne bouge plus.
+    </p>
+
+    <p>
+      Clive la regarde.
+    </p>
+
+    <p>
+      Root sourit.
+    </p>
+
+    <p>
+      Lucy finit par murmurer :
+    </p>
+
+    <p>
+      — Bon sang…
+    </p>
+
+  </div>
+
+
+  <!-- INTERACTION 8 -->
+
+  <div class="interaction-block deduction-interaction">
+
+    <h2>
+      Reconstruire les futurs possibles
+    </h2>
+
+    <div class="observation-buttons">
+
+      <button
+        class="interaction-btn"
+        type="button"
+        data-future-analysis="decision"
+      >
+        Une décision
+      </button>
+
+      <button
+        class="interaction-btn"
+        type="button"
+        data-future-analysis="meeting"
+      >
+        Une rencontre
+      </button>
+
+      <button
+        class="interaction-btn"
+        type="button"
+        data-future-analysis="discovery"
+      >
+        Une découverte
+      </button>
+
+      <button
+        class="interaction-btn"
+        type="button"
+        data-future-analysis="impact"
+      >
+        Une vie sauvée ou condamnée
+      </button>
+
+    </div>
+
+    <div
+      class="reveal-box"
+      id="futureAnalysisReveal"
+    ></div>
+
+  </div>
+
+
+  <div class="text-block dialogue">
+
+    <p>
+      Hope continue :
+    </p>
+
+    <p>
+      — Quelle décision aurait-elle pu prendre ?
+    </p>
+
+    <p>
+      — Qui aurait-elle pu rencontrer ?
+    </p>
+
+    <p>
+      — Quel contrat aurait-elle pu empêcher ?
+    </p>
+
+    <p>
+      — Quelle découverte aurait-elle pu faire ?
+    </p>
+
+    <p>
+      — Quelle personne aurait-elle pu sauver… ou condamner ?
+    </p>
+
+    <p>
+      Lucy attrape son téléphone.
+    </p>
+
+    <p>
+      — C’est ça.
+    </p>
+
+    <p>
+      Elle regarde Hope.
+    </p>
+
+    <p>
+      — Tu viens de gagner ta place dans l’équipe.
+    </p>
+
+    <p>
+      Hope sourit.
+    </p>
+
+    <p>
+      — Ça veut dire que Root et moi ne sommes plus suspectes ?
+    </p>
+
+    <p>
+      Lucy range son téléphone.
+    </p>
+
+    <p>
+      — Je n’ai pas dit ça.
+    </p>
+
+    <p>
+      Hope éclate de rire.
+    </p>
+
+    <p>
+      — J’aurai essayé.
+    </p>
+
+    <p>
+      Clive intervient :
+    </p>
+
+    <p>
+      — Donc, si je résume…
+    </p>
+
+    <p>
+      Il désigne Root et Lucy.
+    </p>
+
+    <p>
+      — Vous deux, vous continuez à travailler sur la piste que la Caméléon nous donne.
+    </p>
+
+    <p>
+      Puis il se désigne.
+    </p>
+
+    <p>
+      — Moi, je cherche les gens qui n’existent pas.
+    </p>
+
+    <p>
+      Lucy sourit.
+    </p>
+
+    <p>
+      — Les identités effacées.
+    </p>
+
+    <p>
+      — Les disparus.
+    </p>
+
+    <p>
+      — Les morts qui ne le sont peut-être pas.
+    </p>
+
+    <p>
+      Clive acquiesce avec satisfaction.
+    </p>
+
+    <p>
+      — Mon terrain préféré.
+    </p>
+
+    <p>
+      Lucy poursuit :
+    </p>
+
+    <p>
+      — IA2 va reconstruire chaque victime comme si elle avait survécu.
+    </p>
+
+    <p>
+      — Décisions probables, réseaux, projets, conséquences.
+    </p>
+
+    <p>
+      Hope ajoute :
+    </p>
+
+    <p>
+      — Et surtout les points où leur avenir aurait pu modifier celui de quelqu’un d’autre.
+    </p>
+
+    <p>
+      Lucy acquiesce.
+    </p>
+
+    <p>
+      — Et toi ?
+    </p>
+
+    <p>
+      Elle regarde Hope.
+    </p>
+
+    <p>
+      Hope sourit.
+    </p>
+
+    <p>
+      — Moi, j’essaierai de regarder là où votre Caméléon espère que personne ne regarde.
+    </p>
+
+    <p>
+      Root lève son verre.
+    </p>
+
+    <p class="emphasis">
+      — Voilà une équipe parfaitement normale.
+    </p>
+
+  </div>
+
+
+  <!-- INTERACTION 9 -->
+
+  <div class="interaction-block unity-interaction">
+
+    <h2>
+      Répartir l’enquête
+    </h2>
+
+    <div class="observation-buttons">
+
+      <button
+        class="interaction-btn"
+        type="button"
+        data-team-role="lucy"
+      >
+        Lucy + IA2
+      </button>
+
+      <button
+        class="interaction-btn"
+        type="button"
+        data-team-role="clive"
+      >
+        Clive
+      </button>
+
+      <button
+        class="interaction-btn"
+        type="button"
+        data-team-role="root"
+      >
+        Root
+      </button>
+
+      <button
+        class="interaction-btn"
+        type="button"
+        data-team-role="hope"
+      >
+        Hope
+      </button>
+
+    </div>
+
+    <div
+      class="reveal-box"
+      id="teamRoleReveal"
+    ></div>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     SÉQUENCE 2
+     L'ATTAQUE
+===================================================== -->
+
+<section
+  class="scene danger-scene"
+  id="attaque"
+>
+
+  <div class="text-block dialogue">
+
+    <p>
+      Soudain, Hope cesse de sourire.
+    </p>
+
+    <p>
+      Son regard change.
+    </p>
+
+    <p>
+      Root le remarque immédiatement.
+    </p>
+
+    <p>
+      — Qu’est-ce qu’il y a ?
+    </p>
+
+    <p>
+      Hope ne répond pas.
+    </p>
+
+    <p>
+      Elle observe autour d’elle.
+    </p>
+
+    <p>
+      Le bar.
+    </p>
+
+    <p>
+      Les tables.
+    </p>
+
+    <p>
+      Les entrées.
+    </p>
+
+    <p>
+      Les passants.
+    </p>
+
+    <p>
+      Puis elle se lève.
+    </p>
+
+    <p class="impact-text">
+      — Il y a trop de monde ici.
+    </p>
+
+    <p>
+      Lucy fronce les sourcils.
+    </p>
+
+    <p>
+      — Et ?
+    </p>
+
+    <p>
+      — On part.
+    </p>
+
+    <p>
+      — Pourquoi ?
+    </p>
+
+    <p>
+      Hope saisit sa veste.
+    </p>
+
+    <p class="emphasis">
+      — Maintenant.
+    </p>
+
+    <p>
+      Root ne pose aucune question.
+    </p>
+
+    <p>
+      — Allez.
+    </p>
+
+    <p>
+      Clive comprend que quelque chose a changé.
+    </p>
+
+    <p>
+      Les quatre quittent rapidement le pub.
+    </p>
+
+  </div>
+
+
+  <!-- INTERACTION 10 -->
+
+  <div class="interaction-block danger-interaction">
+
+    <h2>
+      Qu’est-ce que Hope a remarqué ?
+    </h2>
+
+    <div class="observation-buttons">
+
+      <button
+        class="interaction-btn"
+        type="button"
+        data-danger-clue="crowd"
+      >
+        Trop de monde
+      </button>
+
+      <button
+        class="interaction-btn"
+        type="button"
+        data-danger-clue="entrances"
+      >
+        Les entrées
+      </button>
+
+      <button
+        class="interaction-btn"
+        type="button"
+        data-danger-clue="positions"
+      >
+        Les positions
+      </button>
+
+    </div>
+
+    <div
+      class="reveal-box"
+      id="dangerClueReveal"
+    ></div>
+
+  </div>
+
+
+  <div class="text-block dialogue">
+
+    <p>
+      À peine ont-ils parcouru quelques mètres que Lucy demande :
+    </p>
+
+    <p>
+      — Quelqu’un pourrait m’expliquer…
+    </p>
+
+    <p>
+      — Attention ! lance Root.
+    </p>
+
+    <p>
+      Elle attrape Lucy par le bras et la tire violemment vers elle.
+    </p>
+
+    <p>
+      Au même instant, un homme surgit dans son dos.
+    </p>
+
+    <p>
+      Hope projette Clive contre un mur.
+    </p>
+
+    <p>
+      — Hé !
+    </p>
+
+    <p>
+      Une lame passe précisément à l’endroit où se trouvait sa gorge une fraction de seconde auparavant.
+    </p>
+
+    <p>
+      — D’accord, retire ce que j’allais dire.
+    </p>
+
+    <p>
+      Six individus apparaissent presque simultanément.
+    </p>
+
+    <p class="impact-text">
+      L’affrontement éclate.
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     VISUEL 6
+     COMBAT
+===================================================== -->
+
+<section
+  class="scene combat-scene"
+  id="combat"
+>
+
+  <div
+    class="visual"
+    data-visual="6"
+  >
+
+    <img
+      src="images/chapitre4/Visuel-41.PNG"
+      alt="Combat contre les six assaillants"
+      loading="lazy"
+    >
+
+  </div>
+
+
+  <div class="text-block dialogue">
+
+    <p>
+      Root et Hope réagissent immédiatement.
+    </p>
+
+    <p>
+      Lucy tente de participer, mais comprend très vite que leurs adversaires ne sont pas de simples agresseurs de rue.
+    </p>
+
+    <p>
+      Ils se déplacent en coordination.
+    </p>
+
+    <p>
+      Sans paroles inutiles.
+    </p>
+
+    <p>
+      Chaque attaque en prépare une autre.
+    </p>
+
+    <p>
+      Root neutralise un premier homme.
+    </p>
+
+    <p>
+      Hope en désarme un second.
+    </p>
+
+    <p>
+      Clive évite de justesse un coup et récupère l’arme abandonnée sans même réfléchir.
+    </p>
+
+    <p>
+      — Je vous rappelle que moi, normalement, je vole des tableaux !
+    </p>
+
+    <p>
+      Lucy esquive une attaque.
+    </p>
+
+    <p class="emphasis">
+      — Adapte-toi !
+    </p>
+
+    <p>
+      Quelques instants plus tard, les six assaillants sont au sol.
+    </p>
+
+    <p>
+      Vivants.
+    </p>
+
+    <p class="emphasis">
+      Mais incapables de poursuivre le combat.
+    </p>
+
+    <p>
+      Hope s’accroupit auprès du premier.
+    </p>
+
+    <p>
+      Elle saisit son poignet droit.
+    </p>
+
+    <p>
+      Rien.
+    </p>
+
+    <p>
+      Puis le deuxième.
+    </p>
+
+    <p>
+      Le troisième.
+    </p>
+
+    <p>
+      Au quatrième, son expression change.
+    </p>
+
+    <p>
+      Root le remarque.
+    </p>
+
+    <p>
+      — Hope ?
+    </p>
+
+    <p>
+      Elle passe au suivant.
+    </p>
+
+    <p>
+      Puis au dernier.
+    </p>
+
+    <p>
+      Cette fois, elle ne cache plus son inquiétude.
+    </p>
+
+    <p>
+      Root s’approche.
+    </p>
+
+    <p>
+      — Qu’est-ce qu’il y a ?
+    </p>
+
+    <p>
+      Hope se redresse.
+    </p>
+
+    <p class="impact-text">
+      — Ce ne sont pas des mercenaires.
+    </p>
+
+    <p>
+      Lucy reprend son souffle.
+    </p>
+
+    <p>
+      — Alors quoi ?
+    </p>
+
+    <p>
+      Hope regarde Root.
+    </p>
+
+    <p class="name-reveal">
+      — Des Gardiens Noirs.
+    </p>
+
+    <p>
+      Le sourire de Root disparaît.
+    </p>
+
+    <p>
+      Lucy regarde les hommes.
+    </p>
+
+    <p>
+      Puis Hope.
+    </p>
+
+    <p>
+      — Les fameux Gardiens Noirs ?
+    </p>
+
+  </div>
+
+
+  <!-- INTERACTION 11 -->
+
+  <div class="interaction-block combat-interaction">
+
+    <h2>
+      Observer leur façon de combattre
+    </h2>
+
+    <div class="observation-buttons">
+
+      <button
+        class="interaction-btn"
+        type="button"
+        data-attack-pattern="silent"
+      >
+        Aucun ordre verbal
+      </button>
+
+      <button
+        class="interaction-btn"
+        type="button"
+        data-attack-pattern="coordinated"
+      >
+        Coordination parfaite
+      </button>
+
+      <button
+        class="interaction-btn"
+        type="button"
+        data-attack-pattern="targets"
+      >
+        Cibles réparties
+      </button>
+
+    </div>
+
+    <div
+      class="reveal-box"
+      id="attackPatternReveal"
+    ></div>
+
+  </div>
+
+
+  <div class="text-block dialogue">
+
+    <p>
+      Hope ne répond pas immédiatement.
+    </p>
+
+    <p>
+      Elle fixe Root.
+    </p>
+
+    <p>
+      — Dis-moi quelque chose.
+    </p>
+
+    <p>
+      — Quoi ?
+    </p>
+
+    <p>
+      — Lorsque tu étais au Vietnam…
+    </p>
+
+    <p>
+      Root attend.
+    </p>
+
+    <p>
+      — À part ce que je t’avais demandé de retrouver…
+    </p>
+
+    <p>
+      Hope choisit soigneusement ses mots.
+    </p>
+
+    <p>
+      — Tu n’aurais rien découvert d’autre ?
+    </p>
+
+    <p>
+      Root hésite.
+    </p>
+
+    <p>
+      Hope ferme les yeux.
+    </p>
+
+    <p>
+      — Root…
+    </p>
+
+    <p>
+      — Si.
+    </p>
+
+    <p>
+      — Quoi ?
+    </p>
+
+    <p>
+      — Une sorte de lame.
+    </p>
+
+    <p>
+      Hope rouvre les yeux.
+    </p>
+
+    <p>
+      — Une lame ?
+    </p>
+
+    <p>
+      — Enfin…
+    </p>
+
+    <p>
+      Root réfléchit.
+    </p>
+
+    <p>
+      — Elle ressemble davantage à une clé qu’à un couteau.
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     VISUEL 7
+     LA CLÉ
+===================================================== -->
+
+<section
+  class="scene artifact-scene"
+  id="cle"
+>
+
+  <div
+    class="visual"
+    data-visual="7"
+  >
+
+    <img
+      src="images/chapitre4/Visuel-48.PNG"
+      alt="Clé ancienne découverte par Root"
+      loading="lazy"
+    >
+
+  </div>
+
+
+  <div class="text-block dialogue">
+
+    <p>
+      L’expression de Hope devient beaucoup plus grave.
+    </p>
+
+    <p>
+      — Où est-elle ?
+    </p>
+
+    <p>
+      — En sécurité.
+    </p>
+
+    <p>
+      — Où ?
+    </p>
+
+    <p>
+      Root lui adresse un regard.
+    </p>
+
+    <p>
+      — Là où tu sais.
+    </p>
+
+    <p>
+      Hope semble légèrement rassurée.
+    </p>
+
+    <p>
+      — Et personne ne sait que tu l’as trouvé?
+    </p>
+
+    <p>
+      — Personne.
+    </p>
+
+    <p>
+      Puis Root hésite.
+    </p>
+
+    <p>
+      — Enfin… personne à qui je l’ai dit.
+    </p>
+
+    <p>
+      Hope regarde les hommes au sol.
+    </p>
+
+    <p>
+      — Alors quelqu’un t’a suivie suffisamment longtemps pour comprendre que tu avais découvert quelque chose.
+    </p>
+
+    <p>
+      Root murmure :
+    </p>
+
+    <p>
+      — Qu’est-ce que cette clé ouvre ?
+    </p>
+
+    <p>
+      Hope regarde la rue.
+    </p>
+
+    <p>
+      Puis les hommes.
+    </p>
+
+    <p>
+      — Si c’est bien ce que je pense…
+    </p>
+
+    <p>
+      Elle marque une pause.
+    </p>
+
+    <p class="emphasis">
+      — Quelque chose que les Gardiens Noirs ne doivent surtout pas ouvrir.
+    </p>
+
+    <p>
+      Lucy soupire.
+    </p>
+
+    <p>
+      — J’adore vos réponses.
+    </p>
+
+    <p>
+      — C’est-à-dire ?
+    </p>
+
+    <p>
+      — Elles répondent toujours à une question en en créant dix nouvelles.
+    </p>
+
+    <p>
+      Clive acquiesce.
+    </p>
+
+    <p>
+      — Là-dessus, elle n’a pas tort.
+    </p>
+
+    <p>
+      Hope regarde Root.
+    </p>
+
+    <p>
+      — Nous devons rentrer.
+    </p>
+
+    <p>
+      Root acquiesce.
+    </p>
+
+  </div>
+
+
+  <!-- INTERACTION 12 -->
+
+  <div class="interaction-block artifact-interaction">
+
+    <h2>
+      Reconstituer la piste de la clé
+    </h2>
+
+    <div class="story-path">
+
+      <button
+        class="interaction-btn"
+        type="button"
+        data-key-path="vietnam"
+      >
+        Vietnam
+      </button>
+
+      <button
+        class="interaction-btn"
+        type="button"
+        data-key-path="object"
+      >
+        Une lame étrange
+      </button>
+
+      <button
+        class="interaction-btn"
+        type="button"
+        data-key-path="followed"
+      >
+        Root a été suivie
+      </button>
+
+      <button
+        class="interaction-btn"
+        type="button"
+        data-key-path="danger"
+      >
+        Les Gardiens la veulent
+      </button>
+
+    </div>
+
+    <div
+      class="reveal-box"
+      id="keyPathReveal"
+    ></div>
+
+  </div>
+
+
+  <div class="text-block dialogue">
+
+    <p>
+      Puis Hope aperçoit quelque chose sur le poignet de Lucy.
+    </p>
+
+    <p>
+      Son regard se fixe.
+    </p>
+
+    <p>
+      Lucy le remarque.
+    </p>
+
+    <p>
+      — Quoi ?
+    </p>
+
+    <p>
+      Hope ne répond pas.
+    </p>
+
+    <p>
+      Elle s’approche.
+    </p>
+
+    <p class="impact-text">
+      — Donne-moi ton bras.
+    </p>
+
+    <p>
+      Lucy recule instinctivement.
+    </p>
+
+    <p>
+      — Certainement pas.
+    </p>
+
+    <p>
+      — Lucy.
+    </p>
+
+    <p>
+      — Pourquoi ?
+    </p>
+
+    <p>
+      Hope regarde Root.
+    </p>
+
+    <p>
+      Cette fois, son expression est différente.
+    </p>
+
+    <p>
+      Plus troublée que véritablement inquiète.
+    </p>
+
+    <p>
+      — Parce que je crois que je viens de comprendre quelque chose.
+    </p>
+
+    <p>
+      Lucy fronce les sourcils.
+    </p>
+
+    <p>
+      — À propos de quoi ?
+    </p>
+
+    <p>
+      Hope tend doucement la main.
+    </p>
+
+    <p class="emphasis">
+      — De toi.
+    </p>
+
+    <p>
+      Lucy hésite.
+    </p>
+
+    <p>
+      Puis, contrairement à son instinct habituel, elle lui tend finalement son bras.
+    </p>
+
+    <p>
+      Hope saisit délicatement son poignet droit.
+    </p>
+
+    <p>
+      — Ça ne fera pas mal.
+    </p>
+
+    <p>
+      — Je commence à détester cette phrase.
+    </p>
+
+    <p>
+      Hope pose deux doigts contre l’intérieur de son poignet.
+    </p>
+
+    <p>
+      Quelques secondes passent.
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     VISUEL 8
+     MARQUE DE LUCY
+===================================================== -->
+
+<section
+  class="scene mark-scene"
+  id="marque-lucy"
+>
+
+  <div
+    class="visual interactive-visual"
+    data-visual="8"
+  >
+
+    <img
+      src="images/chapitre4/Visuel-52.PNG"
+      alt="Marque des Indécis sous la peau de Lucy"
+      loading="lazy"
+    >
+
+  </div>
+
+
+  <!-- INTERACTION 13 -->
+
+  <div class="interaction-block">
+
+    <h2>
+      La marque de Lucy
+    </h2>
+
+    <button
+      class="interaction-btn"
+      id="lucyMarkTrigger"
+      type="button"
+    >
+      Révéler la marque
+    </button>
+
+    <div
+      class="reveal-box"
+      id="lucyMarkReveal"
+    ></div>
+
+  </div>
+
+
+  <div class="text-block dialogue">
+
+    <p>
+      Puis quelque chose apparaît sous la peau de Lucy.
+    </p>
+
+    <p>
+      Une ligne.
+    </p>
+
+    <p>
+      Puis une seconde.
+    </p>
+
+    <p>
+      Des symboles se dessinent lentement.
+    </p>
+
+    <p>
+      Root reste figée.
+    </p>
+
+    <p>
+      — Impossible…
+    </p>
+
+    <p>
+      Lucy observe son propre poignet.
+    </p>
+
+    <p>
+      La marque continue à apparaître.
+    </p>
+
+    <p>
+      Elle est différente de celle de Root.
+    </p>
+
+    <p>
+      Différente également de celles des Sentinelles qu’elle a déjà aperçues.
+    </p>
+
+    <p>
+      Mais tout aussi complexe.
+    </p>
+
+    <p>
+      Tout aussi ancienne.
+    </p>
+
+    <p>
+      Un cercle incomplet semble se diviser en deux chemins qui ne se rejoignent jamais complètement.
+    </p>
+
+    <p>
+      Au centre, une fine lumière hésite entre deux directions.
+    </p>
+
+    <p>
+      Lucy ne trouve plus ses mots.
+    </p>
+
+    <p>
+      — Qu’est-ce que…
+    </p>
+
+    <p>
+      Elle regarde Hope.
+    </p>
+
+    <p>
+      — Comment tu as fait ça ?
+    </p>
+
+    <p>
+      Hope ne répond pas.
+    </p>
+
+    <p>
+      Lucy regarde à nouveau son poignet.
+    </p>
+
+    <p>
+      — Je n’ai jamais eu de tatouage.
+    </p>
+
+    <p>
+      — Ce n’en est pas un.
+    </p>
+
+    <p>
+      Root semble presque aussi bouleversée qu’elle.
+    </p>
+
+    <p>
+      Hope retire lentement sa main.
+    </p>
+
+    <p>
+      La marque reste visible quelques instants.
+    </p>
+
+    <p>
+      Puis commence à s’effacer.
+    </p>
+
+    <p>
+      Lucy relève les yeux.
+    </p>
+
+    <p>
+      — Qu’est-ce que ça signifie ?
+    </p>
+
+    <p>
+      Hope regarde Root.
+    </p>
+
+    <p>
+      Puis Lucy.
+    </p>
+
+    <p>
+      Elle hésite.
+    </p>
+
+    <p>
+      Ce qui, venant d’elle, inquiète encore davantage Lucy.
+    </p>
+
+    <p>
+      — Hope ?
+    </p>
+
+    <p>
+      Hope finit par répondre :
+    </p>
+
+    <p>
+      — Ça signifie que notre rencontre n’est probablement pas aussi fortuite que je l’espérais.
+    </p>
+
+    <p>
+      Lucy se raidit.
+    </p>
+
+    <p>
+      — Ce n’est toujours pas une réponse.
+    </p>
+
+    <p>
+      — Non.
+    </p>
+
+    <p>
+      Hope la regarde droit dans les yeux.
+    </p>
+
+    <p>
+      — Mais celle que tu demandes mérite mieux qu’une explication donnée au milieu d’une rue avec six Gardiens Noirs inconscients à nos pieds.
+    </p>
+
+    <p>
+      Clive lève une main.
+    </p>
+
+    <p>
+      — Pour une fois, je vote avec Hope.
+    </p>
+
+    <p>
+      Lucy ne quitte pas Hope des yeux.
+    </p>
+
+    <p>
+      — Tu sais ce que c’est.
+    </p>
+
+    <p>
+      — Oui.
+    </p>
+
+    <p>
+      — Root aussi ?
+    </p>
+
+    <p>
+      Root répond honnêtement :
+    </p>
+
+    <p>
+      — Je crois savoir.
+    </p>
+
+    <p>
+      Lucy réfléchit.
+    </p>
+
+    <p>
+      — Et moi ?
+    </p>
+
+    <p>
+      Hope secoue doucement la tête.
+    </p>
+
+    <p>
+      — Toi, tu viens seulement de découvrir que tu possèdes une question dont tu ignorais l’existence.
+    </p>
+
+    <p>
+      Lucy regarde encore son poignet.
+    </p>
+
+    <p>
+      La marque disparaît lentement sous sa peau.
+    </p>
+
+    <p>
+      — Alors ? demande-t-elle. Je suis quoi ?
+    </p>
+
+    <p>
+      Hope hésite.
+    </p>
+
+    <p>
+      Root le remarque immédiatement.
+    </p>
+
+    <p>
+      — Hope ?
+    </p>
+
+    <p>
+      Hope regarde Lucy.
+    </p>
+
+    <p>
+      — Certaines choses doivent être découvertes, pas simplement dévoilées.
+    </p>
+
+    <p>
+      Lucy soupire.
+    </p>
+
+    <p>
+      — Évidemment.
+    </p>
+
+    <p>
+      — Je suis sérieuse.
+    </p>
+
+    <p>
+      Hope poursuit :
+    </p>
+
+    <p>
+      — Ce que cette marque signifie concerne ton histoire. Peut-être même celle de ta famille. Ce n’est pas à moi de décider à ta place ce que tu dois en faire.
+    </p>
+
+    <p>
+      Lucy secoue la tête.
+    </p>
+
+    <p>
+      — Tu pourrais au moins me donner un début.
+    </p>
+
+    <p>
+      Hope réfléchit.
+    </p>
+
+    <p>
+      — Très bien.
+    </p>
+
+    <p>
+      Elle désigne son poignet.
+    </p>
+
+    <p>
+      — Cette marque signifie que tu n’es pas extérieure à tout ce que je viens de te raconter.
+    </p>
+
+    <p>
+      Lucy reste silencieuse.
+    </p>
+
+    <p>
+      — Mais elle ne fait pas de toi une Sentinelle de la Lumière.
+    </p>
+
+    <p>
+      Root ajoute doucement :
+    </p>
+
+    <p>
+      — Ni une Gardienne Noire.
+    </p>
+
+    <p>
+      Lucy regarde successivement les deux femmes.
+    </p>
+
+    <p>
+      — Donc il existe encore autre chose.
+    </p>
+
+    <p>
+      Hope acquiesce.
+    </p>
+
+    <p>
+      — Oui.
+    </p>
+
+    <p>
+      — Et ça s’appelle comment ?
+    </p>
+
+    <p>
+      Un nouveau silence.
+    </p>
+
+    <p>
+      Hope finit par répondre :
+    </p>
+
+    <p class="name-reveal">
+      — Les Indécis.
+    </p>
+
+    <p>
+      Lucy éclate presque de rire.
+    </p>
+
+    <p>
+      — Vous êtes sérieuses ?
+    </p>
+
+    <p>
+      — Complètement.
+    </p>
+
+    <p>
+      — Et évidemment, je suis une « Indécise ».
+    </p>
+
+    <p>
+      — Tu portes leur marque.
+    </p>
+
+  </div>
+
+
+  <!-- INTERACTION 14 -->
+
+  <div class="interaction-block choice-interaction">
+
+    <h2>
+      Que signifie être une Indécise ?
+    </h2>
+
+    <div class="choice-buttons">
+
+      <button
+        class="choice-btn"
+        type="button"
+        data-indecis="light"
+      >
+        Choisir la Lumière
+      </button>
+
+      <button
+        class="choice-btn"
+        type="button"
+        data-indecis="dark"
+      >
+        Choisir les Gardiens
+      </button>
+
+      <button
+        class="choice-btn"
+        type="button"
+        data-indecis="free"
+      >
+        Suivre son propre chemin
+      </button>
+
+    </div>
+
+    <div
+      class="reveal-box"
+      id="indecisReveal"
+    ></div>
+
+  </div>
+
+
+  <div class="text-block dialogue">
+
+    <p>
+      Lucy observe une nouvelle fois son poignet.
+    </p>
+
+    <p>
+      — Qu’est-ce que ça signifie ?
+    </p>
+
+    <p>
+      Hope choisit soigneusement ses mots.
+    </p>
+
+    <p>
+      — Que ton chemin n’est lié par naissance à aucun des deux ordres.
+    </p>
+
+    <p>
+      — Donc je dois choisir un camp ?
+    </p>
+
+    <p>
+      — Non.
+    </p>
+
+    <p>
+      Hope insiste :
+    </p>
+
+    <p>
+      — Tu peux ne jamais en choisir.
+    </p>
+
+    <p>
+      — Tu peux leur faire confiance.
+    </p>
+
+    <p>
+      — Les combattre tous les deux.
+    </p>
+
+    <p>
+      — Ou suivre ton propre chemin.
+    </p>
+
+    <p>
+      Lucy fronce les sourcils.
+    </p>
+
+    <p>
+      — Alors pourquoi « Indécis » ?
+    </p>
+
+    <p>
+      Root sourit.
+    </p>
+
+    <p>
+      — Parce que les gens aiment mettre des noms sur ce qu’ils ne peuvent pas prévoir.
+    </p>
+
+    <p>
+      Cette réponse semble davantage plaire à Lucy.
+    </p>
+
+    <p>
+      Hope reprend :
+    </p>
+
+    <p>
+      — Tout ce qui t’entoure influence tes décisions : les personnes que tu rencontres, ce que tu apprends, ce que tu ignores, ce que tu crains, ce que tu aimes.
+    </p>
+
+    <p>
+      Elle marque une pause.
+    </p>
+
+    <p class="emphasis">
+      — Mais influencer n’est pas décider.
+    </p>
+
+    <p>
+      Lucy écoute.
+    </p>
+
+    <p>
+      — C’est là toute la différence.
+    </p>
+
+    <p>
+      Hope poursuit :
+    </p>
+
+    <p>
+      — Certains voudront probablement te convaincre que ton chemin est déjà écrit.
+    </p>
+
+    <p>
+      — Moi, je pense que le destin place parfois des croisements devant nous.
+    </p>
+
+    <p>
+      — Mais c’est encore nous qui choisissons dans quelle direction marcher.
+    </p>
+
+    <p>
+      Lucy regarde Root.
+    </p>
+
+    <p>
+      — C’est donc ça, votre obsession du destin.
+    </p>
+
+    <p>
+      Root sourit.
+    </p>
+
+    <p>
+      — Entre autres.
+    </p>
+
+    <p>
+      Hope ajoute :
+    </p>
+
+    <p>
+      — Et ne sous-estime jamais ce que tu ignores.
+    </p>
+
+    <p>
+      Lucy arque un sourcil.
+    </p>
+
+    <p>
+      — Pourquoi ?
+    </p>
+
+    <p>
+      — Parce que nous prenons tous nos décisions avec ce que nous savons au moment où nous les prenons.
+    </p>
+
+    <p>
+      Elle regarde son poignet.
+    </p>
+
+    <p>
+      — Il y a dix minutes, cette marque n’existait pas dans ta réalité.
+    </p>
+
+    <p>
+      Lucy corrige immédiatement :
+    </p>
+
+    <p>
+      — Elle existait.
+    </p>
+
+    <p>
+      Hope sourit.
+    </p>
+
+    <p>
+      — Exactement.
+    </p>
+
+    <p>
+      — Je l’ignorais simplement.
+    </p>
+
+    <p>
+      — Et maintenant que tu le sais, tes prochains choix ne seront plus exactement les mêmes.
+    </p>
+
+    <p>
+      Lucy reste silencieuse.
+    </p>
+
+    <p>
+      Cette fois, l’idée semble réellement l’atteindre.
+    </p>
+
+    <p>
+      Puis elle regarde les six hommes étendus au sol.
+    </p>
+
+    <p>
+      — Très bien.
+    </p>
+
+    <p>
+      Elle reprend brusquement son ton d’enquêtrice.
+    </p>
+
+    <p>
+      — Maintenant que nous avons terminé la séance de philosophie existentielle…
+    </p>
+
+    <p>
+      Clive sourit.
+    </p>
+
+    <p>
+      — Je la reconnais.
+    </p>
+
+    <p>
+      Lucy désigne les hommes.
+    </p>
+
+    <p>
+      — Qu’est-ce qu’on fait d’eux ?
+    </p>
+
+    <p>
+      Hope regarde autour d’elle.
+    </p>
+
+    <p>
+      — Rien.
+    </p>
+
+    <p>
+      — Pardon ?
+    </p>
+
+    <p>
+      — Nous partons.
+    </p>
+
+    <p>
+      Lucy reste stupéfaite.
+    </p>
+
+    <p>
+      — Six hommes viennent de nous attaquer et tu veux simplement partir ?
+    </p>
+
+    <p>
+      — Oui.
+    </p>
+
+    <p>
+      — Je suis flic, Hope.
+    </p>
+
+    <p>
+      — Justement.
+    </p>
+
+    <p>
+      Hope s’accroupit auprès de l’un des agresseurs.
+    </p>
+
+    <p>
+      — Regarde-les.
+    </p>
+
+    <p>
+      Lucy s’approche.
+    </p>
+
+    <p>
+      — Quoi ?
+    </p>
+
+    <p>
+      — Aucun document.
+    </p>
+
+    <p>
+      — Ça arrive.
+    </p>
+
+    <p>
+      — Aucun téléphone.
+    </p>
+
+    <p>
+      — Toujours possible.
+    </p>
+
+    <p>
+      — Aucun objet personnel.
+    </p>
+
+    <p>
+      Lucy commence à comprendre.
+    </p>
+
+    <p>
+      Hope poursuit :
+    </p>
+
+    <p>
+      — Et ils sont venus en équipe parfaitement coordonnée, sans parler, sans hésiter, en sachant exactement qui attaquer.
+    </p>
+
+    <p>
+      Lucy se tourne vers Clive.
+    </p>
+
+    <p>
+      — Photos.
+    </p>
+
+    <p>
+      — Déjà fait.
+    </p>
+
+    <p>
+      Il montre son téléphone.
+    </p>
+
+    <p>
+      — Empreintes ?
+    </p>
+
+    <p>
+      — Je peux essayer.
+    </p>
+
+    <p>
+      Lucy s’accroupit.
+    </p>
+
+    <p>
+      Quelques minutes plus tard, elle transmet les premiers éléments à IA2.
+    </p>
+
+    <p>
+      Hope se relève.
+    </p>
+
+    <p>
+      — Nous ne devrions plus rester ici.
+    </p>
+
+    <p>
+      Lucy ne quitte pas son écran.
+    </p>
+
+    <p>
+      — Une minute.
+    </p>
+
+    <p>
+      IA2 commence à renvoyer plusieurs correspondances.
+    </p>
+
+    <p>
+      Lucy cesse soudain de respirer.
+    </p>
+
+    <p>
+      — Non…
+    </p>
+
+    <p>
+      Clive se rapproche.
+    </p>
+
+    <p>
+      — Quoi ?
+    </p>
+
+    <p>
+      Lucy ouvre le premier dossier.
+    </p>
+
+    <p class="impact-text">
+      Décédé.
+    </p>
+
+    <p>
+      Puis le deuxième.
+    </p>
+
+    <p class="impact-text">
+      Décédé.
+    </p>
+
+    <p>
+      Un troisième.
+    </p>
+
+    <p>
+      Encore.
+    </p>
+
+    <p>
+      Elle regarde l’homme inconscient à quelques mètres d’elle.
+    </p>
+
+    <p>
+      Puis son écran.
+    </p>
+
+    <p>
+      — Ça n’a aucun sens.
+    </p>
+
+    <p>
+      Hope ne semble pas surprise.
+    </p>
+
+    <p>
+      Lucy vérifie les données.
+    </p>
+
+    <p>
+      — Celui-là est officiellement mort il y a six ans.
+    </p>
+
+    <p>
+      Elle regarde un autre homme.
+    </p>
+
+    <p>
+      — Celui-ci il y a presque neuf ans.
+    </p>
+
+    <p>
+      Clive cesse complètement de plaisanter.
+    </p>
+
+    <p>
+      — Morts comment ?
+    </p>
+
+    <p>
+      Lucy parcourt les informations.
+    </p>
+
+    <p>
+      — Accidents.
+    </p>
+
+    <p>
+      Elle ouvre un autre dossier.
+    </p>
+
+    <p>
+      — Accident de voiture.
+    </p>
+
+    <p>
+      Puis un autre.
+    </p>
+
+    <p>
+      — Noyade.
+    </p>
+
+    <p>
+      Un autre.
+    </p>
+
+    <p>
+      — Chute.
+    </p>
+
+    <p>
+      Root regarde Hope.
+    </p>
+
+    <p>
+      Lucy dit brutalement, un peu énervé :
+    </p>
+
+    <p>
+      — Ils étaient pourtant parfaitement vivants lorsqu’ils ont essayé de nous découper il y a cinq minutes.
+    </p>
+
+    <p>
+      Hope acquiesce.
+    </p>
+
+    <p>
+      — Je n’ai pas dit qu’ils étaient morts.
+    </p>
+
+    <p>
+      — C’est exactement ce qu’indique IA2.
+    </p>
+
+    <p>
+      — Non.
+    </p>
+
+    <p>
+      Hope secoue la tête.
+    </p>
+
+    <p class="emphasis">
+      — IA2 t’indique qu’ils sont officiellement morts.
+    </p>
+
+    <p>
+      Lucy comprend la différence.
+    </p>
+
+    <p>
+      — Donc leurs morts ont été falsifiées.
+    </p>
+
+    <p>
+      — Ou leurs identités ont été effacées.
+    </p>
+
+    <p>
+      Clive ajoute :
+    </p>
+
+    <p>
+      — Pour le monde administratif, ces types n’existent plus.
+    </p>
+
+    <p>
+      Hope acquiesce.
+    </p>
+
+    <p>
+      — Voilà.
+    </p>
+
+  </div>
+
+
+  <!-- INTERACTION 15 -->
+
+  <div class="interaction-block investigation-block">
+
+    <h2>
+      Dossiers IA2
+    </h2>
+
+    <button
+      class="interaction-btn"
+      id="deadFilesTrigger"
+      type="button"
+    >
+      Examiner les identités
+    </button>
+
+    <div
+      class="reveal-box"
+      id="deadFilesReveal"
+    ></div>
+
+  </div>
+
+
+  <div class="text-block dialogue">
+
+    <p>
+      Lucy regarde encore les dossiers.
+    </p>
+
+    <p>
+      — Et tu savais ça ?
+    </p>
+
+    <p>
+      — Je savais que les Gardiens Noirs utilisent des personnes qui ont abandonné leur ancienne existence.
+    </p>
+
+    <p>
+      — Ça ne signifie pas nécessairement qu’ils simulent tous leur mort.
+    </p>
+
+    <p>
+      — Non.
+    </p>
+
+    <p>
+      Hope regarde les six hommes.
+    </p>
+
+    <p>
+      — Mais visiblement, certains le font.
+    </p>
+
+    <p>
+      Lucy se relève.
+    </p>
+
+    <p>
+      — Et maintenant ?
+    </p>
+
+    <p>
+      — Maintenant nous partons avant que d’autres viennent les récupérer.
+    </p>
+
+    <p>
+      — Tu es certaine qu’ils vont venir ?
+    </p>
+
+    <p>
+      — Oui.
+    </p>
+
+    <p>
+      — Comment ?
+    </p>
+
+    <p>
+      Hope sourit légèrement.
+    </p>
+
+    <p>
+      — Parce que si six membres de ton organisation secrète disparaissaient soudainement, tu ne les abandonnerais pas sur un trottoir.
+    </p>
+
+    <p>
+      Clive acquiesce.
+    </p>
+
+    <p>
+      — Argument raisonnable.
+    </p>
+
+    <p>
+      Lucy hésite encore.
+    </p>
+
+    <p>
+      Puis range finalement son téléphone.
+    </p>
+
+    <p>
+      — Très bien.
+    </p>
+
+    <p>
+      — On bouge.
+    </p>
+
+    <p>
+      Les quatre commencent à s’éloigner.
+    </p>
+
+    <p>
+      Lucy marche à côté de Hope.
+    </p>
+
+    <p>
+      — J’ai encore besoin d’une explication.
+    </p>
+
+    <p>
+      Hope soupire.
+    </p>
+
+    <p>
+      — Quelle surprise.
+    </p>
+
+    <p>
+      — Tu m’as parlé des Sentinelles, des Gardiens Noirs et maintenant des Indécis.
+    </p>
+
+    <p>
+      Elle compte sur ses doigts.
+    </p>
+
+    <p>
+      — Donne-moi au moins la version courte.
+    </p>
+
+    <p>
+      Hope réfléchit.
+    </p>
+
+    <p>
+      — La version très courte ?
+    </p>
+
+    <p>
+      — Très courte.
+    </p>
+
+    <p>
+      — Les Sentinelles de la Lumière et les Gardiens Noirs sont deux organisations anciennes.
+    </p>
+
+    <p>
+      Lucy attend.
+    </p>
+
+    <p>
+      — Elles possèdent des visions radicalement différentes de ce que devrait devenir l’humanité et de la manière dont certaines connaissances doivent être utilisées.
+    </p>
+
+    <p>
+      — Et elles contrôlent le monde.
+    </p>
+
+    <p>
+      Hope secoue immédiatement la tête.
+    </p>
+
+    <p>
+      — Non.
+    </p>
+
+    <p>
+      — Pourtant vous influencez des événements.
+    </p>
+
+    <p>
+      — Influencer n’est pas contrôler.
+    </p>
+
+    <p>
+      Hope poursuit :
+    </p>
+
+    <p>
+      — Aucun des deux ordres ne maîtrise le monde. Heureusement.
+    </p>
+
+    <p>
+      — Mais ils interviennent.
+    </p>
+
+    <p>
+      — Parfois.
+    </p>
+
+    <p>
+      — Ils manipulent.
+    </p>
+
+    <p>
+      Hope hésite.
+    </p>
+
+    <p>
+      — Parfois aussi.
+    </p>
+
+    <p>
+      Lucy relève immédiatement ce mot.
+    </p>
+
+    <p>
+      — Même les Sentinelles ?
+    </p>
+
+    <p>
+      Hope la regarde droit dans les yeux.
+    </p>
+
+    <p>
+      — Je t’avais promis de ne pas mentir.
+    </p>
+
+    <p>
+      Lucy apprécie la réponse malgré elle.
+    </p>
+
+    <p>
+      — Donc vos gentils Sentinelles ne sont pas toujours si gentils.
+    </p>
+
+    <p>
+      — Je n’ai jamais dit que nous étions les gentils.
+    </p>
+
+    <p>
+      Root regarde Hope.
+    </p>
+
+    <p>
+      Lucy reste silencieuse.
+    </p>
+
+    <p>
+      Hope poursuit :
+    </p>
+
+    <p>
+      — Les Sentinelles prétendent préserver un équilibre et protéger certaines connaissances.
+    </p>
+
+    <p>
+      — Les Gardiens Noirs cherchent généralement à rompre cet équilibre pour accroître leur pouvoir.
+    </p>
+
+    <p>
+      — Mais réduire tout cela à « bien contre mal » serait beaucoup trop simple.
+    </p>
+
+    <p>
+      Lucy réfléchit.
+    </p>
+
+    <p>
+      — Et les Indécis ?
+    </p>
+
+    <p>
+      Hope la regarde.
+    </p>
+
+    <p>
+      — Ils n’appartiennent naturellement à aucun des deux.
+    </p>
+
+    <p>
+      — Donc les deux camps essaient de les récupérer.
+    </p>
+
+    <p>
+      — Parfois.
+    </p>
+
+    <p>
+      Lucy comprend soudain.
+    </p>
+
+    <p>
+      — Et moi ?
+    </p>
+
+    <p>
+      Hope ne répond pas.
+    </p>
+
+    <p>
+      — Hope.
+    </p>
+
+    <p>
+      — Je pense que tu viens de devenir beaucoup plus intéressante aux yeux de certaines personnes.
+    </p>
+
+    <p>
+      Lucy grimace.
+    </p>
+
+    <p>
+      — Formidable.
+    </p>
+
+    <p>
+      Clive intervient :
+    </p>
+
+    <p>
+      — Je te l’avais dit. Les vacances au Mexique étaient une excellente idée.
+    </p>
+
+    <p>
+      Lucy lui lance un regard.
+    </p>
+
+  </div>
+
+
+  <!-- INTERACTION 16 -->
+
+  <div class="interaction-block choice-interaction">
+
+    <h2>
+      Comprendre les trois positions
+    </h2>
+
+    <div class="observation-buttons">
+
+      <button
+        class="interaction-btn"
+        type="button"
+        data-orders="light"
+      >
+        Sentinelles de la Lumière
+      </button>
+
+      <button
+        class="interaction-btn"
+        type="button"
+        data-orders="dark"
+      >
+        Gardiens Noirs
+      </button>
+
+      <button
+        class="interaction-btn"
+        type="button"
+        data-orders="indecis"
+      >
+        Indécis
+      </button>
+
+    </div>
+
+    <div
+      class="reveal-box"
+      id="ordersReveal"
+    ></div>
+
+  </div>
+
+
+  <div class="text-block dialogue">
+
+    <p>
+      Après quelques mètres, Lucy revient à son enquête.
+    </p>
+
+    <p>
+      — Et la Caméléon dans tout ça ?
+    </p>
+
+    <p>
+      Hope ne répond pas immédiatement.
+    </p>
+
+    <p>
+      — Tu as une idée, n’est-ce pas ?
+    </p>
+
+    <p>
+      — Une hypothèse.
+    </p>
+
+    <p>
+      — Laquelle ?
+    </p>
+
+    <p>
+      Hope regarde Root.
+    </p>
+
+    <p>
+      Puis Lucy.
+    </p>
+
+    <p>
+      — Je connais quelqu’un qui pourrait correspondre à plusieurs éléments que tu m’as décrits.
+    </p>
+
+    <p>
+      Lucy s’immobilise.
+    </p>
+
+    <p>
+      — Qui ?
+    </p>
+
+    <p>
+      Hope hésite.
+    </p>
+
+    <p>
+      — Je vais d’abord effectuer quelques vérifications avant de te donner une tête à scalper.
+    </p>
+
+    <p>
+      Root ne dit rien.
+    </p>
+
+    <p>
+      Clive regarde Hope.
+    </p>
+
+    <p>
+      — C’est compréhensible.
+    </p>
+
+    <p>
+      Lucy, elle, devient immédiatement beaucoup plus attentive.
+    </p>
+
+    <p>
+      — Donne-moi au moins un nom.
+    </p>
+
+    <p>
+      — Pas maintenant.
+    </p>
+
+    <p>
+      — Hope…
+    </p>
+
+    <p>
+      — Parce que je ne sais pas encore si c’est elle.
+    </p>
+
+    <p>
+      Lucy soupire.
+    </p>
+
+    <p>
+      — Alors qu’est-ce qui correspond ?
+    </p>
+
+    <p>
+      Hope réfléchit.
+    </p>
+
+    <p>
+      — Une femme.
+    </p>
+
+    <p>
+      — Extrêmement bien entraînée.
+    </p>
+
+    <p>
+      — Capable de disparaître pendant des périodes entières.
+    </p>
+
+    <p>
+      — Très intelligente.
+    </p>
+
+    <p>
+      — Patiente.
+    </p>
+
+    <p>
+      Elle marque une pause.
+    </p>
+
+    <p>
+      — Et suffisamment sûre d’elle pour transformer une traque en jeu.
+    </p>
+
+    <p>
+      Lucy sent plusieurs éléments s’aligner dans son esprit.
+    </p>
+
+    <p>
+      — Une tueuse professionnelle ?
+    </p>
+
+    <p>
+      Hope la regarde.
+    </p>
+
+    <p>
+      — Disons que oui.
+    </p>
+
+    <p>
+      Un silence.
+    </p>
+
+    <p>
+      Lucy demande :
+    </p>
+
+    <p>
+      — Elle travaille pour les Gardiens Noirs ?
+    </p>
+
+    <p>
+      — Oui.
+    </p>
+
+    <p>
+      Lucy sort presque son téléphone.
+    </p>
+
+    <p>
+      Hope l’arrête immédiatement.
+    </p>
+
+    <p>
+      — Ne fais pas de raccourci.
+    </p>
+
+    <p>
+      — Pourquoi ?
+    </p>
+
+    <p>
+      — Parce que tout ce que je viens de te dire correspond à un profil.
+    </p>
+
+    <p>
+      Elle la regarde droit dans les yeux.
+    </p>
+
+    <p class="emphasis">
+      — Pas à une preuve.
+    </p>
+
+    <p>
+      Lucy reste silencieuse.
+    </p>
+
+    <p>
+      Elle sait que Hope a raison.
+    </p>
+
+    <p>
+      Hope ajoute :
+    </p>
+
+    <p>
+      — Et si cette personne est réellement ta Caméléon, alors il faut comprendre pourquoi elle veut autant que tu la recherches.
+    </p>
+
+    <p>
+      Lucy repense immédiatement au message.
+    </p>
+
+    <p>
+      Le fragile espoir.
+    </p>
+
+    <p>
+      La persistance.
+    </p>
+
+    <p>
+      Approcher l’artiste.
+    </p>
+
+    <p>
+      — Tu penses qu’elle sait qui je suis.
+    </p>
+
+    <p>
+      — Je pense que c’est une possibilité.
+    </p>
+
+    <p>
+      — À cause de ma marque ?
+    </p>
+
+    <p>
+      Hope hésite.
+    </p>
+
+    <p>
+      — Peut-être.
+    </p>
+
+    <p>
+      Lucy n’aime pas du tout cette réponse.
+    </p>
+
+    <p>
+      — Et pourquoi voudrait-elle que je la trouve ?
+    </p>
+
+    <p>
+      Hope regarde son poignet.
+    </p>
+
+    <p>
+      — Ça…
+    </p>
+
+    <p>
+      Elle marque une pause.
+    </p>
+
+    <p class="impact-text">
+      — C’est probablement beaucoup plus important que son identité.
+    </p>
+
+    <p>
+      Lucy marche quelques secondes en silence.
+    </p>
+
+    <p>
+      Puis elle ralentit.
+    </p>
+
+    <p>
+      — Attends.
+    </p>
+
+    <p>
+      Tout le monde se tourne vers elle.
+    </p>
+
+    <p>
+      — On est en train de supposer que la Caméléon tue pour les Gardiens Noirs.
+    </p>
+
+    <p>
+      — Oui, répond Hope.
+    </p>
+
+    <p>
+      — Et donc que ses victimes ont un rapport avec les Sentinelles.
+    </p>
+
+    <p>
+      — Peut-être.
+    </p>
+
+    <p>
+      Lucy réfléchit.
+    </p>
+
+    <p>
+      — Mais les victimes que j’ai identifiées sont ordinaires.
+    </p>
+
+    <p>
+      — Pas de politiciens.
+    </p>
+
+    <p>
+      — Pas de milliardaires.
+    </p>
+
+    <p>
+      — Pas de militaires haut placés.
+    </p>
+
+    <p>
+      Elle secoue la tête.
+    </p>
+
+    <p>
+      — Certaines sont même parfaitement insignifiantes d’un point de vue géopolitique.
+    </p>
+
+    <p>
+      Hope sourit légèrement.
+    </p>
+
+    <p>
+      — « Insignifiantes » selon quoi ?
+    </p>
+
+    <p>
+      Lucy la regarde.
+    </p>
+
+    <p>
+      — Selon leur influence.
+    </p>
+
+    <p>
+      — Leur influence visible.
+    </p>
+
+    <p>
+      Lucy comprend la nuance.
+    </p>
+
+    <p>
+      Hope poursuit :
+    </p>
+
+    <p>
+      — Souviens-toi de ce que nous disions tout à l’heure.
+    </p>
+
+    <p>
+      — Ne demande pas seulement ce que leur mort a changé.
+    </p>
+
+    <p>
+      — Demande ce que leur vie aurait pu changer.
+    </p>
+
+    <p>
+      Lucy reste silencieuse.
+    </p>
+
+    <p>
+      Root intervient :
+    </p>
+
+    <p>
+      — Un professeur inconnu peut changer la vie d’un futur président.
+    </p>
+
+    <p>
+      Clive ajoute :
+    </p>
+
+    <p>
+      — Un technicien peut être le seul à remarquer une anomalie.
+    </p>
+
+    <p>
+      Hope poursuit :
+    </p>
+
+    <p>
+      — Une infirmière peut sauver quelqu’un qui, dix ans plus tard, changera le destin de milliers de personnes.
+    </p>
+
+    <p>
+      Lucy secoue lentement la tête.
+    </p>
+
+    <p>
+      — L’effet papillon.
+    </p>
+
+    <p>
+      — Exactement.
+    </p>
+
+    <p>
+      — Et tu penses que quelqu’un choisit les personnes qu’il faut supprimer avant qu’elles produisent certains effets.
+    </p>
+
+    <p>
+      Hope répond immédiatement :
+    </p>
+
+    <p>
+      — Je pense seulement que ça mérite d’être vérifié.
+    </p>
+
+    <p>
+      Lucy la regarde longuement.
+    </p>
+
+    <p>
+      — Là, tu apprends vite.
+    </p>
+
+    <p>
+      Hope sourit.
+    </p>
+
+    <p>
+      — J’avais un bon professeur ce soir.
+    </p>
+
+    <p>
+      Lucy sort son téléphone.
+    </p>
+
+    <p>
+      — IA2 va avoir du travail.
+    </p>
+
+    <p>
+      Clive soupire.
+    </p>
+
+    <p>
+      — Et moi aussi, j’imagine.
+    </p>
+
+    <p>
+      — Beaucoup.
+    </p>
+
+    <p>
+      Lucy poursuit :
+    </p>
+
+    <p>
+      — On reprend chaque victime.
+    </p>
+
+    <p>
+      — Entourage.
+    </p>
+
+    <p>
+      — Projets.
+    </p>
+
+    <p>
+      — Rencontres interrompues.
+    </p>
+
+    <p>
+      — Décisions qu’elle n’a jamais pu prendre.
+    </p>
+
+    <p>
+      — Personnes qu’elle aurait probablement croisées.
+    </p>
+
+    <p>
+      Root acquiesce.
+    </p>
+
+    <p>
+      — Là, nous commencerons peut-être à voir le dessin derrière les points.
+    </p>
+
+    <p>
+      Lucy regarde Hope.
+    </p>
+
+    <p>
+      — Et si ta. Suspecte apparaît quelque part dans ce dessin ?
+    </p>
+
+    <p>
+      Hope devient sérieuse.
+    </p>
+
+    <p>
+      — Alors nous aurons une vraie piste.
+    </p>
+
+    <p>
+      Lucy range son téléphone.
+    </p>
+
+    <p>
+      — Pas une certitude.
+    </p>
+
+    <p>
+      Hope sourit.
+    </p>
+
+    <p>
+      — Exactement.
+    </p>
+
+    <p>
+      Lucy lui rend son sourire.
+    </p>
+
+    <p>
+      — Finalement, tu apprends aussi à parler comme une flic.
+    </p>
+
+    <p>
+      — Ne m’insulte pas.
+    </p>
+
+    <p>
+      Clive éclate de rire.
+    </p>
+
+    <p>
+      Lucy regarde une dernière fois derrière elle.
+    </p>
+
+    <p>
+      Les six hommes sont toujours au sol.
+    </p>
+
+    <p>
+      Puis son regard revient vers Hope.
+    </p>
+
+    <p>
+      — Je te préviens.
+    </p>
+
+    <p>
+      — Quoi ?
+    </p>
+
+    <p>
+      — Si cette histoire de Sentinelles, de Gardiens et d’Indécis est une gigantesque mise en scène…
+    </p>
+
+    <p>
+      Hope sourit.
+    </p>
+
+    <p>
+      — Tu vas m’arrêter ?
+    </p>
+
+    <p>
+      — Personnellement.
+    </p>
+
+    <p>
+      — Marché conclu.
+    </p>
+
+    <p>
+      Lucy reprend sa marche.
+    </p>
+
+    <p>
+      Mais elle ne peut s’empêcher de regarder son poignet.
+    </p>
+
+    <p>
+      Elle ne voit plus rien.
+    </p>
+
+    <p>
+      Et pourtant, pour la première fois, elle sait que quelque chose s’y cache.
+    </p>
+
+    <p>
+      Quelque chose que ni IA2, ni ses dossiers, ni toutes ses années d’enquête n’avaient jamais découvert.
+    </p>
+
+    <p>
+      Et cette fois, la question n’était plus seulement :
+    </p>
+
+    <p class="impact-text">
+      Mais qui est la Caméléon ?
+    </p>
+
+    <p>
+      Il y en avait désormais une autre.
+    </p>
+
+    <p>
+      Beaucoup plus personnelle.
+    </p>
+
+    <p class="impact-text">
+      Pourquoi la Caméléon chercherait-elle Lucy Adverse ?
+    </p>
+
+    <p>
+      Root reprend doucement :
+    </p>
+
+    <p>
+      — Comme Rosa Parks avant son simple « non ».
+    </p>
+
+    <p>
+      Lucy tourne les yeux vers elle.
+    </p>
+
+    <p>
+      Root poursuit :
+    </p>
+
+    <p>
+      — Une personne n’a pas besoin d’être riche, célèbre ou puissante pour provoquer des conséquences immenses.
+    </p>
+
+    <p>
+      Hope acquiesce.
+    </p>
+
+    <p>
+      — C’est exactement ce que j’essaie de te faire comprendre.
+    </p>
+
+    <p>
+      Elle regarde Lucy.
+    </p>
+
+    <p>
+      — Je sais que tout cela est difficile à accepter pour toi. Tu es pragmatique. Tu travailles avec des faits, des preuves, des éléments vérifiables.
+    </p>
+
+    <p>
+      — Oui.
+    </p>
+
+    <p>
+      — Alors vérifie.
+    </p>
+
+    <p>
+      Hope sourit légèrement.
+    </p>
+
+    <p>
+      — Qu’est-ce que ça te coûte ?
+    </p>
+
+    <p>
+      — Du temps.
+    </p>
+
+    <p>
+      — Exactement.
+    </p>
+
+    <p>
+      Elle poursuit :
+    </p>
+
+    <p>
+      — Reprends tes victimes autrement.
+    </p>
+
+    <p>
+      — Ne regarde pas seulement ce qu’elles étaient.
+    </p>
+
+    <p>
+      — Regarde ce qu’elles représentaient pour les autres.
+    </p>
+
+    <p>
+      Lucy écoute.
+    </p>
+
+    <p>
+      — Certaines n’étaient ni riches ni connues.
+    </p>
+
+    <p>
+      — Pourtant, elles étaient écoutées.
+    </p>
+
+    <p>
+      — Elles avaient de l’influence sur un groupe, une communauté, une entreprise, une famille, parfois beaucoup plus.
+    </p>
+
+    <p>
+      Hope insiste :
+    </p>
+
+    <p>
+      — Quelqu’un peut bouleverser l’histoire sans jamais apparaître dans un livre d’histoire.
+    </p>
+
+    <p>
+      Root ajoute :
+    </p>
+
+    <p>
+      — Un professeur.
+    </p>
+
+    <p>
+      — Un scientifique.
+    </p>
+
+    <p>
+      — Un médecin.
+    </p>
+
+    <p>
+      — Un militant local.
+    </p>
+
+    <p>
+      — Un journaliste inconnu.
+    </p>
+
+    <p>
+      — Une personne qui convainc simplement quelqu’un d’autre au bon moment.
+    </p>
+
+    <p>
+      Lucy réfléchit.
+    </p>
+
+    <p>
+      Hope poursuit :
+    </p>
+
+    <p>
+      — Tu cherches peut-être des victimes importantes selon les critères habituels.
+    </p>
+
+    <p>
+      — Alors qu’il faudrait chercher des personnes importantes par leurs conséquences potentielles.
+    </p>
+
+    <p>
+      Lucy secoue lentement la tête.
+    </p>
+
+    <p>
+      — Et tu voudrais me faire croire que vos deux ordres choisissent ce genre de personnes pour faire basculer l’histoire ?
+    </p>
+
+    <p>
+      Hope rectifie immédiatement :
+    </p>
+
+    <p>
+      — Non.
+    </p>
+
+    <p>
+      — Je te demande seulement d’envisager que certaines organisations puissent essayer d’influencer des événements.
+    </p>
+
+    <p>
+      Lucy arque un sourcil.
+    </p>
+
+    <p>
+      — Comme les gouvernements, les services secrets, les multinationales, les groupes criminels…
+    </p>
+
+    <p>
+      — Exactement.
+    </p>
+
+    <p>
+      Hope poursuit :
+    </p>
+
+    <p>
+      — Sauf que les nôtres existent depuis beaucoup plus longtemps.
+    </p>
+
+    <p>
+      Lucy la fixe.
+    </p>
+
+    <p>
+      — Et vous voulez me faire croire que derrière toutes les catastrophes historiques se cachent vos deux groupes ?
+    </p>
+
+    <p>
+      — Certainement pas.
+    </p>
+
+    <p>
+      Hope secoue la tête.
+    </p>
+
+    <p>
+      — Ce serait absurde.
+    </p>
+
+    <p>
+      Elle ajoute :
+    </p>
+
+    <p>
+      — Les guerres, les révolutions, les crises et les progrès naissent de milliers de causes humaines.
+    </p>
+
+    <p>
+      — Mais certaines personnes essaient parfois d’accélérer une évolution.
+    </p>
+
+    <p>
+      — D’en ralentir une autre.
+    </p>
+
+    <p>
+      — Ou de profiter d’un moment favorable.
+    </p>
+
+    <p>
+      Lucy reste silencieuse.
+    </p>
+
+    <p>
+      Hope poursuit :
+    </p>
+
+    <p>
+      — Nous ne contrôlons pas l’humanité comme des marionnettistes.
+    </p>
+
+    <p>
+      — Nous l’influençons parfois.
+    </p>
+
+    <p>
+      — Et les Gardiens Noirs aussi.
+    </p>
+
+    <p>
+      Root intervient :
+    </p>
+
+    <p>
+      — Voilà pourquoi les conséquences sont essentielles.
+    </p>
+
+    <p>
+      — Si ta Caméléon élimine certaines personnes, il faut découvrir ce que leur absence permet.
+    </p>
+
+    <p>
+      Lucy soupire.
+    </p>
+
+    <p>
+      — Très bien.
+    </p>
+
+    <p>
+      Puis elle désigne les six hommes étendus au sol.
+    </p>
+
+    <p>
+      — Mais pour l’instant, j’ai surtout six types qui ont essayé de nous tuer et que vous prétendez appartenir à un ordre secret.
+    </p>
+
+    <p>
+      Hope la regarde.
+    </p>
+
+    <p>
+      — Tu veux une preuve ?
+    </p>
+
+    <p>
+      Lucy ne répond pas immédiatement.
+    </p>
+
+    <p>
+      Puis :
+    </p>
+
+    <p>
+      — Oui.
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     VISUEL 9
+     MARQUE D'UN GARDIEN NOIR
+===================================================== -->
+
+<section
+  class="scene dark-mark-scene"
+  id="preuve-gardien"
+>
+
+  <div
+    class="visual interactive-visual"
+    data-visual="9"
+  >
+
+    <img
+      src="images/chapitre4/Visuel-57.PNG"
+      alt="Marque d'un Gardien Noir révélée par Hope"
+      loading="lazy"
+    >
+
+  </div>
+
+
+  <!-- INTERACTION 17 -->
+
+  <div class="interaction-block">
+
+    <h2>
+      Preuve des Gardiens Noirs
+    </h2>
+
+    <button
+      class="interaction-btn"
+      id="blackMarkTrigger"
+      type="button"
+    >
+      Révéler la marque
+    </button>
+
+    <div
+      class="reveal-box"
+      id="blackMarkReveal"
+    ></div>
+
+  </div>
+
+
+  <div class="text-block dialogue">
+
+    <p>
+      Hope s’accroupit auprès de l’un des hommes inconscients.
+    </p>
+
+    <p>
+      Elle remonte doucement la manche de son bras droit.
+    </p>
+
+    <p>
+      Puis pose sa main contre l’intérieur de son poignet.
+    </p>
+
+    <p>
+      Lucy observe attentivement.
+    </p>
+
+    <p>
+      Pendant quelques secondes, rien ne se passe.
+    </p>
+
+    <p>
+      Puis une ligne sombre apparaît sous la peau.
+    </p>
+
+    <p>
+      Une seconde.
+    </p>
+
+    <p>
+      Puis plusieurs symboles prennent forme.
+    </p>
+
+    <p>
+      Clive cesse immédiatement de sourire.
+    </p>
+
+    <p>
+      Lucy s’approche.
+    </p>
+
+    <p>
+      — Qu’est-ce que c’est ?
+    </p>
+
+    <p>
+      La marque continue à se dessiner.
+    </p>
+
+    <p>
+      Elle forme un cercle irrégulier, traversé de lignes sombres semblant s’enfoncer sous la peau.
+    </p>
+
+    <p>
+      Au même instant, de fines lueurs orangées apparaissent brièvement sous la peau de la main de Hope.
+    </p>
+
+    <p>
+      Comme si quelque chose circulait entre elle et l’homme.
+    </p>
+
+    <p>
+      Lucy la fixe.
+    </p>
+
+    <p>
+      — Hope…
+    </p>
+
+    <p>
+      Hope retire sa main.
+    </p>
+
+    <p>
+      La marque de l’agresseur reste visible quelques secondes.
+    </p>
+
+    <p>
+      Puis elle commence lentement à disparaître.
+    </p>
+
+    <p>
+      Lucy regarde Hope.
+    </p>
+
+    <p>
+      — Qu’est-ce qui vient de se passer ?
+    </p>
+
+    <p>
+      — J’ai simplement révélé une marque qui était déjà là.
+    </p>
+
+    <p>
+      — Et ta main ?
+    </p>
+
+    <p>
+      Hope regarde ses doigts.
+    </p>
+
+    <p>
+      — Une réaction physiologique liée à la technique.
+    </p>
+
+    <p>
+      Lucy plisse les yeux.
+    </p>
+
+    <p>
+      — Physiologique ?
+    </p>
+
+    <p>
+      — Oui.
+    </p>
+
+    <p>
+      — Et tu veux toujours me faire croire que tu n’as aucun pouvoir ?
+    </p>
+
+    <p>
+      Hope sourit.
+    </p>
+
+    <p>
+      — Je n’ai jamais prétendu être ordinaire dans le sens où tu l’entends.
+    </p>
+
+    <p>
+      Puis elle ajoute :
+    </p>
+
+    <p>
+      — Mais je ne lance pas de boules de feu et je ne vole pas.
+    </p>
+
+    <p>
+      Clive intervient :
+    </p>
+
+    <p>
+      — Très décevant.
+    </p>
+
+    <p>
+      Root sourit.
+    </p>
+
+    <p>
+      Hope poursuit :
+    </p>
+
+    <p>
+      — J’ai simplement été entraînée depuis l’enfance à développer des capacités que la plupart des gens n’exploitent jamais à ce niveau.
+    </p>
+
+    <p>
+      Lucy demande :
+    </p>
+
+    <p>
+      — Lesquelles ?
+    </p>
+
+    <p>
+      — Observation.
+    </p>
+
+    <p>
+      — Contrôle du corps.
+    </p>
+
+    <p>
+      — Respiration.
+    </p>
+
+    <p>
+      — Vitesse de réaction.
+    </p>
+
+    <p>
+      — Mémoire.
+    </p>
+
+    <p>
+      — Perception.
+    </p>
+
+    <p>
+      — Maîtrise de la douleur.
+    </p>
+
+    <p>
+      — Analyse du mouvement.
+    </p>
+
+    <p>
+      — Et beaucoup d’autres choses.
+    </p>
+
+    <p>
+      Hope ajoute :
+    </p>
+
+    <p>
+      — Une personne privée d’un sens apprend parfois à développer énormément les autres pour s’adapter.
+    </p>
+
+    <p>
+      — Chez les Sentinelles, certains entraînements reposent sur une logique comparable.
+    </p>
+
+    <p>
+      Lucy regarde Root.
+    </p>
+
+    <p>
+      — Et c’est pour ça que vous avez senti arriver ces hommes avant nous.
+    </p>
+
+    <p>
+      — Entre autres.
+    </p>
+
+    <p>
+      Hope reprend :
+    </p>
+
+    <p>
+      — Je n’ai rien de surnaturel.
+    </p>
+
+    <p>
+      Elle sourit légèrement.
+    </p>
+
+    <p>
+      — Mais mon éducation n’a rien eu de très ordinaire.
+    </p>
+
+    <p>
+      Lucy regarde de nouveau l’homme.
+    </p>
+
+    <p>
+      — Et ce symbole ?
+    </p>
+
+    <p>
+      — Celui des Gardiens Noirs.
+    </p>
+
+    <p>
+      Lucy croise les bras.
+    </p>
+
+    <p>
+      — Donc, si je résume…
+    </p>
+
+    <p>
+      — Mauvaise idée, murmure Clive.
+    </p>
+
+    <p>
+      Lucy l’ignore.
+    </p>
+
+    <p>
+      — Les Gardiens Noirs seraient les voyous…
+    </p>
+
+    <p>
+      Hope secoue déjà la tête.
+    </p>
+
+    <p>
+      — Non.
+    </p>
+
+    <p>
+      — … et les Sentinelles les gentils qui vivent discrètement.
+    </p>
+
+    <p>
+      — Encore moins.
+    </p>
+
+    <p>
+      Lucy soupire.
+    </p>
+
+    <p>
+      — Alors explique-moi.
+    </p>
+
+    <p>
+      Hope réfléchit.
+    </p>
+
+    <p>
+      — L’apparence d’une personne ne dit absolument rien de l’ordre qu’elle sert.
+    </p>
+
+    <p>
+      Elle désigne l’homme inconscient.
+    </p>
+
+    <p>
+      — Un Gardien Noir peut être violent.
+    </p>
+
+    <p>
+      — Ou charmant.
+    </p>
+
+    <p>
+      — Pauvre.
+    </p>
+
+    <p>
+      — Milliardaire.
+    </p>
+
+    <p>
+      — Médecin.
+    </p>
+
+    <p>
+      — Soldat.
+    </p>
+
+    <p>
+      — Chef d’entreprise.
+    </p>
+
+    <p>
+      — Parfait père de famille.
+    </p>
+
+    <p>
+      Lucy écoute.
+    </p>
+
+    <p>
+      — Et une Sentinelle peut également appartenir à n’importe quel milieu.
+    </p>
+
+    <p>
+      Hope poursuit :
+    </p>
+
+    <p>
+      — Ce ne sont pas des catégories sociales.
+    </p>
+
+    <p>
+      — Ce sont des engagements.
+    </p>
+
+    <p>
+      Root ajoute :
+    </p>
+
+    <p>
+      — Des façons de voir le monde.
+    </p>
+
+    <p>
+      Hope acquiesce.
+    </p>
+
+    <p>
+      — Et encore, même ça est une simplification.
+    </p>
+
+    <p>
+      Lucy demande :
+    </p>
+
+    <p>
+      — Donc on choisit ?
+    </p>
+
+    <p>
+      Hope hésite.
+    </p>
+
+    <p>
+      — Parfois.
+    </p>
+
+    <p>
+      — Parfois ?
+    </p>
+
+    <p>
+      — Certaines personnes grandissent dans un ordre.
+    </p>
+
+    <p>
+      — Certaines sont appelées plus tard.
+    </p>
+
+    <p>
+      — Certaines ne sauront jamais que ces ordres existent.
+    </p>
+
+    <p>
+      — Pourtant, leurs actions peuvent favoriser l’un ou l’autre sans qu’elles en aient conscience.
+    </p>
+
+    <p>
+      Lucy réfléchit.
+    </p>
+
+    <p>
+      — Donc la majorité des gens sont manipulés sans même savoir qu’un jeu existe.
+    </p>
+
+    <p>
+      Hope répond immédiatement :
+    </p>
+
+    <p>
+      — Influencés, parfois.
+    </p>
+
+    <p>
+      — Manipulés, parfois aussi.
+    </p>
+
+    <p>
+      Lucy la regarde.
+    </p>
+
+    <p>
+      — Même par les Sentinelles ?
+    </p>
+
+    <p>
+      Hope ne détourne pas les yeux.
+    </p>
+
+    <p>
+      — Oui.
+    </p>
+
+    <p>
+      Root observe Lucy.
+    </p>
+
+    <p>
+      Hope poursuit :
+    </p>
+
+    <p class="emphasis">
+      — La Lumière n’est pas parfaite parce qu’elle s’appelle Lumière.
+    </p>
+
+    <p>
+      Lucy reste silencieuse.
+    </p>
+
+    <p>
+      Cette réponse la surprend davantage que toutes les précédentes.
+    </p>
+
+    <p>
+      — Au moins, tu ne prétends pas être du côté des saints.
+    </p>
+
+    <p>
+      — Je ne l’ai jamais prétendu.
+    </p>
+
+    <p>
+      Lucy montre Root.
+    </p>
+
+    <p>
+      — Et elle ?
+    </p>
+
+    <p>
+      — Root appartient à la Lumière.
+    </p>
+
+    <p>
+      Root acquiesce.
+    </p>
+
+    <p>
+      Lucy regarde son propre poignet.
+    </p>
+
+    <p>
+      — Et moi ?
+    </p>
+
+    <p>
+      Hope hésite.
+    </p>
+
+    <p>
+      — Toi, c’est différent.
+    </p>
+
+    <p>
+      — À cause de ma marque.
+    </p>
+
+    <p>
+      — Oui.
+    </p>
+
+    <p>
+      Lucy insiste :
+    </p>
+
+    <p>
+      — Je suis quoi exactement ?
+    </p>
+
+    <p>
+      Hope prend une inspiration.
+    </p>
+
+    <p>
+      — Une Indécise.
+    </p>
+
+    <p>
+      Clive intervient :
+    </p>
+
+    <p>
+      — Nom particulièrement flatteur.
+    </p>
+
+    <p>
+      Lucy lui lance un regard.
+    </p>
+
+    <p>
+      Hope poursuit :
+    </p>
+
+    <p>
+      — Les Indécis sont rares.
+    </p>
+
+    <p>
+      — Ils ne naissent liés ni à la Lumière ni aux Gardiens Noirs.
+    </p>
+
+    <p>
+      — Donc je suis neutre ?
+    </p>
+
+    <p>
+      — Pas exactement.
+    </p>
+
+    <p>
+      Hope choisit ses mots.
+    </p>
+
+    <p>
+      — Libre serait peut-être plus juste.
+    </p>
+
+    <p>
+      Lucy fronce les sourcils.
+    </p>
+
+    <p>
+      — Tout le monde n’est pas libre ?
+    </p>
+
+    <p>
+      Hope sourit légèrement.
+    </p>
+
+    <p>
+      — Tout le monde possède une part de liberté.
+    </p>
+
+    <p>
+      — Mais certains héritent d’un environnement, d’une éducation, d’une loyauté ou d’une histoire qui les oriente très fortement.
+    </p>
+
+    <p>
+      Elle regarde Lucy.
+    </p>
+
+    <p>
+      — Chez toi, cette orientation semble beaucoup moins déterminée.
+    </p>
+
+    <p>
+      Lucy reste silencieuse.
+    </p>
+
+    <p>
+      — Et ça vous rend importante ?
+    </p>
+
+    <p>
+      — Potentiellement.
+    </p>
+
+    <p>
+      — Pourquoi ?
+    </p>
+
+    <p>
+      Hope réfléchit.
+    </p>
+
+    <p>
+      — Parce qu’une personne capable d’avancer dans plusieurs directions peut devenir extrêmement précieuse lorsque deux forces s’opposent.
+    </p>
+
+    <p>
+      Lucy croise les bras.
+    </p>
+
+    <p>
+      — Donc les deux camps pourraient chercher à m’attirer.
+    </p>
+
+    <p>
+      — Peut-être.
+    </p>
+
+    <p>
+      — Et toi ?
+    </p>
+
+    <p>
+      Hope sourit.
+    </p>
+
+    <p>
+      — Je préférerais que tu continues à penser par toi-même.
+    </p>
+
+    <p>
+      Lucy reste méfiante.
+    </p>
+
+    <p>
+      — Très pratique comme réponse.
+    </p>
+
+    <p>
+      — Pourtant elle est sincère.
+    </p>
+
+    <p>
+      Lucy regarde encore la marque disparue.
+    </p>
+
+    <p>
+      Puis elle demande :
+    </p>
+
+    <p>
+      — Et Clive ?
+    </p>
+
+    <p>
+      Tout le monde tourne la tête vers lui.
+    </p>
+
+    <p>
+      Clive lève les mains.
+    </p>
+
+    <p>
+      — Pourquoi je suis impliqué, moi ?
+    </p>
+
+    <p>
+      Hope sourit.
+    </p>
+
+    <p>
+      — Très bonne question.
+    </p>
+
+    <p>
+      Puis elle regarde Lucy.
+    </p>
+
+    <p>
+      — Et nous n’avons pas la réponse.
+    </p>
+
+    <p>
+      Clive soupire de soulagement.
+    </p>
+
+    <p>
+      — Enfin une bonne nouvelle.
+    </p>
+
+    <p>
+      Lucy regarde une nouvelle fois l’homme inconscient.
+    </p>
+
+    <p>
+      — Une chose me dérange.
+    </p>
+
+    <p>
+      — Seulement une ? demande Root.
+    </p>
+
+    <p>
+      Lucy poursuit :
+    </p>
+
+    <p>
+      — Qui me prouve que cette marque est réellement celle des Gardiens Noirs ?
+    </p>
+
+    <p>
+      Root intervient.
+    </p>
+
+    <p>
+      — Moi.
+    </p>
+
+    <p>
+      Lucy la regarde.
+    </p>
+
+    <p>
+      — J’ai passé une grande partie de ma vie à rechercher des objets et des manuscrits liés à la légende du Cercle.
+    </p>
+
+    <p>
+      Root poursuit :
+    </p>
+
+    <p>
+      — J’ai déjà vu ce symbole.
+    </p>
+
+    <p>
+      — Plusieurs fois ?
+    </p>
+
+    <p>
+      — Très rarement.
+    </p>
+
+    <p>
+      — Mais suffisamment pour le reconnaître.
+    </p>
+
+    <p>
+      Lucy réfléchit.
+    </p>
+
+    <p>
+      — Et celui des Sentinelles ?
+    </p>
+
+    <p>
+      Root remonte légèrement sa manche.
+    </p>
+
+    <p>
+      — Tu l’as déjà vu.
+    </p>
+
+    <p>
+      Lucy regarde sa marque.
+    </p>
+
+    <p>
+      Puis Hope.
+    </p>
+
+    <p>
+      — Et toi ?
+    </p>
+
+    <p>
+      Hope sourit.
+    </p>
+
+    <p>
+      — Moi, c’est un peu plus compliqué.
+    </p>
+
+    <p>
+      — Évidemment.
+    </p>
+
+    <p>
+      — Les marques n’ont pas toutes la même fonction ni la même forme selon les personnes.
+    </p>
+
+    <p>
+      Lucy insiste :
+    </p>
+
+    <p>
+      — Mais tu es censée être leur Maître Unique.
+    </p>
+
+    <p>
+      — Oui.
+    </p>
+
+    <p>
+      — Donc montre-moi quelque chose qui le prouve.
+    </p>
+
+    <p>
+      Hope regarde Root.
+    </p>
+
+    <p>
+      — Tu crois que je peux… ?
+    </p>
+
+    <p>
+      Root ne la laisse même pas finir.
+    </p>
+
+    <p>
+      Elle pose une main sur son épaule.
+    </p>
+
+    <p>
+      — Vas-y.
+    </p>
+
+    <p>
+      Puis elle ajoute avec un grand sourire :
+    </p>
+
+    <p>
+      — Au pire, tu lui effaceras la mémoire.
+    </p>
+
+    <p>
+      Lucy les fixe.
+    </p>
+
+    <p>
+      — Très drôle.
+    </p>
+
+    <p>
+      Root éclate de rire.
+    </p>
+
+    <p>
+      — Je plaisante.
+    </p>
+
+    <p>
+      Lucy regarde Hope.
+    </p>
+
+    <p>
+      — J’espère.
+    </p>
+
+    <p>
+      Hope sourit.
+    </p>
+
+    <p>
+      — Alors regarde bien.
+    </p>
+
+  </div>
+
+
+  <!-- INTERACTION 18 -->
+
+  <div class="interaction-block sentinel-interaction">
+
+    <h2>
+      Révéler les marques de Root
+    </h2>
+
+    <button
+      class="interaction-btn"
+      id="rootHigherMarkTrigger"
+      type="button"
+    >
+      Observer Root
+    </button>
+
+    <div
+      class="reveal-box"
+      id="rootHigherMarkReveal"
+    ></div>
+
+  </div>
+
+
+  <div class="text-block dialogue">
+
+    <p>
+      Hope regarde Lucy quelques secondes.
+    </p>
+
+    <p>
+      — Tu veux une preuve ?
+    </p>
+
+    <p>
+      — Oui.
+    </p>
+
+    <p>
+      Hope acquiesce simplement.
+    </p>
+
+    <p>
+      Sans un mot de plus, elle déboutonne sa chemise et l’enlève.
+    </p>
+
+    <p>
+      Elle se retrouve en soutien-gorge.
+    </p>
+
+    <p>
+      Lucy et Root la regardent faire, surprises, sans comprendre immédiatement où elle veut en venir.
+    </p>
+
+    <p>
+      Hope tend alors la main vers Root et attrape doucement son poignet gauche.
+    </p>
+
+    <p>
+      — Regarde bien, Lucy.
+    </p>
+
+    <p>
+      À l’instant où Hope pose ses doigts sur la peau de Root, le symbole des Sentinelles apparaît à l’intérieur de son poignet.
+    </p>
+
+    <p>
+      Lucy se penche légèrement.
+    </p>
+
+    <p>
+      Mais cette fois, le phénomène ne s’arrête pas là.
+    </p>
+
+    <p>
+      Le symbole continue de se développer.
+    </p>
+
+    <p>
+      D’autres lignes surgissent, plus fines, plus complexes.
+    </p>
+
+    <p>
+      Deux autres marques viennent s’entrelacer à la première, remontant le long de l’avant-bras de Root, comme si toute une écriture ancienne se révélait soudain à fleur de peau.
+    </p>
+
+    <p>
+      Lucy reste figée.
+    </p>
+
+    <p>
+      Hope parle calmement :
+    </p>
+
+    <p>
+      — Tous les Sentinelles ne portent pas exactement la même marque.
+    </p>
+
+    <p>
+      Elle regarde Root avec une forme de respect.
+    </p>
+
+    <p class="emphasis">
+      — Root est une Sentinelle de niveau supérieur.
+    </p>
+
+    <p>
+      Puis elle ajoute :
+    </p>
+
+    <p>
+      — Elle descend d’une lignée ancienne.
+    </p>
+
+    <p>
+      Lucy lève les yeux vers Hope.
+    </p>
+
+    <p>
+      Et c’est alors que cela se produit.
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     VISUEL 10
+     DRAGON DE HOPE
+===================================================== -->
+
+<section
+  class="scene dragon-scene"
+  id="dragon-hope"
+>
+
+  <div
+    class="visual interactive-visual"
+    data-visual="10"
+  >
+
+    <img
+      src="images/chapitre4/Visuel-59.PNG"
+      alt="Dragon vivant apparaissant sur le corps de Hope"
+      loading="lazy"
+    >
+
+  </div>
+
+
+  <div class="interaction-block">
+
+    <h2>
+      Le Maître Unique
+    </h2>
+
+    <button
+      class="interaction-btn"
+      id="dragonTrigger"
+      type="button"
+    >
+      Révéler le dragon
+    </button>
+
+    <div
+      class="reveal-box"
+      id="dragonReveal"
+    ></div>
+
+  </div>
+
+
+  <div class="text-block dialogue">
+
+    <p>
+      Sur la peau nue de Hope, un éclat multicolore apparaît au niveau de l’épaule.
+    </p>
+
+    <p>
+      Puis la lumière se propage.
+    </p>
+
+    <p>
+      Comme un feu vivant glissant sous la peau.
+    </p>
+
+    <p>
+      En quelques secondes, un immense dragon se dessine sur son corps.
+    </p>
+
+    <p>
+      Il épouse ses courbes, traverse son buste, son ventre, son dos, ses bras, dans des teintes irisées et mouvantes.
+    </p>
+
+    <p>
+      On dirait moins un tatouage qu’une présence.
+    </p>
+
+    <p class="impact-text">
+      Le dragon semble respirer.
+    </p>
+
+    <p>
+      Frémir.
+    </p>
+
+    <p class="emphasis">
+      Vivre.
+    </p>
+
+    <p>
+      Lucy en reste bouche bée.
+    </p>
+
+    <p>
+      Même Clive, pourtant rarement impressionné, ne dit plus un mot.
+    </p>
+
+    <p>
+      Hope soutient le regard de Lucy.
+    </p>
+
+    <p>
+      — Voilà ma réponse.
+    </p>
+
+    <p>
+      Un silence lourd s’installe.
+    </p>
+
+    <p>
+      Puis Hope relâche le poignet de Root.
+    </p>
+
+    <p>
+      Peu à peu, les marques de Root s’effacent.
+    </p>
+
+    <p>
+      Le dragon sur le corps de Hope pâlit à son tour, jusqu’à disparaître complètement.
+    </p>
+
+    <p>
+      Hope remet calmement sa chemise.
+    </p>
+
+    <p>
+      Lucy finit par murmurer :
+    </p>
+
+    <p>
+      — Le symbole des Sentinelles était déjà magnifique…
+    </p>
+
+    <p>
+      Elle secoue légèrement la tête, encore saisie.
+    </p>
+
+    <p>
+      — Mais ce dragon…
+    </p>
+
+    <p>
+      Elle cherche ses mots.
+    </p>
+
+    <p>
+      — On aurait dit qu’il était vivant.
+    </p>
+
+    <p>
+      Hope s’approche d’elle.
+    </p>
+
+    <p>
+      — Il l’est, d’une certaine manière.
+    </p>
+
+    <p>
+      Lucy fronce les sourcils, mais ne répond pas.
+    </p>
+
+    <p>
+      Hope poursuit, plus grave :
+    </p>
+
+    <p>
+      — Ce que tu viens de voir ne t’apporte pas toutes les réponses.
+    </p>
+
+    <p>
+      — Mais cela doit au moins t’aider à comprendre que nous ne t’avons pas menti.
+    </p>
+
+    <p>
+      Lucy hoche lentement la tête.
+    </p>
+
+    <p>
+      — D’accord…
+    </p>
+
+    <p>
+      Puis elle relève les yeux vers Hope.
+    </p>
+
+    <p>
+      — Et moi, dans tout ça ?
+    </p>
+
+    <p>
+      Hope hésite une fraction de seconde.
+    </p>
+
+    <p>
+      — Toi, tu es à un point de passage.
+    </p>
+
+    <p>
+      Lucy attend.
+    </p>
+
+    <p>
+      — Tu es encore libre.
+    </p>
+
+    <p>
+      — Encore ?
+    </p>
+
+    <p>
+      — Oui.
+    </p>
+
+    <p>
+      Hope choisit soigneusement ses mots.
+    </p>
+
+    <p>
+      — Certaines épreuves, certaines rencontres, certaines décisions nous obligent un jour à révéler ce que nous sommes profondément.
+    </p>
+
+    <p>
+      Elle regarde Lucy droit dans les yeux.
+    </p>
+
+    <p>
+      — Quand ce moment viendra pour toi, il comptera.
+    </p>
+
+    <p>
+      Lucy ne dit rien.
+    </p>
+
+    <p>
+      Hope poursuit :
+    </p>
+
+    <p>
+      — Tu n’es liée ni aux Sentinelles, ni aux Gardiens Noirs.
+    </p>
+
+    <p>
+      — Pas encore.
+    </p>
+
+    <p>
+      — Et peut-être jamais totalement.
+    </p>
+
+    <p>
+      Puis elle ajoute :
+    </p>
+
+    <p>
+      — Mais ta place dans l’équilibre des forces est plus importante que tu ne l’imagines.
+    </p>
+
+    <p>
+      Clive soupire doucement.
+    </p>
+
+    <p>
+      — Vous avez un don incroyable pour répondre sans répondre complètement.
+    </p>
+
+    <p>
+      Root sourit.
+    </p>
+
+    <p>
+      — C’est leur spécialité.
+    </p>
+
+    <p>
+      Hope ignore la remarque et tourne brusquement la tête vers la rue.
+    </p>
+
+    <p>
+      Son expression change immédiatement.
+    </p>
+
+    <p>
+      — Il faut partir.
+    </p>
+
+    <p>
+      Lucy revient aussitôt à la réalité.
+    </p>
+
+    <p>
+      — Tout de suite ?
+    </p>
+
+    <p>
+      — Oui.
+    </p>
+
+    <p>
+      Root comprend avant même qu’Hope n’ajoute quoi que ce soit.
+    </p>
+
+    <p>
+      — Ils arrivent.
+    </p>
+
+    <p>
+      Hope acquiesce.
+    </p>
+
+    <p>
+      — Les Gardiens Noirs ne vont pas laisser traîner leurs hommes bien longtemps.
+    </p>
+
+    <p>
+      Elle regarde Lucy.
+    </p>
+
+    <p>
+      — Et quand tes collègues arriveront, ils ne trouveront rien.
+    </p>
+
+    <p>
+      — Ni corps.
+    </p>
+
+    <p>
+      — Ni trace exploitable.
+    </p>
+
+    <p>
+      Lucy serre les dents.
+    </p>
+
+    <p>
+      — Ça, j’aimerais vraiment éviter d’en faire l’expérience.
+    </p>
+
+    <p>
+      — Alors allons-y.
+    </p>
+
+    <p>
+      Clive regarde Lucy.
+    </p>
+
+    <p>
+      — On rentre aux Flores ?
+    </p>
+
+    <p>
+      Lucy réfléchit une seconde.
+    </p>
+
+    <p>
+      Puis acquiesce.
+    </p>
+
+    <p>
+      — Oui.
+    </p>
+
+    <p>
+      Elle veut Betty et Anna en sécurité.
+    </p>
+
+    <p>
+      Hope se tourne vers Root.
+    </p>
+
+    <p>
+      — Et nous, au musée Tempass.
+    </p>
+
+    <p>
+      Root comprend immédiatement.
+    </p>
+
+    <p>
+      — Pour la clé.
+    </p>
+
+    <p>
+      — Oui.
+    </p>
+
+    <p>
+      — Il faut l’étudier ?
+    </p>
+
+    <p class="emphasis">
+      — Et surtout la rendre inaccessible.
+    </p>
+
+    <p>
+      Lucy regarde Hope une dernière fois.
+    </p>
+
+    <p>
+      Elle voudrait poser mille questions.
+    </p>
+
+    <p>
+      Sur le dragon.
+    </p>
+
+    <p>
+      Sur la marque.
+    </p>
+
+    <p>
+      Sur elle-même.
+    </p>
+
+    <p>
+      Sur les Gardiens Noirs.
+    </p>
+
+    <p>
+      Sur ce point de passage dont Hope vient de parler.
+    </p>
+
+    <p>
+      Mais le moment n’est plus aux questions.
+    </p>
+
+    <p>
+      Alors elle se contente de dire :
+    </p>
+
+    <p>
+      — Ce n’est pas terminé.
+    </p>
+
+    <p>
+      Hope la regarde avec un léger sourire.
+    </p>
+
+    <p>
+      — Non.
+    </p>
+
+    <p>
+      Puis elle ajoute :
+    </p>
+
+    <p class="impact-text">
+      — Ce n’est que le début.
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     FIN DU CHAPITRE
+===================================================== -->
+
+<section
+  class="scene chapter-end"
+  id="chapter-end"
+>
+
+  <div class="text-block">
+
+    <p>
+      Quelques instants plus tard, Lucy et Clive prennent la direction de l’hacienda Flores pour rejoindre Betty et Anna.
+    </p>
+
+    <p>
+      De leur côté, Hope et Root filent vers le musée Tempass, avec une seule idée en tête :
+    </p>
+
+    <p class="impact-text">
+      comprendre la clé…
+    </p>
+
+    <p class="emphasis">
+      et la rendre inaccessible à quiconque voudrait s’en servir.
+    </p>
+
+  </div>
+
+
+  <div class="end-symbol">
+    ∞
+  </div>
+
+
+  <div class="end-actions">
+
+    <button
+      class="chapter-btn"
+      id="restartChapter"
+      type="button"
+    >
+      Relire le chapitre
+    </button>
+
+    <a
+      class="chapter-btn primary"
+      href="chapitre5.html"
+    >
+      Continuer
+    </a>
+
+  </div>
+
+</section>
+
+
+</main>
+
+
+<!-- =====================================================
+     POPUP INFORMATION / SECRET
+===================================================== -->
+
+<div
+  class="secret-popup"
+  id="secretPopup"
+  aria-hidden="true"
+>
+
+  <div class="secret-popup-inner">
+
+    <span class="secret-symbol">
+      ∞
+    </span>
+
+    <span class="secret-title">
+      INFORMATION DÉCOUVERTE
+    </span>
+
+    <p
+      class="secret-description"
+      id="secretDescription"
+    ></p>
+
+  </div>
+
+</div>
+
+
+<!-- =====================================================
+     MENU
+===================================================== -->
+
+<div
+  class="chapter-menu"
+  id="chapterMenu"
+  aria-hidden="true"
+>
+
+  <div class="chapter-menu-panel">
+
+    <button
+      class="menu-close"
+      id="menuClose"
+      aria-label="Fermer le menu"
+      type="button"
+    >
+      ×
+    </button>
+
+    <h2>
+      Chapitre 4
+    </h2>
+
+    <p>
+      Mais qui est-elle ?
+    </p>
+
+    <button
+      id="resumeBtn"
+      class="menu-action"
+      type="button"
+    >
+      Reprendre la lecture
+    </button>
+
+    <button
+      id="restartBtn"
+      class="menu-action"
+      type="button"
+    >
+      Recommencer le chapitre
+    </button>
+
+    <a
+      href="menu.html"
+      class="menu-action"
+    >
+      Retour au menu
+    </a>
+
+  </div>
+
+</div>
+
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
+<script src="js/chapitre4.js"></script>
+
+
+</body>
+</html>
