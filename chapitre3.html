@@ -1,1 +1,5636 @@
+<!DOCTYPE html>
+<html lang="fr">
 
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+  >
+
+  <meta
+    name="theme-color"
+    content="#050505"
+  >
+
+  <title>
+    Chapitre 3 — La Confiance | La Société de l'Ombre
+  </title>
+
+  <link
+    rel="stylesheet"
+    href="css/chapitre3.css"
+  >
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     BARRE DE PROGRESSION
+===================================================== -->
+
+<div
+  class="progress-bar"
+  aria-hidden="true"
+>
+  <div
+    class="progress-fill"
+    id="progressFill"
+  ></div>
+</div>
+
+
+<!-- =====================================================
+     COMMANDES
+===================================================== -->
+
+<div class="chapter-controls">
+
+  <button
+    class="control-btn"
+    id="menuBtn"
+    type="button"
+    aria-label="Ouvrir le menu"
+  >
+    ☰
+  </button>
+
+  <button
+    class="control-btn"
+    id="soundBtn"
+    type="button"
+    aria-label="Activer ou désactiver le son"
+  >
+    ♫
+  </button>
+
+</div>
+
+
+<main
+  class="chapter"
+  id="chapter"
+>
+
+
+<!-- =====================================================
+     VISUEL 1
+     COUVERTURE
+===================================================== -->
+
+<section
+  class="scene scene-cover"
+  id="scene-1"
+>
+
+  <div
+    class="visual full-visual"
+    data-visual="1"
+  >
+
+    <img
+      src="images/chapitre3/Visuel-1.PNG"
+      alt="Chapitre 3 — La Confiance"
+      loading="eager"
+    >
+
+  </div>
+
+  <div class="chapter-title-overlay">
+
+    <p class="chapter-number">
+      Chapitre 3
+    </p>
+
+    <h1>
+      La Confiance
+    </h1>
+
+    <button
+      class="continue-btn"
+      type="button"
+      data-next
+    >
+      Continuer
+    </button>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     SÉQUENCE 1
+     BETTY REJOINT L'HACIENDA AWAKE
+===================================================== -->
+
+<section
+  class="scene"
+  id="scene-2"
+>
+
+  <div class="location-card">
+
+    <span>
+      Mexique
+    </span>
+
+    <strong>
+      Hacienda Flores
+    </strong>
+
+  </div>
+
+
+  <div class="text-block dialogue">
+
+    <p>
+      Betty rentre du laboratoire et demande immédiatement à voir sa fille.
+    </p>
+
+    <p>
+      — Hale, où est Anna ?
+    </p>
+
+    <p>
+      — Elle est en sécurité, Madame. Toujours avec votre sœur, à l’hacienda Awake.
+    </p>
+
+    <p>
+      Betty s’arrête.
+    </p>
+
+    <p>
+      — Elles sont encore là-bas ?
+    </p>
+
+    <p>
+      — Oui.
+    </p>
+
+    <p>
+      — Et comment pouvez-vous être certain qu’elles vont bien ?
+    </p>
+
+    <p>
+      Hale reste parfaitement calme.
+    </p>
+
+    <p>
+      — Parce que je le sais.
+    </p>
+
+    <p>
+      Cette réponse n’a rien de rassurant pour Betty.
+    </p>
+
+    <p>
+      Quelques minutes plus tard, elle monte dans son Range Rover et prend immédiatement la direction de l’hacienda Awake.
+    </p>
+
+  </div>
+
+
+  <!-- INTERACTION 1 -->
+
+  <div class="interaction-block">
+
+    <h2>
+      Betty doit-elle faire confiance à Hale ?
+    </h2>
+
+    <p>
+      Sa réponse ne repose sur aucune preuve visible.
+    </p>
+
+    <div class="choice-buttons">
+
+      <button
+        class="choice-btn"
+        type="button"
+        data-hale-trust="trust"
+      >
+        Hale semble savoir quelque chose
+      </button>
+
+      <button
+        class="choice-btn"
+        type="button"
+        data-hale-trust="doubt"
+      >
+        Betty a raison de rester méfiante
+      </button>
+
+    </div>
+
+    <div
+      class="reveal-box"
+      id="haleTrustReveal"
+    ></div>
+
+  </div>
+
+</section>
+
+
+<section
+  class="scene security-scene"
+  id="scene-3"
+>
+
+  <div class="location-card">
+
+    <strong>
+      Hacienda Awake
+    </strong>
+
+  </div>
+
+
+  <div class="text-block dialogue">
+
+    <p>
+      À son arrivée, Betty est immédiatement frappée par le niveau de sécurité de la propriété.
+    </p>
+
+    <p>
+      Des drones apparaissent presque silencieusement autour de son véhicule.
+    </p>
+
+    <p>
+      Ils l’analysent.
+    </p>
+
+    <p>
+      Quelques secondes passent.
+    </p>
+
+    <p>
+      Puis une voix annonce :
+    </p>
+
+    <p>
+      — Betty Flores. Généticienne et biologiste. Accès en cours de validation.
+    </p>
+
+    <p>
+      Betty fronce les sourcils.
+    </p>
+
+    <p>
+      — Charmant…
+    </p>
+
+    <p>
+      Quelques instants plus tard :
+    </p>
+
+    <p>
+      — Autorisation accordée. Bienvenue à l’hacienda Awake.
+    </p>
+
+    <p>
+      Le portail s’ouvre.
+    </p>
+
+    <p>
+      Betty s’engage dans la propriété.
+    </p>
+
+    <p>
+      Lorsqu’elle arrive devant l’entrée principale, James l’attend déjà.
+    </p>
+
+    <p>
+      — Bonjour, Mme Flores.
+    </p>
+
+    <p>
+      — Bonjour.
+    </p>
+
+    <p>
+      — Votre fille, Mme Adverse, Mme Tempass et Mme Awake vous attendent près de la piscine.
+    </p>
+
+    <p>
+      Il lui indique le chemin.
+    </p>
+
+    <p>
+      — Si vous voulez bien me suivre.
+    </p>
+
+    <p>
+      Betty le regarde brièvement.
+    </p>
+
+    <p>
+      — Vous saviez que j’arrivais ?
+    </p>
+
+    <p>
+      James esquisse un sourire.
+    </p>
+
+    <p>
+      — Ici, nous savons généralement qui entre avant même qu’il ne franchisse le portail.
+    </p>
+
+    <p>
+      Betty ne répond pas.
+    </p>
+
+    <p>
+      Cela ne la rassure pas davantage.
+    </p>
+
+  </div>
+
+
+  <!-- INTERACTION 2 -->
+
+  <div class="interaction-block investigation-block">
+
+    <h2>
+      Analyser la sécurité
+    </h2>
+
+    <div class="observation-buttons">
+
+      <button
+        class="interaction-btn"
+        type="button"
+        data-security="drones"
+      >
+        Drones silencieux
+      </button>
+
+      <button
+        class="interaction-btn"
+        type="button"
+        data-security="identity"
+      >
+        Identification automatique
+      </button>
+
+      <button
+        class="interaction-btn"
+        type="button"
+        data-security="validation"
+      >
+        Validation avant ouverture
+      </button>
+
+      <button
+        class="interaction-btn"
+        type="button"
+        data-security="anticipation"
+      >
+        James connaît déjà son arrivée
+      </button>
+
+    </div>
+
+    <div
+      class="reveal-box"
+      id="securityReveal"
+    ></div>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     VISUEL 2
+     LE GROUPE AU BORD DE LA PISCINE
+===================================================== -->
+
+<section
+  class="scene pact-scene"
+  id="scene-4"
+>
+
+  <div
+    class="visual"
+    data-visual="2"
+  >
+    <img
+      src="images/chapitre3/Visuel-7.PNG"
+      alt="Betty découvre Anna, Lucy, Root et Hope près de la piscine"
+      loading="lazy"
+    >
+  </div>
+
+
+  <div class="text-block dialogue">
+
+    <p>
+      Lorsqu’elle approche de la piscine, elle découvre les quatre femmes installées ensemble.
+    </p>
+
+    <p>
+      Anna.
+    </p>
+
+    <p>
+      Lucy.
+    </p>
+
+    <p>
+      Root.
+    </p>
+
+    <p>
+      Hope.
+    </p>
+
+    <p>
+      Elles sourient.
+    </p>
+
+    <p>
+      Elles plaisantent.
+    </p>
+
+    <p>
+      Une étrange complicité semble déjà s’être installée entre elles.
+    </p>
+
+    <p>
+      Betty s’arrête quelques secondes.
+    </p>
+
+    <p>
+      Elle n’a pas vu Lucy aussi détendue depuis longtemps.
+    </p>
+
+    <p>
+      Et Anna semble rayonnante.
+    </p>
+
+    <p>
+      Sa fille lui fait immédiatement signe.
+    </p>
+
+    <p>
+      — Man ! Viens !
+    </p>
+
+    <p>
+      Betty s’approche.
+    </p>
+
+    <p>
+      Anna se lève.
+    </p>
+
+    <p>
+      — Je te présente officiellement Hope.
+    </p>
+
+    <p>
+      Puis elle désigne Root.
+    </p>
+
+    <p>
+      — Et Root, mais apparemment vous vous connaissez déjà.
+    </p>
+
+    <p>
+      Betty regarde l’archéologue.
+    </p>
+
+    <p>
+      — Root…
+    </p>
+
+    <p>
+      Un sourire sincère apparaît enfin sur son visage.
+    </p>
+
+    <p>
+      — Ça fait une éternité.
+    </p>
+
+    <p>
+      Root se lève et vient la saluer.
+    </p>
+
+    <p>
+      — Beaucoup trop longtemps.
+    </p>
+
+    <p>
+      Betty l’observe.
+    </p>
+
+    <p>
+      — Et tu n’as pratiquement pas changé.
+    </p>
+
+    <p>
+      Root sourit.
+    </p>
+
+    <p>
+      — Toi non plus.
+    </p>
+
+    <p>
+      Hope s’approche à son tour.
+    </p>
+
+    <p>
+      — Bonjour, Betty. Et bienvenue.
+    </p>
+
+    <p>
+      — Bonjour.
+    </p>
+
+    <p>
+      Betty lui tend la main.
+    </p>
+
+    <p>
+      — Je voulais surtout vous remercier personnellement pour ce que vous avez fait pour Anna.
+    </p>
+
+    <p>
+      Son expression redevient néanmoins plus prudente.
+    </p>
+
+    <p>
+      — Je vous en serai toujours reconnaissante.
+    </p>
+
+    <p>
+      Puis elle regarde Lucy et sa fille.
+    </p>
+
+    <p>
+      — Mais je crois qu’il est temps que nous rentrions.
+    </p>
+
+    <p>
+      Anna soupire immédiatement.
+    </p>
+
+    <p>
+      Lucy fait de même.
+    </p>
+
+    <p>
+      — Betty…
+    </p>
+
+    <p>
+      — Quoi ?
+    </p>
+
+    <p>
+      Anna et Lucy répondent presque en même temps :
+    </p>
+
+    <p class="impact-text">
+      — Assieds-toi.
+    </p>
+
+    <p>
+      Betty les regarde.
+    </p>
+
+    <p>
+      Anna sourit.
+    </p>
+
+    <p>
+      — Profite un peu de la vie.
+    </p>
+
+    <p>
+      Lucy ajoute :
+    </p>
+
+    <p>
+      — Pour une fois.
+    </p>
+
+    <p>
+      Betty croise les bras.
+    </p>
+
+    <p>
+      Hope intervient calmement.
+    </p>
+
+    <p>
+      — Il n’y a aucune raison de vous inquiéter.
+    </p>
+
+    <p>
+      Betty la regarde.
+    </p>
+
+    <p>
+      — Je n’en suis pas encore certaine.
+    </p>
+
+    <p>
+      — C’est justement pour cette raison que nous étions sur le point de discuter.
+    </p>
+
+    <p>
+      Hope lui indique un fauteuil.
+    </p>
+
+    <p>
+      — Lucy et Anna ont des questions.
+    </p>
+
+    <p>
+      Elle sourit légèrement.
+    </p>
+
+    <p>
+      — Et quelque chose me dit que vous en avez également quelques-unes.
+    </p>
+
+    <p>
+      Betty hésite.
+    </p>
+
+    <p>
+      Hope poursuit :
+    </p>
+
+    <p>
+      — Nous avons seulement posé une règle.
+    </p>
+
+    <p>
+      — Laquelle ?
+    </p>
+
+    <p class="emphasis">
+      — Aucun mensonge.
+    </p>
+
+    <p>
+      Betty arque un sourcil.
+    </p>
+
+    <p>
+      — C’est tout ?
+    </p>
+
+    <p>
+      — Presque.
+    </p>
+
+    <p>
+      Hope ajoute :
+    </p>
+
+    <p>
+      — Personne n’est obligé de répondre à une question. Mais si l’une de nous décide de répondre, alors elle dit la vérité.
+    </p>
+
+    <p>
+      Elle regarde chacune des femmes.
+    </p>
+
+    <p>
+      — Et ce qui est confié ici reste ici.
+    </p>
+
+    <p>
+      Betty laisse passer quelques secondes.
+    </p>
+
+    <p>
+      — Vous appelez ça un pacte ?
+    </p>
+
+    <p>
+      — Le mot est un peu théâtral.
+    </p>
+
+    <p>
+      Hope sourit.
+    </p>
+
+    <p>
+      — Disons plutôt un accord de confiance.
+    </p>
+
+    <p>
+      Betty observe Lucy.
+    </p>
+
+    <p>
+      Puis Anna.
+    </p>
+
+    <p>
+      Toutes deux semblent parfaitement à l’aise.
+    </p>
+
+  </div>
+
+
+  <!-- INTERACTION 3 -->
+
+  <div class="interaction-block pact-interaction">
+
+    <h2>
+      Accord de confiance
+    </h2>
+
+    <p>
+      Betty accepte-t-elle de rester ?
+    </p>
+
+    <button
+      class="pact-btn"
+      id="bettyTrustButton"
+      type="button"
+    >
+      Accepter de s’asseoir
+    </button>
+
+    <div
+      class="reveal-box"
+      id="bettyTrustReveal"
+    ></div>
+
+  </div>
+
+
+  <div class="text-block dialogue">
+
+    <p>
+      Elle finit par s’asseoir.
+    </p>
+
+    <p>
+      — Très bien.
+    </p>
+
+    <p>
+      Hope acquiesce.
+    </p>
+
+    <p>
+      — Je vous préviens simplement d’une chose.
+    </p>
+
+    <p>
+      — Laquelle ?
+    </p>
+
+    <p>
+      — Avant de poser une question, assurez-vous de vouloir réellement entendre la réponse.
+    </p>
+
+    <p>
+      Betty la fixe.
+    </p>
+
+    <p>
+      Hope poursuit :
+    </p>
+
+    <p>
+      — La vérité n’est pas toujours celle que nous espérons.
+    </p>
+
+    <p>
+      — Mais elle reste la vérité.
+    </p>
+
+    <p>
+      Betty ne répond pas.
+    </p>
+
+    <p>
+      Anna intervient :
+    </p>
+
+    <p>
+      — Hope est la sœur du propriétaire du restaurant français qui a brûlé.
+    </p>
+
+    <p>
+      Betty se tourne brusquement vers elle.
+    </p>
+
+    <p>
+      Puis vers Hope.
+    </p>
+
+    <p>
+      — Ted Awake était votre frère ?
+    </p>
+
+    <p>
+      — Oui.
+    </p>
+
+    <p>
+      Le visage de Betty change.
+    </p>
+
+    <p>
+      — Je suis sincèrement désolée.
+    </p>
+
+    <p>
+      Elle poursuit :
+    </p>
+
+    <p>
+      — Anna et moi avons eu l’occasion de déjeuner dans son restaurant peu avant l’incendie.
+    </p>
+
+    <p>
+      Hope semble touchée.
+    </p>
+
+    <p>
+      — Alors vous avez connu une petite partie de son rêve.
+    </p>
+
+    <p>
+      — C’était un excellent restaurant.
+    </p>
+
+    <p>
+      — Merci.
+    </p>
+
+    <p>
+      Hope regarde un instant l’hacienda.
+    </p>
+
+    <p>
+      — Ted aimait profondément la cuisine.
+    </p>
+
+    <p>
+      Puis elle ajoute :
+    </p>
+
+    <p>
+      — C’est notamment pour cette raison que j’ai décidé de reconstruire ici.
+    </p>
+
+    <p>
+      Betty acquiesce.
+    </p>
+
+    <p>
+      Hope poursuit :
+    </p>
+
+    <p>
+      — Ce restaurant continuera ce qu’il avait commencé.
+    </p>
+
+    <p>
+      Elle marque une pause.
+    </p>
+
+    <p>
+      — Mais cette fois, personne ne viendra lui imposer une prétendue protection.
+    </p>
+
+    <p>
+      Betty relève immédiatement les yeux.
+    </p>
+
+    <p>
+      — Vous parlez du cartel Santalucibel.
+    </p>
+
+    <p>
+      — Oui.
+    </p>
+
+    <p>
+      — Vous comptez lui tenir tête ?
+    </p>
+
+    <p>
+      — Je compte simplement refuser de lui appartenir.
+    </p>
+
+    <p>
+      Betty secoue la tête.
+    </p>
+
+    <p>
+      — Vous ne savez pas à qui vous vous attaquez.
+    </p>
+
+    <p>
+      Hope la regarde calmement.
+    </p>
+
+    <p>
+      — Si.
+    </p>
+
+    <p>
+      — Non.
+    </p>
+
+    <p>
+      Betty insiste :
+    </p>
+
+    <p>
+      — Élie Santalucibel ne fonctionne pas comme un commerçant avec lequel on négocie.
+    </p>
+
+    <p>
+      Elle commence à s’agacer.
+    </p>
+
+    <p>
+      — Il détruit ce qui lui résiste.
+    </p>
+
+    <p>
+      Hope ne réagit pas.
+    </p>
+
+    <p>
+      Betty poursuit :
+    </p>
+
+    <p>
+      — Votre frère vient précisément d’en mourir.
+    </p>
+
+    <p>
+      Un silence tombe.
+    </p>
+
+    <p>
+      — Et vous voulez recommencer exactement au même endroit ?
+    </p>
+
+    <p>
+      Hope répond calmement :
+    </p>
+
+    <p>
+      — Non.
+    </p>
+
+    <p>
+      — Alors quoi ?
+    </p>
+
+    <p>
+      — Je veux faire en sorte que ce qui est arrivé à Ted ne devienne pas une règle.
+    </p>
+
+    <p>
+      Betty la fixe.
+    </p>
+
+    <p>
+      — Votre cause est peut-être noble.
+    </p>
+
+    <p>
+      Sa voix devient plus dure.
+    </p>
+
+    <p>
+      — Mais elle est dangereuse.
+    </p>
+
+    <p>
+      Puis elle regarde Anna.
+    </p>
+
+    <p>
+      — Et je refuse que ma fille se retrouve impliquée là-dedans.
+    </p>
+
+    <p>
+      Anna ouvre la bouche.
+    </p>
+
+    <p>
+      — Man…
+    </p>
+
+    <p>
+      — Non.
+    </p>
+
+    <p>
+      Betty se lève.
+    </p>
+
+    <p>
+      — Tu dis au revoir à Hope. Nous rentrons.
+    </p>
+
+    <p>
+      Hope reste assise.
+    </p>
+
+    <p>
+      — Betty.
+    </p>
+
+    <p>
+      — Quoi ?
+    </p>
+
+    <p>
+      — Ce n’est pas le fait de me fréquenter qui met Anna en danger.
+    </p>
+
+    <p>
+      Betty se fige.
+    </p>
+
+    <p>
+      — Pardon ?
+    </p>
+
+    <p>
+      Hope la regarde droit dans les yeux.
+    </p>
+
+    <p>
+      — La tentative d’enlèvement a eu lieu avant qu’Anna sache réellement qui j’étais.
+    </p>
+
+    <p>
+      Betty ne répond pas.
+    </p>
+
+    <p class="emphasis">
+      — Quelqu’un s’intéressait donc déjà à elle.
+    </p>
+
+    <p>
+      Un silence.
+    </p>
+
+    <p>
+      Cette fois, Betty écoute.
+    </p>
+
+  </div>
+
+
+  <!-- INTERACTION 4 -->
+
+  <div class="interaction-block investigation-block">
+
+    <h2>
+      Reconstituer le danger
+    </h2>
+
+    <div class="observation-buttons">
+
+      <button
+        class="interaction-btn"
+        type="button"
+        data-anna-danger="before"
+      >
+        Enlèvement avant la rencontre avec Hope
+      </button>
+
+      <button
+        class="interaction-btn"
+        type="button"
+        data-anna-danger="target"
+      >
+        Anna était déjà une cible
+      </button>
+
+      <button
+        class="interaction-btn"
+        type="button"
+        data-anna-danger="reason"
+      >
+        La raison reste inconnue
+      </button>
+
+    </div>
+
+    <div
+      class="reveal-box"
+      id="annaDangerReveal"
+    ></div>
+
+  </div>
+
+
+  <div class="text-block dialogue">
+
+    <p>
+      Hope poursuit :
+    </p>
+
+    <p>
+      — Et je pense que nous sommes toutes d’accord sur une chose : comprendre pourquoi est beaucoup plus important que chercher à l’éloigner de toutes les personnes susceptibles de l’aider.
+    </p>
+
+    <p>
+      Betty reste debout.
+    </p>
+
+    <p>
+      — Vous prétendez pouvoir la protéger ?
+    </p>
+
+    <p>
+      — Je dis seulement que sa sécurité peut être améliorée.
+    </p>
+
+    <p>
+      Lucy intervient :
+    </p>
+
+    <p>
+      — Sur ce point, elle n’a pas tort.
+    </p>
+
+    <p>
+      Betty regarde sa sœur.
+    </p>
+
+    <p>
+      — Toi aussi ?
+    </p>
+
+    <p>
+      Lucy hausse les épaules.
+    </p>
+
+    <p>
+      — Je ne dis pas que je lui fais confiance aveuglément.
+    </p>
+
+    <p>
+      Root sourit.
+    </p>
+
+    <p>
+      Lucy lui lance un regard.
+    </p>
+
+    <p>
+      — Mais leur système de sécurité est impressionnant.
+    </p>
+
+    <p>
+      Hope regarde Anna.
+    </p>
+
+    <p>
+      — Tu veux lui montrer ?
+    </p>
+
+    <p>
+      Anna sourit immédiatement.
+    </p>
+
+    <p>
+      — Oui.
+    </p>
+
+    <p>
+      Betty fronce les sourcils.
+    </p>
+
+    <p>
+      — Me montrer quoi ?
+    </p>
+
+    <p>
+      Hope se tourne vers Root.
+    </p>
+
+    <p>
+      — Doucement.
+    </p>
+
+    <p>
+      Root comprend.
+    </p>
+
+    <p>
+      Elle se lève et s’approche d’Anna.
+    </p>
+
+    <p>
+      Puis, sans prévenir, elle effectue un mouvement extrêmement rapide dans sa direction.
+    </p>
+
+    <p>
+      Betty sursaute.
+    </p>
+
+    <p>
+      — Root !
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     VISUEL 3
+     BOUCLIER D'ANNA
+===================================================== -->
+
+<section
+  class="scene shield-scene interaction-scene"
+  id="scene-5"
+>
+
+  <div
+    class="visual interactive-visual"
+    data-visual="3"
+  >
+    <img
+      src="images/chapitre3/Visuel-15.PNG"
+      alt="Bouclier de protection transparent autour d'Anna"
+      loading="lazy"
+    >
+  </div>
+
+
+  <!-- INTERACTION 5 -->
+
+  <div class="interaction-block">
+
+    <h2>
+      Test de protection
+    </h2>
+
+    <button
+      class="interaction-btn"
+      id="shieldTrigger"
+      type="button"
+    >
+      Déclencher l’attaque de Root
+    </button>
+
+    <div
+      class="reveal-box"
+      id="shieldReveal"
+    ></div>
+
+  </div>
+
+
+  <div class="text-block dialogue">
+
+    <p>
+      Mais avant même qu’elle puisse intervenir, quelque chose apparaît autour d’Anna.
+    </p>
+
+    <p>
+      Une fine enveloppe transparente semble se déployer autour de son corps.
+    </p>
+
+    <p>
+      Root s’arrête à quelques centimètres d’elle.
+    </p>
+
+    <p class="impact-text">
+      Anna n’a rien.
+    </p>
+
+    <p>
+      Betty reste bouche bée.
+    </p>
+
+    <p>
+      — Qu’est-ce que…
+    </p>
+
+    <p>
+      Anna regarde autour d’elle.
+    </p>
+
+    <p>
+      — C’est toujours aussi génial.
+    </p>
+
+    <p>
+      Betty se tourne brutalement vers Hope.
+    </p>
+
+    <p>
+      — Qu’est-ce que vous avez fait à ma fille ?
+    </p>
+
+    <p>
+      — Rien d’irréversible.
+    </p>
+
+    <p>
+      — Ce n’est pas une réponse !
+    </p>
+
+    <p>
+      Hope reste calme.
+    </p>
+
+    <p>
+      — C’est un dispositif de protection.
+    </p>
+
+    <p>
+      — Quel genre de dispositif ?
+    </p>
+
+    <p>
+      — Une technologie encore expérimentale.
+    </p>
+
+    <p>
+      Betty regarde Anna.
+    </p>
+
+    <p>
+      — Tu savais qu’elle t’avait équipée de ça ?
+    </p>
+
+    <p>
+      Anna hésite.
+    </p>
+
+    <p>
+      — Pas vraiment au début.
+    </p>
+
+    <p>
+      Betty ferme les yeux.
+    </p>
+
+    <p>
+      — Évidemment.
+    </p>
+
+    <p>
+      Hope poursuit :
+    </p>
+
+    <p>
+      — Anna peut le désactiver à tout moment.
+    </p>
+
+    <p>
+      — Comment ?
+    </p>
+
+    <p>
+      Anna sourit.
+    </p>
+
+    <p>
+      — Comme ça.
+    </p>
+
+    <p>
+      Elle touche légèrement sa tempe gauche.
+    </p>
+
+    <p>
+      La protection disparaît.
+    </p>
+
+    <p>
+      Puis elle recommence.
+    </p>
+
+    <p>
+      Elle réapparaît.
+    </p>
+
+    <p>
+      — C’est génial, Man.
+    </p>
+
+    <p>
+      Betty la regarde sévèrement.
+    </p>
+
+    <p>
+      — Tu n’es pas invincible.
+    </p>
+
+    <p>
+      Le sourire d’Anna diminue légèrement.
+    </p>
+
+    <p>
+      — Je sais.
+    </p>
+
+    <p>
+      — Et je refuse que qui que ce soit te fasse croire le contraire.
+    </p>
+
+    <p>
+      Hope acquiesce immédiatement.
+    </p>
+
+    <p>
+      — Sur ce point, nous sommes parfaitement d’accord.
+    </p>
+
+    <p>
+      Betty se tourne vers elle, surprise.
+    </p>
+
+    <p>
+      Hope poursuit :
+    </p>
+
+    <p>
+      — Cette protection peut arrêter beaucoup de choses.
+    </p>
+
+    <p class="emphasis">
+      — Pas toutes.
+    </p>
+
+    <p>
+      Elle regarde Anna.
+    </p>
+
+    <p>
+      — Et surtout, elle ne protège ni de la peur, ni de la manipulation, ni des conséquences psychologiques d’une agression.
+    </p>
+
+  </div>
+
+
+  <!-- INTERACTION 6 -->
+
+  <div class="interaction-block">
+
+    <h2>
+      Les limites du bouclier
+    </h2>
+
+    <div class="observation-buttons">
+
+      <button
+        class="interaction-btn"
+        type="button"
+        data-shield-limit="physical"
+      >
+        Protection physique
+      </button>
+
+      <button
+        class="interaction-btn"
+        type="button"
+        data-shield-limit="fear"
+      >
+        La peur reste possible
+      </button>
+
+      <button
+        class="interaction-btn"
+        type="button"
+        data-shield-limit="manipulation"
+      >
+        La manipulation reste possible
+      </button>
+
+      <button
+        class="interaction-btn"
+        type="button"
+        data-shield-limit="trauma"
+      >
+        Les conséquences psychologiques restent possibles
+      </button>
+
+    </div>
+
+    <div
+      class="reveal-box"
+      id="shieldLimitReveal"
+    ></div>
+
+  </div>
+
+
+  <div class="text-block dialogue">
+
+    <p>
+      Betty se calme légèrement.
+    </p>
+
+    <p>
+      — Au moins, nous sommes d’accord sur quelque chose.
+    </p>
+
+    <p>
+      — Sur beaucoup plus de choses que vous ne le pensez.
+    </p>
+
+    <p>
+      Hope poursuit :
+    </p>
+
+    <p>
+      — Nous voulons toutes les deux qu’Anna reste en vie.
+    </p>
+
+    <p>
+      Betty la regarde.
+    </p>
+
+    <p>
+      — Pourquoi ?
+    </p>
+
+    <p>
+      Hope ne répond pas immédiatement.
+    </p>
+
+    <p>
+      Anna observe les deux femmes.
+    </p>
+
+    <p>
+      Lucy également.
+    </p>
+
+    <p>
+      — Pourquoi êtes-vous autant concernée par ma fille ?
+    </p>
+
+    <p>
+      Hope réfléchit à ses mots.
+    </p>
+
+    <p>
+      — Parce que quelqu’un a essayé de l’enlever.
+    </p>
+
+    <p>
+      Betty attend.
+    </p>
+
+    <p>
+      — Et parce que certaines choses autour d’elle ne me semblent pas être le fruit du hasard.
+    </p>
+
+    <p>
+      Cette réponse ne satisfait évidemment pas Betty.
+    </p>
+
+    <p>
+      — Encore le destin ?
+    </p>
+
+    <p>
+      Hope sourit légèrement.
+    </p>
+
+    <p>
+      — Vous n’êtes pas obligée d’y croire.
+    </p>
+
+    <p>
+      — Je n’y crois pas.
+    </p>
+
+    <p>
+      — Alors appelons cela des probabilités exceptionnellement faibles.
+    </p>
+
+    <p>
+      Betty ne peut s’empêcher d’avoir un léger sourire.
+    </p>
+
+    <p>
+      — Là, vous commencez à parler ma langue.
+    </p>
+
+    <p>
+      Hope sourit à son tour.
+    </p>
+
+    <p>
+      Puis elle ajoute :
+    </p>
+
+    <p>
+      — Et il existe encore une chose que vous devriez savoir.
+    </p>
+
+    <p>
+      Elle regarde Anna.
+    </p>
+
+    <p>
+      — Avec ton accord ?
+    </p>
+
+    <p>
+      Anna acquiesce.
+    </p>
+
+    <p>
+      Hope reprend :
+    </p>
+
+    <p>
+      — J’ai également équipé Anna d’un système de communication.
+    </p>
+
+    <p>
+      Betty soupire.
+    </p>
+
+    <p>
+      — Évidemment.
+    </p>
+
+    <p class="impact-text">
+      — Un bio-téléphone holographique.
+    </p>
+
+    <p>
+      Cette fois, Betty se fige.
+    </p>
+
+    <p>
+      Elle regarde Hope.
+    </p>
+
+    <p>
+      — Comment connaissez-vous cette technologie ?
+    </p>
+
+    <p>
+      Hope ne répond pas tout de suite.
+    </p>
+
+    <p>
+      Betty se rapproche.
+    </p>
+
+    <p>
+      — Ce projet est confidentiel.
+    </p>
+
+    <p>
+      Elle insiste :
+    </p>
+
+    <p>
+      — Extrêmement confidentiel.
+    </p>
+
+    <p>
+      Hope garde son calme.
+    </p>
+
+    <p>
+      — Je sais.
+    </p>
+
+    <p>
+      — Vous ne devriez même pas connaître son existence.
+    </p>
+
+    <p>
+      Betty comprend soudain.
+    </p>
+
+    <p class="name-reveal">
+      — Peter.
+    </p>
+
+    <p>
+      Hope ne répond toujours pas.
+    </p>
+
+    <p>
+      Le regard de Betty se durcit.
+    </p>
+
+    <p>
+      — Peter Evanos.
+    </p>
+
+    <p>
+      Anna regarde sa mère.
+    </p>
+
+    <p>
+      Lucy aussi.
+    </p>
+
+    <p>
+      Betty se tourne vers Hope.
+    </p>
+
+    <p>
+      — Qui êtes-vous exactement ?
+    </p>
+
+    <p>
+      Hope sourit légèrement.
+    </p>
+
+    <p>
+      — Décidément…
+    </p>
+
+    <p>
+      Elle regarde Root.
+    </p>
+
+    <p>
+      — C’est vraiment la question du jour.
+    </p>
+
+    <p>
+      Elle s’apprête à répondre lorsqu’un drone s’approche soudainement.
+    </p>
+
+    <p>
+      Hope tourne la tête.
+    </p>
+
+    <p>
+      Le dispositif s’immobilise devant elle.
+    </p>
+
+    <p>
+      — Excusez-moi une seconde.
+    </p>
+
+    <p>
+      Le drone s’immobilise à quelques mètres de Hope.
+    </p>
+
+    <p>
+      Elle se lève.
+    </p>
+
+    <p>
+      — Excusez-moi une minute.
+    </p>
+
+    <p>
+      Elle s’éloigne légèrement du groupe.
+    </p>
+
+    <p>
+      Betty observe attentivement la scène.
+    </p>
+
+    <p>
+      Hope échange quelques mots avec le drone, puis effectue un geste de la main.
+    </p>
+
+    <p>
+      Presque immédiatement, trois autres appareils apparaissent au-dessus de l’hacienda et viennent rejoindre le premier.
+    </p>
+
+    <p>
+      Hope leur transmet quelques instructions.
+    </p>
+
+    <p>
+      Les quatre drones repartent aussitôt dans des directions différentes.
+    </p>
+
+    <p>
+      Root observe Hope.
+    </p>
+
+    <p>
+      Lorsque celle-ci revient vers elles, leurs regards se croisent.
+    </p>
+
+    <p>
+      Une interrogation silencieuse passe entre les deux femmes.
+    </p>
+
+    <p>
+      Hope lui adresse un léger signe de tête.
+    </p>
+
+    <p class="emphasis">
+      Tout va bien.
+    </p>
+
+    <p>
+      Root se détend.
+    </p>
+
+    <p>
+      Hope reprend place.
+    </p>
+
+    <p>
+      — Où en étions-nous ?
+    </p>
+
+    <p>
+      Betty n’a rien oublié.
+    </p>
+
+    <p>
+      — Au bio-holophone.
+    </p>
+
+    <p>
+      Hope sourit.
+    </p>
+
+    <p>
+      — Évidemment.
+    </p>
+
+    <p>
+      Betty se penche légèrement vers elle.
+    </p>
+
+    <p>
+      — Cette technologie est extrêmement coûteuse, protégée et connue d’un nombre très restreint de personnes.
+    </p>
+
+    <p>
+      Elle désigne Anna.
+    </p>
+
+    <p>
+      — Et surtout, chaque appareil demande normalement un temps considérable pour être individualisé.
+    </p>
+
+    <p>
+      Son regard devient plus dur.
+    </p>
+
+    <p>
+      — Donc soit vous m’avez caché une partie de ce que vous savez…
+    </p>
+
+    <p>
+      Elle marque une pause.
+    </p>
+
+    <p>
+      — … soit ce que porte ma fille n’est pas le dispositif que je connais.
+    </p>
+
+    <p>
+      — Les deux réponses contiennent une part de vérité.
+    </p>
+
+    <p>
+      Betty fronce immédiatement les sourcils.
+    </p>
+
+    <p>
+      Hope poursuit :
+    </p>
+
+    <p>
+      — Vous connaissez la première génération.
+    </p>
+
+    <p>
+      Elle désigne discrètement l’oreille de Betty.
+    </p>
+
+    <p>
+      — Celle que vous utilisez encore.
+    </p>
+
+    <p>
+      Betty se fige.
+    </p>
+
+    <p>
+      Hope sourit.
+    </p>
+
+    <p>
+      — Peter a beaucoup travaillé depuis.
+    </p>
+
+    <p>
+      — Peter…
+    </p>
+
+    <p>
+      Betty ferme brièvement les yeux.
+    </p>
+
+    <p>
+      — Bien sûr.
+    </p>
+
+    <p>
+      Hope ajoute :
+    </p>
+
+    <p>
+      — La nouvelle génération se calibre presque seule sur son utilisateur. Quelques secondes suffisent pour une adaptation de base. Le système poursuit ensuite son ajustement biologique progressivement.
+    </p>
+
+    <p>
+      Betty semble soudain beaucoup plus intéressée.
+    </p>
+
+    <p>
+      — Ça, par contre…
+    </p>
+
+    <p>
+      Elle réfléchit.
+    </p>
+
+    <p>
+      — C’est possible.
+    </p>
+
+    <p>
+      Hope sourit.
+    </p>
+
+    <p>
+      — Vous voyez ? Tout n’est pas impossible.
+    </p>
+
+    <p>
+      Betty lui lance un regard.
+    </p>
+
+    <p>
+      — Ne prenez pas trop vite de mauvaises habitudes.
+    </p>
+
+    <p>
+      Hope rit.
+    </p>
+
+    <p>
+      — Voulez-vous essayer ?
+    </p>
+
+    <p>
+      Betty arque un sourcil.
+    </p>
+
+    <p>
+      — Sur moi ?
+    </p>
+
+    <p>
+      — Je peux remplacer votre ancienne version par la nouvelle.
+    </p>
+
+    <p>
+      Betty hésite.
+    </p>
+
+    <p>
+      — Et je pourrai l’examiner ensuite ?
+    </p>
+
+    <p>
+      — Autant que vous le souhaitez.
+    </p>
+
+    <p>
+      — Alors faites.
+    </p>
+
+    <p>
+      Hope se rapproche.
+    </p>
+
+    <p>
+      — La suppression de l’ancien dispositif risque d’être un peu désagréable.
+    </p>
+
+    <p>
+      — J’ai connu pire.
+    </p>
+
+    <p>
+      Hope travaille rapidement derrière son oreille.
+    </p>
+
+    <p>
+      Betty serre légèrement les mâchoires mais ne bouge pas.
+    </p>
+
+    <p>
+      Quelques secondes plus tard, Hope recule.
+    </p>
+
+    <p>
+      — Terminé.
+    </p>
+
+    <p>
+      Betty la regarde, presque vexée.
+    </p>
+
+    <p>
+      — Déjà ?
+    </p>
+
+    <p>
+      — Essayez.
+    </p>
+
+  </div>
+
+
+  <!-- INTERACTION 7 -->
+
+  <div class="interaction-block tech-interaction">
+
+    <h2>
+      Comprendre la nouvelle génération
+    </h2>
+
+    <div class="observation-buttons">
+
+      <button
+        class="interaction-btn"
+        type="button"
+        data-bio-tech="old"
+      >
+        Première génération
+      </button>
+
+      <button
+        class="interaction-btn"
+        type="button"
+        data-bio-tech="calibration"
+      >
+        Auto-calibration
+      </button>
+
+      <button
+        class="interaction-btn"
+        type="button"
+        data-bio-tech="adaptation"
+      >
+        Adaptation biologique progressive
+      </button>
+
+    </div>
+
+    <div
+      class="reveal-box"
+      id="bioTechReveal"
+    ></div>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     VISUEL 4
+     BIO-HOLOPHONE
+===================================================== -->
+
+<section
+  class="scene hologram-scene interaction-scene"
+  id="scene-6"
+>
+
+  <div
+    class="visual interactive-visual"
+    data-visual="4"
+  >
+    <img
+      src="images/chapitre3/Visuel-24.PNG"
+      alt="Hologramme d'Anna devant Betty"
+      loading="lazy"
+    >
+  </div>
+
+
+  <!-- INTERACTION 8 -->
+
+  <div class="interaction-block">
+
+    <h2>
+      Bio-holophone
+    </h2>
+
+    <button
+      class="interaction-btn"
+      id="hologramTrigger"
+      type="button"
+    >
+      Activer le nouveau dispositif
+    </button>
+
+    <div
+      class="reveal-box"
+      id="hologramReveal"
+    ></div>
+
+  </div>
+
+
+  <div class="text-block dialogue">
+
+    <p>
+      Betty porte son index à son oreille gauche.
+    </p>
+
+    <p>
+      Puis elle effectue instinctivement la séquence qu’elle connaît : son petit doigt touche sa paume avant que sa main ne s’ouvre.
+    </p>
+
+    <p>
+      Un hologramme apparaît.
+    </p>
+
+    <p class="impact-text">
+      Anna.
+    </p>
+
+    <p>
+      Parfaitement net.
+    </p>
+
+    <p>
+      Betty ne dit plus rien.
+    </p>
+
+    <p>
+      Elle teste plusieurs commandes.
+    </p>
+
+    <p>
+      L’image réagit immédiatement.
+    </p>
+
+    <p>
+      La qualité de transmission est supérieure.
+    </p>
+
+    <p>
+      Le délai presque inexistant.
+    </p>
+
+    <p>
+      Même les paramètres biologiques de connexion semblent plus stables.
+    </p>
+
+    <p>
+      Betty referme brusquement sa main.
+    </p>
+
+    <p>
+      L’hologramme disparaît.
+    </p>
+
+    <p>
+      Elle regarde Hope.
+    </p>
+
+    <p>
+      — Peter.
+    </p>
+
+    <p>
+      Hope retient difficilement son sourire.
+    </p>
+
+    <p>
+      — Peter.
+    </p>
+
+    <p class="impact-text">
+      — Je vais le tuer.
+    </p>
+
+    <p>
+      Root éclate de rire.
+    </p>
+
+    <p>
+      Anna également.
+    </p>
+
+    <p>
+      — Maintenant…
+    </p>
+
+    <p>
+      Betty se rapproche de Hope.
+    </p>
+
+    <p>
+      — Vous avez toute mon attention.
+    </p>
+
+    <p>
+      Puis elle ajoute :
+    </p>
+
+    <p>
+      — Et ma curiosité vient officiellement d’atteindre un niveau dangereux.
+    </p>
+
+    <p>
+      Hope sourit.
+    </p>
+
+    <p>
+      — Je suis, entre autres choses, une amie de Peter.
+    </p>
+
+    <p>
+      Betty la regarde.
+    </p>
+
+    <p>
+      — Ce qui, actuellement, n’est franchement pas un argument en votre faveur.
+    </p>
+
+    <p>
+      — J’avais cru comprendre.
+    </p>
+
+    <p>
+      Hope ajoute avec amusement :
+    </p>
+
+    <p>
+      — Peut-être pourrions-nous également devenir collaboratrices un jour.
+    </p>
+
+    <p>
+      Elle réfléchit.
+    </p>
+
+    <p>
+      — Et qui sait ? Peut-être même amies.
+    </p>
+
+    <p>
+      Betty sourit légèrement.
+    </p>
+
+    <p>
+      — Vous allez vite.
+    </p>
+
+    <p>
+      — Je vous préviens simplement d’une chose.
+    </p>
+
+    <p>
+      — Laquelle ?
+    </p>
+
+    <p>
+      Hope la pointe du doigt.
+    </p>
+
+    <p>
+      — Je ne serai jamais l’un de vos cobayes.
+    </p>
+
+    <p>
+      Betty éclate de rire.
+    </p>
+
+    <p>
+      — Mon cobaye ?
+    </p>
+
+    <p>
+      Puis elle secoue la tête.
+    </p>
+
+    <p>
+      — Pour attirer réellement mon intérêt scientifique à ce point-là, il faudrait déjà que vous soyez hors du commun.
+    </p>
+
+    <p>
+      Elle regarde Anna.
+    </p>
+
+    <p>
+      — Et à l’heure actuelle, la seule personne véritablement hors du commun à mes yeux, c’est ma fille.
+    </p>
+
+    <p>
+      Anna sourit.
+    </p>
+
+    <p>
+      Betty poursuit immédiatement :
+    </p>
+
+    <p>
+      — Et elle n’a jamais été et ne sera jamais mon cobaye.
+    </p>
+
+    <p>
+      Hope ne répond pas tout de suite.
+    </p>
+
+    <p>
+      Puis elle sourit mystérieusement.
+    </p>
+
+    <p>
+      — Je vous rappellerai cette phrase le moment venu.
+    </p>
+
+    <p>
+      Betty la fixe.
+    </p>
+
+    <p>
+      — Pourquoi ?
+    </p>
+
+    <p>
+      — Plus tard.
+    </p>
+
+    <p>
+      — Ça commence déjà.
+    </p>
+
+    <p>
+      Hope rit.
+    </p>
+
+    <p>
+      — Vous venez pourtant de me démontrer vous-même qu’une bonne question ne doit être posée que lorsqu’on est prête à entendre la réponse.
+    </p>
+
+    <p>
+      Betty reconnaît le coup.
+    </p>
+
+    <p>
+      — Un point pour vous.
+    </p>
+
+    <p>
+      Elle s’installe plus confortablement.
+    </p>
+
+    <p>
+      — Mais puisque nous parlons de confiance…
+    </p>
+
+    <p>
+      Son expression devient plus sérieuse.
+    </p>
+
+    <p>
+      — Une véritable amitié repose sur une confiance mutuelle.
+    </p>
+
+    <p>
+      Hope acquiesce.
+    </p>
+
+    <p>
+      — Elle ne s’offre pas immédiatement.
+    </p>
+
+    <p>
+      — Exactement.
+    </p>
+
+    <p>
+      Betty poursuit :
+    </p>
+
+    <p>
+      — Elle se construit lentement. Avec du temps. Des preuves. De la loyauté.
+    </p>
+
+    <p>
+      Puis elle ajoute :
+    </p>
+
+    <p>
+      — Et elle peut disparaître en quelques secondes.
+    </p>
+
+    <p>
+      — Là-dessus, nous sommes parfaitement d’accord.
+    </p>
+
+    <p>
+      Hope s’assoit face à elle.
+    </p>
+
+    <p>
+      — Alors commençons correctement.
+    </p>
+
+    <p>
+      Elle sourit.
+    </p>
+
+    <p>
+      — Vous vouliez savoir qui je suis.
+    </p>
+
+    <p>
+      — Exactement.
+    </p>
+
+    <p>
+      — Je peux vous raconter une partie de mon histoire.
+    </p>
+
+    <p>
+      Hope regarde successivement Betty, Lucy et Anna.
+    </p>
+
+    <p>
+      — Mais tout ne vous paraîtra pas immédiatement rationnel.
+    </p>
+
+    <p>
+      Betty ouvre la bouche.
+    </p>
+
+    <p>
+      Hope la devance.
+    </p>
+
+    <p>
+      — Je sais.
+    </p>
+
+    <p>
+      Elle sourit.
+    </p>
+
+    <p>
+      — Vous allez prononcer le mot « impossible ».
+    </p>
+
+    <p>
+      Anna rit.
+    </p>
+
+    <p>
+      Betty secoue la tête.
+    </p>
+
+    <p>
+      Hope reprend :
+    </p>
+
+    <p>
+      — Je ne vous demande pas de croire aveuglément ce que je vais raconter.
+    </p>
+
+    <p>
+      Cette fois, Lucy semble apprécier la formulation.
+    </p>
+
+    <p>
+      — Je vous demande simplement de ne pas rejeter une information uniquement parce qu’elle ne correspond pas encore à ce que vous connaissez du monde.
+    </p>
+
+    <p>
+      Betty réfléchit.
+    </p>
+
+    <p>
+      — Un doute raisonnable positif ?
+    </p>
+
+    <p>
+      — Exactement.
+    </p>
+
+    <p>
+      Lucy intervient :
+    </p>
+
+    <p>
+      — Ça, elle peut faire.
+    </p>
+
+    <p>
+      — Merci pour ta confiance.
+    </p>
+
+    <p>
+      Puis Hope change légèrement de ton.
+    </p>
+
+    <p>
+      — Avant cela… vous viendrez samedi à l’inauguration ?
+    </p>
+
+    <p>
+      Betty regarde Anna.
+    </p>
+
+    <p>
+      La réponse est pratiquement déjà donnée.
+    </p>
+
+    <p>
+      — Très certainement.
+    </p>
+
+    <p>
+      Anna sourit immédiatement.
+    </p>
+
+    <p>
+      — Yes !
+    </p>
+
+    <p>
+      Betty ajoute :
+    </p>
+
+    <p>
+      — Ma sœur sera évidemment avec nous.
+    </p>
+
+    <p>
+      Hope acquiesce.
+    </p>
+
+    <p>
+      — Naturellement.
+    </p>
+
+    <p>
+      — Et son ami Clive également, si ça ne vous pose aucun problème.
+    </p>
+
+    <p>
+      Hope sourit.
+    </p>
+
+    <p>
+      — Clive Lynx ?
+    </p>
+
+    <p>
+      Lucy tourne immédiatement la tête vers elle.
+    </p>
+
+    <p>
+      — Vous le connaissez ?
+    </p>
+
+    <p>
+      Hope répond simplement :
+    </p>
+
+    <p>
+      — De réputation.
+    </p>
+
+    <p>
+      Root prend un air innocent.
+    </p>
+
+    <p>
+      — Le Magicien.
+    </p>
+
+    <p>
+      Lucy lui lance un regard.
+    </p>
+
+    <p>
+      Root poursuit :
+    </p>
+
+    <p>
+      — Un Magicien et une agente de la cybercriminalité…
+    </p>
+
+    <p>
+      Elle sourit.
+    </p>
+
+    <p>
+      — Sacré couple.
+    </p>
+
+    <p>
+      — Duo.
+    </p>
+
+    <p>
+      — Pardon ?
+    </p>
+
+    <p>
+      Lucy insiste :
+    </p>
+
+    <p>
+      — Duo.
+    </p>
+
+    <p>
+      — Bien entendu.
+    </p>
+
+    <p>
+      Root affiche un sourire beaucoup trop satisfait.
+    </p>
+
+    <p>
+      Lucy la fusille du regard.
+    </p>
+
+    <p>
+      Betty éclate de rire.
+    </p>
+
+    <p>
+      Anna également.
+    </p>
+
+    <p>
+      Puis Betty attire sa fille près d’elle et s’installe confortablement dans la banquette.
+    </p>
+
+    <p>
+      — Très bien.
+    </p>
+
+    <p>
+      Elle regarde Hope.
+    </p>
+
+    <p>
+      — Je vous écoute.
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     VISUEL 5
+     HOPE LYNATTENDU
+===================================================== -->
+
+<section
+  class="scene revelation-scene"
+  id="scene-7"
+>
+
+  <div
+    class="visual"
+    data-visual="5"
+  >
+    <img
+      src="images/chapitre3/Visuel-27.PNG"
+      alt="Hope révèle son véritable nom"
+      loading="lazy"
+    >
+  </div>
+
+
+  <div class="text-block dialogue">
+
+    <p>
+      Hope reste silencieuse quelques secondes.
+    </p>
+
+    <p>
+      Puis elle commence.
+    </p>
+
+    <p>
+      — Mon nom de naissance n’est pas Hope Awake.
+    </p>
+
+    <p>
+      Lucy devient immédiatement attentive.
+    </p>
+
+    <p class="name-reveal">
+      — Mon véritable nom est Hope Lynattendu.
+    </p>
+
+    <p>
+      Betty ne réagit pas.
+    </p>
+
+    <p>
+      Anna, elle, écoute avec fascination.
+    </p>
+
+    <p>
+      — Awake est le nom de la famille qui a recueilli puis adopté mon frère Ted après la disparition de notre famille.
+    </p>
+
+    <p>
+      Hope prend une inspiration.
+    </p>
+
+    <p class="impact-text">
+      — Officiellement, je suis morte.
+    </p>
+
+    <p>
+      Silence.
+    </p>
+
+    <p>
+      — Plus précisément, je suis portée disparue et présumée morte depuis le crash de l’avion dans lequel je voyageais avec mes parents, en Chine.
+    </p>
+
+    <p>
+      Lucy la fixe.
+    </p>
+
+    <p>
+      C’est exactement la piste retrouvée par IA2.
+    </p>
+
+    <p>
+      — J’avais douze ans.
+    </p>
+
+    <p>
+      Anna ne dit plus un mot.
+    </p>
+
+    <p>
+      Hope poursuit :
+    </p>
+
+    <p>
+      — L’appareil s’est écrasé dans une région isolée de Zhangjiajie.
+    </p>
+
+    <p>
+      Sa voix reste calme.
+    </p>
+
+    <p>
+      — Je ne sais pas combien de temps je suis restée inconsciente.
+    </p>
+
+    <p>
+      Elle regarde ses mains.
+    </p>
+
+    <p>
+      — Lorsque je me suis réveillée, ma vie d’avant avait disparu.
+    </p>
+
+    <p>
+      Elle marque une pause.
+    </p>
+
+    <p>
+      — Mes parents étaient morts.
+    </p>
+
+    <p>
+      Son regard se perd quelques secondes.
+    </p>
+
+    <p>
+      — Et le crash avait également touché une petite communauté qui vivait dans cette région, loin des routes et des circuits habituels.
+    </p>
+
+    <p>
+      Lucy intervient doucement :
+    </p>
+
+    <p>
+      — Une communauté qui n’apparaissait pas dans les rapports officiels.
+    </p>
+
+    <p>
+      Hope la regarde.
+    </p>
+
+    <p>
+      — Très peu.
+    </p>
+
+    <p>
+      Lucy comprend immédiatement pourquoi IA2 avait trouvé si peu de choses.
+    </p>
+
+  </div>
+
+
+  <!-- INTERACTION 9 -->
+
+  <div class="interaction-block investigation-block">
+
+    <h2>
+      Reconstituer l’identité de Hope
+    </h2>
+
+    <div class="observation-buttons">
+
+      <button
+        class="interaction-btn"
+        type="button"
+        data-hope-identity="name"
+      >
+        Hope Lynattendu
+      </button>
+
+      <button
+        class="interaction-btn"
+        type="button"
+        data-hope-identity="crash"
+      >
+        Crash en Chine
+      </button>
+
+      <button
+        class="interaction-btn"
+        type="button"
+        data-hope-identity="age"
+      >
+        Douze ans
+      </button>
+
+      <button
+        class="interaction-btn"
+        type="button"
+        data-hope-identity="missing"
+      >
+        Portée disparue
+      </button>
+
+    </div>
+
+    <div
+      class="reveal-box"
+      id="hopeIdentityReveal"
+    ></div>
+
+  </div>
+
+
+  <div class="text-block dialogue">
+
+    <p>
+      Hope poursuit :
+    </p>
+
+    <p>
+      — Une autre enfant avait survécu.
+    </p>
+
+    <p>
+      Root baisse légèrement les yeux.
+    </p>
+
+    <p>
+      — Elle avait sensiblement mon âge.
+    </p>
+
+    <p>
+      Betty écoute maintenant avec beaucoup plus d’attention.
+    </p>
+
+    <p>
+      — Nous avons été retrouvées séparément.
+    </p>
+
+    <p>
+      Hope marque une pause.
+    </p>
+
+    <p>
+      — Et nos vies ont pris deux directions totalement opposées.
+    </p>
+
+    <p>
+      Anna demande doucement :
+    </p>
+
+    <p>
+      — Amy ?
+    </p>
+
+    <p>
+      Hope la regarde.
+    </p>
+
+    <p>
+      Un silence.
+    </p>
+
+    <p>
+      Puis :
+    </p>
+
+    <p class="impact-text">
+      — Oui.
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     VISUEL 6
+     HOPE ET AMY
+===================================================== -->
+
+<section
+  class="scene duality-scene"
+  id="scene-8"
+>
+
+  <div
+    class="visual"
+    data-visual="6"
+  >
+    <img
+      src="images/chapitre3/Visuel-31.PNG"
+      alt="Hope et Amy enfants suivent deux chemins opposés"
+      loading="lazy"
+    >
+  </div>
+
+
+  <div class="text-block dialogue">
+
+    <p>
+      Root observe Anna avec surprise.
+    </p>
+
+    <p>
+      Hope poursuit sans développer.
+    </p>
+
+    <p>
+      — J’ai été recueillie et soignée par une communauté dont l’existence n’est connue du monde extérieur qu’à travers quelques récits, quelques traces et beaucoup de légendes.
+    </p>
+
+    <p>
+      — Les Sentinelles de la Lumière ? demande Anna.
+    </p>
+
+    <p>
+      — Oui.
+    </p>
+
+    <p>
+      Hope sourit légèrement.
+    </p>
+
+    <p>
+      — Eux se désignent comme les Lumsenti.
+    </p>
+
+    <p>
+      Elle ajoute :
+    </p>
+
+    <p>
+      — Dans leur langue, ce nom renvoie à l’idée de ceux qui veillent dans la lumière.
+    </p>
+
+    <p>
+      Lucy retient immédiatement le détail.
+    </p>
+
+    <p>
+      — Et Amy ?
+    </p>
+
+    <p>
+      Hope hésite.
+    </p>
+
+    <p>
+      — Elle a été recueillie ailleurs.
+    </p>
+
+    <p>
+      Son expression change.
+    </p>
+
+    <p class="emphasis">
+      — Par ceux que nous appelons aujourd’hui les Gardiens Noirs.
+    </p>
+
+    <p>
+      Anna allait poser une nouvelle question.
+    </p>
+
+    <p>
+      Hope lève doucement une main.
+    </p>
+
+    <p>
+      — Pas encore.
+    </p>
+
+    <p>
+      Anna comprend.
+    </p>
+
+    <p>
+      — D’accord.
+    </p>
+
+  </div>
+
+
+  <!-- INTERACTION 10 -->
+
+  <div class="interaction-block">
+
+    <h2>
+      Deux survivantes, deux chemins
+    </h2>
+
+    <div class="choice-buttons">
+
+      <button
+        class="choice-btn"
+        type="button"
+        data-path="hope"
+      >
+        Hope — Lumsenti
+      </button>
+
+      <button
+        class="choice-btn"
+        type="button"
+        data-path="amy"
+      >
+        Amy — Gardiens Noirs
+      </button>
+
+    </div>
+
+    <div
+      class="reveal-box"
+      id="pathsReveal"
+    ></div>
+
+  </div>
+
+
+  <div class="text-block dialogue">
+
+    <p>
+      — J’ai grandi auprès des Lumsenti.
+    </p>
+
+    <p>
+      Hope poursuit :
+    </p>
+
+    <p>
+      — Maître Lee m’a soignée, éduquée et entraînée.
+    </p>
+
+    <p>
+      — Le maître des Sentinelles ? demande Betty.
+    </p>
+
+    <p>
+      — Oui.
+    </p>
+
+    <p>
+      — Et vous êtes devenue comme lui ?
+    </p>
+
+    <p>
+      Hope sourit.
+    </p>
+
+    <p>
+      — Pas exactement.
+    </p>
+
+    <p>
+      Root intervient :
+    </p>
+
+    <p>
+      — Elle minimise.
+    </p>
+
+    <p>
+      Hope lui lance un regard.
+    </p>
+
+    <p>
+      — Je raconte mon histoire.
+    </p>
+
+    <p>
+      — Alors raconte-la correctement.
+    </p>
+
+    <p>
+      Hope soupire avec amusement.
+    </p>
+
+    <p>
+      — À vingt-quatre ans, j’ai achevé les épreuves qui permettent d’accéder au rang le plus élevé de leur enseignement.
+    </p>
+
+    <p>
+      Lucy réfléchit.
+    </p>
+
+    <p>
+      — Maître Sentinelle.
+    </p>
+
+    <p>
+      — Entre autres titres.
+    </p>
+
+    <p>
+      Root ajoute :
+    </p>
+
+    <p class="emphasis">
+      — Maître Unique.
+    </p>
+
+    <p>
+      Hope soupire.
+    </p>
+
+    <p>
+      — Je savais que je n’aurais pas dû te laisser parler.
+    </p>
+
+    <p>
+      Anna rit.
+    </p>
+
+    <p>
+      Hope poursuit :
+    </p>
+
+    <p>
+      — J’ai passé une grande partie de ma vie loin du monde que vous connaissez.
+    </p>
+
+    <p>
+      — C’est pour cela que vous n’existez pratiquement pas dans les bases de données, dit Lucy.
+    </p>
+
+    <p>
+      Hope regarde Lucy.
+    </p>
+
+    <p>
+      — Tu avais déjà trouvé le crash.
+    </p>
+
+    <p>
+      Ce n’est pas une question.
+    </p>
+
+    <p>
+      Lucy ne ment pas.
+    </p>
+
+    <p>
+      — Oui.
+    </p>
+
+    <p>
+      — Et la fillette disparue ?
+    </p>
+
+    <p>
+      — Oui.
+    </p>
+
+    <p>
+      Hope acquiesce.
+    </p>
+
+    <p class="emphasis">
+      — Alors maintenant tu sais pourquoi.
+    </p>
+
+    <p>
+      Lucy reste silencieuse.
+    </p>
+
+    <p>
+      Pour la première fois depuis le début de son enquête, une partie du puzzle vient réellement de prendre forme.
+    </p>
+
+  </div>
+
+
+  <!-- INTERACTION 11 -->
+
+  <div class="interaction-block investigation-block">
+
+    <h2>
+      Confirmer l’enquête de Lucy
+    </h2>
+
+    <div class="observation-buttons">
+
+      <button
+        class="interaction-btn"
+        type="button"
+        data-hope-confirm="crash"
+      >
+        Crash en Chine
+      </button>
+
+      <button
+        class="interaction-btn"
+        type="button"
+        data-hope-confirm="child"
+      >
+        Fillette disparue
+      </button>
+
+      <button
+        class="interaction-btn"
+        type="button"
+        data-hope-confirm="absence"
+      >
+        Absence de traces administratives
+      </button>
+
+    </div>
+
+    <div
+      class="reveal-box"
+      id="hopeConfirmReveal"
+    ></div>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     VISUEL 7
+     RENCONTRE HOPE / ROOT / PETER / MAX
+===================================================== -->
+
+<section
+  class="scene flashback-scene"
+  id="scene-9"
+>
+
+  <div
+    class="visual"
+    data-visual="7"
+  >
+    <img
+      src="images/chapitre3/Visuel-38.jpg"
+      alt="Hope retrouve Root Peter et Max après leur disparition"
+      loading="lazy"
+    >
+  </div>
+
+
+  <div class="text-block dialogue">
+
+    <p>
+      Hope poursuit :
+    </p>
+
+    <p>
+      — Je n’avais pas encore vingt-quatre ans lorsque j’ai rencontré Root, Peter et Max.
+    </p>
+
+    <p>
+      Anna se redresse brusquement.
+    </p>
+
+    <p>
+      Mais elle se retient.
+    </p>
+
+    <p>
+      Root sourit en la voyant faire.
+    </p>
+
+    <p>
+      Hope poursuit :
+    </p>
+
+    <p>
+      — Ils étaient jeunes.
+    </p>
+
+    <p>
+      Root intervient aussitôt :
+    </p>
+
+    <p>
+      — Et particulièrement idiots.
+    </p>
+
+    <p>
+      — Je voulais rester polie.
+    </p>
+
+    <p>
+      — Moi pas.
+    </p>
+
+    <p>
+      Tout le monde rit.
+    </p>
+
+    <p>
+      Root reprend :
+    </p>
+
+    <p>
+      — Nous terminions nos études.
+    </p>
+
+    <p>
+      Elle regarde Hope.
+    </p>
+
+    <p>
+      — Et quand elle dit qu’elle nous a « rencontrés », elle oublie un petit détail.
+    </p>
+
+    <p>
+      Hope soupire.
+    </p>
+
+    <p>
+      — Root…
+    </p>
+
+    <p>
+      — Elle nous a sauvé la vie.
+    </p>
+
+    <p>
+      Lucy devient immédiatement attentive.
+    </p>
+
+    <p>
+      Root continue :
+    </p>
+
+    <p>
+      — Tous les trois.
+    </p>
+
+    <p>
+      — Qu’est-ce qui s’était passé ? demande Anna.
+    </p>
+
+    <p>
+      Root s’installe mieux.
+    </p>
+
+    <p>
+      — Nous étions partis dans une région où nous n’aurions probablement jamais dû aller.
+    </p>
+
+    <p>
+      Hope ajoute :
+    </p>
+
+    <p>
+      — Certainement jamais dû aller.
+    </p>
+
+    <p>
+      — Nous nous sommes perdus.
+    </p>
+
+    <p>
+      Root sourit.
+    </p>
+
+    <p class="impact-text">
+      — Puis nous sommes tombés dans un gouffre.
+    </p>
+
+    <p>
+      Lucy réfléchit.
+    </p>
+
+    <p>
+      Elle connaît cette histoire.
+    </p>
+
+    <p>
+      — Attendez…
+    </p>
+
+    <p>
+      Tout le monde la regarde.
+    </p>
+
+    <p>
+      — Trois étudiants disparus dans la région de Zhangjiajie.
+    </p>
+
+    <p>
+      Root sourit.
+    </p>
+
+    <p>
+      — Je savais qu’elle finirait par retrouver ça.
+    </p>
+
+    <p>
+      Lucy poursuit :
+    </p>
+
+    <p>
+      — Les médias avaient parlé de vous pendant des jours.
+    </p>
+
+    <p>
+      Elle regarde Root.
+    </p>
+
+    <p>
+      — Les autorités pensaient même que vous étiez morts.
+    </p>
+
+    <p>
+      — Nous avons failli l’être.
+    </p>
+
+    <p>
+      Lucy se tourne vers Hope.
+    </p>
+
+    <p>
+      — Et vous les avez trouvés.
+    </p>
+
+    <p>
+      — Oui.
+    </p>
+
+    <p>
+      Root reprend :
+    </p>
+
+    <p>
+      — Elle a fait beaucoup plus que ça.
+    </p>
+
+    <p>
+      Son ton devient plus sérieux.
+    </p>
+
+    <p>
+      — Hope nous a soignés.
+    </p>
+
+    <p>
+      — Elle nous a appris à survivre.
+    </p>
+
+    <p>
+      — À observer réellement ce qui nous entourait.
+    </p>
+
+    <p>
+      Puis elle sourit légèrement.
+    </p>
+
+    <p>
+      — Et surtout, elle nous a obligés à réfléchir à ce que nous voulions faire de nos vies.
+    </p>
+
+    <p>
+      Hope secoue la tête.
+    </p>
+
+    <p>
+      — Je n’ai rien décidé à votre place.
+    </p>
+
+    <p>
+      — Justement.
+    </p>
+
+    <p>
+      Root regarde Lucy.
+    </p>
+
+    <p>
+      — Elle ne nous a jamais dit quoi devenir.
+    </p>
+
+    <p>
+      — Elle nous a appris à comprendre pourquoi nous voulions devenir quelque chose.
+    </p>
+
+    <p>
+      Un silence.
+    </p>
+
+    <p>
+      — Peter n’était pas encore le Peter Evanos que tout le monde connaît.
+    </p>
+
+    <p>
+      — Max n’était pas encore le reporter que tu admires tant.
+    </p>
+
+    <p>
+      Anna ne tient plus.
+    </p>
+
+    <p>
+      — Max Speedman ?
+    </p>
+
+    <p>
+      Root éclate de rire.
+    </p>
+
+    <p>
+      — Oui.
+    </p>
+
+    <p>
+      Les yeux d’Anna s’agrandissent.
+    </p>
+
+    <p>
+      — LE Max Speedman ?
+    </p>
+
+    <p>
+      Lucy intervient :
+    </p>
+
+    <p>
+      — Anna…
+    </p>
+
+    <p>
+      — Quoi ? C’est Max Speedman !
+    </p>
+
+    <p>
+      Hope rit.
+    </p>
+
+    <p>
+      — Il sera là samedi.
+    </p>
+
+    <p>
+      Anna reste figée.
+    </p>
+
+    <p>
+      — Ici ?
+    </p>
+
+    <p>
+      — Oui.
+    </p>
+
+    <p>
+      — Samedi ?
+    </p>
+
+    <p>
+      — Oui.
+    </p>
+
+    <p>
+      Anna regarde immédiatement Betty.
+    </p>
+
+    <p>
+      — Man, même si l’hacienda prend feu, je viens samedi.
+    </p>
+
+    <p>
+      Betty lève les yeux au ciel.
+    </p>
+
+    <p>
+      — Nous reparlerons de cette formulation.
+    </p>
+
+    <p>
+      Le rire détend momentanément l’atmosphère.
+    </p>
+
+    <p>
+      Puis Lucy revient au sujet.
+    </p>
+
+    <p>
+      — Vous avez donc passé plusieurs jours ensemble.
+    </p>
+
+    <p>
+      Root acquiesce.
+    </p>
+
+    <p>
+      — Douze.
+    </p>
+
+    <p>
+      Elle regarde Hope.
+    </p>
+
+    <p class="impact-text">
+      — Douze jours qui ont changé toute notre vie.
+    </p>
+
+    <p>
+      Hope baisse légèrement les yeux.
+    </p>
+
+    <p>
+      Root poursuit :
+    </p>
+
+    <p>
+      — Elle a désobéi aux siens pour nous aider.
+    </p>
+
+    <p>
+      Hope ne corrige pas.
+    </p>
+
+    <p>
+      — Elle nous a ramenés jusqu’à un endroit où les secours pouvaient nous retrouver.
+    </p>
+
+    <p>
+      — Et nous avons promis de ne jamais révéler son existence.
+    </p>
+
+    <p>
+      Lucy regarde Root.
+    </p>
+
+    <p>
+      — Et vous avez tenu cette promesse pendant toutes ces années.
+    </p>
+
+    <p>
+      — Toujours.
+    </p>
+
+    <p>
+      Root répond sans hésiter.
+    </p>
+
+    <p>
+      Hope la regarde avec une affection évidente.
+    </p>
+
+  </div>
+
+
+  <!-- INTERACTION 12 -->
+
+  <div class="interaction-block investigation-block">
+
+    <h2>
+      Reconstituer la disparition
+    </h2>
+
+    <div class="observation-buttons">
+
+      <button
+        class="interaction-btn"
+        type="button"
+        data-students="lost"
+      >
+        Trois étudiants perdus
+      </button>
+
+      <button
+        class="interaction-btn"
+        type="button"
+        data-students="fall"
+      >
+        Chute dans un gouffre
+      </button>
+
+      <button
+        class="interaction-btn"
+        type="button"
+        data-students="hope"
+      >
+        Hope les retrouve
+      </button>
+
+      <button
+        class="interaction-btn"
+        type="button"
+        data-students="promise"
+      >
+        Promesse de silence
+      </button>
+
+    </div>
+
+    <div
+      class="reveal-box"
+      id="studentsReveal"
+    ></div>
+
+  </div>
+
+
+  <div class="text-block dialogue">
+
+    <p>
+      Lucy réfléchit.
+    </p>
+
+    <p>
+      — Mais pourquoi étiez-vous là-bas au départ ?
+    </p>
+
+    <p>
+      Cette fois, Hope tourne les yeux vers Root.
+    </p>
+
+    <p>
+      Root ne répond pas immédiatement.
+    </p>
+
+    <p>
+      Hope demande doucement :
+    </p>
+
+    <p>
+      — C’est ton histoire.
+    </p>
+
+    <p>
+      Root acquiesce.
+    </p>
+
+    <p>
+      — Tu peux.
+    </p>
+
+    <p>
+      Hope reprend.
+    </p>
+
+    <p>
+      — Root cherchait quelque chose.
+    </p>
+
+    <p>
+      Anna se tourne immédiatement vers elle.
+    </p>
+
+    <p>
+      — Un objet ?
+    </p>
+
+    <p>
+      — Oui.
+    </p>
+
+    <p>
+      Root sourit légèrement.
+    </p>
+
+    <p>
+      — Une obsession de gamine.
+    </p>
+
+    <p>
+      Hope poursuit :
+    </p>
+
+    <p>
+      — Lorsqu’elle était enfant, Root avait trouvé une pierre portant plusieurs symboles qu’elle n’avait jamais réussi à identifier.
+    </p>
+
+    <p>
+      Root intervient :
+    </p>
+
+    <p>
+      — Pendant des années, j’ai essayé de comprendre ce qu’ils signifiaient.
+    </p>
+
+    <p>
+      — Et tu as réussi ?
+    </p>
+
+    <p>
+      — En partie.
+    </p>
+
+    <p>
+      Root regarde Anna.
+    </p>
+
+    <p>
+      — Assez pour me convaincre qu’ils indiquaient l’existence d’un objet ancien.
+    </p>
+
+    <p>
+      Lucy demande :
+    </p>
+
+    <p>
+      — Quel objet ?
+    </p>
+
+    <p>
+      Root hésite.
+    </p>
+
+    <p>
+      Puis elle répond :
+    </p>
+
+    <p class="impact-text">
+      — Une fiole.
+    </p>
+
+    <p>
+      Betty ne bouge plus.
+    </p>
+
+    <p>
+      Hope l’a remarqué.
+    </p>
+
+    <p>
+      Lucy aussi, peut-être.
+    </p>
+
+    <p>
+      Anna, elle, reste concentrée sur Root.
+    </p>
+
+    <p>
+      — Une simple fiole ?
+    </p>
+
+    <p>
+      Root sourit.
+    </p>
+
+    <p>
+      — Je pensais à l’époque qu’elle était tout sauf simple.
+    </p>
+
+    <p>
+      Hope poursuit :
+    </p>
+
+    <p>
+      — Nous l’avons retrouvée.
+    </p>
+
+    <p>
+      Betty baisse lentement les yeux.
+    </p>
+
+    <p>
+      Hope ne la quitte pas du regard.
+    </p>
+
+    <p>
+      — Root l’a conservée pendant plusieurs années.
+    </p>
+
+    <p>
+      Root reprend :
+    </p>
+
+    <p>
+      — Jusqu’au jour où j’ai rencontré quelqu’un dont les compétences scientifiques pouvaient peut-être enfin m’aider à comprendre ce que j’avais trouvé.
+    </p>
+
+  </div>
+
+
+  <!-- INTERACTION 13 -->
+
+  <div class="interaction-block artifact-interaction">
+
+    <h2>
+      Suivre la quête de Root
+    </h2>
+
+    <div class="story-path">
+
+      <button
+        class="interaction-btn"
+        type="button"
+        data-root-quest="stone"
+      >
+        La pierre
+      </button>
+
+      <button
+        class="interaction-btn"
+        type="button"
+        data-root-quest="symbols"
+      >
+        Les symboles
+      </button>
+
+      <button
+        class="interaction-btn"
+        type="button"
+        data-root-quest="object"
+      >
+        L’objet ancien
+      </button>
+
+      <button
+        class="interaction-btn"
+        type="button"
+        data-root-quest="vial"
+      >
+        La fiole
+      </button>
+
+    </div>
+
+    <div
+      class="reveal-box"
+      id="rootQuestReveal"
+    ></div>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     VISUEL 8
+     LA FIOLE
+===================================================== -->
+
+<section
+  class="scene artifact-scene"
+  id="scene-10"
+>
+
+  <div
+    class="visual"
+    data-visual="8"
+  >
+    <img
+      src="images/chapitre3/Visuel-42.PNG"
+      alt="La fiole ancienne retrouvée par Root"
+      loading="lazy"
+    >
+  </div>
+
+
+  <div class="text-block">
+
+    <p>
+      Betty sait déjà où cette histoire conduit.
+    </p>
+
+    <p>
+      Hope s’arrête.
+    </p>
+
+    <p>
+      Elle regarde Root.
+    </p>
+
+    <p>
+      Puis Betty.
+    </p>
+
+    <p>
+      Et elle comprend quelque chose à l’expression de la généticienne.
+    </p>
+
+    <p>
+      Root demande doucement :
+    </p>
+
+    <p>
+      — Betty ?
+    </p>
+
+    <p>
+      Anna tourne la tête vers sa mère.
+    </p>
+
+    <p>
+      Betty relève lentement les yeux.
+    </p>
+
+    <p>
+      Son visage a changé.
+    </p>
+
+    <p>
+      Hope ne dit rien de plus.
+    </p>
+
+    <p>
+      Elle n’en a pas besoin.
+    </p>
+
+    <p class="impact-text">
+      Betty vient de comprendre.
+    </p>
+
+    <p>
+      Elles parlent de la fiole.
+    </p>
+
+    <p>
+      De sa fiole.
+    </p>
+
+    <p>
+      De celle que Root lui avait confiée plus de vingt ans auparavant.
+    </p>
+
+    <p>
+      Et de celle dont Betty n’avait jamais révélé ce qu’elle avait réellement fait.
+    </p>
+
+  </div>
+
+
+  <!-- INTERACTION 14 -->
+
+  <div class="interaction-block revelation-interaction">
+
+    <h2>
+      Ce que Betty vient de comprendre
+    </h2>
+
+    <button
+      class="interaction-btn"
+      id="vialMemoryButton"
+      type="button"
+    >
+      Relier la fiole à Betty
+    </button>
+
+    <div
+      class="reveal-box"
+      id="vialMemoryReveal"
+    ></div>
+
+  </div>
+
+
+  <div class="text-block dialogue">
+
+    <p>
+      Betty reste silencieuse quelques instants.
+    </p>
+
+    <p>
+      Son regard passe de Root à Hope.
+    </p>
+
+    <p>
+      Puis elle demande :
+    </p>
+
+    <p>
+      — Comment avez-vous su que vous pouviez leur faire confiance à tous les trois ?
+    </p>
+
+    <p>
+      Hope relève légèrement les yeux.
+    </p>
+
+    <p>
+      — À Root, Peter et Max ?
+    </p>
+
+    <p>
+      — Oui.
+    </p>
+
+    <p>
+      Betty poursuit :
+    </p>
+
+    <p>
+      — Vous veniez à peine de les rencontrer. Pourtant vous leur avez confié votre existence, celle des Sentinelles et probablement beaucoup d’autres choses.
+    </p>
+
+    <p>
+      Elle marque une pause.
+    </p>
+
+    <p>
+      — Comment pouviez-vous être certaine qu’ils respecteraient votre pacte ?
+    </p>
+
+    <p>
+      Puis elle ajoute :
+    </p>
+
+    <p>
+      — Et pourquoi avoir décidé, des années plus tard, de « revenir à la vie », comme vous dites ?
+    </p>
+
+    <p>
+      Un léger sourire apparaît au coin des lèvres de Hope.
+    </p>
+
+    <p>
+      — Si je vous réponds que je l’ai vu dans leurs yeux, vous allez probablement me prendre pour une illuminée.
+    </p>
+
+    <p>
+      Betty sourit.
+    </p>
+
+    <p>
+      — Probablement.
+    </p>
+
+    <p>
+      Anna étouffe un rire.
+    </p>
+
+    <p>
+      Hope poursuit :
+    </p>
+
+    <p>
+      — Pourtant, nous révélons beaucoup plus de choses par notre regard que nous ne l’imaginons.
+    </p>
+
+    <p>
+      Elle regarde brièvement Root.
+    </p>
+
+    <p>
+      — Mais non, je ne me suis pas contentée de mon intuition.
+    </p>
+
+    <p>
+      Betty devient immédiatement attentive.
+    </p>
+
+    <p>
+      — J’ai vérifié.
+    </p>
+
+    <p>
+      — Comment ?
+    </p>
+
+    <p>
+      Hope tend sa propre main.
+    </p>
+
+    <p>
+      — À l’époque, lorsque nous avons finalement été en sécurité, j’ai posé ma main sur l’intérieur de leur poignet droit.
+    </p>
+
+    <p>
+      Root comprend.
+    </p>
+
+    <p>
+      Elle remonte lentement sa manche.
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     VISUEL 9
+     MARQUE DE ROOT
+===================================================== -->
+
+<section
+  class="scene mark-scene interaction-scene"
+  id="scene-11"
+>
+
+  <div
+    class="visual interactive-visual"
+    data-visual="9"
+  >
+    <img
+      src="images/chapitre3/Visuel-45.PNG"
+      alt="Marque au poignet de Root"
+      loading="lazy"
+    >
+  </div>
+
+
+  <!-- INTERACTION 15 -->
+
+  <div class="interaction-block">
+
+    <h2>
+      La marque de Root
+    </h2>
+
+    <button
+      class="interaction-btn"
+      id="rootMarkTrigger"
+      type="button"
+    >
+      Observer son poignet
+    </button>
+
+    <div
+      class="reveal-box"
+      id="rootMarkReveal"
+    ></div>
+
+  </div>
+
+
+  <div class="text-block dialogue">
+
+    <p>
+      Lucy se penche légèrement.
+    </p>
+
+    <p>
+      Anna également.
+    </p>
+
+    <p>
+      Sur l’intérieur du poignet de Root apparaît une marque étrange.
+    </p>
+
+    <p>
+      Un cercle presque parfaitement intégré à sa peau.
+    </p>
+
+    <p>
+      De fins symboles semblent surgir des profondeurs de la chair, comme un trompe-l’œil impossible.
+    </p>
+
+    <p>
+      Au centre, une ligne lumineuse aux reflets multicolores traverse le motif.
+    </p>
+
+    <p>
+      Betty se rapproche.
+    </p>
+
+    <p>
+      — C’est un tatouage ?
+    </p>
+
+    <p>
+      — Non, répond Root.
+    </p>
+
+    <p>
+      Hope poursuit :
+    </p>
+
+    <p class="impact-text">
+      — Cette marque ne se dessine pas.
+    </p>
+
+    <p class="emphasis">
+      — Elle se révèle.
+    </p>
+
+    <p>
+      Lucy observe immédiatement le symbole.
+    </p>
+
+    <p>
+      — Et ils avaient tous les trois la même ?
+    </p>
+
+    <p>
+      Hope réfléchit.
+    </p>
+
+    <p>
+      — La même origine.
+    </p>
+
+    <p>
+      Elle insiste sur le mot.
+    </p>
+
+    <p>
+      — Pas nécessairement la même signification.
+    </p>
+
+    <p>
+      Root rabaisse doucement sa manche.
+    </p>
+
+    <p>
+      Hope poursuit :
+    </p>
+
+    <p>
+      — Pour les Sentinelles, l’apparition de cette marque signifie qu’une personne appartient à une histoire beaucoup plus ancienne qu’elle ne le sait elle-même.
+    </p>
+
+    <p>
+      Anna fronce les sourcils.
+    </p>
+
+    <p>
+      — Donc Root, Peter et Max étaient déjà liés aux Sentinelles sans le savoir ?
+    </p>
+
+    <p>
+      Hope sourit.
+    </p>
+
+    <p>
+      — Disons plutôt que leurs chemins pouvaient un jour les conduire jusqu’à nous.
+    </p>
+
+    <p>
+      Betty remarque immédiatement la nuance.
+    </p>
+
+    <p>
+      — Ce n’est pas exactement la même chose.
+    </p>
+
+    <p>
+      — Non.
+    </p>
+
+    <p>
+      Hope sourit.
+    </p>
+
+    <p>
+      — Et cette différence est importante.
+    </p>
+
+  </div>
+
+
+  <!-- INTERACTION 16 -->
+
+  <div class="interaction-block">
+
+    <h2>
+      Comprendre la marque
+    </h2>
+
+    <div class="choice-buttons">
+
+      <button
+        class="choice-btn"
+        type="button"
+        data-mark-meaning="destiny"
+      >
+        Un destin déjà écrit
+      </button>
+
+      <button
+        class="choice-btn"
+        type="button"
+        data-mark-meaning="path"
+      >
+        Un chemin possible
+      </button>
+
+    </div>
+
+    <div
+      class="reveal-box"
+      id="markMeaningReveal"
+    ></div>
+
+  </div>
+
+
+  <div class="text-block dialogue">
+
+    <p>
+      Anna semble vouloir poser une autre question.
+    </p>
+
+    <p>
+      Betty lève une main.
+    </p>
+
+    <p>
+      — Je crois que nous aurons déjà beaucoup de choses à digérer ce soir.
+    </p>
+
+    <p>
+      Root rit.
+    </p>
+
+    <p>
+      — Pour une fois, je suis d’accord avec Betty.
+    </p>
+
+    <p>
+      Puis elle reprend :
+    </p>
+
+    <p>
+      — Et puisque nous parlons de notre rencontre, il y a quelque chose que je dois rectifier.
+    </p>
+
+    <p>
+      Elle regarde Lucy.
+    </p>
+
+    <p>
+      — Les médias ont raconté une version très simplifiée de notre disparition.
+    </p>
+
+    <p>
+      — Étonnant, répond Lucy avec ironie.
+    </p>
+
+    <p>
+      Root sourit.
+    </p>
+
+    <p>
+      — Max et moi étions déjà partis ensemble en Chine.
+    </p>
+
+    <p>
+      Anna se redresse immédiatement.
+    </p>
+
+    <p>
+      — Avec Max Speedman ?
+    </p>
+
+    <p>
+      — Avec le futur Max Speedman.
+    </p>
+
+    <p>
+      Root poursuit :
+    </p>
+
+    <p>
+      — À cette époque, il n’était encore qu’un étudiant particulièrement curieux, persuadé que certaines communautés vivant en marge du monde moderne pouvaient malgré tout exercer une influence considérable sur lui.
+    </p>
+
+    <p>
+      Hope sourit.
+    </p>
+
+    <p>
+      — Il avait déjà besoin de comprendre ce que personne ne regardait.
+    </p>
+
+    <p>
+      Root acquiesce.
+    </p>
+
+    <p>
+      — Et il était déjà obsédé par les conséquences disproportionnées que pouvait provoquer un événement apparemment insignifiant.
+    </p>
+
+    <p>
+      Anna intervient :
+    </p>
+
+    <p>
+      — L’effet papillon.
+    </p>
+
+    <p>
+      Root la regarde.
+    </p>
+
+    <p>
+      — Exactement.
+    </p>
+
+    <p>
+      Anna sourit.
+    </p>
+
+    <p>
+      — Un petit événement peut entraîner une chaîne de conséquences gigantesques.
+    </p>
+
+    <p>
+      — C’est l’idée.
+    </p>
+
+    <p>
+      Root ajoute :
+    </p>
+
+    <p>
+      — Même si Max avait tendance à l’appliquer absolument partout.
+    </p>
+
+    <p>
+      Hope éclate de rire.
+    </p>
+
+    <p>
+      — Absolument partout.
+    </p>
+
+  </div>
+
+
+  <!-- INTERACTION 17 -->
+
+  <div class="interaction-block">
+
+    <h2>
+      L’effet papillon selon Max
+    </h2>
+
+    <button
+      class="interaction-btn"
+      id="butterflyButton"
+      type="button"
+    >
+      Voir la chaîne de conséquences
+    </button>
+
+    <div
+      class="reveal-box"
+      id="butterflyReveal"
+    ></div>
+
+  </div>
+
+
+  <div class="text-block dialogue">
+
+    <p>
+      Root reprend :
+    </p>
+
+    <p>
+      — Moi, j’étais venue pour quelque chose de beaucoup moins raisonnable.
+    </p>
+
+    <p>
+      Lucy sourit.
+    </p>
+
+    <p>
+      — La fiole.
+    </p>
+
+    <p>
+      — La fiole.
+    </p>
+
+    <p>
+      Root réfléchit quelques secondes.
+    </p>
+
+    <p>
+      — Lorsque j’étais enfant, j’avais découvert une pierre portant des symboles que personne autour de moi ne connaissait.
+    </p>
+
+    <p>
+      — La pierre dont vous parliez tout à l’heure ? demande Anna.
+    </p>
+
+    <p>
+      — Oui.
+    </p>
+
+    <p>
+      — Et vous l’avez gardée ?
+    </p>
+
+    <p>
+      — En secret.
+    </p>
+
+    <p>
+      Root poursuit :
+    </p>
+
+    <p>
+      — Pendant des années, j’ai essayé de comprendre ces inscriptions.
+    </p>
+
+    <p>
+      — Jusqu’à ce que tu réussisses ?
+    </p>
+
+    <p>
+      Root sourit.
+    </p>
+
+    <p>
+      — Jusqu’à ce que je réussisse à en comprendre suffisamment pour devenir complètement obsédée.
+    </p>
+
+    <p>
+      Hope intervient :
+    </p>
+
+    <p>
+      — Voilà une description beaucoup plus honnête.
+    </p>
+
+    <p>
+      Root lui lance un regard.
+    </p>
+
+    <p>
+      — Les inscriptions évoquaient une ancienne légende.
+    </p>
+
+    <p>
+      Elle hésite.
+    </p>
+
+    <p>
+      — Une source.
+    </p>
+
+    <p>
+      — La Source de Vie ? demande Anna.
+    </p>
+
+    <p>
+      Hope et Root échangent un regard.
+    </p>
+
+    <p>
+      Root répond prudemment :
+    </p>
+
+    <p>
+      — Peut-être.
+    </p>
+
+    <p>
+      Elle poursuit :
+    </p>
+
+    <p>
+      — La pierre parlait aussi d’un objet associé à cette légende.
+    </p>
+
+    <p>
+      — La fiole.
+    </p>
+
+    <p>
+      — Oui.
+    </p>
+
+    <p>
+      Root regarde Betty une fraction de seconde.
+    </p>
+
+    <p>
+      — Et elle faisait allusion à deux forces opposées, présentes depuis très longtemps dans l’histoire humaine.
+    </p>
+
+    <p>
+      Lucy intervient :
+    </p>
+
+    <p>
+      — Les Sentinelles de la Lumière et les Gardiens Noirs.
+    </p>
+
+    <p>
+      — C’est ce que nous avons compris plus tard.
+    </p>
+
+    <p>
+      Root poursuit :
+    </p>
+
+    <p>
+      — Quant à Peter, nous l’avons rencontré peu avant notre départ vers la région que les médias ont ensuite surnommée la Forêt des Âmes Perdues.
+    </p>
+
+    <p>
+      Hope commence déjà à sourire.
+    </p>
+
+    <p>
+      Root aussi.
+    </p>
+
+    <p>
+      — Il nous a plu immédiatement.
+    </p>
+
+    <p>
+      — C’est inquiétant, remarque Lucy.
+    </p>
+
+    <p>
+      — Ça l’était.
+    </p>
+
+    <p>
+      Root rit.
+    </p>
+
+    <p>
+      — Il avait des milliers d’idées à la minute, une imagination incroyable et absolument aucune idée de la façon dont il allait en réaliser la moitié.
+    </p>
+
+    <p>
+      Hope ajoute :
+    </p>
+
+    <p>
+      — Et suffisamment de confiance en lui pour être persuadé que ça finirait forcément par fonctionner.
+    </p>
+
+    <p>
+      — Exactement.
+    </p>
+
+    <p>
+      Root poursuit :
+    </p>
+
+    <p>
+      — Il était aussi ingénieux que complètement allumé.
+    </p>
+
+    <p>
+      Anna rit.
+    </p>
+
+    <p>
+      — Donc forcément…
+    </p>
+
+    <p>
+      — Forcément, nous sommes devenus amis.
+    </p>
+
+    <p>
+      Root hausse les épaules.
+    </p>
+
+    <p>
+      — Et il nous a accompagnés.
+    </p>
+
+    <p>
+      Lucy secoue lentement la tête.
+    </p>
+
+    <p>
+      — Trois étudiants brillants, beaucoup trop curieux, qui partent chercher une légende dans une région isolée de Chine.
+    </p>
+
+    <p>
+      — Présenté comme ça, reconnaît Root…
+    </p>
+
+    <p>
+      — C’était une idée catastrophique.
+    </p>
+
+    <p>
+      — Complètement.
+    </p>
+
+    <p>
+      — Et vous êtes tombés dans un gouffre.
+    </p>
+
+    <p>
+      — Aussi.
+    </p>
+
+    <p>
+      Tout le monde éclate de rire.
+    </p>
+
+    <p>
+      Root poursuit :
+    </p>
+
+    <p>
+      — Et c’est ainsi que nous avons rencontré Hope.
+    </p>
+
+    <p>
+      Son expression devient plus douce.
+    </p>
+
+    <p>
+      — Depuis ce jour, Peter, Max et moi sommes devenus comme les doigts d’une même main.
+    </p>
+
+    <p>
+      Elle regarde Hope.
+    </p>
+
+    <p>
+      — Et elle en fait partie, même si elle prétend régulièrement le contraire.
+    </p>
+
+    <p>
+      — Je n’ai jamais prétendu le contraire.
+    </p>
+
+    <p>
+      — Tu le penses très fort.
+    </p>
+
+    <p>
+      Hope sourit.
+    </p>
+
+    <p>
+      Root poursuit :
+    </p>
+
+    <p>
+      — Nous avons choisi des vies différentes.
+    </p>
+
+    <p>
+      — Nous vivons parfois à des milliers de kilomètres les uns des autres.
+    </p>
+
+    <p>
+      — Nous pouvons rester longtemps sans nous voir.
+    </p>
+
+    <p>
+      Puis elle ajoute simplement :
+    </p>
+
+    <p class="emphasis">
+      — Mais si l’un de nous appelle, les autres viennent.
+    </p>
+
+    <p>
+      Un petit silence suit cette phrase.
+    </p>
+
+    <p>
+      Anna sourit.
+    </p>
+
+    <p>
+      — Des inséparables.
+    </p>
+
+    <p>
+      Root acquiesce.
+    </p>
+
+    <p>
+      — À notre manière.
+    </p>
+
+    <p>
+      Puis elle regarde Betty.
+    </p>
+
+    <p>
+      — Maintenant que nous venons de raconter une partie plutôt conséquente de notre vie…
+    </p>
+
+    <p>
+      Elle tourne la tête vers Lucy et Anna.
+    </p>
+
+    <p>
+      — Vous savez énormément de choses sur nous.
+    </p>
+
+    <p>
+      Puis elle revient vers Betty.
+    </p>
+
+    <p>
+      — Et toi, par exemple, tu ne m’avais jamais dit que tu avais une sœur.
+    </p>
+
+    <p>
+      Lucy lève les yeux au ciel.
+    </p>
+
+    <p>
+      Betty sourit.
+    </p>
+
+    <p>
+      — Tu sais parfaitement que je n’ai jamais été très communicative.
+    </p>
+
+    <p>
+      — C’est un euphémisme.
+    </p>
+
+    <p>
+      — Et c’est probablement l’une des raisons pour lesquelles tu m’as confié cette fameuse fiole.
+    </p>
+
+    <p>
+      Root ne répond pas.
+    </p>
+
+    <p>
+      Betty poursuit :
+    </p>
+
+    <p>
+      — Nous nous sommes rapprochées parce que nous excellions toutes les deux dans nos domaines.
+    </p>
+
+    <p>
+      Elle sourit.
+    </p>
+
+    <p>
+      — Enfin… parce que nous étions toutes les deux complètement obsédées par notre travail.
+    </p>
+
+    <p>
+      — Ça aussi, c’est plus honnête.
+    </p>
+
+    <p>
+      — Nous nous respections énormément.
+    </p>
+
+    <p>
+      Betty poursuit :
+    </p>
+
+    <p>
+      — Mais nous n’avons jamais réellement pris le temps d’apprendre à nous connaître autrement que par nos recherches.
+    </p>
+
+    <p>
+      Elle regarde toutes les femmes autour de la table.
+    </p>
+
+    <p>
+      — Peut-être que cela va changer.
+    </p>
+
+    <p>
+      Root lui sourit.
+    </p>
+
+  </div>
+
+
+  <!-- INTERACTION 18 -->
+
+  <div class="interaction-block pact-interaction">
+
+    <h2>
+      Ce qui unit réellement le groupe
+    </h2>
+
+    <div class="observation-buttons">
+
+      <button
+        class="interaction-btn"
+        type="button"
+        data-group-link="survival"
+      >
+        La survie
+      </button>
+
+      <button
+        class="interaction-btn"
+        type="button"
+        data-group-link="promise"
+      >
+        La promesse
+      </button>
+
+      <button
+        class="interaction-btn"
+        type="button"
+        data-group-link="distance"
+      >
+        La distance ne les sépare pas
+      </button>
+
+      <button
+        class="interaction-btn"
+        type="button"
+        data-group-link="call"
+      >
+        Si l’un appelle, les autres viennent
+      </button>
+
+    </div>
+
+    <div
+      class="reveal-box"
+      id="groupLinkReveal"
+    ></div>
+
+  </div>
+
+
+  <div class="text-block dialogue">
+
+    <p>
+      Puis Betty revient vers Hope.
+    </p>
+
+    <p>
+      — Cela dit…
+    </p>
+
+    <p>
+      Hope reconnaît immédiatement son expression.
+    </p>
+
+    <p>
+      — Encore une question.
+    </p>
+
+    <p>
+      — Évidemment.
+    </p>
+
+    <p>
+      Betty sourit.
+    </p>
+
+    <p>
+      — Je reste persuadée que vous savez beaucoup plus de choses sur nous trois que vous ne voulez bien l’admettre.
+    </p>
+
+    <p>
+      — Sur vous, Lucy et Anna ?
+    </p>
+
+    <p>
+      — Oui.
+    </p>
+
+    <p>
+      Hope réfléchit.
+    </p>
+
+    <p>
+      — Certaines.
+    </p>
+
+    <p>
+      — Grâce à Peter ?
+    </p>
+
+    <p>
+      — Entre autres.
+    </p>
+
+    <p>
+      Betty acquiesce.
+    </p>
+
+    <p>
+      — Voilà.
+    </p>
+
+    <p>
+      Elle poursuit :
+    </p>
+
+    <p>
+      — Nos vies sont relativement publiques. La vôtre, au contraire, ressemble à un gigantesque trou noir administratif.
+    </p>
+
+    <p>
+      Lucy approuve silencieusement.
+    </p>
+
+    <p>
+      — Donc pour le moment, j’ai surtout l’impression que nous découvrons beaucoup de choses sur vous pendant que vous disposez déjà d’une belle longueur d’avance sur nous.
+    </p>
+
+    <p>
+      Hope sourit.
+    </p>
+
+    <p>
+      — C’est possible.
+    </p>
+
+    <p>
+      — Seulement possible ?
+    </p>
+
+    <p>
+      — Pacte de confiance, Betty.
+    </p>
+
+    <p>
+      Hope lui adresse un regard amusé.
+    </p>
+
+    <p>
+      — Je ne viens pas de mentir.
+    </p>
+
+    <p>
+      Betty ne peut s’empêcher de rire.
+    </p>
+
+    <p>
+      Puis elle regarde l’heure.
+    </p>
+
+    <p>
+      — Il commence à se faire tard.
+    </p>
+
+    <p>
+      Anna proteste immédiatement.
+    </p>
+
+    <p>
+      — Man…
+    </p>
+
+    <p>
+      — Nous reviendrons samedi.
+    </p>
+
+    <p>
+      Anna retrouve son sourire.
+    </p>
+
+    <p>
+      — Promis ?
+    </p>
+
+    <p>
+      — Promis.
+    </p>
+
+    <p>
+      Betty se lève.
+    </p>
+
+    <p>
+      — Merci pour votre accueil.
+    </p>
+
+    <p>
+      Elle regarde Hope.
+    </p>
+
+    <p>
+      — Et pour vos réponses.
+    </p>
+
+    <p>
+      Puis elle ajoute :
+    </p>
+
+    <p>
+      — Même si je repars avec deux fois plus de questions qu’en arrivant.
+    </p>
+
+    <p>
+      Hope sourit.
+    </p>
+
+    <p>
+      — Alors notre conversation a probablement été utile.
+    </p>
+
+    <p>
+      Lucy se lève à son tour.
+    </p>
+
+    <p>
+      Root lui adresse un regard.
+    </p>
+
+    <p>
+      — N’oublie pas.
+    </p>
+
+    <p>
+      — Quoi ?
+    </p>
+
+    <p>
+      — Le dîner.
+    </p>
+
+    <p>
+      Lucy sourit.
+    </p>
+
+    <p>
+      — Et la confidence.
+    </p>
+
+    <p>
+      Root soupire.
+    </p>
+
+    <p>
+      — Évidemment.
+    </p>
+
+    <p>
+      Anna se tourne vers Hope.
+    </p>
+
+    <p>
+      — Et samedi, Max est vraiment là ?
+    </p>
+
+    <p>
+      — Vraiment.
+    </p>
+
+    <p>
+      — Alors vous ne vous débarrasserez pas de moi.
+    </p>
+
+    <p>
+      — Je commence à le comprendre.
+    </p>
+
+    <p>
+      Les femmes se saluent.
+    </p>
+
+    <p>
+      Quelques minutes plus tard, Betty, Anna et Lucy quittent l’hacienda Awake et reprennent la direction de l’hacienda Flores.
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     FIN DE SOIRÉE
+===================================================== -->
+
+<section
+  class="scene calm-scene"
+  id="scene-12"
+>
+
+  <div class="text-block dialogue">
+
+    <p>
+      Hope et Root restent seules.
+    </p>
+
+    <p>
+      Pendant près d’une heure, elles reparlent de cette étrange journée.
+    </p>
+
+    <p>
+      De Lucy.
+    </p>
+
+    <p>
+      De Betty.
+    </p>
+
+    <p>
+      Et surtout d’Anna.
+    </p>
+
+    <p>
+      Root regarde son amie.
+    </p>
+
+    <p>
+      — Elle t’intrigue.
+    </p>
+
+    <p>
+      Hope ne répond pas immédiatement.
+    </p>
+
+    <p>
+      — Beaucoup de choses m’intriguent.
+    </p>
+
+    <p>
+      Root sourit.
+    </p>
+
+    <p>
+      — Ce n’est pas ce que j’ai dit.
+    </p>
+
+    <p>
+      Hope tourne les yeux vers elle.
+    </p>
+
+    <p>
+      Root n’insiste pas.
+    </p>
+
+    <p>
+      Un bruit lointain finit par attirer leur attention.
+    </p>
+
+    <p>
+      Puis trois drones apparaissent au-dessus de la propriété.
+    </p>
+
+    <p>
+      Hope les reconnaît immédiatement.
+    </p>
+
+    <p>
+      Elle sourit.
+    </p>
+
+    <p>
+      — Ils sont enfin là.
+    </p>
+
+    <p>
+      Root lève les yeux vers les appareils.
+    </p>
+
+    <p>
+      — Peter.
+    </p>
+
+    <p>
+      — Évidemment.
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     VISUEL 10
+     ARRIVÉE DE PETER ET MAX
+===================================================== -->
+
+<section
+  class="scene chapter-end"
+  id="chapter-end"
+>
+
+  <div
+    class="visual"
+    data-visual="10"
+  >
+    <img
+      src="images/chapitre3/Visuel-50.PNG"
+      alt="Peter et Max arrivent à l'hacienda Awake"
+      loading="lazy"
+    >
+  </div>
+
+
+  <div class="text-block">
+
+    <p>
+      Quelques instants plus tard, un véhicule franchit les contrôles de l’hacienda.
+    </p>
+
+    <p>
+      À son bord se trouvent deux hommes qu’elles n’ont pas vus depuis trop longtemps.
+    </p>
+
+    <p class="name-reveal">
+      Peter Evanos.
+    </p>
+
+    <p class="name-reveal">
+      Max Speedman.
+    </p>
+
+    <p>
+      Et devant eux volent les trois drones chargés de les surveiller depuis leur arrivée au Mexique.
+    </p>
+
+    <p>
+      Root sourit.
+    </p>
+
+    <p>
+      Hope également.
+    </p>
+
+    <p class="impact-text">
+      Le cercle continuait à se refermer.
+    </p>
+
+  </div>
+
+
+  <div class="end-symbol">
+    ∞
+  </div>
+
+
+  <div class="end-actions">
+
+    <button
+      class="chapter-btn"
+      id="restartChapter"
+      type="button"
+    >
+      Relire le chapitre
+    </button>
+
+    <a
+      class="chapter-btn primary"
+      href="chapitre4.html"
+    >
+      Continuer
+    </a>
+
+  </div>
+
+</section>
+
+
+</main>
+
+
+<!-- =====================================================
+     POPUP DÉCOUVERTE
+===================================================== -->
+
+<div
+  class="secret-popup"
+  id="secretPopup"
+  aria-hidden="true"
+>
+
+  <div class="secret-popup-inner">
+
+    <span class="secret-symbol">
+      ∞
+    </span>
+
+    <span class="secret-title">
+      INFORMATION CONFIRMÉE
+    </span>
+
+    <p
+      class="secret-description"
+      id="secretDescription"
+    ></p>
+
+  </div>
+
+</div>
+
+
+<!-- =====================================================
+     MENU DU CHAPITRE
+===================================================== -->
+
+<div
+  class="chapter-menu"
+  id="chapterMenu"
+  aria-hidden="true"
+>
+
+  <div class="chapter-menu-panel">
+
+    <button
+      class="menu-close"
+      id="menuClose"
+      type="button"
+      aria-label="Fermer le menu"
+    >
+      ×
+    </button>
+
+    <h2>
+      Chapitre 3
+    </h2>
+
+    <p>
+      La Confiance
+    </p>
+
+    <button
+      id="resumeBtn"
+      class="menu-action"
+      type="button"
+    >
+      Reprendre la lecture
+    </button>
+
+    <button
+      id="restartBtn"
+      class="menu-action"
+      type="button"
+    >
+      Recommencer le chapitre
+    </button>
+
+    <a
+      href="menu.html"
+      class="menu-action"
+    >
+      Retour au menu
+    </a>
+
+  </div>
+
+</div>
+
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
+<script src="js/chapitre3.js"></script>
+
+
+</body>
+</html>
