@@ -289,11 +289,11 @@ button {
 .visual {
   position: relative;
 
-  width: min(100%, 460px);
+  width: 100%;
 
   margin:
-    28px auto
-    34px;
+    0 auto
+    28px;
 
   border-radius: var(--radius);
 
@@ -332,7 +332,21 @@ button {
 }
 
 
-.visual img {
+/* =====================================================
+   VISUELS NORMAUX
+   9:16 — largeur limitée sur iPad
+===================================================== */
+
+.visual:not(.full-visual) {
+  width: min(100%, 460px);
+
+  margin:
+    28px auto
+    34px;
+}
+
+
+.visual:not(.full-visual) img {
   display: block;
 
   width: 100%;
@@ -346,10 +360,29 @@ button {
 }
 
 
+/* =====================================================
+   COUVERTURE
+   NE PAS LIMITER
+===================================================== */
+
+.full-visual {
+  width: 100%;
+}
+
+
+.full-visual img {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+}
+
+
 .visual.visual-missing {
   display: none;
 }
-
 
 /* =========================================================
    COUVERTURE
