@@ -368,26 +368,19 @@ a:focus-visible {
 
 .scene {
 
-  position:
-    relative;
+  position: relative;
 
-  width:
-    100%;
+  width: 100%;
+  max-width: var(--content-width);
 
-  max-width:
-    var(--content-width);
+  margin: 0 auto;
 
-  margin:
-    0 auto;
+  padding: 58px 18px;
 
-  padding:
-    58px 18px;
+  overflow: visible;
 
-  overflow:
-    visible;
+  isolation: isolate;
 }
-
-
 /*
    IMPORTANT :
    uniquement la couverture et la fin peuvent
