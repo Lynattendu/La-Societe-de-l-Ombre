@@ -851,61 +851,16 @@ document.addEventListener("DOMContentLoaded", function () {
      APPARITION DES SCÈNES
   ========================================================= */
 
-  function animateParagraphs(
-    scene
-  ) {
+  function animateParagraphs(scene) {
 
-    if (
-      !scene ||
-      scene.dataset.textAnimated ===
-      "1"
-    ) {
-
-      return;
-
-    }
-
-    scene.dataset.textAnimated =
-      "1";
-
-    const paragraphs =
-      scene.querySelectorAll(
-        ".text-block p"
-      );
-
-    paragraphs.forEach(
-      function (
-        paragraph,
-        index
-      ) {
-
-        paragraph.style.opacity =
-          "0";
-
-        paragraph.style.transform =
-          "translateY(12px)";
-
-        setTimeout(
-          function () {
-
-            paragraph.style.transition =
-              "opacity 0.65s ease, transform 0.65s ease";
-
-            paragraph.style.opacity =
-              "1";
-
-            paragraph.style.transform =
-              "translateY(0)";
-
-          },
-          index * 55
-        );
-
-      }
-    );
-
+  if (!scene) {
+    return;
   }
 
+  scene.dataset.textAnimated =
+    "1";
+
+}
 
   if (
     "IntersectionObserver"
