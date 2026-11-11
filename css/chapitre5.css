@@ -289,11 +289,11 @@ button {
 .visual {
   position: relative;
 
-  width: 100%;
+  width: min(100%, 460px);
 
   margin:
-    0 auto
-    28px;
+    28px auto
+    34px;
 
   border-radius: var(--radius);
 
@@ -322,6 +322,7 @@ button {
     transform 0.8s ease;
 }
 
+
 .scene.is-visible .visual {
   opacity: 1;
 
@@ -330,18 +331,20 @@ button {
     scale(1);
 }
 
+
 .visual img {
+  display: block;
+
   width: 100%;
   height: auto;
+
+  aspect-ratio: 9 / 16;
 
   object-fit: contain;
 
   background: #050505;
 }
 
-.visual:not(.full-visual) img {
-  max-height: 84svh;
-}
 
 .visual.visual-missing {
   display: none;
