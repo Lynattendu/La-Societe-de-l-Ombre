@@ -534,23 +534,11 @@ button {
   flex-direction: column;
   gap: 7px;
 
-  opacity: 0;
-
-  transform:
-    translateY(18px);
-
-  transition:
-    opacity 0.8s ease 0.12s,
-    transform 0.8s ease 0.12s;
+opcity: 1;
+   transform: none;
 }
 
-.scene.is-visible
-.location-card {
-  opacity: 1;
 
-  transform:
-    translateY(0);
-}
 
 .location-card strong {
   color:
