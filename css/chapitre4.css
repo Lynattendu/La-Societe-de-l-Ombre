@@ -414,20 +414,15 @@ a:focus-visible {
 
 .scene::before {
 
-  content:
-    "";
+  content: "";
 
-  position:
-    absolute;
+  position: absolute;
 
-  inset:
-    0;
+  inset: 0;
 
-  z-index:
-    -2;
+  z-index: -1;
 
-  pointer-events:
-    none;
+  pointer-events: none;
 
   background:
     radial-gradient(
@@ -437,28 +432,24 @@ a:focus-visible {
     );
 }
 
+
 .scene::after {
 
-  content:
-    "";
+  content: "";
 
-  position:
-    absolute;
+  position: absolute;
 
-  left:
-    50%;
+  left: 50%;
+  bottom: 0;
 
-  bottom:
-    0;
+  z-index: -1;
 
-  transform:
-    translateX(-50%);
+  width: 82%;
+  height: 1px;
 
-  width:
-    82%;
+  transform: translateX(-50%);
 
-  height:
-    1px;
+  pointer-events: none;
 
   background:
     linear-gradient(
@@ -468,10 +459,8 @@ a:focus-visible {
       transparent
     );
 
-  opacity:
-    0.4;
+  opacity: 0.4;
 }
-
 
 /* =========================================================
    COUVERTURE
