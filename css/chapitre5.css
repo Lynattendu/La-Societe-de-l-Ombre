@@ -322,7 +322,6 @@ button {
     transform 0.8s ease;
 }
 
-
 .scene.is-visible .visual {
   opacity: 1;
 
@@ -331,6 +330,18 @@ button {
     scale(1);
 }
 
+.visual img {
+  width: 100%;
+  height: auto;
+
+  object-fit: contain;
+
+  background: #050505;
+}
+
+.visual:not(.full-visual) img {
+  max-height: 84svh;
+}
 
 /* =====================================================
    VISUELS NORMAUX
