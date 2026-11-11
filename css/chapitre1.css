@@ -616,22 +616,8 @@ button {
     4px
     0;
 
-  opacity: 0;
-
-  transform:
-    translateY(20px);
-
-  transition:
-    opacity 0.9s ease 0.18s,
-    transform 0.9s ease 0.18s;
-}
-
-.scene.is-visible
-.text-block {
   opacity: 1;
-
-  transform:
-    translateY(0);
+  transform: none;
 }
 
 .text-block p {
