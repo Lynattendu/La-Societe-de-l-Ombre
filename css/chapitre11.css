@@ -1788,3 +1788,39 @@ button:disabled {
   }
 
 }
+
+
+/* =========================================================
+   CORRECTION AFFICHAGE VISUELS — CHAPITRE 11
+========================================================= */
+
+.visual {
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+
+/* Visuels normaux du chapitre */
+.visual:not(.full-visual) {
+  width: min(100%, 460px);
+  margin: 28px auto 34px;
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.visual:not(.full-visual) img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 9 / 16;
+  object-fit: cover;
+}
+
+
+/* Image de couverture */
+.scene-cover .full-visual img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
