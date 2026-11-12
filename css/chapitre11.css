@@ -1824,3 +1824,51 @@ button:disabled {
   height: auto;
   object-fit: contain;
 }
+/* =========================================================
+   CORRECTION DÉFINITIVE VISUELS — CHAPITRE 11
+========================================================= */
+
+.visual,
+.visual.visual-missing {
+  display: block !important;
+  opacity: 1 !important;
+  transform: none !important;
+  visibility: visible !important;
+}
+
+
+/* VISUELS NORMAUX — FORMAT 9:16 */
+.visual:not(.full-visual) {
+  width: min(100%, 460px);
+  margin: 28px auto 34px;
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.visual:not(.full-visual) img {
+  display: block !important;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 9 / 16;
+  object-fit: cover;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+
+/* COUVERTURE */
+.scene-cover .full-visual {
+  display: block !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+.scene-cover .full-visual img {
+  display: block !important;
+  width: 100%;
+  height: 100svh;
+  min-height: 100svh;
+  object-fit: cover;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
