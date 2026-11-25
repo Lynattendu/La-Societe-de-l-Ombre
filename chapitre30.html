@@ -1,1 +1,3402 @@
 
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+  >
+
+  <meta
+    name="theme-color"
+    content="#050505"
+  >
+
+  <title>
+    Chapitre 30 — La convergence | La Société de l'Ombre
+  </title>
+
+  <link
+    rel="stylesheet"
+    href="css/chapitre30.css?v=1"
+  >
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     BARRE DE PROGRESSION
+===================================================== -->
+
+<div
+  class="progress-bar"
+  aria-hidden="true"
+>
+  <div
+    class="progress-fill"
+    id="progressFill"
+  ></div>
+</div>
+
+
+<!-- =====================================================
+     COMMANDES
+===================================================== -->
+
+<div class="chapter-controls">
+
+  <button
+    class="control-btn"
+    id="menuBtn"
+    aria-label="Ouvrir le menu"
+  >
+    ☰
+  </button>
+
+  <button
+    class="control-btn"
+    id="soundBtn"
+    aria-label="Activer ou désactiver le son"
+  >
+    ♫
+  </button>
+
+</div>
+
+
+<main
+  class="chapter"
+  id="chapter"
+>
+
+
+<!-- =====================================================
+     SCÈNE 1
+     COUVERTURE
+===================================================== -->
+
+<section
+  class="scene scene-cover"
+  id="scene-1"
+>
+
+  <div
+    class="visual full-visual"
+    data-visual="1"
+  >
+
+    <img
+      src="images/chapitre30/Visuel-1.PNG"
+      alt="Chapitre 30 — La convergence"
+      loading="eager"
+    >
+
+  </div>
+
+
+  <div class="chapter-title-overlay">
+
+    <p class="chapter-number">
+      Chapitre 30
+    </p>
+
+    <h1>
+      La convergence
+    </h1>
+
+    <button
+      class="continue-btn"
+      data-next
+    >
+      Continuer
+    </button>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     INTERACTION 1
+     LES TROIS CONVOIS
+===================================================== -->
+
+<section
+  class="scene shadow-scene interaction-scene"
+  id="scene-2"
+>
+
+  <div class="text-block dialogue">
+
+    <p>
+      Route vers l’Hidalgo — Nuit
+    </p>
+
+    <p>
+      Le premier convoi d’Élie traverse un poste secondaire.
+    </p>
+
+    <p>
+      Puis un deuxième.
+    </p>
+
+    <p>
+      Puis un troisième.
+    </p>
+
+    <p>
+      Trois directions différentes.
+    </p>
+
+    <p>
+      Trois itinéraires plausibles.
+    </p>
+
+    <p class="impact-text">
+      Trois mensonges.
+    </p>
+
+    <p>
+      Élie suit les mouvements sur plusieurs écrans.
+    </p>
+
+    <p>
+      — Ils regardent.
+    </p>
+
+    <p>
+      Son lieutenant acquiesce.
+    </p>
+
+    <p>
+      — Deux véhicules nous suivent déjà.
+    </p>
+
+    <p>
+      Élie sourit.
+    </p>
+
+    <p>
+      — Parfait.
+    </p>
+
+    <p>
+      — On continue ?
+    </p>
+
+    <p>
+      — Oui.
+    </p>
+
+    <p>
+      — Et si on nous intercepte ?
+    </p>
+
+    <p>
+      Élie ajuste sa veste.
+    </p>
+
+    <p>
+      — Alors soyez convaincants.
+    </p>
+
+    <p>
+      — Sans tirer ?
+    </p>
+
+    <p>
+      Élie le regarde.
+    </p>
+
+    <p>
+      — Sans tirer vers la Cueva.
+    </p>
+
+    <p>
+      — Pour le reste, débrouillez-vous.
+    </p>
+
+  </div>
+
+
+  <div class="observation-buttons">
+
+    <button
+      class="interaction-btn convoys-trigger"
+      data-convoys="three"
+    >
+      Trois convois
+    </button>
+
+    <button
+      class="interaction-btn convoys-trigger"
+      data-convoys="routes"
+    >
+      Trois itinéraires
+    </button>
+
+    <button
+      class="interaction-btn convoys-trigger"
+      data-convoys="followed"
+    >
+      Ils les suivent
+    </button>
+
+    <button
+      class="interaction-btn convoys-trigger"
+      data-convoys="lies"
+    >
+      Trois mensonges
+    </button>
+
+  </div>
+
+
+  <div
+    class="reveal-box"
+    id="convoysReveal"
+  ></div>
+
+</section>
+
+
+<!-- =====================================================
+     VISUEL 1
+     APPROCHE DE LA CUEVA
+===================================================== -->
+
+<section
+  class="scene investigation-scene interaction-scene"
+  id="scene-3"
+>
+
+  <div
+    class="visual interactive-visual"
+    data-visual="1"
+  >
+
+    <img
+      src="images/chapitre30/Visuel-1.PNG"
+      alt="Le véritable groupe avance à pied vers la Cueva en binômes pendant que les billes cartographient le terrain"
+      loading="lazy"
+    >
+
+  </div>
+
+
+  <div class="text-block">
+
+    <p>
+      Approche de la Cueva
+    </p>
+
+    <p>
+      Le vrai groupe avance à pied.
+    </p>
+
+    <p>
+      Hope avec Clive.
+    </p>
+
+    <p>
+      Lucy avec Amy.
+    </p>
+
+    <p>
+      Betty avec Hale.
+    </p>
+
+    <p>
+      Anna avec Maître Lee.
+    </p>
+
+    <p>
+      Peter et Max restent légèrement en retrait dans une zone mobile de contrôle, reliés à eux.
+    </p>
+
+    <p>
+      Les billes de reconnaissance roulent régulièrement devant le groupe.
+    </p>
+
+    <p>
+      Chaque trajectoire se reconstruit instantanément en 3D sur les lunettes de Peter.
+    </p>
+
+    <p>
+      Couloirs.
+    </p>
+
+    <p>
+      Reliefs.
+    </p>
+
+    <p>
+      Variations thermiques.
+    </p>
+
+    <p>
+      Obstacles.
+    </p>
+
+    <p>
+      Clive observe.
+    </p>
+
+    <p>
+      — J’ai eu une très bonne idée.
+    </p>
+
+    <p>
+      Peter répond dans l’oreillette :
+    </p>
+
+    <p>
+      — J’ai une très bonne technologie.
+    </p>
+
+    <p>
+      — Détails.
+    </p>
+
+  </div>
+
+
+  <div class="story-path">
+
+    <button
+      class="interaction-btn real-group-trigger"
+      data-real-group="foot"
+    >
+      À pied
+    </button>
+
+    <button
+      class="interaction-btn real-group-trigger"
+      data-real-group="pairs"
+    >
+      Les binômes
+    </button>
+
+    <button
+      class="interaction-btn real-group-trigger"
+      data-real-group="balls"
+    >
+      Les billes
+    </button>
+
+    <button
+      class="interaction-btn real-group-trigger"
+      data-real-group="map"
+    >
+      Cartographie 3D
+    </button>
+
+  </div>
+
+
+  <div
+    class="reveal-box"
+    id="realGroupReveal"
+  ></div>
+
+</section>
+
+
+<!-- =====================================================
+     VISUEL 2
+     LUCY APPREND À SENTIR
+===================================================== -->
+
+<section
+  class="scene revelation-scene interaction-scene"
+  id="scene-4"
+>
+
+  <div
+    class="visual interactive-visual"
+    data-visual="2"
+  >
+
+    <img
+      src="images/chapitre30/Visuel-2.PNG"
+      alt="Lucy marche avec Amy dans l'obscurité et tente de percevoir les ennemis avant de les voir"
+      loading="lazy"
+    >
+
+  </div>
+
+
+  <div class="text-block dialogue">
+
+    <p>
+      Lucy avance à côté d’Amy.
+    </p>
+
+    <p>
+      Silence.
+    </p>
+
+    <p>
+      Puis :
+    </p>
+
+    <p>
+      — Tu sens quelque chose ?
+    </p>
+
+    <p>
+      Amy ne la regarde pas.
+    </p>
+
+    <p>
+      — Oui.
+    </p>
+
+    <p>
+      — Quoi ?
+    </p>
+
+    <p>
+      — Trois personnes devant.
+    </p>
+
+    <p>
+      Lucy observe.
+    </p>
+
+    <p>
+      Rien.
+    </p>
+
+    <p>
+      — Je ne vois rien.
+    </p>
+
+    <p>
+      Amy :
+    </p>
+
+    <p>
+      — Justement.
+    </p>
+
+    <p>
+      Lucy ferme les yeux quelques secondes.
+    </p>
+
+    <p>
+      Respire.
+    </p>
+
+    <p>
+      Leçon de Lee.
+    </p>
+
+    <p>
+      Pas voir.
+    </p>
+
+    <p>
+      Sentir.
+    </p>
+
+    <p>
+      Un déplacement d’air.
+    </p>
+
+    <p>
+      Une variation.
+    </p>
+
+    <p>
+      Une tension.
+    </p>
+
+    <p>
+      Elle ouvre les yeux.
+    </p>
+
+    <p>
+      — À gauche.
+    </p>
+
+    <p>
+      Amy sourit légèrement.
+    </p>
+
+    <p>
+      — Deux.
+    </p>
+
+    <p>
+      Lucy tourne la tête.
+    </p>
+
+    <p>
+      — Et le troisième ?
+    </p>
+
+    <p>
+      — Il attend que tu regardes les deux premiers.
+    </p>
+
+    <p>
+      Lucy sourit.
+    </p>
+
+    <p>
+      — Très drôle.
+    </p>
+
+  </div>
+
+
+  <div class="observation-buttons">
+
+    <button
+      class="interaction-btn lucy-perception-trigger"
+      data-lucy-perception="air"
+    >
+      Déplacement d’air
+    </button>
+
+    <button
+      class="interaction-btn lucy-perception-trigger"
+      data-lucy-perception="tension"
+    >
+      Tension
+    </button>
+
+    <button
+      class="interaction-btn lucy-perception-trigger"
+      data-lucy-perception="left"
+    >
+      Deux à gauche
+    </button>
+
+    <button
+      class="interaction-btn lucy-perception-trigger"
+      data-lucy-perception="third"
+    >
+      Le troisième
+    </button>
+
+  </div>
+
+
+  <div
+    class="reveal-box"
+    id="lucyPerceptionReveal"
+  ></div>
+
+</section>
+
+
+<!-- =====================================================
+     INTERACTION 4
+     EMBRANCHEMENTS
+===================================================== -->
+
+<section
+  class="scene investigation-scene interaction-scene"
+  id="scene-5"
+>
+
+  <div class="text-block dialogue">
+
+    <p>
+      Cueva — Zone intermédiaire
+    </p>
+
+    <p>
+      Hope lance une bille.
+    </p>
+
+    <p>
+      Elle roule.
+    </p>
+
+    <p>
+      Disparaît dans l’obscurité.
+    </p>
+
+    <p>
+      Peter reçoit immédiatement la cartographie.
+    </p>
+
+    <p>
+      — Trois embranchements.
+    </p>
+
+    <p>
+      — Deux surveillés.
+    </p>
+
+    <p>
+      — Un libre.
+    </p>
+
+    <p>
+      Clive :
+    </p>
+
+    <p>
+      — Donc le troisième est probablement piégé.
+    </p>
+
+    <p>
+      Hope :
+    </p>
+
+    <p>
+      — Enfin quelqu’un qui apprend.
+    </p>
+
+    <p>
+      Clive :
+    </p>
+
+    <p>
+      — Je suis extrêmement adaptable.
+    </p>
+
+    <p>
+      Il s’accroupit.
+    </p>
+
+    <p>
+      Observe le sol.
+    </p>
+
+    <p>
+      Un fil presque invisible.
+    </p>
+
+    <p>
+      Puis un second.
+    </p>
+
+    <p>
+      — Voilà.
+    </p>
+
+    <p>
+      Hope sourit.
+    </p>
+
+    <p>
+      — Je commence à comprendre pourquoi Lucy te garde.
+    </p>
+
+    <p>
+      Clive :
+    </p>
+
+    <p>
+      — Je lui dirai.
+    </p>
+
+    <p>
+      — Ne fais surtout pas ça.
+    </p>
+
+  </div>
+
+
+  <div class="story-path">
+
+    <button
+      class="interaction-btn branches-trigger"
+      data-branches="three"
+    >
+      Trois embranchements
+    </button>
+
+    <button
+      class="interaction-btn branches-trigger"
+      data-branches="watched"
+    >
+      Deux surveillés
+    </button>
+
+    <button
+      class="interaction-btn branches-trigger"
+      data-branches="free"
+    >
+      Un libre
+    </button>
+
+    <button
+      class="interaction-btn branches-trigger"
+      data-branches="trap"
+    >
+      Le piège
+    </button>
+
+  </div>
+
+
+  <div
+    class="reveal-box"
+    id="branchesReveal"
+  ></div>
+
+</section>
+
+
+<!-- =====================================================
+     VISUEL 3
+     ARAIGNÉE JUSQU'À ROOT
+===================================================== -->
+
+<section
+  class="scene artifact-scene interaction-scene"
+  id="scene-6"
+>
+
+  <div
+    class="visual interactive-visual"
+    data-visual="3"
+  >
+
+    <img
+      src="images/chapitre30/Visuel-3.PNG"
+      alt="Une araignée mécanique rejoint Root prisonnière et lui remet une micro-pastille"
+      loading="lazy"
+    >
+
+  </div>
+
+
+  <div class="text-block">
+
+    <p>
+      Hacienda de la Sierra — Cellule de Root
+    </p>
+
+    <p>
+      Root attend.
+    </p>
+
+    <p>
+      Depuis combien de temps ?
+    </p>
+
+    <p>
+      Elle ne sait plus vraiment.
+    </p>
+
+    <p>
+      Le Maître Noir lui a laissé les fresques.
+    </p>
+
+    <p>
+      Les plans.
+    </p>
+
+    <p>
+      Les fragments.
+    </p>
+
+    <p>
+      Tout ce qu’il croit utile.
+    </p>
+
+    <p>
+      Elle, elle compte.
+    </p>
+
+    <p>
+      La fenêtre approche.
+    </p>
+
+    <p>
+      Quarante-sept minutes.
+    </p>
+
+    <p>
+      Pas plus.
+    </p>
+
+    <p>
+      Un bruit minuscule.
+    </p>
+
+    <p>
+      Root baisse les yeux.
+    </p>
+
+    <p>
+      Quelque chose bouge dans l’ombre.
+    </p>
+
+    <p>
+      Une araignée.
+    </p>
+
+    <p>
+      Très petite.
+    </p>
+
+    <p>
+      Métallique.
+    </p>
+
+    <p>
+      Elle manque de sourire.
+    </p>
+
+    <p>
+      Peter.
+    </p>
+
+    <p>
+      L’araignée grimpe le long du mur.
+    </p>
+
+    <p>
+      Puis sur sa botte.
+    </p>
+
+    <p>
+      Root reste parfaitement immobile.
+    </p>
+
+    <p>
+      Un Gardien est posté à quelques mètres.
+    </p>
+
+    <p>
+      L’araignée atteint sa main.
+    </p>
+
+    <p>
+      Dépose une micro-pastille.
+    </p>
+
+    <p>
+      Plus petite qu’un grain de riz.
+    </p>
+
+    <p>
+      Root la récupère.
+    </p>
+
+    <p>
+      Puis attend.
+    </p>
+
+    <p>
+      Encore.
+    </p>
+
+    <p>
+      Le Gardien se retourne.
+    </p>
+
+    <p>
+      Root glisse la pastille derrière son oreille.
+    </p>
+
+    <p>
+      Silence.
+    </p>
+
+    <p>
+      Puis une vibration presque imperceptible.
+    </p>
+
+    <p>
+      — Root ?
+    </p>
+
+    <p>
+      Elle ferme les yeux.
+    </p>
+
+    <p class="impact-text">
+      Max.
+    </p>
+
+    <p>
+      Sa voix.
+    </p>
+
+    <p class="name-reveal">
+      — Enfin.
+    </p>
+
+  </div>
+
+
+  <div class="observation-buttons">
+
+    <button
+      class="interaction-btn spider-contact-trigger"
+      data-spider-contact="spider"
+    >
+      L’araignée
+    </button>
+
+    <button
+      class="interaction-btn spider-contact-trigger"
+      data-spider-contact="pellet"
+    >
+      Micro-pastille
+    </button>
+
+    <button
+      class="interaction-btn spider-contact-trigger"
+      data-spider-contact="hidden"
+    >
+      Contact discret
+    </button>
+
+    <button
+      class="interaction-btn spider-contact-trigger"
+      data-spider-contact="max"
+    >
+      Max
+    </button>
+
+  </div>
+
+
+  <div
+    class="reveal-box"
+    id="spiderContactReveal"
+  ></div>
+
+</section>
+
+
+<!-- =====================================================
+     INTERACTION 6
+     CONTACT ROOT / MAX / PETER
+===================================================== -->
+
+<section
+  class="scene revelation-scene interaction-scene"
+  id="scene-7"
+>
+
+  <div class="text-block dialogue">
+
+    <p>
+      Root ne bouge presque pas.
+    </p>
+
+    <p>
+      — Vous êtes où ?
+    </p>
+
+    <p>
+      Peter répond très bas.
+    </p>
+
+    <p>
+      — Proches.
+    </p>
+
+    <p>
+      — Trop proches.
+    </p>
+
+    <p>
+      Max :
+    </p>
+
+    <p>
+      — Tu vas bien ?
+    </p>
+
+    <p>
+      Root ferme les yeux une seconde.
+    </p>
+
+    <p>
+      — Non.
+    </p>
+
+    <p>
+      Puis :
+    </p>
+
+    <p>
+      — Mais je vais tenir.
+    </p>
+
+    <p>
+      Max :
+    </p>
+
+    <p>
+      — On arrive.
+    </p>
+
+    <p>
+      — N’avancez pas n’importe comment.
+    </p>
+
+    <p>
+      Peter :
+    </p>
+
+    <p>
+      — Pourquoi ?
+    </p>
+
+    <p>
+      Root regarde les fresques.
+    </p>
+
+    <p class="impact-text">
+      — Le dispositif est mal monté.
+    </p>
+
+    <p>
+      Silence.
+    </p>
+
+    <p>
+      — Répète.
+    </p>
+
+    <p>
+      — Mal monté.
+    </p>
+
+    <p>
+      — Deux axes sont inversés.
+    </p>
+
+    <p>
+      — Et les quatre fonctions ne sont pas placées correctement.
+    </p>
+
+  </div>
+
+
+  <div class="story-path">
+
+    <button
+      class="interaction-btn secret-contact-trigger"
+      data-secret-contact="close"
+    >
+      Ils sont proches
+    </button>
+
+    <button
+      class="interaction-btn secret-contact-trigger"
+      data-secret-contact="hold"
+    >
+      Root va tenir
+    </button>
+
+    <button
+      class="interaction-btn secret-contact-trigger"
+      data-secret-contact="wrong"
+    >
+      Mal monté
+    </button>
+
+    <button
+      class="interaction-btn secret-contact-trigger"
+      data-secret-contact="axes"
+    >
+      Deux axes inversés
+    </button>
+
+  </div>
+
+
+  <div
+    class="reveal-box"
+    id="secretContactReveal"
+  ></div>
+
+</section>
+
+
+<!-- =====================================================
+     VISUEL 4
+     POSITIONS EXACTES
+===================================================== -->
+
+<section
+  class="scene artifact-scene interaction-scene"
+  id="scene-8"
+>
+
+  <div
+    class="visual interactive-visual"
+    data-visual="4"
+  >
+
+    <img
+      src="images/chapitre30/Visuel-4.PNG"
+      alt="Root explique à Peter et Max les quatre positions exactes du dispositif"
+      loading="lazy"
+    >
+
+  </div>
+
+
+  <div class="text-block dialogue">
+
+    <p>
+      Peter :
+    </p>
+
+    <p>
+      — Position exacte ?
+    </p>
+
+    <p>
+      Root murmure :
+    </p>
+
+    <p class="name-reveal">
+      — Nord : moi.
+    </p>
+
+    <p>
+      — Sud : Anna.
+    </p>
+
+    <p>
+      — Est : Hope.
+    </p>
+
+    <p>
+      — Ouest : Lucy.
+    </p>
+
+    <p>
+      Max répète mentalement.
+    </p>
+
+    <p>
+      — Et les autres ?
+    </p>
+
+    <p>
+      Root :
+    </p>
+
+    <p>
+      — Pas indispensables au cercle.
+    </p>
+
+    <p>
+      — Mais ils ont leur rôle autour.
+    </p>
+
+    <p>
+      Puis :
+    </p>
+
+    <p class="impact-text">
+      — Surtout, ne corrigez rien avant mon signal.
+    </p>
+
+  </div>
+
+
+  <div class="story-path">
+
+    <button
+      class="interaction-btn exact-positions-trigger"
+      data-exact-positions="north"
+    >
+      Nord — Root
+    </button>
+
+    <button
+      class="interaction-btn exact-positions-trigger"
+      data-exact-positions="south"
+    >
+      Sud — Anna
+    </button>
+
+    <button
+      class="interaction-btn exact-positions-trigger"
+      data-exact-positions="east"
+    >
+      Est — Hope
+    </button>
+
+    <button
+      class="interaction-btn exact-positions-trigger"
+      data-exact-positions="west"
+    >
+      Ouest — Lucy
+    </button>
+
+  </div>
+
+
+  <div
+    class="reveal-box"
+    id="exactPositionsReveal"
+  ></div>
+
+</section>
+
+
+<!-- =====================================================
+     INTERACTION 8
+     47 MINUTES
+===================================================== -->
+
+<section
+  class="scene revelation-scene interaction-scene"
+  id="scene-9"
+>
+
+  <div class="text-block dialogue">
+
+    <p>
+      Peter :
+    </p>
+
+    <p>
+      — Pourquoi ?
+    </p>
+
+    <p>
+      Root regarde le plafond peint.
+    </p>
+
+    <p>
+      — Parce que l’appel n’est possible qu’à une fenêtre précise.
+    </p>
+
+    <p>
+      — Combien de temps ?
+    </p>
+
+    <p>
+      Root hésite.
+    </p>
+
+    <p>
+      Puis :
+    </p>
+
+    <p class="impact-text">
+      — Quarante-sept minutes.
+    </p>
+
+    <p>
+      Silence.
+    </p>
+
+    <p>
+      Max :
+    </p>
+
+    <p>
+      — À partir de quand ?
+    </p>
+
+    <p>
+      Root regarde l’ombre projetée sur la fresque.
+    </p>
+
+    <p>
+      — Bientôt.
+    </p>
+
+    <p class="name-reveal">
+      — Très bientôt.
+    </p>
+
+  </div>
+
+
+  <div class="observation-buttons">
+
+    <button
+      class="interaction-btn window-trigger"
+      data-window="call"
+    >
+      L’appel
+    </button>
+
+    <button
+      class="interaction-btn window-trigger"
+      data-window="precise"
+    >
+      Fenêtre précise
+    </button>
+
+    <button
+      class="interaction-btn window-trigger"
+      data-window="minutes"
+    >
+      47 minutes
+    </button>
+
+    <button
+      class="interaction-btn window-trigger"
+      data-window="soon"
+    >
+      Très bientôt
+    </button>
+
+  </div>
+
+
+  <div
+    class="reveal-box"
+    id="windowReveal"
+  ></div>
+
+</section>
+
+
+<!-- =====================================================
+     APPROCHE FINALE
+===================================================== -->
+
+<section
+  class="scene investigation-scene"
+  id="scene-10"
+>
+
+  <div class="text-block dialogue">
+
+    <p>
+      Approche finale
+    </p>
+
+    <p>
+      Peter coupe la communication quelques secondes.
+    </p>
+
+    <p>
+      Max le regarde.
+    </p>
+
+    <p>
+      — Tu as tout ?
+    </p>
+
+    <p>
+      — Oui.
+    </p>
+
+    <p>
+      — Tu crois Root ?
+    </p>
+
+    <p>
+      Peter le fixe.
+    </p>
+
+    <p>
+      — Toujours.
+    </p>
+
+    <p>
+      Puis il affiche le dispositif en 3D.
+    </p>
+
+    <p>
+      Nord.
+    </p>
+
+    <p>
+      Sud.
+    </p>
+
+    <p>
+      Est.
+    </p>
+
+    <p>
+      Ouest.
+    </p>
+
+    <p>
+      Les quatre positions apparaissent.
+    </p>
+
+    <p>
+      Max murmure :
+    </p>
+
+    <p>
+      — Donc il a tout monté presque correctement.
+    </p>
+
+    <p>
+      Peter :
+    </p>
+
+    <p>
+      — Presque.
+    </p>
+
+    <p class="impact-text">
+      — Et dans ce cas-là, “presque” est notre meilleur ami.
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     VISUEL 5
+     PROGRESSION DES BINÔMES
+===================================================== -->
+
+<section
+  class="scene danger-scene interaction-scene"
+  id="scene-11"
+>
+
+  <div
+    class="visual interactive-visual"
+    data-visual="5"
+  >
+
+    <img
+      src="images/chapitre30/Visuel-5.PNG"
+      alt="Les binômes progressent dans les galeries de la Cueva et affrontent les Gardiens"
+      loading="lazy"
+    >
+
+  </div>
+
+
+  <div class="text-block dialogue">
+
+    <p>
+      Cueva — Galerie des Gardiens
+    </p>
+
+    <p>
+      Betty suit Hale.
+    </p>
+
+    <p>
+      Un Gardien surgit.
+    </p>
+
+    <p>
+      Hale le neutralise.
+    </p>
+
+    <p>
+      Un second arrive.
+    </p>
+
+    <p>
+      Betty voit sa main.
+    </p>
+
+    <p>
+      Un injecteur.
+    </p>
+
+    <p>
+      — Hale !
+    </p>
+
+    <p>
+      Trop tard.
+    </p>
+
+    <p>
+      Le Gardien tente de frapper.
+    </p>
+
+    <p>
+      Betty utilise le module appris à l’entraînement.
+    </p>
+
+    <p>
+      Pas pour gagner.
+    </p>
+
+    <p>
+      Pour survivre.
+    </p>
+
+    <p>
+      Elle dévie juste assez.
+    </p>
+
+    <p>
+      Hale intervient.
+    </p>
+
+    <p>
+      Le Gardien tombe.
+    </p>
+
+    <p>
+      Betty respire fort.
+    </p>
+
+    <p>
+      Hale la regarde.
+    </p>
+
+    <p>
+      — Ça va ?
+    </p>
+
+    <p>
+      — Non.
+    </p>
+
+    <p>
+      Puis :
+    </p>
+
+    <p class="impact-text">
+      — Mais je suis encore debout.
+    </p>
+
+    <p>
+      Hale acquiesce.
+    </p>
+
+    <p>
+      — C’est le but.
+    </p>
+
+  </div>
+
+
+  <div class="observation-buttons">
+
+    <button
+      class="interaction-btn betty-survival-trigger"
+      data-betty-survival="injector"
+    >
+      L’injecteur
+    </button>
+
+    <button
+      class="interaction-btn betty-survival-trigger"
+      data-betty-survival="training"
+    >
+      L’entraînement
+    </button>
+
+    <button
+      class="interaction-btn betty-survival-trigger"
+      data-betty-survival="survive"
+    >
+      Survivre
+    </button>
+
+    <button
+      class="interaction-btn betty-survival-trigger"
+      data-betty-survival="standing"
+    >
+      Encore debout
+    </button>
+
+  </div>
+
+
+  <div
+    class="reveal-box"
+    id="bettySurvivalReveal"
+  ></div>
+
+</section>
+
+
+<!-- =====================================================
+     INTERACTION 10
+     LUCY ANTICIPE
+===================================================== -->
+
+<section
+  class="scene danger-scene interaction-scene"
+  id="scene-12"
+>
+
+  <div class="text-block dialogue">
+
+    <p>
+      Lucy / Amy
+    </p>
+
+    <p>
+      Lucy et Amy avancent dans un couloir étroit.
+    </p>
+
+    <p>
+      Deux Gardiens surgissent.
+    </p>
+
+    <p>
+      Amy frappe.
+    </p>
+
+    <p>
+      Lucy accompagne.
+    </p>
+
+    <p>
+      Pas de panique.
+    </p>
+
+    <p>
+      Pas de poursuite inutile.
+    </p>
+
+    <p>
+      Elles gardent leur axe.
+    </p>
+
+    <p>
+      Puis un troisième les contourne.
+    </p>
+
+    <p>
+      Lucy ferme les yeux une fraction de seconde.
+    </p>
+
+    <p>
+      Sensation.
+    </p>
+
+    <p>
+      Déplacement.
+    </p>
+
+    <p>
+      Elle pivote avant le coup.
+    </p>
+
+    <p>
+      Amy la voit.
+    </p>
+
+    <p>
+      — Bien.
+    </p>
+
+    <p>
+      Lucy sourit.
+    </p>
+
+    <p class="name-reveal">
+      — J’apprends.
+    </p>
+
+  </div>
+
+
+  <div class="story-path">
+
+    <button
+      class="interaction-btn lucy-anticipates-trigger"
+      data-lucy-anticipates="axis"
+    >
+      Garder l’axe
+    </button>
+
+    <button
+      class="interaction-btn lucy-anticipates-trigger"
+      data-lucy-anticipates="sense"
+    >
+      Sensation
+    </button>
+
+    <button
+      class="interaction-btn lucy-anticipates-trigger"
+      data-lucy-anticipates="move"
+    >
+      Déplacement
+    </button>
+
+    <button
+      class="interaction-btn lucy-anticipates-trigger"
+      data-lucy-anticipates="before"
+    >
+      Avant le coup
+    </button>
+
+  </div>
+
+
+  <div
+    class="reveal-box"
+    id="lucyAnticipatesReveal"
+  ></div>
+
+</section>
+
+
+<!-- =====================================================
+     INTERACTION 11
+     LA LAME CHAUFFE
+===================================================== -->
+
+<section
+  class="scene revelation-scene interaction-scene"
+  id="scene-13"
+>
+
+  <div class="text-block dialogue">
+
+    <p>
+      Puis sa main chauffe.
+    </p>
+
+    <p>
+      Les symboles apparaissent sous sa peau.
+    </p>
+
+    <p>
+      Amy le remarque.
+    </p>
+
+    <p>
+      — La lame.
+    </p>
+
+    <p>
+      Lucy regarde devant.
+    </p>
+
+    <p class="impact-text">
+      — On approche.
+    </p>
+
+  </div>
+
+
+  <div class="observation-buttons">
+
+    <button
+      class="interaction-btn blade-near-trigger"
+      data-blade-near="heat"
+    >
+      La chaleur
+    </button>
+
+    <button
+      class="interaction-btn blade-near-trigger"
+      data-blade-near="symbols"
+    >
+      Les symboles
+    </button>
+
+    <button
+      class="interaction-btn blade-near-trigger"
+      data-blade-near="blade"
+    >
+      La lame
+    </button>
+
+    <button
+      class="interaction-btn blade-near-trigger"
+      data-blade-near="near"
+    >
+      On approche
+    </button>
+
+  </div>
+
+
+  <div
+    class="reveal-box"
+    id="bladeNearReveal"
+  ></div>
+
+</section>
+
+
+<!-- =====================================================
+     HOPE / CLIVE
+===================================================== -->
+
+<section
+  class="scene investigation-scene"
+  id="scene-14"
+>
+
+  <div class="text-block dialogue">
+
+    <p>
+      Hope / Clive
+    </p>
+
+    <p>
+      Clive s’arrête devant une porte ancienne.
+    </p>
+
+    <p>
+      — Fermée.
+    </p>
+
+    <p>
+      Hope :
+    </p>
+
+    <p>
+      — Quelle analyse.
+    </p>
+
+    <p>
+      — J’allais dire autre chose.
+    </p>
+
+    <p>
+      Il sort une petite araignée.
+    </p>
+
+    <p>
+      La glisse dans une fissure.
+    </p>
+
+    <p>
+      Peter reçoit l’image.
+    </p>
+
+    <p>
+      — Pièce vide.
+    </p>
+
+    <p>
+      — Deux gardes derrière la deuxième cloison.
+    </p>
+
+    <p>
+      Clive :
+    </p>
+
+    <p>
+      — Voilà.
+    </p>
+
+    <p>
+      Hope :
+    </p>
+
+    <p>
+      — Tu veux les endormir ?
+    </p>
+
+    <p>
+      Clive :
+    </p>
+
+    <p>
+      — Absolument.
+    </p>
+
+    <p>
+      Une deuxième araigné passe.
+    </p>
+
+    <p>
+      Quelques secondes.
+    </p>
+
+    <p>
+      Deux corps tombent hors champ.
+    </p>
+
+    <p>
+      Hope le regarde.
+    </p>
+
+    <p>
+      — Tu prends beaucoup trop de plaisir à ça.
+    </p>
+
+    <p>
+      — J’appelle ça de l’efficacité.
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     INTERACTION 12
+     ANNA SENT LE SEUIL
+===================================================== -->
+
+<section
+  class="scene revelation-scene interaction-scene"
+  id="scene-15"
+>
+
+  <div class="text-block dialogue">
+
+    <p>
+      Anna / Maître Lee
+    </p>
+
+    <p>
+      Anna marche en silence.
+    </p>
+
+    <p>
+      Puis :
+    </p>
+
+    <p>
+      — Je sens quelque chose.
+    </p>
+
+    <p>
+      Lee la regarde.
+    </p>
+
+    <p>
+      — Quoi ?
+    </p>
+
+    <p>
+      — Je ne sais pas.
+    </p>
+
+    <p>
+      Elle pose une main sur sa poitrine.
+    </p>
+
+    <p>
+      — Comme…
+    </p>
+
+    <p>
+      — comme si je reconnaissais le lieu.
+    </p>
+
+    <p>
+      Lee ne répond pas immédiatement.
+    </p>
+
+    <p>
+      — Vous êtes déjà venue ici ?
+    </p>
+
+    <p>
+      — Jamais.
+    </p>
+
+    <p>
+      — Alors ne cherchez pas à expliquer.
+    </p>
+
+    <p>
+      — Observez.
+    </p>
+
+    <p>
+      Anna ferme les yeux.
+    </p>
+
+    <p>
+      Respire.
+    </p>
+
+    <p>
+      Puis ouvre les yeux.
+    </p>
+
+    <p>
+      — C’est devant.
+    </p>
+
+    <p>
+      Lee acquiesce.
+    </p>
+
+    <p class="name-reveal">
+      — Le Pont reconnaît peut-être le seuil avant de comprendre pourquoi.
+    </p>
+
+    <p>
+      Anna n’aime pas vraiment la phrase.
+    </p>
+
+    <p>
+      Mais elle avance.
+    </p>
+
+  </div>
+
+
+  <div class="story-path">
+
+    <button
+      class="interaction-btn bridge-sense-trigger"
+      data-bridge-sense="feel"
+    >
+      Elle ressent
+    </button>
+
+    <button
+      class="interaction-btn bridge-sense-trigger"
+      data-bridge-sense="recognize"
+    >
+      Reconnaître
+    </button>
+
+    <button
+      class="interaction-btn bridge-sense-trigger"
+      data-bridge-sense="ahead"
+    >
+      C’est devant
+    </button>
+
+    <button
+      class="interaction-btn bridge-sense-trigger"
+      data-bridge-sense="threshold"
+    >
+      Le seuil
+    </button>
+
+  </div>
+
+
+  <div
+    class="reveal-box"
+    id="bridgeSenseReveal"
+  ></div>
+
+</section>
+
+
+<!-- =====================================================
+     VISUEL 6
+     ROOT / MAÎTRE NOIR
+===================================================== -->
+
+<section
+  class="scene dark-mark-scene interaction-scene"
+  id="scene-16"
+>
+
+  <div
+    class="visual interactive-visual"
+    data-visual="6"
+  >
+
+    <img
+      src="images/chapitre30/Visuel-6.PNG"
+      alt="Root confronte le Maître Noir devant le dispositif mal assemblé"
+      loading="lazy"
+    >
+
+  </div>
+
+
+  <div class="text-block dialogue">
+
+    <p>
+      Hacienda de la Sierra — Root et le Maître Noir
+    </p>
+
+    <p>
+      Le Maître Noir entre.
+    </p>
+
+    <p>
+      — Ils sont là.
+    </p>
+
+    <p>
+      Root ne réagit pas.
+    </p>
+
+    <p>
+      — Vous ne semblez pas surprise.
+    </p>
+
+    <p>
+      — Vous les avez invités.
+    </p>
+
+    <p>
+      — Et ils sont venus.
+    </p>
+
+    <p>
+      — Évidemment.
+    </p>
+
+    <p>
+      Le Maître Noir sourit.
+    </p>
+
+    <p>
+      — Tous ?
+    </p>
+
+    <p>
+      Root le regarde.
+    </p>
+
+    <p class="impact-text">
+      — Vous ne savez pas.
+    </p>
+
+    <p>
+      Son sourire disparaît légèrement.
+    </p>
+
+    <p>
+      — Pardon ?
+    </p>
+
+    <p>
+      — Vous ne savez toujours pas qui fait quoi.
+    </p>
+
+    <p>
+      Silence.
+    </p>
+
+    <p>
+      Root poursuit :
+    </p>
+
+    <p>
+      — C’est pour ça que vous avez demandé tout le monde.
+    </p>
+
+    <p>
+      Le Maître Noir s’approche.
+    </p>
+
+    <p>
+      — Et vous allez me l’expliquer.
+    </p>
+
+    <p>
+      Root sourit.
+    </p>
+
+    <p>
+      — Non.
+    </p>
+
+  </div>
+
+
+  <div class="observation-buttons">
+
+    <button
+      class="interaction-btn master-ignorance-trigger"
+      data-master-ignorance="all"
+    >
+      Tous ?
+    </button>
+
+    <button
+      class="interaction-btn master-ignorance-trigger"
+      data-master-ignorance="unknown"
+    >
+      Vous ne savez pas
+    </button>
+
+    <button
+      class="interaction-btn master-ignorance-trigger"
+      data-master-ignorance="roles"
+    >
+      Qui fait quoi
+    </button>
+
+    <button
+      class="interaction-btn master-ignorance-trigger"
+      data-master-ignorance="everyone"
+    >
+      Pourquoi tout le monde
+    </button>
+
+  </div>
+
+
+  <div
+    class="reveal-box"
+    id="masterIgnoranceReveal"
+  ></div>
+
+</section>
+
+
+<section
+  class="scene dark-mark-scene"
+  id="scene-17"
+>
+
+  <div class="text-block dialogue">
+
+    <p>
+      Il montre le dispositif.
+    </p>
+
+    <p>
+      — Vous finirez par coopérer.
+    </p>
+
+    <p>
+      Root regarde les axes mal placés.
+    </p>
+
+    <p>
+      Puis le ciel peint.
+    </p>
+
+    <p>
+      Puis lui.
+    </p>
+
+    <p>
+      — Vous avez déjà commencé sans moi.
+    </p>
+
+    <p>
+      — Et ?
+    </p>
+
+    <p>
+      — Et vous avez mal commencé.
+    </p>
+
+    <p>
+      Le Maître Noir se fige.
+    </p>
+
+    <p>
+      Root savoure juste assez.
+    </p>
+
+    <p class="name-reveal">
+      — Enfin quelque chose que vous ne saviez pas.
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     INTERACTION 14
+     CODE DE ROOT
+===================================================== -->
+
+<section
+  class="scene investigation-scene interaction-scene"
+  id="scene-18"
+>
+
+  <div class="text-block dialogue">
+
+    <p>
+      Salle de contrôle mobile
+    </p>
+
+    <p>
+      Peter reçoit une impulsion de l’araignée.
+    </p>
+
+    <p>
+      Deux taps.
+    </p>
+
+    <p>
+      Puis un.
+    </p>
+
+    <p>
+      Code.
+    </p>
+
+    <p>
+      Max :
+    </p>
+
+    <p>
+      — Qu’est-ce qu’elle dit ?
+    </p>
+
+    <p>
+      Peter :
+    </p>
+
+    <p>
+      — Danger proche.
+    </p>
+
+    <p>
+      Puis trois taps.
+    </p>
+
+    <p>
+      — Et elle confirme qu’il ne connaît pas encore les positions exactes.
+    </p>
+
+    <p>
+      Max sourit.
+    </p>
+
+    <p>
+      — Donc Root continue de travailler pour nous.
+    </p>
+
+    <p>
+      Peter :
+    </p>
+
+    <p class="impact-text">
+      — Comme toujours.
+    </p>
+
+  </div>
+
+
+  <div class="story-path">
+
+    <button
+      class="interaction-btn vibration-code-trigger"
+      data-vibration-code="two-one"
+    >
+      Deux puis un
+    </button>
+
+    <button
+      class="interaction-btn vibration-code-trigger"
+      data-vibration-code="danger"
+    >
+      Danger proche
+    </button>
+
+    <button
+      class="interaction-btn vibration-code-trigger"
+      data-vibration-code="three"
+    >
+      Trois taps
+    </button>
+
+    <button
+      class="interaction-btn vibration-code-trigger"
+      data-vibration-code="positions"
+    >
+      Positions inconnues
+    </button>
+
+  </div>
+
+
+  <div
+    class="reveal-box"
+    id="vibrationCodeReveal"
+  ></div>
+
+</section>
+
+
+<!-- =====================================================
+     VISUEL 7
+     CONVERGENCE
+===================================================== -->
+
+<section
+  class="scene unity-scene interaction-scene"
+  id="scene-19"
+>
+
+  <div
+    class="visual interactive-visual"
+    data-visual="7"
+  >
+
+    <img
+      src="images/chapitre30/Visuel-7.PNG"
+      alt="Le groupe se rassemble devant le grand accès de la Cueva avant d'entrer dans la cavité"
+      loading="lazy"
+    >
+
+  </div>
+
+
+  <div class="text-block dialogue">
+
+    <p>
+      Grand accès de la Cueva
+    </p>
+
+    <p>
+      Tout le groupe converge.
+    </p>
+
+    <p>
+      Pas encore dans la grande cavité.
+    </p>
+
+    <p>
+      Mais juste avant.
+    </p>
+
+    <p>
+      Hope retrouve Lucy.
+    </p>
+
+    <p>
+      Betty retrouve Anna.
+    </p>
+
+    <p>
+      Hale vérifie tout le monde.
+    </p>
+
+    <p>
+      Amy reste volontairement en retrait.
+    </p>
+
+    <p>
+      Toujours hors des axes principaux.
+    </p>
+
+    <p>
+      Clive rejoint Peter sur le réseau.
+    </p>
+
+    <p>
+      Max serre le bracelet de Root.
+    </p>
+
+    <p>
+      Maître Lee observe chacun.
+    </p>
+
+    <p>
+      — À partir d’ici…
+    </p>
+
+    <p>
+      Tous se taisent.
+    </p>
+
+    <p class="impact-text">
+      — Plus de séparation.
+    </p>
+
+    <p>
+      Lucy regarde Amy.
+    </p>
+
+    <p>
+      — D’accord.
+    </p>
+
+    <p>
+      Hope regarde Clive.
+    </p>
+
+    <p>
+      — D’accord.
+    </p>
+
+    <p>
+      Betty regarde Hale.
+    </p>
+
+    <p>
+      — D’accord.
+    </p>
+
+    <p>
+      Anna regarde Lee.
+    </p>
+
+    <p>
+      — D’accord.
+    </p>
+
+  </div>
+
+
+  <div class="observation-buttons">
+
+    <button
+      class="interaction-btn convergence-trigger"
+      data-convergence="together"
+    >
+      Tout le groupe
+    </button>
+
+    <button
+      class="interaction-btn convergence-trigger"
+      data-convergence="amy"
+    >
+      Amy en retrait
+    </button>
+
+    <button
+      class="interaction-btn convergence-trigger"
+      data-convergence="bracelet"
+    >
+      Bracelet de Root
+    </button>
+
+    <button
+      class="interaction-btn convergence-trigger"
+      data-convergence="separation"
+    >
+      Plus de séparation
+    </button>
+
+  </div>
+
+
+  <div
+    class="reveal-box"
+    id="convergenceReveal"
+  ></div>
+
+</section>
+
+
+<!-- =====================================================
+     INTERACTION 15
+     DOUZE MINUTES
+===================================================== -->
+
+<section
+  class="scene revelation-scene interaction-scene"
+  id="scene-20"
+>
+
+  <div class="text-block dialogue">
+
+    <p>
+      Peter :
+    </p>
+
+    <p class="impact-text">
+      — La fenêtre commence dans douze minutes.
+    </p>
+
+    <p>
+      Max :
+    </p>
+
+    <p>
+      — Tu es sûr ?
+    </p>
+
+    <p>
+      — Root aussi.
+    </p>
+
+    <p>
+      Silence.
+    </p>
+
+    <p class="name-reveal">
+      Douze minutes.
+    </p>
+
+  </div>
+
+
+  <div class="story-path">
+
+    <button
+      class="interaction-btn twelve-minutes-trigger"
+      data-twelve-minutes="window"
+    >
+      La fenêtre
+    </button>
+
+    <button
+      class="interaction-btn twelve-minutes-trigger"
+      data-twelve-minutes="twelve"
+    >
+      Douze minutes
+    </button>
+
+    <button
+      class="interaction-btn twelve-minutes-trigger"
+      data-twelve-minutes="root"
+    >
+      Root confirme
+    </button>
+
+    <button
+      class="interaction-btn twelve-minutes-trigger"
+      data-twelve-minutes="countdown"
+    >
+      Compte à rebours
+    </button>
+
+  </div>
+
+
+  <div
+    class="reveal-box"
+    id="twelveMinutesReveal"
+  ></div>
+
+</section>
+
+
+<!-- =====================================================
+     VISUEL 8
+     GRANDE CAVITÉ
+===================================================== -->
+
+<section
+  class="scene revelation-scene"
+  id="scene-21"
+>
+
+  <div
+    class="visual interactive-visual"
+    data-visual="8"
+  >
+
+    <img
+      src="images/chapitre30/Visuel-8.PNG"
+      alt="Le groupe entre dans la grande cavité où Root et le Maître Noir attendent près du dispositif"
+      loading="lazy"
+    >
+
+  </div>
+
+
+  <div class="text-block">
+
+    <p>
+      Grande cavité
+    </p>
+
+    <p>
+      Ils entrent.
+    </p>
+
+    <p>
+      Lentement.
+    </p>
+
+    <p>
+      Le dispositif est là.
+    </p>
+
+    <p>
+      Immense.
+    </p>
+
+    <p>
+      Plus impressionnant encore que la première fois.
+    </p>
+
+    <p>
+      Les pierres anciennes.
+    </p>
+
+    <p>
+      Les copies.
+    </p>
+
+    <p>
+      Les anneaux.
+    </p>
+
+    <p>
+      Les structures modernes.
+    </p>
+
+    <p>
+      Les générateurs.
+    </p>
+
+    <p>
+      Et au centre…
+    </p>
+
+    <p class="name-reveal">
+      Root.
+    </p>
+
+    <p>
+      Debout.
+    </p>
+
+    <p>
+      Libre en apparence.
+    </p>
+
+    <p>
+      Mais entourée.
+    </p>
+
+    <p>
+      Le Maître Noir à quelques mètres.
+    </p>
+
+  </div>
+
+</section>
+
+
+<section
+  class="scene unity-scene"
+  id="scene-22"
+>
+
+  <div class="text-block">
+
+    <p>
+      Max s’arrête.
+    </p>
+
+    <p>
+      Root le voit.
+    </p>
+
+    <p>
+      Son visage change.
+    </p>
+
+    <p>
+      À peine.
+    </p>
+
+    <p>
+      Puis elle aperçoit Anna.
+    </p>
+
+    <p>
+      Hope.
+    </p>
+
+    <p>
+      Lucy.
+    </p>
+
+    <p>
+      Betty.
+    </p>
+
+    <p>
+      Peter.
+    </p>
+
+    <p>
+      Clive.
+    </p>
+
+    <p>
+      Hale.
+    </p>
+
+    <p>
+      Lee.
+    </p>
+
+    <p>
+      Amy n’est pas visible.
+    </p>
+
+    <p>
+      Bien.
+    </p>
+
+    <p class="impact-text">
+      Très bien.
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     LE MAÎTRE NOIR OBSERVE
+===================================================== -->
+
+<section
+  class="scene dark-mark-scene"
+  id="scene-23"
+>
+
+  <div class="text-block dialogue">
+
+    <p>
+      Le Maître Noir ouvre les bras.
+    </p>
+
+    <p>
+      — Vous êtes venus.
+    </p>
+
+    <p>
+      Personne ne répond.
+    </p>
+
+    <p>
+      — Tous.
+    </p>
+
+    <p>
+      Hope le regarde.
+    </p>
+
+    <p>
+      — Vous aviez posé une condition.
+    </p>
+
+    <p>
+      Il sourit.
+    </p>
+
+    <p>
+      — J’apprécie les gens qui respectent les accords.
+    </p>
+
+    <p>
+      Root lève les yeux au ciel.
+    </p>
+
+  </div>
+
+</section>
+
+
+<section
+  class="scene dark-mark-scene"
+  id="scene-24"
+>
+
+  <div class="text-block">
+
+    <p>
+      Le Maître Noir regarde Anna.
+    </p>
+
+    <p>
+      Puis Lucy.
+    </p>
+
+    <p>
+      Puis Hope.
+    </p>
+
+    <p>
+      Puis Peter.
+    </p>
+
+    <p>
+      Max.
+    </p>
+
+    <p>
+      Betty.
+    </p>
+
+    <p>
+      Lee.
+    </p>
+
+    <p>
+      Clive.
+    </p>
+
+    <p>
+      Hale.
+    </p>
+
+    <p>
+      Il cherche.
+    </p>
+
+    <p>
+      Quelque chose lui manque.
+    </p>
+
+    <p>
+      Ou quelqu’un.
+    </p>
+
+    <p>
+      Mais il ne sait pas quoi.
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     INTERACTION 16
+     LA LAME EST LUCY
+===================================================== -->
+
+<section
+  class="scene revelation-scene interaction-scene"
+  id="scene-25"
+>
+
+  <div class="text-block">
+
+    <p>
+      Root regarde Lucy.
+    </p>
+
+    <p>
+      Puis sa main.
+    </p>
+
+    <p>
+      Elle sait déjà ce qu’elle porte.
+    </p>
+
+    <p>
+      Et cette fois, elle comprend pourquoi le Maître Noir n’a toujours pas compris le dispositif.
+    </p>
+
+    <p>
+      Il cherche encore une lame.
+    </p>
+
+    <p class="impact-text">
+      Alors que la lame est devant lui.
+    </p>
+
+    <p>
+      Elle sourit.
+    </p>
+
+    <p>
+      Le Maître Noir le remarque.
+    </p>
+
+    <p>
+      — Qu’est-ce qui vous amuse ?
+    </p>
+
+    <p>
+      Root le regarde.
+    </p>
+
+    <p>
+      — Vous avez passé vingt ans à reconstruire un dispositif.
+    </p>
+
+    <p class="name-reveal">
+      — Et vous n’avez toujours pas compris ce qu’il attend.
+    </p>
+
+    <p>
+      Silence.
+    </p>
+
+  </div>
+
+
+  <div class="story-path">
+
+    <button
+      class="interaction-btn blade-woman-trigger"
+      data-blade-woman="lucy"
+    >
+      Lucy
+    </button>
+
+    <button
+      class="interaction-btn blade-woman-trigger"
+      data-blade-woman="hand"
+    >
+      Sa main
+    </button>
+
+    <button
+      class="interaction-btn blade-woman-trigger"
+      data-blade-woman="search"
+    >
+      Il cherche une lame
+    </button>
+
+    <button
+      class="interaction-btn blade-woman-trigger"
+      data-blade-woman="woman"
+    >
+      La lame est devant lui
+    </button>
+
+  </div>
+
+
+  <div
+    class="reveal-box"
+    id="bladeWomanReveal"
+  ></div>
+
+</section>
+
+
+<!-- =====================================================
+     DIX MINUTES
+===================================================== -->
+
+<section
+  class="scene danger-scene"
+  id="scene-26"
+>
+
+  <div class="text-block">
+
+    <p>
+      Peter reçoit une vibration.
+    </p>
+
+    <p>
+      La fenêtre.
+    </p>
+
+    <p class="impact-text">
+      Dix minutes.
+    </p>
+
+  </div>
+
+</section>
+
+
+<section
+  class="scene dark-mark-scene"
+  id="scene-27"
+>
+
+  <div class="text-block dialogue">
+
+    <p>
+      Le Maître Noir fait un geste.
+    </p>
+
+    <p>
+      Les Gardiens ferment les issues.
+    </p>
+
+    <p>
+      — Alors expliquez-moi.
+    </p>
+
+    <p>
+      Root regarde le ciel peint.
+    </p>
+
+    <p>
+      Puis les quatre positions.
+    </p>
+
+    <p>
+      Puis ses amis.
+    </p>
+
+    <p>
+      Et enfin le Maître Noir.
+    </p>
+
+    <p>
+      — Non.
+    </p>
+
+    <p>
+      Il sourit.
+    </p>
+
+    <p>
+      — Vous n’êtes pas en position de refuser.
+    </p>
+
+    <p>
+      Root regarde discrètement vers l’ouest.
+    </p>
+
+    <p>
+      Lucy.
+    </p>
+
+    <p>
+      Puis l’est.
+    </p>
+
+    <p>
+      Hope.
+    </p>
+
+    <p>
+      Puis le sud.
+    </p>
+
+    <p>
+      Anna.
+    </p>
+
+    <p>
+      Puis le nord.
+    </p>
+
+    <p>
+      Elle-même.
+    </p>
+
+    <p>
+      Tout est là.
+    </p>
+
+    <p class="impact-text">
+      Presque.
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     INTERACTION 17
+     TROIS CHOSES QU'IL IGNORE
+===================================================== -->
+
+<section
+  class="scene revelation-scene interaction-scene"
+  id="scene-28"
+>
+
+  <div class="text-block">
+
+    <p>
+      Dans l’ombre, Amy avance lentement.
+    </p>
+
+    <p>
+      Invisible.
+    </p>
+
+    <p>
+      Et pour la première fois, le Maître Noir croit avoir réuni toutes les pièces.
+    </p>
+
+    <p>
+      Mais il ignore encore trois choses.
+    </p>
+
+    <p class="impact-text">
+      Le dispositif est mal assemblé.
+    </p>
+
+    <p class="impact-text">
+      La lame est devenue une femme.
+    </p>
+
+    <p class="name-reveal">
+      Et l’une de ses anciennes armes les plus dangereuses est déjà derrière ses lignes.
+    </p>
+
+  </div>
+
+
+  <div class="story-path">
+
+    <button
+      class="interaction-btn three-secrets-trigger"
+      data-three-secrets="device"
+    >
+      Dispositif mal assemblé
+    </button>
+
+    <button
+      class="interaction-btn three-secrets-trigger"
+      data-three-secrets="blade"
+    >
+      La lame
+    </button>
+
+    <button
+      class="interaction-btn three-secrets-trigger"
+      data-three-secrets="amy"
+    >
+      Amy
+    </button>
+
+    <button
+      class="interaction-btn three-secrets-trigger"
+      data-three-secrets="advantage"
+    >
+      L’avantage
+    </button>
+
+  </div>
+
+
+  <div
+    class="reveal-box"
+    id="threeSecretsReveal"
+  ></div>
+
+</section>
+
+
+<!-- =====================================================
+     FIN DU CHAPITRE
+===================================================== -->
+
+<section
+  class="scene chapter-end"
+  id="scene-29"
+>
+
+  <div class="end-symbol">
+    ∞
+  </div>
+
+
+  <div class="end-actions">
+
+    <button
+      class="chapter-btn"
+      id="restartChapter"
+    >
+      Relire le chapitre
+    </button>
+
+    <!--
+    Quand le chapitre 31 sera prêt :
+
+    <a
+      class="chapter-btn primary"
+      href="chapitre31.html"
+    >
+      Continuer
+    </a>
+    -->
+
+    <a
+      href="index.html"
+      class="chapter-btn primary"
+    >
+      Retour à l’accueil
+    </a>
+
+  </div>
+
+</section>
+
+
+</main>
+
+
+<!-- =====================================================
+     POPUP INFORMATION DÉCOUVERTE
+===================================================== -->
+
+<div
+  class="secret-popup"
+  id="secretPopup"
+  aria-hidden="true"
+>
+
+  <div class="secret-popup-inner">
+
+    <span class="secret-symbol">
+      ∞
+    </span>
+
+    <span>
+      INFORMATION DÉCOUVERTE
+    </span>
+
+  </div>
+
+</div>
+
+
+<!-- =====================================================
+     MENU
+===================================================== -->
+
+<div
+  class="chapter-menu"
+  id="chapterMenu"
+  aria-hidden="true"
+>
+
+  <div class="chapter-menu-panel">
+
+    <button
+      class="menu-close"
+      id="menuClose"
+      aria-label="Fermer le menu"
+    >
+      ×
+    </button>
+
+    <h2>
+      Chapitre 30
+    </h2>
+
+    <p>
+      La convergence
+    </p>
+
+    <button
+      id="resumeBtn"
+      class="menu-action"
+    >
+      Reprendre la lecture
+    </button>
+
+    <button
+      id="restartBtn"
+      class="menu-action"
+    >
+      Recommencer le chapitre
+    </button>
+
+    <a
+      href="index.html"
+      class="menu-action"
+    >
+      Retour à l’accueil
+    </a>
+
+    <a
+      href="menu.html"
+      class="menu-action"
+    >
+      Retour au menu
+    </a>
+
+  </div>
+
+</div>
+
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
+<script src="js/chapitre30.js?v=1"></script>
+
+
+</body>
+</html>
