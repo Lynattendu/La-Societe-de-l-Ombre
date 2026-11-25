@@ -213,36 +213,6 @@ function addStoredValue(
 
 
 /* =========================================================
-   IMAGES MANQUANTES
-========================================================= */
-
-document
-  .querySelectorAll(".visual img")
-  .forEach((img) => {
-
-    img.addEventListener(
-      "error",
-      () => {
-
-        const visual =
-          img.closest(".visual");
-
-
-        if (visual) {
-
-          visual.classList.add(
-            "visual-missing"
-          );
-
-        }
-
-      }
-    );
-
-  });
-
-
-/* =========================================================
    APPARITION DES SCÈNES
 ========================================================= */
 
