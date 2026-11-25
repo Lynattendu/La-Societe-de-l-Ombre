@@ -1,9 +1,16 @@
 /* =========================================================
    LA SOCIÉTÉ DE L’OMBRE
    CHAPITRE 11 — LE MONDE CONVERGE
+   VERSION CORRIGÉE
 ========================================================= */
 
 document.addEventListener("DOMContentLoaded", () => {
+
+
+/* =========================================================
+   DERNIÈRE PAGE LUE
+========================================================= */
+
 localStorage.setItem(
   "societeOmbre_dernierePage",
   "chapitre11.html"
@@ -14,12 +21,10 @@ localStorage.setItem(
   "Chapitre 11 - Le monde converge"
 );
 
+
 /* =========================================================
    ÉLÉMENTS PRINCIPAUX
 ========================================================= */
-
-const scenes =
-  document.querySelectorAll(".scene");
 
 const progressFill =
   document.getElementById("progressFill");
@@ -192,7 +197,6 @@ function addStoredValue(
   const values =
     getStoredArray(key);
 
-
   if (
     !values.includes(value)
   ) {
@@ -206,127 +210,7 @@ function addStoredValue(
 
   }
 
-
   return values;
-
-}
-
-
-/* =========================================================
-   APPARITION DES SCÈNES
-========================================================= */
-
-const sceneObserver =
-  new IntersectionObserver(
-    (entries) => {
-
-      entries.forEach((entry) => {
-
-        if (
-          entry.isIntersecting
-        ) {
-
-          const scene =
-            entry.target;
-
-
-          scene.classList.add(
-            "is-visible"
-          );
-
-
-          animateParagraphs(
-            scene
-          );
-
-
-          localStorage.setItem(
-            STORAGE_PROGRESS,
-            "1"
-          );
-
-        }
-
-      });
-
-    },
-    {
-      threshold: 0.14
-    }
-  );
-
-
-scenes.forEach(
-  (scene) => {
-
-    sceneObserver.observe(
-      scene
-    );
-
-  }
-);
-
-
-/* =========================================================
-   TEXTE PROGRESSIF
-========================================================= */
-
-function animateParagraphs(scene) {
-
-  if (
-    scene.dataset.textAnimated === "1"
-  ) {
-    return;
-  }
-
-
-  scene.dataset.textAnimated =
-    "1";
-
-
-  const paragraphs =
-    scene.querySelectorAll(
-      ".text-block p"
-    );
-
-
-  paragraphs.forEach(
-    (paragraph, index) => {
-
-      paragraph.style.opacity =
-        "0";
-
-      paragraph.style.transform =
-        "translateY(12px)";
-
-
-      setTimeout(
-        () => {
-
-          paragraph.animate(
-            [
-              {
-                opacity: 0,
-                transform: "translateY(12px)"
-              },
-              {
-                opacity: 1,
-                transform: "translateY(0)"
-              }
-            ],
-            {
-              duration: 650,
-              easing: "ease-out",
-              fill: "forwards"
-            }
-          );
-
-        },
-        index * 105
-      );
-
-    }
-  );
 
 }
 
@@ -341,15 +225,12 @@ function updateProgress() {
     return;
   }
 
-
   const scrollTop =
     window.scrollY;
-
 
   const documentHeight =
     document.documentElement.scrollHeight -
     window.innerHeight;
-
 
   if (
     documentHeight <= 0
@@ -362,7 +243,6 @@ function updateProgress() {
 
   }
 
-
   const percentage =
     Math.min(
       100,
@@ -374,7 +254,6 @@ function updateProgress() {
         ) * 100
       )
     );
-
 
   progressFill.style.width =
     percentage + "%";
@@ -390,6 +269,10 @@ window.addEventListener(
   }
 );
 
+window.addEventListener(
+  "resize",
+  updateProgress
+);
 
 updateProgress();
 
@@ -410,7 +293,6 @@ window.addEventListener(
       saveScrollTimer
     );
 
-
     saveScrollTimer =
       setTimeout(
         () => {
@@ -421,7 +303,6 @@ window.addEventListener(
               window.scrollY
             )
           );
-
 
           localStorage.setItem(
             STORAGE_PROGRESS,
@@ -455,7 +336,6 @@ if (
       10
     );
 
-
   if (
     !Number.isNaN(
       savedPosition
@@ -469,14 +349,13 @@ if (
         window.scrollTo({
           top: savedPosition,
           left: 0,
-          behavior: "instant"
+          behavior: "auto"
         });
-
 
         updateProgress();
 
       },
-      400
+      300
     );
 
   }
@@ -498,9 +377,8 @@ if (
       window.scrollTo({
         top: 0,
         left: 0,
-        behavior: "instant"
+        behavior: "auto"
       });
-
 
       updateProgress();
 
@@ -526,15 +404,12 @@ document
         const currentScene =
           button.closest(".scene");
 
-
         if (!currentScene) {
           return;
         }
 
-
         const nextScene =
           currentScene.nextElementSibling;
-
 
         if (nextScene) {
 
@@ -561,17 +436,14 @@ function openMenu() {
     return;
   }
 
-
   chapterMenu.classList.add(
     "open"
   );
-
 
   chapterMenu.setAttribute(
     "aria-hidden",
     "false"
   );
-
 
   document.body.classList.add(
     "no-scroll"
@@ -586,17 +458,14 @@ function closeMenu() {
     return;
   }
 
-
   chapterMenu.classList.remove(
     "open"
   );
-
 
   chapterMenu.setAttribute(
     "aria-hidden",
     "true"
   );
-
 
   document.body.classList.remove(
     "no-scroll"
@@ -643,7 +512,6 @@ resumeBtn?.addEventListener(
 
     closeMenu();
 
-
     const position =
       parseInt(
         localStorage.getItem(
@@ -651,7 +519,6 @@ resumeBtn?.addEventListener(
         ),
         10
       );
-
 
     if (
       !Number.isNaN(position)
@@ -677,7 +544,6 @@ function restartChapterFunction() {
   const keysToDelete =
     [];
 
-
   for (
     let i = 0;
     i < localStorage.length;
@@ -686,7 +552,6 @@ function restartChapterFunction() {
 
     const key =
       localStorage.key(i);
-
 
     if (
       key &&
@@ -701,7 +566,6 @@ function restartChapterFunction() {
 
   }
 
-
   keysToDelete.forEach(
     (key) => {
 
@@ -709,7 +573,6 @@ function restartChapterFunction() {
 
     }
   );
-
 
   window.location.href =
     "chapitre11.html?lecture=recommencer";
@@ -737,11 +600,16 @@ function getSecrets() {
 
   try {
 
-    return JSON.parse(
-      localStorage.getItem(
-        STORAGE_SECRETS
-      )
-    ) || [];
+    const value =
+      JSON.parse(
+        localStorage.getItem(
+          STORAGE_SECRETS
+        )
+      );
+
+    return Array.isArray(value)
+      ? value
+      : [];
 
   } catch {
 
@@ -757,13 +625,11 @@ function saveSecret(secret) {
   const secrets =
     getSecrets();
 
-
   if (
     !secrets.includes(secret)
   ) {
 
     secrets.push(secret);
-
 
     localStorage.setItem(
       STORAGE_SECRETS,
@@ -789,11 +655,9 @@ function hideSecretPopup() {
     return;
   }
 
-
   secretPopup.classList.remove(
     "show"
   );
-
 
   secretPopup.setAttribute(
     "aria-hidden",
@@ -810,38 +674,31 @@ function showSecret(
 
   saveSecret(secretName);
 
-
   if (!secretPopup) {
     return;
   }
-
 
   const inner =
     secretPopup.querySelector(
       ".secret-popup-inner"
     );
 
-
   if (!inner) {
     return;
   }
-
 
   let description =
     inner.querySelector(
       ".secret-description"
     );
 
-
   if (!description) {
 
     description =
       document.createElement("p");
 
-
     description.className =
       "secret-description";
-
 
     description.style.marginTop =
       "14px";
@@ -858,36 +715,29 @@ function showSecret(
     description.style.color =
       "#f4eee6";
 
-
     inner.appendChild(
       description
     );
 
   }
 
-
   description.textContent =
     secretText;
-
 
   secretPopup.classList.add(
     "show"
   );
-
 
   secretPopup.setAttribute(
     "aria-hidden",
     "false"
   );
 
-
   playSecretSound();
-
 
   clearTimeout(
     secretTimer
   );
-
 
   secretTimer =
     setTimeout(
@@ -911,10 +761,8 @@ function setRevealHTML(
     return;
   }
 
-
   reveal.innerHTML =
     html;
-
 
   reveal.classList.add(
     "open"
@@ -928,7 +776,6 @@ function openReveal(reveal) {
   if (!reveal) {
     return;
   }
-
 
   reveal.classList.add(
     "open"
@@ -946,11 +793,9 @@ function completeButton(
     return;
   }
 
-
   button.classList.add(
     "completed"
   );
-
 
   if (text) {
 
@@ -971,7 +816,6 @@ const convergenceReveal =
   document.getElementById(
     "convergenceReveal"
   );
-
 
 let convergenceObserved =
   getStoredArray(
@@ -1012,18 +856,15 @@ document
         const type =
           button.dataset.convergence;
 
-
         convergenceObserved =
           addStoredValue(
             STORAGE_CONVERGENCE,
             type
           );
 
-
         button.classList.add(
           "completed"
         );
-
 
         setRevealHTML(
           convergenceReveal,
@@ -1034,9 +875,7 @@ document
           `
         );
 
-
         playAnalysisSound();
-
 
         if (
           convergenceObserved.length >= 5
@@ -1045,21 +884,10 @@ document
           setRevealHTML(
             convergenceReveal,
             `
-              <p>
-                Sentinelles.
-              </p>
-
-              <p>
-                Gardiens Noirs.
-              </p>
-
-              <p>
-                Groupes indépendants.
-              </p>
-
-              <p>
-                Observateurs.
-              </p>
+              <p>Sentinelles.</p>
+              <p>Gardiens Noirs.</p>
+              <p>Groupes indépendants.</p>
+              <p>Observateurs.</p>
 
               <p class="impact-text">
                 LA DISPARITION D’HOPE
@@ -1072,7 +900,6 @@ document
               </p>
             `
           );
-
 
           showSecret(
             "world-converges",
@@ -1118,7 +945,6 @@ const annaImportanceReveal =
     "annaImportanceReveal"
   );
 
-
 let annaImportanceObserved =
   getStoredArray(
     STORAGE_ANNA_IMPORTANCE
@@ -1155,18 +981,15 @@ document
         const type =
           button.dataset.annaImportance;
 
-
         annaImportanceObserved =
           addStoredValue(
             STORAGE_ANNA_IMPORTANCE,
             type
           );
 
-
         button.classList.add(
           "completed"
         );
-
 
         setRevealHTML(
           annaImportanceReveal,
@@ -1177,9 +1000,7 @@ document
           `
         );
 
-
         playClueSound();
-
 
         if (
           annaImportanceObserved.length >= 4
@@ -1188,21 +1009,10 @@ document
           setRevealHTML(
             annaImportanceReveal,
             `
-              <p>
-                Hope disparaît.
-              </p>
-
-              <p>
-                La protection change.
-              </p>
-
-              <p>
-                Les deux ordres bougent.
-              </p>
-
-              <p>
-                Anna reste au centre.
-              </p>
+              <p>Hope disparaît.</p>
+              <p>La protection change.</p>
+              <p>Les deux ordres bougent.</p>
+              <p>Anna reste au centre.</p>
 
               <p class="emphasis">
                 Quelque chose dans son existence
@@ -1211,7 +1021,6 @@ document
               </p>
             `
           );
-
 
           showSecret(
             "anna-central",
@@ -1257,7 +1066,6 @@ const leeLucyReveal =
     "leeLucyReveal"
   );
 
-
 let leeLucyObserved =
   getStoredArray(
     STORAGE_LEE_LUCY
@@ -1294,18 +1102,15 @@ document
         const type =
           button.dataset.leeLucy;
 
-
         leeLucyObserved =
           addStoredValue(
             STORAGE_LEE_LUCY,
             type
           );
 
-
         button.classList.add(
           "completed"
         );
-
 
         setRevealHTML(
           leeLucyReveal,
@@ -1316,9 +1121,7 @@ document
           `
         );
 
-
         playMemorySound();
-
 
         if (
           leeLucyObserved.length >= 4
@@ -1327,17 +1130,9 @@ document
           setRevealHTML(
             leeLucyReveal,
             `
-              <p>
-                Lucy questionne.
-              </p>
-
-              <p>
-                Lee l’observe.
-              </p>
-
-              <p>
-                Root sait quelque chose.
-              </p>
+              <p>Lucy questionne.</p>
+              <p>Lee l’observe.</p>
+              <p>Root sait quelque chose.</p>
 
               <p class="impact-text">
                 « TU ES EXACTEMENT
@@ -1350,7 +1145,6 @@ document
               </p>
             `
           );
-
 
           showSecret(
             "lee-knows-lucy",
@@ -1396,7 +1190,6 @@ const locateHopeReveal =
     "locateHopeReveal"
   );
 
-
 let locateHopeObserved =
   getStoredArray(
     STORAGE_LOCATE_HOPE
@@ -1433,18 +1226,15 @@ document
         const type =
           button.dataset.locateHope;
 
-
         locateHopeObserved =
           addStoredValue(
             STORAGE_LOCATE_HOPE,
             type
           );
 
-
         button.classList.add(
           "completed"
         );
-
 
         setRevealHTML(
           locateHopeReveal,
@@ -1455,9 +1245,7 @@ document
           `
         );
 
-
         playDataSound();
-
 
         if (
           locateHopeObserved.length >= 4
@@ -1466,21 +1254,10 @@ document
           setRevealHTML(
             locateHopeReveal,
             `
-              <p>
-                Signature Crash.
-              </p>
-
-              <p>
-                Capteurs environnementaux.
-              </p>
-
-              <p>
-                Hydrologie.
-              </p>
-
-              <p>
-                Données du matériel de Max.
-              </p>
+              <p>Signature Crash.</p>
+              <p>Capteurs environnementaux.</p>
+              <p>Hydrologie.</p>
+              <p>Données du matériel de Max.</p>
 
               <p class="impact-text">
                 ZONE PROBABLE IDENTIFIÉE.
@@ -1492,7 +1269,6 @@ document
               </p>
             `
           );
-
 
           showSecret(
             "hope-zone",
@@ -1538,12 +1314,10 @@ const undergroundMapReveal =
     "undergroundMapReveal"
   );
 
-
 const undergroundMapButtons =
   document.querySelectorAll(
     ".underground-map-trigger"
   );
-
 
 const undergroundMapOrder = [
   "fall",
@@ -1553,7 +1327,6 @@ const undergroundMapOrder = [
   "zone"
 ];
 
-
 let undergroundMapProgress =
   parseInt(
     localStorage.getItem(
@@ -1561,6 +1334,18 @@ let undergroundMapProgress =
     ) || "0",
     10
   );
+
+
+if (
+  Number.isNaN(
+    undergroundMapProgress
+  )
+) {
+
+  undergroundMapProgress =
+    0;
+
+}
 
 
 const undergroundMapTexts = {
@@ -1604,7 +1389,6 @@ function restoreUndergroundMap() {
     }
   );
 
-
   if (
     undergroundMapProgress >= 5
   ) {
@@ -1612,21 +1396,10 @@ function restoreUndergroundMap() {
     setRevealHTML(
       undergroundMapReveal,
       `
-        <p>
-          Chute.
-        </p>
-
-        <p>
-          Courant secondaire.
-        </p>
-
-        <p>
-          Passage sous la roche.
-        </p>
-
-        <p>
-          Réseau souterrain.
-        </p>
+        <p>Chute.</p>
+        <p>Courant secondaire.</p>
+        <p>Passage sous la roche.</p>
+        <p>Réseau souterrain.</p>
 
         <p class="impact-text">
           ZONE PROBABLE.
@@ -1654,12 +1427,10 @@ undergroundMapButtons.forEach(
         const selected =
           button.dataset.undergroundMap;
 
-
         const expected =
           undergroundMapOrder[
             undergroundMapProgress
           ];
-
 
         if (
           selected !== expected
@@ -1669,9 +1440,7 @@ undergroundMapButtons.forEach(
             "wrong"
           );
 
-
           playWrongSound();
-
 
           setTimeout(
             () => {
@@ -1684,20 +1453,18 @@ undergroundMapButtons.forEach(
             650
           );
 
-
           return;
 
         }
 
-
         undergroundMapProgress++;
-
 
         localStorage.setItem(
           STORAGE_UNDERGROUND_MAP,
-          undergroundMapProgress
+          String(
+            undergroundMapProgress
+          )
         );
-
 
         button.classList.add(
           "completed"
@@ -1705,7 +1472,6 @@ undergroundMapButtons.forEach(
 
         button.disabled =
           true;
-
 
         setRevealHTML(
           undergroundMapReveal,
@@ -1716,9 +1482,7 @@ undergroundMapButtons.forEach(
           `
         );
 
-
         playAnalysisSound();
-
 
         if (
           undergroundMapProgress >= 5
@@ -1727,21 +1491,10 @@ undergroundMapButtons.forEach(
           setRevealHTML(
             undergroundMapReveal,
             `
-              <p>
-                Chute.
-              </p>
-
-              <p>
-                Courant secondaire.
-              </p>
-
-              <p>
-                Passage sous roche.
-              </p>
-
-              <p>
-                Réseau souterrain.
-              </p>
+              <p>Chute.</p>
+              <p>Courant secondaire.</p>
+              <p>Passage sous roche.</p>
+              <p>Réseau souterrain.</p>
 
               <p class="impact-text">
                 ZONE PROBABLE IDENTIFIÉE.
@@ -1753,7 +1506,6 @@ undergroundMapButtons.forEach(
               </p>
             `
           );
-
 
           showSecret(
             "underground-search",
@@ -1780,7 +1532,6 @@ const biologyReveal =
   document.getElementById(
     "biologyReveal"
   );
-
 
 let biologyObserved =
   getStoredArray(
@@ -1818,18 +1569,15 @@ document
         const type =
           button.dataset.biology;
 
-
         biologyObserved =
           addStoredValue(
             STORAGE_BIOLOGY,
             type
           );
 
-
         button.classList.add(
           "completed"
         );
-
 
         setRevealHTML(
           biologyReveal,
@@ -1840,9 +1588,7 @@ document
           `
         );
 
-
         playBiologySound();
-
 
         if (
           biologyObserved.length >= 4
@@ -1851,21 +1597,10 @@ document
           setRevealHTML(
             biologyReveal,
             `
-              <p>
-                Traumatisme important.
-              </p>
-
-              <p>
-                Régénération active.
-              </p>
-
-              <p>
-                Multiplication désorganisée.
-              </p>
-
-              <p>
-                Zones lésées.
-              </p>
+              <p>Traumatisme important.</p>
+              <p>Régénération active.</p>
+              <p>Multiplication désorganisée.</p>
+              <p>Zones lésées.</p>
 
               <p class="impact-text">
                 CE N’EST PAS UNE TUMEUR.
@@ -1879,7 +1614,6 @@ document
               </p>
             `
           );
-
 
           showSecret(
             "hope-regeneration",
@@ -1925,7 +1659,6 @@ const treatmentReveal =
     "treatmentReveal"
   );
 
-
 let treatmentObserved =
   getStoredArray(
     STORAGE_TREATMENT
@@ -1962,18 +1695,15 @@ document
         const type =
           button.dataset.treatment;
 
-
         treatmentObserved =
           addStoredValue(
             STORAGE_TREATMENT,
             type
           );
 
-
         button.classList.add(
           "completed"
         );
-
 
         setRevealHTML(
           treatmentReveal,
@@ -1984,9 +1714,7 @@ document
           `
         );
 
-
         playArtifactSound();
-
 
         if (
           treatmentObserved.length >= 4
@@ -2021,7 +1749,6 @@ document
               </p>
             `
           );
-
 
           showSecret(
             "betty-prototype",
@@ -2067,7 +1794,6 @@ const teamReveal =
     "teamReveal"
   );
 
-
 let teamObserved =
   getStoredArray(
     STORAGE_TEAM
@@ -2104,18 +1830,15 @@ document
         const type =
           button.dataset.team;
 
-
         teamObserved =
           addStoredValue(
             STORAGE_TEAM,
             type
           );
 
-
         button.classList.add(
           "completed"
         );
-
 
         setRevealHTML(
           teamReveal,
@@ -2126,9 +1849,7 @@ document
           `
         );
 
-
         playClueSound();
-
 
         if (
           teamObserved.length >= 4
@@ -2163,7 +1884,6 @@ document
               </p>
             `
           );
-
 
           showSecret(
             "search-team",
@@ -2209,7 +1929,6 @@ const expeditionReveal =
     "expeditionReveal"
   );
 
-
 let expeditionObserved =
   getStoredArray(
     STORAGE_EXPEDITION
@@ -2246,18 +1965,15 @@ document
         const type =
           button.dataset.expedition;
 
-
         expeditionObserved =
           addStoredValue(
             STORAGE_EXPEDITION,
             type
           );
 
-
         button.classList.add(
           "completed"
         );
-
 
         setRevealHTML(
           expeditionReveal,
@@ -2268,9 +1984,7 @@ document
           `
         );
 
-
         playEquipmentSound();
-
 
         if (
           expeditionObserved.length >= 4
@@ -2279,21 +1993,10 @@ document
           setRevealHTML(
             expeditionReveal,
             `
-              <p>
-                Protection thermique.
-              </p>
-
-              <p>
-                Capteurs souterrains.
-              </p>
-
-              <p>
-                Balises.
-              </p>
-
-              <p>
-                Capsules.
-              </p>
+              <p>Protection thermique.</p>
+              <p>Capteurs souterrains.</p>
+              <p>Balises.</p>
+              <p>Capsules.</p>
 
               <p class="impact-text">
                 EXPÉDITION PRÊTE.
@@ -2305,7 +2008,6 @@ document
               </p>
             `
           );
-
 
           showSecret(
             "expedition-ready",
@@ -2351,7 +2053,6 @@ const protectionReveal =
     "protectionReveal"
   );
 
-
 let protectionObserved =
   getStoredArray(
     STORAGE_PROTECTION
@@ -2388,18 +2089,15 @@ document
         const type =
           button.dataset.protection;
 
-
         protectionObserved =
           addStoredValue(
             STORAGE_PROTECTION,
             type
           );
 
-
         button.classList.add(
           "completed"
         );
-
 
         setRevealHTML(
           protectionReveal,
@@ -2410,9 +2108,7 @@ document
           `
         );
 
-
         playClueSound();
-
 
         if (
           protectionObserved.length >= 4
@@ -2421,17 +2117,9 @@ document
           setRevealHTML(
             protectionReveal,
             `
-              <p>
-                Root part.
-              </p>
-
-              <p>
-                Betty part.
-              </p>
-
-              <p>
-                Max part.
-              </p>
+              <p>Root part.</p>
+              <p>Betty part.</p>
+              <p>Max part.</p>
 
               <p class="impact-text">
                 LUCY RESTE AVEC ANNA.
@@ -2484,7 +2172,6 @@ const trainingRoomReveal =
     "trainingRoomReveal"
   );
 
-
 let trainingRoomObserved =
   getStoredArray(
     STORAGE_TRAINING_ROOM
@@ -2524,18 +2211,15 @@ document
         const type =
           button.dataset.trainingRoom;
 
-
         trainingRoomObserved =
           addStoredValue(
             STORAGE_TRAINING_ROOM,
             type
           );
 
-
         button.classList.add(
           "completed"
         );
-
 
         setRevealHTML(
           trainingRoomReveal,
@@ -2546,9 +2230,7 @@ document
           `
         );
 
-
         playEquipmentSound();
-
 
         if (
           trainingRoomObserved.length >= 5
@@ -2557,25 +2239,11 @@ document
           setRevealHTML(
             trainingRoomReveal,
             `
-              <p>
-                Robots.
-              </p>
-
-              <p>
-                Drones.
-              </p>
-
-              <p>
-                Équilibre.
-              </p>
-
-              <p>
-                Environnement modulable.
-              </p>
-
-              <p>
-                Cibles mobiles.
-              </p>
+              <p>Robots.</p>
+              <p>Drones.</p>
+              <p>Équilibre.</p>
+              <p>Environnement modulable.</p>
+              <p>Cibles mobiles.</p>
 
               <p class="impact-text">
                 RIEN ICI
@@ -2623,7 +2291,6 @@ const environmentsReveal =
     "environmentsReveal"
   );
 
-
 let environmentsObserved =
   getStoredArray(
     STORAGE_ENVIRONMENTS
@@ -2663,18 +2330,15 @@ document
         const type =
           button.dataset.environments;
 
-
         environmentsObserved =
           addStoredValue(
             STORAGE_ENVIRONMENTS,
             type
           );
 
-
         button.classList.add(
           "completed"
         );
-
 
         setRevealHTML(
           environmentsReveal,
@@ -2685,9 +2349,7 @@ document
           `
         );
 
-
         playNatureSound();
-
 
         if (
           environmentsObserved.length >= 5
@@ -2696,25 +2358,11 @@ document
           setRevealHTML(
             environmentsReveal,
             `
-              <p>
-                Eau.
-              </p>
-
-              <p>
-                Tunnels.
-              </p>
-
-              <p>
-                Courants.
-              </p>
-
-              <p>
-                Obstacles.
-              </p>
-
-              <p>
-                Jungle.
-              </p>
+              <p>Eau.</p>
+              <p>Tunnels.</p>
+              <p>Courants.</p>
+              <p>Obstacles.</p>
+              <p>Jungle.</p>
 
               <p class="emphasis">
                 Root ne crée jamais
@@ -2723,7 +2371,6 @@ document
               </p>
             `
           );
-
 
           showSecret(
             "tempass-training",
@@ -2769,7 +2416,6 @@ const technologyReveal =
     "technologyReveal"
   );
 
-
 let technologyObserved =
   getStoredArray(
     STORAGE_TECHNOLOGY
@@ -2806,18 +2452,15 @@ document
         const type =
           button.dataset.technology;
 
-
         technologyObserved =
           addStoredValue(
             STORAGE_TECHNOLOGY,
             type
           );
 
-
         button.classList.add(
           "completed"
         );
-
 
         setRevealHTML(
           technologyReveal,
@@ -2828,9 +2471,7 @@ document
           `
         );
 
-
         playDataSound();
-
 
         if (
           technologyObserved.length >= 4
@@ -2839,17 +2480,9 @@ document
           setRevealHTML(
             technologyReveal,
             `
-              <p>
-                Interfaces.
-              </p>
-
-              <p>
-                Capteurs.
-              </p>
-
-              <p>
-                Prototypes.
-              </p>
+              <p>Interfaces.</p>
+              <p>Capteurs.</p>
+              <p>Prototypes.</p>
 
               <p class="impact-text">
                 NE TOUCHE À RIEN.
@@ -2913,7 +2546,6 @@ const touchSymbolReveal =
     "touchSymbolReveal"
   );
 
-
 let symbolObserved =
   getStoredArray(
     STORAGE_SYMBOL
@@ -2943,6 +2575,22 @@ function updateSymbolTouchState() {
     return;
   }
 
+  if (
+    localStorage.getItem(
+      STORAGE_SYMBOL_TOUCH
+    ) === "1"
+  ) {
+
+    touchSymbolTrigger.disabled =
+      true;
+
+    touchSymbolTrigger.classList.remove(
+      "active"
+    );
+
+    return;
+
+  }
 
   if (
     symbolObserved.length >= 4
@@ -2982,18 +2630,15 @@ document
         const type =
           button.dataset.symbol;
 
-
         symbolObserved =
           addStoredValue(
             STORAGE_SYMBOL,
             type
           );
 
-
         button.classList.add(
           "completed"
         );
-
 
         setRevealHTML(
           symbolReveal,
@@ -3004,9 +2649,7 @@ document
           `
         );
 
-
         playArtifactSound();
-
 
         if (
           symbolObserved.length >= 4
@@ -3015,21 +2658,10 @@ document
           setRevealHTML(
             symbolReveal,
             `
-              <p>
-                Sable multicolore.
-              </p>
-
-              <p>
-                Eau sombre.
-              </p>
-
-              <p>
-                Puits de lumière.
-              </p>
-
-              <p>
-                Un symbole.
-              </p>
+              <p>Sable multicolore.</p>
+              <p>Eau sombre.</p>
+              <p>Puits de lumière.</p>
+              <p>Un symbole.</p>
 
               <p class="impact-text">
                 HOPE LE CONNAÎT.
@@ -3042,14 +2674,12 @@ document
             `
           );
 
-
           showSecret(
             "cave-symbol",
             "Le symbole de la grotte semble appartenir à un souvenir ancien qu’Hope n’arrive pas encore à retrouver."
           );
 
         }
-
 
         updateSymbolTouchState();
 
@@ -3082,7 +2712,6 @@ document
 
 /* =========================================================
    TOUCHER LE SYMBOLE
-   SOUS-ÉTAPE DE L'INTERACTION 14
 ========================================================= */
 
 function touchSymbol() {
@@ -3093,34 +2722,34 @@ function touchSymbol() {
     return;
   }
 
-
   localStorage.setItem(
     STORAGE_SYMBOL_TOUCH,
     "1"
   );
 
-
   openReveal(
     touchSymbolReveal
   );
-
 
   completeButton(
     touchSymbolTrigger,
     "Symbole activé"
   );
 
+  if (
+    touchSymbolTrigger
+  ) {
 
-  touchSymbolTrigger.disabled =
-    true;
+    touchSymbolTrigger.disabled =
+      true;
 
-  touchSymbolTrigger.classList.remove(
-    "active"
-  );
+    touchSymbolTrigger.classList.remove(
+      "active"
+    );
 
+  }
 
   playDragonSound();
-
 
   showSecret(
     "dragon-activation",
@@ -3136,9 +2765,6 @@ touchSymbolTrigger?.addEventListener(
 );
 
 
-updateSymbolTouchState();
-
-
 if (
   localStorage.getItem(
     STORAGE_SYMBOL_TOUCH
@@ -3149,29 +2775,20 @@ if (
     touchSymbolReveal
   );
 
-
   completeButton(
     touchSymbolTrigger,
     "Symbole activé"
   );
 
-
-  if (touchSymbolTrigger) {
-
-    touchSymbolTrigger.disabled =
-      true;
-
-    touchSymbolTrigger.classList.remove(
-      "active"
-    );
-
-  }
-
 }
+
+
+updateSymbolTouchState();
 
 
 /* =========================================================
    FIN DU CHAPITRE
+   SEUL OBSERVER CONSERVÉ
 ========================================================= */
 
 const finalScene =
@@ -3180,7 +2797,10 @@ const finalScene =
   );
 
 
-if (finalScene) {
+if (
+  finalScene &&
+  "IntersectionObserver" in window
+) {
 
   const endObserver =
     new IntersectionObserver(
@@ -3198,7 +2818,6 @@ if (finalScene) {
                 "1"
               );
 
-
               localStorage.setItem(
                 STORAGE_PROGRESS,
                 "1"
@@ -3211,10 +2830,9 @@ if (finalScene) {
 
       },
       {
-        threshold: 0.5
+        threshold: 0.35
       }
     );
-
 
   endObserver.observe(
     finalScene
@@ -3249,49 +2867,38 @@ function startSound() {
     return;
   }
 
-
   const AudioContextClass =
     window.AudioContext ||
     window.webkitAudioContext;
-
 
   if (!AudioContextClass) {
     return;
   }
 
-
   audioCtx =
     new AudioContextClass();
-
 
   masterGain =
     audioCtx.createGain();
 
-
   masterGain.gain.value =
     0.021;
-
 
   masterGain.connect(
     audioCtx.destination
   );
 
-
   ambienceOsc1 =
     audioCtx.createOscillator();
-
 
   ambienceOsc2 =
     audioCtx.createOscillator();
 
-
   const gain1 =
     audioCtx.createGain();
 
-
   const gain2 =
     audioCtx.createGain();
-
 
   ambienceOsc1.type =
     "sine";
@@ -3299,10 +2906,8 @@ function startSound() {
   ambienceOsc1.frequency.value =
     39;
 
-
   gain1.gain.value =
     0.62;
-
 
   ambienceOsc2.type =
     "triangle";
@@ -3310,36 +2915,29 @@ function startSound() {
   ambienceOsc2.frequency.value =
     77;
 
-
   gain2.gain.value =
     0.06;
-
 
   ambienceOsc1
     .connect(gain1)
     .connect(masterGain);
 
-
   ambienceOsc2
     .connect(gain2)
     .connect(masterGain);
-
 
   ambienceOsc1.start();
 
   ambienceOsc2.start();
 
-
   soundActive =
     true;
-
 
   if (soundBtn) {
 
     soundBtn.classList.add(
       "sound-active"
     );
-
 
     soundBtn.textContent =
       "♪";
@@ -3362,7 +2960,6 @@ function stopSound() {
     return;
   }
 
-
   if (masterGain) {
 
     masterGain.gain
@@ -3373,16 +2970,13 @@ function stopSound() {
 
   }
 
-
   setTimeout(
     () => {
 
       try {
 
         ambienceOsc1?.stop();
-
         ambienceOsc2?.stop();
-
         audioCtx?.close();
 
       } catch {
@@ -3390,7 +2984,6 @@ function stopSound() {
         /* rien */
 
       }
-
 
       audioCtx =
         null;
@@ -3408,17 +3001,14 @@ function stopSound() {
     450
   );
 
-
   soundActive =
     false;
-
 
   if (soundBtn) {
 
     soundBtn.classList.remove(
       "sound-active"
     );
-
 
     soundBtn.textContent =
       "♫";
@@ -3464,28 +3054,22 @@ function playTone(
     return;
   }
 
-
   const oscillator =
     audioCtx.createOscillator();
-
 
   const gain =
     audioCtx.createGain();
 
-
   oscillator.type =
     type;
 
-
   oscillator.frequency.value =
     frequency;
-
 
   gain.gain.setValueAtTime(
     volume,
     audioCtx.currentTime
   );
-
 
   gain.gain
     .exponentialRampToValueAtTime(
@@ -3493,16 +3077,13 @@ function playTone(
       audioCtx.currentTime + duration
     );
 
-
   oscillator
     .connect(gain)
     .connect(
       audioCtx.destination
     );
 
-
   oscillator.start();
-
 
   oscillator.stop(
     audioCtx.currentTime + duration
@@ -3522,7 +3103,6 @@ function playClueSound() {
     0.35,
     0.018
   );
-
 
   setTimeout(
     () => {
@@ -3549,7 +3129,6 @@ function playAnalysisSound() {
     "triangle"
   );
 
-
   setTimeout(
     () => {
 
@@ -3574,7 +3153,6 @@ function playDataSound() {
     0.016,
     "square"
   );
-
 
   setTimeout(
     () => {
@@ -3602,7 +3180,6 @@ function playMemorySound() {
     "sine"
   );
 
-
   setTimeout(
     () => {
 
@@ -3628,7 +3205,6 @@ function playBiologySound() {
     0.017,
     "sine"
   );
-
 
   setTimeout(
     () => {
@@ -3656,7 +3232,6 @@ function playArtifactSound() {
     "sine"
   );
 
-
   setTimeout(
     () => {
 
@@ -3670,7 +3245,6 @@ function playArtifactSound() {
     },
     140
   );
-
 
   setTimeout(
     () => {
@@ -3696,7 +3270,6 @@ function playEquipmentSound() {
     0.016,
     "square"
   );
-
 
   setTimeout(
     () => {
@@ -3724,7 +3297,6 @@ function playNatureSound() {
     "sine"
   );
 
-
   setTimeout(
     () => {
 
@@ -3751,7 +3323,6 @@ function playDragonSound() {
     "triangle"
   );
 
-
   setTimeout(
     () => {
 
@@ -3766,7 +3337,6 @@ function playDragonSound() {
     140
   );
 
-
   setTimeout(
     () => {
 
@@ -3780,7 +3350,6 @@ function playDragonSound() {
     },
     300
   );
-
 
   setTimeout(
     () => {
@@ -3819,7 +3388,6 @@ function playSecretSound() {
     0.022
   );
 
-
   setTimeout(
     () => {
 
@@ -3849,7 +3417,6 @@ document.addEventListener(
     ) {
 
       closeMenu();
-
       hideSecretPopup();
 
     }
@@ -3871,14 +3438,12 @@ window.addEventListener(
         window.location.search
       );
 
-
     if (
       params.get("lecture") ===
       "recommencer"
     ) {
       return;
     }
-
 
     localStorage.setItem(
       STORAGE_SCROLL,
@@ -3887,7 +3452,6 @@ window.addEventListener(
       )
     );
 
-
     localStorage.setItem(
       STORAGE_PROGRESS,
       "1"
@@ -3895,32 +3459,6 @@ window.addEventListener(
 
   }
 );
-
-
-/* =========================================================
-   PREMIÈRE SCÈNE
-========================================================= */
-
-const firstScene =
-  document.querySelector(
-    ".scene"
-  );
-
-
-if (firstScene) {
-
-  setTimeout(
-    () => {
-
-      firstScene.classList.add(
-        "is-visible"
-      );
-
-    },
-    100
-  );
-
-}
 
 
 /* =========================================================
