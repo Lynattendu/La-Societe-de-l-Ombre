@@ -195,7 +195,7 @@ const chapters = [
 
   {
     number: 31,
-    title: "Chapitre 31",
+    title: "Les quatre points",
     file: "chapitre31.html"
   },
 
