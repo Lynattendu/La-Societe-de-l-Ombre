@@ -1,1 +1,4343 @@
 
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+  >
+
+  <meta
+    name="theme-color"
+    content="#050505"
+  >
+
+  <title>
+    Chapitre 25 — Les héritages | La Société de l'Ombre
+  </title>
+
+  <link
+    rel="stylesheet"
+    href="css/chapitre25.css"
+  >
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     BARRE DE PROGRESSION
+===================================================== -->
+
+<div
+  class="progress-bar"
+  aria-hidden="true"
+>
+  <div
+    class="progress-fill"
+    id="progressFill"
+  ></div>
+</div>
+
+
+<!-- =====================================================
+     COMMANDES
+===================================================== -->
+
+<div class="chapter-controls">
+
+  <button
+    class="control-btn"
+    id="menuBtn"
+    aria-label="Ouvrir le menu"
+  >
+    ☰
+  </button>
+
+  <button
+    class="control-btn"
+    id="soundBtn"
+    aria-label="Activer ou désactiver le son"
+  >
+    ♫
+  </button>
+
+</div>
+
+
+<main
+  class="chapter"
+  id="chapter"
+>
+
+
+<!-- =====================================================
+     SCÈNE 1
+     COUVERTURE
+===================================================== -->
+
+<section
+  class="scene scene-cover"
+  id="scene-1"
+>
+
+  <div
+    class="visual full-visual"
+    data-visual="1"
+  >
+
+    <img
+      src="images/chapitre25/Visuel-1.PNG"
+      alt="Chapitre 25 — Les héritages"
+      loading="eager"
+    >
+
+  </div>
+
+
+  <div class="chapter-title-overlay">
+
+    <p class="chapter-number">
+      Chapitre 25
+    </p>
+
+    <h1>
+      Les héritages
+    </h1>
+
+    <button
+      class="continue-btn"
+      data-next
+    >
+      Continuer
+    </button>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     VISUEL 1
+     LA VRAIE FONCTION DE LA LAME
+===================================================== -->
+
+<section
+  class="scene artifact-scene interaction-scene"
+  id="scene-2"
+>
+
+  <div
+    class="visual interactive-visual"
+    data-visual="1"
+  >
+
+    <img
+      src="images/chapitre25/Visuel-1.PNG"
+      alt="Root tient la lame près de la reconstruction holographique du dispositif ancien"
+      loading="lazy"
+    >
+
+  </div>
+
+
+  <div class="text-block">
+
+    <p>
+      Hacienda Awake — Salle sécurisée
+    </p>
+
+    <p>
+      Peter ouvre le coffre.
+    </p>
+
+    <p>
+      Root ne dit rien.
+    </p>
+
+    <p>
+      Hope, Lucy, Max et Maître Lee regardent.
+    </p>
+
+    <p>
+      À l’intérieur, la lame repose dans un logement parfaitement ajusté.
+    </p>
+
+    <p>
+      Fine.
+    </p>
+
+    <p>
+      Ancienne.
+    </p>
+
+    <p>
+      Presque trop simple.
+    </p>
+
+    <p>
+      Clive s’approche.
+    </p>
+
+    <p>
+      — Voilà donc la fameuse clé.
+    </p>
+
+    <p>
+      Root le regarde.
+    </p>
+
+    <p>
+      — Pas touche.
+    </p>
+
+    <p>
+      — Je regardais.
+    </p>
+
+    <p>
+      Lucy sourit.
+    </p>
+
+    <p>
+      — Avec toi, c’est déjà suspect.
+    </p>
+
+  </div>
+
+
+  <div class="observation-buttons">
+
+    <button
+      class="interaction-btn blade-function-trigger"
+      data-blade-function="reaction"
+    >
+      Réaction à Root
+    </button>
+
+    <button
+      class="interaction-btn blade-function-trigger"
+      data-blade-function="line"
+    >
+      Ligne pâle
+    </button>
+
+    <button
+      class="interaction-btn blade-function-trigger"
+      data-blade-function="lateral"
+    >
+      Axe latéral
+    </button>
+
+    <button
+      class="interaction-btn blade-function-trigger"
+      data-blade-function="selector"
+    >
+      Sélecteur
+    </button>
+
+    <button
+      class="interaction-btn blade-function-trigger"
+      data-blade-function="direction"
+    >
+      Orientation
+    </button>
+
+  </div>
+
+
+  <div
+    class="reveal-box"
+    id="bladeFunctionReveal"
+  >
+  </div>
+
+</section>
+
+
+<section
+  class="scene artifact-scene"
+  id="scene-3"
+>
+
+  <div class="text-block">
+
+    <p>
+      Peter désactive le dernier verrou.
+    </p>
+
+    <p>
+      — Elle n’a pas bougé depuis la dernière série de tests.
+    </p>
+
+    <p>
+      Root tend la main.
+    </p>
+
+    <p>
+      La lame réagit immédiatement.
+    </p>
+
+    <p class="impact-text">
+      Une ligne pâle apparaît sur son manche.
+    </p>
+
+    <p>
+      Max se penche.
+    </p>
+
+    <p>
+      — Elle ne faisait pas ça avant.
+    </p>
+
+    <p>
+      Root acquiesce.
+    </p>
+
+    <p>
+      — Pas comme ça.
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     INTERACTION 2
+     RECONSTRUCTION DU DISPOSITIF
+===================================================== -->
+
+<section
+  class="scene artifact-scene interaction-scene"
+  id="scene-4"
+>
+
+  <div class="text-block">
+
+    <p>
+      Peter projette à côté la reconstruction virtuelle du dispositif ancien dispersé.
+    </p>
+
+    <p>
+      Les pierres retrouvées.
+    </p>
+
+    <p>
+      Les fragments transportés par le réseau d’Élie.
+    </p>
+
+    <p>
+      Les lignes.
+    </p>
+
+    <p>
+      Les courbes.
+    </p>
+
+    <p>
+      Les parties manquantes.
+    </p>
+
+  </div>
+
+
+  <div class="story-path">
+
+    <button
+      class="interaction-btn device-reconstruction-trigger"
+      data-device-reconstruction="stones"
+    >
+      Pierres
+    </button>
+
+    <button
+      class="interaction-btn device-reconstruction-trigger"
+      data-device-reconstruction="elie"
+    >
+      Fragments d’Élie
+    </button>
+
+    <button
+      class="interaction-btn device-reconstruction-trigger"
+      data-device-reconstruction="missing"
+    >
+      Parties manquantes
+    </button>
+
+    <button
+      class="interaction-btn device-reconstruction-trigger"
+      data-device-reconstruction="guide"
+    >
+      Guide
+    </button>
+
+    <button
+      class="interaction-btn device-reconstruction-trigger"
+      data-device-reconstruction="path"
+    >
+      Chemin
+    </button>
+
+  </div>
+
+
+  <div
+    class="reveal-box"
+    id="deviceReconstructionReveal"
+  >
+  </div>
+
+</section>
+
+
+<section
+  class="scene artifact-scene"
+  id="scene-5"
+>
+
+  <div class="text-block dialogue">
+
+    <p>
+      Root approche la lame de la projection.
+    </p>
+
+    <p>
+      Peter superpose les mesures.
+    </p>
+
+    <p>
+      Puis s’arrête.
+    </p>
+
+    <p>
+      — Attends.
+    </p>
+
+    <p>
+      Root ne bouge plus.
+    </p>
+
+    <p>
+      Peter agrandit.
+    </p>
+
+    <p>
+      — Tourne-la.
+    </p>
+
+    <p>
+      Elle obéit.
+    </p>
+
+    <p>
+      La forme correspond.
+    </p>
+
+    <p>
+      Pas au centre.
+    </p>
+
+    <p class="impact-text">
+      Sur un axe latéral.
+    </p>
+
+    <p>
+      Root fronce les sourcils.
+    </p>
+
+    <p>
+      — Ce n’est pas une clé centrale.
+    </p>
+
+    <p>
+      Peter acquiesce.
+    </p>
+
+    <p>
+      — Non.
+    </p>
+
+    <p>
+      Il fait pivoter la modélisation.
+    </p>
+
+    <p>
+      La lame vient se placer exactement dans une zone du dispositif.
+    </p>
+
+    <p>
+      Une sorte de rainure.
+    </p>
+
+    <p>
+      Un guide.
+    </p>
+
+    <p>
+      Un sélecteur.
+    </p>
+
+    <p>
+      Max murmure :
+    </p>
+
+    <p class="impact-text">
+      — Elle sert à choisir quelque chose.
+    </p>
+
+    <p>
+      Root regarde.
+    </p>
+
+    <p>
+      — Une direction.
+    </p>
+
+    <p>
+      Maître Lee acquiesce lentement.
+    </p>
+
+    <p class="name-reveal">
+      — Ou un chemin.
+    </p>
+
+  </div>
+
+</section>
+
+
+<section
+  class="scene revelation-scene"
+  id="scene-6"
+>
+
+  <div class="text-block dialogue">
+
+    <p>
+      Hope s’approche.
+    </p>
+
+    <p>
+      — Donc la lame ne crée pas le passage.
+    </p>
+
+    <p>
+      — Non, répond Peter.
+    </p>
+
+    <p class="impact-text">
+      — Elle l’oriente.
+    </p>
+
+    <p>
+      Root regarde les pierres.
+    </p>
+
+    <p>
+      — Voilà pourquoi elle réagissait avec Anna.
+    </p>
+
+    <p>
+      Lucy comprend.
+    </p>
+
+    <p>
+      — Parce qu’un Pont sans direction ne mène nulle part.
+    </p>
+
+    <p>
+      Root lève les yeux.
+    </p>
+
+    <p>
+      — Exactement.
+    </p>
+
+    <p>
+      Une réponse ancienne vient enfin de trouver sa place.
+    </p>
+
+    <p>
+      La lame n’avait jamais été perdue.
+    </p>
+
+    <p class="emphasis">
+      Ils ne l’avaient simplement jamais comprise.
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     VISUEL 2
+     LES PARQUES
+===================================================== -->
+
+<section
+  class="scene symbol-scene interaction-scene"
+  id="scene-7"
+>
+
+  <div
+    class="visual interactive-visual"
+    data-visual="2"
+  >
+
+    <img
+      src="images/chapitre25/Visuel-2.PNG"
+      alt="Root étudie les symboles de Nona Décima et Morta"
+      loading="lazy"
+    >
+
+  </div>
+
+
+  <div class="text-block">
+
+    <p>
+      Hacienda Awake — Salle d’analyse
+    </p>
+
+    <p>
+      Root place la lame près d’une reproduction d’inscriptions anciennes.
+    </p>
+
+    <p>
+      Max observe.
+    </p>
+
+    <p>
+      Peter fait défiler plusieurs symboles.
+    </p>
+
+    <p>
+      Maître Lee reste silencieux.
+    </p>
+
+    <p>
+      Root s’arrête soudain.
+    </p>
+
+    <p>
+      — Là.
+    </p>
+
+    <p>
+      Un motif apparaît.
+    </p>
+
+    <p>
+      Trois lignes.
+    </p>
+
+    <p>
+      Trois chemins.
+    </p>
+
+    <p>
+      Trois figures.
+    </p>
+
+  </div>
+
+
+  <div class="observation-buttons">
+
+    <button
+      class="interaction-btn parcae-trigger"
+      data-parcae="nona"
+    >
+      Nona
+    </button>
+
+    <button
+      class="interaction-btn parcae-trigger"
+      data-parcae="decima"
+    >
+      Décima
+    </button>
+
+    <button
+      class="interaction-btn parcae-trigger"
+      data-parcae="morta"
+    >
+      Morta
+    </button>
+
+    <button
+      class="interaction-btn parcae-trigger"
+      data-parcae="choice"
+    >
+      Choix
+    </button>
+
+    <button
+      class="interaction-btn parcae-trigger"
+      data-parcae="consequence"
+    >
+      Conséquence
+    </button>
+
+  </div>
+
+
+  <div
+    class="reveal-box"
+    id="parcaeReveal"
+  >
+  </div>
+
+</section>
+
+
+<section
+  class="scene symbol-scene"
+  id="scene-8"
+>
+
+  <div class="text-block dialogue">
+
+    <p>
+      — Nona.
+    </p>
+
+    <p>
+      — Décima.
+    </p>
+
+    <p>
+      — Morta.
+    </p>
+
+    <p>
+      Max regarde Root.
+    </p>
+
+    <p>
+      — Les Parques.
+    </p>
+
+    <p>
+      Elle acquiesce.
+    </p>
+
+    <p>
+      — Oui.
+    </p>
+
+    <p>
+      Peter zoome.
+    </p>
+
+    <p>
+      — Ce motif apparaît sur plusieurs fragments.
+    </p>
+
+    <p>
+      Root devient plus sérieuse.
+    </p>
+
+    <p>
+      — Et sur certains objets de ma famille.
+    </p>
+
+    <p>
+      Hope la regarde.
+    </p>
+
+    <p>
+      — Depuis longtemps ?
+    </p>
+
+    <p>
+      — Depuis toujours.
+    </p>
+
+    <p>
+      — Je pensais que c’était juste notre manière de raconter notre histoire.
+    </p>
+
+    <p>
+      Lee répond :
+    </p>
+
+    <p class="emphasis">
+      — Les familles transforment souvent la mémoire en légende.
+    </p>
+
+    <p>
+      Root se tourne vers lui.
+    </p>
+
+    <p>
+      — Vous saviez ?
+    </p>
+
+    <p>
+      — Pas exactement.
+    </p>
+
+    <p>
+      — Mais je soupçonnais que votre nom n’était pas seulement symbolique.
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     INTERACTION 4
+     HÉRITAGE DE ROOT
+===================================================== -->
+
+<section
+  class="scene symbol-scene interaction-scene"
+  id="scene-9"
+>
+
+  <div class="text-block dialogue">
+
+    <p>
+      Root reprend.
+    </p>
+
+    <p>
+      — Les Parques sont censées filer, mesurer et couper.
+    </p>
+
+    <p>
+      Max ajoute :
+    </p>
+
+    <p>
+      — Le destin.
+    </p>
+
+    <p>
+      Root secoue la tête.
+    </p>
+
+    <p>
+      — Pas exactement.
+    </p>
+
+  </div>
+
+
+  <div class="story-path">
+
+    <button
+      class="interaction-btn root-inheritance-trigger"
+      data-root-inheritance="family"
+    >
+      Famille
+    </button>
+
+    <button
+      class="interaction-btn root-inheritance-trigger"
+      data-root-inheritance="memory"
+    >
+      Mémoire
+    </button>
+
+    <button
+      class="interaction-btn root-inheritance-trigger"
+      data-root-inheritance="paths"
+    >
+      Chemins
+    </button>
+
+    <button
+      class="interaction-btn root-inheritance-trigger"
+      data-root-inheritance="orientation"
+    >
+      Orientation
+    </button>
+
+    <button
+      class="interaction-btn root-inheritance-trigger"
+      data-root-inheritance="function"
+    >
+      Fonction
+    </button>
+
+  </div>
+
+
+  <div
+    class="reveal-box"
+    id="rootInheritanceReveal"
+  >
+  </div>
+
+</section>
+
+
+<section
+  class="scene symbol-scene"
+  id="scene-10"
+>
+
+  <div class="text-block dialogue">
+
+    <p>
+      Elle regarde les inscriptions.
+    </p>
+
+    <p>
+      — Peut-être qu’on a mal compris.
+    </p>
+
+    <p>
+      Elle suit les lignes avec le doigt.
+    </p>
+
+    <p>
+      — Nona ne crée pas le futur.
+    </p>
+
+    <p>
+      — Décima ne le fixe pas.
+    </p>
+
+    <p>
+      — Morta ne décide pas de tout.
+    </p>
+
+    <p>
+      Peter demande :
+    </p>
+
+    <p>
+      — Alors quoi ?
+    </p>
+
+    <p>
+      Root réfléchit.
+    </p>
+
+    <p class="impact-text">
+      — Elles observent les conséquences.
+    </p>
+
+    <p>
+      — Un choix.
+    </p>
+
+    <p>
+      — Une direction.
+    </p>
+
+    <p>
+      — Un résultat possible.
+    </p>
+
+    <p>
+      Max sourit.
+    </p>
+
+    <p>
+      — Ça te ressemble.
+    </p>
+
+    <p>
+      Root le regarde.
+    </p>
+
+    <p class="emphasis">
+      — Beaucoup trop.
+    </p>
+
+  </div>
+
+</section>
+
+
+<section
+  class="scene revelation-scene"
+  id="scene-11"
+>
+
+  <div class="text-block dialogue">
+
+    <p>
+      Lee intervient.
+    </p>
+
+    <p>
+      — Les anciens enseignements parlaient parfois de lignées chargées de préserver certaines fonctions.
+    </p>
+
+    <p>
+      Lucy :
+    </p>
+
+    <p>
+      — Encore des lignées.
+    </p>
+
+    <p>
+      Lee la regarde.
+    </p>
+
+    <p>
+      — Pas des castes.
+    </p>
+
+    <p>
+      — Pas des pouvoirs.
+    </p>
+
+    <p class="impact-text">
+      — Des transmissions.
+    </p>
+
+    <p>
+      Root regarde la lame.
+    </p>
+
+    <p>
+      — Donc ma famille aurait gardé la mémoire des chemins.
+    </p>
+
+    <p>
+      Lee acquiesce.
+    </p>
+
+    <p>
+      — Et peut-être la capacité de les comprendre plus facilement que d’autres.
+    </p>
+
+    <p>
+      Root sourit sans joie.
+    </p>
+
+    <p>
+      — Donc toute ma vie à étudier le passé…
+    </p>
+
+    <p>
+      Max complète :
+    </p>
+
+    <p>
+      — …pour comprendre ce qu’il produit dans le futur.
+    </p>
+
+    <p>
+      Root le regarde.
+    </p>
+
+    <p>
+      — Oui.
+    </p>
+
+    <p>
+      Pour la première fois, le mot Parques cesse d’être seulement une référence familiale.
+    </p>
+
+    <p>
+      Il devient une fonction.
+    </p>
+
+    <p>
+      Mémoire.
+    </p>
+
+    <p>
+      Conséquence.
+    </p>
+
+    <p class="name-reveal">
+      Orientation.
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     VISUEL 3
+     JANUS / THOTH
+===================================================== -->
+
+<section
+  class="scene symbol-scene interaction-scene"
+  id="scene-12"
+>
+
+  <div
+    class="visual interactive-visual"
+    data-visual="3"
+  >
+
+    <img
+      src="images/chapitre25/Visuel-3.PNG"
+      alt="Peter et Max découvrent les symboles de Janus et Thoth"
+      loading="lazy"
+    >
+
+  </div>
+
+
+  <div class="text-block">
+
+    <p>
+      Hacienda Awake — Quelques minutes plus tard
+    </p>
+
+    <p>
+      Peter tourne encore autour de la projection.
+    </p>
+
+    <p>
+      Il ne parle plus.
+    </p>
+
+    <p>
+      Betty arrive.
+    </p>
+
+    <p>
+      — Quand tu fais cette tête, soit tu as compris quelque chose, soit tu vas faire exploser une pièce.
+    </p>
+
+    <p>
+      — Très encourageant.
+    </p>
+
+    <p>
+      Elle regarde l’écran.
+    </p>
+
+    <p>
+      — Quoi ?
+    </p>
+
+    <p>
+      Peter pointe une double structure.
+    </p>
+
+    <p>
+      Deux arcs.
+    </p>
+
+    <p>
+      Deux directions.
+    </p>
+
+    <p>
+      Une entrée.
+    </p>
+
+    <p>
+      Une sortie.
+    </p>
+
+  </div>
+
+
+  <div class="observation-buttons">
+
+    <button
+      class="interaction-btn janus-trigger"
+      data-janus="faces"
+    >
+      Deux faces
+    </button>
+
+    <button
+      class="interaction-btn janus-trigger"
+      data-janus="directions"
+    >
+      Deux directions
+    </button>
+
+    <button
+      class="interaction-btn janus-trigger"
+      data-janus="doors"
+    >
+      Portes
+    </button>
+
+    <button
+      class="interaction-btn janus-trigger"
+      data-janus="passages"
+    >
+      Passages
+    </button>
+
+    <button
+      class="interaction-btn janus-trigger"
+      data-janus="peter"
+    >
+      Peter
+    </button>
+
+  </div>
+
+
+  <div
+    class="reveal-box"
+    id="janusReveal"
+  >
+  </div>
+
+</section>
+
+
+<section
+  class="scene symbol-scene"
+  id="scene-13"
+>
+
+  <div class="text-block dialogue">
+
+    <p>
+      — Regarde ça.
+    </p>
+
+    <p>
+      Betty observe.
+    </p>
+
+    <p>
+      — Deux faces.
+    </p>
+
+    <p>
+      — Oui.
+    </p>
+
+    <p>
+      — Deux orientations.
+    </p>
+
+    <p>
+      — Oui.
+    </p>
+
+    <p>
+      Root se tourne.
+    </p>
+
+    <p>
+      — Ça correspond à quoi ?
+    </p>
+
+    <p>
+      Peter hésite.
+    </p>
+
+    <p>
+      — J’en sais rien.
+    </p>
+
+    <p>
+      Puis :
+    </p>
+
+    <p class="impact-text">
+      — Mais je comprends comment ça fonctionne.
+    </p>
+
+    <p>
+      Lucy le regarde.
+    </p>
+
+    <p>
+      — Sans l’avoir vu ?
+    </p>
+
+    <p>
+      Peter hausse les épaules.
+    </p>
+
+    <p>
+      — C’est logique.
+    </p>
+
+    <p>
+      — Pas pour moi.
+    </p>
+
+    <p>
+      — Parce que tu n’es pas moi.
+    </p>
+
+    <p>
+      Betty lève les yeux au ciel.
+    </p>
+
+  </div>
+
+</section>
+
+
+<section
+  class="scene symbol-scene"
+  id="scene-14"
+>
+
+  <div class="text-block dialogue">
+
+    <p>
+      Max s’approche d’une tablette ancienne.
+    </p>
+
+    <p>
+      — Là.
+    </p>
+
+    <p>
+      Tout le monde se tourne.
+    </p>
+
+    <p>
+      Un symbole apparaît.
+    </p>
+
+    <p>
+      Deux visages opposés.
+    </p>
+
+    <p>
+      Root se fige.
+    </p>
+
+    <p class="name-reveal">
+      — Janus.
+    </p>
+
+    <p>
+      Peter regarde.
+    </p>
+
+    <p>
+      — Comme le dieu romain ?
+    </p>
+
+    <p>
+      Max acquiesce.
+    </p>
+
+    <p>
+      — Les passages.
+    </p>
+
+    <p>
+      — Les commencements.
+    </p>
+
+    <p>
+      — Les portes.
+    </p>
+
+    <p>
+      — Les deux directions.
+    </p>
+
+    <p>
+      Peter sourit.
+    </p>
+
+    <p>
+      — Très subtil.
+    </p>
+
+    <p>
+      Lee, lui, ne sourit pas.
+    </p>
+
+    <p>
+      — Peut-être trop subtil pour être une coïncidence.
+    </p>
+
+    <p>
+      Peter le regarde.
+    </p>
+
+    <p>
+      — Vous pensez vraiment que—
+    </p>
+
+    <p>
+      Lee l’interrompt.
+    </p>
+
+    <p>
+      — Je ne pense rien encore.
+    </p>
+
+    <p>
+      — Mais vous comprenez certaines structures que vous n’avez jamais étudiées.
+    </p>
+
+    <p>
+      Peter regarde à nouveau le symbole.
+    </p>
+
+    <p class="emphasis">
+      Pour une fois, il ne plaisante pas.
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     INTERACTION 6
+     THOTH / MAX
+===================================================== -->
+
+<section
+  class="scene investigation-scene interaction-scene"
+  id="scene-15"
+>
+
+  <div class="text-block">
+
+    <p>
+      Hacienda Awake — Bibliothèque
+    </p>
+
+    <p>
+      Max est resté seul avec Root.
+    </p>
+
+    <p>
+      Il relit les inscriptions.
+    </p>
+
+    <p>
+      Root prend des notes.
+    </p>
+
+  </div>
+
+
+  <div class="story-path">
+
+    <button
+      class="interaction-btn thoth-trigger"
+      data-thoth="writing"
+    >
+      Écriture
+    </button>
+
+    <button
+      class="interaction-btn thoth-trigger"
+      data-thoth="memory"
+    >
+      Mémoire
+    </button>
+
+    <button
+      class="interaction-btn thoth-trigger"
+      data-thoth="knowledge"
+    >
+      Connaissance
+    </button>
+
+    <button
+      class="interaction-btn thoth-trigger"
+      data-thoth="truth"
+    >
+      Vérité
+    </button>
+
+    <button
+      class="interaction-btn thoth-trigger"
+      data-thoth="journalist"
+    >
+      Journaliste
+    </button>
+
+  </div>
+
+
+  <div
+    class="reveal-box"
+    id="thothReveal"
+  >
+  </div>
+
+</section>
+
+
+<section
+  class="scene investigation-scene"
+  id="scene-16"
+>
+
+  <div class="text-block dialogue">
+
+    <p>
+      — Tu bloques sur quoi ?
+    </p>
+
+    <p>
+      demande-t-elle.
+    </p>
+
+    <p>
+      Max montre une traduction.
+    </p>
+
+    <p>
+      — Là.
+    </p>
+
+    <p>
+      — Tu as écrit : « Le gardien de la mémoire désigne le chemin. »
+    </p>
+
+    <p>
+      — Oui.
+    </p>
+
+    <p>
+      — Mais le mot ne veut pas dire « désigne ».
+    </p>
+
+    <p>
+      Root le regarde.
+    </p>
+
+    <p>
+      — Tu es sûr ?
+    </p>
+
+    <p>
+      — Non.
+    </p>
+
+    <p>
+      — C’est pour ça que je te demande.
+    </p>
+
+    <p>
+      Il compare plusieurs sources.
+    </p>
+
+    <p>
+      — Ça peut aussi vouloir dire « consigne ».
+    </p>
+
+    <p>
+      Root s’arrête.
+    </p>
+
+    <p>
+      — Consigne ?
+    </p>
+
+    <p>
+      — Comme enregistrer.
+    </p>
+
+    <p>
+      — Conserver.
+    </p>
+
+    <p>
+      — Témoigner.
+    </p>
+
+    <p>
+      Root se rapproche.
+    </p>
+
+    <p>
+      Max poursuit.
+    </p>
+
+    <p>
+      — Peut-être que la Mémoire ne choisit pas seulement le chemin.
+    </p>
+
+    <p class="impact-text">
+      — Elle garde la trace du trajet emprunté.
+    </p>
+
+    <p>
+      Root s’arrête.
+    </p>
+
+    <p>
+      — Pour pouvoir retrouver le chemin du retour.
+    </p>
+
+    <p>
+      Root réfléchit.
+    </p>
+
+    <p>
+      — Pour revenir.
+    </p>
+
+    <p>
+      Max la regarde.
+    </p>
+
+    <p class="emphasis">
+      — Voilà.
+    </p>
+
+  </div>
+
+</section>
+
+
+<section
+  class="scene investigation-scene"
+  id="scene-17"
+>
+
+  <div class="text-block dialogue">
+
+    <p>
+      Un symbole apparaît dans la marge du texte.
+    </p>
+
+    <p>
+      Un ibis stylisé.
+    </p>
+
+    <p>
+      Root se fige.
+    </p>
+
+    <p>
+      — Attends.
+    </p>
+
+    <p>
+      Max regarde.
+    </p>
+
+    <p>
+      — Quoi ?
+    </p>
+
+    <p>
+      — Ça.
+    </p>
+
+    <p>
+      Elle agrandit.
+    </p>
+
+    <p>
+      — Je l’ai déjà vu.
+    </p>
+
+    <p>
+      — Où ?
+    </p>
+
+    <p>
+      — Sur des fragments liés à des scribes anciens.
+    </p>
+
+    <p>
+      Max sourit.
+    </p>
+
+    <p>
+      — Très utile pour un journaliste.
+    </p>
+
+    <p>
+      Root ne répond pas.
+    </p>
+
+    <p>
+      Puis murmure :
+    </p>
+
+    <p class="name-reveal">
+      — Thoth.
+    </p>
+
+    <p>
+      Max la regarde.
+    </p>
+
+    <p>
+      — Encore un dieu.
+    </p>
+
+    <p>
+      — Écriture.
+    </p>
+
+    <p>
+      — mémoire.
+    </p>
+
+    <p>
+      — connaissance.
+    </p>
+
+    <p>
+      — mesure.
+    </p>
+
+    <p>
+      — vérité consignée.
+    </p>
+
+    <p>
+      Max sourit.
+    </p>
+
+    <p>
+      — Ça commence à devenir gênant.
+    </p>
+
+    <p>
+      Root le regarde.
+    </p>
+
+    <p>
+      — Pourquoi ?
+    </p>
+
+    <p>
+      — Parce que j’ai construit toute ma carrière autour de ça.
+    </p>
+
+    <p>
+      — Vérifier.
+    </p>
+
+    <p>
+      — écrire.
+    </p>
+
+    <p>
+      — conserver.
+    </p>
+
+    <p>
+      — distinguer un fait d’une interprétation.
+    </p>
+
+    <p>
+      Root devient plus sérieuse.
+    </p>
+
+    <p>
+      — Peut-être que ce n’est pas un hasard.
+    </p>
+
+    <p>
+      Max soupire.
+    </p>
+
+    <p class="emphasis">
+      — J’espérais que tu dirais exactement l’inverse.
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     BUREAU D'ÉLIE
+===================================================== -->
+
+<section
+  class="scene shadow-scene"
+  id="scene-18"
+>
+
+  <div class="text-block">
+
+    <p>
+      Bureau d’Élie — Mexico
+    </p>
+
+    <p>
+      Élie lit un dossier.
+    </p>
+
+    <p>
+      Son visage se ferme.
+    </p>
+
+    <p>
+      Un de ses hommes attend.
+    </p>
+
+    <p>
+      — C’est confirmé ?
+    </p>
+
+    <p>
+      — Oui.
+    </p>
+
+    <p>
+      — Les pierres transportées pour ces clients passent bien par les mêmes intermédiaires depuis des années.
+    </p>
+
+    <p>
+      Élie feuillette.
+    </p>
+
+    <p>
+      — Et les premiers convois ?
+    </p>
+
+    <p>
+      — Très anciens.
+    </p>
+
+    <p>
+      — Avant certaines de nos structures actuelles.
+    </p>
+
+    <p>
+      Élie s’arrête.
+    </p>
+
+    <p>
+      — Donc ils utilisaient déjà les routes avant que je contrôle tout.
+    </p>
+
+    <p>
+      — Oui.
+    </p>
+
+  </div>
+
+</section>
+
+
+<section
+  class="scene shadow-scene"
+  id="scene-19"
+>
+
+  <div class="text-block dialogue">
+
+    <p>
+      Il referme le dossier.
+    </p>
+
+    <p>
+      — Et Ted Awake ?
+    </p>
+
+    <p>
+      L’homme hésite.
+    </p>
+
+    <p>
+      — Aucun lien direct avec les pierres.
+    </p>
+
+    <p>
+      — Je n’ai pas demandé ça.
+    </p>
+
+    <p>
+      Silence.
+    </p>
+
+    <p>
+      — Le racket du restaurant.
+    </p>
+
+    <p>
+      L’homme baisse les yeux.
+    </p>
+
+    <p>
+      — Oui.
+    </p>
+
+    <p>
+      — C’était bien une équipe sous notre contrôle.
+    </p>
+
+    <p>
+      Élie reste immobile.
+    </p>
+
+    <p>
+      Longtemps.
+    </p>
+
+    <p>
+      — Qui a donné l’ordre final ?
+    </p>
+
+    <p>
+      — L’homme est mort depuis.
+    </p>
+
+    <p>
+      Élie sourit froidement.
+    </p>
+
+    <p class="emphasis">
+      — Pratique.
+    </p>
+
+    <p>
+      Son téléphone sonne.
+    </p>
+
+    <p>
+      Betty.
+    </p>
+
+    <p>
+      Il répond.
+    </p>
+
+    <p>
+      — Tu tombes bien.
+    </p>
+
+    <p>
+      — Viens à Awake.
+    </p>
+
+    <p>
+      Élie se redresse.
+    </p>
+
+    <p>
+      — Pardon ?
+    </p>
+
+    <p>
+      — Hope veut te parler.
+    </p>
+
+    <p>
+      Silence.
+    </p>
+
+    <p>
+      Élie comprend immédiatement.
+    </p>
+
+    <p>
+      — À propos de Ted.
+    </p>
+
+    <p>
+      — Et des pierres.
+    </p>
+
+    <p>
+      Il ferme les yeux une seconde.
+    </p>
+
+    <p class="impact-text">
+      — D’accord.
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     VISUEL 4
+     HOPE / ÉLIE
+===================================================== -->
+
+<section
+  class="scene confrontation-scene interaction-scene"
+  id="scene-20"
+>
+
+  <div
+    class="visual interactive-visual"
+    data-visual="4"
+  >
+
+    <img
+      src="images/chapitre25/Visuel-4.PNG"
+      alt="Hope confronte Élie sur la terrasse extérieure de l'Hacienda Awake"
+      loading="lazy"
+    >
+
+  </div>
+
+
+  <div class="text-block">
+
+    <p>
+      Hacienda Awake — Terrasse extérieure
+    </p>
+
+    <p>
+      Élie arrive seul.
+    </p>
+
+    <p>
+      Hale le fouille.
+    </p>
+
+    <p>
+      Encore.
+    </p>
+
+    <p>
+      Élie ne proteste presque pas.
+    </p>
+
+    <p>
+      Hope l’attend.
+    </p>
+
+    <p>
+      Debout.
+    </p>
+
+    <p>
+      Betty est plus loin.
+    </p>
+
+    <p>
+      Pas assez loin pour ne pas entendre.
+    </p>
+
+  </div>
+
+
+  <div class="observation-buttons">
+
+    <button
+      class="interaction-btn ted-truth-trigger"
+      data-ted-truth="racket"
+    >
+      Racket
+    </button>
+
+    <button
+      class="interaction-btn ted-truth-trigger"
+      data-ted-truth="refusal"
+    >
+      Refus de payer
+    </button>
+
+    <button
+      class="interaction-btn ted-truth-trigger"
+      data-ted-truth="organization"
+    >
+      Organisation
+    </button>
+
+    <button
+      class="interaction-btn ted-truth-trigger"
+      data-ted-truth="responsibility"
+    >
+      Responsabilité
+    </button>
+
+  </div>
+
+
+  <div
+    class="reveal-box"
+    id="tedTruthReveal"
+  >
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     INTERACTION 8
+     LES PIERRES / ÉLIE
+===================================================== -->
+
+<section
+  class="scene confrontation-scene interaction-scene"
+  id="scene-21"
+>
+
+  <div class="text-block dialogue">
+
+    <p>
+      Élie s’approche.
+    </p>
+
+    <p>
+      — Hope.
+    </p>
+
+    <p>
+      Elle ne répond pas immédiatement.
+    </p>
+
+    <p>
+      Puis :
+    </p>
+
+    <p>
+      — Ton réseau a transporté les pierres.
+    </p>
+
+    <p>
+      — Oui.
+    </p>
+
+    <p>
+      — Pendant des années.
+    </p>
+
+    <p>
+      — Oui.
+    </p>
+
+    <p>
+      — Les mêmes Gardiens qui veulent utiliser Anna.
+    </p>
+
+    <p>
+      — Oui.
+    </p>
+
+    <p>
+      Hope serre les mâchoires.
+    </p>
+
+    <p class="impact-text">
+      — Et ton cartel a tué Ted.
+    </p>
+
+    <p>
+      Silence.
+    </p>
+
+    <p>
+      Élie ne détourne pas les yeux.
+    </p>
+
+    <p class="impact-text">
+      — Oui.
+    </p>
+
+  </div>
+
+
+  <div class="story-path">
+
+    <button
+      class="interaction-btn elie-stones-trigger"
+      data-elie-stones="transport"
+    >
+      Transport
+    </button>
+
+    <button
+      class="interaction-btn elie-stones-trigger"
+      data-elie-stones="network"
+    >
+      Réseau
+    </button>
+
+    <button
+      class="interaction-btn elie-stones-trigger"
+      data-elie-stones="ignorance"
+    >
+      Ignorance volontaire
+    </button>
+
+    <button
+      class="interaction-btn elie-stones-trigger"
+      data-elie-stones="money"
+    >
+      Argent
+    </button>
+
+  </div>
+
+
+  <div
+    class="reveal-box"
+    id="elieStonesReveal"
+  >
+  </div>
+
+</section>
+
+
+<section
+  class="scene confrontation-scene"
+  id="scene-22"
+>
+
+  <div class="text-block dialogue">
+
+    <p>
+      Hope s’approche.
+    </p>
+
+    <p>
+      — Mon frère refusait de payer pour garder son propre restaurant.
+    </p>
+
+    <p>
+      Élie ne répond pas.
+    </p>
+
+    <p>
+      — Il a été racketté.
+    </p>
+
+    <p>
+      — Menacé.
+    </p>
+
+    <p>
+      — Puis tué.
+    </p>
+
+    <p>
+      — Par des hommes qui travaillaient pour ton organisation.
+    </p>
+
+    <p>
+      Élie acquiesce lentement.
+    </p>
+
+    <p>
+      — Oui.
+    </p>
+
+    <p>
+      Hope le regarde.
+    </p>
+
+    <p>
+      — Et tu vas me dire que tu ne savais pas ?
+    </p>
+
+    <p>
+      Élie secoue la tête.
+    </p>
+
+    <p class="impact-text">
+      — Non.
+    </p>
+
+    <p>
+      Hope semble surprise.
+    </p>
+
+    <p>
+      — Non ?
+    </p>
+
+    <p>
+      — Ce serait trop facile.
+    </p>
+
+    <p>
+      Il respire.
+    </p>
+
+    <p>
+      — Je ne connaissais pas Ted personnellement.
+    </p>
+
+    <p>
+      — Je n’ai pas donné son nom dans un ordre.
+    </p>
+
+    <p>
+      — Mais je savais comment mon organisation fonctionnait.
+    </p>
+
+    <p>
+      — Je savais ce qu’elle faisait aux gens qui refusaient de payer.
+    </p>
+
+    <p>
+      Hope ne bouge plus.
+    </p>
+
+    <p>
+      Élie poursuit :
+    </p>
+
+    <p class="name-reveal">
+      — Donc je ne vais pas te dire que je n’y suis pour rien.
+    </p>
+
+    <p>
+      Silence.
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     INTERACTION 9
+     RESPONSABILITÉ D'ÉLIE
+===================================================== -->
+
+<section
+  class="scene confrontation-scene interaction-scene"
+  id="scene-23"
+>
+
+  <div class="text-block dialogue">
+
+    <p>
+      Hope demande :
+    </p>
+
+    <p>
+      — Et les pierres ?
+    </p>
+
+    <p>
+      — Là, non.
+    </p>
+
+    <p>
+      — Je ne savais pas ce qu’elles étaient.
+    </p>
+
+    <p>
+      — Je savais qu’on transportait des objets.
+    </p>
+
+    <p>
+      — Je savais qu’on était payé. Bien payé
+    </p>
+
+    <p>
+      — Je n’ai jamais demandé pourquoi.
+    </p>
+
+    <p>
+      Hope sourit sans joie.
+    </p>
+
+    <p>
+      — Très pratique.
+    </p>
+
+    <p>
+      — Oui.
+    </p>
+
+    <p>
+      — Ça l’était.
+    </p>
+
+    <p>
+      Élie la regarde.
+    </p>
+
+    <p class="emphasis">
+      — Jusqu’à maintenant.
+    </p>
+
+  </div>
+
+
+  <div class="observation-buttons">
+
+    <button
+      class="interaction-btn elie-responsibility-trigger"
+      data-elie-responsibility="guilt"
+    >
+      Culpabilité
+    </button>
+
+    <button
+      class="interaction-btn elie-responsibility-trigger"
+      data-elie-responsibility="useful"
+    >
+      Utilité
+    </button>
+
+    <button
+      class="interaction-btn elie-responsibility-trigger"
+      data-elie-responsibility="forgive"
+    >
+      Pas de pardon
+    </button>
+
+    <button
+      class="interaction-btn elie-responsibility-trigger"
+      data-elie-responsibility="help"
+    >
+      Aider maintenant
+    </button>
+
+  </div>
+
+
+  <div
+    class="reveal-box"
+    id="elieResponsibilityReveal"
+  >
+  </div>
+
+</section>
+
+
+<section
+  class="scene confrontation-scene"
+  id="scene-24"
+>
+
+  <div class="text-block dialogue">
+
+    <p>
+      Hope détourne les yeux.
+    </p>
+
+    <p>
+      — Tu sais ce qui me dégoûte le plus ?
+    </p>
+
+    <p>
+      — Beaucoup de choses, probablement.
+    </p>
+
+    <p class="impact-text">
+      — Que tu puisses être utile.
+    </p>
+
+    <p>
+      Élie sourit légèrement.
+    </p>
+
+    <p>
+      — Je comprends.
+    </p>
+
+    <p>
+      — Ne souris pas.
+    </p>
+
+    <p>
+      Il s’arrête immédiatement.
+    </p>
+
+    <p>
+      Hope reprend :
+    </p>
+
+    <p class="name-reveal">
+      — Je ne te pardonne pas pour Ted.
+    </p>
+
+    <p>
+      — Je ne te le demande pas.
+    </p>
+
+    <p>
+      — Et le fait que tu aides aujourd’hui ne change rien.
+    </p>
+
+    <p>
+      — Je sais.
+    </p>
+
+    <p>
+      — Mais si tu as transporté ces pierres…
+    </p>
+
+    <p>
+      — Alors tu vas m’aider à empêcher qu’elles servent.
+    </p>
+
+    <p>
+      Élie la regarde.
+    </p>
+
+    <p>
+      — Oui.
+    </p>
+
+    <p>
+      Hope se retourne.
+    </p>
+
+    <p>
+      Puis s’arrête.
+    </p>
+
+    <p>
+      — Pourquoi ?
+    </p>
+
+    <p>
+      Élie réfléchit.
+    </p>
+
+    <p>
+      — Parce que je déteste être utilisé.
+    </p>
+
+    <p>
+      Hope reste silencieuse.
+    </p>
+
+    <p>
+      Élie ajoute :
+    </p>
+
+    <p>
+      — Et parce que certaines choses vont plus loin que mes affaires.
+    </p>
+
+    <p>
+      Hope le regarde une dernière fois.
+    </p>
+
+    <p>
+      — J’espère que tu le penses.
+    </p>
+
+    <p>
+      Puis elle part.
+    </p>
+
+  </div>
+
+</section>
+
+
+<section
+  class="scene unity-scene"
+  id="scene-25"
+>
+
+  <div class="text-block dialogue">
+
+    <p>
+      Betty rejoint Élie.
+    </p>
+
+    <p>
+      — Tu t’en es mieux sorti que prévu.
+    </p>
+
+    <p>
+      Élie sourit faiblement.
+    </p>
+
+    <p>
+      — Elle ne m’a pas frappé.
+    </p>
+
+    <p>
+      — Elle en avait envie.
+    </p>
+
+    <p>
+      — Je sais.
+    </p>
+
+    <p>
+      Betty le regarde.
+    </p>
+
+    <p>
+      — Moi aussi.
+    </p>
+
+    <p>
+      — Pour Ted ?
+    </p>
+
+    <p>
+      — Pour beaucoup de choses.
+    </p>
+
+    <p>
+      Élie soupire.
+    </p>
+
+    <p>
+      — Je suis entouré de femmes extrêmement violentes.
+    </p>
+
+    <p>
+      Betty sourit.
+    </p>
+
+    <p class="emphasis">
+      — Tu l’as bien cherché.
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     VISUEL 5
+     LES TROIS HÉRITAGES
+===================================================== -->
+
+<section
+  class="scene revelation-scene interaction-scene"
+  id="scene-26"
+>
+
+  <div
+    class="visual interactive-visual"
+    data-visual="5"
+  >
+
+    <img
+      src="images/chapitre25/Visuel-5.PNG"
+      alt="Root Peter et Max face aux symboles des Parques Janus et Thoth"
+      loading="lazy"
+    >
+
+  </div>
+
+
+  <div class="text-block">
+
+    <p>
+      Hacienda Awake — Salle d’analyse
+    </p>
+
+    <p>
+      Root replace la lame dans son axe.
+    </p>
+
+    <p>
+      Peter observe.
+    </p>
+
+    <p>
+      Max relit les textes.
+    </p>
+
+    <p>
+      Lucy examine les réactions.
+    </p>
+
+    <p>
+      Hope revient.
+    </p>
+
+    <p>
+      Son visage est fermé.
+    </p>
+
+    <p>
+      Root la regarde.
+    </p>
+
+    <p>
+      — Ça va ?
+    </p>
+
+    <p>
+      — Non.
+    </p>
+
+    <p>
+      Root acquiesce.
+    </p>
+
+    <p>
+      — D’accord.
+    </p>
+
+  </div>
+
+
+  <div class="observation-buttons">
+
+    <button
+      class="interaction-btn three-symbols-trigger"
+      data-three-symbols="parcae"
+    >
+      Parques
+    </button>
+
+    <button
+      class="interaction-btn three-symbols-trigger"
+      data-three-symbols="janus"
+    >
+      Janus
+    </button>
+
+    <button
+      class="interaction-btn three-symbols-trigger"
+      data-three-symbols="thoth"
+    >
+      Thoth
+    </button>
+
+  </div>
+
+
+  <div
+    class="reveal-box"
+    id="threeSymbolsReveal"
+  >
+  </div>
+
+</section>
+
+
+<section
+  class="scene revelation-scene"
+  id="scene-27"
+>
+
+  <div class="text-block dialogue">
+
+    <p>
+      Hope regarde la lame.
+    </p>
+
+    <p>
+      — On en est où ?
+    </p>
+
+    <p>
+      Peter répond :
+    </p>
+
+    <p>
+      — On pense avoir compris.
+    </p>
+
+    <p>
+      Il projette la structure.
+    </p>
+
+    <p>
+      — La lame donne une orientation au dispositif.
+    </p>
+
+    <p>
+      — Root lit ou conserve le chemin.
+    </p>
+
+    <p>
+      — Anna crée le lien.
+    </p>
+
+    <p>
+      — Toi, tu rends l’activation possible.
+    </p>
+
+    <p>
+      Lucy croise les bras.
+    </p>
+
+    <p>
+      — Et moi, toujours la pièce mystérieuse.
+    </p>
+
+    <p>
+      Peter sourit.
+    </p>
+
+    <p>
+      — Oui.
+    </p>
+
+    <p>
+      Lucy le regarde.
+    </p>
+
+    <p class="emphasis">
+      — Je vais finir par te frapper.
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     INTERACTION 11
+     DES HÉRITAGES
+===================================================== -->
+
+<section
+  class="scene revelation-scene interaction-scene"
+  id="scene-28"
+>
+
+  <div class="text-block dialogue">
+
+    <p>
+      Maître Lee observe les trois symboles anciens.
+    </p>
+
+    <p>
+      Parques.
+    </p>
+
+    <p>
+      Janus.
+    </p>
+
+    <p>
+      Thoth.
+    </p>
+
+    <p>
+      Puis les trois personnes.
+    </p>
+
+    <p>
+      Root.
+    </p>
+
+    <p>
+      Peter.
+    </p>
+
+    <p>
+      Max.
+    </p>
+
+    <p>
+      — Intéressant.
+    </p>
+
+    <p>
+      Lucy :
+    </p>
+
+    <p>
+      — Quoi encore ?
+    </p>
+
+  </div>
+
+
+  <div class="story-path">
+
+    <button
+      class="interaction-btn inheritances-trigger"
+      data-inheritances="roles"
+    >
+      Rôles
+    </button>
+
+    <button
+      class="interaction-btn inheritances-trigger"
+      data-inheritances="abilities"
+    >
+      Aptitudes
+    </button>
+
+    <button
+      class="interaction-btn inheritances-trigger"
+      data-inheritances="transmission"
+    >
+      Transmission
+    </button>
+
+    <button
+      class="interaction-btn inheritances-trigger"
+      data-inheritances="understanding"
+    >
+      Compréhension
+    </button>
+
+    <button
+      class="interaction-btn inheritances-trigger"
+      data-inheritances="families"
+    >
+      Familles
+    </button>
+
+  </div>
+
+
+  <div
+    class="reveal-box"
+    id="inheritancesReveal"
+  >
+  </div>
+
+</section>
+
+
+<section
+  class="scene revelation-scene"
+  id="scene-29"
+>
+
+  <div class="text-block dialogue">
+
+    <p>
+      Lee répond :
+    </p>
+
+    <p>
+      — Peut-être que les quatre fonctions du passage ne sont pas les seules choses à avoir traversé le temps.
+    </p>
+
+    <p>
+      Silence.
+    </p>
+
+    <p>
+      Root le regarde.
+    </p>
+
+    <p>
+      — Vous pensez que certaines familles ont conservé autre chose.
+    </p>
+
+    <p>
+      — Des rôles.
+    </p>
+
+    <p>
+      — Des aptitudes.
+    </p>
+
+    <p>
+      — Des manières de comprendre.
+    </p>
+
+    <p>
+      Peter :
+    </p>
+
+    <p>
+      — Pas des pouvoirs.
+    </p>
+
+    <p>
+      — Non.
+    </p>
+
+    <p>
+      Max :
+    </p>
+
+    <p class="name-reveal">
+      — Des héritages.
+    </p>
+
+    <p>
+      Lee acquiesce.
+    </p>
+
+    <p class="impact-text">
+      — Exactement.
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     AMY REPREND L'ENTRAÎNEMENT
+===================================================== -->
+
+<section
+  class="scene danger-scene"
+  id="scene-30"
+>
+
+  <div class="text-block">
+
+    <p>
+      Hacienda Awake — Salle d’entraînement
+    </p>
+
+    <p>
+      Amy frappe le sac.
+    </p>
+
+    <p>
+      Encore.
+    </p>
+
+    <p>
+      Encore.
+    </p>
+
+    <p>
+      Plus vite.
+    </p>
+
+    <p>
+      Hope entre.
+    </p>
+
+    <p>
+      — Charles avait dit reprise progressive.
+    </p>
+
+    <p>
+      Amy continue.
+    </p>
+
+    <p>
+      — Ceci est progressif.
+    </p>
+
+    <p>
+      Hope regarde le sac osciller violemment.
+    </p>
+
+    <p>
+      — Nous n’avons visiblement pas la même définition.
+    </p>
+
+    <p>
+      Amy s’arrête enfin.
+    </p>
+
+    <p>
+      — Je vais bien.
+    </p>
+
+    <p>
+      — Je vois ça.
+    </p>
+
+    <p>
+      Hope lui tend une serviette.
+    </p>
+
+    <p>
+      — Root a ressorti la lame.
+    </p>
+
+    <p>
+      Amy se fige légèrement.
+    </p>
+
+    <p>
+      — La clé ?
+    </p>
+
+    <p>
+      Hope la regarde.
+    </p>
+
+    <p>
+      — Tu la connais ?
+    </p>
+
+    <p>
+      — Non.
+    </p>
+
+    <p>
+      Puis :
+    </p>
+
+    <p class="impact-text">
+      — Mais je connais le symbole qui apparaît dessus.
+    </p>
+
+    <p>
+      Hope cesse de sourire.
+    </p>
+
+    <p>
+      — Viens.
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     VISUEL 6
+     AMY / SYMBOLE INTERDIT
+===================================================== -->
+
+<section
+  class="scene dark-mark-scene interaction-scene"
+  id="scene-31"
+>
+
+  <div
+    class="visual interactive-visual"
+    data-visual="6"
+  >
+
+    <img
+      src="images/chapitre25/Visuel-6.PNG"
+      alt="Amy reconnaît un symbole interdit gravé sur la lame"
+      loading="lazy"
+    >
+
+  </div>
+
+
+  <div class="text-block">
+
+    <p>
+      Salle d’analyse
+    </p>
+
+    <p>
+      Amy observe la lame sans la toucher.
+    </p>
+
+    <p>
+      Root attend.
+    </p>
+
+    <p>
+      Peter aussi.
+    </p>
+
+    <p>
+      — Alors ?
+    </p>
+
+    <p>
+      demande Lucy.
+    </p>
+
+  </div>
+
+
+  <div class="observation-buttons">
+
+    <button
+      class="interaction-btn route-symbol-trigger"
+      data-route-symbol="way"
+    >
+      Une voie
+    </button>
+
+    <button
+      class="interaction-btn route-symbol-trigger"
+      data-route-symbol="direction"
+    >
+      Direction
+    </button>
+
+    <button
+      class="interaction-btn route-symbol-trigger"
+      data-route-symbol="authorization"
+    >
+      Autorisation
+    </button>
+
+    <button
+      class="interaction-btn route-symbol-trigger"
+      data-route-symbol="route"
+    >
+      Route
+    </button>
+
+  </div>
+
+
+  <div
+    class="reveal-box"
+    id="routeSymbolReveal"
+  >
+  </div>
+
+</section>
+
+
+<section
+  class="scene dark-mark-scene"
+  id="scene-32"
+>
+
+  <div class="text-block dialogue">
+
+    <p>
+      Amy désigne une petite gravure près de la base.
+    </p>
+
+    <p>
+      — Chez les Gardiens, ce symbole n’était pas utilisé pour désigner une porte.
+    </p>
+
+    <p>
+      Root se rapproche.
+    </p>
+
+    <p>
+      — Quoi alors ?
+    </p>
+
+    <p>
+      — Une voie.
+    </p>
+
+    <p class="impact-text">
+      — Une direction autorisée.
+    </p>
+
+    <p>
+      Peter regarde immédiatement sa modélisation.
+    </p>
+
+    <p>
+      — Donc notre hypothèse tient.
+    </p>
+
+    <p>
+      Amy acquiesce.
+    </p>
+
+    <p>
+      — Probablement.
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     INTERACTION 13
+     ACCÈS INTERDIT
+===================================================== -->
+
+<section
+  class="scene dark-mark-scene interaction-scene"
+  id="scene-33"
+>
+
+  <div class="text-block dialogue">
+
+    <p>
+      Puis elle désigne un second motif.
+    </p>
+
+    <p>
+      — Mais celui-là est plus important.
+    </p>
+
+    <p>
+      Maître Lee relève les yeux.
+    </p>
+
+    <p>
+      — Vous le connaissez ?
+    </p>
+
+    <p>
+      Amy le regarde.
+    </p>
+
+    <p>
+      — Oui.
+    </p>
+
+  </div>
+
+
+  <div class="story-path">
+
+    <button
+      class="interaction-btn forbidden-access-trigger"
+      data-forbidden-access="restricted"
+    >
+      Accès restreint
+    </button>
+
+    <button
+      class="interaction-btn forbidden-access-trigger"
+      data-forbidden-access="order"
+    >
+      Ordre direct
+    </button>
+
+    <button
+      class="interaction-btn forbidden-access-trigger"
+      data-forbidden-access="master"
+    >
+      Maître Noir
+    </button>
+
+    <button
+      class="interaction-btn forbidden-access-trigger"
+      data-forbidden-access="device"
+    >
+      Dispositif
+    </button>
+
+  </div>
+
+
+  <div
+    class="reveal-box"
+    id="forbiddenAccessReveal"
+  >
+  </div>
+
+</section>
+
+
+<section
+  class="scene dark-mark-scene"
+  id="scene-34"
+>
+
+  <div class="text-block dialogue">
+
+    <p>
+      — Il marquait les accès qui ne devaient jamais être empruntés sans ordre direct du Maître Noir.
+    </p>
+
+    <p>
+      Silence.
+    </p>
+
+    <p>
+      Root demande :
+    </p>
+
+    <p>
+      — Pourquoi ?
+    </p>
+
+    <p>
+      Amy regarde la carte de la Cueva de las Voces.
+    </p>
+
+    <p>
+      — Parce qu’ils ne conduisent pas seulement à une autre salle.
+    </p>
+
+    <p>
+      Elle pointe une zone profonde de la grotte.
+    </p>
+
+    <p class="name-reveal">
+      — Ils conduisent au dispositif.
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     INTERACTION 14
+     LE CHERCHEUR TERRIFIÉ
+===================================================== -->
+
+<section
+  class="scene dark-mark-scene interaction-scene"
+  id="scene-35"
+>
+
+  <div class="text-block dialogue">
+
+    <p>
+      Hope la fixe.
+    </p>
+
+    <p>
+      — Tu es déjà descendue jusque-là ?
+    </p>
+
+    <p>
+      Amy secoue la tête.
+    </p>
+
+    <p>
+      — Non.
+    </p>
+
+    <p>
+      Puis :
+    </p>
+
+    <p>
+      — Mais j’ai escorté quelqu’un qui, lui, en revenait.
+    </p>
+
+  </div>
+
+
+  <div class="observation-buttons">
+
+    <button
+      class="interaction-btn researcher-trigger"
+      data-researcher="guardian"
+    >
+      Chercheur
+    </button>
+
+    <button
+      class="interaction-btn researcher-trigger"
+      data-researcher="return"
+    >
+      Retour du dispositif
+    </button>
+
+    <button
+      class="interaction-btn researcher-trigger"
+      data-researcher="fear"
+    >
+      Terrifié
+    </button>
+
+    <button
+      class="interaction-btn researcher-trigger"
+      data-researcher="silence"
+    >
+      Son silence
+    </button>
+
+  </div>
+
+
+  <div
+    class="reveal-box"
+    id="researcherReveal"
+  >
+  </div>
+
+</section>
+
+
+<section
+  class="scene dark-mark-scene"
+  id="scene-36"
+>
+
+  <div class="text-block dialogue">
+
+    <p>
+      Root se rapproche.
+    </p>
+
+    <p>
+      — Qui ?
+    </p>
+
+    <p>
+      Amy hésite.
+    </p>
+
+    <p>
+      — Un chercheur des Gardiens.
+    </p>
+
+    <p class="impact-text">
+      — Il était terrifié.
+    </p>
+
+    <p>
+      Peter demande :
+    </p>
+
+    <p>
+      — Par quoi ?
+    </p>
+
+    <p>
+      Amy regarde la lame.
+    </p>
+
+    <p class="emphasis">
+      — Il n’a jamais voulu le dire.
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     VISUEL 7
+     RETOUR DE CLARK
+===================================================== -->
+
+<section
+  class="scene unity-scene interaction-scene"
+  id="scene-37"
+>
+
+  <div
+    class="visual interactive-visual"
+    data-visual="7"
+  >
+
+    <img
+      src="images/chapitre25/Visuel-7.PNG"
+      alt="Root retrouve Clark à l'entrée de l'Hacienda Awake"
+      loading="lazy"
+    >
+
+  </div>
+
+
+  <div class="text-block">
+
+    <p>
+      Hacienda Awake — Entrée principale
+    </p>
+
+    <p>
+      Une voiture s’arrête.
+    </p>
+
+    <p>
+      Anna passe dans le couloir au même moment.
+    </p>
+
+    <p>
+      Elle regarde par la baie vitrée.
+    </p>
+
+    <p>
+      Puis sourit.
+    </p>
+
+    <p>
+      — Oh.
+    </p>
+
+    <p>
+      Hale approche.
+    </p>
+
+    <p>
+      — Vous connaissez ?
+    </p>
+
+    <p>
+      Anna sourit encore plus.
+    </p>
+
+    <p>
+      — Moi non.
+    </p>
+
+    <p>
+      Puis elle regarde vers la salle d’analyse.
+    </p>
+
+    <p class="emphasis">
+      — Mais Root, oui.
+    </p>
+
+  </div>
+
+
+  <div class="observation-buttons">
+
+    <button
+      class="interaction-btn clark-return-trigger"
+      data-clark-return="surprise"
+    >
+      Surprise
+    </button>
+
+    <button
+      class="interaction-btn clark-return-trigger"
+      data-clark-return="root"
+    >
+      Root
+    </button>
+
+    <button
+      class="interaction-btn clark-return-trigger"
+      data-clark-return="clark"
+    >
+      Clark
+    </button>
+
+    <button
+      class="interaction-btn clark-return-trigger"
+      data-clark-return="reunion"
+    >
+      Retrouvailles
+    </button>
+
+  </div>
+
+
+  <div
+    class="reveal-box"
+    id="clarkReturnReveal"
+  >
+  </div>
+
+</section>
+
+
+<section
+  class="scene unity-scene"
+  id="scene-38"
+>
+
+  <div class="text-block dialogue">
+
+    <p>
+      Quelques minutes plus tard.
+    </p>
+
+    <p>
+      Root sort.
+    </p>
+
+    <p>
+      Elle s’arrête net.
+    </p>
+
+    <p>
+      Clark est là.
+    </p>
+
+    <p>
+      Grand sourire.
+    </p>
+
+    <p>
+      Sac à l’épaule.
+    </p>
+
+    <p>
+      — Surprise.
+    </p>
+
+    <p>
+      Root reste immobile une seconde.
+    </p>
+
+    <p>
+      Puis son visage change complètement.
+    </p>
+
+    <p class="impact-text">
+      — Clark ?
+    </p>
+
+    <p>
+      Il ouvre les bras.
+    </p>
+
+    <p>
+      Elle court presque jusqu’à lui.
+    </p>
+
+    <p>
+      Il la serre contre lui.
+    </p>
+
+    <p>
+      — Tu pensais vraiment pouvoir disparaître pendant des semaines sans que je vienne vérifier ?
+    </p>
+
+    <p>
+      Root rit.
+    </p>
+
+    <p>
+      — Tu es fou.
+    </p>
+
+    <p class="emphasis">
+      — C’est ce qui fait mon charme.
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     INTERACTION 16
+     RÉACTION DE MAX
+===================================================== -->
+
+<section
+  class="scene unity-scene interaction-scene"
+  id="scene-39"
+>
+
+  <div class="text-block">
+
+    <p>
+      Anna arrive.
+    </p>
+
+    <p>
+      Puis Max.
+    </p>
+
+    <p>
+      Max voit Clark.
+    </p>
+
+    <p>
+      S’arrête.
+    </p>
+
+    <p>
+      Anna regarde Max.
+    </p>
+
+    <p>
+      Puis Clark.
+    </p>
+
+    <p>
+      Puis Root.
+    </p>
+
+    <p>
+      Puis de nouveau Max.
+    </p>
+
+    <p>
+      Un sourire apparaît lentement sur son visage.
+    </p>
+
+  </div>
+
+
+  <div class="story-path">
+
+    <button
+      class="interaction-btn max-reaction-trigger"
+      data-max-reaction="jealousy"
+    >
+      Jalousie
+    </button>
+
+    <button
+      class="interaction-btn max-reaction-trigger"
+      data-max-reaction="observation"
+    >
+      Observation
+    </button>
+
+    <button
+      class="interaction-btn max-reaction-trigger"
+      data-max-reaction="anna"
+    >
+      Anna remarque
+    </button>
+
+    <button
+      class="interaction-btn max-reaction-trigger"
+      data-max-reaction="knowsee"
+    >
+      Savoir et voir
+    </button>
+
+  </div>
+
+
+  <div
+    class="reveal-box"
+    id="maxReactionReveal"
+  >
+  </div>
+
+</section>
+
+
+<section
+  class="scene unity-scene"
+  id="scene-40"
+>
+
+  <div class="text-block dialogue">
+
+    <p>
+      Max le voit.
+    </p>
+
+    <p>
+      — Non.
+    </p>
+
+    <p>
+      Anna murmure :
+    </p>
+
+    <p>
+      — Je n’ai rien dit.
+    </p>
+
+    <p>
+      — Tu allais le faire.
+    </p>
+
+    <p>
+      — Absolument.
+    </p>
+
+    <p>
+      Clark se tourne.
+    </p>
+
+    <p>
+      — Max !
+    </p>
+
+    <p>
+      Il lui serre la main.
+    </p>
+
+    <p>
+      — Toujours en train de courir après les catastrophes ?
+    </p>
+
+    <p>
+      Max sourit.
+    </p>
+
+    <p>
+      — Ça dépend.
+    </p>
+
+    <p>
+      — Certaines viennent directement à nous.
+    </p>
+
+    <p>
+      Clark rit.
+    </p>
+
+    <p>
+      Root ne remarque rien.
+    </p>
+
+    <p class="emphasis">
+      Anna, si.
+    </p>
+
+    <p>
+      Tout.
+    </p>
+
+  </div>
+
+</section>
+
+
+<section
+  class="scene unity-scene"
+  id="scene-41"
+>
+
+  <div class="text-block dialogue">
+
+    <p>
+      Terrasse — Un peu plus tard
+    </p>
+
+    <p>
+      Clark raconte son voyage.
+    </p>
+
+    <p>
+      Root écoute.
+    </p>
+
+    <p>
+      Heureuse.
+    </p>
+
+    <p>
+      Max reste plus loin avec Anna.
+    </p>
+
+    <p>
+      Anna lui tend un verre.
+    </p>
+
+    <p>
+      — Ça va ?
+    </p>
+
+    <p>
+      — Très bien.
+    </p>
+
+    <p>
+      — Tu mens très mal.
+    </p>
+
+    <p>
+      — Je suis journaliste.
+    </p>
+
+    <p>
+      — Justement.
+    </p>
+
+    <p>
+      Max regarde Root.
+    </p>
+
+    <p>
+      Puis Clark.
+    </p>
+
+    <p>
+      — Je savais qu’elle avait quelqu’un. Mais un playboy adulé par des millions de femmes…
+    </p>
+
+    <p>
+      Anna sourit.
+    </p>
+
+    <p class="impact-text">
+      — J’avais presque oublié la star de cinéma. Savoir et voir, ce n’est pas pareil.
+    </p>
+
+    <p>
+      Max la regarde.
+    </p>
+
+    <p>
+      — Depuis quand tu es aussi pénible ?
+    </p>
+
+    <p>
+      — Depuis que tu m’apprends à observer.
+    </p>
+
+    <p>
+      Il soupire.
+    </p>
+
+    <p>
+      — J’ai créé un monstre.
+    </p>
+
+    <p class="emphasis">
+      — Exactement.
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     VISUEL 8
+     LA LAME MONTRE LE CHEMIN
+===================================================== -->
+
+<section
+  class="scene revelation-scene interaction-scene"
+  id="scene-42"
+>
+
+  <div
+    class="visual interactive-visual"
+    data-visual="8"
+  >
+
+    <img
+      src="images/chapitre25/Visuel-8.PNG"
+      alt="Une ligne lumineuse sur la lame indique la Cueva de las Voces"
+      loading="lazy"
+    >
+
+  </div>
+
+
+  <div class="text-block">
+
+    <p>
+      Hacienda Awake — Salle sécurisée
+    </p>
+
+    <p>
+      Plus tard dans la nuit.
+    </p>
+
+    <p>
+      Root replace la lame dans son coffre.
+    </p>
+
+    <p>
+      Mais avant que Peter referme…
+    </p>
+
+    <p>
+      elle s’arrête.
+    </p>
+
+    <p>
+      — Attends.
+    </p>
+
+    <p class="impact-text">
+      Une nouvelle ligne vient d’apparaître sur la lame.
+    </p>
+
+    <p>
+      Très fine.
+    </p>
+
+  </div>
+
+
+  <div class="story-path">
+
+    <button
+      class="interaction-btn blade-direction-trigger"
+      data-blade-direction="root"
+    >
+      Root
+    </button>
+
+    <button
+      class="interaction-btn blade-direction-trigger"
+      data-blade-direction="peter"
+    >
+      Janus
+    </button>
+
+    <button
+      class="interaction-btn blade-direction-trigger"
+      data-blade-direction="max"
+    >
+      Thoth
+    </button>
+
+    <button
+      class="interaction-btn blade-direction-trigger"
+      data-blade-direction="cave"
+    >
+      Cueva
+    </button>
+
+    <button
+      class="interaction-btn blade-direction-trigger"
+      data-blade-direction="heritages"
+    >
+      Trois héritages
+    </button>
+
+  </div>
+
+
+  <div
+    class="reveal-box"
+    id="bladeDirectionReveal"
+  >
+  </div>
+
+</section>
+
+
+<section
+  class="scene revelation-scene"
+  id="scene-43"
+>
+
+  <div class="text-block">
+
+    <p>
+      Peter zoome.
+    </p>
+
+    <p>
+      Max s’approche.
+    </p>
+
+    <p>
+      Lucy aussi.
+    </p>
+
+    <p>
+      La ligne ne montre pas un symbole.
+    </p>
+
+    <p class="impact-text">
+      Elle montre une direction.
+    </p>
+
+    <p>
+      Peter superpose immédiatement les coordonnées connues.
+    </p>
+
+    <p class="name-reveal">
+      La Cueva de las Voces.
+    </p>
+
+    <p>
+      Root regarde l’écran.
+    </p>
+
+    <p>
+      — Elle reconnaît le dispositif.
+    </p>
+
+    <p>
+      Hope se rapproche.
+    </p>
+
+    <p>
+      — Ou elle reconnaît le chemin.
+    </p>
+
+    <p>
+      Maître Lee ne dit rien.
+    </p>
+
+  </div>
+
+</section>
+
+
+<section
+  class="scene revelation-scene"
+  id="scene-44"
+>
+
+  <div class="text-block dialogue">
+
+    <p>
+      Root regarde sa propre marque.
+    </p>
+
+    <p>
+      Puis la lame.
+    </p>
+
+    <p>
+      Puis la carte.
+    </p>
+
+    <p>
+      — Les Parques ne prédisaient peut-être pas l’avenir.
+    </p>
+
+    <p>
+      Max murmure :
+    </p>
+
+    <p class="impact-text">
+      — Elles conservaient les chemins possibles.
+    </p>
+
+    <p>
+      Root acquiesce.
+    </p>
+
+    <p>
+      Peter regarde le symbole de Janus.
+    </p>
+
+    <p>
+      Max celui de Thoth.
+    </p>
+
+    <p class="name-reveal">
+      Trois héritages.
+    </p>
+
+    <p>
+      Trois fonctions oubliées.
+    </p>
+
+    <p>
+      Pas encore des réponses complètes.
+    </p>
+
+    <p>
+      Mais plus des coïncidences non plus.
+    </p>
+
+    <p>
+      Et pour la première fois depuis longtemps…
+    </p>
+
+    <p>
+      ils n’avaient pas découvert un nouveau mystère.
+    </p>
+
+    <p class="emphasis">
+      Ils venaient de retrouver des morceaux de leur propre histoire.
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     FIN DU CHAPITRE
+===================================================== -->
+
+<section
+  class="scene chapter-end"
+  id="scene-45"
+>
+
+  <div class="end-symbol">
+    ∞
+  </div>
+
+
+  <div class="end-actions">
+
+    <button
+      class="chapter-btn"
+      id="restartChapter"
+    >
+      Relire le chapitre
+    </button>
+
+    <!--
+    Quand le chapitre 26 sera prêt :
+
+    <a
+      class="chapter-btn primary"
+      href="chapitre26.html"
+    >
+      Continuer
+    </a>
+    -->
+
+    <a
+      href="index.html"
+      class="chapter-btn primary"
+    >
+      Retour à l’accueil
+    </a>
+
+  </div>
+
+</section>
+
+
+</main>
+
+
+<!-- =====================================================
+     POPUP INFORMATION / SECRET
+===================================================== -->
+
+<div
+  class="secret-popup"
+  id="secretPopup"
+  aria-hidden="true"
+>
+
+  <div class="secret-popup-inner">
+
+    <span class="secret-symbol">
+      ∞
+    </span>
+
+    <span>
+      INFORMATION DÉCOUVERTE
+    </span>
+
+  </div>
+
+</div>
+
+
+<!-- =====================================================
+     MENU
+===================================================== -->
+
+<div
+  class="chapter-menu"
+  id="chapterMenu"
+  aria-hidden="true"
+>
+
+  <div class="chapter-menu-panel">
+
+    <button
+      class="menu-close"
+      id="menuClose"
+      aria-label="Fermer le menu"
+    >
+      ×
+    </button>
+
+    <h2>
+      Chapitre 25
+    </h2>
+
+    <p>
+      Les héritages
+    </p>
+
+    <button
+      id="resumeBtn"
+      class="menu-action"
+    >
+      Reprendre la lecture
+    </button>
+
+    <button
+      id="restartBtn"
+      class="menu-action"
+    >
+      Recommencer le chapitre
+    </button>
+
+    <a
+      href="index.html"
+      class="menu-action"
+    >
+      Retour à l’accueil
+    </a>
+
+    <a
+      href="menu.html"
+      class="menu-action"
+    >
+      Retour au menu
+    </a>
+
+  </div>
+
+</div>
+
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
+<script src="js/chapitre25.js?v=1"></script>
+
+
+</body>
+</html>
