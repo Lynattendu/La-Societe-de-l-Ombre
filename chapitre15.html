@@ -1,1 +1,4430 @@
+<!DOCTYPE html>
+<html lang="fr">
 
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+  >
+
+  <meta
+    name="theme-color"
+    content="#050505"
+  >
+
+  <title>
+    Chapitre 15 — Le jeu commence | La Société de l'Ombre
+  </title>
+
+  <link
+    rel="stylesheet"
+    href="css/chapitre15.css"
+  >
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     BARRE DE PROGRESSION
+===================================================== -->
+
+<div
+  class="progress-bar"
+  aria-hidden="true"
+>
+  <div
+    class="progress-fill"
+    id="progressFill"
+  ></div>
+</div>
+
+
+<!-- =====================================================
+     COMMANDES
+===================================================== -->
+
+<div class="chapter-controls">
+
+  <button
+    class="control-btn"
+    id="menuBtn"
+    aria-label="Ouvrir le menu"
+  >
+    ☰
+  </button>
+
+  <button
+    class="control-btn"
+    id="soundBtn"
+    aria-label="Activer ou désactiver le son"
+  >
+    ♫
+  </button>
+
+</div>
+
+
+<main
+  class="chapter"
+  id="chapter"
+>
+
+
+<!-- =====================================================
+     VISUEL 1
+     COUVERTURE
+===================================================== -->
+
+<section
+  class="scene scene-cover"
+  id="scene-1"
+>
+
+  <div
+    class="visual full-visual"
+    data-visual="1"
+  >
+
+    <img
+      src="images/chapitre15/Visuel-1.PNG"
+      alt="Chapitre 15 — Le jeu commence"
+      loading="eager"
+    >
+
+  </div>
+
+
+  <div class="chapter-title-overlay">
+
+    <p class="chapter-number">
+      Chapitre 15
+    </p>
+
+    <h1>
+      Le jeu commence
+    </h1>
+
+    <button
+      class="continue-btn"
+      data-next
+    >
+      Continuer
+    </button>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     INTERACTION 1
+     ISABEL SOUS SURVEILLANCE
+===================================================== -->
+
+<section
+  class="scene investigation-scene interaction-scene"
+  id="scene-2"
+>
+
+  <div
+    class="visual interactive-visual"
+    data-visual="1"
+  >
+    <img
+      src="images/chapitre15/Visuel-1.PNG"
+      alt="Isabel traverse l'Hacienda Flores sous la surveillance de Hale Lucy et Clive"
+      loading="lazy"
+    >
+  </div>
+
+
+  <div class="text-block">
+
+    <p>
+      Hacienda Flores
+    </p>
+
+    <p>
+      Isabel Ortega traverse
+      le grand hall de l’hacienda
+      comme elle le fait
+      depuis des années.
+    </p>
+
+    <p>
+      Même démarche.
+    </p>
+
+    <p>
+      Même sourire discret.
+    </p>
+
+    <p>
+      Même classeur contre elle.
+    </p>
+
+    <p>
+      Elle s’arrête quelques secondes
+      pour échanger avec une employée,
+      vérifie une livraison prévue
+      dans l’après-midi,
+      puis disparaît dans un couloir.
+    </p>
+
+    <p>
+      Depuis la salle de sécurité,
+      Hale la regarde
+      sur un écran.
+    </p>
+
+    <p>
+      Il ne dit rien.
+    </p>
+
+    <p>
+      Lucy se tient
+      à côté de lui.
+    </p>
+
+  </div>
+
+
+  <div class="observation-buttons">
+
+    <button
+      class="interaction-btn isabel-watch-trigger"
+      data-isabel-watch="routine"
+    >
+      Observer sa routine
+    </button>
+
+    <button
+      class="interaction-btn isabel-watch-trigger"
+      data-isabel-watch="smile"
+    >
+      Observer son attitude
+    </button>
+
+    <button
+      class="interaction-btn isabel-watch-trigger"
+      data-isabel-watch="work"
+    >
+      Observer son travail
+    </button>
+
+    <button
+      class="interaction-btn isabel-watch-trigger"
+      data-isabel-watch="hale"
+    >
+      Observer Hale
+    </button>
+
+    <button
+      class="interaction-btn isabel-watch-trigger"
+      data-isabel-watch="years"
+    >
+      Dix-huit ans
+    </button>
+
+  </div>
+
+
+  <div
+    class="reveal-box"
+    id="isabelWatchReveal"
+  >
+  </div>
+
+</section>
+
+
+<section
+  class="scene investigation-scene"
+  id="scene-3"
+>
+
+  <div class="text-block dialogue">
+
+    <p>
+      Clive,
+      installé un peu plus loin,
+      observe alternativement Hale
+      et les images
+      de vidéosurveillance.
+    </p>
+
+    <p>
+      — Tu vas finir
+      par traverser l’écran
+      avec ton regard.
+    </p>
+
+    <p>
+      Hale ne réagit pas.
+    </p>
+
+    <p>
+      Lucy tourne légèrement
+      la tête.
+    </p>
+
+    <p>
+      — Il a raison.
+    </p>
+
+    <p>
+      — Je sais.
+    </p>
+
+    <p>
+      — Tu la connais
+      depuis combien de temps ?
+    </p>
+
+    <p>
+      Hale hésite.
+    </p>
+
+    <p class="impact-text">
+      — Dix-huit ans.
+    </p>
+
+    <p>
+      Clive cesse de sourire.
+    </p>
+
+    <p>
+      — Dix-huit ?
+    </p>
+
+    <p>
+      — Elle est arrivée
+      environ un an après Anna.
+    </p>
+
+    <p>
+      Lucy regarde
+      de nouveau l’écran.
+    </p>
+
+    <p>
+      Isabel vient de s’arrêter
+      devant une employée
+      et lui adresse quelques mots
+      avec un sourire.
+    </p>
+
+    <p>
+      Tout semble
+      parfaitement normal.
+    </p>
+
+    <p>
+      — Et pendant tout ce temps,
+      tu n’as jamais rien remarqué ?
+    </p>
+
+    <p>
+      Hale serre la mâchoire.
+    </p>
+
+    <p>
+      — Non.
+    </p>
+
+    <p>
+      Clive intervient :
+    </p>
+
+    <p>
+      — C’est justement
+      pour ça qu’elle est bonne.
+    </p>
+
+    <p>
+      Hale lui lance
+      un regard froid.
+    </p>
+
+    <p>
+      Clive lève immédiatement
+      les mains.
+    </p>
+
+    <p>
+      — Ce n’était pas
+      un reproche.
+    </p>
+
+    <p>
+      Puis il ajoute :
+    </p>
+
+    <p>
+      — Pour rester dix-huit ans
+      dans une maison comme celle-ci
+      sans être repérée,
+      elle devait être irréprochable.
+    </p>
+
+    <p>
+      Lucy acquiesce.
+    </p>
+
+    <p>
+      — Pas d’excès.
+    </p>
+
+    <p>
+      — Pas d’erreur.
+    </p>
+
+    <p>
+      — Pas de comportement
+      inhabituel.
+    </p>
+
+    <p class="emphasis">
+      — Rien qui donne envie
+      qu’on regarde
+      dans sa direction.
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     VISUEL 2
+     UTILISER LA TAUPE
+===================================================== -->
+
+<section
+  class="scene deduction-scene interaction-scene"
+  id="scene-4"
+>
+
+  <div
+    class="visual interactive-visual"
+    data-visual="2"
+  >
+    <img
+      src="images/chapitre15/Visuel-2.PNG"
+      alt="Lucy Hale et Clive décident de ne pas arrêter Isabel"
+      loading="lazy"
+    >
+  </div>
+
+
+  <div class="text-block">
+
+    <p>
+      Hale murmure :
+    </p>
+
+    <p>
+      — Anna lui fait confiance.
+    </p>
+
+    <p>
+      Lucy le regarde.
+    </p>
+
+    <p>
+      — Je sais.
+    </p>
+
+    <p>
+      — Betty aussi.
+    </p>
+
+    <p>
+      — Je sais.
+    </p>
+
+    <p>
+      Hale détourne les yeux.
+    </p>
+
+    <p>
+      — Et moi aussi.
+    </p>
+
+    <p>
+      Un silence.
+    </p>
+
+    <p>
+      Clive se redresse.
+    </p>
+
+    <p class="impact-text">
+      — Alors on ne l’arrête pas.
+    </p>
+
+  </div>
+
+
+  <div class="observation-buttons">
+
+    <button
+      class="interaction-btn mole-strategy-trigger"
+      data-mole-strategy="arrest"
+    >
+      L’arrêter
+    </button>
+
+    <button
+      class="interaction-btn mole-strategy-trigger"
+      data-mole-strategy="question"
+    >
+      L’interroger
+    </button>
+
+    <button
+      class="interaction-btn mole-strategy-trigger"
+      data-mole-strategy="watch"
+    >
+      La surveiller
+    </button>
+
+    <button
+      class="interaction-btn mole-strategy-trigger"
+      data-mole-strategy="feed"
+    >
+      Lui donner une fausse information
+    </button>
+
+  </div>
+
+
+  <div
+    class="reveal-box"
+    id="moleStrategyReveal"
+  >
+  </div>
+
+</section>
+
+
+<section
+  class="scene deduction-scene"
+  id="scene-5"
+>
+
+  <div class="text-block dialogue">
+
+    <p>
+      Hale tourne
+      brutalement la tête.
+    </p>
+
+    <p>
+      — Pardon ?
+    </p>
+
+    <p>
+      Lucy regarde Clive.
+    </p>
+
+    <p>
+      — Développe.
+    </p>
+
+    <p>
+      — Vous avez enfin trouvé
+      une taupe qui transmet
+      probablement des informations
+      depuis presque deux décennies.
+    </p>
+
+    <p>
+      Il sourit légèrement.
+    </p>
+
+    <p>
+      — Et vous voulez immédiatement
+      lui faire savoir
+      qu’elle a été découverte ?
+    </p>
+
+    <p>
+      Hale comprend.
+    </p>
+
+    <p>
+      Clive poursuit :
+    </p>
+
+    <p class="impact-text">
+      — Une taupe identifiée
+      est beaucoup plus utile
+      qu’une taupe arrêtée.
+    </p>
+
+    <p>
+      Lucy acquiesce lentement.
+    </p>
+
+    <p>
+      — On la laisse travailler.
+    </p>
+
+    <p>
+      — Exactement.
+    </p>
+
+    <p>
+      Clive pointe l’écran.
+    </p>
+
+    <p>
+      — Elle croit toujours
+      qu’elle nous observe.
+    </p>
+
+    <p>
+      Puis son sourire s’élargit.
+    </p>
+
+    <p class="emphasis">
+      — Maintenant,
+      c’est nous
+      qui allons l’observer.
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     VISUEL 3
+     CONSTRUIRE LE PIÈGE
+===================================================== -->
+
+<section
+  class="scene investigation-scene interaction-scene"
+  id="scene-6"
+>
+
+  <div
+    class="visual interactive-visual"
+    data-visual="3"
+  >
+    <img
+      src="images/chapitre15/Visuel-3.PNG"
+      alt="Lucy prépare un faux déplacement médical d'Anna"
+      loading="lazy"
+    >
+  </div>
+
+
+  <div class="text-block">
+
+    <p>
+      Lucy affiche
+      plusieurs schémas
+      sur l’écran principal.
+    </p>
+
+    <p>
+      — Première règle :
+      personne ne change
+      de comportement avec elle.
+    </p>
+
+    <p>
+      Elle regarde Hale.
+    </p>
+
+    <p class="emphasis">
+      — Surtout toi.
+    </p>
+
+    <p>
+      — Je sais faire
+      mon travail.
+    </p>
+
+    <p>
+      — Je n’en doute pas.
+    </p>
+
+    <p>
+      Puis elle ajoute :
+    </p>
+
+    <p>
+      — Mais toi,
+      tu sais qu’elle a peut-être
+      contribué à envoyer
+      des tueurs chez Anna.
+    </p>
+
+    <p>
+      Hale ne répond pas.
+    </p>
+
+    <p>
+      Lucy poursuit :
+    </p>
+
+    <p>
+      — Si tu la regardes différemment,
+      elle le verra.
+    </p>
+
+    <p>
+      Clive intervient :
+    </p>
+
+    <p>
+      — Et si elle est aussi bonne
+      que je le pense,
+      elle partira avant même
+      qu’on sache comment.
+    </p>
+
+    <p>
+      Hale respire profondément.
+    </p>
+
+    <p>
+      — Très bien.
+    </p>
+
+    <p>
+      Lucy affiche
+      une nouvelle page.
+    </p>
+
+    <p class="impact-text">
+      — Deuxième règle :
+      on lui donne une information
+      que personne d’autre
+      ne possède.
+    </p>
+
+    <p>
+      Clive sourit.
+    </p>
+
+    <p>
+      — Enfin.
+    </p>
+
+  </div>
+
+
+  <div class="story-path">
+
+    <button
+      class="interaction-btn trap-plan-trigger"
+      data-trap-plan="move"
+    >
+      Déplacement d’Anna
+    </button>
+
+    <button
+      class="interaction-btn trap-plan-trigger"
+      data-trap-plan="medical"
+    >
+      Raison médicale
+    </button>
+
+    <button
+      class="interaction-btn trap-plan-trigger"
+      data-trap-plan="vehicle"
+    >
+      Préparer un véhicule
+    </button>
+
+    <button
+      class="interaction-btn trap-plan-trigger"
+      data-trap-plan="schedule"
+    >
+      Modifier le planning
+    </button>
+
+    <button
+      class="interaction-btn trap-plan-trigger"
+      data-trap-plan="exclusive"
+    >
+      Réserver l’information à Isabel
+    </button>
+
+  </div>
+
+
+  <div
+    class="reveal-box"
+    id="trapPlanReveal"
+  >
+  </div>
+
+</section>
+
+
+<section
+  class="scene investigation-scene"
+  id="scene-7"
+>
+
+  <div class="text-block dialogue">
+
+    <p>
+      Hale regarde Lucy.
+    </p>
+
+    <p>
+      — Quelle information ?
+    </p>
+
+    <p>
+      — Anna quittera discrètement
+      l’hacienda Awake
+      après-demain matin.
+    </p>
+
+    <p>
+      — Destination ?
+    </p>
+
+    <p>
+      Lucy réfléchit.
+    </p>
+
+    <p>
+      Clive répond :
+    </p>
+
+    <p>
+      — Laboratoire de Peter.
+    </p>
+
+    <p>
+      — Trop logique.
+    </p>
+
+    <p>
+      Lucy secoue la tête.
+    </p>
+
+    <p>
+      — Justement.
+    </p>
+
+    <p>
+      Elle se tourne vers Hale.
+    </p>
+
+    <p>
+      — On dit qu’elle doit subir
+      des examens supplémentaires
+      à cause de ce qu’on vient
+      d’apprendre sur sa naissance.
+    </p>
+
+    <p>
+      Hale grimace.
+    </p>
+
+    <p>
+      — Utiliser ça
+      comme appât
+      ne va pas me plaire.
+    </p>
+
+    <p>
+      — À moi non plus.
+    </p>
+
+    <p>
+      Lucy répond calmement :
+    </p>
+
+    <p>
+      — Anna ne bougera pas.
+    </p>
+
+    <p>
+      — Personne
+      ne sera exposé.
+    </p>
+
+    <p class="impact-text">
+      — On veut seulement savoir
+      si l’information
+      quitte cette maison.
+    </p>
+
+    <p>
+      Clive ajoute :
+    </p>
+
+    <p class="emphasis">
+      — Et surtout
+      où elle va.
+    </p>
+
+    <p>
+      Hale réfléchit.
+    </p>
+
+    <p>
+      — Comment Isabel
+      va l’apprendre ?
+    </p>
+
+    <p>
+      Lucy sourit légèrement.
+    </p>
+
+    <p>
+      — Naturellement.
+    </p>
+
+    <p>
+      — Je vais demander
+      que son service organise
+      un véhicule
+      et modifie un planning.
+    </p>
+
+    <p>
+      Clive acquiesce.
+    </p>
+
+    <p>
+      — Pas de message secret.
+    </p>
+
+    <p>
+      — Pas de rendez-vous suspect.
+    </p>
+
+    <p>
+      — Juste son travail.
+    </p>
+
+    <p>
+      Lucy poursuit :
+    </p>
+
+    <p>
+      — Et IA2 surveillera
+      tout ce qu’elle peut.
+    </p>
+
+    <p>
+      Clive ajoute :
+    </p>
+
+    <p>
+      — Et moi
+      tout ce qu’IA2
+      ne peut pas voir.
+    </p>
+
+    <p>
+      Lucy le regarde.
+    </p>
+
+    <p>
+      — Comme quoi ?
+    </p>
+
+    <p>
+      — Comme la manière
+      dont un être humain intelligent
+      transmet une information
+      lorsqu’il sait
+      que les systèmes numériques
+      peuvent être surveillés.
+    </p>
+
+    <p>
+      Hale demande :
+    </p>
+
+    <p>
+      — Tu penses
+      qu’elle utilise
+      un intermédiaire physique ?
+    </p>
+
+    <p>
+      — Peut-être.
+    </p>
+
+    <p>
+      Clive sourit.
+    </p>
+
+    <p>
+      — Ou quelque chose
+      d’encore plus simple.
+    </p>
+
+    <p>
+      Lucy soupire.
+    </p>
+
+    <p>
+      — Je déteste
+      quand tu prends cet air.
+    </p>
+
+    <p>
+      — C’est parce que tu sais
+      que j’ai souvent raison.
+    </p>
+
+    <p>
+      — Occasionnellement.
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     VISUEL 4
+     ANNA ET MAX
+===================================================== -->
+
+<section
+  class="scene unity-scene interaction-scene"
+  id="scene-8"
+>
+
+  <div
+    class="visual interactive-visual"
+    data-visual="4"
+  >
+    <img
+      src="images/chapitre15/Visuel-4.PNG"
+      alt="Anna et Max discutent dans le jardin de l'Hacienda Awake"
+      loading="lazy"
+    >
+  </div>
+
+
+  <div class="text-block">
+
+    <p>
+      Hacienda Awake
+    </p>
+
+    <p>
+      Anna est assise
+      seule à l’extérieur.
+    </p>
+
+    <p>
+      Devant elle,
+      le jardin descend doucement
+      vers une zone boisée.
+    </p>
+
+    <p>
+      Elle tient une tasse
+      qu’elle ne boit pas.
+    </p>
+
+    <p>
+      Max arrive
+      sans bruit.
+    </p>
+
+    <p>
+      Il s’installe
+      sur le muret,
+      à quelques mètres d’elle.
+    </p>
+
+    <p>
+      Il ne parle pas.
+    </p>
+
+  </div>
+
+
+  <div class="observation-buttons">
+
+    <button
+      class="interaction-btn anna-max-trigger"
+      data-anna-max="origin"
+    >
+      Son origine
+    </button>
+
+    <button
+      class="interaction-btn anna-max-trigger"
+      data-anna-max="genetics"
+    >
+      La génétique
+    </button>
+
+    <button
+      class="interaction-btn anna-max-trigger"
+      data-anna-max="coffee"
+    >
+      Le café
+    </button>
+
+    <button
+      class="interaction-btn anna-max-trigger"
+      data-anna-max="abilities"
+    >
+      Ses capacités
+    </button>
+
+    <button
+      class="interaction-btn anna-max-trigger"
+      data-anna-max="choice"
+    >
+      Ses choix
+    </button>
+
+  </div>
+
+
+  <div
+    class="reveal-box"
+    id="annaMaxReveal"
+  >
+  </div>
+
+</section>
+
+
+<section
+  class="scene unity-scene"
+  id="scene-9"
+>
+
+  <div class="text-block dialogue">
+
+    <p>
+      Anna finit
+      par tourner la tête.
+    </p>
+
+    <p>
+      — Tu n’as rien à dire ?
+    </p>
+
+    <p>
+      — Si.
+    </p>
+
+    <p>
+      — Alors pourquoi
+      tu ne dis rien ?
+    </p>
+
+    <p>
+      — Parce que je ne sais pas encore
+      si tu veux parler
+      ou seulement ne pas être seule.
+    </p>
+
+    <p>
+      Anna regarde
+      de nouveau devant elle.
+    </p>
+
+    <p>
+      — Peut-être les deux.
+    </p>
+
+    <p>
+      Max acquiesce.
+    </p>
+
+    <p>
+      — Très bien.
+    </p>
+
+    <p>
+      Silence.
+    </p>
+
+    <p>
+      Puis Anna demande :
+    </p>
+
+    <p>
+      — Tu savais ?
+    </p>
+
+    <p>
+      — Non.
+    </p>
+
+    <p>
+      — Root ?
+    </p>
+
+    <p>
+      — Non.
+    </p>
+
+    <p>
+      — Hope ?
+    </p>
+
+    <p>
+      — Elle le soupçonnait
+      depuis ce qu’elle a découvert
+      dans la grotte.
+    </p>
+
+    <p>
+      Anna baisse les yeux.
+    </p>
+
+    <p>
+      — Et Peter ?
+    </p>
+
+    <p>
+      Max hésite.
+    </p>
+
+    <p>
+      — Je ne pense pas.
+    </p>
+
+    <p>
+      Anna remarque immédiatement
+      la nuance.
+    </p>
+
+    <p>
+      — Tu ne penses pas ?
+    </p>
+
+    <p>
+      — Peter connaît
+      certaines recherches
+      de ta mère
+      qu’il n’aurait probablement
+      jamais dû voir.
+    </p>
+
+    <p>
+      Anna soupire.
+    </p>
+
+    <p>
+      — Génial.
+    </p>
+
+    <p>
+      Elle laisse échapper
+      un petit rire nerveux.
+    </p>
+
+    <p>
+      — Plus je pose de questions,
+      plus ma vie devient bizarre.
+    </p>
+
+    <p>
+      Max sourit.
+    </p>
+
+    <p>
+      — C’est malheureusement
+      une caractéristique
+      assez fréquente
+      de la vérité.
+    </p>
+
+    <p>
+      Anna le regarde.
+    </p>
+
+    <p>
+      — C’est ça,
+      être journaliste ?
+    </p>
+
+    <p>
+      — Une partie.
+    </p>
+
+    <p>
+      — Découvrir
+      que ce qu’on croyait vrai
+      ne l’était pas ?
+    </p>
+
+    <p>
+      — Souvent.
+    </p>
+
+    <p>
+      Anna réfléchit.
+    </p>
+
+    <p>
+      Puis :
+    </p>
+
+    <p>
+      — Si toute mon histoire
+      commence par une expérience…
+    </p>
+
+    <p>
+      Elle s’arrête.
+    </p>
+
+    <p>
+      Max attend.
+    </p>
+
+    <p>
+      — Comment je sais
+      ce qui est vraiment moi ?
+    </p>
+
+    <p>
+      Max ne répond pas
+      tout de suite.
+    </p>
+
+    <p>
+      Puis il désigne
+      sa tasse.
+    </p>
+
+    <p>
+      — Tu aimes le café ?
+    </p>
+
+    <p>
+      — Non.
+    </p>
+
+    <p>
+      — Ta mère ?
+    </p>
+
+    <p>
+      — Beaucoup trop.
+    </p>
+
+    <p class="emphasis">
+      — Donc manifestement,
+      la génétique n’explique
+      déjà pas tout.
+    </p>
+
+    <p>
+      Anna sourit malgré elle.
+    </p>
+
+    <p>
+      Max poursuit :
+    </p>
+
+    <p>
+      — Ton origine
+      peut expliquer
+      pourquoi tu existes.
+    </p>
+
+    <p>
+      — Elle peut peut-être
+      expliquer certaines capacités.
+    </p>
+
+    <p>
+      — Certaines réactions.
+    </p>
+
+    <p>
+      — Certaines particularités.
+    </p>
+
+    <p>
+      Il la regarde.
+    </p>
+
+    <p>
+      — Mais elle ne décide pas
+      de ce que tu fais
+      de tout ça.
+    </p>
+
+    <p>
+      Anna reste silencieuse.
+    </p>
+
+    <p>
+      — Si quelqu’un découvre
+      qu’il est né avec un talent
+      exceptionnel pour courir,
+      poursuit Max,
+      cela ne lui dit pas
+      s’il doit devenir athlète,
+      pompier
+      ou ne jamais courir
+      de sa vie.
+    </p>
+
+    <p class="impact-text">
+      — C’est lui qui choisit.
+    </p>
+
+    <p>
+      Anna le regarde.
+    </p>
+
+    <p>
+      — Donc tu penses
+      que je suis libre ?
+    </p>
+
+    <p>
+      Max sourit.
+    </p>
+
+    <p>
+      — J’espère bien.
+    </p>
+
+    <p>
+      — Sinon mon métier
+      ne sert plus
+      à grand-chose.
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     VISUEL 5
+     HOPE ET ANNA
+===================================================== -->
+
+<section
+  class="scene unity-scene interaction-scene"
+  id="scene-10"
+>
+
+  <div
+    class="visual interactive-visual"
+    data-visual="5"
+  >
+    <img
+      src="images/chapitre15/Visuel-5.PNG"
+      alt="Hope parle à Anna de colère de choix et de liberté"
+      loading="lazy"
+    >
+  </div>
+
+
+  <div class="text-block">
+
+    <p>
+      Hope apparaît
+      au bout du chemin.
+    </p>
+
+    <p>
+      Elle avance encore
+      avec une légère raideur.
+    </p>
+
+    <p>
+      Max se lève.
+    </p>
+
+    <p>
+      — Je vais vous laisser.
+    </p>
+
+    <p>
+      Anna le regarde.
+    </p>
+
+    <p>
+      — Tu fuis ?
+    </p>
+
+    <p>
+      — Je sais reconnaître
+      quand une conversation
+      ne me concerne pas.
+    </p>
+
+    <p>
+      Il se tourne vers Hope.
+    </p>
+
+    <p>
+      — Essaie de ne pas
+      lui révéler l’existence
+      d’une nouvelle civilisation extraterrestre
+      avant le déjeuner.
+    </p>
+
+    <p>
+      Hope sourit.
+    </p>
+
+    <p>
+      — Je vais essayer.
+    </p>
+
+    <p>
+      Max s’éloigne.
+    </p>
+
+    <p>
+      Hope s’installe
+      près d’Anna.
+    </p>
+
+    <p>
+      — Comment ça va ?
+    </p>
+
+    <p>
+      — Question idiote.
+    </p>
+
+    <p>
+      — Probablement.
+    </p>
+
+  </div>
+
+
+  <div class="observation-buttons">
+
+    <button
+      class="interaction-btn hope-anna-trigger"
+      data-hope-anna="anger"
+    >
+      La colère
+    </button>
+
+    <button
+      class="interaction-btn hope-anna-trigger"
+      data-hope-anna="understanding"
+    >
+      Comprendre
+    </button>
+
+    <button
+      class="interaction-btn hope-anna-trigger"
+      data-hope-anna="forgive"
+    >
+      Pardonner
+    </button>
+
+    <button
+      class="interaction-btn hope-anna-trigger"
+      data-hope-anna="balance"
+    >
+      L’Équilibre
+    </button>
+
+    <button
+      class="interaction-btn hope-anna-trigger"
+      data-hope-anna="danger"
+    >
+      Le danger
+    </button>
+
+    <button
+      class="interaction-btn hope-anna-trigger"
+      data-hope-anna="freedom"
+    >
+      La liberté
+    </button>
+
+  </div>
+
+
+  <div
+    class="reveal-box"
+    id="hopeAnnaReveal"
+  >
+  </div>
+
+</section>
+
+
+<section
+  class="scene unity-scene"
+  id="scene-11"
+>
+
+  <div class="text-block dialogue">
+
+    <p>
+      Anna regarde Hope.
+    </p>
+
+    <p>
+      — Est-ce que j’ai le droit
+      d’être en colère contre elle ?
+    </p>
+
+    <p>
+      — Oui.
+    </p>
+
+    <p>
+      La réponse est immédiate.
+    </p>
+
+    <p>
+      Anna semble surprise.
+    </p>
+
+    <p>
+      Hope poursuit :
+    </p>
+
+    <p>
+      — Tu as même le droit
+      d’être furieuse.
+    </p>
+
+    <p>
+      — De ne pas vouloir
+      lui parler.
+    </p>
+
+    <p>
+      — De lui en vouloir.
+    </p>
+
+    <p>
+      — D’avoir besoin de temps.
+    </p>
+
+    <p>
+      Anna baisse les yeux.
+    </p>
+
+    <p>
+      — Mais elle voulait
+      me protéger.
+    </p>
+
+    <p>
+      — Oui.
+    </p>
+
+    <p>
+      — Donc je devrais
+      comprendre.
+    </p>
+
+    <p>
+      Hope secoue la tête.
+    </p>
+
+    <p class="impact-text">
+      — Comprendre
+      n’oblige pas
+      à pardonner immédiatement.
+    </p>
+
+    <p>
+      Anna relève les yeux.
+    </p>
+
+    <p>
+      Hope ajoute :
+    </p>
+
+    <p class="emphasis">
+      — Et pardonner un jour
+      ne signifie pas
+      que ce qu’elle a fait
+      était juste.
+    </p>
+
+  </div>
+
+</section>
+
+
+<section
+  class="scene revelation-scene"
+  id="scene-12"
+>
+
+  <div class="text-block dialogue">
+
+    <p>
+      Anna reste silencieuse.
+    </p>
+
+    <p>
+      Puis :
+    </p>
+
+    <p>
+      — Tu crois vraiment
+      que je suis ce truc
+      dont parlent les fresques ?
+    </p>
+
+    <p>
+      — L’Équilibre ?
+    </p>
+
+    <p>
+      Anna acquiesce.
+    </p>
+
+    <p>
+      Hope réfléchit.
+    </p>
+
+    <p>
+      — Je crois que quelque chose
+      te relie à ces fresques.
+    </p>
+
+    <p>
+      — Et à la fiole.
+    </p>
+
+    <p>
+      — Mais je refuse
+      de décider à ta place
+      ce que ça signifie.
+    </p>
+
+    <p>
+      — Maître Lee
+      ferait pareil ?
+    </p>
+
+    <p>
+      Hope sourit.
+    </p>
+
+    <p>
+      — Non.
+    </p>
+
+    <p>
+      Anna rit légèrement.
+    </p>
+
+    <p>
+      — Au moins
+      tu es honnête.
+    </p>
+
+    <p>
+      — Toujours
+      quand ça m’arrange.
+    </p>
+
+    <p>
+      Anna reprend
+      son sérieux.
+    </p>
+
+    <p>
+      — Et si les Gardiens
+      ont raison ?
+    </p>
+
+    <p>
+      Hope fronce les sourcils.
+    </p>
+
+    <p>
+      — À propos de quoi ?
+    </p>
+
+    <p>
+      — Si je peux vraiment
+      devenir dangereuse.
+    </p>
+
+    <p>
+      Hope la regarde
+      longuement.
+    </p>
+
+    <p>
+      — Tout le monde
+      peut devenir dangereux.
+    </p>
+
+    <p>
+      — Ça dépend
+      des moyens qu’il possède.
+    </p>
+
+    <p>
+      — Et des choix
+      qu’il fait.
+    </p>
+
+    <p>
+      Elle s’approche légèrement.
+    </p>
+
+    <p>
+      — Le danger n’est pas
+      ce que tu pourrais devenir.
+    </p>
+
+    <p class="impact-text">
+      — Le danger serait
+      que quelqu’un d’autre
+      décide à ta place
+      de ce que tu dois devenir.
+    </p>
+
+    <p>
+      Anna pense
+      à ces mots.
+    </p>
+
+    <p>
+      Hope ajoute :
+    </p>
+
+    <p>
+      — C’est précisément
+      pour ça
+      que je te protégerai.
+    </p>
+
+    <p>
+      Anna sourit.
+    </p>
+
+    <p>
+      — Jusqu’à quand ?
+    </p>
+
+    <p>
+      Hope répond
+      sans hésiter :
+    </p>
+
+    <p class="emphasis">
+      — Jusqu’au jour
+      où tu n’auras plus
+      besoin de moi.
+    </p>
+
+    <p>
+      Anna ne répond pas.
+    </p>
+
+    <p>
+      Mais quelque chose
+      dans cette phrase
+      lui plaît.
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     VISUEL 6
+     HACIENDA DE LA SIERRA
+===================================================== -->
+
+<section
+  class="scene shadow-scene interaction-scene"
+  id="scene-13"
+>
+
+  <div
+    class="visual interactive-visual"
+    data-visual="6"
+  >
+    <img
+      src="images/chapitre15/Visuel-6.PNG"
+      alt="Hacienda de la Sierra perdue dans les montagnes avec ses galeries souterraines"
+      loading="lazy"
+    >
+  </div>
+
+
+  <div class="text-block">
+
+    <p>
+      Sierra Madre Oriental — Hidalgo
+    </p>
+
+    <p>
+      Hacienda de la Sierra
+    </p>
+
+    <p>
+      Le domaine semble
+      presque endormi.
+    </p>
+
+    <p>
+      Perdu entre les montagnes.
+    </p>
+
+    <p>
+      Une ancienne hacienda
+      restaurée avec un soin
+      remarquable.
+    </p>
+
+    <p>
+      Pierre sombre.
+    </p>
+
+    <p>
+      Bois ancien.
+    </p>
+
+    <p>
+      Jardins parfaitement
+      entretenus.
+    </p>
+
+  </div>
+
+
+  <div class="observation-buttons">
+
+    <button
+      class="interaction-btn black-hacienda-trigger"
+      data-black-hacienda="domain"
+    >
+      Observer le domaine
+    </button>
+
+    <button
+      class="interaction-btn black-hacienda-trigger"
+      data-black-hacienda="stone"
+    >
+      La pierre sombre
+    </button>
+
+    <button
+      class="interaction-btn black-hacienda-trigger"
+      data-black-hacienda="gardens"
+    >
+      Les jardins
+    </button>
+
+    <button
+      class="interaction-btn black-hacienda-trigger"
+      data-black-hacienda="galleries"
+    >
+      Les galeries souterraines
+    </button>
+
+    <button
+      class="interaction-btn black-hacienda-trigger"
+      data-black-hacienda="room"
+    >
+      La salle du Maître Noir
+    </button>
+
+  </div>
+
+
+  <div
+    class="reveal-box"
+    id="blackHaciendaReveal"
+  >
+  </div>
+
+</section>
+
+
+<section
+  class="scene shadow-scene"
+  id="scene-14"
+>
+
+  <div class="text-block">
+
+    <p>
+      Aucun signe extérieur
+      ne laisse penser
+      que sous le bâtiment principal
+      s’étend un réseau de galeries
+      beaucoup plus ancien
+      que la propriété elle-même.
+    </p>
+
+    <p>
+      Dans l’une
+      de ces salles souterraines,
+      un homme lit un rapport.
+    </p>
+
+    <p>
+      On ne voit pas
+      clairement son visage.
+    </p>
+
+    <p>
+      La lumière éclaire seulement
+      ses mains.
+    </p>
+
+    <p>
+      Et l’écran
+      devant lui.
+    </p>
+
+    <p>
+      Un homme entre.
+    </p>
+
+    <p>
+      — Maître.
+    </p>
+
+    <p class="name-reveal">
+      Le Maître Noir
+      ne relève pas la tête.
+    </p>
+
+    <p>
+      — Isabel ?
+    </p>
+
+    <p>
+      — Toujours en place.
+    </p>
+
+    <p>
+      — Soupçonnée ?
+    </p>
+
+    <p>
+      — Nous n’avons
+      aucune confirmation.
+    </p>
+
+    <p>
+      Le Maître Noir
+      fait défiler
+      plusieurs informations.
+    </p>
+
+    <p>
+      Puis :
+    </p>
+
+    <p>
+      — Ils ont trouvé
+      les anciens rapports.
+    </p>
+
+    <p>
+      Son interlocuteur
+      se fige.
+    </p>
+
+    <p>
+      — Comment le savez-vous ?
+    </p>
+
+    <p>
+      — Parce qu’ils ont changé
+      leur comportement.
+    </p>
+
+    <p>
+      — Isabel
+      ne l’a pas signalé.
+    </p>
+
+    <p>
+      — Ce n’est pas elle
+      que j’observe.
+    </p>
+
+    <p>
+      Silence.
+    </p>
+
+    <p>
+      Le Maître Noir
+      relève enfin légèrement
+      la tête.
+    </p>
+
+    <p>
+      — Hale.
+    </p>
+
+    <p>
+      — Lucy Adverse.
+    </p>
+
+    <p>
+      — Clive Lynx.
+    </p>
+
+    <p>
+      Il ferme le rapport.
+    </p>
+
+    <p>
+      — Trois personnes intelligentes
+      dans la même maison.
+    </p>
+
+    <p>
+      — Elles finiront forcément
+      par comprendre.
+    </p>
+
+    <p>
+      — Alors nous retirons Isabel ?
+    </p>
+
+    <p>
+      — Non.
+    </p>
+
+    <p>
+      Le lieutenant
+      semble surpris.
+    </p>
+
+    <p>
+      — Pourquoi ?
+    </p>
+
+    <p>
+      Le Maître Noir
+      sourit légèrement.
+    </p>
+
+    <p class="impact-text">
+      — Parce que s’ils l’ont découverte,
+      ils vont essayer
+      de l’utiliser.
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     VISUEL 7
+     LE MAÎTRE NOIR VOIT LE PIÈGE
+===================================================== -->
+
+<section
+  class="scene dark-mark-scene interaction-scene"
+  id="scene-15"
+>
+
+  <div
+    class="visual interactive-visual"
+    data-visual="7"
+  >
+    <img
+      src="images/chapitre15/Visuel-7.PNG"
+      alt="Le Maître Noir analyse le faux transfert médical d'Anna"
+      loading="lazy"
+    >
+  </div>
+
+
+  <div class="text-block">
+
+    <p>
+      Au même moment,
+      une notification
+      arrive sur l’écran.
+    </p>
+
+    <p>
+      Un changement
+      de planning.
+    </p>
+
+    <p class="impact-text">
+      A.F. — transfert médical exceptionnel
+      — dans deux jours.
+    </p>
+
+  </div>
+
+
+  <div class="story-path">
+
+    <button
+      class="interaction-btn black-master-trigger"
+      data-black-master="read"
+    >
+      Lire l’information
+    </button>
+
+    <button
+      class="interaction-btn black-master-trigger"
+      data-black-master="clean"
+    >
+      Trop propre
+    </button>
+
+    <button
+      class="interaction-btn black-master-trigger"
+      data-black-master="logical"
+    >
+      Trop logique
+    </button>
+
+    <button
+      class="interaction-btn black-master-trigger"
+      data-black-master="easy"
+    >
+      Trop facile
+    </button>
+
+    <button
+      class="interaction-btn black-master-trigger"
+      data-black-master="trap"
+    >
+      Conclusion
+    </button>
+
+  </div>
+
+
+  <div
+    class="reveal-box"
+    id="blackMasterReveal"
+  >
+  </div>
+
+</section>
+
+
+<section
+  class="scene dark-mark-scene"
+  id="scene-16"
+>
+
+  <div class="text-block dialogue">
+
+    <p>
+      Le lieutenant s’approche.
+    </p>
+
+    <p>
+      — Anna va se déplacer.
+    </p>
+
+    <p>
+      Le Maître Noir
+      ne réagit pas.
+    </p>
+
+    <p>
+      Il lit le message.
+    </p>
+
+    <p>
+      Une seconde fois.
+    </p>
+
+    <p>
+      Puis :
+    </p>
+
+    <p class="impact-text">
+      — Non.
+    </p>
+
+    <p>
+      — Maître ?
+    </p>
+
+    <p>
+      — Trop propre.
+    </p>
+
+    <p>
+      Il pose la tablette.
+    </p>
+
+    <p>
+      — Trop logique.
+    </p>
+
+    <p>
+      — Trop facile.
+    </p>
+
+    <p>
+      Le lieutenant comprend.
+    </p>
+
+    <p class="name-reveal">
+      — Un piège.
+    </p>
+
+    <p>
+      — Probablement.
+    </p>
+
+    <p>
+      — Vous voulez
+      que nous ignorions
+      l’information ?
+    </p>
+
+    <p>
+      Le Maître Noir
+      secoue lentement la tête.
+    </p>
+
+    <p class="emphasis">
+      — Surtout pas.
+    </p>
+
+    <p>
+      Il sourit.
+    </p>
+
+    <p>
+      — Nous allons leur laisser croire
+      que nous mordons
+      à l’hameçon.
+    </p>
+
+  </div>
+
+</section>
+
+
+<section
+  class="scene dark-mark-scene"
+  id="scene-17"
+>
+
+  <div class="text-block dialogue">
+
+    <p>
+      Le lieutenant attend.
+    </p>
+
+    <p>
+      — Préparez une équipe.
+    </p>
+
+    <p>
+      — Pour Anna ?
+    </p>
+
+    <p>
+      — Non.
+    </p>
+
+    <p>
+      Le Maître Noir
+      se lève.
+    </p>
+
+    <p class="impact-text">
+      — Pour ceux
+      qui surveillent Isabel.
+    </p>
+
+    <p>
+      Un silence.
+    </p>
+
+    <p>
+      — Je veux savoir
+      jusqu’où Lucy Adverse
+      et Clive Lynx
+      sont capables de remonter.
+    </p>
+
+    <p>
+      Il marche lentement
+      vers une carte du Mexique
+      gravée dans la pierre.
+    </p>
+
+    <p>
+      — Et surtout…
+    </p>
+
+    <p>
+      Il pose un doigt
+      sur l’emplacement
+      de l’hacienda Flores.
+    </p>
+
+    <p class="emphasis">
+      — je veux savoir
+      ce que Hale sait réellement.
+    </p>
+
+    <p>
+      Le lieutenant hésite.
+    </p>
+
+    <p>
+      — Et Anna ?
+    </p>
+
+    <p>
+      — Personne
+      ne la touche.
+    </p>
+
+    <p>
+      — Pour le moment.
+    </p>
+
+    <p>
+      — Amy ?
+    </p>
+
+    <p>
+      Le Maître Noir
+      reste silencieux
+      quelques secondes.
+    </p>
+
+    <p>
+      Puis :
+    </p>
+
+    <p>
+      — Mission suspendue.
+    </p>
+
+    <p>
+      — Elle ne va pas
+      apprécier.
+    </p>
+
+    <p>
+      — Amy n’est pas payée
+      pour apprécier.
+    </p>
+
+    <p>
+      Il se retourne.
+    </p>
+
+    <p class="name-reveal">
+      — Elle est payée
+      pour obéir.
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     VISUEL 8
+     AMY SURVIT
+===================================================== -->
+
+<section
+  class="scene danger-scene interaction-scene"
+  id="scene-18"
+>
+
+  <div
+    class="visual interactive-visual"
+    data-visual="8"
+  >
+    <img
+      src="images/chapitre15/Visuel-8.PNG"
+      alt="Amy blessée découvre que sa mission concernant Anna est suspendue"
+      loading="lazy"
+    >
+  </div>
+
+
+  <div class="text-block">
+
+    <p>
+      Quelque part
+      dans l’État
+      de San Luis Potosí
+    </p>
+
+    <p>
+      Amy ouvre les yeux.
+    </p>
+
+    <p>
+      Elle est allongée
+      sur un lit.
+    </p>
+
+    <p>
+      Son épaule
+      est bandée.
+    </p>
+
+    <p>
+      Plusieurs ecchymoses
+      couvrent son corps.
+    </p>
+
+    <p>
+      Elle observe le plafond
+      quelques secondes.
+    </p>
+
+    <p>
+      Puis tente
+      de se relever.
+    </p>
+
+    <p>
+      — Mauvaise idée.
+    </p>
+
+    <p>
+      Un homme assis
+      dans un fauteuil
+      la regarde.
+    </p>
+
+  </div>
+
+
+  <div class="observation-buttons">
+
+    <button
+      class="interaction-btn amy-survival-trigger"
+      data-amy-survival="injury"
+    >
+      Évaluer ses blessures
+    </button>
+
+    <button
+      class="interaction-btn amy-survival-trigger"
+      data-amy-survival="man"
+    >
+      Observer l’homme
+    </button>
+
+    <button
+      class="interaction-btn amy-survival-trigger"
+      data-amy-survival="tablet"
+    >
+      Récupérer la tablette
+    </button>
+
+    <button
+      class="interaction-btn amy-survival-trigger"
+      data-amy-survival="order"
+    >
+      Lire l’ordre
+    </button>
+
+    <button
+      class="interaction-btn amy-survival-trigger"
+      data-amy-survival="anna"
+    >
+      Regarder Anna
+    </button>
+
+  </div>
+
+
+  <div
+    class="reveal-box"
+    id="amySurvivalReveal"
+  >
+  </div>
+
+</section>
+
+
+<section
+  class="scene danger-scene"
+  id="scene-19"
+>
+
+  <div class="text-block dialogue">
+
+    <p>
+      Amy tourne lentement
+      la tête.
+    </p>
+
+    <p>
+      — Qui es-tu ?
+    </p>
+
+    <p>
+      — Celui qui t’a évité
+      de te noyer.
+    </p>
+
+    <p>
+      — Donc je suppose
+      que je dois te remercier.
+    </p>
+
+    <p>
+      — Ce serait déjà
+      un début.
+    </p>
+
+    <p>
+      Amy s’assoit
+      malgré la douleur.
+    </p>
+
+    <p>
+      — Où est Hope ?
+    </p>
+
+    <p>
+      L’homme hausse
+      les épaules.
+    </p>
+
+    <p>
+      — Aucune idée.
+    </p>
+
+    <p>
+      Amy le fixe.
+    </p>
+
+    <p>
+      — Mauvaise réponse.
+    </p>
+
+    <p>
+      — C’est pourtant
+      la seule que j’ai.
+    </p>
+
+    <p>
+      Amy regarde
+      autour d’elle.
+    </p>
+
+    <p>
+      — Qui m’a récupérée ?
+    </p>
+
+    <p>
+      — Des hommes
+      qui travaillent
+      pour ton employeur.
+    </p>
+
+    <p>
+      — Mon employeur n’aime pas
+      que ses employés
+      connaissent trop de choses.
+    </p>
+
+    <p>
+      L’homme sourit.
+    </p>
+
+    <p>
+      — Alors évite
+      de poser trop de questions.
+    </p>
+
+    <p>
+      Amy repère
+      sa tablette
+      sur une table.
+    </p>
+
+    <p>
+      Elle tend la main.
+    </p>
+
+    <p>
+      L’homme n’essaie pas
+      de l’en empêcher.
+    </p>
+
+    <p>
+      Un message l’attend.
+    </p>
+
+    <p class="name-reveal">
+      MISSION A.F. SUSPENDUE.
+    </p>
+
+    <p>
+      Amy reste
+      parfaitement immobile.
+    </p>
+
+    <p>
+      Puis elle relit.
+    </p>
+
+    <p>
+      Une deuxième fois.
+    </p>
+
+    <p>
+      — Suspendue ?
+    </p>
+
+    <p>
+      L’homme répond :
+    </p>
+
+    <p>
+      — Ordre direct.
+    </p>
+
+    <p>
+      Amy serre
+      la tablette.
+    </p>
+
+    <p>
+      — Pourquoi ?
+    </p>
+
+    <p>
+      — Je n’en sais rien.
+    </p>
+
+    <p>
+      — Décidément,
+      tu sais très peu
+      de choses.
+    </p>
+
+    <p>
+      — C’est probablement
+      pour ça
+      que je suis encore vivant.
+    </p>
+
+    <p>
+      Amy repose la tablette.
+    </p>
+
+    <p>
+      Son visage
+      s’est fermé.
+    </p>
+
+    <p>
+      — Où est Hope ?
+    </p>
+
+    <p>
+      — Toujours aucune idée.
+    </p>
+
+    <p>
+      Amy se lève.
+    </p>
+
+    <p>
+      — Tu ne devrais
+      vraiment pas…
+    </p>
+
+    <p>
+      — Je vais très bien.
+    </p>
+
+    <p>
+      Elle manque immédiatement
+      de perdre l’équilibre.
+    </p>
+
+    <p>
+      L’homme la rattrape.
+    </p>
+
+    <p>
+      Amy le repousse.
+    </p>
+
+    <p>
+      — Ne me touche pas.
+    </p>
+
+    <p>
+      Puis elle murmure :
+    </p>
+
+    <p>
+      — Ils pensent vraiment
+      que ça s’arrête là ?
+    </p>
+
+    <p>
+      — Quoi ?
+    </p>
+
+    <p>
+      Amy regarde
+      la photographie d’Anna
+      toujours affichée
+      sur l’écran.
+    </p>
+
+    <p>
+      — Rien.
+    </p>
+
+    <p>
+      Mais son regard
+      dit exactement
+      le contraire.
+    </p>
+
+    <p class="impact-text">
+      Cette histoire
+      ne s’arrête plus
+      avec un ordre.
+    </p>
+
+    <p class="emphasis">
+      Anna est devenue
+      son affaire.
+      Et Hope aussi.
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     VISUEL 9
+     ISABEL ET L'ORATOIRE
+===================================================== -->
+
+<section
+  class="scene investigation-scene interaction-scene"
+  id="scene-20"
+>
+
+  <div
+    class="visual interactive-visual"
+    data-visual="9"
+  >
+    <img
+      src="images/chapitre15/Visuel-9.PNG"
+      alt="Isabel entre brièvement dans l'ancien oratoire de l'Hacienda Flores"
+      loading="lazy"
+    >
+  </div>
+
+
+  <div class="text-block">
+
+    <p>
+      Hacienda Flores
+    </p>
+
+    <p>
+      Le soir est tombé.
+    </p>
+
+    <p>
+      Isabel termine
+      son service.
+    </p>
+
+    <p>
+      Elle salue Hale
+      en passant.
+    </p>
+
+    <p>
+      — Bonne soirée.
+    </p>
+
+    <p>
+      Hale lui répond
+      exactement comme il le fait
+      depuis des années.
+    </p>
+
+    <p>
+      — Bonne soirée,
+      Isabel.
+    </p>
+
+    <p>
+      Elle sourit.
+    </p>
+
+    <p>
+      Puis s’éloigne.
+    </p>
+
+    <p>
+      Hale attend
+      qu’elle ait disparu.
+    </p>
+
+    <p>
+      Lucy apparaît
+      derrière lui.
+    </p>
+
+    <p>
+      — Bien joué.
+    </p>
+
+    <p>
+      — J’ai envie
+      de l’arrêter.
+    </p>
+
+    <p>
+      — Je sais.
+    </p>
+
+    <p>
+      Clive les rejoint.
+    </p>
+
+    <p>
+      — Et moi,
+      j’ai envie de savoir
+      comment elle communique.
+    </p>
+
+    <p>
+      Lucy regarde son écran.
+    </p>
+
+    <p>
+      — Pour l’instant,
+      rien.
+    </p>
+
+    <p>
+      — Aucun appel inhabituel.
+    </p>
+
+    <p>
+      — Aucun message.
+    </p>
+
+    <p>
+      — Aucun accès réseau
+      suspect.
+    </p>
+
+    <p>
+      Clive sourit.
+    </p>
+
+    <p>
+      — Donc elle est
+      vraiment bonne.
+    </p>
+
+    <p>
+      Lucy soupire.
+    </p>
+
+    <p>
+      — Arrête d’avoir l’air
+      admiratif.
+    </p>
+
+    <p>
+      — Je respecte
+      les professionnels.
+    </p>
+
+    <p>
+      Hale demande :
+    </p>
+
+    <p>
+      — Tu as trouvé
+      quelque chose ?
+    </p>
+
+    <p>
+      — Peut-être.
+    </p>
+
+    <p>
+      Clive sort
+      un petit objet
+      de sa poche.
+    </p>
+
+    <p>
+      Une photographie.
+    </p>
+
+    <p class="impact-text">
+      — Elle s’est arrêtée
+      quinze secondes
+      devant l’ancien oratoire
+      du jardin.
+    </p>
+
+    <p>
+      Lucy fronce les sourcils.
+    </p>
+
+    <p>
+      — Et ?
+    </p>
+
+    <p>
+      — Elle ne prie jamais.
+    </p>
+
+    <p>
+      Hale répond :
+    </p>
+
+    <p>
+      — Comment tu peux
+      savoir ça ?
+    </p>
+
+    <p>
+      — Je l’observe
+      depuis deux jours.
+    </p>
+
+    <p>
+      Clive poursuit :
+    </p>
+
+    <p>
+      — Elle est entrée.
+    </p>
+
+    <p>
+      — Elle a déplacé
+      une bougie.
+    </p>
+
+    <p>
+      — Puis elle est repartie.
+    </p>
+
+    <p>
+      Lucy le regarde.
+    </p>
+
+    <p>
+      — Tu penses
+      à une cache ?
+    </p>
+
+    <p>
+      — Peut-être.
+    </p>
+
+    <p>
+      Hale se dirige immédiatement
+      vers la porte.
+    </p>
+
+    <p>
+      Clive le retient.
+    </p>
+
+    <p>
+      — Non.
+    </p>
+
+    <p>
+      — Pourquoi ?
+    </p>
+
+    <p>
+      — Parce qu’elle saura
+      que quelqu’un
+      l’a fouillée.
+    </p>
+
+    <p>
+      Lucy acquiesce.
+    </p>
+
+    <p class="emphasis">
+      — On attend.
+    </p>
+
+  </div>
+
+
+  <div class="observation-buttons">
+
+    <button
+      class="interaction-btn chapel-trigger"
+      data-chapel="time"
+    >
+      Quinze secondes
+    </button>
+
+    <button
+      class="interaction-btn chapel-trigger"
+      data-chapel="chapel"
+    >
+      L’ancien oratoire
+    </button>
+
+    <button
+      class="interaction-btn chapel-trigger"
+      data-chapel="candle"
+    >
+      La bougie
+    </button>
+
+    <button
+      class="interaction-btn chapel-trigger"
+      data-chapel="habit"
+    >
+      Ses habitudes
+    </button>
+
+    <button
+      class="interaction-btn chapel-trigger"
+      data-chapel="wait"
+    >
+      Ne pas intervenir
+    </button>
+
+  </div>
+
+
+  <div
+    class="reveal-box"
+    id="chapelReveal"
+  >
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     VISUEL 10
+     DÉPÔT MORT
+===================================================== -->
+
+<section
+  class="scene shadow-scene interaction-scene"
+  id="scene-21"
+>
+
+  <div
+    class="visual interactive-visual"
+    data-visual="10"
+  >
+    <img
+      src="images/chapitre15/Visuel-10.PNG"
+      alt="Clive découvre une cavité cachée dans l'oratoire"
+      loading="lazy"
+    >
+  </div>
+
+
+  <div class="text-block">
+
+    <p>
+      Plus tard dans la nuit,
+      Clive retourne seul
+      dans l’oratoire.
+    </p>
+
+    <p>
+      Pas de lumière.
+    </p>
+
+    <p>
+      Pas de caméra visible.
+    </p>
+
+    <p>
+      Il examine
+      le meuble.
+    </p>
+
+    <p>
+      La bougie.
+    </p>
+
+    <p>
+      La pierre.
+    </p>
+
+    <p>
+      Puis sourit.
+    </p>
+
+  </div>
+
+
+  <div class="story-path">
+
+    <button
+      class="interaction-btn dead-drop-trigger"
+      data-dead-drop="candle"
+    >
+      Examiner la bougie
+    </button>
+
+    <button
+      class="interaction-btn dead-drop-trigger"
+      data-dead-drop="wood"
+    >
+      Examiner la plaque de bois
+    </button>
+
+    <button
+      class="interaction-btn dead-drop-trigger"
+      data-dead-drop="cavity"
+    >
+      Trouver la cavité
+    </button>
+
+    <button
+      class="interaction-btn dead-drop-trigger"
+      data-dead-drop="empty"
+    >
+      Vérifier le contenu
+    </button>
+
+    <button
+      class="interaction-btn dead-drop-trigger"
+      data-dead-drop="mark"
+    >
+      Observer la marque
+    </button>
+
+  </div>
+
+
+  <div
+    class="reveal-box"
+    id="deadDropReveal"
+  >
+  </div>
+
+</section>
+
+
+<section
+  class="scene shadow-scene"
+  id="scene-22"
+>
+
+  <div class="text-block dialogue">
+
+    <p>
+      Une minuscule cavité
+      est dissimulée
+      derrière une plaque
+      de bois.
+    </p>
+
+    <p>
+      Vide.
+    </p>
+
+    <p>
+      Clive observe.
+    </p>
+
+    <p class="name-reveal">
+      — Dépôt mort.
+    </p>
+
+    <p>
+      Lucy l’entend
+      via son oreillette.
+    </p>
+
+    <p>
+      — Quoi ?
+    </p>
+
+    <p>
+      — Un endroit
+      où elle dépose
+      quelque chose.
+    </p>
+
+    <p>
+      — Quelqu’un vient
+      le récupérer
+      sans qu’ils aient besoin
+      de se rencontrer.
+    </p>
+
+    <p>
+      Hale murmure :
+    </p>
+
+    <p>
+      — Donc on peut attendre
+      celui qui vient chercher.
+    </p>
+
+    <p>
+      Clive sourit.
+    </p>
+
+    <p class="emphasis">
+      — Exactement.
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     VISUEL 11
+     SYMBOLE ANCIEN
+===================================================== -->
+
+<section
+  class="scene symbol-scene interaction-scene"
+  id="scene-23"
+>
+
+  <div
+    class="visual interactive-visual"
+    data-visual="11"
+  >
+    <img
+      src="images/chapitre15/Visuel-11.PNG"
+      alt="Symbole caché relié aux dossiers des hommes officiellement morts"
+      loading="lazy"
+    >
+  </div>
+
+
+  <div class="text-block">
+
+    <p>
+      Puis Clive remarque
+      quelque chose.
+    </p>
+
+    <p>
+      Une infime marque
+      au fond de la cavité.
+    </p>
+
+    <p>
+      Un symbole.
+    </p>
+
+    <p>
+      Il photographie.
+    </p>
+
+    <p>
+      Lucy agrandit
+      immédiatement l’image.
+    </p>
+
+  </div>
+
+
+  <div class="observation-buttons">
+
+    <button
+      class="interaction-btn old-symbol-trigger"
+      data-old-symbol="shape"
+    >
+      Observer le symbole
+    </button>
+
+    <button
+      class="interaction-btn old-symbol-trigger"
+      data-old-symbol="files"
+    >
+      Comparer aux dossiers
+    </button>
+
+    <button
+      class="interaction-btn old-symbol-trigger"
+      data-old-symbol="dead"
+    >
+      Hommes officiellement morts
+    </button>
+
+    <button
+      class="interaction-btn old-symbol-trigger"
+      data-old-symbol="transmissions"
+    >
+      Anciennes transmissions
+    </button>
+
+    <button
+      class="interaction-btn old-symbol-trigger"
+      data-old-symbol="older"
+    >
+      Plus ancien qu’Isabel
+    </button>
+
+  </div>
+
+
+  <div
+    class="reveal-box"
+    id="oldSymbolReveal"
+  >
+  </div>
+
+</section>
+
+
+<section
+  class="scene symbol-scene"
+  id="scene-24"
+>
+
+  <div class="text-block dialogue">
+
+    <p>
+      Son visage change.
+    </p>
+
+    <p>
+      — Hale…
+    </p>
+
+    <p>
+      — Quoi ?
+    </p>
+
+    <p class="impact-text">
+      — J’ai déjà vu
+      quelque chose
+      de similaire.
+    </p>
+
+    <p>
+      — Où ?
+    </p>
+
+    <p class="emphasis">
+      — Dans les dossiers
+      des hommes
+      officiellement morts.
+    </p>
+
+    <p>
+      Silence.
+    </p>
+
+    <p>
+      Lucy retourne
+      vers IA2.
+    </p>
+
+    <p>
+      — Analyse ce symbole.
+    </p>
+
+    <p class="name-reveal">
+      ANALYSE EN COURS.
+    </p>
+
+    <p>
+      Clive rejoint
+      la salle de sécurité.
+    </p>
+
+    <p>
+      Hale attend.
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     VISUEL 12
+     LE PREMIER SIGNAL
+===================================================== -->
+
+<section
+  class="scene investigation-scene interaction-scene"
+  id="scene-25"
+>
+
+  <div
+    class="visual interactive-visual"
+    data-visual="12"
+  >
+    <img
+      src="images/chapitre15/Visuel-12.PNG"
+      alt="Ancien fichier confirmant l'existence de l'enfant au Mexique"
+      loading="lazy"
+    >
+  </div>
+
+
+  <div class="text-block">
+
+    <p>
+      Une première série
+      de correspondances apparaît.
+    </p>
+
+    <p>
+      Puis une autre.
+    </p>
+
+    <p>
+      Pas de résultat définitif.
+    </p>
+
+    <p>
+      Mais plusieurs
+      documents anciens.
+    </p>
+
+    <p>
+      Plusieurs identifiants.
+    </p>
+
+    <p>
+      Des transmissions
+      bien antérieures
+      à Isabel.
+    </p>
+
+    <p>
+      Lucy fronce les sourcils.
+    </p>
+
+    <p>
+      — Attendez.
+    </p>
+
+    <p>
+      Elle ouvre
+      un fichier.
+    </p>
+
+  </div>
+
+
+  <div class="story-path">
+
+    <button
+      class="interaction-btn first-signal-trigger"
+      data-first-signal="date"
+    >
+      Dix-neuf ans plus tôt
+    </button>
+
+    <button
+      class="interaction-btn first-signal-trigger"
+      data-first-signal="birth"
+    >
+      Quelques mois après la naissance
+    </button>
+
+    <button
+      class="interaction-btn first-signal-trigger"
+      data-first-signal="message"
+    >
+      Lire le message
+    </button>
+
+    <button
+      class="interaction-btn first-signal-trigger"
+      data-first-signal="recipient"
+    >
+      Destinataire
+    </button>
+
+    <button
+      class="interaction-btn first-signal-trigger"
+      data-first-signal="reactivation"
+    >
+      Réactivation
+    </button>
+
+  </div>
+
+
+  <div
+    class="reveal-box"
+    id="firstSignalReveal"
+  >
+  </div>
+
+</section>
+
+
+<section
+  class="scene danger-scene"
+  id="scene-26"
+>
+
+  <div class="text-block">
+
+    <p>
+      Hale s’approche.
+    </p>
+
+    <p>
+      — Quelle date ?
+    </p>
+
+    <p>
+      Lucy ne répond pas
+      immédiatement.
+    </p>
+
+    <p>
+      Elle vérifie.
+    </p>
+
+    <p>
+      Puis une seconde fois.
+    </p>
+
+    <p>
+      — Isabel n’était
+      pas encore ici.
+    </p>
+
+    <p>
+      Clive cesse
+      de sourire.
+    </p>
+
+    <p>
+      Le fichier date
+      de dix-neuf ans plus tôt.
+    </p>
+
+    <p>
+      Quelques mois seulement
+      après la naissance d’Anna.
+    </p>
+
+    <p>
+      Hale pâlit.
+    </p>
+
+    <p>
+      — Ouvre.
+    </p>
+
+    <p>
+      Lucy s’exécute.
+    </p>
+
+    <p>
+      Le contenu
+      est extrêmement court.
+    </p>
+
+    <p>
+      Une seule phrase.
+    </p>
+
+    <p class="name-reveal">
+      LE SIGNAL A ÉTÉ CONFIRMÉ
+      AU MEXIQUE.
+      L’ENFANT EXISTE.
+    </p>
+
+    <p>
+      Silence.
+    </p>
+
+    <p>
+      Hale fixe l’écran.
+    </p>
+
+    <p>
+      Lucy fait défiler
+      les métadonnées.
+    </p>
+
+    <p>
+      — Origine inconnue.
+    </p>
+
+    <p>
+      — Destinataire ?
+    </p>
+
+    <p>
+      — Masqué.
+    </p>
+
+    <p>
+      Clive regarde Hale.
+    </p>
+
+    <p>
+      — Donc Isabel
+      n’était pas la première.
+    </p>
+
+    <p>
+      Hale ne répond pas.
+    </p>
+
+    <p>
+      Lucy poursuit
+      la recherche.
+    </p>
+
+    <p>
+      Une autre trace apparaît.
+    </p>
+
+    <p>
+      Encore plus ancienne.
+    </p>
+
+    <p>
+      Cette fois,
+      quelques jours seulement
+      après la naissance d’Anna.
+    </p>
+
+    <p>
+      Un identifiant.
+    </p>
+
+    <p>
+      Puis une série
+      de coordonnées
+      partiellement effacées.
+    </p>
+
+    <p>
+      Et un terme.
+    </p>
+
+    <p class="impact-text">
+      RÉACTIVATION.
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     VISUEL 13
+     LA MARQUE DE HALE
+===================================================== -->
+
+<section
+  class="scene sentinel-scene interaction-scene"
+  id="scene-27"
+>
+
+  <div
+    class="visual interactive-visual"
+    data-visual="13"
+  >
+    <img
+      src="images/chapitre15/Visuel-13.PNG"
+      alt="Hale regarde sa marque de Sentinelle en repensant à la naissance d'Anna"
+      loading="lazy"
+    >
+  </div>
+
+
+  <div class="text-block">
+
+    <p>
+      Hale recule légèrement.
+    </p>
+
+    <p>
+      Lucy le remarque.
+    </p>
+
+    <p>
+      — Tu connais ce mot.
+    </p>
+
+    <p>
+      Hale hésite.
+    </p>
+
+    <p>
+      Puis regarde
+      son poignet.
+    </p>
+
+  </div>
+
+
+  <div class="observation-buttons">
+
+    <button
+      class="interaction-btn hale-memory-trigger"
+      data-hale-memory="vial"
+    >
+      La fiole
+    </button>
+
+    <button
+      class="interaction-btn hale-memory-trigger"
+      data-hale-memory="lee"
+    >
+      Maître Lee
+    </button>
+
+    <button
+      class="interaction-btn hale-memory-trigger"
+      data-hale-memory="birth"
+    >
+      La naissance d’Anna
+    </button>
+
+    <button
+      class="interaction-btn hale-memory-trigger"
+      data-hale-memory="mark"
+    >
+      La marque
+    </button>
+
+    <button
+      class="interaction-btn hale-memory-trigger"
+      data-hale-memory="signal"
+    >
+      Le premier signal
+    </button>
+
+  </div>
+
+
+  <div
+    class="reveal-box"
+    id="haleMemoryReveal"
+  >
+  </div>
+
+</section>
+
+
+<section
+  class="scene sentinel-scene"
+  id="scene-28"
+>
+
+  <div class="text-block dialogue">
+
+    <p>
+      Pendant dix-neuf ans,
+      le symbole des Sentinelles
+      y est resté dissimulé.
+    </p>
+
+    <p>
+      Mais il se souvient
+      parfaitement
+      du premier jour
+      où il est apparu.
+    </p>
+
+    <p class="impact-text">
+      Du jour où Anna est née.
+    </p>
+
+    <p>
+      Lucy comprend
+      à son expression.
+    </p>
+
+    <p>
+      — Hale ?
+    </p>
+
+    <p>
+      Il relève lentement
+      les yeux.
+    </p>
+
+    <p>
+      — Le jour où Anna
+      est arrivée…
+    </p>
+
+    <p>
+      Sa voix devient
+      plus basse.
+    </p>
+
+    <p class="name-reveal">
+      — ma marque est apparue.
+    </p>
+
+    <p>
+      Clive regarde Lucy.
+    </p>
+
+    <p>
+      Lucy ne dit plus rien.
+    </p>
+
+    <p>
+      Hale poursuit :
+    </p>
+
+    <p>
+      — Maître Lee
+      m’avait envoyé ici
+      pour surveiller une fiole.
+    </p>
+
+    <p class="impact-text">
+      — Pas un enfant.
+    </p>
+
+    <p>
+      Il regarde
+      le message.
+    </p>
+
+    <p>
+      LE SIGNAL A ÉTÉ CONFIRMÉ
+      AU MEXIQUE.
+      L’ENFANT EXISTE.
+    </p>
+
+    <p>
+      — Puis Anna est née.
+    </p>
+
+    <p>
+      Silence.
+    </p>
+
+    <p>
+      Lucy murmure :
+    </p>
+
+    <p class="emphasis">
+      — Et quelqu’un,
+      quelque part,
+      l’a su presque immédiatement.
+    </p>
+
+    <p>
+      Hale serre
+      les mâchoires.
+    </p>
+
+    <p>
+      — Oui.
+    </p>
+
+  </div>
+
+</section>
+
+
+<section
+  class="scene deduction-scene"
+  id="scene-29"
+>
+
+  <div class="text-block">
+
+    <p>
+      Clive regarde l’écran.
+    </p>
+
+    <p>
+      — Alors la vraie question
+      n’est plus
+      de savoir depuis combien de temps
+      Isabel espionne Anna.
+    </p>
+
+    <p>
+      Lucy acquiesce.
+    </p>
+
+    <p class="impact-text">
+      — Mais comment ils ont su
+      qu’elle existait
+      avant même
+      d’avoir quelqu’un
+      à l’intérieur.
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     VISUEL 14
+     LÀ OÙ TOUT A COMMENCÉ
+===================================================== -->
+
+<section
+  class="scene dark-mark-scene interaction-scene"
+  id="scene-30"
+>
+
+  <div
+    class="visual interactive-visual"
+    data-visual="14"
+  >
+    <img
+      src="images/chapitre15/Visuel-14.PNG"
+      alt="Le Maître Noir découvre une trace liée au premier signal hors du Mexique"
+      loading="lazy"
+    >
+  </div>
+
+
+  <div class="text-block">
+
+    <p>
+      Hacienda de la Sierra — Hidalgo
+    </p>
+
+    <p>
+      Le Maître Noir
+      se tient seul
+      devant un immense mur
+      de pierre.
+    </p>
+
+    <p>
+      Au centre :
+    </p>
+
+    <p class="impact-text">
+      le même symbole.
+    </p>
+
+  </div>
+
+
+  <div class="story-path">
+
+    <button
+      class="interaction-btn origin-trace-trigger"
+      data-origin-trace="anomaly"
+    >
+      Anomalie à Hacienda Flores
+    </button>
+
+    <button
+      class="interaction-btn origin-trace-trigger"
+      data-origin-trace="hale"
+    >
+      Hale actif
+    </button>
+
+    <button
+      class="interaction-btn origin-trace-trigger"
+      data-origin-trace="lee"
+    >
+      Maître Lee
+    </button>
+
+    <button
+      class="interaction-btn origin-trace-trigger"
+      data-origin-trace="signal"
+    >
+      Premier signal
+    </button>
+
+    <button
+      class="interaction-btn origin-trace-trigger"
+      data-origin-trace="outside"
+    >
+      Hors du Mexique
+    </button>
+
+  </div>
+
+
+  <div
+    class="reveal-box"
+    id="originTraceReveal"
+  >
+  </div>
+
+</section>
+
+
+<section
+  class="scene dark-mark-scene"
+  id="scene-31"
+>
+
+  <div class="text-block dialogue">
+
+    <p>
+      Une lumière discrète
+      apparaît.
+    </p>
+
+    <p>
+      Puis une voix électronique.
+    </p>
+
+    <p>
+      — ANOMALIE DÉTECTÉE.
+    </p>
+
+    <p>
+      Il tourne lentement
+      la tête.
+    </p>
+
+    <p>
+      — Où ?
+    </p>
+
+    <p>
+      — HACIENDA FLORES.
+    </p>
+
+    <p>
+      Le Maître Noir sourit.
+    </p>
+
+    <p>
+      — Ils remontent le fil.
+    </p>
+
+    <p>
+      Quelques secondes passent.
+    </p>
+
+    <p>
+      — Et Hale ?
+    </p>
+
+    <p>
+      — ACTIF.
+    </p>
+
+    <p>
+      Le sourire disparaît.
+    </p>
+
+    <p>
+      — Alors il se souvient.
+    </p>
+
+    <p>
+      Il approche une main
+      du symbole.
+    </p>
+
+    <p>
+      — Intéressant.
+    </p>
+
+    <p>
+      Puis il murmure :
+    </p>
+
+    <p class="emphasis">
+      — Voyons jusqu’où
+      Maître Lee
+      lui a dit la vérité.
+    </p>
+
+  </div>
+
+</section>
+
+
+<section
+  class="scene dark-mark-scene"
+  id="scene-32"
+>
+
+  <div class="text-block dialogue">
+
+    <p>
+      Derrière lui,
+      une porte s’ouvre.
+    </p>
+
+    <p>
+      Un homme entre.
+    </p>
+
+    <p>
+      — Maître.
+    </p>
+
+    <p>
+      — Oui ?
+    </p>
+
+    <p>
+      — Nous avons retrouvé
+      une trace liée
+      au premier signal.
+    </p>
+
+    <p>
+      Le Maître Noir
+      se retourne.
+    </p>
+
+    <p>
+      — Où ?
+    </p>
+
+    <p>
+      L’homme hésite.
+    </p>
+
+    <p class="impact-text">
+      — Pas au Mexique.
+    </p>
+
+    <p>
+      Silence.
+    </p>
+
+    <p>
+      — Alors où ?
+    </p>
+
+    <p>
+      L’homme lui tend
+      la tablette.
+    </p>
+
+    <p>
+      Le Maître Noir
+      regarde l’écran.
+    </p>
+
+    <p>
+      Son expression change
+      pour la première fois.
+    </p>
+
+    <p class="name-reveal">
+      — Impossible…
+    </p>
+
+    <p>
+      Puis son regard
+      se durcit.
+    </p>
+
+    <p>
+      — Préparez mon départ.
+    </p>
+
+    <p>
+      — Pour où ?
+    </p>
+
+    <p>
+      Il relève lentement
+      les yeux.
+    </p>
+
+    <p class="impact-text">
+      — Là où tout a commencé.
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     FIN DU CHAPITRE
+===================================================== -->
+
+<section
+  class="scene chapter-end"
+  id="scene-33"
+>
+
+  <div class="end-symbol">
+    ∞
+  </div>
+
+
+  <div class="end-actions">
+
+    <button
+      class="chapter-btn"
+      id="restartChapter"
+    >
+      Relire le chapitre
+    </button>
+
+    <!--
+      Quand le chapitre 16 sera prêt :
+
+      <a
+        class="chapter-btn primary"
+        href="chapitre16.html"
+      >
+        Continuer
+      </a>
+    -->
+
+    <a
+      class="chapter-btn primary"
+      href="index.html"
+    >
+      Retour à l’accueil
+    </a>
+
+  </div>
+
+</section>
+
+
+</main>
+
+
+<!-- =====================================================
+     POPUP INFORMATION / SECRET
+===================================================== -->
+
+<div
+  class="secret-popup"
+  id="secretPopup"
+  aria-hidden="true"
+>
+
+  <div class="secret-popup-inner">
+
+    <span class="secret-symbol">
+      ∞
+    </span>
+
+    <span>
+      INFORMATION DÉCOUVERTE
+    </span>
+
+  </div>
+
+</div>
+
+
+<!-- =====================================================
+     MENU
+===================================================== -->
+
+<div
+  class="chapter-menu"
+  id="chapterMenu"
+  aria-hidden="true"
+>
+
+  <div class="chapter-menu-panel">
+
+    <button
+      class="menu-close"
+      id="menuClose"
+      aria-label="Fermer le menu"
+    >
+      ×
+    </button>
+
+    <h2>
+      Chapitre 15
+    </h2>
+
+    <p>
+      Le jeu commence
+    </p>
+
+    <button
+      id="resumeBtn"
+      class="menu-action"
+    >
+      Reprendre la lecture
+    </button>
+
+    <button
+      id="restartBtn"
+      class="menu-action"
+    >
+      Recommencer le chapitre
+    </button>
+
+    <a
+      href="index.html"
+      class="menu-action"
+    >
+      Retour à l’accueil
+    </a>
+
+  </div>
+
+</div>
+
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
+<script src="js/chapitre15.js"></script>
+
+
+</body>
+</html>
