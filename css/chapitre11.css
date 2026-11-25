@@ -297,11 +297,9 @@ button {
 .visual {
   position: relative;
 
-  width: 100%;
+  width: min(100%, 460px);
 
-  margin:
-    0 auto
-    28px;
+  margin: 28px auto 34px;
 
   border-radius: var(--radius);
 
@@ -319,36 +317,25 @@ button {
 
   box-shadow: var(--shadow);
 
-  opacity: 0;
-
-  transform:
-    translateY(26px)
-    scale(0.985);
-
-  transition:
-    opacity 0.8s ease,
-    transform 0.8s ease;
-}
-
-.scene.is-visible .visual {
   opacity: 1;
-
-  transform:
-    translateY(0)
-    scale(1);
+  visibility: visible;
+  transform: none;
 }
 
 .visual img {
+  display: block;
+
   width: 100%;
   height: auto;
 
-  object-fit: contain;
+  aspect-ratio: 9 / 16;
+
+  object-fit: cover;
+
+  opacity: 1;
+  visibility: visible;
 
   background: #050505;
-}
-
-.visual:not(.full-visual) img {
-  max-height: 84svh;
 }
 
 
@@ -357,6 +344,7 @@ button {
 ========================================================= */
 
 .interactive-visual {
+  position: relative;
   overflow: hidden;
 
   animation:
@@ -381,17 +369,6 @@ button {
       rgba(0, 0, 0, 0.24)
     );
 }
-
-
-/* =========================================================
-   VISUELS MANQUANTS
-========================================================= */
-
-.visual.visual-missing {
-  display: none;
-}
-
-
 /* =========================================================
    COUVERTURE
 ========================================================= */
