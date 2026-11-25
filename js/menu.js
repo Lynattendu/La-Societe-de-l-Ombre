@@ -153,7 +153,7 @@ const chapters = [
 
   {
     number: 24,
-    title: "Chapitre 24",
+    title: "L'irremplaçable",
     file: "chapitre24.html"
   },
 
