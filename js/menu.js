@@ -177,7 +177,7 @@ const chapters = [
 
   {
     number: 28,
-    title: "Chapitre 28",
+    title: "Le prix du piège",
     file: "chapitre28.html"
   },
 
