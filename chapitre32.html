@@ -1,1 +1,4572 @@
 
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+  >
+
+  <meta
+    name="theme-color"
+    content="#050505"
+  >
+
+  <title>
+    Chapitre 32 — Le messager | La Société de l'Ombre
+  </title>
+
+  <link
+    rel="stylesheet"
+    href="css/chapitre32.css?v=1"
+  >
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     BARRE DE PROGRESSION
+===================================================== -->
+
+<div
+  class="progress-bar"
+  aria-hidden="true"
+>
+  <div
+    class="progress-fill"
+    id="progressFill"
+  ></div>
+</div>
+
+
+<!-- =====================================================
+     COMMANDES
+===================================================== -->
+
+<div class="chapter-controls">
+
+  <button
+    class="control-btn"
+    id="menuBtn"
+    aria-label="Ouvrir le menu"
+  >
+    ☰
+  </button>
+
+  <button
+    class="control-btn"
+    id="soundBtn"
+    aria-label="Activer ou désactiver le son"
+  >
+    ♫
+  </button>
+
+</div>
+
+
+<main
+  class="chapter"
+  id="chapter"
+>
+
+
+<!-- =====================================================
+     SCÈNE 1
+     COUVERTURE
+===================================================== -->
+
+<section
+  class="scene scene-cover"
+  id="scene-1"
+>
+
+  <div
+    class="visual full-visual"
+    data-visual="1"
+  >
+
+    <img
+      src="images/chapitre32/Visuel-1.PNG"
+      alt="Chapitre 32 — Le messager"
+      loading="eager"
+    >
+
+  </div>
+
+
+  <div class="chapter-title-overlay">
+
+    <p class="chapter-number">
+      Chapitre 32
+    </p>
+
+    <h1>
+      Le messager
+    </h1>
+
+    <button
+      class="continue-btn"
+      data-next
+    >
+      Continuer
+    </button>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     VISUEL 1
+     LE SEUIL
+===================================================== -->
+
+<section
+  class="scene danger-scene interaction-scene"
+  id="scene-2"
+>
+
+  <div
+    class="visual interactive-visual"
+    data-visual="1"
+  >
+
+    <img
+      src="images/chapitre32/Visuel-1.PNG"
+      alt="La grande cavité disparaît dans une explosion de lumière tandis que Lucy reste reliée au dispositif"
+      loading="lazy"
+    >
+
+  </div>
+
+
+  <div class="text-block dialogue">
+
+    <p>
+      Cueva de las Voces — Le seuil
+    </p>
+
+    <p>
+      La lumière explose.
+    </p>
+
+    <p>
+      Tout disparaît.
+    </p>
+
+    <p>
+      La roche.
+    </p>
+
+    <p>
+      Le dispositif.
+    </p>
+
+    <p>
+      Les visages.
+    </p>
+
+    <p>
+      Pendant une fraction de seconde, il n’existe plus ni haut ni bas.
+    </p>
+
+    <p>
+      Seulement du blanc.
+    </p>
+
+    <p>
+      Puis le son revient.
+    </p>
+
+    <p>
+      Un grondement profond.
+    </p>
+
+    <p>
+      Pas celui d’une explosion.
+    </p>
+
+    <p>
+      Quelque chose de plus grave.
+    </p>
+
+    <p>
+      Plus ancien.
+    </p>
+
+    <p>
+      Comme si la montagne entière respirait.
+    </p>
+
+    <p>
+      Lucy serre les dents.
+    </p>
+
+    <p>
+      Sa main reste plaquée contre la pierre.
+    </p>
+
+    <p>
+      La lame lumineuse sortie de ses doigts est toujours engagée dans la fente.
+    </p>
+
+    <p>
+      — Je peux pas la retirer !
+    </p>
+
+    <p>
+      Root regarde les lignes projetées par Pandore.
+    </p>
+
+    <p>
+      Elles bougent toutes.
+    </p>
+
+    <p>
+      Trop vite.
+    </p>
+
+    <p class="impact-text">
+      — Ne la retire surtout pas !
+    </p>
+
+    <p>
+      Lucy tourne la tête.
+    </p>
+
+    <p>
+      — Décidez-vous !
+    </p>
+
+  </div>
+
+
+  <div class="observation-buttons">
+
+    <button
+      class="interaction-btn locked-blade-trigger"
+      data-locked-blade="white"
+    >
+      Tout devient blanc
+    </button>
+
+    <button
+      class="interaction-btn locked-blade-trigger"
+      data-locked-blade="blade"
+    >
+      La lame reste engagée
+    </button>
+
+    <button
+      class="interaction-btn locked-blade-trigger"
+      data-locked-blade="lines"
+    >
+      Les lignes s’affolent
+    </button>
+
+    <button
+      class="interaction-btn locked-blade-trigger"
+      data-locked-blade="do-not-remove"
+    >
+      Ne pas retirer
+    </button>
+
+  </div>
+
+
+  <div
+    class="reveal-box"
+    id="lockedBladeReveal"
+  ></div>
+
+</section>
+
+
+<!-- =====================================================
+     INTERACTION 2
+     ANNA MAINTIENT LE PONT
+===================================================== -->
+
+<section
+  class="scene revelation-scene interaction-scene"
+  id="scene-3"
+>
+
+  <div class="text-block">
+
+    <p>
+      Anna tremble.
+    </p>
+
+    <p>
+      Toujours au Sud.
+    </p>
+
+    <p>
+      Toujours les bras ouverts.
+    </p>
+
+    <p>
+      Le cercle lumineux passe maintenant par elle.
+    </p>
+
+    <p>
+      À droite.
+    </p>
+
+    <p>
+      À gauche.
+    </p>
+
+    <p>
+      Puis revient.
+    </p>
+
+    <p>
+      Elle est réellement devenue la liaison entre les quatre points.
+    </p>
+
+    <p>
+      Hope la regarde.
+    </p>
+
+    <p>
+      — Anna !
+    </p>
+
+    <p>
+      — Je suis là !
+    </p>
+
+    <p>
+      Mais sa voix paraît venir de très loin.
+    </p>
+
+    <p>
+      Betty fait un mouvement vers elle.
+    </p>
+
+    <p>
+      Hale lui barre doucement le passage.
+    </p>
+
+    <p>
+      — Pas maintenant.
+    </p>
+
+    <p>
+      — C’est ma fille.
+    </p>
+
+    <p>
+      — Je sais.
+    </p>
+
+    <p>
+      Betty le regarde avec colère.
+    </p>
+
+    <p>
+      Puis comprend.
+    </p>
+
+    <p>
+      Si elle rompt le cercle…
+    </p>
+
+    <p>
+      personne ne sait ce qui arrivera.
+    </p>
+
+    <p>
+      Elle reste.
+    </p>
+
+    <p class="impact-text">
+      Mais ses mains tremblent.
+    </p>
+
+  </div>
+
+
+  <div class="story-path">
+
+    <button
+      class="interaction-btn bridge-holds-trigger"
+      data-bridge-holds="south"
+    >
+      Toujours au Sud
+    </button>
+
+    <button
+      class="interaction-btn bridge-holds-trigger"
+      data-bridge-holds="link"
+    >
+      Liaison des quatre points
+    </button>
+
+    <button
+      class="interaction-btn bridge-holds-trigger"
+      data-bridge-holds="betty"
+    >
+      Betty veut intervenir
+    </button>
+
+    <button
+      class="interaction-btn bridge-holds-trigger"
+      data-bridge-holds="circle"
+    >
+      Ne pas rompre le cercle
+    </button>
+
+  </div>
+
+
+  <div
+    class="reveal-box"
+    id="bridgeHoldsReveal"
+  ></div>
+
+</section>
+
+
+<!-- =====================================================
+     INTERACTION 3
+     LE MAÎTRE NOIR RÉCUPÈRE
+===================================================== -->
+
+<section
+  class="scene dark-mark-scene interaction-scene"
+  id="scene-4"
+>
+
+  <div class="text-block dialogue">
+
+    <p>
+      Le Maître Noir est toujours au sol.
+    </p>
+
+    <p>
+      La paralysie commence à céder.
+    </p>
+
+    <p>
+      Un doigt bouge.
+    </p>
+
+    <p>
+      Puis deux.
+    </p>
+
+    <p>
+      Amy le voit.
+    </p>
+
+    <p>
+      Maître Lee aussi.
+    </p>
+
+    <p>
+      — Il récupère.
+    </p>
+
+    <p>
+      Amy se place devant lui.
+    </p>
+
+    <p>
+      — Qu’il récupère.
+    </p>
+
+    <p>
+      Lee la regarde.
+    </p>
+
+    <p>
+      Amy ne quitte pas le Maître Noir des yeux.
+    </p>
+
+    <p class="name-reveal">
+      — Cette fois, il va regarder jusqu’au bout.
+    </p>
+
+  </div>
+
+
+  <div class="observation-buttons">
+
+    <button
+      class="interaction-btn master-recovers-trigger"
+      data-master-recovers="paralysis"
+    >
+      Paralysie
+    </button>
+
+    <button
+      class="interaction-btn master-recovers-trigger"
+      data-master-recovers="movement"
+    >
+      Il recommence à bouger
+    </button>
+
+    <button
+      class="interaction-btn master-recovers-trigger"
+      data-master-recovers="amy"
+    >
+      Amy reste devant lui
+    </button>
+
+    <button
+      class="interaction-btn master-recovers-trigger"
+      data-master-recovers="watch"
+    >
+      Regarder jusqu’au bout
+    </button>
+
+  </div>
+
+
+  <div
+    class="reveal-box"
+    id="masterRecoversReveal"
+  ></div>
+
+</section>
+
+
+<!-- =====================================================
+     VISUEL 2
+     LE MESSAGER PREND FORME
+===================================================== -->
+
+<section
+  class="scene revelation-scene interaction-scene"
+  id="scene-5"
+>
+
+  <div
+    class="visual interactive-visual"
+    data-visual="2"
+  >
+
+    <img
+      src="images/chapitre32/Visuel-2.PNG"
+      alt="Une immense matière sombre et lumineuse surgit du centre du dispositif"
+      loading="lazy"
+    >
+
+  </div>
+
+
+  <div class="text-block">
+
+    <p>
+      Au centre du cercle, l’obscurité s’élargit.
+    </p>
+
+    <p>
+      Une sphère.
+    </p>
+
+    <p>
+      Puis une profondeur.
+    </p>
+
+    <p>
+      Puis…
+    </p>
+
+    <p>
+      quelque chose.
+    </p>
+
+    <p>
+      Pas un corps.
+    </p>
+
+    <p>
+      Pas vraiment.
+    </p>
+
+    <p>
+      Une matière sombre et lumineuse à la fois.
+    </p>
+
+    <p>
+      Comme de la fumée traversée d’éclairs.
+    </p>
+
+    <p>
+      Elle monte lentement du centre du dispositif.
+    </p>
+
+    <p>
+      Un nuage.
+    </p>
+
+    <p>
+      Un tourbillon.
+    </p>
+
+    <p>
+      Une forme immense qui se déploie dans la cavité comme un génie sortant d’une lampe invisible.
+    </p>
+
+    <p>
+      Clive recule.
+    </p>
+
+    <p>
+      — Dites-moi que Peter avait prévu ça.
+    </p>
+
+    <p>
+      Peter ne répond pas.
+    </p>
+
+    <p>
+      Max le regarde.
+    </p>
+
+    <p>
+      — Peter ?
+    </p>
+
+    <p>
+      — Non.
+    </p>
+
+    <p>
+      Clive :
+    </p>
+
+    <p class="impact-text">
+      — Mauvaise réponse.
+    </p>
+
+  </div>
+
+
+  <div class="story-path">
+
+    <button
+      class="interaction-btn messenger-form-trigger"
+      data-messenger-form="sphere"
+    >
+      Une sphère
+    </button>
+
+    <button
+      class="interaction-btn messenger-form-trigger"
+      data-messenger-form="matter"
+    >
+      Matière sombre et lumineuse
+    </button>
+
+    <button
+      class="interaction-btn messenger-form-trigger"
+      data-messenger-form="storm"
+    >
+      Fumée et éclairs
+    </button>
+
+    <button
+      class="interaction-btn messenger-form-trigger"
+      data-messenger-form="unknown"
+    >
+      Peter ne l’avait pas prévu
+    </button>
+
+  </div>
+
+
+  <div
+    class="reveal-box"
+    id="messengerFormReveal"
+  ></div>
+
+</section>
+
+
+<section
+  class="scene revelation-scene"
+  id="scene-6"
+>
+
+  <div class="text-block">
+
+    <p>
+      La forme continue de grandir.
+    </p>
+
+    <p>
+      Elle ne possède pas de visage.
+    </p>
+
+    <p>
+      Pourtant, parfois…
+    </p>
+
+    <p>
+      deux points semblent apparaître.
+    </p>
+
+    <p>
+      Puis disparaissent.
+    </p>
+
+    <p>
+      Une main.
+    </p>
+
+    <p>
+      Peut-être.
+    </p>
+
+    <p>
+      Une aile.
+    </p>
+
+    <p>
+      Peut-être.
+    </p>
+
+    <p>
+      Un visage humain pendant une seconde.
+    </p>
+
+    <p>
+      Puis quelque chose d’animal.
+    </p>
+
+    <p>
+      Puis plus rien.
+    </p>
+
+    <p>
+      Comme si leur cerveau tentait désespérément de donner une forme à quelque chose qui n’en avait pas.
+    </p>
+
+    <p>
+      Anna murmure :
+    </p>
+
+    <p>
+      — Il n’arrive pas à rester pareil.
+    </p>
+
+    <p>
+      Root la regarde.
+    </p>
+
+    <p class="name-reveal">
+      — Ou c’est nous qui n’arrivons pas à le voir tel qu’il est.
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     INTERACTION 5
+     IL RECONNAÎT ANNA
+===================================================== -->
+
+<section
+  class="scene revelation-scene interaction-scene"
+  id="scene-7"
+>
+
+  <div class="text-block dialogue">
+
+    <p>
+      La forme se tourne.
+    </p>
+
+    <p>
+      Pas vers le Maître Noir.
+    </p>
+
+    <p>
+      Vers Anna.
+    </p>
+
+    <p>
+      Betty cesse de respirer.
+    </p>
+
+    <p>
+      Hope aussi.
+    </p>
+
+    <p>
+      Le nuage se penche légèrement.
+    </p>
+
+    <p>
+      Une vibration traverse le cercle.
+    </p>
+
+    <p>
+      Anna ferme les yeux.
+    </p>
+
+    <p>
+      Puis les ouvre.
+    </p>
+
+    <p>
+      — Il me connaît.
+    </p>
+
+    <p>
+      Betty fait un pas.
+    </p>
+
+    <p>
+      — Comment ça, il te connaît ?
+    </p>
+
+    <p>
+      Anna secoue lentement la tête.
+    </p>
+
+    <p>
+      — Je ne sais pas.
+    </p>
+
+    <p>
+      Puis :
+    </p>
+
+    <p class="impact-text">
+      — Mais il me reconnaît.
+    </p>
+
+  </div>
+
+
+  <div class="observation-buttons">
+
+    <button
+      class="interaction-btn recognizes-anna-trigger"
+      data-recognizes-anna="turn"
+    >
+      Il se tourne vers Anna
+    </button>
+
+    <button
+      class="interaction-btn recognizes-anna-trigger"
+      data-recognizes-anna="vibration"
+    >
+      La vibration
+    </button>
+
+    <button
+      class="interaction-btn recognizes-anna-trigger"
+      data-recognizes-anna="knows"
+    >
+      Il me connaît
+    </button>
+
+    <button
+      class="interaction-btn recognizes-anna-trigger"
+      data-recognizes-anna="recognizes"
+    >
+      Il me reconnaît
+    </button>
+
+  </div>
+
+
+  <div
+    class="reveal-box"
+    id="recognizesAnnaReveal"
+  ></div>
+
+</section>
+
+
+<!-- =====================================================
+     VISUEL 3
+     LE MAÎTRE NOIR EST IGNORÉ
+===================================================== -->
+
+<section
+  class="scene dark-mark-scene interaction-scene"
+  id="scene-8"
+>
+
+  <div
+    class="visual interactive-visual"
+    data-visual="3"
+  >
+
+    <img
+      src="images/chapitre32/Visuel-3.PNG"
+      alt="Le Maître Noir tente de s'adresser à la forme tandis qu'Amy le maintient à distance"
+      loading="lazy"
+    >
+
+  </div>
+
+
+  <div class="text-block dialogue">
+
+    <p>
+      Le Maître Noir parvient enfin à parler.
+    </p>
+
+    <p>
+      Sa voix est encore faible.
+    </p>
+
+    <p>
+      — Enfin.
+    </p>
+
+    <p>
+      Amy se tourne légèrement.
+    </p>
+
+    <p>
+      Il sourit.
+    </p>
+
+    <p>
+      — Enfin…
+    </p>
+
+    <p>
+      La forme ne réagit pas.
+    </p>
+
+    <p>
+      Le sourire du Maître Noir disparaît peu à peu.
+    </p>
+
+    <p>
+      — Je vous ai appelé.
+    </p>
+
+    <p>
+      Rien.
+    </p>
+
+    <p>
+      — J’ai reconstitué le dispositif.
+    </p>
+
+    <p>
+      Rien.
+    </p>
+
+    <p>
+      — J’ai retrouvé le passage.
+    </p>
+
+    <p>
+      Toujours rien.
+    </p>
+
+    <p>
+      Clive murmure :
+    </p>
+
+    <p>
+      — Il se fait ignorer par un nuage.
+    </p>
+
+    <p>
+      Peter lui lance un regard.
+    </p>
+
+    <p>
+      — Pas maintenant.
+    </p>
+
+    <p>
+      — C’était difficile de résister.
+    </p>
+
+    <p>
+      Le Maître Noir tente de se redresser.
+    </p>
+
+    <p>
+      Amy pose simplement un pied devant lui.
+    </p>
+
+    <p>
+      — Restez.
+    </p>
+
+    <p>
+      — Écarte-toi.
+    </p>
+
+    <p>
+      — Non.
+    </p>
+
+    <p>
+      Sa marque protectrice apparaît sur ses bras.
+    </p>
+
+    <p>
+      Le Maître Noir la regarde.
+    </p>
+
+    <p>
+      Puis regarde la forme.
+    </p>
+
+    <p>
+      — Vous ne comprenez pas ce que vous avez devant vous.
+    </p>
+
+    <p>
+      Hope répond :
+    </p>
+
+    <p class="name-reveal">
+      — Vous non plus.
+    </p>
+
+  </div>
+
+
+  <div class="story-path">
+
+    <button
+      class="interaction-btn ignored-master-trigger"
+      data-ignored-master="finally"
+    >
+      Enfin
+    </button>
+
+    <button
+      class="interaction-btn ignored-master-trigger"
+      data-ignored-master="ignored"
+    >
+      Ignoré
+    </button>
+
+    <button
+      class="interaction-btn ignored-master-trigger"
+      data-ignored-master="amy"
+    >
+      Amy le bloque
+    </button>
+
+    <button
+      class="interaction-btn ignored-master-trigger"
+      data-ignored-master="hope"
+    >
+      « Vous non plus »
+    </button>
+
+  </div>
+
+
+  <div
+    class="reveal-box"
+    id="ignoredMasterReveal"
+  ></div>
+
+</section>
+
+
+<!-- =====================================================
+     VISUEL 4
+     TOUTES LES MARQUES
+===================================================== -->
+
+<section
+  class="scene artifact-scene interaction-scene"
+  id="scene-9"
+>
+
+  <div
+    class="visual interactive-visual"
+    data-visual="4"
+  >
+
+    <img
+      src="images/chapitre32/Visuel-4.PNG"
+      alt="Toutes les marques du groupe réagissent tandis que le Messager les observe"
+      loading="lazy"
+    >
+
+  </div>
+
+
+  <div class="text-block">
+
+    <p>
+      Le nuage change.
+    </p>
+
+    <p>
+      Il se contracte.
+    </p>
+
+    <p>
+      Puis s’élève.
+    </p>
+
+    <p>
+      Les symboles projetés par Pandore tournent autour de lui.
+    </p>
+
+    <p>
+      Certains disparaissent en entrant dans sa matière.
+    </p>
+
+    <p>
+      D’autres ressortent transformés.
+    </p>
+
+    <p>
+      Root observe.
+    </p>
+
+    <p>
+      Fascinée.
+    </p>
+
+    <p>
+      — Il lit le dispositif.
+    </p>
+
+    <p>
+      Peter :
+    </p>
+
+    <p>
+      — Ou il nous lit.
+    </p>
+
+    <p>
+      Max :
+    </p>
+
+    <p>
+      — Quelle différence ?
+    </p>
+
+    <p>
+      Personne ne répond.
+    </p>
+
+    <p>
+      Soudain, toutes les marques réagissent.
+    </p>
+
+    <p>
+      Le Dragon de Hope.
+    </p>
+
+    <p>
+      Le Phénix.
+    </p>
+
+    <p>
+      Pandore sur Root.
+    </p>
+
+    <p>
+      La lame de Lucy.
+    </p>
+
+    <p>
+      La marque d’Amy.
+    </p>
+
+    <p>
+      Même celle de Hale apparaît.
+    </p>
+
+    <p>
+      Anna, elle, n’a pas besoin de marque.
+    </p>
+
+    <p>
+      Tout son corps semble entouré d’une lumière très fine.
+    </p>
+
+    <p>
+      Betty regarde les relevés sur son bracelet.
+    </p>
+
+    <p>
+      — Peter…
+    </p>
+
+    <p>
+      — Je vois.
+    </p>
+
+    <p>
+      — Ils réagissent tous.
+    </p>
+
+    <p>
+      — Oui.
+    </p>
+
+    <p>
+      — Même Amy.
+    </p>
+
+    <p>
+      Amy regarde ses bras.
+    </p>
+
+    <p>
+      Hope la regarde aussi.
+    </p>
+
+    <p>
+      Le nuage se tourne vers elle.
+    </p>
+
+    <p>
+      Un instant.
+    </p>
+
+    <p>
+      Puis vers Lee.
+    </p>
+
+    <p>
+      Puis Hale.
+    </p>
+
+    <p>
+      Puis Peter.
+    </p>
+
+    <p>
+      Max.
+    </p>
+
+    <p>
+      Clive.
+    </p>
+
+    <p>
+      Betty.
+    </p>
+
+    <p>
+      Lucy.
+    </p>
+
+    <p>
+      Root.
+    </p>
+
+    <p>
+      Hope.
+    </p>
+
+    <p>
+      Anna.
+    </p>
+
+    <p class="impact-text">
+      Il les regarde tous.
+    </p>
+
+    <p>
+      Comme s’il les comptait.
+    </p>
+
+  </div>
+
+
+  <div class="observation-buttons">
+
+    <button
+      class="interaction-btn all-marks-trigger"
+      data-all-marks="pandore"
+    >
+      Pandore et les symboles
+    </button>
+
+    <button
+      class="interaction-btn all-marks-trigger"
+      data-all-marks="everyone"
+    >
+      Toutes les marques
+    </button>
+
+    <button
+      class="interaction-btn all-marks-trigger"
+      data-all-marks="anna"
+    >
+      Anna sans marque
+    </button>
+
+    <button
+      class="interaction-btn all-marks-trigger"
+      data-all-marks="count"
+    >
+      Il les compte
+    </button>
+
+  </div>
+
+
+  <div
+    class="reveal-box"
+    id="allMarksReveal"
+  ></div>
+
+</section>
+
+
+<!-- =====================================================
+     INTERACTION 8
+     ÉLIE BLOQUE LES RENFORTS
+===================================================== -->
+
+<section
+  class="scene investigation-scene interaction-scene"
+  id="scene-10"
+>
+
+  <div class="text-block dialogue">
+
+    <p>
+      À l’extérieur de la Cueva, une détonation sourde.
+    </p>
+
+    <p>
+      Hale tourne la tête.
+    </p>
+
+    <p>
+      Peter reçoit une brève impulsion sur son système.
+    </p>
+
+    <p>
+      — Élie.
+    </p>
+
+    <p>
+      Hope :
+    </p>
+
+    <p>
+      — Quoi ?
+    </p>
+
+    <p>
+      — Il bloque les renforts.
+    </p>
+
+    <p>
+      Une nouvelle détonation.
+    </p>
+
+    <p>
+      Puis silence.
+    </p>
+
+    <p>
+      Peter ajoute :
+    </p>
+
+    <p>
+      — Les routes secondaires sont coupées.
+    </p>
+
+    <p>
+      Clive sourit.
+    </p>
+
+    <p>
+      — Pour une fois, le cartel sert à quelque chose d’utile.
+    </p>
+
+    <p>
+      Betty le regarde.
+    </p>
+
+    <p>
+      — Il entendra ça.
+    </p>
+
+    <p>
+      — Je lui dirai moi-même.
+    </p>
+
+  </div>
+
+
+  <div class="story-path">
+
+    <button
+      class="interaction-btn elie-blockade-trigger"
+      data-elie-blockade="blast"
+    >
+      Détonations
+    </button>
+
+    <button
+      class="interaction-btn elie-blockade-trigger"
+      data-elie-blockade="reinforcements"
+    >
+      Bloquer les renforts
+    </button>
+
+    <button
+      class="interaction-btn elie-blockade-trigger"
+      data-elie-blockade="roads"
+    >
+      Routes coupées
+    </button>
+
+    <button
+      class="interaction-btn elie-blockade-trigger"
+      data-elie-blockade="time"
+    >
+      Gagner du temps
+    </button>
+
+  </div>
+
+
+  <div
+    class="reveal-box"
+    id="elieBlockadeReveal"
+  ></div>
+
+</section>
+
+
+<!-- =====================================================
+     VISUEL 5
+     LES VISIONS
+===================================================== -->
+
+<section
+  class="scene revelation-scene interaction-scene"
+  id="scene-11"
+>
+
+  <div
+    class="visual interactive-visual"
+    data-visual="5"
+  >
+
+    <img
+      src="images/chapitre32/Visuel-5.PNG"
+      alt="La matière du Messager traverse doucement le groupe et provoque des visions"
+      loading="lazy"
+    >
+
+  </div>
+
+
+  <div class="text-block">
+
+    <p>
+      Le nuage s’étend soudain.
+    </p>
+
+    <p>
+      Tout le monde se met en garde.
+    </p>
+
+    <p>
+      Amy lève ses bras.
+    </p>
+
+    <p>
+      Hope aussi.
+    </p>
+
+    <p>
+      Lee fait un pas devant Anna.
+    </p>
+
+    <p>
+      Mais la matière ne les frappe pas.
+    </p>
+
+    <p>
+      Elle les traverse.
+    </p>
+
+    <p>
+      Doucement.
+    </p>
+
+    <p>
+      Comme un vent chaud.
+    </p>
+
+    <p>
+      Lucy ferme les yeux.
+    </p>
+
+    <p>
+      Root aussi.
+    </p>
+
+    <p class="impact-text">
+      Et pendant quelques secondes…
+    </p>
+
+    <p class="impact-text">
+      chacun voit quelque chose.
+    </p>
+
+  </div>
+
+
+  <div class="observation-buttons">
+
+    <button
+      class="interaction-btn visions-trigger"
+      data-visions="touch"
+    >
+      La matière les traverse
+    </button>
+
+    <button
+      class="interaction-btn visions-trigger"
+      data-visions="warm"
+    >
+      Comme un vent chaud
+    </button>
+
+    <button
+      class="interaction-btn visions-trigger"
+      data-visions="everyone"
+    >
+      Chacun voit quelque chose
+    </button>
+
+    <button
+      class="interaction-btn visions-trigger"
+      data-visions="individual"
+    >
+      Visions individuelles
+    </button>
+
+  </div>
+
+
+  <div
+    class="reveal-box"
+    id="visionsReveal"
+  ></div>
+
+</section>
+
+
+<!-- =====================================================
+     HOPE
+===================================================== -->
+
+<section
+  class="scene revelation-scene"
+  id="scene-12"
+>
+
+  <div class="text-block">
+
+    <p>
+      Hope
+    </p>
+
+    <p>
+      Une forêt.
+    </p>
+
+    <p>
+      Immense.
+    </p>
+
+    <p>
+      Plus ancienne que tout ce qu’elle connaît.
+    </p>
+
+    <p>
+      Le Dragon marche devant elle.
+    </p>
+
+    <p>
+      Le Phénix vole au-dessus.
+    </p>
+
+    <p>
+      Puis les deux disparaissent.
+    </p>
+
+    <p>
+      Et Hope reste seule.
+    </p>
+
+    <p>
+      Une voix sans mots semble lui poser une question.
+    </p>
+
+    <p>
+      Pas encore compréhensible.
+    </p>
+
+    <p>
+      Elle revient brutalement dans la grotte.
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     INTERACTION 10
+     ROOT
+===================================================== -->
+
+<section
+  class="scene artifact-scene interaction-scene"
+  id="scene-13"
+>
+
+  <div class="text-block">
+
+    <p>
+      Root
+    </p>
+
+    <p>
+      Des milliers de chemins.
+    </p>
+
+    <p>
+      Des mondes.
+    </p>
+
+    <p>
+      Des routes.
+    </p>
+
+    <p>
+      Certaines commencent.
+    </p>
+
+    <p>
+      Certaines finissent.
+    </p>
+
+    <p>
+      Certaines reviennent sur elles-mêmes.
+    </p>
+
+    <p>
+      Puis une seule phrase apparaît devant elle :
+    </p>
+
+    <p class="name-reveal">
+      Connaître le chemin n’est pas choisir la destination.
+    </p>
+
+    <p>
+      Elle cligne des yeux.
+    </p>
+
+    <p>
+      La grotte revient.
+    </p>
+
+  </div>
+
+
+  <div class="story-path">
+
+    <button
+      class="interaction-btn root-vision-trigger"
+      data-root-vision="paths"
+    >
+      Les chemins
+    </button>
+
+    <button
+      class="interaction-btn root-vision-trigger"
+      data-root-vision="worlds"
+    >
+      Les mondes
+    </button>
+
+    <button
+      class="interaction-btn root-vision-trigger"
+      data-root-vision="return"
+    >
+      Les routes qui reviennent
+    </button>
+
+    <button
+      class="interaction-btn root-vision-trigger"
+      data-root-vision="destination"
+    >
+      La destination
+    </button>
+
+  </div>
+
+
+  <div
+    class="reveal-box"
+    id="rootVisionReveal"
+  ></div>
+
+</section>
+
+
+<!-- =====================================================
+     LUCY
+===================================================== -->
+
+<section
+  class="scene revelation-scene"
+  id="scene-14"
+>
+
+  <div class="text-block">
+
+    <p>
+      Lucy
+    </p>
+
+    <p>
+      Ombre.
+    </p>
+
+    <p>
+      Lumière.
+    </p>
+
+    <p>
+      Puis aucune des deux.
+    </p>
+
+    <p>
+      Elle se voit debout entre les deux.
+    </p>
+
+    <p>
+      Seule.
+    </p>
+
+    <p>
+      Mais libre.
+    </p>
+
+    <p>
+      La lame dans sa main.
+    </p>
+
+    <p>
+      Puis rien.
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     INTERACTION 11
+     ANNA
+===================================================== -->
+
+<section
+  class="scene revelation-scene interaction-scene"
+  id="scene-15"
+>
+
+  <div class="text-block dialogue">
+
+    <p>
+      Anna
+    </p>
+
+    <p>
+      Elle voit…
+    </p>
+
+    <p>
+      Une main.
+    </p>
+
+    <p>
+      Immense.
+    </p>
+
+    <p>
+      Pas menaçante.
+    </p>
+
+    <p>
+      Une main qui tient quelque chose.
+    </p>
+
+    <p>
+      Une sphère.
+    </p>
+
+    <p>
+      Dans cette sphère…
+    </p>
+
+    <p>
+      des étoiles.
+    </p>
+
+    <p>
+      Des mondes.
+    </p>
+
+    <p>
+      Puis elle comprend quelque chose qui lui donne le vertige.
+    </p>
+
+    <p class="impact-text">
+      Nous ne sommes peut-être pas grands.
+    </p>
+
+    <p class="impact-text">
+      Nous sommes peut-être minuscules.
+    </p>
+
+    <p>
+      Elle rouvre brutalement les yeux.
+    </p>
+
+    <p>
+      — Oh mon Dieu…
+    </p>
+
+    <p>
+      Betty :
+    </p>
+
+    <p>
+      — Anna ?
+    </p>
+
+    <p>
+      — Rien.
+    </p>
+
+    <p>
+      — Anna.
+    </p>
+
+    <p>
+      — Après.
+    </p>
+
+    <p>
+      Elle ne peut pas encore le dire.
+    </p>
+
+    <p>
+      Pas parce qu’elle veut cacher.
+    </p>
+
+    <p>
+      Parce qu’elle n’a pas les mots.
+    </p>
+
+  </div>
+
+
+  <div class="observation-buttons">
+
+    <button
+      class="interaction-btn anna-vision-trigger"
+      data-anna-vision="hand"
+    >
+      La main
+    </button>
+
+    <button
+      class="interaction-btn anna-vision-trigger"
+      data-anna-vision="sphere"
+    >
+      La sphère
+    </button>
+
+    <button
+      class="interaction-btn anna-vision-trigger"
+      data-anna-vision="worlds"
+    >
+      Les mondes
+    </button>
+
+    <button
+      class="interaction-btn anna-vision-trigger"
+      data-anna-vision="small"
+    >
+      Minuscules
+    </button>
+
+  </div>
+
+
+  <div
+    class="reveal-box"
+    id="annaVisionReveal"
+  ></div>
+
+</section>
+
+
+<!-- =====================================================
+     INTERACTION 12
+     AMY
+===================================================== -->
+
+<section
+  class="scene revelation-scene interaction-scene"
+  id="scene-16"
+>
+
+  <div class="text-block">
+
+    <p>
+      Amy
+    </p>
+
+    <p>
+      Elle voit Hope enfant.
+    </p>
+
+    <p>
+      Puis elle-même.
+    </p>
+
+    <p>
+      Deux petites filles.
+    </p>
+
+    <p>
+      Une barrière entre elles.
+    </p>
+
+    <p>
+      Amy la franchit.
+    </p>
+
+    <p>
+      Puis l’image change.
+    </p>
+
+    <p>
+      Des centaines de personnes qu’elle a protégées sans jamais appeler cela protéger.
+    </p>
+
+    <p>
+      Une cible qu’elle n’a pas tuée.
+    </p>
+
+    <p>
+      Un enfant qu’elle a laissé partir.
+    </p>
+
+    <p>
+      Hope.
+    </p>
+
+    <p>
+      Anna.
+    </p>
+
+    <p>
+      Puis sa marque.
+    </p>
+
+    <p>
+      Le bouclier.
+    </p>
+
+    <p>
+      Elle revient.
+    </p>
+
+    <p class="impact-text">
+      Et cette fois, elle ne regarde plus son symbole avec méfiance.
+    </p>
+
+  </div>
+
+
+  <div class="story-path">
+
+    <button
+      class="interaction-btn amy-vision-trigger"
+      data-amy-vision="children"
+    >
+      Deux petites filles
+    </button>
+
+    <button
+      class="interaction-btn amy-vision-trigger"
+      data-amy-vision="barrier"
+    >
+      La barrière
+    </button>
+
+    <button
+      class="interaction-btn amy-vision-trigger"
+      data-amy-vision="protected"
+    >
+      Ceux qu’elle a protégés
+    </button>
+
+    <button
+      class="interaction-btn amy-vision-trigger"
+      data-amy-vision="shield"
+    >
+      Le bouclier
+    </button>
+
+  </div>
+
+
+  <div
+    class="reveal-box"
+    id="amyVisionReveal"
+  ></div>
+
+</section>
+
+
+<!-- =====================================================
+     INTERACTION 13
+     BETTY
+===================================================== -->
+
+<section
+  class="scene revelation-scene interaction-scene"
+  id="scene-17"
+>
+
+  <div class="text-block">
+
+    <p>
+      Betty
+    </p>
+
+    <p>
+      Elle voit une cellule.
+    </p>
+
+    <p>
+      Minuscule.
+    </p>
+
+    <p>
+      Puis deux.
+    </p>
+
+    <p>
+      Quatre.
+    </p>
+
+    <p>
+      Huit.
+    </p>
+
+    <p>
+      La vie qui se divise.
+    </p>
+
+    <p>
+      Se construit.
+    </p>
+
+    <p>
+      Se répare.
+    </p>
+
+    <p>
+      Puis l’image change.
+    </p>
+
+    <p>
+      Anna.
+    </p>
+
+    <p>
+      Pas telle qu’elle est aujourd’hui.
+    </p>
+
+    <p>
+      Avant.
+    </p>
+
+    <p>
+      À l’origine.
+    </p>
+
+    <p>
+      Quelques cellules.
+    </p>
+
+    <p>
+      Une possibilité.
+    </p>
+
+    <p>
+      Betty tend instinctivement la main.
+    </p>
+
+    <p>
+      Mais l’image s’éloigne.
+    </p>
+
+    <p>
+      Elle veut la retenir.
+    </p>
+
+    <p>
+      Impossible.
+    </p>
+
+    <p>
+      Plus elle serre les doigts, plus Anna disparaît.
+    </p>
+
+    <p>
+      Alors Betty ouvre la main.
+    </p>
+
+    <p>
+      Et Anna revient.
+    </p>
+
+    <p>
+      Adulte.
+    </p>
+
+    <p>
+      Libre.
+    </p>
+
+    <p>
+      Debout devant elle.
+    </p>
+
+    <p>
+      Betty comprend.
+    </p>
+
+    <p class="impact-text">
+      Créer la vie ne donne pas le droit de la posséder.
+    </p>
+
+    <p class="impact-text">
+      La protéger ne signifie pas l’empêcher de choisir.
+    </p>
+
+    <p>
+      Une larme roule sur sa joue.
+    </p>
+
+    <p>
+      Puis la grotte revient.
+    </p>
+
+    <p>
+      Betty cherche immédiatement Anna du regard.
+    </p>
+
+    <p>
+      Elle est là.
+    </p>
+
+    <p class="name-reveal">
+      Et cette fois, Betty ne fait aucun mouvement pour la retenir.
+    </p>
+
+  </div>
+
+
+  <div class="observation-buttons">
+
+    <button
+      class="interaction-btn betty-vision-trigger"
+      data-betty-vision="cells"
+    >
+      Les cellules
+    </button>
+
+    <button
+      class="interaction-btn betty-vision-trigger"
+      data-betty-vision="origin"
+    >
+      Anna à l’origine
+    </button>
+
+    <button
+      class="interaction-btn betty-vision-trigger"
+      data-betty-vision="open-hand"
+    >
+      Ouvrir la main
+    </button>
+
+    <button
+      class="interaction-btn betty-vision-trigger"
+      data-betty-vision="choice"
+    >
+      La laisser choisir
+    </button>
+
+  </div>
+
+
+  <div
+    class="reveal-box"
+    id="bettyVisionReveal"
+  ></div>
+
+</section>
+
+
+<!-- =====================================================
+     INTERACTION 14
+     PETER
+===================================================== -->
+
+<section
+  class="scene investigation-scene interaction-scene"
+  id="scene-18"
+>
+
+  <div class="text-block">
+
+    <p>
+      Peter
+    </p>
+
+    <p>
+      Il voit une porte.
+    </p>
+
+    <p>
+      Puis une deuxième.
+    </p>
+
+    <p>
+      L’une s’ouvre.
+    </p>
+
+    <p>
+      L’autre se ferme.
+    </p>
+
+    <p>
+      Puis cent.
+    </p>
+
+    <p>
+      Puis des milliers.
+    </p>
+
+    <p>
+      Des mécanismes.
+    </p>
+
+    <p>
+      Des circuits.
+    </p>
+
+    <p>
+      Des machines.
+    </p>
+
+    <p>
+      Des organismes.
+    </p>
+
+    <p>
+      Toutes ses inventions apparaissent autour de lui.
+    </p>
+
+    <p>
+      Phénix.
+    </p>
+
+    <p>
+      Ses drones.
+    </p>
+
+    <p>
+      Ses créatures.
+    </p>
+
+    <p>
+      Ses protections.
+    </p>
+
+    <p>
+      Puis les deux visages de Janus se dessinent dans la lumière.
+    </p>
+
+    <p>
+      L’un regarde ce qui existe déjà.
+    </p>
+
+    <p>
+      L’autre ce qui pourrait exister.
+    </p>
+
+    <p>
+      Peter sourit.
+    </p>
+
+    <p>
+      Puis son sourire disparaît.
+    </p>
+
+    <p>
+      Parce qu’il voit aussi autre chose.
+    </p>
+
+    <p>
+      Chaque invention peut devenir deux choses.
+    </p>
+
+    <p>
+      Un outil qui protège.
+    </p>
+
+    <p>
+      Ou un outil qui enferme.
+    </p>
+
+    <p>
+      Une porte vers l’avenir.
+    </p>
+
+    <p>
+      Ou une serrure.
+    </p>
+
+    <p>
+      Il tend la main vers une de ses créations.
+    </p>
+
+    <p>
+      Elle se divise en deux chemins.
+    </p>
+
+    <p>
+      Et il comprend que créer n’est jamais seulement demander :
+    </p>
+
+    <p>
+      Est-ce possible ?
+    </p>
+
+    <p>
+      Il faut aussi demander :
+    </p>
+
+    <p>
+      Pourquoi le faire ?
+    </p>
+
+    <p>
+      Et surtout :
+    </p>
+
+    <p class="name-reveal">
+      Pour qui ?
+    </p>
+
+    <p>
+      Peter rouvre les yeux.
+    </p>
+
+    <p>
+      Pour une fois…
+    </p>
+
+    <p class="impact-text">
+      il n’a rien à dire.
+    </p>
+
+  </div>
+
+
+  <div class="story-path">
+
+    <button
+      class="interaction-btn peter-vision-trigger"
+      data-peter-vision="doors"
+    >
+      Les portes
+    </button>
+
+    <button
+      class="interaction-btn peter-vision-trigger"
+      data-peter-vision="janus"
+    >
+      Janus
+    </button>
+
+    <button
+      class="interaction-btn peter-vision-trigger"
+      data-peter-vision="two-uses"
+    >
+      Deux usages
+    </button>
+
+    <button
+      class="interaction-btn peter-vision-trigger"
+      data-peter-vision="for-whom"
+    >
+      Pour qui ?
+    </button>
+
+  </div>
+
+
+  <div
+    class="reveal-box"
+    id="peterVisionReveal"
+  ></div>
+
+</section>
+
+
+<!-- =====================================================
+     CLIVE
+===================================================== -->
+
+<section
+  class="scene revelation-scene"
+  id="scene-19"
+>
+
+  <div class="text-block">
+
+    <p>
+      Clive
+    </p>
+
+    <p>
+      Une serrure.
+    </p>
+
+    <p>
+      Évidemment.
+    </p>
+
+    <p>
+      Clive sourit.
+    </p>
+
+    <p>
+      Puis il voit une deuxième serrure.
+    </p>
+
+    <p>
+      Une troisième.
+    </p>
+
+    <p>
+      Des coffres.
+    </p>
+
+    <p>
+      Des portes.
+    </p>
+
+    <p>
+      Des chambres secrètes.
+    </p>
+
+    <p>
+      Des bijoux.
+    </p>
+
+    <p>
+      Des œuvres.
+    </p>
+
+    <p>
+      Tout ce qu’il pourrait voler.
+    </p>
+
+    <p>
+      Toutes s’ouvrent devant lui.
+    </p>
+
+    <p>
+      Sans effort.
+    </p>
+
+    <p>
+      Il avance.
+    </p>
+
+    <p>
+      Puis aperçoit une dernière porte.
+    </p>
+
+    <p>
+      Aucune serrure.
+    </p>
+
+    <p>
+      Aucune poignée.
+    </p>
+
+    <p>
+      Seulement une cage derrière laquelle se trouve un homme.
+    </p>
+
+    <p>
+      Lui.
+    </p>
+
+    <p>
+      Clive cesse de sourire.
+    </p>
+
+    <p>
+      Il cherche le mécanisme.
+    </p>
+
+    <p>
+      Il n’y en a pas.
+    </p>
+
+    <p>
+      Il frappe.
+    </p>
+
+    <p>
+      Rien.
+    </p>
+
+    <p>
+      Puis il comprend.
+    </p>
+
+    <p>
+      La porte n’était jamais fermée.
+    </p>
+
+    <p>
+      Il la pousse.
+    </p>
+
+    <p>
+      Elle s’ouvre.
+    </p>
+
+    <p>
+      Derrière…
+    </p>
+
+    <p>
+      un espace immense.
+    </p>
+
+    <p>
+      Pas d’or.
+    </p>
+
+    <p>
+      Pas de trésor.
+    </p>
+
+    <p>
+      Pas de murs.
+    </p>
+
+    <p>
+      Seulement le ciel.
+    </p>
+
+    <p>
+      Clive reste immobile.
+    </p>
+
+    <p>
+      Et quelque chose en lui comprend une vérité qui l’agace presque.
+    </p>
+
+    <p class="name-reveal">
+      La liberté n’est peut-être pas de pouvoir entrer partout.
+    </p>
+
+    <p class="name-reveal">
+      C’est de pouvoir choisir où l’on veut rester.
+    </p>
+
+    <p>
+      Il rouvre les yeux.
+    </p>
+
+    <p>
+      Regarde autour de lui.
+    </p>
+
+    <p>
+      Puis murmure :
+    </p>
+
+    <p>
+      — Très drôle.
+    </p>
+
+    <p>
+      Personne ne sait à qui il parle.
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     MAÎTRE LEE
+===================================================== -->
+
+<section
+  class="scene revelation-scene"
+  id="scene-20"
+>
+
+  <div class="text-block">
+
+    <p>
+      Maître Lee
+    </p>
+
+    <p>
+      Il voit un arbre.
+    </p>
+
+    <p>
+      Immense.
+    </p>
+
+    <p>
+      Ses racines descendent dans une obscurité profonde.
+    </p>
+
+    <p>
+      Ses branches montent vers une lumière presque aveuglante.
+    </p>
+
+    <p>
+      Entre les deux…
+    </p>
+
+    <p>
+      le tronc.
+    </p>
+
+    <p>
+      L’équilibre.
+    </p>
+
+    <p>
+      Lee s’approche.
+    </p>
+
+    <p>
+      Sur une branche apparaît Hope enfant.
+    </p>
+
+    <p>
+      Sur une autre, Amy.
+    </p>
+
+    <p>
+      Puis Hale.
+    </p>
+
+    <p>
+      Lucy.
+    </p>
+
+    <p>
+      Anna.
+    </p>
+
+    <p>
+      Des générations entières.
+    </p>
+
+    <p>
+      Sentinelles.
+    </p>
+
+    <p>
+      Gardiens.
+    </p>
+
+    <p>
+      Un seul arbre.
+    </p>
+
+    <p>
+      Puis une fissure traverse le tronc.
+    </p>
+
+    <p>
+      Une moitié cherche la lumière.
+    </p>
+
+    <p>
+      L’autre plonge vers l’ombre.
+    </p>
+
+    <p>
+      Lee observe.
+    </p>
+
+    <p>
+      Il s’attend à voir l’arbre mourir.
+    </p>
+
+    <p>
+      Il ne meurt pas.
+    </p>
+
+    <p>
+      Les racines des deux côtés restent entremêlées.
+    </p>
+
+    <p>
+      Impossible de séparer complètement l’une de l’autre.
+    </p>
+
+    <p>
+      Une feuille tombe.
+    </p>
+
+    <p>
+      Lee la recueille dans sa paume.
+    </p>
+
+    <p>
+      Une pensée lui vient.
+    </p>
+
+    <p>
+      Il a passé sa vie à transmettre ce qu’il savait.
+    </p>
+
+    <p>
+      Mais la sagesse n’est peut-être pas de connaître toutes les réponses.
+    </p>
+
+    <p>
+      C’est aussi savoir quand laisser ceux qui viennent après vous trouver les leurs.
+    </p>
+
+    <p>
+      L’image disparaît.
+    </p>
+
+    <p>
+      Lee rouvre les yeux.
+    </p>
+
+    <p>
+      Regarde Hope.
+    </p>
+
+    <p>
+      Puis Amy.
+    </p>
+
+    <p>
+      Puis Lucy.
+    </p>
+
+    <p>
+      Puis Anna.
+    </p>
+
+    <p>
+      Et pour la première fois depuis longtemps…
+    </p>
+
+    <p class="impact-text">
+      il ne cherche pas à comprendre avant elles.
+    </p>
+
+    <p>
+      Il attend.
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     LE MAÎTRE NOIR
+===================================================== -->
+
+<section
+  class="scene dark-mark-scene"
+  id="scene-21"
+>
+
+  <div class="text-block">
+
+    <p>
+      Le Maître Noir
+    </p>
+
+    <p>
+      La matière le traverse aussi.
+    </p>
+
+    <p>
+      Son visage change.
+    </p>
+
+    <p>
+      Un sourire apparaît.
+    </p>
+
+    <p>
+      Puis disparaît.
+    </p>
+
+    <p>
+      Il voit quelque chose.
+    </p>
+
+    <p>
+      Personne ne sait quoi.
+    </p>
+
+    <p>
+      Mais pour la première fois…
+    </p>
+
+    <p class="impact-text">
+      il a peur.
+    </p>
+
+    <p>
+      Vraiment.
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     FIN DES VISIONS
+===================================================== -->
+
+<section
+  class="scene revelation-scene"
+  id="scene-22"
+>
+
+  <div class="text-block dialogue">
+
+    <p>
+      Le nuage se retire.
+    </p>
+
+    <p>
+      Tout le monde reste immobile.
+    </p>
+
+    <p>
+      Puis Max murmure :
+    </p>
+
+    <p>
+      — Qu’est-ce que c’était ?
+    </p>
+
+    <p>
+      Maître Lee répond :
+    </p>
+
+    <p>
+      — Une réponse.
+    </p>
+
+    <p>
+      Root le regarde.
+    </p>
+
+    <p>
+      — À quelle question ?
+    </p>
+
+    <p>
+      Lee secoue la tête.
+    </p>
+
+    <p class="impact-text">
+      — Je ne sais pas encore.
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     VISUEL 6
+     LE MESSAGER PARLE
+===================================================== -->
+
+<section
+  class="scene revelation-scene interaction-scene"
+  id="scene-23"
+>
+
+  <div
+    class="visual interactive-visual"
+    data-visual="6"
+  >
+
+    <img
+      src="images/chapitre32/Visuel-6.PNG"
+      alt="Le Messager fait face au groupe et au Maître Noir lorsqu'une voix apparaît dans chacun d'eux"
+      loading="lazy"
+    >
+
+  </div>
+
+
+  <div class="text-block dialogue">
+
+    <p>
+      La forme se tourne enfin vers le Maître Noir.
+    </p>
+
+    <p>
+      Il tente de se relever.
+    </p>
+
+    <p>
+      — Vous me connaissez.
+    </p>
+
+    <p>
+      Le nuage reste immobile.
+    </p>
+
+    <p>
+      — Nos textes parlent de vous.
+    </p>
+
+    <p>
+      Silence.
+    </p>
+
+    <p>
+      — Je vous ai cherché toute ma vie.
+    </p>
+
+    <p>
+      La forme se rapproche.
+    </p>
+
+    <p>
+      Le Maître Noir lève les yeux.
+    </p>
+
+    <p>
+      Presque fasciné.
+    </p>
+
+    <p>
+      — Dites-moi.
+    </p>
+
+    <p>
+      Une vibration remplit la grotte.
+    </p>
+
+    <p>
+      Cette fois…
+    </p>
+
+    <p>
+      ce n’est plus seulement une sensation.
+    </p>
+
+    <p>
+      Une voix apparaît.
+    </p>
+
+    <p>
+      Pas dans l’air.
+    </p>
+
+    <p>
+      Dans chacun d’eux.
+    </p>
+
+    <p>
+      Différente pour chacun.
+    </p>
+
+    <p>
+      Et pourtant identique.
+    </p>
+
+    <p class="name-reveal">
+      Vous n’avez rien appelé.
+    </p>
+
+    <p>
+      Le Maître Noir se fige.
+    </p>
+
+    <p>
+      La voix reprend.
+    </p>
+
+    <p class="impact-text">
+      Vous avez été entendus.
+    </p>
+
+    <p>
+      Silence.
+    </p>
+
+    <p>
+      Le Maître Noir murmure :
+    </p>
+
+    <p>
+      — Quelle différence ?
+    </p>
+
+    <p>
+      Le nuage se tourne vers lui.
+    </p>
+
+    <p class="name-reveal">
+      Toutes.
+    </p>
+
+  </div>
+
+
+  <div class="story-path">
+
+    <button
+      class="interaction-btn heard-trigger"
+      data-heard="voice"
+    >
+      La voix
+    </button>
+
+    <button
+      class="interaction-btn heard-trigger"
+      data-heard="not-called"
+    >
+      Rien appelé
+    </button>
+
+    <button
+      class="interaction-btn heard-trigger"
+      data-heard="heard"
+    >
+      Entendus
+    </button>
+
+    <button
+      class="interaction-btn heard-trigger"
+      data-heard="difference"
+    >
+      « Toutes »
+    </button>
+
+  </div>
+
+
+  <div
+    class="reveal-box"
+    id="heardReveal"
+  ></div>
+
+</section>
+
+
+<section
+  class="scene dark-mark-scene"
+  id="scene-24"
+>
+
+  <div class="text-block dialogue">
+
+    <p>
+      Root frissonne.
+    </p>
+
+    <p>
+      Max oublie encore d’écrire.
+    </p>
+
+    <p>
+      Peter regarde ses capteurs.
+    </p>
+
+    <p>
+      Aucun signal utilisable.
+    </p>
+
+    <p>
+      Comme si rien de tout cela n’existait physiquement.
+    </p>
+
+    <p>
+      Et pourtant ils l’entendent tous.
+    </p>
+
+    <p>
+      Le Maître Noir serre les dents.
+    </p>
+
+    <p>
+      — Je veux savoir ce qu’il y a de l’autre côté.
+    </p>
+
+    <p>
+      La réponse vient immédiatement.
+    </p>
+
+    <p class="impact-text">
+      Vous voulez posséder ce que vous ne comprenez pas.
+    </p>
+
+    <p>
+      Il sourit froidement.
+    </p>
+
+    <p>
+      — Comprendre vient après.
+    </p>
+
+    <p>
+      Hope regarde Amy.
+    </p>
+
+    <p>
+      Amy secoue la tête.
+    </p>
+
+    <p>
+      Même elle paraît stupéfaite.
+    </p>
+
+    <p>
+      La forme change encore.
+    </p>
+
+    <p>
+      Pendant une seconde, quelque chose qui ressemble à un visage apparaît.
+    </p>
+
+    <p>
+      Pas humain.
+    </p>
+
+    <p>
+      Pas totalement étranger non plus.
+    </p>
+
+    <p>
+      Puis disparaît.
+    </p>
+
+    <p class="name-reveal">
+      C’est pour cela que vous n’êtes pas prêt.
+    </p>
+
+    <p>
+      Le Maître Noir blanchit.
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     VISUEL 7
+     RÉVÉLATION DU MESSAGER ET DES ANCIENS
+===================================================== -->
+
+<section
+  class="scene artifact-scene interaction-scene"
+  id="scene-25"
+>
+
+  <div
+    class="visual interactive-visual"
+    data-visual="7"
+  >
+
+    <img
+      src="images/chapitre32/Visuel-7.PNG"
+      alt="Le Messager révèle son rôle et confirme l'existence des Anciens"
+      loading="lazy"
+    >
+
+  </div>
+
+
+  <div class="text-block dialogue">
+
+    <p>
+      Anna regarde la forme.
+    </p>
+
+    <p>
+      — Qui êtes-vous ?
+    </p>
+
+    <p>
+      Betty tourne immédiatement la tête vers elle.
+    </p>
+
+    <p>
+      Hope aussi.
+    </p>
+
+    <p>
+      La forme se tourne vers Anna.
+    </p>
+
+    <p>
+      Long silence.
+    </p>
+
+    <p>
+      Puis :
+    </p>
+
+    <p class="name-reveal">
+      Une fonction.
+    </p>
+
+    <p>
+      Anna fronce les sourcils.
+    </p>
+
+    <p>
+      — Ce n’est pas une réponse.
+    </p>
+
+    <p>
+      Max murmure :
+    </p>
+
+    <p>
+      — Elle est bien la fille de Betty.
+    </p>
+
+    <p>
+      Betty, malgré la tension :
+    </p>
+
+    <p>
+      — Merci.
+    </p>
+
+    <p>
+      La voix reprend.
+    </p>
+
+    <p class="impact-text">
+      Vous me nommeriez Messager.
+    </p>
+
+    <p>
+      Root :
+    </p>
+
+    <p>
+      — Messager de qui ?
+    </p>
+
+    <p>
+      Le nuage se dilate légèrement.
+    </p>
+
+    <p>
+      Des milliers de petites lumières apparaissent à l’intérieur.
+    </p>
+
+    <p class="name-reveal">
+      De ceux que vous avez appelés Anciens.
+    </p>
+
+    <p>
+      Personne ne parle.
+    </p>
+
+    <p>
+      Le Maître Noir sourit de nouveau.
+    </p>
+
+    <p>
+      — Alors ils existent.
+    </p>
+
+    <p>
+      La réponse :
+    </p>
+
+    <p class="impact-text">
+      Oui.
+    </p>
+
+    <p>
+      Un seul mot.
+    </p>
+
+    <p>
+      Et pourtant il change tout.
+    </p>
+
+  </div>
+
+
+  <div class="story-path">
+
+    <button
+      class="interaction-btn ancients-reveal-trigger"
+      data-ancients-reveal="function"
+    >
+      Une fonction
+    </button>
+
+    <button
+      class="interaction-btn ancients-reveal-trigger"
+      data-ancients-reveal="messenger"
+    >
+      Le Messager
+    </button>
+
+    <button
+      class="interaction-btn ancients-reveal-trigger"
+      data-ancients-reveal="ancients"
+    >
+      Les Anciens
+    </button>
+
+    <button
+      class="interaction-btn ancients-reveal-trigger"
+      data-ancients-reveal="yes"
+    >
+      Oui
+    </button>
+
+  </div>
+
+
+  <div
+    class="reveal-box"
+    id="ancientsRevealReveal"
+  ></div>
+
+</section>
+
+
+<section
+  class="scene artifact-scene"
+  id="scene-26"
+>
+
+  <div class="text-block dialogue">
+
+    <p>
+      Root ferme les yeux.
+    </p>
+
+    <p>
+      Toutes les recherches.
+    </p>
+
+    <p>
+      Les grottes.
+    </p>
+
+    <p>
+      Pandore.
+    </p>
+
+    <p>
+      La fiole.
+    </p>
+
+    <p>
+      Anna.
+    </p>
+
+    <p>
+      Hope.
+    </p>
+
+    <p>
+      Les ordres.
+    </p>
+
+    <p>
+      Des siècles de croyances.
+    </p>
+
+    <p>
+      Et une réponse.
+    </p>
+
+    <p>
+      Oui.
+    </p>
+
+    <p class="impact-text">
+      Les Anciens existent.
+    </p>
+
+    <p>
+      Betty regarde Anna.
+    </p>
+
+    <p>
+      Puis le Messager.
+    </p>
+
+    <p>
+      — Le sang.
+    </p>
+
+    <p>
+      La forme se tourne vers elle.
+    </p>
+
+    <p>
+      Betty avale difficilement.
+    </p>
+
+    <p>
+      — La fiole.
+    </p>
+
+    <p>
+      — Elle venait d’eux ?
+    </p>
+
+    <p>
+      Silence.
+    </p>
+
+    <p>
+      Puis :
+    </p>
+
+    <p class="name-reveal">
+      Oui.
+    </p>
+
+    <p>
+      Betty ferme les yeux.
+    </p>
+
+    <p>
+      Anna ne bouge plus.
+    </p>
+
+    <p>
+      Hope murmure :
+    </p>
+
+    <p>
+      — Pourquoi ?
+    </p>
+
+    <p>
+      La forme se tourne vers elle.
+    </p>
+
+    <p>
+      Pas de réponse.
+    </p>
+
+    <p>
+      Hope comprend.
+    </p>
+
+    <p>
+      Pas maintenant.
+    </p>
+
+  </div>
+
+</section>
+
+
+<section
+  class="scene dark-mark-scene"
+  id="scene-27"
+>
+
+  <div class="text-block dialogue">
+
+    <p>
+      Le Maître Noir rit.
+    </p>
+
+    <p>
+      Un rire presque euphorique.
+    </p>
+
+    <p>
+      — Vous voyez ?
+    </p>
+
+    <p>
+      Il regarde tous les autres.
+    </p>
+
+    <p>
+      — J’avais raison.
+    </p>
+
+    <p>
+      — Tout ce que j’ai fait…
+    </p>
+
+    <p>
+      Amy :
+    </p>
+
+    <p>
+      — Non.
+    </p>
+
+    <p>
+      Il tourne la tête.
+    </p>
+
+    <p>
+      Amy le regarde.
+    </p>
+
+    <p>
+      — Ne faites pas ça.
+    </p>
+
+    <p>
+      — Quoi ?
+    </p>
+
+    <p class="impact-text">
+      — Transformer leur existence en justification de vos crimes.
+    </p>
+
+    <p>
+      Le Maître Noir sourit.
+    </p>
+
+    <p>
+      — Toujours aussi naïve.
+    </p>
+
+    <p>
+      Amy :
+    </p>
+
+    <p>
+      — Non.
+    </p>
+
+    <p>
+      Elle regarde le Messager.
+    </p>
+
+    <p class="name-reveal">
+      — Juste moins aveugle.
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     INTERACTION 17
+     LE PRIX DES RÉPONSES
+===================================================== -->
+
+<section
+  class="scene danger-scene interaction-scene"
+  id="scene-28"
+>
+
+  <div class="text-block dialogue">
+
+    <p>
+      Le dispositif tremble.
+    </p>
+
+    <p>
+      Lucy grimace.
+    </p>
+
+    <p>
+      — Root…
+    </p>
+
+    <p>
+      Root regarde immédiatement les lignes.
+    </p>
+
+    <p>
+      — L’appel ne tiendra pas éternellement.
+    </p>
+
+    <p>
+      Peter :
+    </p>
+
+    <p>
+      — Combien ?
+    </p>
+
+    <p>
+      Root regarde la géométrie.
+    </p>
+
+    <p>
+      — Moins qu’on pensait.
+    </p>
+
+    <p>
+      — Combien ?
+    </p>
+
+    <p class="impact-text">
+      — Quelques minutes.
+    </p>
+
+    <p>
+      Anna :
+    </p>
+
+    <p>
+      — Alors posez-lui les questions.
+    </p>
+
+    <p>
+      Tout le monde la regarde.
+    </p>
+
+    <p>
+      — Quoi ?
+    </p>
+
+    <p>
+      — On a passé des années à chercher des réponses.
+    </p>
+
+    <p>
+      Elle regarde le Messager.
+    </p>
+
+    <p>
+      — Il est là.
+    </p>
+
+    <p>
+      — Alors on demande.
+    </p>
+
+    <p>
+      Max sourit légèrement.
+    </p>
+
+    <p>
+      — Très journaliste.
+    </p>
+
+    <p>
+      Anna regarde Max.
+    </p>
+
+    <p>
+      — J’ai un bon professeur.
+    </p>
+
+    <p>
+      Le Messager semble les observer.
+    </p>
+
+    <p>
+      Puis sa voix traverse chacun d’eux.
+    </p>
+
+    <p class="name-reveal">
+      Les réponses ont un prix.
+    </p>
+
+    <p>
+      Silence.
+    </p>
+
+    <p>
+      Clive murmure :
+    </p>
+
+    <p>
+      — Évidemment.
+    </p>
+
+    <p>
+      Peter :
+    </p>
+
+    <p>
+      — Tu peux vraiment t’arrêter ?
+    </p>
+
+    <p>
+      — Non.
+    </p>
+
+    <p>
+      Lucy :
+    </p>
+
+    <p>
+      — Quel prix ?
+    </p>
+
+    <p>
+      Le Messager se tourne vers elle.
+    </p>
+
+    <p>
+      Sa marque Opaque s’illumine.
+    </p>
+
+    <p class="impact-text">
+      Comprendre.
+    </p>
+
+    <p>
+      Lucy fronce les sourcils.
+    </p>
+
+    <p>
+      — Ce n’est pas un prix.
+    </p>
+
+    <p>
+      La voix :
+    </p>
+
+    <p class="name-reveal">
+      Si.
+    </p>
+
+  </div>
+
+
+  <div class="story-path">
+
+    <button
+      class="interaction-btn answers-price-trigger"
+      data-answers-price="minutes"
+    >
+      Quelques minutes
+    </button>
+
+    <button
+      class="interaction-btn answers-price-trigger"
+      data-answers-price="questions"
+    >
+      Poser les questions
+    </button>
+
+    <button
+      class="interaction-btn answers-price-trigger"
+      data-answers-price="price"
+    >
+      Le prix
+    </button>
+
+    <button
+      class="interaction-btn answers-price-trigger"
+      data-answers-price="understand"
+    >
+      Comprendre
+    </button>
+
+  </div>
+
+
+  <div
+    class="reveal-box"
+    id="answersPriceReveal"
+  ></div>
+
+</section>
+
+
+<section
+  class="scene revelation-scene"
+  id="scene-29"
+>
+
+  <div class="text-block dialogue">
+
+    <p>
+      Maître Lee sourit légèrement.
+    </p>
+
+    <p>
+      Comme s’il comprenait déjà.
+    </p>
+
+    <p>
+      Le Messager poursuit :
+    </p>
+
+    <p class="impact-text">
+      Une réponse donnée à celui qui ne peut la comprendre devient une nouvelle prison.
+    </p>
+
+    <p>
+      Root murmure :
+    </p>
+
+    <p>
+      — Alors vous voulez savoir si on est prêts.
+    </p>
+
+    <p class="name-reveal">
+      Oui.
+    </p>
+
+    <p>
+      Max :
+    </p>
+
+    <p>
+      — Comment ?
+    </p>
+
+    <p>
+      Le nuage se contracte.
+    </p>
+
+    <p>
+      Les petites lumières à l’intérieur disparaissent.
+    </p>
+
+    <p>
+      Puis réapparaissent une à une autour d’eux.
+    </p>
+
+    <p>
+      Une devant Hope.
+    </p>
+
+    <p>
+      Une devant Anna.
+    </p>
+
+    <p>
+      Une devant Root.
+    </p>
+
+    <p>
+      Une devant Lucy.
+    </p>
+
+    <p>
+      Puis Peter.
+    </p>
+
+    <p>
+      Max.
+    </p>
+
+    <p>
+      Amy.
+    </p>
+
+    <p>
+      Betty.
+    </p>
+
+    <p>
+      Lee.
+    </p>
+
+    <p>
+      Clive.
+    </p>
+
+    <p>
+      Hale.
+    </p>
+
+    <p>
+      Et enfin, devant le Maître Noir.
+    </p>
+
+    <p>
+      Chacune différente.
+    </p>
+
+    <p>
+      Anna regarde la sienne.
+    </p>
+
+    <p>
+      — Qu’est-ce que c’est ?
+    </p>
+
+    <p>
+      La réponse du Messager tombe dans le silence.
+    </p>
+
+    <p class="name-reveal">
+      Une question.
+    </p>
+
+    <p>
+      Hope sourit légèrement.
+    </p>
+
+    <p>
+      — Une question pour obtenir une réponse.
+    </p>
+
+    <p class="impact-text">
+      Non.
+    </p>
+
+    <p>
+      Le Messager se tourne vers elle.
+    </p>
+
+    <p class="name-reveal">
+      Une question pour savoir si vous méritez de la comprendre.
+    </p>
+
+  </div>
+
+</section>
+
+
+<section
+  class="scene dark-mark-scene"
+  id="scene-30"
+>
+
+  <div class="text-block dialogue">
+
+    <p>
+      Le Maître Noir tente de bouger davantage.
+    </p>
+
+    <p>
+      Amy le remarque.
+    </p>
+
+    <p>
+      Mais ne le quitte pas des yeux.
+    </p>
+
+    <p>
+      — Et lui ?
+    </p>
+
+    <p>
+      demande-t-elle.
+    </p>
+
+    <p>
+      Le Messager se tourne vers le Maître Noir.
+    </p>
+
+    <p>
+      Une lumière apparaît devant lui également.
+    </p>
+
+    <p>
+      Beaucoup plus sombre.
+    </p>
+
+    <p>
+      Le Maître Noir sourit.
+    </p>
+
+    <p>
+      — Bien.
+    </p>
+
+    <p>
+      Lee le regarde.
+    </p>
+
+    <p class="impact-text">
+      — Ne soyez pas si certain.
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     VISUEL 8
+     LES LUMIÈRES
+===================================================== -->
+
+<section
+  class="scene revelation-scene"
+  id="scene-31"
+>
+
+  <div
+    class="visual interactive-visual"
+    data-visual="8"
+  >
+
+    <img
+      src="images/chapitre32/Visuel-8.PNG"
+      alt="Une lumière différente flotte devant chacun des personnages"
+      loading="lazy"
+    >
+
+  </div>
+
+
+  <div class="text-block dialogue">
+
+    <p>
+      Le Messager s’élève.
+    </p>
+
+    <p>
+      Sa forme commence lentement à se dissoudre.
+    </p>
+
+    <p>
+      Anna panique légèrement.
+    </p>
+
+    <p>
+      — Attendez !
+    </p>
+
+    <p>
+      Le nuage s’arrête.
+    </p>
+
+    <p>
+      — Si vous partez…
+    </p>
+
+    <p>
+      Elle cherche ses mots.
+    </p>
+
+    <p>
+      — Comment saurons-nous quoi demander ?
+    </p>
+
+    <p>
+      La voix répond :
+    </p>
+
+    <p class="impact-text">
+      Vous ne choisirez pas les questions.
+    </p>
+
+    <p>
+      Silence.
+    </p>
+
+    <p>
+      Puis :
+    </p>
+
+    <p class="name-reveal">
+      Elles vous choisiront.
+    </p>
+
+  </div>
+
+</section>
+
+
+<section
+  class="scene revelation-scene"
+  id="scene-32"
+>
+
+  <div class="text-block">
+
+    <p>
+      Une dernière vibration traverse la grotte.
+    </p>
+
+    <p>
+      Le cercle lumineux tremble.
+    </p>
+
+    <p>
+      Lucy serre les dents.
+    </p>
+
+    <p>
+      Root lève la tête.
+    </p>
+
+    <p>
+      Hope regarde Anna.
+    </p>
+
+    <p>
+      Betty approche enfin d’un pas.
+    </p>
+
+    <p>
+      Max reprend son carnet.
+    </p>
+
+    <p>
+      Peter oublie encore ses instruments.
+    </p>
+
+    <p>
+      Amy surveille le Maître Noir.
+    </p>
+
+    <p>
+      Lee ferme les yeux.
+    </p>
+
+    <p>
+      Clive ne plaisante plus.
+    </p>
+
+    <p>
+      Hale reste près d’Anna.
+    </p>
+
+    <p>
+      Le Messager prononce une dernière phrase.
+    </p>
+
+    <p class="impact-text">
+      Vous avez cherché l’origine de votre monde.
+    </p>
+
+    <p>
+      Toutes les lumières devant eux s’embrasent.
+    </p>
+
+    <p class="impact-text">
+      Avant de la connaître…
+    </p>
+
+    <p>
+      Le nuage disparaît presque entièrement.
+    </p>
+
+    <p class="name-reveal">
+      …vous devrez me montrer ce que vous avez compris de la vie.
+    </p>
+
+    <p>
+      Puis plus rien.
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     LES MOTS
+===================================================== -->
+
+<section
+  class="scene artifact-scene"
+  id="scene-33"
+>
+
+  <div class="text-block dialogue">
+
+    <p>
+      Le dispositif continue de vibrer.
+    </p>
+
+    <p>
+      Les petites lumières restent suspendues devant eux.
+    </p>
+
+    <p>
+      Une pour chacun.
+    </p>
+
+    <p>
+      Anna regarde la sienne.
+    </p>
+
+    <p>
+      Puis les autres.
+    </p>
+
+    <p>
+      Hope murmure :
+    </p>
+
+    <p>
+      — Je crois qu’on vient de passer à l’examen final…
+    </p>
+
+    <p>
+      Clive termine :
+    </p>
+
+    <p>
+      — …à l’oral.
+    </p>
+
+    <p>
+      Quelques regards se tournent vers lui.
+    </p>
+
+    <p>
+      Il hausse les épaules.
+    </p>
+
+    <p>
+      — Désolé.
+    </p>
+
+    <p>
+      Un sourire nerveux apparaît sur le visage d’Anna.
+    </p>
+
+    <p>
+      Puis disparaît.
+    </p>
+
+    <p>
+      Parce que la lumière devant elle vient de changer.
+    </p>
+
+    <p>
+      Des symboles commencent à apparaître.
+    </p>
+
+    <p>
+      Et le premier mot se dessine.
+    </p>
+
+    <p class="name-reveal">
+      ESPOIR.
+    </p>
+
+    <p>
+      Anna regarde Hope.
+    </p>
+
+    <p>
+      Hope regarde sa propre lumière.
+    </p>
+
+    <p>
+      Un autre mot apparaît.
+    </p>
+
+    <p class="name-reveal">
+      ÉQUILIBRE.
+    </p>
+
+    <p>
+      Puis Root.
+    </p>
+
+    <p class="name-reveal">
+      DESTIN.
+    </p>
+
+    <p>
+      Lucy.
+    </p>
+
+    <p class="name-reveal">
+      CHOIX.
+    </p>
+
+    <p>
+      Amy.
+    </p>
+
+    <p class="name-reveal">
+      PROTÉGER.
+    </p>
+
+    <p>
+      Peter.
+    </p>
+
+    <p class="name-reveal">
+      CRÉER.
+    </p>
+
+    <p>
+      Max.
+    </p>
+
+    <p class="name-reveal">
+      VÉRITÉ.
+    </p>
+
+    <p>
+      Betty.
+    </p>
+
+    <p class="name-reveal">
+      VIE.
+    </p>
+
+    <p>
+      Maître Lee.
+    </p>
+
+    <p class="name-reveal">
+      SAGESSE.
+    </p>
+
+    <p>
+      Clive.
+    </p>
+
+    <p class="name-reveal">
+      LIBERTÉ.
+    </p>
+
+    <p>
+      Hale.
+    </p>
+
+    <p class="name-reveal">
+      DEVOIR.
+    </p>
+
+    <p>
+      Enfin, devant le Maître Noir…
+    </p>
+
+    <p>
+      un mot apparaît.
+    </p>
+
+    <p class="impact-text">
+      POUVOIR.
+    </p>
+
+    <p>
+      Le silence devient absolu.
+    </p>
+
+    <p class="name-reveal">
+      Et chacun comprend que la dernière porte ne s’ouvrira pas avec une clé.
+    </p>
+
+    <p class="impact-text">
+      Elle s’ouvrira avec une réponse.
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     FIN DU CHAPITRE
+===================================================== -->
+
+<section
+  class="scene chapter-end"
+  id="scene-34"
+>
+
+  <div class="end-symbol">
+    ∞
+  </div>
+
+
+  <div class="end-actions">
+
+    <button
+      class="chapter-btn"
+      id="restartChapter"
+    >
+      Relire le chapitre
+    </button>
+
+
+    <!--
+    Quand le chapitre 33 sera prêt :
+
+    <a
+      class="chapter-btn primary"
+      href="chapitre33.html"
+    >
+      Continuer
+    </a>
+    -->
+
+
+    <a
+      href="index.html"
+      class="chapter-btn primary"
+    >
+      Retour à l’accueil
+    </a>
+
+  </div>
+
+</section>
+
+
+</main>
+
+
+<!-- =====================================================
+     POPUP INFORMATION DÉCOUVERTE
+===================================================== -->
+
+<div
+  class="secret-popup"
+  id="secretPopup"
+  aria-hidden="true"
+>
+
+  <div class="secret-popup-inner">
+
+    <span class="secret-symbol">
+      ∞
+    </span>
+
+    <span>
+      INFORMATION DÉCOUVERTE
+    </span>
+
+  </div>
+
+</div>
+
+
+<!-- =====================================================
+     MENU
+===================================================== -->
+
+<div
+  class="chapter-menu"
+  id="chapterMenu"
+  aria-hidden="true"
+>
+
+  <div class="chapter-menu-panel">
+
+    <button
+      class="menu-close"
+      id="menuClose"
+      aria-label="Fermer le menu"
+    >
+      ×
+    </button>
+
+    <h2>
+      Chapitre 32
+    </h2>
+
+    <p>
+      Le messager
+    </p>
+
+    <button
+      id="resumeBtn"
+      class="menu-action"
+    >
+      Reprendre la lecture
+    </button>
+
+    <button
+      id="restartBtn"
+      class="menu-action"
+    >
+      Recommencer le chapitre
+    </button>
+
+    <a
+      href="index.html"
+      class="menu-action"
+    >
+      Retour à l’accueil
+    </a>
+
+    <a
+      href="menu.html"
+      class="menu-action"
+    >
+      Retour au menu
+    </a>
+
+  </div>
+
+</div>
+
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
+<script src="js/chapitre32.js?v=1"></script>
+
+
+</body>
+</html>
