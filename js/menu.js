@@ -1,11 +1,12 @@
 /* =========================================================
    LA SOCIÉTÉ DE L’OMBRE
    MENU DES CHAPITRES
-   ========================================================= */
+========================================================= */
 
 document.addEventListener(
   "DOMContentLoaded",
   () => {
+
 
 /* =========================================================
    LISTE DES CHAPITRES
@@ -260,26 +261,71 @@ let selectedChapter =
 
 /* =========================================================
    ÉTAT D'UN CHAPITRE
+
+   Compatible avec :
+
+   ANCIEN SYSTÈME
+   societeOmbre_chapitre23_progression
+   societeOmbre_chapitre23_termine
+
+   NOUVEAU SYSTÈME
+   societeOmbre_ch24_scroll
+   societeOmbre_ch24_progress
+   societeOmbre_ch24_interactions
 ========================================================= */
 
 function getChapterStatus(
   chapter
 ) {
 
-  const progression =
+  const number =
+    chapter.number;
+
+
+  /* -------------------------------------------------------
+     ANCIEN FORMAT
+  ------------------------------------------------------- */
+
+  const oldProgression =
     localStorage.getItem(
-      `societeOmbre_chapitre${chapter.number}_progression`
+      `societeOmbre_chapitre${number}_progression`
     );
 
 
-  const termine =
+  const oldCompleted =
     localStorage.getItem(
-      `societeOmbre_chapitre${chapter.number}_termine`
+      `societeOmbre_chapitre${number}_termine`
     );
 
+
+  /* -------------------------------------------------------
+     NOUVEAU FORMAT
+  ------------------------------------------------------- */
+
+  const newScroll =
+    localStorage.getItem(
+      `societeOmbre_ch${number}_scroll`
+    );
+
+
+  const newProgress =
+    localStorage.getItem(
+      `societeOmbre_ch${number}_progress`
+    );
+
+
+  const newInteractions =
+    localStorage.getItem(
+      `societeOmbre_ch${number}_interactions`
+    );
+
+
+  /* -------------------------------------------------------
+     CHAPITRE TERMINÉ
+  ------------------------------------------------------- */
 
   if (
-    termine === "1"
+    oldCompleted === "1"
   ) {
 
     return {
@@ -291,7 +337,39 @@ function getChapterStatus(
   }
 
 
-  if (progression) {
+  /*
+    Pour les nouveaux chapitres,
+    une progression quasiment à 100 %
+    signifie que le chapitre a été lu
+    jusqu'à la fin.
+  */
+
+  if (
+    newProgress !== null &&
+    Number(
+      newProgress
+    ) >= 0.98
+  ) {
+
+    return {
+      text: "Déjà lu",
+      started: true,
+      completed: true
+    };
+
+  }
+
+
+  /* -------------------------------------------------------
+     CHAPITRE COMMENCÉ
+  ------------------------------------------------------- */
+
+  if (
+    oldProgression !== null ||
+    newScroll !== null ||
+    newProgress !== null ||
+    newInteractions !== null
+  ) {
 
     return {
       text: "Lecture en cours",
@@ -301,6 +379,10 @@ function getChapterStatus(
 
   }
 
+
+  /* -------------------------------------------------------
+     JAMAIS COMMENCÉ
+  ------------------------------------------------------- */
 
   return {
     text: "Non commencé",
@@ -329,7 +411,9 @@ function openChapterModal(
     );
 
 
-  if (selectedChapterTitle) {
+  if (
+    selectedChapterTitle
+  ) {
 
     selectedChapterTitle.textContent =
       `Chapitre ${chapter.number} — ${chapter.title}`;
@@ -338,11 +422,16 @@ function openChapterModal(
 
 
   /*
-    Si le chapitre n'a jamais été lu,
-    le bouton devient "Commencer".
+    Si le chapitre a déjà été commencé :
+    Reprendre la lecture.
+
+    Sinon :
+    Commencer le chapitre.
   */
 
-  if (resumeBtn) {
+  if (
+    resumeBtn
+  ) {
 
     if (
       status.started
@@ -361,11 +450,15 @@ function openChapterModal(
   }
 
 
-  if (chapterModal) {
+  if (
+    chapterModal
+  ) {
 
-    chapterModal.classList.remove(
-      "hidden"
-    );
+    chapterModal
+      .classList
+      .remove(
+        "hidden"
+      );
 
 
     chapterModal.setAttribute(
@@ -388,11 +481,15 @@ function openChapterModal(
 
 function closeChapterModal() {
 
-  if (chapterModal) {
+  if (
+    chapterModal
+  ) {
 
-    chapterModal.classList.add(
-      "hidden"
-    );
+    chapterModal
+      .classList
+      .add(
+        "hidden"
+      );
 
 
     chapterModal.setAttribute(
@@ -419,22 +516,19 @@ function closeChapterModal() {
 
 function renderChapters() {
 
-  if (!chaptersContainer) {
+  if (
+    !chaptersContainer
+  ) {
     return;
   }
 
-
-  /*
-    Important si la fonction devait
-    être rappelée plus tard.
-  */
 
   chaptersContainer.innerHTML =
     "";
 
 
   chapters.forEach(
-    (chapter) => {
+    chapter => {
 
       const status =
         getChapterStatus(
@@ -456,11 +550,9 @@ function renderChapters() {
         "chapter-btn";
 
 
-      /*
-        Classes supplémentaires utiles
-        pour le CSS si on veut ensuite
-        différencier les états.
-      */
+      /* ---------------------------------------------------
+         CLASSE SELON L'ÉTAT
+      --------------------------------------------------- */
 
       if (
         status.completed
@@ -486,6 +578,10 @@ function renderChapters() {
 
       }
 
+
+      /* ---------------------------------------------------
+         CONTENU
+      --------------------------------------------------- */
 
       button.innerHTML =
         `
@@ -517,9 +613,10 @@ function renderChapters() {
       );
 
 
-      chaptersContainer.appendChild(
-        button
-      );
+      chaptersContainer
+        .appendChild(
+          button
+        );
 
     }
   );
@@ -531,13 +628,17 @@ function renderChapters() {
    REPRENDRE / COMMENCER
 ========================================================= */
 
-if (resumeBtn) {
+if (
+  resumeBtn
+) {
 
   resumeBtn.addEventListener(
     "click",
     () => {
 
-      if (!selectedChapter) {
+      if (
+        !selectedChapter
+      ) {
         return;
       }
 
@@ -549,9 +650,9 @@ if (resumeBtn) {
 
 
       /*
-        Si le chapitre a déjà été commencé,
+        Chapitre déjà commencé :
         on demande au JS du chapitre
-        de reprendre la position enregistrée.
+        de reprendre la position.
       */
 
       if (
@@ -567,8 +668,8 @@ if (resumeBtn) {
 
 
       /*
-        Si le chapitre n'a jamais été lu,
-        on l'ouvre simplement au début.
+        Chapitre jamais commencé :
+        ouverture normale.
       */
 
       window.location.href =
@@ -584,13 +685,17 @@ if (resumeBtn) {
    RECOMMENCER LE CHAPITRE
 ========================================================= */
 
-if (restartBtn) {
+if (
+  restartBtn
+) {
 
   restartBtn.addEventListener(
     "click",
     () => {
 
-      if (!selectedChapter) {
+      if (
+        !selectedChapter
+      ) {
         return;
       }
 
@@ -613,7 +718,9 @@ if (restartBtn) {
    ANNULER
 ========================================================= */
 
-if (cancelBtn) {
+if (
+  cancelBtn
+) {
 
   cancelBtn.addEventListener(
     "click",
@@ -627,17 +734,17 @@ if (cancelBtn) {
    CLIC SUR LE FOND
 ========================================================= */
 
-if (chapterModal) {
+if (
+  chapterModal
+) {
 
   chapterModal.addEventListener(
     "click",
-    (event) => {
+    event => {
 
       if (
-        event.target ===
-          chapterModal ||
-        event.target ===
-          modalBackground ||
+        event.target === chapterModal ||
+        event.target === modalBackground ||
         event.target.classList.contains(
           "modal-background"
         )
@@ -659,7 +766,7 @@ if (chapterModal) {
 
 document.addEventListener(
   "keydown",
-  (event) => {
+  event => {
 
     if (
       event.key ===
@@ -676,14 +783,20 @@ document.addEventListener(
 
 /* =========================================================
    EFFACER LA MÉMOIRE D'UN SEUL CHAPITRE
+
+   Efface l'ancien ET le nouveau format.
 ========================================================= */
 
 function resetChapter(
   chapterNumber
 ) {
 
-  const prefix =
+  const oldPrefix =
     `societeOmbre_chapitre${chapterNumber}_`;
+
+
+  const newPrefix =
+    `societeOmbre_ch${chapterNumber}_`;
 
 
   const keysToDelete =
@@ -702,8 +815,13 @@ function resetChapter(
 
     if (
       key &&
-      key.startsWith(
-        prefix
+      (
+        key.startsWith(
+          oldPrefix
+        ) ||
+        key.startsWith(
+          newPrefix
+        )
       )
     ) {
 
@@ -717,7 +835,7 @@ function resetChapter(
 
 
   keysToDelete.forEach(
-    (key) => {
+    key => {
 
       localStorage.removeItem(
         key
@@ -734,6 +852,23 @@ function resetChapter(
 ========================================================= */
 
 renderChapters();
+
+
+/* =========================================================
+   ACTUALISATION AU RETOUR SUR LA PAGE
+
+   Utile sur Safari / iPhone / iPad lorsque
+   le menu revient depuis le cache.
+========================================================= */
+
+window.addEventListener(
+  "pageshow",
+  () => {
+
+    renderChapters();
+
+  }
+);
 
 
 /* =========================================================
