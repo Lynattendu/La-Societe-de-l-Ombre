@@ -183,7 +183,7 @@ const chapters = [
 
   {
     number: 29,
-    title: "Chapitre 29",
+    title: "Avant la porte",
     file: "chapitre29.html"
   },
 
